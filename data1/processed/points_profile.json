@@ -1,6 +1,6 @@
 [
   {
-    "id": "5ce43de1-d16d-5afb-b0f4-55a543a53c64",
+    "id": "2d1b6fb6-8a1e-503d-8f60-569f192dad60",
     "vector": [],
     "payload": {
       "chunk_id": "0001",
@@ -14,25 +14,25 @@
         "profile",
         "root"
       ],
-      "text": "Q: What is the candidate's current role?\nA: AI Infrastructure Engineer",
-      "embed_text": "[SECTION: ROOT]\nQ: What is the candidate's current role?\nA: AI Infrastructure Engineer\nQ: What is the candidate's current role?\nQ: Can you specify the candidate's job title?\nQ: What position does the candidate hold?",
+      "text": "Q: What is Taixing Bi's current role?\nA: AI Infrastructure Engineer",
+      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's current role?\nA: AI Infrastructure Engineer\nQ: What is Taixing Bi's current role?\nQ: What does Taixing Bi do at his job?\nQ: Which position does Taixing Bi hold?",
       "token_count": 11,
-      "embed_token_count": 35,
+      "embed_token_count": 36,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is the candidate's current role?",
-        "Can you specify the candidate's job title?",
-        "What position does the candidate hold?"
+        "What is Taixing Bi's current role?",
+        "What does Taixing Bi do at his job?",
+        "Which position does Taixing Bi hold?"
       ],
-      "content_hash": "af125f02b9f48d2bb41213238890bc1a782f0dc1901bc129518f5b45c6ccca42",
-      "source": "profile_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "content_hash": "2103d77f4a42685f262a25f4a8f48301eadda0fc88f330c5919d4508d54a0085",
+      "source": "personal_profile",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
-    "id": "4ea3b1c0-c227-558c-8de9-319c3642e7c8",
+    "id": "776ca7ec-bd25-568d-b181-51760cf81281",
     "vector": [],
     "payload": {
       "chunk_id": "0002",
@@ -46,25 +46,25 @@
         "profile",
         "root"
       ],
-      "text": "Q: Where is the candidate currently working?\nA: Saks",
-      "embed_text": "[SECTION: ROOT]\nQ: Where is the candidate currently working?\nA: Saks\nQ: Where is the candidate currently working?\nQ: What is the candidate's current workplace?\nQ: Can you tell me where the candidate works?",
+      "text": "Q: Where does Taixing Bi currently work?\nA: Saks",
+      "embed_text": "[SECTION: ROOT]\nQ: Where does Taixing Bi currently work?\nA: Saks\nQ: Where does Taixing Bi currently work?\nQ: What company is Taixing Bi associated with?\nQ: Can you name the current workplace of Taixing Bi?",
       "token_count": 9,
-      "embed_token_count": 34,
+      "embed_token_count": 36,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "Where is the candidate currently working?",
-        "What is the candidate's current workplace?",
-        "Can you tell me where the candidate works?"
+        "Where does Taixing Bi currently work?",
+        "What company is Taixing Bi associated with?",
+        "Can you name the current workplace of Taixing Bi?"
       ],
-      "content_hash": "6c892ffd5a06e779cc1df5f1b1d3cb5343dfafe2278bb0019b3673ae22ca06d1",
-      "source": "profile_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "content_hash": "cd28aa84bddf61a05eb8fd37fe6aedc12c2e5d2e80c20eb5f585047d67b457b4",
+      "source": "personal_profile",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
-    "id": "f92afb3e-5d27-569a-98b6-5b0c75858fc0",
+    "id": "c43c00a7-a06b-54bf-96f2-2870ea35ebb6",
     "vector": [],
     "payload": {
       "chunk_id": "0003",
@@ -78,25 +78,25 @@
         "profile",
         "root"
       ],
-      "text": "Q: What work locations is the candidate open to?\nA: Remote, Hybrid, or Office",
-      "embed_text": "[SECTION: ROOT]\nQ: What work locations is the candidate open to?\nA: Remote, Hybrid, or Office\nQ: What work locations is the candidate open to?\nQ: Is the candidate open to remote work?\nQ: Can the candidate work in an office?",
+      "text": "Q: Which work locations is Taixing Bi open to?\nA: Remote, Hybrid, or Office",
+      "embed_text": "[SECTION: ROOT]\nQ: Which work locations is Taixing Bi open to?\nA: Remote, Hybrid, or Office\nQ: Which work locations is Taixing Bi open to?\nQ: What are the available work location options for Taixing Bi?\nQ: Can Taixing Bi employees work remotely?",
       "token_count": 14,
-      "embed_token_count": 41,
+      "embed_token_count": 43,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What work locations is the candidate open to?",
-        "Is the candidate open to remote work?",
-        "Can the candidate work in an office?"
+        "Which work locations is Taixing Bi open to?",
+        "What are the available work location options for Taixing Bi?",
+        "Can Taixing Bi employees work remotely?"
       ],
-      "content_hash": "1a271286bc125c014e707811a836aa8d3cec1ca8268216a393edd16922eae5c8",
-      "source": "profile_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "content_hash": "4e796a9c993b09b145770775edaf7e022b6b746ccd3e7bad070aa76090f82309",
+      "source": "personal_profile",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
-    "id": "e90fa986-7ae6-534e-8f32-bf269f0d981b",
+    "id": "626fe18d-2fbd-55ee-81a8-3bd0dc22fb4b",
     "vector": [],
     "payload": {
       "chunk_id": "0004",
@@ -110,25 +110,25 @@
         "profile",
         "root"
       ],
-      "text": "Q: What is the candidate's expected compensation range?\nA: $180,000 – $240,000 USD",
-      "embed_text": "[SECTION: ROOT]\nQ: What is the candidate's expected compensation range?\nA: $180,000 – $240,000 USD\nQ: What is the candidate's expected compensation range?\nQ: What is the highest salary mentioned?\nQ: What is the lowest salary mentioned?",
+      "text": "Q: What is Taixing Bi's expected compensation range?\nA: $180,000 – $240,000 USD",
+      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's expected compensation range?\nA: $180,000 – $240,000 USD\nQ: What is the expected compensation range for Taixing Bi?\nQ: What is the maximum expected compensation for Taixing Bi?\nQ: What is the minimum expected compensation for Taixing Bi?",
       "token_count": 13,
-      "embed_token_count": 37,
+      "embed_token_count": 45,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is the candidate's expected compensation range?",
-        "What is the highest salary mentioned?",
-        "What is the lowest salary mentioned?"
+        "What is the expected compensation range for Taixing Bi?",
+        "What is the maximum expected compensation for Taixing Bi?",
+        "What is the minimum expected compensation for Taixing Bi?"
       ],
-      "content_hash": "3309092d0d2f678f9b1dce964b435281adeec73042377bfcb1eaaf29e62c8f07",
-      "source": "profile_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "content_hash": "100a672a74efd05c3700566c2c3bd5f90568d46672d2a569c9417aec5729dc04",
+      "source": "personal_profile",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
-    "id": "3c2360ce-88db-5c0f-83db-fef9f3e1d63f",
+    "id": "f2f7d45e-b002-5fe6-8a1c-5d3fb297b44b",
     "vector": [],
     "payload": {
       "chunk_id": "0005",
@@ -142,25 +142,25 @@
         "profile",
         "root"
       ],
-      "text": "Q: What is the candidate's visa status?\nA: H4 EAD",
-      "embed_text": "[SECTION: ROOT]\nQ: What is the candidate's visa status?\nA: H4 EAD\nQ: What type of visa does the candidate hold?\nQ: Does the candidate have an EAD?\nQ: What is the candidate's current visa status?",
+      "text": "Q: What is Taixing Bi's visa status?\nA: H4 EAD",
+      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's visa status?\nA: H4 EAD\nQ: What is Taixing Bi's current visa status?\nQ: What type of visa and work permit does Taixing Bi have?\nQ: Does Taixing Bi have an H4 EAD visa?",
       "token_count": 10,
-      "embed_token_count": 36,
+      "embed_token_count": 41,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What type of visa does the candidate hold?",
-        "Does the candidate have an EAD?",
-        "What is the candidate's current visa status?"
+        "What is Taixing Bi's current visa status?",
+        "What type of visa and work permit does Taixing Bi have?",
+        "Does Taixing Bi have an H4 EAD visa?"
       ],
-      "content_hash": "1dfb56d7c2adb1b2a79e192b4b1363c47a14702316673fd4a0219370c6201eeb",
-      "source": "profile_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "content_hash": "a793ae571f66cb4784b912fc89f06f0aacb90a45e1a74c260b8f7ae0540dea62",
+      "source": "personal_profile",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
-    "id": "74e39287-02bb-5e37-9e0b-84dabe00307c",
+    "id": "5ff44fad-0518-5541-a67a-9eee8c7a892b",
     "vector": [],
     "payload": {
       "chunk_id": "0006",
@@ -174,25 +174,25 @@
         "profile",
         "root"
       ],
-      "text": "Q: Does the candidate require visa sponsorship?\nA: No",
-      "embed_text": "[SECTION: ROOT]\nQ: Does the candidate require visa sponsorship?\nA: No\nQ: Does the candidate need visa support?\nQ: Is visa sponsorship provided?\nQ: Will the candidate be sponsored for a visa?",
+      "text": "Q: Does Taixing Bi require visa sponsorship?\nA: No",
+      "embed_text": "[SECTION: ROOT]\nQ: Does Taixing Bi require visa sponsorship?\nA: No\nQ: Does Taixing Bi need a visa sponsored?\nQ: Is visa sponsorship required for Taixing Bi?\nQ: Do they sponsor visas for Taixing Bi?",
       "token_count": 9,
-      "embed_token_count": 32,
+      "embed_token_count": 35,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "Does the candidate need visa support?",
-        "Is visa sponsorship provided?",
-        "Will the candidate be sponsored for a visa?"
+        "Does Taixing Bi need a visa sponsored?",
+        "Is visa sponsorship required for Taixing Bi?",
+        "Do they sponsor visas for Taixing Bi?"
       ],
-      "content_hash": "0404f4ba177dcd708be0c01f36dc30d1c5e3b26aa2a5f9329a1a1f56f2fba2da",
-      "source": "profile_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "content_hash": "3bd3a445ac648e6129c66c305462e057c85363f639fb4f47bcbb4763415b9941",
+      "source": "personal_profile",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
-    "id": "b48b25a1-3af8-5a00-9d19-9c0f387beb85",
+    "id": "26b7505f-f831-5954-ba5c-fac8cff41780",
     "vector": [],
     "payload": {
       "chunk_id": "0007",
@@ -206,25 +206,25 @@
         "profile",
         "root"
       ],
-      "text": "Q: What roles is the candidate targeting?\nA: AI Infra / Backend / LLM Engineer",
-      "embed_text": "[SECTION: ROOT]\nQ: What roles is the candidate targeting?\nA: AI Infra / Backend / LLM Engineer\nQ: What roles is the candidate targeting?\nQ: Are there specific roles mentioned for the candidate?\nQ: Which technical roles is the candidate applying for?",
+      "text": "Q: Which roles is Taixing Bi targeting?\nA: AI Infra / Backend / LLM Engineer",
+      "embed_text": "[SECTION: ROOT]\nQ: Which roles is Taixing Bi targeting?\nA: AI Infra / Backend / LLM Engineer\nQ: What roles is Taixing Bi targeting?\nQ: Which positions is Taixing Bi looking for?\nQ: Can you list the roles targeted by Taixing Bi?",
       "token_count": 15,
       "embed_token_count": 42,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What roles is the candidate targeting?",
-        "Are there specific roles mentioned for the candidate?",
-        "Which technical roles is the candidate applying for?"
+        "What roles is Taixing Bi targeting?",
+        "Which positions is Taixing Bi looking for?",
+        "Can you list the roles targeted by Taixing Bi?"
       ],
-      "content_hash": "1f557fcc25f3e77c72803626b9056f7b690d51676a058fe9dccae21740e0bed1",
-      "source": "profile_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "content_hash": "64836b6bf10078ec46964a3bf33e99b8e7e7f944cc47b10461c2e7409412b7cc",
+      "source": "personal_profile",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
-    "id": "8b7a4d92-fe4e-5e0b-a56a-bd60659e8a4e",
+    "id": "f36f7fd9-8223-50f9-8f90-08470ca1eac2",
     "vector": [],
     "payload": {
       "chunk_id": "0008",
@@ -238,25 +238,25 @@
         "profile",
         "root"
       ],
-      "text": "Q: What is the candidate's LinkedIn profile?\nA: https://www.linkedin.com/in/taixing-bi-757a4961/",
-      "embed_text": "[SECTION: ROOT]\nQ: What is the candidate's LinkedIn profile?\nA: https://www.linkedin.com/in/taixing-bi-757a4961/\nQ: What is the candidate's LinkedIn profile?\nQ: Where can one find the candidate's professional profile on LinkedIn?\nQ: Which LinkedIn link corresponds to the candidate?",
+      "text": "Q: What is Taixing Bi's LinkedIn profile?\nA: https://www.linkedin.com/in/taixing-bi-757a4961/",
+      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's LinkedIn profile?\nA: https://www.linkedin.com/in/taixing-bi-757a4961/\nQ: What is the LinkedIn profile of Taixing Bi?\nQ: Can you provide the LinkedIn link for Taixing Bi?\nQ: How can I find Taixing Bi's professional profile?",
       "token_count": 9,
-      "embed_token_count": 37,
+      "embed_token_count": 39,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is the candidate's LinkedIn profile?",
-        "Where can one find the candidate's professional profile on LinkedIn?",
-        "Which LinkedIn link corresponds to the candidate?"
+        "What is the LinkedIn profile of Taixing Bi?",
+        "Can you provide the LinkedIn link for Taixing Bi?",
+        "How can I find Taixing Bi's professional profile?"
       ],
-      "content_hash": "47f997d35183953d1d2ae33a40ca613d20c0a07bea1a548107e4a7cfbe74efc5",
-      "source": "profile_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "content_hash": "92f4acf3abcb6ba1a1d1907faad89594766ac362da2b35895e0ef05e79cd5064",
+      "source": "personal_profile",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
-    "id": "ff92cb4c-e239-5946-b607-9c14a8738027",
+    "id": "dedfa408-3e1b-5994-96f4-e36386c8522b",
     "vector": [],
     "payload": {
       "chunk_id": "0009",
@@ -270,25 +270,25 @@
         "profile",
         "root"
       ],
-      "text": "Q: What is the candidate's phone number?\nA: 347-560-4308",
-      "embed_text": "[SECTION: ROOT]\nQ: What is the candidate's phone number?\nA: 347-560-4308\nQ: What is the candidate's phone number?\nQ: Can you provide the contact number for the candidate?\nQ: Which telephone number should be used to reach the candidate?",
+      "text": "Q: What is Taixing Bi's phone number?\nA: 347-560-4308",
+      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's phone number?\nA: 347-560-4308\nQ: What is Taixing Bi's phone number?\nQ: What phone number can be associated with Taixing Bi?\nQ: How can one contact Taixing Bi?",
       "token_count": 9,
-      "embed_token_count": 39,
+      "embed_token_count": 35,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is the candidate's phone number?",
-        "Can you provide the contact number for the candidate?",
-        "Which telephone number should be used to reach the candidate?"
+        "What is Taixing Bi's phone number?",
+        "What phone number can be associated with Taixing Bi?",
+        "How can one contact Taixing Bi?"
       ],
-      "content_hash": "9ef9488392dfbffa0095017c3b338727b9b9a511e027adfe56bf313855271786",
-      "source": "profile_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "content_hash": "10c4d13c14303145301dd77f8a9e19335fc4219fb8c08967f18ebe611367c480",
+      "source": "personal_profile",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
-    "id": "076affab-bb85-52b8-b6c0-592521cbbb85",
+    "id": "9aa770a8-f4f2-5199-8081-31594a8ab6e7",
     "vector": [],
     "payload": {
       "chunk_id": "0010",
@@ -302,21 +302,21 @@
         "profile",
         "root"
       ],
-      "text": "Q: What is the candidate's email address?\nA: taixingbijob@gmail.com",
-      "embed_text": "[SECTION: ROOT]\nQ: What is the candidate's email address?\nA: taixingbijob@gmail.com\nQ: What is the candidate's email address?\nQ: What is taixingbijob@gmail.com?\nQ: Is taixingbijob@gmail.com the candidate's contact?",
+      "text": "Q: What is Taixing Bi's email address?\nA: taixingbijob@gmail.com",
+      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's email address?\nA: taixingbijob@gmail.com\nQ: What is Taixing Bi's email address?\nQ: Where can one find Taixing Bi's professional email?\nQ: How can one contact Taixing Bi professionally?",
       "token_count": 9,
-      "embed_token_count": 28,
+      "embed_token_count": 35,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is the candidate's email address?",
-        "What is taixingbijob@gmail.com?",
-        "Is taixingbijob@gmail.com the candidate's contact?"
+        "What is Taixing Bi's email address?",
+        "Where can one find Taixing Bi's professional email?",
+        "How can one contact Taixing Bi professionally?"
       ],
-      "content_hash": "896c102b5e0eefd333ff15b3cacb8b11bedfb6966ad916ede77223b627e22cb2",
-      "source": "profile_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "content_hash": "fe9e001550886289692f2cb6f7d28a2e2e241d7ccfa682e7adfd8b32533ab4ea",
+      "source": "personal_profile",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   }
 ]

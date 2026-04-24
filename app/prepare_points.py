@@ -8,6 +8,7 @@ import hashlib
 import json
 import os
 import re
+import time
 import uuid
 from datetime import UTC, datetime
 from pathlib import Path
@@ -198,6 +199,7 @@ def _to_point(
 
 
 def main() -> None:
+    started = time.perf_counter()
     args = parse_args()
     data_dir = Path(args.data_dir)
     out_dir = Path(args.output_dir)
@@ -273,6 +275,8 @@ def main() -> None:
     summary_path.write_text(json.dumps(summary, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"Prepared {summary['stats']['chunks_total_prepared']} chunks across {summary['stats']['files_total']} files")
     print(f"Wrote summary to {summary_path}")
+    elapsed_ms = (time.perf_counter() - started) * 1000
+    print(f"prepare_points total_latency_ms={elapsed_ms:.1f}")
 
 
 if __name__ == "__main__":

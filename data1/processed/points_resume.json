@@ -26,9 +26,9 @@
         "What is the LinkedIn profile URL for Taixing Bi?"
       ],
       "content_hash": "367f35a1a85728e859704849639ea9486c14ac57eea9885e915f12524c1f3776",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -47,20 +47,20 @@
         "summary"
       ],
       "text": "Backend AI Engineer with 7+ years of experience building LLM-powered backend systems, RAG pipelines, agent orchestration, and large-scale distributed infrastructure. Expert in LLM tool-calling, multi-agent systems, retrieval architectures, high-throughput pipelines (Kafka/MSK), AWS serverless, DynamoDB performance engineering, and LLM evaluation frameworks for reliability.",
-      "embed_text": "[SECTION: SUMMARY]\nBackend AI Engineer with 7+ years of experience building LLM-powered backend systems, RAG pipelines, agent orchestration, and large-scale distributed infrastructure. Expert in LLM tool-calling, multi-agent systems, retrieval architectures, high-throughput pipelines (Kafka/MSK), AWS serverless, DynamoDB performance engineering, and LLM evaluation frameworks for reliability.\nQ: How many years of experience does the Backend AI Engineer have?\nQ: What LLM evaluation frameworks is the engineer familiar with?\nQ: Which distributed messaging systems are mentioned?",
+      "embed_text": "[SECTION: SUMMARY]\nBackend AI Engineer with 7+ years of experience building LLM-powered backend systems, RAG pipelines, agent orchestration, and large-scale distributed infrastructure. Expert in LLM tool-calling, multi-agent systems, retrieval architectures, high-throughput pipelines (Kafka/MSK), AWS serverless, DynamoDB performance engineering, and LLM evaluation frameworks for reliability.\nQ: How many years of experience does the Backend AI Engineer have?\nQ: What LLM evaluation frameworks is the engineer expert in?\nQ: Which distributed infrastructure technologies is the engineer experienced with?",
       "token_count": 42,
-      "embed_token_count": 73,
+      "embed_token_count": 76,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "How many years of experience does the Backend AI Engineer have?",
-        "What LLM evaluation frameworks is the engineer familiar with?",
-        "Which distributed messaging systems are mentioned?"
+        "What LLM evaluation frameworks is the engineer expert in?",
+        "Which distributed infrastructure technologies is the engineer experienced with?"
       ],
       "content_hash": "284fff5ca142e79fa7061dd70e21a2661b3b4df80225f1a5715bcb190c9260ee",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -90,9 +90,9 @@
         "What does KV cache refer to in this context?"
       ],
       "content_hash": "8ce160faa2411a9d541b6c89320f2cf85576be61c701d79de06d58ef81f2611a",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -111,20 +111,20 @@
         "core_skills"
       ],
       "text": "RAG & Retrieval: FAISS, BM25, hybrid retrieval, embeddings, chunking, cross-encoder reranking, prompt engineering.",
-      "embed_text": "[SECTION: CORE SKILLS]\nRAG & Retrieval: FAISS, BM25, hybrid retrieval, embeddings, chunking, cross-encoder reranking, prompt engineering.\nQ: What are the core skills mentioned in this section?\nQ: List three techniques mentioned for retrieval.\nQ: Which technique is used for cross-document ranking?",
+      "embed_text": "[SECTION: CORE SKILLS]\nRAG & Retrieval: FAISS, BM25, hybrid retrieval, embeddings, chunking, cross-encoder reranking, prompt engineering.\nQ: What retrieval methods are mentioned?\nQ: What technique is used for cross-document ranking?\nQ: How are documents processed for retrieval?",
       "token_count": 13,
-      "embed_token_count": 41,
+      "embed_token_count": 37,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What are the core skills mentioned in this section?",
-        "List three techniques mentioned for retrieval.",
-        "Which technique is used for cross-document ranking?"
+        "What retrieval methods are mentioned?",
+        "What technique is used for cross-document ranking?",
+        "How are documents processed for retrieval?"
       ],
       "content_hash": "51ca4f09ce5b2f12f84736dac5c3fcf5eaf22e9bf30c348ec2142f2f526c329c",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -154,9 +154,9 @@
         "What AWS services are included?"
       ],
       "content_hash": "abad2182bb3cb8545c2aa2c995a00362fbee0749289ef136befdfbf202b752f8",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -175,20 +175,20 @@
         "core_skills"
       ],
       "text": "AI Serving: vLLM/Crew, SGLang, TGI, batching, caching, token streaming.",
-      "embed_text": "[SECTION: CORE SKILLS]\nAI Serving: vLLM/Crew, SGLang, TGI, batching, caching, token streaming.\nQ: What AI serving technologies are mentioned?\nQ: What technique is used for token processing?\nQ: Which methods are used for optimization?",
+      "embed_text": "[SECTION: CORE SKILLS]\nAI Serving: vLLM/Crew, SGLang, TGI, batching, caching, token streaming.\nQ: What AI serving technologies are mentioned?\nQ: What technique is listed for handling tokens?\nQ: Which method is noted for managing requests?",
       "token_count": 9,
-      "embed_token_count": 34,
+      "embed_token_count": 35,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What AI serving technologies are mentioned?",
-        "What technique is used for token processing?",
-        "Which methods are used for optimization?"
+        "What technique is listed for handling tokens?",
+        "Which method is noted for managing requests?"
       ],
       "content_hash": "01e36ff443ae358ae21ddcec8402e595cc3f656b915db577a1b665322d6b7e0b",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -207,20 +207,20 @@
         "core_skills"
       ],
       "text": "Observability: Datadog APM & logs, CloudWatch Insights, Prometheus, Grafana\nData & ML: TensorFlow, PyTorch, Keras, XGBoost, scikit- learn, Spark, BigQuery, Hadoop, HBase, transformer for classification.",
-      "embed_text": "[SECTION: CORE SKILLS]\nObservability: Datadog APM & logs, CloudWatch Insights, Prometheus, Grafana\nData & ML: TensorFlow, PyTorch, Keras, XGBoost, scikit- learn, Spark, BigQuery, Hadoop, HBase, transformer for classification.\nQ: What tools are listed under observability?\nQ: Which machine learning frameworks are mentioned?\nQ: What database technologies are included in the list?",
+      "embed_text": "[SECTION: CORE SKILLS]\nObservability: Datadog APM & logs, CloudWatch Insights, Prometheus, Grafana\nData & ML: TensorFlow, PyTorch, Keras, XGBoost, scikit- learn, Spark, BigQuery, Hadoop, HBase, transformer for classification.\nQ: What tools are listed for observability?\nQ: What machine learning frameworks are mentioned?\nQ: Which databases are included in the list?",
       "token_count": 25,
-      "embed_token_count": 51,
+      "embed_token_count": 50,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What tools are listed under observability?",
-        "Which machine learning frameworks are mentioned?",
-        "What database technologies are included in the list?"
+        "What tools are listed for observability?",
+        "What machine learning frameworks are mentioned?",
+        "Which databases are included in the list?"
       ],
       "content_hash": "09b10b02a7e6941c5a7685971b6cd9d8571c317ffadc6b53d71f1d9c7152077b",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -239,20 +239,20 @@
         "professional_experience"
       ],
       "text": "Saks.com — AI Infrastructure Engineer",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nSaks.com — AI Infrastructure Engineer\nQ: What was the role held at Saks.com?\nQ: Which company held the position of AI Infrastructure Engineer?\nQ: Can you name the specific job title mentioned?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nSaks.com — AI Infrastructure Engineer\nQ: What was the role held at Saks.com?\nQ: Which company held the position of AI Infrastructure Engineer?\nQ: What specific job title did the individual hold at Saks.com?",
       "token_count": 5,
-      "embed_token_count": 35,
+      "embed_token_count": 37,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What was the role held at Saks.com?",
         "Which company held the position of AI Infrastructure Engineer?",
-        "Can you name the specific job title mentioned?"
+        "What specific job title did the individual hold at Saks.com?"
       ],
       "content_hash": "a702c341d11300582e2c6d47aa8dc06d61f8ead52f54310d2a9e5244e01d7095",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -271,20 +271,20 @@
         "professional_experience"
       ],
       "text": "New York, NY • Aug 2021 – Present\nBuilt and operated production-grade RAG infrastructure using LangChain, including document ingestion, chunking, semantic ranking, and vector store orchestration, improving grounded response accuracy by +38%.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nNew York, NY • Aug 2021 – Present\nBuilt and operated production-grade RAG infrastructure using LangChain, including document ingestion, chunking, semantic ranking, and vector store orchestration, improving grounded response accuracy by +38%.\nQ: What technologies were used to build the RAG infrastructure?\nQ: What specific aspects of the RAG infrastructure were built and operated?\nQ: By what percentage did the accuracy of grounded responses improve?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nNew York, NY • Aug 2021 – Present\nBuilt and operated production-grade RAG infrastructure using LangChain, including document ingestion, chunking, semantic ranking, and vector store orchestration, improving grounded response accuracy by +38%.\nQ: What was the time period for building and operating the RAG infrastructure?\nQ: Which tools were used to build the RAG infrastructure?\nQ: By what percentage did the accuracy of grounded responses improve?",
       "token_count": 32,
-      "embed_token_count": 68,
+      "embed_token_count": 69,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What technologies were used to build the RAG infrastructure?",
-        "What specific aspects of the RAG infrastructure were built and operated?",
+        "What was the time period for building and operating the RAG infrastructure?",
+        "Which tools were used to build the RAG infrastructure?",
         "By what percentage did the accuracy of grounded responses improve?"
       ],
       "content_hash": "786caa559121a9423dd24c3ddb308cfe091b3d630bb7565a3ebf602dd42ded3f",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -303,20 +303,20 @@
         "professional_experience"
       ],
       "text": "Designed LLM-to-database access layers using LangChain SQL and tool abstractions, enabling safe, structured querying over operational data and reducing manual lookup time by 65%.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDesigned LLM-to-database access layers using LangChain SQL and tool abstractions, enabling safe, structured querying over operational data and reducing manual lookup time by 65%.\nQ: What technology was used to design the LLM-to-database access layers?\nQ: By what percentage did the new system reduce manual lookup time?\nQ: What specific layers were designed for database access?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDesigned LLM-to-database access layers using LangChain SQL and tool abstractions, enabling safe, structured querying over operational data and reducing manual lookup time by 65%.\nQ: What technology was used to design the LLM-to-database access layers?\nQ: By what percentage did the new system reduce manual lookup time?\nQ: What specific features were implemented to ensure safe and structured querying?",
       "token_count": 24,
-      "embed_token_count": 59,
+      "embed_token_count": 62,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What technology was used to design the LLM-to-database access layers?",
         "By what percentage did the new system reduce manual lookup time?",
-        "What specific layers were designed for database access?"
+        "What specific features were implemented to ensure safe and structured querying?"
       ],
       "content_hash": "bae90fd5baeeeefbce3f3ea18e12d2bbf3b4f7fa274f606a39898d4c8b51534b",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -335,20 +335,20 @@
         "professional_experience"
       ],
       "text": "Architected multi-agent orchestration frameworks with LangGraph, enabling task-specialized agents (retrieval, reasoning, validation) and increasing end-to-end task success rate by 28%.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nArchitected multi-agent orchestration frameworks with LangGraph, enabling task-specialized agents (retrieval, reasoning, validation) and increasing end-to-end task success rate by 28%.\nQ: What did Architected multi-agent orchestration frameworks with LangGraph enable?\nQ: What was the increase in end-to-end task success rate due to these frameworks?\nQ: How many specific types of agents were mentioned?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nArchitected multi-agent orchestration frameworks with LangGraph, enabling task-specialized agents (retrieval, reasoning, validation) and increasing end-to-end task success rate by 28%.\nQ: What did Architected multi-agent orchestration frameworks with LangGraph enable?\nQ: How many percentage points did the end-to-end task success rate increase by?\nQ: What types of agents were used in these frameworks?",
       "token_count": 20,
       "embed_token_count": 56,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What did Architected multi-agent orchestration frameworks with LangGraph enable?",
-        "What was the increase in end-to-end task success rate due to these frameworks?",
-        "How many specific types of agents were mentioned?"
+        "How many percentage points did the end-to-end task success rate increase by?",
+        "What types of agents were used in these frameworks?"
       ],
       "content_hash": "365aa08d296196e014eeb605940b14913d92b8328e0ae5e7b9bccd9554d7415b",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -367,20 +367,20 @@
         "professional_experience"
       ],
       "text": "Implemented LLM observability and evaluation pipelines with LangSmith, including regression testing, prompt/version diffing, and pairwise model evaluation, preventing 92% of quality regressions prior to production release.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nImplemented LLM observability and evaluation pipelines with LangSmith, including regression testing, prompt/version diffing, and pairwise model evaluation, preventing 92% of quality regressions prior to production release.\nQ: What tools were used for observability and evaluation?\nQ: What specific methods were implemented for model evaluation?\nQ: What was the effectiveness of the implemented pipelines in preventing quality issues?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nImplemented LLM observability and evaluation pipelines with LangSmith, including regression testing, prompt/version diffing, and pairwise model evaluation, preventing 92% of quality regressions prior to production release.\nQ: What tools were used for observability and evaluation?\nQ: What specific methods were implemented for model evaluation?\nQ: What was the success rate in preventing quality regressions?",
       "token_count": 26,
-      "embed_token_count": 60,
+      "embed_token_count": 57,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What tools were used for observability and evaluation?",
         "What specific methods were implemented for model evaluation?",
-        "What was the effectiveness of the implemented pipelines in preventing quality issues?"
+        "What was the success rate in preventing quality regressions?"
       ],
       "content_hash": "5a3c749d9331f2ddd6045a8c12bf08640a281500aa4fddc9a874312f8fe11545",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -399,7 +399,7 @@
         "professional_experience"
       ],
       "text": "Deployed low-latency LLM inference services with online tracing, evaluation hooks, and monitoring, maintaining P95 latency under 1.5s at production scale.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDeployed low-latency LLM inference services with online tracing, evaluation hooks, and monitoring, maintaining P95 latency under 1.5s at production scale.\nQ: What was the target P95 latency for the deployed services?\nQ: What features were included in the deployment of the LLM inference services?\nQ: At what scale were these services maintained?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDeployed low-latency LLM inference services with online tracing, evaluation hooks, and monitoring, maintaining P95 latency under 1.5s at production scale.\nQ: What was the target P95 latency for the deployed services?\nQ: What features were included in the deployment of the LLM inference services?\nQ: At what scale were the services maintained?",
       "token_count": 20,
       "embed_token_count": 55,
       "synthetic_questions_used": 3,
@@ -407,12 +407,12 @@
       "synthetic_questions": [
         "What was the target P95 latency for the deployed services?",
         "What features were included in the deployment of the LLM inference services?",
-        "At what scale were these services maintained?"
+        "At what scale were the services maintained?"
       ],
       "content_hash": "12eac9dc1b01b44e9fc670b692104b1122fd7d5ce3f241d47366324d0ea4edf3",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -431,20 +431,20 @@
         "professional_experience"
       ],
       "text": "Designed and implemented Kubernetes GPU autoscaling and workload orchestration strategies (HPA/KEDA), enabling dynamic scaling of LLM inference services under variable load while optimizing GPU utilization and latency.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDesigned and implemented Kubernetes GPU autoscaling and workload orchestration strategies (HPA/KEDA), enabling dynamic scaling of LLM inference services under variable load while optimizing GPU utilization and latency.\nQ: What technologies were used for autoscaling and workload orchestration?\nQ: How was GPU utilization optimized?\nQ: What services were dynamically scaled?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDesigned and implemented Kubernetes GPU autoscaling and workload orchestration strategies (HPA/KEDA), enabling dynamic scaling of LLM inference services under variable load while optimizing GPU utilization and latency.\nQ: What strategies did the individual design and implement for Kubernetes GPU autoscaling?\nQ: How were LLM inference services scaled dynamically under variable load?\nQ: What specific tools or technologies were used for workload orchestration?",
       "token_count": 27,
-      "embed_token_count": 52,
+      "embed_token_count": 65,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What technologies were used for autoscaling and workload orchestration?",
-        "How was GPU utilization optimized?",
-        "What services were dynamically scaled?"
+        "What strategies did the individual design and implement for Kubernetes GPU autoscaling?",
+        "How were LLM inference services scaled dynamically under variable load?",
+        "What specific tools or technologies were used for workload orchestration?"
       ],
       "content_hash": "aaaca9726c46b8a900da2ed25dcb7e9b28565fb814952219298277b11af7b53c",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -463,20 +463,20 @@
         "professional_experience"
       ],
       "text": "Built a centralized analytics and feature data platform on Snowflake to unify multi-source operational and event data for downstream AI and ML workloads.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nBuilt a centralized analytics and feature data platform on Snowflake to unify multi-source operational and event data for downstream AI and ML workloads.\nQ: What platform was used to build the analytics and feature data platform?\nQ: What was the main goal of building this platform?\nQ: Which types of data were unified by this platform?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nBuilt a centralized analytics and feature data platform on Snowflake to unify multi-source operational and event data for downstream AI and ML workloads.\nQ: What platform was used to build the analytics and feature data platform?\nQ: What was the purpose of unifying multi-source operational and event data?\nQ: Which technology was utilized for the centralized analytics platform?",
       "token_count": 23,
-      "embed_token_count": 59,
+      "embed_token_count": 61,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What platform was used to build the analytics and feature data platform?",
-        "What was the main goal of building this platform?",
-        "Which types of data were unified by this platform?"
+        "What was the purpose of unifying multi-source operational and event data?",
+        "Which technology was utilized for the centralized analytics platform?"
       ],
       "content_hash": "e4021425aa4d4cc01db588b8e80a019d58c285af76dea1dec0934e183b75ad74",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -495,20 +495,20 @@
         "professional_experience"
       ],
       "text": "Applied reinforcement learning techniques (PPO, DPO, GRPO) for LLM fine-tuning, leveraging offline evaluations, human and programmatic feedback signals to optimize response quality,\nDesigned and operated high-throughput Kafka event pipelines to support real-time ingestion, model signals, and agent execution triggers.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nApplied reinforcement learning techniques (PPO, DPO, GRPO) for LLM fine-tuning, leveraging offline evaluations, human and programmatic feedback signals to optimize response quality,\nDesigned and operated high-throughput Kafka event pipelines to support real-time ingestion, model signals, and agent execution triggers.\nQ: What reinforcement learning techniques were used for LLM fine-tuning?\nQ: How were feedback signals utilized to optimize response quality?\nQ: What tools were used to design and operate high-throughput event pipelines?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nApplied reinforcement learning techniques (PPO, DPO, GRPO) for LLM fine-tuning, leveraging offline evaluations, human and programmatic feedback signals to optimize response quality,\nDesigned and operated high-throughput Kafka event pipelines to support real-time ingestion, model signals, and agent execution triggers.\nQ: What reinforcement learning techniques were used for LLM fine-tuning?\nQ: How were feedback signals utilized in optimizing response quality?\nQ: What technology was used to design and operate high-throughput event pipelines?",
       "token_count": 39,
       "embed_token_count": 74,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What reinforcement learning techniques were used for LLM fine-tuning?",
-        "How were feedback signals utilized to optimize response quality?",
-        "What tools were used to design and operate high-throughput event pipelines?"
+        "How were feedback signals utilized in optimizing response quality?",
+        "What technology was used to design and operate high-throughput event pipelines?"
       ],
       "content_hash": "bb37357d1e657888c2e4558912834091c93bf9e270f5e0ae946e0af53ef3bdc2",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -527,20 +527,20 @@
         "professional_experience"
       ],
       "text": "Developed serverless, distributed backend services using AWS Lambda to support scalable AI workflows and data processing.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDeveloped serverless, distributed backend services using AWS Lambda to support scalable AI workflows and data processing.\nQ: What technology was used to develop the backend services?\nQ: For what purpose were the backend services developed?\nQ: Which cloud service provider was utilized?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDeveloped serverless, distributed backend services using AWS Lambda to support scalable AI workflows and data processing.\nQ: What technologies were used to develop the backend services?\nQ: For what purpose were the backend services developed?\nQ: Which cloud service provider was utilized for developing the backend services?",
       "token_count": 16,
-      "embed_token_count": 45,
+      "embed_token_count": 50,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What technology was used to develop the backend services?",
+        "What technologies were used to develop the backend services?",
         "For what purpose were the backend services developed?",
-        "Which cloud service provider was utilized?"
+        "Which cloud service provider was utilized for developing the backend services?"
       ],
       "content_hash": "0a46a78d97906fa85550c4e043546ac03427cc2ba86938670711677f1b73c9e7",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -570,9 +570,9 @@
         "What was the outcome of implementing these patterns?"
       ],
       "content_hash": "fa693781987f027202eea33bb449b5e704395ba94267bab700d6efb09fc90ff9",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -591,20 +591,20 @@
         "professional_experience"
       ],
       "text": "Kaden Health — ML Engineer",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nKaden Health — ML Engineer\nQ: What was Kaden's role?\nQ: Where did Kaden work as an ML Engineer?\nQ: What specific company is mentioned?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nKaden Health — ML Engineer\nQ: What was Kaden's role?\nQ: Where did Kaden work as an ML Engineer?\nQ: What specific company did Kaden work for as an ML Engineer?",
       "token_count": 5,
-      "embed_token_count": 28,
+      "embed_token_count": 34,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What was Kaden's role?",
         "Where did Kaden work as an ML Engineer?",
-        "What specific company is mentioned?"
+        "What specific company did Kaden work for as an ML Engineer?"
       ],
       "content_hash": "f6b2d67881869589835f3e5bcb629d810e3971bdf4e6f196a7cf04c2b837c713",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -623,20 +623,20 @@
         "professional_experience"
       ],
       "text": "Remote • Jul 2019 – Aug 2021\nDeveloped ML/NLP models using TensorFlow, PyTorch, Keras, XGBoost (classification, sentiment, Speech models), Spacy.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nRemote • Jul 2019 – Aug 2021\nDeveloped ML/NLP models using TensorFlow, PyTorch, Keras, XGBoost (classification, sentiment, Speech models), Spacy.\nQ: Which machine learning frameworks were used for developing models?\nQ: What types of models were developed during the remote job from July 2019 to August 2021?\nQ: Were any NLP models developed during this period?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nRemote • Jul 2019 – Aug 2021\nDeveloped ML/NLP models using TensorFlow, PyTorch, Keras, XGBoost (classification, sentiment, Speech models), Spacy.\nQ: Which machine learning frameworks were used?\nQ: What types of models were developed?\nQ: For which purposes were the NLP models developed?",
       "token_count": 20,
-      "embed_token_count": 59,
+      "embed_token_count": 46,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "Which machine learning frameworks were used for developing models?",
-        "What types of models were developed during the remote job from July 2019 to August 2021?",
-        "Were any NLP models developed during this period?"
+        "Which machine learning frameworks were used?",
+        "What types of models were developed?",
+        "For which purposes were the NLP models developed?"
       ],
       "content_hash": "2ed0a35cdd07de90e3903675cc24a4c17e6ac768baebb84901d9ba28c0650261",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -655,7 +655,7 @@
         "professional_experience"
       ],
       "text": "Built fine-tuning pipelines with automated voice data cleaning, feature extraction, evaluation loops.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nBuilt fine-tuning pipelines with automated voice data cleaning, feature extraction, evaluation loops.\nQ: What tasks were involved in building the fine-tuning pipelines?\nQ: What kind of data cleaning was performed?\nQ: Which steps were included in the evaluation loops?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nBuilt fine-tuning pipelines with automated voice data cleaning, feature extraction, evaluation loops.\nQ: What tasks were involved in building the fine-tuning pipelines?\nQ: What kind of data cleaning was performed?\nQ: Which processes were included in the evaluation loops?",
       "token_count": 12,
       "embed_token_count": 42,
       "synthetic_questions_used": 3,
@@ -663,12 +663,12 @@
       "synthetic_questions": [
         "What tasks were involved in building the fine-tuning pipelines?",
         "What kind of data cleaning was performed?",
-        "Which steps were included in the evaluation loops?"
+        "Which processes were included in the evaluation loops?"
       ],
       "content_hash": "f0a6cdd1fc7a1ee59b37899c4049c96a4a4f549c03874491fa08c56188d0cc26",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -687,20 +687,20 @@
         "professional_experience"
       ],
       "text": "Developed model-serving microservices for clinical inference.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDeveloped model-serving microservices for clinical inference.\nQ: What type of microservices did the individual develop?\nQ: For what purpose were the developed microservices used?\nQ: Which domain does the work relate to?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDeveloped model-serving microservices for clinical inference.\nQ: What type of microservices did the developer create?\nQ: For what purpose were the microservices developed?\nQ: Which field does the work relate to?",
       "token_count": 6,
-      "embed_token_count": 35,
+      "embed_token_count": 34,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What type of microservices did the individual develop?",
-        "For what purpose were the developed microservices used?",
-        "Which domain does the work relate to?"
+        "What type of microservices did the developer create?",
+        "For what purpose were the microservices developed?",
+        "Which field does the work relate to?"
       ],
       "content_hash": "a35ddaf032baa5f9eb8f112f2485ae67a390fe738788ad973c8a1f2e0c8017c4",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -719,20 +719,20 @@
         "professional_experience"
       ],
       "text": "Designed real-time streaming architecture using NATS + Kafka.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDesigned real-time streaming architecture using NATS + Kafka.\nQ: What technologies were used to design the real-time streaming architecture?\nQ: Which messaging system was paired with Kafka in the architecture?\nQ: Did they design any other aspects of the architecture besides the real-time streaming part?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDesigned real-time streaming architecture using NATS + Kafka.\nQ: What technologies were used to design the real-time streaming architecture?\nQ: Which messaging systems were employed in the real-time streaming architecture?\nQ: Who designed the real-time streaming architecture?",
       "token_count": 8,
-      "embed_token_count": 48,
+      "embed_token_count": 40,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What technologies were used to design the real-time streaming architecture?",
-        "Which messaging system was paired with Kafka in the architecture?",
-        "Did they design any other aspects of the architecture besides the real-time streaming part?"
+        "Which messaging systems were employed in the real-time streaming architecture?",
+        "Who designed the real-time streaming architecture?"
       ],
       "content_hash": "cda558ac71d1e988a163a14d412327eee3bb8c582f77c1386fbd81ce1aa78c1a",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -751,20 +751,20 @@
         "professional_experience"
       ],
       "text": "Built unified log ingestion (Cloud Run → BigQuery/S3).",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nBuilt unified log ingestion (Cloud Run → BigQuery/S3).\nQ: What did the individual build?\nQ: Which services were used for log ingestion?\nQ: Where were the logs stored?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nBuilt unified log ingestion (Cloud Run → BigQuery/S3).\nQ: What was the project?\nQ: Which services were used for ingestion?\nQ: Where was the data stored?",
       "token_count": 8,
-      "embed_token_count": 31,
+      "embed_token_count": 29,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What did the individual build?",
-        "Which services were used for log ingestion?",
-        "Where were the logs stored?"
+        "What was the project?",
+        "Which services were used for ingestion?",
+        "Where was the data stored?"
       ],
       "content_hash": "ea9bbc91c042d1ab367072f663df1d8d7c51b92ac308dfc9624e71c008fb65c6",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -783,20 +783,20 @@
         "professional_experience"
       ],
       "text": "CGMAX — ML Engineer",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nCGMAX — ML Engineer\nQ: What was the role held?\nQ: At which company did the person work?\nQ: What field does the ML Engineer specialize in?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nCGMAX — ML Engineer\nQ: What was the role?\nQ: Which company worked for?\nQ: Was it an ML Engineer position?",
       "token_count": 4,
-      "embed_token_count": 30,
+      "embed_token_count": 24,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What was the role held?",
-        "At which company did the person work?",
-        "What field does the ML Engineer specialize in?"
+        "What was the role?",
+        "Which company worked for?",
+        "Was it an ML Engineer position?"
       ],
       "content_hash": "84c30fb09f98800e0eeafde02b2c72b7282532179ff02181dba723fc8d8af20c",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -826,9 +826,9 @@
         "When did the professional experience in New York, NY end?"
       ],
       "content_hash": "98e9fa16424c93add76664d90913a2deac00bf0df0bec530a4232601bb032dca",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -847,20 +847,20 @@
         "professional_experience"
       ],
       "text": "• Built sentiment & price prediction models.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\n• Built sentiment & price prediction models.\nQ: What types of models were built?\nQ: Which models were developed?\nQ: Did they predict anything specific?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\n• Built sentiment & price prediction models.\nQ: What kind of models were built?\nQ: Which models were developed?\nQ: Did they involve predicting stock prices?",
       "token_count": 7,
-      "embed_token_count": 28,
+      "embed_token_count": 29,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What types of models were built?",
+        "What kind of models were built?",
         "Which models were developed?",
-        "Did they predict anything specific?"
+        "Did they involve predicting stock prices?"
       ],
       "content_hash": "a5880e45431f9cecd60b09561482cd2d335c12cd3e8d1583eba5c3c7b71e1353",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -890,9 +890,9 @@
         "Did they use any specific big data technologies?"
       ],
       "content_hash": "f59f8cfb13315af3d7788c189d445b583177ddbc7fb936ea175de8d80ede80e4",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -911,20 +911,20 @@
         "professional_experience"
       ],
       "text": "NVIDIA — Full Stack Engineer",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nNVIDIA — Full Stack Engineer\nQ: What was the role held at NVIDIA?\nQ: Was the role at NVIDIA part-time or full-time?\nQ: What type of engineer position was held at NVIDIA?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nNVIDIA — Full Stack Engineer\nQ: What was the role held at NVIDIA?\nQ: Which company employed the individual as a Full Stack Engineer?\nQ: What specific technology stack might the Full Stack Engineer have worked with at NVIDIA?",
       "token_count": 5,
-      "embed_token_count": 35,
+      "embed_token_count": 42,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What was the role held at NVIDIA?",
-        "Was the role at NVIDIA part-time or full-time?",
-        "What type of engineer position was held at NVIDIA?"
+        "Which company employed the individual as a Full Stack Engineer?",
+        "What specific technology stack might the Full Stack Engineer have worked with at NVIDIA?"
       ],
       "content_hash": "d81056f056bded96ebe60c410fb46ef4e4e471159b3d27686a8e3ad5e8ac112f",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -954,9 +954,9 @@
         "When did the professional experience in Santa Clara, CA end?"
       ],
       "content_hash": "ec30f1e8a641c1a4310fdd564365e76d8fd2a2bc008384db5e1c5c918b496a50",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -975,20 +975,20 @@
         "professional_experience"
       ],
       "text": "• Built telemetry services, dashboards, and analytics tools (C++/Python).",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\n• Built telemetry services, dashboards, and analytics tools (C++/Python).\nQ: What programming languages were used to build telemetry services, dashboards, and analytics tools?\nQ: Which specific tools were built?\nQ: Were any other technologies or languages involved besides C++ and Python?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\n• Built telemetry services, dashboards, and analytics tools (C++/Python).\nQ: What programming languages were used to build telemetry services, dashboards, and analytics tools?\nQ: Which specific tools were built?\nQ: What technologies were utilized for building the telemetry services?",
       "token_count": 9,
-      "embed_token_count": 44,
+      "embed_token_count": 42,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What programming languages were used to build telemetry services, dashboards, and analytics tools?",
         "Which specific tools were built?",
-        "Were any other technologies or languages involved besides C++ and Python?"
+        "What technologies were utilized for building the telemetry services?"
       ],
       "content_hash": "1e7370a28c4b33dfa5a22c008dd7cb06fd91b241dc1266c7f5408b1ef473f871",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -1007,7 +1007,7 @@
         "professional_experience"
       ],
       "text": "Developed internal REST APIs supporting GPU engineering.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDeveloped internal REST APIs supporting GPU engineering.\nQ: What type of APIs did the individual develop?\nQ: For what purpose were the APIs developed?\nQ: Which engineering field do the APIs support?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDeveloped internal REST APIs supporting GPU engineering.\nQ: What type of APIs did the individual develop?\nQ: For what purpose were the APIs developed?\nQ: Which technology was used for API development?",
       "token_count": 7,
       "embed_token_count": 35,
       "synthetic_questions_used": 3,
@@ -1015,12 +1015,12 @@
       "synthetic_questions": [
         "What type of APIs did the individual develop?",
         "For what purpose were the APIs developed?",
-        "Which engineering field do the APIs support?"
+        "Which technology was used for API development?"
       ],
       "content_hash": "ce05e3d33fe5c633ab41e6ec9c47f2ec38fdf9b24c4b615c946c351431160169",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -1039,20 +1039,20 @@
         "professional_experience"
       ],
       "text": "Built frontend interfaces using React within a Node.js environment.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nBuilt frontend interfaces using React within a Node.js environment.\nQ: What technology was used to build frontend interfaces?\nQ: Within what backend environment were the frontend interfaces built?\nQ: Which specific frontend technology was utilized?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nBuilt frontend interfaces using React within a Node.js environment.\nQ: What technology was used to build frontend interfaces?\nQ: In what environment were the frontend interfaces built?\nQ: Which specific technology was used for frontend development?",
       "token_count": 9,
-      "embed_token_count": 38,
+      "embed_token_count": 39,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What technology was used to build frontend interfaces?",
-        "Within what backend environment were the frontend interfaces built?",
-        "Which specific frontend technology was utilized?"
+        "In what environment were the frontend interfaces built?",
+        "Which specific technology was used for frontend development?"
       ],
       "content_hash": "1cccdcb5b697a1159d40e4c7ce6454737287d9710df3937dbe7c98d1c2404197",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -1082,9 +1082,9 @@
         "When was the degree obtained?"
       ],
       "content_hash": "9e1617669ab76542029835c626787caf979c835bdd0b00d93c5b425a51dca61a",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -1114,9 +1114,9 @@
         "When was the degree obtained?"
       ],
       "content_hash": "3cdfb931c3863451bc9cd213e9bc976e518dbc2e642234b58b90170102639607",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   },
   {
@@ -1146,9 +1146,9 @@
         "What is the URL for the publication?"
       ],
       "content_hash": "0cf73f57b395f897e009ed0635b6db9e5b8b369a35dc2e91ad328f5e6e0fbfd7",
-      "source": "resume_source",
-      "ingest_run_id": "run_20260424_154004",
-      "ingest_ts": "2026-04-24T15:40:04Z"
+      "source": "personal_resume",
+      "ingest_run_id": "run_20260424_183307",
+      "ingest_ts": "2026-04-24T18:33:07Z"
     }
   }
 ]

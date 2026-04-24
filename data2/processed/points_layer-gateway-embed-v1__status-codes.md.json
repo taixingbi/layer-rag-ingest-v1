@@ -26,9 +26,9 @@
         "When does the embedding gateway return 503?"
       ],
       "content_hash": "3c238bbc802ada3f436c219e9b2992d8a814e05e2b8c2b658e766873e52928ee",
-      "source": "layer-gateway-embed-v1__status-codes.md_source",
-      "ingest_run_id": "run_20260424_002659",
-      "ingest_ts": "2026-04-24T00:26:59Z"
+      "source": "repo_layer-gateway-embed-v1__status-codes.md",
+      "ingest_run_id": "run_20260424_183552",
+      "ingest_ts": "2026-04-24T18:35:52Z"
     }
   },
   {
@@ -47,20 +47,20 @@
         "when_the_gateway_returns_429"
       ],
       "text": "The gateway returns `429 Too Many Requests` when admission control cannot accept a request in time.\n\nCondition:\n\n- The admission semaphore is full (`ADMISSION_MAX_CONCURRENT` active requests), and\n- waiting to acquire a slot exceeds `ADMISSION_WAIT_TIMEOUT_MS`.\n\nBehavior:\n\n- Response: `{\"error\": \"Gateway busy, try again\"}`\n- Log event: `admission_rejected`\n- Metrics: `ADMISSION_REJECTED` incremented",
-      "embed_text": "[SECTION: When the gateway returns 429]\nThe gateway returns `429 Too Many Requests` when admission control cannot accept a request in time.\n\nCondition:\n\n- The admission semaphore is full (`ADMISSION_MAX_CONCURRENT` active requests), and\n- waiting to acquire a slot exceeds `ADMISSION_WAIT_TIMEOUT_MS`.\n\nBehavior:\n\n- Response: `{\"error\": \"Gateway busy, try again\"}`\n- Log event: `admission_rejected`\n- Metrics: `ADMISSION_REJECTED` incremented\nQ: What does the gateway return when admission control cannot accept a request in time?\nQ: What condition causes the gateway to return 429 Too Many Requests?\nQ: What is the response sent to the client when the gateway returns 429 Too Many Requests?",
+      "embed_text": "[SECTION: When the gateway returns 429]\nThe gateway returns `429 Too Many Requests` when admission control cannot accept a request in time.\n\nCondition:\n\n- The admission semaphore is full (`ADMISSION_MAX_CONCURRENT` active requests), and\n- waiting to acquire a slot exceeds `ADMISSION_WAIT_TIMEOUT_MS`.\n\nBehavior:\n\n- Response: `{\"error\": \"Gateway busy, try again\"}`\n- Log event: `admission_rejected`\n- Metrics: `ADMISSION_REJECTED` incremented\nQ: What does the gateway return when admission control cannot accept a request in time?\nQ: What condition causes the gateway to return 429 Too Many Requests?\nQ: What is logged when a request is rejected due to too many concurrent requests?",
       "token_count": 51,
-      "embed_token_count": 101,
+      "embed_token_count": 99,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What does the gateway return when admission control cannot accept a request in time?",
         "What condition causes the gateway to return 429 Too Many Requests?",
-        "What is the response sent to the client when the gateway returns 429 Too Many Requests?"
+        "What is logged when a request is rejected due to too many concurrent requests?"
       ],
       "content_hash": "22886b6f67dfb07ab1a52555fc356a8f7ba4af0bc01d79f575bbe9cf990860d8",
-      "source": "layer-gateway-embed-v1__status-codes.md_source",
-      "ingest_run_id": "run_20260424_002659",
-      "ingest_ts": "2026-04-24T00:26:59Z"
+      "source": "repo_layer-gateway-embed-v1__status-codes.md",
+      "ingest_run_id": "run_20260424_183552",
+      "ingest_ts": "2026-04-24T18:35:52Z"
     }
   },
   {
@@ -79,20 +79,20 @@
         "when_the_gateway_returns_503"
       ],
       "text": "The gateway can return `503 Service Unavailable` in two gateway-generated cases and one passthrough case.",
-      "embed_text": "[SECTION: When the gateway returns 503]\nThe gateway can return `503 Service Unavailable` in two gateway-generated cases and one passthrough case.\nQ: How many cases can cause the gateway to return 503 Service Unavailable?\nQ: What type of cases can lead to a 503 Service Unavailable being returned by the gateway?\nQ: Are there any passthrough cases for the 503 Service Unavailable response?",
+      "embed_text": "[SECTION: When the gateway returns 503]\nThe gateway can return `503 Service Unavailable` in two gateway-generated cases and one passthrough case.\nQ: How many cases can cause the gateway to return 503 Service Unavailable?\nQ: What type of cases can lead to a 503 Service Unavailable being returned by the gateway?\nQ: Are there any passthrough cases that can result in a 503 Service Unavailable?",
       "token_count": 15,
-      "embed_token_count": 63,
+      "embed_token_count": 65,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "How many cases can cause the gateway to return 503 Service Unavailable?",
         "What type of cases can lead to a 503 Service Unavailable being returned by the gateway?",
-        "Are there any passthrough cases for the 503 Service Unavailable response?"
+        "Are there any passthrough cases that can result in a 503 Service Unavailable?"
       ],
       "content_hash": "2cd461d7fd3efb5b870a50bbf63b0295e4984b416a8d01adc3f53ad56aa5f039",
-      "source": "layer-gateway-embed-v1__status-codes.md_source",
-      "ingest_run_id": "run_20260424_002659",
-      "ingest_ts": "2026-04-24T00:26:59Z"
+      "source": "repo_layer-gateway-embed-v1__status-codes.md",
+      "ingest_run_id": "run_20260424_183552",
+      "ingest_ts": "2026-04-24T18:35:52Z"
     }
   },
   {
@@ -111,20 +111,20 @@
         "1)_no_eligible_backend_at_pick_time"
       ],
       "text": "If routing cannot find any backend to send the request to (for example, all are excluded or circuit-open), the gateway returns `503`.\n\nThis can also happen during half-open recovery when all remaining candidates are temporarily ineligible for additional probe traffic.\n\nBehavior:\n\n- Raises: `HTTPException(status_code=503, detail=\"No healthy backend available\")`\n- Log event: `routing_no_backend`",
-      "embed_text": "[SECTION: 1) No eligible backend at pick time]\nIf routing cannot find any backend to send the request to (for example, all are excluded or circuit-open), the gateway returns `503`.\n\nThis can also happen during half-open recovery when all remaining candidates are temporarily ineligible for additional probe traffic.\n\nBehavior:\n\n- Raises: `HTTPException(status_code=503, detail=\"No healthy backend available\")`\n- Log event: `routing_no_backend`\nQ: What HTTP status code is returned when no backend is eligible?\nQ: What log event is raised when there's no backend available?\nQ: Under what condition can the 'No healthy backend available' error occur during half-open recovery?",
+      "embed_text": "[SECTION: 1) No eligible backend at pick time]\nIf routing cannot find any backend to send the request to (for example, all are excluded or circuit-open), the gateway returns `503`.\n\nThis can also happen during half-open recovery when all remaining candidates are temporarily ineligible for additional probe traffic.\n\nBehavior:\n\n- Raises: `HTTPException(status_code=503, detail=\"No healthy backend available\")`\n- Log event: `routing_no_backend`\nQ: What HTTP status code is returned when no eligible backend is found?\nQ: What log event is raised when there's no healthy backend available?\nQ: During which condition can the 'No eligible backend at pick time' scenario occur?",
       "token_count": 52,
-      "embed_token_count": 98,
+      "embed_token_count": 99,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What HTTP status code is returned when no backend is eligible?",
-        "What log event is raised when there's no backend available?",
-        "Under what condition can the 'No healthy backend available' error occur during half-open recovery?"
+        "What HTTP status code is returned when no eligible backend is found?",
+        "What log event is raised when there's no healthy backend available?",
+        "During which condition can the 'No eligible backend at pick time' scenario occur?"
       ],
       "content_hash": "1e9c1ef2254de25a5b702675d422c00b06eb896c670171c57425a7c794384d16",
-      "source": "layer-gateway-embed-v1__status-codes.md_source",
-      "ingest_run_id": "run_20260424_002659",
-      "ingest_ts": "2026-04-24T00:26:59Z"
+      "source": "repo_layer-gateway-embed-v1__status-codes.md",
+      "ingest_run_id": "run_20260424_183552",
+      "ingest_ts": "2026-04-24T18:35:52Z"
     }
   },
   {
@@ -154,9 +154,9 @@
         "What log event is generated when all retry attempts fail?"
       ],
       "content_hash": "99ed774533a896df016fa5955343f812a5ccbe792eec54feb7f57b08d370ecf5",
-      "source": "layer-gateway-embed-v1__status-codes.md_source",
-      "ingest_run_id": "run_20260424_002659",
-      "ingest_ts": "2026-04-24T00:26:59Z"
+      "source": "repo_layer-gateway-embed-v1__status-codes.md",
+      "ingest_run_id": "run_20260424_183552",
+      "ingest_ts": "2026-04-24T18:35:52Z"
     }
   },
   {
@@ -175,20 +175,20 @@
         "3)_upstream_backend_returns_503_on_final_attempt_(passthrough)"
       ],
       "text": "`503` is retryable, so the gateway retries while attempts remain. If the final attempt still gets upstream `503`, the gateway returns that upstream status to the client.\n\nBehavior:\n\n- Response status: `503` (passthrough from upstream)\n- Log event: `request_finished` with upstream status",
-      "embed_text": "[SECTION: 3) Upstream backend returns 503 on final attempt (passthrough)]\n`503` is retryable, so the gateway retries while attempts remain. If the final attempt still gets upstream `503`, the gateway returns that upstream status to the client.\n\nBehavior:\n\n- Response status: `503` (passthrough from upstream)\n- Log event: `request_finished` with upstream status\nQ: What status does the gateway return to the client if the final attempt still gets a 503 from the upstream backend?\nQ: How does the gateway handle the final 503 response from the upstream backend?\nQ: What log event is generated when the final attempt results in a 503 from the upstream backend?",
+      "embed_text": "[SECTION: 3) Upstream backend returns 503 on final attempt (passthrough)]\n`503` is retryable, so the gateway retries while attempts remain. If the final attempt still gets upstream `503`, the gateway returns that upstream status to the client.\n\nBehavior:\n\n- Response status: `503` (passthrough from upstream)\n- Log event: `request_finished` with upstream status\nQ: What status does the gateway return to the client if the final attempt still gets a 503 from the upstream backend?\nQ: How many retries does the gateway perform before returning a 503 to the client?\nQ: What log event is generated by the gateway when the final attempt results in a 503 from the upstream backend?",
       "token_count": 42,
-      "embed_token_count": 106,
+      "embed_token_count": 110,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What status does the gateway return to the client if the final attempt still gets a 503 from the upstream backend?",
-        "How does the gateway handle the final 503 response from the upstream backend?",
-        "What log event is generated when the final attempt results in a 503 from the upstream backend?"
+        "How many retries does the gateway perform before returning a 503 to the client?",
+        "What log event is generated by the gateway when the final attempt results in a 503 from the upstream backend?"
       ],
       "content_hash": "54196dff33e49d16ad5d65552d0d5ad2e752240200a07e5d68b90c7ed48af338",
-      "source": "layer-gateway-embed-v1__status-codes.md_source",
-      "ingest_run_id": "run_20260424_002659",
-      "ingest_ts": "2026-04-24T00:26:59Z"
+      "source": "repo_layer-gateway-embed-v1__status-codes.md",
+      "ingest_run_id": "run_20260424_183552",
+      "ingest_ts": "2026-04-24T18:35:52Z"
     }
   }
 ]

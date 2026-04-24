@@ -4,10 +4,13 @@ from __future__ import annotations
 
 import asyncio
 import argparse
+from datetime import datetime, timedelta, timezone
 import json
 import logging
 import os
+import random
 import re
+import time
 from pathlib import Path
 from typing import Any
 
@@ -25,6 +28,7 @@ _APP_DIR = Path(__file__).resolve().parent
 _ROOT_DIR = _APP_DIR.parent
 
 logger = logging.getLogger(__name__)
+_EST = timezone(timedelta(hours=-5), name="EST")
 
 
 def _json_from_response(content: str) -> dict[str, Any]:
@@ -46,6 +50,7 @@ async def generate_questions_for_chunk(
     num_questions: int,
     use_json_object: bool,
 ) -> list[str]:
+    started = time.perf_counter()
     logger.debug(
         "chat_completions: section=%r text_chars=%d questions_requested=%d json_object=%s",
         section,
@@ -70,12 +75,19 @@ async def generate_questions_for_chunk(
         ],
         base_url=normalize_chat_base_url(base_url),
         model=model,
-        max_tokens=512,
+        max_tokens=256,
         temperature=0.3,
         api_key=api_key if api_key else None,
         client=client,
         timeout=120.0,
         response_format={"type": "json_object"} if use_json_object else None,
+    )
+    elapsed_ms = (time.perf_counter() - started) * 1000
+    logger.info(
+        "chat_completions latency_ms=%.1f section=%r requested_questions=%d",
+        elapsed_ms,
+        section,
+        num_questions,
     )
     content = data["choices"][0]["message"]["content"]
     parsed = _json_from_response(str(content))
@@ -96,6 +108,27 @@ def _load_points(path: Path) -> list[dict[str, Any]]:
     if not isinstance(data, list):
         raise ValueError(f"{path} must contain a JSON array of points")
     return data
+
+
+def _is_transient_error(exc: Exception) -> bool:
+    if isinstance(exc, (httpx.TimeoutException, httpx.ConnectError)):
+        return True
+    if isinstance(exc, httpx.HTTPStatusError):
+        code = exc.response.status_code
+        return code == 429 or 500 <= code <= 599
+    return False
+
+
+def _retry_delay_seconds(*, attempt: int, base_delay: float) -> float:
+    # Exponential backoff with low jitter to avoid synchronized retries.
+    return max(0.0, base_delay) * (2 ** (attempt - 1)) + random.uniform(0.0, 0.1)
+
+
+def _default_failed_report_path(*, out_dir: Path | None, data_dir: Path) -> Path:
+    target_dir = out_dir if out_dir is not None else data_dir
+    ts = datetime.now(_EST).strftime("%Y%m%dT%H%M%S_EST")
+    reports_dir = target_dir / "reports"
+    return reports_dir / f"synthetic_questions_failed_{ts}.json"
 
 
 def enrich_point_payload(payload: dict[str, Any], *, questions: list[str]) -> None:
@@ -123,47 +156,75 @@ async def _enrich_row(
     use_json_object: bool,
     skip_existing: bool,
     sem: asyncio.Semaphore,
-) -> tuple[bool, bool]:
+    source_file: Path,
+    retry_max_attempts: int,
+    retry_base_delay: float,
+) -> tuple[bool, bool, dict[str, Any] | None, tuple[str, float] | None]:
     payload = row.get("payload")
     if not isinstance(payload, dict):
         logger.warning("Skipping row without dict payload")
-        return False, False
+        return False, False, None, None
     section = str(payload.get("section") or "ROOT")
     text = str(payload.get("text") or "").strip()
     if not text:
-        return False, False
+        return False, False, None, None
     existing = payload.get("synthetic_questions", [])
     if (
         skip_existing
         and isinstance(existing, list)
         and len([q for q in existing if str(q).strip()]) >= num_questions
     ):
-        return False, False
+        return False, False, None, None
 
-    try:
-        async with sem:
-            qs = await generate_questions_for_chunk(
-                client=client,
-                base_url=base_url,
-                model=model,
-                api_key=api_key,
-                section=section,
-                text=text,
-                num_questions=num_questions,
-                use_json_object=use_json_object,
+    chunk_id = str(payload.get("chunk_id") or "?")
+    attempts = max(1, retry_max_attempts)
+    last_error_message = ""
+
+    for attempt in range(1, attempts + 1):
+        try:
+            call_started = time.perf_counter()
+            async with sem:
+                qs = await generate_questions_for_chunk(
+                    client=client,
+                    base_url=base_url,
+                    model=model,
+                    api_key=api_key,
+                    section=section,
+                    text=text,
+                    num_questions=num_questions,
+                    use_json_object=use_json_object,
+                )
+            section_elapsed_ms = (time.perf_counter() - call_started) * 1000
+            enrich_point_payload(payload, questions=qs)
+            return True, False, None, (section, section_elapsed_ms)
+        except Exception as exc:
+            last_error_message = f"{type(exc).__name__}: {exc}"
+            transient = _is_transient_error(exc)
+            should_retry = transient and attempt < attempts
+            logger.warning(
+                "Question generation failed for chunk_id=%s attempt=%d/%d retry=%s: %s",
+                chunk_id,
+                attempt,
+                attempts,
+                should_retry,
+                exc,
+                exc_info=logger.isEnabledFor(logging.DEBUG),
             )
-    except Exception as exc:
-        logger.warning(
-            "Question generation failed for chunk_id=%s: %s",
-            payload.get("chunk_id", "?"),
-            exc,
-            exc_info=logger.isEnabledFor(logging.DEBUG),
-        )
-        enrich_point_payload(payload, questions=[])
-        return True, True
+            if should_retry:
+                delay = _retry_delay_seconds(attempt=attempt, base_delay=retry_base_delay)
+                await asyncio.sleep(delay)
+                continue
+            break
 
-    enrich_point_payload(payload, questions=qs)
-    return True, False
+    enrich_point_payload(payload, questions=[])
+    failed_item = {
+        "source_file": str(source_file),
+        "chunk_id": chunk_id,
+        "section": section,
+        "attempts": attempts,
+        "error": last_error_message,
+    }
+    return True, True, failed_item, None
 
 
 async def enrich_points_file(
@@ -177,14 +238,17 @@ async def enrich_points_file(
     use_json_object: bool,
     skip_existing: bool,
     max_concurrency: int,
-) -> tuple[list[dict[str, Any]], int, int]:
+    retry_max_attempts: int,
+    retry_base_delay: float,
+) -> tuple[list[dict[str, Any]], int, int, list[dict[str, Any]]]:
     """
     Load points JSON, fill synthetic_questions per payload, refresh embed_text.
-    Returns (points, updated_count, question_gen_failure_count).
+    Returns (points, updated_count, question_gen_failure_count, failed_items).
     """
+    file_started = time.perf_counter()
     points = _load_points(path)
     sem = asyncio.Semaphore(max(1, max_concurrency))
-    tasks: list[asyncio.Task[tuple[bool, bool]]] = []
+    tasks: list[asyncio.Task[tuple[bool, bool, dict[str, Any] | None, tuple[str, float] | None]]] = []
     for row in points:
         if not isinstance(row, dict):
             continue
@@ -200,14 +264,44 @@ async def enrich_points_file(
                     use_json_object=use_json_object,
                     skip_existing=skip_existing,
                     sem=sem,
+                    source_file=path,
+                    retry_max_attempts=retry_max_attempts,
+                    retry_base_delay=retry_base_delay,
                 )
             )
         )
 
     results = await asyncio.gather(*tasks) if tasks else []
-    updated = sum(1 for did_update, _ in results if did_update)
-    failed = sum(1 for _, did_fail in results if did_fail)
-    return points, updated, failed
+    updated = sum(1 for did_update, _, _, _ in results if did_update)
+    failed = sum(1 for _, did_fail, _, _ in results if did_fail)
+    failed_items = [item for _, _, item, _ in results if item is not None]
+    section_latency_totals: dict[str, float] = {}
+    for _, _, _, section_latency in results:
+        if section_latency is None:
+            continue
+        section_name, latency_ms = section_latency
+        section_latency_totals[section_name] = section_latency_totals.get(section_name, 0.0) + latency_ms
+    file_elapsed_ms = (time.perf_counter() - file_started) * 1000
+    logger.info(
+        "enrich_points_file latency_ms=%.1f path=%s updated=%d failed=%d",
+        file_elapsed_ms,
+        path,
+        updated,
+        failed,
+    )
+    if section_latency_totals:
+        for section_name, total_ms in sorted(
+            section_latency_totals.items(),
+            key=lambda item: item[1],
+            reverse=True,
+        ):
+            logger.info(
+                "section_total_latency_ms=%.1f path=%s section=%r",
+                total_ms,
+                path,
+                section_name,
+            )
+    return points, updated, failed, failed_items
 
 
 def _configure_logging(*, verbose: bool) -> None:
@@ -288,6 +382,24 @@ def _parse_args_points() -> argparse.Namespace:
         help="Maximum concurrent inference requests (default: 40).",
     )
     p.add_argument(
+        "--retry-max-attempts",
+        type=int,
+        default=3,
+        help="Maximum attempts for transient failures (default: 3).",
+    )
+    p.add_argument(
+        "--retry-base-delay",
+        type=float,
+        default=0.5,
+        help="Base delay in seconds for retry backoff (default: 0.5).",
+    )
+    p.add_argument(
+        "--failed-report-path",
+        type=Path,
+        default=None,
+        help="Optional path for failed-items report JSON. Defaults under output/data dir.",
+    )
+    p.add_argument(
         "-v",
         "--verbose",
         action="store_true",
@@ -297,6 +409,7 @@ def _parse_args_points() -> argparse.Namespace:
 
 
 async def main_points_async() -> None:
+    started = time.perf_counter()
     load_dotenv(_ROOT_DIR / ".env")
     load_dotenv()
     args = _parse_args_points()
@@ -315,6 +428,10 @@ async def main_points_async() -> None:
         raise SystemExit("--questions-per-chunk must be >= 1")
     if args.max_concurrency < 1:
         raise SystemExit("--max-concurrency must be >= 1")
+    if args.retry_max_attempts < 1:
+        raise SystemExit("--retry-max-attempts must be >= 1")
+    if args.retry_base_delay < 0:
+        raise SystemExit("--retry-base-delay must be >= 0")
 
     base_url = normalize_chat_base_url(args.chat_base_url)
     api_key = args.chat_api_key.strip() or None
@@ -332,6 +449,7 @@ async def main_points_async() -> None:
 
     total_updated = 0
     total_failed = 0
+    failed_items_all: list[dict[str, Any]] = []
     if args.dry_run:
         for path in paths:
             data = _load_points(path)
@@ -351,7 +469,7 @@ async def main_points_async() -> None:
     limits = httpx.Limits(max_connections=max(20, args.max_concurrency * 2))
     async with httpx.AsyncClient(timeout=timeout, limits=limits) as client:
         for path in paths:
-            data, updated, failed = await enrich_points_file(
+            data, updated, failed, failed_items = await enrich_points_file(
                 path,
                 num_questions=n,
                 client=client,
@@ -361,9 +479,12 @@ async def main_points_async() -> None:
                 use_json_object=use_json,
                 skip_existing=args.skip_existing,
                 max_concurrency=args.max_concurrency,
+                retry_max_attempts=args.retry_max_attempts,
+                retry_base_delay=args.retry_base_delay,
             )
             total_updated += updated
             total_failed += failed
+            failed_items_all.extend(failed_items)
             dest = (out_dir / path.name) if out_dir is not None else path
             dest.parent.mkdir(parents=True, exist_ok=True)
             dest.write_text(
@@ -372,12 +493,42 @@ async def main_points_async() -> None:
             )
             logger.info("Wrote %s (updated_payloads=%d gen_failures=%d)", dest, updated, failed)
 
+    failed_report_path = args.failed_report_path or _default_failed_report_path(
+        out_dir=out_dir,
+        data_dir=data_dir,
+    )
+    failed_report_path.parent.mkdir(parents=True, exist_ok=True)
+    report_payload = {
+        "generated_at": datetime.now(_EST).isoformat(),
+        "summary": {
+            "files": len(paths),
+            "updated_payloads": total_updated,
+            "gen_failures": total_failed,
+        },
+        "run_args": {
+            "data_dir": str(data_dir),
+            "pattern": args.pattern,
+            "questions_per_chunk": n,
+            "max_concurrency": args.max_concurrency,
+            "retry_max_attempts": args.retry_max_attempts,
+            "retry_base_delay": args.retry_base_delay,
+        },
+        "failed_items": failed_items_all,
+    }
+    failed_report_path.write_text(
+        json.dumps(report_payload, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+    logger.info("Wrote failed-items report: %s (count=%d)", failed_report_path, len(failed_items_all))
+
     logger.info(
         "Done: files=%d total_updated_payloads=%d total_gen_failures=%d",
         len(paths),
         total_updated,
         total_failed,
     )
+    elapsed_ms = (time.perf_counter() - started) * 1000
+    logger.info("synthetic_questions total_latency_ms=%.1f", elapsed_ms)
 
 
 def main_points() -> None:

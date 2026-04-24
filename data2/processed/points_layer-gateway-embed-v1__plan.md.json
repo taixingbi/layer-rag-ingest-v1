@@ -15,20 +15,20 @@
         "root"
       ],
       "text": "layer-gateway-embed-v1\n\nA lightweight, request-level routing gateway for embedding workloads across multiple vLLM backends.\n\nThis service complements\nlayer-gateway-inference-v1 by handling /v1/embeddings traffic independently.\n\nOverview\n\nlayer-gateway-embed-v1 provides:\n\nLoad-aware routing across embedding backends\nRequest-level scheduling (not connection-level)\nRetry and circuit breaker for reliability\nStructured logging and metrics\nSimple, production-ready architecture\nWhy a Separate Gateway?",
-      "embed_text": "[SECTION: ROOT]\nlayer-gateway-embed-v1\n\nA lightweight, request-level routing gateway for embedding workloads across multiple vLLM backends.\n\nThis service complements\nlayer-gateway-inference-v1 by handling /v1/embeddings traffic independently.\n\nOverview\n\nlayer-gateway-embed-v1 provides:\n\nLoad-aware routing across embedding backends\nRequest-level scheduling (not connection-level)\nRetry and circuit breaker for reliability\nStructured logging and metrics\nSimple, production-ready architecture\nWhy a Separate Gateway?\nQ: What does layer-gateway-embed-v1 handle independently?\nQ: What are the key features of layer-gateway-embed-v1?\nQ: Why is there a separate gateway for embeddings?",
+      "embed_text": "[SECTION: ROOT]\nlayer-gateway-embed-v1\n\nA lightweight, request-level routing gateway for embedding workloads across multiple vLLM backends.\n\nThis service complements\nlayer-gateway-inference-v1 by handling /v1/embeddings traffic independently.\n\nOverview\n\nlayer-gateway-embed-v1 provides:\n\nLoad-aware routing across embedding backends\nRequest-level scheduling (not connection-level)\nRetry and circuit breaker for reliability\nStructured logging and metrics\nSimple, production-ready architecture\nWhy a Separate Gateway?\nQ: What is the purpose of layer-gateway-embed-v1?\nQ: How does layer-gateway-embed-v1 handle traffic?\nQ: What features does layer-gateway-embed-v1 provide?",
       "token_count": 51,
-      "embed_token_count": 76,
+      "embed_token_count": 72,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What does layer-gateway-embed-v1 handle independently?",
-        "What are the key features of layer-gateway-embed-v1?",
-        "Why is there a separate gateway for embeddings?"
+        "What is the purpose of layer-gateway-embed-v1?",
+        "How does layer-gateway-embed-v1 handle traffic?",
+        "What features does layer-gateway-embed-v1 provide?"
       ],
       "content_hash": "db47718635ddfa9e605a9db3334e7a6d7f82876ee3a20b0dd5ca5783e80b90a9",
-      "source": "layer-gateway-embed-v1__plan.md_source",
-      "ingest_run_id": "run_20260424_002659",
-      "ingest_ts": "2026-04-24T00:26:59Z"
+      "source": "repo_layer-gateway-embed-v1__plan.md",
+      "ingest_run_id": "run_20260424_183552",
+      "ingest_ts": "2026-04-24T18:35:52Z"
     }
   },
   {
@@ -58,9 +58,9 @@
         "What HTTP methods are supported by the embedding API?"
       ],
       "content_hash": "278b2fecc50361a5a5de543084e5bc58b749329eefe83d8a37ebc8b54e64ecbb",
-      "source": "layer-gateway-embed-v1__plan.md_source",
-      "ingest_run_id": "run_20260424_002659",
-      "ingest_ts": "2026-04-24T00:26:59Z"
+      "source": "repo_layer-gateway-embed-v1__plan.md",
+      "ingest_run_id": "run_20260424_183552",
+      "ingest_ts": "2026-04-24T18:35:52Z"
     }
   },
   {
@@ -90,9 +90,9 @@
         "How many embedding nodes are configured in the example?"
       ],
       "content_hash": "56b74d8c2fcba3119a3a204ded20beae739b74230f6aae7796ce5ae36b564fa5",
-      "source": "layer-gateway-embed-v1__plan.md_source",
-      "ingest_run_id": "run_20260424_002659",
-      "ingest_ts": "2026-04-24T00:26:59Z"
+      "source": "repo_layer-gateway-embed-v1__plan.md",
+      "ingest_run_id": "run_20260424_183552",
+      "ingest_ts": "2026-04-24T18:35:52Z"
     }
   },
   {
@@ -111,20 +111,20 @@
         "root"
       ],
       "text": "The gateway selects the best backend using a score-based approach:\n\nscore = inflight * W1 + latency * W2 + error_rate * W3\n\nWhere:\n\ninflight = current active requests\nlatency = recent response time\nerror_rate = recent failures\n\nLowest score wins.\n\nRequest Classification\n\nRequests are classified for observability and future tuning:\n\nSMALL_EMBED\nMEDIUM_EMBED\nLARGE_EMBED\n\nBased on:\n\nnumber of input items\ntotal character size\nReliability\nRetry",
-      "embed_text": "[SECTION: ROOT]\nThe gateway selects the best backend using a score-based approach:\n\nscore = inflight * W1 + latency * W2 + error_rate * W3\n\nWhere:\n\ninflight = current active requests\nlatency = recent response time\nerror_rate = recent failures\n\nLowest score wins.\n\nRequest Classification\n\nRequests are classified for observability and future tuning:\n\nSMALL_EMBED\nMEDIUM_EMBED\nLARGE_EMBED\n\nBased on:\n\nnumber of input items\ntotal character size\nReliability\nRetry\nQ: What factors are considered in the score calculation for selecting the best backend?\nQ: How are requests classified for observability and future tuning?\nQ: What does the SMALL_EMBED classification consider?",
+      "embed_text": "[SECTION: ROOT]\nThe gateway selects the best backend using a score-based approach:\n\nscore = inflight * W1 + latency * W2 + error_rate * W3\n\nWhere:\n\ninflight = current active requests\nlatency = recent response time\nerror_rate = recent failures\n\nLowest score wins.\n\nRequest Classification\n\nRequests are classified for observability and future tuning:\n\nSMALL_EMBED\nMEDIUM_EMBED\nLARGE_EMBED\n\nBased on:\n\nnumber of input items\ntotal character size\nReliability\nRetry\nQ: What factors are considered in the score-based approach for selecting the best backend?\nQ: How are requests classified for observability and future tuning?\nQ: What does the SMALL_EMBED classification consider?",
       "token_count": 65,
       "embed_token_count": 98,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What factors are considered in the score calculation for selecting the best backend?",
+        "What factors are considered in the score-based approach for selecting the best backend?",
         "How are requests classified for observability and future tuning?",
         "What does the SMALL_EMBED classification consider?"
       ],
       "content_hash": "820a2c50618e532f606d3cddb571e56d575eddccda0e75fe9d404abbbf4354a0",
-      "source": "layer-gateway-embed-v1__plan.md_source",
-      "ingest_run_id": "run_20260424_002659",
-      "ingest_ts": "2026-04-24T00:26:59Z"
+      "source": "repo_layer-gateway-embed-v1__plan.md",
+      "ingest_run_id": "run_20260424_183552",
+      "ingest_ts": "2026-04-24T18:35:52Z"
     }
   },
   {
@@ -143,20 +143,20 @@
         "root"
       ],
       "text": "Retries occur on:\n\ntimeouts\n502, 503, 504\n\nConfig:\n\nretry:\n  max_attempts: 2\n\nRetries will prefer a different backend.\n\nCircuit Breaker\n\nEach backend is protected by a circuit breaker:\n\nOpens after repeated failures\nTemporarily removes backend from routing\nAutomatically retries after cooldown\nConfiguration\n\nExample:\n\nserver:\n  host: 0.0.0.0\n  port: 30181\n\ntimeouts:\n  connect_ms: 1000\n  read_ms: 15000",
-      "embed_text": "[SECTION: ROOT]\nRetries occur on:\n\ntimeouts\n502, 503, 504\n\nConfig:\n\nretry:\n  max_attempts: 2\n\nRetries will prefer a different backend.\n\nCircuit Breaker\n\nEach backend is protected by a circuit breaker:\n\nOpens after repeated failures\nTemporarily removes backend from routing\nAutomatically retries after cooldown\nConfiguration\n\nExample:\n\nserver:\n  host: 0.0.0.0\n  port: 30181\n\ntimeouts:\n  connect_ms: 1000\n  read_ms: 15000\nQ: What types of errors trigger retries?\nQ: How many maximum attempts are set for retries?\nQ: What happens after a backend is protected by a circuit breaker?",
+      "embed_text": "[SECTION: ROOT]\nRetries occur on:\n\ntimeouts\n502, 503, 504\n\nConfig:\n\nretry:\n  max_attempts: 2\n\nRetries will prefer a different backend.\n\nCircuit Breaker\n\nEach backend is protected by a circuit breaker:\n\nOpens after repeated failures\nTemporarily removes backend from routing\nAutomatically retries after cooldown\nConfiguration\n\nExample:\n\nserver:\n  host: 0.0.0.0\n  port: 30181\n\ntimeouts:\n  connect_ms: 1000\n  read_ms: 15000\nQ: What types of errors trigger retries?\nQ: How many times can a retry attempt be made?\nQ: What happens after a backend is protected by a circuit breaker?",
       "token_count": 52,
-      "embed_token_count": 82,
+      "embed_token_count": 83,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What types of errors trigger retries?",
-        "How many maximum attempts are set for retries?",
+        "How many times can a retry attempt be made?",
         "What happens after a backend is protected by a circuit breaker?"
       ],
       "content_hash": "c9b5e6535d1c942d7c27ff47f119c0be8fdc9e9335d2dfc23dbd951409033ce0",
-      "source": "layer-gateway-embed-v1__plan.md_source",
-      "ingest_run_id": "run_20260424_002659",
-      "ingest_ts": "2026-04-24T00:26:59Z"
+      "source": "repo_layer-gateway-embed-v1__plan.md",
+      "ingest_run_id": "run_20260424_183552",
+      "ingest_ts": "2026-04-24T18:35:52Z"
     }
   },
   {
@@ -186,9 +186,9 @@
         "Which backends are configured and what are their URLs?"
       ],
       "content_hash": "5539cc5b8b5fca7155158469c9d36e15f4752decceac2c4f0e62d650986c9a7f",
-      "source": "layer-gateway-embed-v1__plan.md_source",
-      "ingest_run_id": "run_20260424_002659",
-      "ingest_ts": "2026-04-24T00:26:59Z"
+      "source": "repo_layer-gateway-embed-v1__plan.md",
+      "ingest_run_id": "run_20260424_183552",
+      "ingest_ts": "2026-04-24T18:35:52Z"
     }
   },
   {
@@ -207,20 +207,20 @@
         "root"
       ],
       "text": "Prometheus metrics include:\n\ngateway_embed_requests_total\ngateway_embed_request_latency_ms\ngateway_embed_backend_selected_total\ngateway_embed_inflight\ngateway_embed_failures_total\ngateway_embed_retries_total\nLogging\n\nStructured logs include:\n\nrequest lifecycle events\nbackend selection\nretry attempts\nfailures and circuit breaker events\n\nFields:\n\nrequest_id\nsession_id\nbackend\nlatency_ms\nmodel\ninput size\nrequest class\nRepository Structure\napp/\n  api/\n  core/\n  routing/\n  proxy/\n  models/\n  metrics/",
-      "embed_text": "[SECTION: ROOT]\nPrometheus metrics include:\n\ngateway_embed_requests_total\ngateway_embed_request_latency_ms\ngateway_embed_backend_selected_total\ngateway_embed_inflight\ngateway_embed_failures_total\ngateway_embed_retries_total\nLogging\n\nStructured logs include:\n\nrequest lifecycle events\nbackend selection\nretry attempts\nfailures and circuit breaker events\n\nFields:\n\nrequest_id\nsession_id\nbackend\nlatency_ms\nmodel\ninput size\nrequest class\nRepository Structure\napp/\n  api/\n  core/\n  routing/\n  proxy/\n  models/\n  metrics/\nQ: What types of metrics does Prometheus track for gateway embed requests?\nQ: What events are included in structured logs?\nQ: What is the purpose of the 'metrics/' directory in the repository structure?",
+      "embed_text": "[SECTION: ROOT]\nPrometheus metrics include:\n\ngateway_embed_requests_total\ngateway_embed_request_latency_ms\ngateway_embed_backend_selected_total\ngateway_embed_inflight\ngateway_embed_failures_total\ngateway_embed_retries_total\nLogging\n\nStructured logs include:\n\nrequest lifecycle events\nbackend selection\nretry attempts\nfailures and circuit breaker events\n\nFields:\n\nrequest_id\nsession_id\nbackend\nlatency_ms\nmodel\ninput size\nrequest class\nRepository Structure\napp/\n  api/\n  core/\n  routing/\n  proxy/\n  models/\n  metrics/\nQ: What types of metrics does Prometheus track for the gateway embed functionality?\nQ: What events are included in structured logs?\nQ: What is the purpose of the 'metrics/' directory in the repository structure?",
       "token_count": 44,
-      "embed_token_count": 79,
+      "embed_token_count": 80,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What types of metrics does Prometheus track for gateway embed requests?",
+        "What types of metrics does Prometheus track for the gateway embed functionality?",
         "What events are included in structured logs?",
         "What is the purpose of the 'metrics/' directory in the repository structure?"
       ],
       "content_hash": "fc0e587b63568a54f9ce76503b227d00cc043c16aa8ad5cfbe33435edf11388c",
-      "source": "layer-gateway-embed-v1__plan.md_source",
-      "ingest_run_id": "run_20260424_002659",
-      "ingest_ts": "2026-04-24T00:26:59Z"
+      "source": "repo_layer-gateway-embed-v1__plan.md",
+      "ingest_run_id": "run_20260424_183552",
+      "ingest_ts": "2026-04-24T18:35:52Z"
     }
   },
   {
@@ -239,20 +239,20 @@
         "root"
       ],
       "text": "config/\ntests/\nDockerfile\nREADME.md\nDevelopment Plan\nPhase 1 — Bootstrap\nCreate repo\nCopy reusable components from inference gateway\nRemove chat-specific logic\nPhase 2 — Core Endpoint\nImplement /v1/embeddings\nAdd config + security\nAdd backend routing\nPhase 3 — Reliability\nRetry logic\nCircuit breaker\nBackend health tracking\nPhase 4 — Observability\nLogging\nMetrics\n/health\nPhase 5 — Deployment\nBuild Docker image\nRun locally or in cluster\nPhase 6 — Load Testing\nConcurrency tests\nFailover tests\nLatency validation\nDesign Principles\nRequest-level routing (not connection-level)\nKeep gateway simple — no batching\nLet vLLM handle batching\nFail fast, retry smart\nPrefer stability over complexity\nFuture Enhancements (Optional)\nOpenAI fallback for embeddings\nAdmission queue / rate limiting\nDynamic backend discovery\nAdaptive routing weights\nRequest batching (if needed)\nStatus",
-      "embed_text": "[SECTION: ROOT]\nconfig/\ntests/\nDockerfile\nREADME.md\nDevelopment Plan\nPhase 1 — Bootstrap\nCreate repo\nCopy reusable components from inference gateway\nRemove chat-specific logic\nPhase 2 — Core Endpoint\nImplement /v1/embeddings\nAdd config + security\nAdd backend routing\nPhase 3 — Reliability\nRetry logic\nCircuit breaker\nBackend health tracking\nPhase 4 — Observability\nLogging\nMetrics\n/health\nPhase 5 — Deployment\nBuild Docker image\nRun locally or in cluster\nPhase 6 — Load Testing\nConcurrency tests\nFailover tests\nLatency validation\nDesign Principles\nRequest-level routing (not connection-level)\nKeep gateway simple — no batching\nLet vLLM handle batching\nFail fast, retry smart\nPrefer stability over complexity\nFuture Enhancements (Optional)\nOpenAI fallback for embeddings\nAdmission queue / rate limiting\nDynamic backend discovery\nAdaptive routing weights\nRequest batching (if needed)\nStatus\nQ: What are the phases of development mentioned in the document?\nQ: What is the first phase of development called and what does it involve?\nQ: Which design principle states to prefer stability over complexity?",
+      "embed_text": "[SECTION: ROOT]\nconfig/\ntests/\nDockerfile\nREADME.md\nDevelopment Plan\nPhase 1 — Bootstrap\nCreate repo\nCopy reusable components from inference gateway\nRemove chat-specific logic\nPhase 2 — Core Endpoint\nImplement /v1/embeddings\nAdd config + security\nAdd backend routing\nPhase 3 — Reliability\nRetry logic\nCircuit breaker\nBackend health tracking\nPhase 4 — Observability\nLogging\nMetrics\n/health\nPhase 5 — Deployment\nBuild Docker image\nRun locally or in cluster\nPhase 6 — Load Testing\nConcurrency tests\nFailover tests\nLatency validation\nDesign Principles\nRequest-level routing (not connection-level)\nKeep gateway simple — no batching\nLet vLLM handle batching\nFail fast, retry smart\nPrefer stability over complexity\nFuture Enhancements (Optional)\nOpenAI fallback for embeddings\nAdmission queue / rate limiting\nDynamic backend discovery\nAdaptive routing weights\nRequest batching (if needed)\nStatus\nQ: What are the phases of development mentioned in the document?\nQ: What is the last phase of deployment described?\nQ: Which design principle suggests to prefer stability over complexity?",
       "token_count": 123,
-      "embed_token_count": 160,
+      "embed_token_count": 155,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What are the phases of development mentioned in the document?",
-        "What is the first phase of development called and what does it involve?",
-        "Which design principle states to prefer stability over complexity?"
+        "What is the last phase of deployment described?",
+        "Which design principle suggests to prefer stability over complexity?"
       ],
       "content_hash": "e13cc464a9d830f8fcf23739db3890463c3c9c9838dd10e44360e17d4a89c34b",
-      "source": "layer-gateway-embed-v1__plan.md_source",
-      "ingest_run_id": "run_20260424_002659",
-      "ingest_ts": "2026-04-24T00:26:59Z"
+      "source": "repo_layer-gateway-embed-v1__plan.md",
+      "ingest_run_id": "run_20260424_183552",
+      "ingest_ts": "2026-04-24T18:35:52Z"
     }
   },
   {
@@ -282,9 +282,9 @@
         "Which aspects does the initial version ensure besides routing stability?"
       ],
       "content_hash": "b62c6b96f4ed646f6cfa61606615ed3ca820ccda8258c97745d408112046be41",
-      "source": "layer-gateway-embed-v1__plan.md_source",
-      "ingest_run_id": "run_20260424_002659",
-      "ingest_ts": "2026-04-24T00:26:59Z"
+      "source": "repo_layer-gateway-embed-v1__plan.md",
+      "ingest_run_id": "run_20260424_183552",
+      "ingest_ts": "2026-04-24T18:35:52Z"
     }
   }
 ]

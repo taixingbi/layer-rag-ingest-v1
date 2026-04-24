@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import time
 from pathlib import Path
 from typing import Any, TypeVar
 
@@ -273,6 +274,7 @@ def _count_missing_vectors(points: list[dict[str, Any]]) -> int:
 
 
 def main() -> None:
+    started = time.perf_counter()
     args = parse_args()
     data_dir = Path(args.data_dir)
     files = sorted(data_dir.glob(args.pattern))
@@ -340,6 +342,8 @@ def main() -> None:
         print(f"Upserted {upserted}/{len(all_points)}")
 
     print(f"Done: upserted {upserted} point(s) into collection {collection!r}")
+    elapsed_ms = (time.perf_counter() - started) * 1000
+    print(f"upsert_qdrant total_latency_ms={elapsed_ms:.1f}")
 
 
 if __name__ == "__main__":

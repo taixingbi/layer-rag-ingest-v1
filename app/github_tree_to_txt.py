@@ -8,6 +8,7 @@ import io
 import logging
 import os
 import re
+import time
 import zipfile
 from pathlib import Path
 from typing import Iterable
@@ -220,6 +221,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> None:
+    started = time.perf_counter()
     args = parse_args()
     configure_logging(verbose=args.verbose)
     repo_list = args.repo_list
@@ -256,6 +258,8 @@ def main() -> None:
             total_files += n
 
     logger.info("Done. URLs=%d files_written=%d out_dir=%s", len(urls), total_files, out_dir)
+    elapsed_ms = (time.perf_counter() - started) * 1000
+    logger.info("github_tree_to_txt total_latency_ms=%.1f", elapsed_ms)
 
 
 if __name__ == "__main__":

@@ -1,13 +1,13 @@
 {
-  "ingest_run_id": "run_20260424_154004",
+  "ingest_run_id": "run_20260424_183307",
   "collection": "taixing_knowledge_dev",
-  "ingest_ts": "2026-04-24T15:40:04Z",
+  "ingest_ts": "2026-04-24T18:33:07Z",
   "files": [
     {
       "input_file": "data1/processed/chunks_profile.json",
       "output_file": "data1/processed/points_profile.json",
       "doc_type": "profile",
-      "source": "profile_source",
+      "source": "personal_profile",
       "chunks_input": 10,
       "chunks_prepared": 10,
       "chunks_failed": 0
@@ -16,7 +16,7 @@
       "input_file": "data1/processed/chunks_qa.json",
       "output_file": "data1/processed/points_qa.json",
       "doc_type": "qa",
-      "source": "qa_source",
+      "source": "personal_qa",
       "chunks_input": 14,
       "chunks_prepared": 14,
       "chunks_failed": 0
@@ -25,7 +25,7 @@
       "input_file": "data1/processed/chunks_resume.json",
       "output_file": "data1/processed/points_resume.json",
       "doc_type": "resume",
-      "source": "resume_source",
+      "source": "personal_resume",
       "chunks_input": 36,
       "chunks_prepared": 36,
       "chunks_failed": 0

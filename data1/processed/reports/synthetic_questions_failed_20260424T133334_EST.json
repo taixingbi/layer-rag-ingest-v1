@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-04-24T13:33:34.868302-05:00",
+  "summary": {
+    "files": 3,
+    "updated_payloads": 60,
+    "gen_failures": 0
+  },
+  "run_args": {
+    "data_dir": "data1/processed",
+    "pattern": "points_*.json",
+    "questions_per_chunk": 3,
+    "max_concurrency": 40,
+    "retry_max_attempts": 3,
+    "retry_base_delay": 0.5
+  },
+  "failed_items": []
+}

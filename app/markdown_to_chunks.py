@@ -7,6 +7,7 @@ import argparse
 import json
 import logging
 import re
+import time
 from pathlib import Path
 from typing import Any
 
@@ -278,6 +279,7 @@ def _process_single_file(
 
 
 def main() -> None:
+    started = time.perf_counter()
     args = parse_args()
     configure_logging(verbose=args.verbose)
     input_path = Path(args.input_path)
@@ -331,6 +333,8 @@ def main() -> None:
             min_chars=min_c,
             max_chars=max_c,
         )
+    elapsed_ms = (time.perf_counter() - started) * 1000
+    logger.info("markdown_to_chunks total_latency_ms=%.1f", elapsed_ms)
 
 
 if __name__ == "__main__":

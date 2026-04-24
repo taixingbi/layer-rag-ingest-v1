@@ -43,7 +43,7 @@ Run chunking, prepare, then upsert (adjust paths as needed):
 
 ```bash
 python3 app/text_to_chunks.py data1
-python3 app/prepare_points.py --data-dir data1/processed --output-dir data1/processed --pattern "chunks_*.json"
+python3 app/prepare_points.py --data-dir data1/processed --output-dir data1/processed --pattern "chunks_*.json" --source-prefix personal
 ```
 
 Variants:
@@ -96,7 +96,7 @@ Optional: `--min-chunk-chars` (default `400`), `--max-chunk-chars` (default `280
 ### 2) Prepare metadata + filter payload files
 
 ```bash
-python3 app/prepare_points.py --data-dir data1/processed --output-dir data1/processed --pattern "chunks_*.json"
+python3 app/prepare_points.py --data-dir data1/processed --output-dir data1/processed --pattern "chunks_*.json" --source-prefix personal
 ```
 
 This writes:
@@ -140,13 +140,17 @@ Optional chat flags: `--chat-base-url`, `--chat-model`, `--chat-api-key`, `--no-
 ```bash
 python3 app/github_tree_to_txt.py --repo-list data2/raw/repo.txt --out-dir data2/raw
 python3 app/markdown_to_chunks.py data2
-python3 app/prepare_points.py --data-dir data2/processed --output-dir data2/processed --pattern "chunks_*.json"
+python3 app/prepare_points.py --data-dir data2/processed --output-dir data2/processed --pattern "chunks_*.json" --source-prefix repo
 # optional: add synthetic questions to points before upsert
 python3 app/synthetic_questions.py --data-dir data2/processed --questions-per-chunk 3
 python3 app/upsert_qdrant.py --data-dir data2/processed --pattern "points_*.json"
 ```
 
 For Markdown-heavy `data2`, use the command block above (chunk with `markdown_to_chunks.py`, then prepare, optional `synthetic_questions.py`, then upsert).
+
+With those `prepare_points.py` flags, `payload.source` is namespaced for clean filtering:
+- `personal_*` for personal context (`data1`)
+- `repo_*` for repository context (`data2`)
 
 ### 3) Upsert to Qdrant
 

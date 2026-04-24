@@ -26,9 +26,9 @@
         "What type of logs are generated?"
       ],
       "content_hash": "3cb416020c74aeb8d5d2ebcfa1019f28a34bd3d6c0864b1a56b3c7636ef44de1",
-      "source": "layer-gateway-inference-v1__fallback.md_source",
-      "ingest_run_id": "run_20260424_002659",
-      "ingest_ts": "2026-04-24T00:26:59Z"
+      "source": "repo_layer-gateway-inference-v1__fallback.md",
+      "ingest_run_id": "run_20260424_183552",
+      "ingest_ts": "2026-04-24T18:35:52Z"
     }
   },
   {
@@ -47,20 +47,20 @@
         "dispatch_to_fallback_(`app/api/routes.py`)"
       ],
       "text": "Look for `event: \"request_dispatched\"` at level `WARN`.\n\n| Field | Meaning |\n| --- | --- |\n| `backend` | Fallback backend name (default `openai-fallback`; matches `openai_fallback.backend_name` in `config.yaml`) |\n| `gateway_meta.openai_fallback_enabled` | Whether `openai_fallback.enabled` is true for this process |\n| `gateway_meta.provider` | Always `openai` for this path |\n| `gateway_meta.reason` | Why fallback was chosen (see below) |",
-      "embed_text": "[SECTION: Dispatch to fallback (`app/api/routes.py`)]\nLook for `event: \"request_dispatched\"` at level `WARN`.\n\n| Field | Meaning |\n| --- | --- |\n| `backend` | Fallback backend name (default `openai-fallback`; matches `openai_fallback.backend_name` in `config.yaml`) |\n| `gateway_meta.openai_fallback_enabled` | Whether `openai_fallback.enabled` is true for this process |\n| `gateway_meta.provider` | Always `openai` for this path |\n| `gateway_meta.reason` | Why fallback was chosen (see below) |\nQ: What does the field 'backend' represent?\nQ: What value does 'gateway_meta.provider' always have?\nQ: What information is contained in 'gateway_meta.reason'?",
+      "embed_text": "[SECTION: Dispatch to fallback (`app/api/routes.py`)]\nLook for `event: \"request_dispatched\"` at level `WARN`.\n\n| Field | Meaning |\n| --- | --- |\n| `backend` | Fallback backend name (default `openai-fallback`; matches `openai_fallback.backend_name` in `config.yaml`) |\n| `gateway_meta.openai_fallback_enabled` | Whether `openai_fallback.enabled` is true for this process |\n| `gateway_meta.provider` | Always `openai` for this path |\n| `gateway_meta.reason` | Why fallback was chosen (see below) |\nQ: What does the field 'backend' represent?\nQ: What value does 'gateway_meta.provider' always have?\nQ: What information is provided by the field 'gateway_meta.reason'?",
       "token_count": 60,
-      "embed_token_count": 86,
+      "embed_token_count": 88,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What does the field 'backend' represent?",
         "What value does 'gateway_meta.provider' always have?",
-        "What information is contained in 'gateway_meta.reason'?"
+        "What information is provided by the field 'gateway_meta.reason'?"
       ],
       "content_hash": "d137c17650874bcb6bd9c4e234647a8961c4bf71a7554f0be5e8731e63ea365b",
-      "source": "layer-gateway-inference-v1__fallback.md_source",
-      "ingest_run_id": "run_20260424_002659",
-      "ingest_ts": "2026-04-24T00:26:59Z"
+      "source": "repo_layer-gateway-inference-v1__fallback.md",
+      "ingest_run_id": "run_20260424_183552",
+      "ingest_ts": "2026-04-24T18:35:52Z"
     }
   },
   {
@@ -90,9 +90,9 @@
         "Which error triggers 'no_backend_fallback'?"
       ],
       "content_hash": "abfb9a3a6beb5f528c289253114ed2849c9729f222320cee8e48b43015270734",
-      "source": "layer-gateway-inference-v1__fallback.md_source",
-      "ingest_run_id": "run_20260424_002659",
-      "ingest_ts": "2026-04-24T00:26:59Z"
+      "source": "repo_layer-gateway-inference-v1__fallback.md",
+      "ingest_run_id": "run_20260424_183552",
+      "ingest_ts": "2026-04-24T18:35:52Z"
     }
   },
   {
@@ -111,20 +111,20 @@
         "after_dispatch_(`app/proxy/client.py`)"
       ],
       "text": "The same request continues with proxy events, all carrying `gateway_meta.openai_fallback_enabled` where `gateway_meta` is present, for example:\n\n- `proxy_start`, `proxy_retry`, `proxy_response`\n- On failure: `proxy_transport_error`, `proxy_final_failure`\n- Streaming: `stream_first_byte`, `stream_complete`",
-      "embed_text": "[SECTION: After dispatch (`app/proxy/client.py`)]\nThe same request continues with proxy events, all carrying `gateway_meta.openai_fallback_enabled` where `gateway_meta` is present, for example:\n\n- `proxy_start`, `proxy_retry`, `proxy_response`\n- On failure: `proxy_transport_error`, `proxy_final_failure`\n- Streaming: `stream_first_byte`, `stream_complete`\nQ: What are the proxy events that carry gateway_meta.openai_fallback_enabled?\nQ: What happens on failure in proxy events?\nQ: Which events are related to streaming?",
+      "embed_text": "[SECTION: After dispatch (`app/proxy/client.py`)]\nThe same request continues with proxy events, all carrying `gateway_meta.openai_fallback_enabled` where `gateway_meta` is present, for example:\n\n- `proxy_start`, `proxy_retry`, `proxy_response`\n- On failure: `proxy_transport_error`, `proxy_final_failure`\n- Streaming: `stream_first_byte`, `stream_complete`\nQ: What types of proxy events carry gateway_meta.openai_fallback_enabled?\nQ: What happens on failure in proxy events?\nQ: Which events are related to streaming?",
       "token_count": 29,
-      "embed_token_count": 57,
+      "embed_token_count": 56,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What are the proxy events that carry gateway_meta.openai_fallback_enabled?",
+        "What types of proxy events carry gateway_meta.openai_fallback_enabled?",
         "What happens on failure in proxy events?",
         "Which events are related to streaming?"
       ],
       "content_hash": "3863400ce1a26e1d30be30480fd0ec24b1ba7ac23166cfb5fef89391f5ce1fe8",
-      "source": "layer-gateway-inference-v1__fallback.md_source",
-      "ingest_run_id": "run_20260424_002659",
-      "ingest_ts": "2026-04-24T00:26:59Z"
+      "source": "repo_layer-gateway-inference-v1__fallback.md",
+      "ingest_run_id": "run_20260424_183552",
+      "ingest_ts": "2026-04-24T18:35:52Z"
     }
   },
   {
@@ -154,9 +154,9 @@
         "What specific field is used to narrow by reason?"
       ],
       "content_hash": "5c90ddad7a0d5fcda5afcbd031e9bbea1f4ece81d10ed6b62322446c76e5b01b",
-      "source": "layer-gateway-inference-v1__fallback.md_source",
-      "ingest_run_id": "run_20260424_002659",
-      "ingest_ts": "2026-04-24T00:26:59Z"
+      "source": "repo_layer-gateway-inference-v1__fallback.md",
+      "ingest_run_id": "run_20260424_183552",
+      "ingest_ts": "2026-04-24T18:35:52Z"
     }
   },
   {
@@ -186,9 +186,9 @@
         "Which provider is associated with the `gateway_fallback_requests_total` metric?"
       ],
       "content_hash": "83c3d2a25d11969afd931fe6a614c361c6e969b8a92fa1ae574da42a238e7ca3",
-      "source": "layer-gateway-inference-v1__fallback.md_source",
-      "ingest_run_id": "run_20260424_002659",
-      "ingest_ts": "2026-04-24T00:26:59Z"
+      "source": "repo_layer-gateway-inference-v1__fallback.md",
+      "ingest_run_id": "run_20260424_183552",
+      "ingest_ts": "2026-04-24T18:35:52Z"
     }
   }
 ]
