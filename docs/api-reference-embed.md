@@ -28,12 +28,12 @@ curl -X POST http://192.168.86.179:30181/v1/embeddings \
 
 Use these from the repo root (or add the repo to `PYTHONPATH`). `base_url` is the service root **without** `/v1` (the clients append `/v1/chat/completions` and `/v1/embeddings`).
 
-Defaults: set `INFERENCE_BASE_URL` and `EMBEDDINGS_BASE_URL` in `.env` (see `env.example`), or rely on built-in fallbacks in `app/inference_client.py` and `app/embeddings_client.py`. Omit `base_url` on calls to use those defaults; pass `base_url=` to override.
+Defaults: set `INFERENCE_BASE_URL` and `EMBEDDINGS_BASE_URL` in `.env` (see `env.example`), or rely on built-in fallbacks in `app/client_inference.py` and `app/client_embeddings.py`. Omit `base_url` on calls to use those defaults; pass `base_url=` to override.
 
-### Chat completions — `app/inference_client.py`
+### Chat completions — `app/client_inference.py`
 
 ```python
-from app.inference_client import chat_completions, chat_completion_text
+from app.client_inference import chat_completions, chat_completion_text
 
 # Full response JSON (base_url optional — uses INFERENCE_BASE_URL from .env or code fallback)
 out = chat_completions(
@@ -50,10 +50,10 @@ text = chat_completion_text(
 )
 ```
 
-### Embeddings — `app/embeddings_client.py`
+### Embeddings — `app/client_embeddings.py`
 
 ```python
-from app.embeddings_client import embed_text, embed_texts, embeddings
+from app.client_embeddings import embed_text, embed_texts, embeddings
 
 vec = embed_text(model="BAAI/bge-m3", text="hello world")
 

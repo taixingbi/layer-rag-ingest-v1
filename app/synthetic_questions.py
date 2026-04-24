@@ -13,7 +13,7 @@ from typing import Any
 import httpx
 from dotenv import load_dotenv
 
-from inference_client import (
+from client_inference import (
     DEFAULT_CHAT_MODEL,
     INFERENCE_BASE_URL,
     chat_completions,

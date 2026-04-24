@@ -13,7 +13,7 @@ import httpx
 from dotenv import load_dotenv
 from qdrant_client import QdrantClient, models
 
-from embeddings_client import EMBEDDINGS_BASE_URL, embed_texts
+from client_embeddings import EMBEDDINGS_BASE_URL, embed_texts
 
 _APP_DIR = Path(__file__).resolve().parent
 _ROOT_DIR = _APP_DIR.parent
