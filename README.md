@@ -22,8 +22,8 @@ Create `.env` at repo root.
 | `EMBEDDINGS_BASE_URL` | yes (for embedding step) | Embeddings root (without `/v1`) |
 | `COLLECTION_NAME` | yes | Base collection name (for example `taixing_knowledge`) |
 | `ENV` | no | Environment label; if `dev`, collection auto-resolves to `<COLLECTION_NAME>_dev` |
-| `VECTOR_SIZE` | yes | Vector dimension (for example `1024`) |
-| `BATCH_SIZE` | yes | Upsert batch size |
+| `VECTOR_SIZE` | no | Embedding vector dimension for `upsert_qdrant.py` (default: `1024`; override with `--vector-size`) |
+| `BATCH_SIZE` | no | Upsert batch size for `upsert_qdrant.py` (default: `20`; override with `--batch-size`) |
 | `EMBEDDING_MODEL` | no | Embedding model id (`BAAI/bge-m3` fallback) |
 | `EMBEDDING_INTERNAL_KEY` | no | Sent as `X-Internal-Key` to embeddings endpoint |
 | `CHAT_BASE_URL` | no | Chat API root; if unset, `synthetic_questions.py` uses `INFERENCE_BASE_URL` |
