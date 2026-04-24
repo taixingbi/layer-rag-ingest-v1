@@ -15,12 +15,16 @@
         "root"
       ],
       "text": "https://github.com/taixingbi/layer-gateway-inference-v1/tree/main/docs\nhttps://github.com/taixingbi/layer-gateway-embed-v1/tree/main/docs",
-      "embed_text": "[SECTION: ROOT]\nhttps://github.com/taixingbi/layer-gateway-inference-v1/tree/main/docs\nhttps://github.com/taixingbi/layer-gateway-embed-v1/tree/main/docs",
+      "embed_text": "[SECTION: ROOT]\nhttps://github.com/taixingbi/layer-gateway-inference-v1/tree/main/docs\nhttps://github.com/taixingbi/layer-gateway-embed-v1/tree/main/docs\nQ: What are the documentation links for layer-gateway-inference-v1?\nQ: What are the documentation links for layer-gateway-embed-v1?\nQ: Are there any other repositories mentioned?",
       "token_count": 2,
-      "embed_token_count": 4,
-      "synthetic_questions_used": 0,
+      "embed_token_count": 27,
+      "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
-      "synthetic_questions": [],
+      "synthetic_questions": [
+        "What are the documentation links for layer-gateway-inference-v1?",
+        "What are the documentation links for layer-gateway-embed-v1?",
+        "Are there any other repositories mentioned?"
+      ],
       "content_hash": "e85963df4d10e55a4739b71d4582a4ca232fb720f85c786a71dd60e978406fcc",
       "source": "repo_source",
       "ingest_run_id": "run_20260424_002659",

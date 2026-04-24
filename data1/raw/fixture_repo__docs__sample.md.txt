@@ -1,4 +1,0 @@
-# source: _fixture_repo/docs/sample.md
-
-# Hello
-Body here.

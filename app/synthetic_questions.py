@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import asyncio
 import argparse
 import json
 import logging
@@ -16,7 +17,7 @@ from dotenv import load_dotenv
 from client_inference import (
     DEFAULT_CHAT_MODEL,
     INFERENCE_BASE_URL,
-    chat_completions,
+    async_chat_completions,
     normalize_chat_base_url,
 )
 
@@ -34,9 +35,9 @@ def _json_from_response(content: str) -> dict[str, Any]:
     return json.loads(content)
 
 
-def generate_questions_for_chunk(
+async def generate_questions_for_chunk(
     *,
-    client: httpx.Client | None,
+    client: httpx.AsyncClient | None,
     base_url: str,
     model: str,
     api_key: str | None,
@@ -62,7 +63,7 @@ def generate_questions_for_chunk(
         f"Return ONLY valid JSON as: "
         f'{{"questions": ["...", "..."]}} with exactly {num_questions} distinct strings.'
     )
-    data = chat_completions(
+    data = await async_chat_completions(
         messages=[
             {"role": "system", "content": system},
             {"role": "user", "content": user},
@@ -111,44 +112,37 @@ def enrich_point_payload(payload: dict[str, Any], *, questions: list[str]) -> No
     payload["synthetic_questions_trimmed"] = trimmed_q
 
 
-def enrich_points_file(
-    path: Path,
+async def _enrich_row(
+    row: dict[str, Any],
     *,
     num_questions: int,
-    client: httpx.Client,
+    client: httpx.AsyncClient,
     base_url: str,
     model: str,
     api_key: str | None,
     use_json_object: bool,
     skip_existing: bool,
-) -> tuple[list[dict[str, Any]], int, int]:
-    """
-    Load points JSON, fill synthetic_questions per payload, refresh embed_text.
-    Returns (points, updated_count, question_gen_failure_count).
-    """
-    points = _load_points(path)
-    failed = 0
-    updated = 0
-    for row in points:
-        if not isinstance(row, dict):
-            continue
-        payload = row.get("payload")
-        if not isinstance(payload, dict):
-            logger.warning("Skipping row without dict payload")
-            continue
-        section = str(payload.get("section") or "ROOT")
-        text = str(payload.get("text") or "").strip()
-        if not text:
-            continue
-        existing = payload.get("synthetic_questions", [])
-        if (
-            skip_existing
-            and isinstance(existing, list)
-            and len([q for q in existing if str(q).strip()]) >= num_questions
-        ):
-            continue
-        try:
-            qs = generate_questions_for_chunk(
+    sem: asyncio.Semaphore,
+) -> tuple[bool, bool]:
+    payload = row.get("payload")
+    if not isinstance(payload, dict):
+        logger.warning("Skipping row without dict payload")
+        return False, False
+    section = str(payload.get("section") or "ROOT")
+    text = str(payload.get("text") or "").strip()
+    if not text:
+        return False, False
+    existing = payload.get("synthetic_questions", [])
+    if (
+        skip_existing
+        and isinstance(existing, list)
+        and len([q for q in existing if str(q).strip()]) >= num_questions
+    ):
+        return False, False
+
+    try:
+        async with sem:
+            qs = await generate_questions_for_chunk(
                 client=client,
                 base_url=base_url,
                 model=model,
@@ -158,17 +152,61 @@ def enrich_points_file(
                 num_questions=num_questions,
                 use_json_object=use_json_object,
             )
-        except Exception as exc:
-            failed += 1
-            logger.warning(
-                "Question generation failed for chunk_id=%s: %s",
-                payload.get("chunk_id", "?"),
-                exc,
-                exc_info=logger.isEnabledFor(logging.DEBUG),
+    except Exception as exc:
+        logger.warning(
+            "Question generation failed for chunk_id=%s: %s",
+            payload.get("chunk_id", "?"),
+            exc,
+            exc_info=logger.isEnabledFor(logging.DEBUG),
+        )
+        enrich_point_payload(payload, questions=[])
+        return True, True
+
+    enrich_point_payload(payload, questions=qs)
+    return True, False
+
+
+async def enrich_points_file(
+    path: Path,
+    *,
+    num_questions: int,
+    client: httpx.AsyncClient,
+    base_url: str,
+    model: str,
+    api_key: str | None,
+    use_json_object: bool,
+    skip_existing: bool,
+    max_concurrency: int,
+) -> tuple[list[dict[str, Any]], int, int]:
+    """
+    Load points JSON, fill synthetic_questions per payload, refresh embed_text.
+    Returns (points, updated_count, question_gen_failure_count).
+    """
+    points = _load_points(path)
+    sem = asyncio.Semaphore(max(1, max_concurrency))
+    tasks: list[asyncio.Task[tuple[bool, bool]]] = []
+    for row in points:
+        if not isinstance(row, dict):
+            continue
+        tasks.append(
+            asyncio.create_task(
+                _enrich_row(
+                    row,
+                    num_questions=num_questions,
+                    client=client,
+                    base_url=base_url,
+                    model=model,
+                    api_key=api_key,
+                    use_json_object=use_json_object,
+                    skip_existing=skip_existing,
+                    sem=sem,
+                )
             )
-            qs = []
-        enrich_point_payload(payload, questions=qs)
-        updated += 1
+        )
+
+    results = await asyncio.gather(*tasks) if tasks else []
+    updated = sum(1 for did_update, _ in results if did_update)
+    failed = sum(1 for _, did_fail in results if did_fail)
     return points, updated, failed
 
 
@@ -244,6 +282,12 @@ def _parse_args_points() -> argparse.Namespace:
         help="No inference and no writes; log matched files and text payload counts.",
     )
     p.add_argument(
+        "--max-concurrency",
+        type=int,
+        default=40,
+        help="Maximum concurrent inference requests (default: 40).",
+    )
+    p.add_argument(
         "-v",
         "--verbose",
         action="store_true",
@@ -252,7 +296,7 @@ def _parse_args_points() -> argparse.Namespace:
     return p.parse_args()
 
 
-def main_points() -> None:
+async def main_points_async() -> None:
     load_dotenv(_ROOT_DIR / ".env")
     load_dotenv()
     args = _parse_args_points()
@@ -269,6 +313,8 @@ def main_points() -> None:
     n = args.questions_per_chunk
     if n < 1:
         raise SystemExit("--questions-per-chunk must be >= 1")
+    if args.max_concurrency < 1:
+        raise SystemExit("--max-concurrency must be >= 1")
 
     base_url = normalize_chat_base_url(args.chat_base_url)
     api_key = args.chat_api_key.strip() or None
@@ -301,9 +347,11 @@ def main_points() -> None:
         logger.info("Dry-run complete: files=%d (no API calls, no writes)", len(paths))
         return
 
-    with httpx.Client() as client:
+    timeout = httpx.Timeout(120.0, connect=15.0)
+    limits = httpx.Limits(max_connections=max(20, args.max_concurrency * 2))
+    async with httpx.AsyncClient(timeout=timeout, limits=limits) as client:
         for path in paths:
-            data, updated, failed = enrich_points_file(
+            data, updated, failed = await enrich_points_file(
                 path,
                 num_questions=n,
                 client=client,
@@ -312,6 +360,7 @@ def main_points() -> None:
                 api_key=api_key,
                 use_json_object=use_json,
                 skip_existing=args.skip_existing,
+                max_concurrency=args.max_concurrency,
             )
             total_updated += updated
             total_failed += failed
@@ -329,6 +378,10 @@ def main_points() -> None:
         total_updated,
         total_failed,
     )
+
+
+def main_points() -> None:
+    asyncio.run(main_points_async())
 
 
 if __name__ == "__main__":

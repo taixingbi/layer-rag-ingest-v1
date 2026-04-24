@@ -79,14 +79,14 @@
         "1)_local_docker_deploy_(single_container)"
       ],
       "text": "Build image from project root:\n\n```bash\ndocker build -t layer-gateway-embed-v1:local .\n```\n\nRun container:\n\n```bash\ndocker run --rm \\\n  --name layer-gateway-embed-v1 \\\n  --env-file .env \\\n  -p 30181:30181 \\\n  layer-gateway-embed-v1:local\n```\n\nVerify:\n\n```bash\ncurl http://localhost:30181/health\n```\n\nExpected response:\n\n```json\n{\"status\":\"ok\"}\n```",
-      "embed_text": "[SECTION: 1) Local Docker Deploy (single container)]\nBuild image from project root:\n\n```bash\ndocker build -t layer-gateway-embed-v1:local .\n```\n\nRun container:\n\n```bash\ndocker run --rm \\\n  --name layer-gateway-embed-v1 \\\n  --env-file .env \\\n  -p 30181:30181 \\\n  layer-gateway-embed-v1:local\n```\n\nVerify:\n\n```bash\ncurl http://localhost:30181/health\n```\n\nExpected response:\n\n```json\n{\"status\":\"ok\"}\n```\nQ: What command is used to build the Docker image?\nQ: How is the Docker container named?\nQ: Which port is exposed by the Docker container?",
+      "embed_text": "[SECTION: 1) Local Docker Deploy (single container)]\nBuild image from project root:\n\n```bash\ndocker build -t layer-gateway-embed-v1:local .\n```\n\nRun container:\n\n```bash\ndocker run --rm \\\n  --name layer-gateway-embed-v1 \\\n  --env-file .env \\\n  -p 30181:30181 \\\n  layer-gateway-embed-v1:local\n```\n\nVerify:\n\n```bash\ncurl http://localhost:30181/health\n```\n\nExpected response:\n\n```json\n{\"status\":\"ok\"}\n```\nQ: What command is used to build the Docker image?\nQ: How is the Docker container named when running?\nQ: Which port is exposed by the Docker container?",
       "token_count": 40,
-      "embed_token_count": 73,
+      "embed_token_count": 75,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What command is used to build the Docker image?",
-        "How is the Docker container named?",
+        "How is the Docker container named when running?",
         "Which port is exposed by the Docker container?"
       ],
       "content_hash": "6836533670d5ae00f231072deb5597aed306a2e984446eb567528b86bb48ddd2",
@@ -175,15 +175,15 @@
         "4)_publish_to_docker_hub"
       ],
       "text": "Set your Docker Hub namespace and target tag:\n\n```bash\nexport DOCKERHUB_USER=<your-dockerhub-username>\nexport IMAGE_NAME=layer-gateway-embed-v1\nexport IMAGE_TAG=v1.0.0\n```\n\nBuild and tag:\n\n```bash\ndocker build -t ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG} .\ndocker tag ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG} ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```\n\nLogin and push:\n\n```bash\ndocker login\ndocker push ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG}\ndocker push ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```",
-      "embed_text": "[SECTION: 4) Publish to Docker Hub]\nSet your Docker Hub namespace and target tag:\n\n```bash\nexport DOCKERHUB_USER=<your-dockerhub-username>\nexport IMAGE_NAME=layer-gateway-embed-v1\nexport IMAGE_TAG=v1.0.0\n```\n\nBuild and tag:\n\n```bash\ndocker build -t ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG} .\ndocker tag ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG} ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```\n\nLogin and push:\n\n```bash\ndocker login\ndocker push ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG}\ndocker push ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```\nQ: What command is used to set the Docker Hub namespace and target tag?\nQ: How many Docker images are pushed to Docker Hub in this process?\nQ: What is the latest tag given to the Docker image?",
+      "embed_text": "[SECTION: 4) Publish to Docker Hub]\nSet your Docker Hub namespace and target tag:\n\n```bash\nexport DOCKERHUB_USER=<your-dockerhub-username>\nexport IMAGE_NAME=layer-gateway-embed-v1\nexport IMAGE_TAG=v1.0.0\n```\n\nBuild and tag:\n\n```bash\ndocker build -t ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG} .\ndocker tag ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG} ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```\n\nLogin and push:\n\n```bash\ndocker login\ndocker push ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG}\ndocker push ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```\nQ: What command is used to build and tag the Docker image?\nQ: Which Docker Hub username variable is exported before building the image?\nQ: What is the name of the image being published?",
       "token_count": 43,
-      "embed_token_count": 87,
+      "embed_token_count": 83,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What command is used to set the Docker Hub namespace and target tag?",
-        "How many Docker images are pushed to Docker Hub in this process?",
-        "What is the latest tag given to the Docker image?"
+        "What command is used to build and tag the Docker image?",
+        "Which Docker Hub username variable is exported before building the image?",
+        "What is the name of the image being published?"
       ],
       "content_hash": "e935288c7a35cf3c609866e3a9cf93f6af1d7fc0720b5e29e781727c9da09a0b",
       "source": "layer-gateway-embed-v1__docker.md_source",
@@ -207,15 +207,15 @@
         "5)_pull_and_run_from_docker_hub"
       ],
       "text": "```bash\ndocker pull ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\ndocker run --rm \\\n  --name layer-gateway-embed-v1 \\\n  --env-file .env \\\n  -p 30181:30181 \\\n  ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```",
-      "embed_text": "[SECTION: 5) Pull and Run from Docker Hub]\n```bash\ndocker pull ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\ndocker run --rm \\\n  --name layer-gateway-embed-v1 \\\n  --env-file .env \\\n  -p 30181:30181 \\\n  ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```\nQ: What command is used to pull the Docker image?\nQ: Which environment file is used with the docker run command?\nQ: On which port is the container exposed?",
+      "embed_text": "[SECTION: 5) Pull and Run from Docker Hub]\n```bash\ndocker pull ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\ndocker run --rm \\\n  --name layer-gateway-embed-v1 \\\n  --env-file .env \\\n  -p 30181:30181 \\\n  ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```\nQ: What command is used to pull the Docker image?\nQ: What does the --rm flag do in the docker run command?\nQ: Which port is exposed by the docker run command?",
       "token_count": 19,
-      "embed_token_count": 56,
+      "embed_token_count": 59,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What command is used to pull the Docker image?",
-        "Which environment file is used with the docker run command?",
-        "On which port is the container exposed?"
+        "What does the --rm flag do in the docker run command?",
+        "Which port is exposed by the docker run command?"
       ],
       "content_hash": "6dd46485454e18caa83b5b7db835463219406047e597286e34c8536641d14666",
       "source": "layer-gateway-embed-v1__docker.md_source",
@@ -239,15 +239,15 @@
         "troubleshooting"
       ],
       "text": "- `503 No healthy backend available`: verify `EMBED_BACKENDS` and backend health.\n- `429 Gateway busy`: increase `ADMISSION_MAX_CONCURRENT` or `ADMISSION_WAIT_TIMEOUT_MS`.",
-      "embed_text": "[SECTION: Troubleshooting]\n- `503 No healthy backend available`: verify `EMBED_BACKENDS` and backend health.\n- `429 Gateway busy`: increase `ADMISSION_MAX_CONCURRENT` or `ADMISSION_WAIT_TIMEOUT_MS`.\nQ: What should be verified when encountering a '503 No healthy backend available' error?\nQ: How can the '429 Gateway busy' issue be resolved?\nQ: What parameters can be adjusted to handle '429 Gateway busy' errors?",
+      "embed_text": "[SECTION: Troubleshooting]\n- `503 No healthy backend available`: verify `EMBED_BACKENDS` and backend health.\n- `429 Gateway busy`: increase `ADMISSION_MAX_CONCURRENT` or `ADMISSION_WAIT_TIMEOUT_MS`.\nQ: What should be verified when encountering a '503 No healthy backend available' error?\nQ: How can the '429 Gateway busy' issue be resolved?\nQ: What settings are related to backend health in this context?",
       "token_count": 19,
-      "embed_token_count": 57,
+      "embed_token_count": 56,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What should be verified when encountering a '503 No healthy backend available' error?",
         "How can the '429 Gateway busy' issue be resolved?",
-        "What parameters can be adjusted to handle '429 Gateway busy' errors?"
+        "What settings are related to backend health in this context?"
       ],
       "content_hash": "a206d8a70869ebebb8023063aa9526d260e8f0fa145384fcedb2fd1ce0a25972",
       "source": "layer-gateway-embed-v1__docker.md_source",

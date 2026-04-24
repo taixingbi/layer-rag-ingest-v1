@@ -50,6 +50,24 @@ text = chat_completion_text(
 )
 ```
 
+Async equivalents:
+
+```python
+from app.client_inference import async_chat_completions, async_chat_completion_text
+
+out = await async_chat_completions(
+    messages=[{"role": "user", "content": "where is jersey city"}],
+    model="Qwen/Qwen2.5-7B-Instruct",
+    max_tokens=50,
+)
+
+text = await async_chat_completion_text(
+    user_content="where is jersey city",
+    model="Qwen/Qwen2.5-7B-Instruct",
+    max_tokens=50,
+)
+```
+
 ### Embeddings — `app/client_embeddings.py`
 
 ```python
