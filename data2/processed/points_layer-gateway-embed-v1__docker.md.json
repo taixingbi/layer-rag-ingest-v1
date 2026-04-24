@@ -1,0 +1,258 @@
+[
+  {
+    "id": "8f6206c9-f4f5-5b5c-89d7-8d06dd917ac2",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0001",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Docker Guide",
+      "doc_type": "layer-gateway-embed-v1__docker.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__docker.md",
+        "docker_guide"
+      ],
+      "text": "This guide covers:\n- Running the gateway locally with Docker\n- Publishing the image to Docker Hub",
+      "embed_text": "[SECTION: Docker Guide]\nThis guide covers:\n- Running the gateway locally with Docker\n- Publishing the image to Docker Hub\nQ: What does this guide cover?\nQ: How can the gateway be run locally?\nQ: Where can the image be published?",
+      "token_count": 17,
+      "embed_token_count": 41,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What does this guide cover?",
+        "How can the gateway be run locally?",
+        "Where can the image be published?"
+      ],
+      "content_hash": "696914bbd11901f6cbaf272b955c470a03eb3e9f5137a295e1865b6898547eb2",
+      "source": "layer-gateway-embed-v1__docker.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "00df627d-f8a6-5f99-bd98-00deacedacc7",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0002",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Prerequisites",
+      "doc_type": "layer-gateway-embed-v1__docker.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__docker.md",
+        "prerequisites"
+      ],
+      "text": "- Docker Desktop (or Docker Engine + Compose plugin)\n- A `.env` file in repo root (you can start from `.env.example`)\n- Reachable embedding backends configured in `EMBED_BACKENDS`",
+      "embed_text": "[SECTION: Prerequisites]\n- Docker Desktop (or Docker Engine + Compose plugin)\n- A `.env` file in repo root (you can start from `.env.example`)\n- Reachable embedding backends configured in `EMBED_BACKENDS`\nQ: What prerequisites are mentioned in the section?\nQ: What is the purpose of the .env file?\nQ: What should you configure in EMBED_BACKENDS?",
+      "token_count": 28,
+      "embed_token_count": 54,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What prerequisites are mentioned in the section?",
+        "What is the purpose of the .env file?",
+        "What should you configure in EMBED_BACKENDS?"
+      ],
+      "content_hash": "a0b56e1803a6f1a9aa0e656f48431cf6f6cf26ddb7f50c22402a6d33ef3bc630",
+      "source": "layer-gateway-embed-v1__docker.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "58d7fd85-28be-5679-a6d9-506a7aaba897",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0003",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "1) Local Docker Deploy (single container)",
+      "doc_type": "layer-gateway-embed-v1__docker.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__docker.md",
+        "1)_local_docker_deploy_(single_container)"
+      ],
+      "text": "Build image from project root:\n\n```bash\ndocker build -t layer-gateway-embed-v1:local .\n```\n\nRun container:\n\n```bash\ndocker run --rm \\\n  --name layer-gateway-embed-v1 \\\n  --env-file .env \\\n  -p 30181:30181 \\\n  layer-gateway-embed-v1:local\n```\n\nVerify:\n\n```bash\ncurl http://localhost:30181/health\n```\n\nExpected response:\n\n```json\n{\"status\":\"ok\"}\n```",
+      "embed_text": "[SECTION: 1) Local Docker Deploy (single container)]\nBuild image from project root:\n\n```bash\ndocker build -t layer-gateway-embed-v1:local .\n```\n\nRun container:\n\n```bash\ndocker run --rm \\\n  --name layer-gateway-embed-v1 \\\n  --env-file .env \\\n  -p 30181:30181 \\\n  layer-gateway-embed-v1:local\n```\n\nVerify:\n\n```bash\ncurl http://localhost:30181/health\n```\n\nExpected response:\n\n```json\n{\"status\":\"ok\"}\n```\nQ: What command is used to build the Docker image?\nQ: How is the Docker container named?\nQ: Which port is exposed by the Docker container?",
+      "token_count": 40,
+      "embed_token_count": 73,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What command is used to build the Docker image?",
+        "How is the Docker container named?",
+        "Which port is exposed by the Docker container?"
+      ],
+      "content_hash": "6836533670d5ae00f231072deb5597aed306a2e984446eb567528b86bb48ddd2",
+      "source": "layer-gateway-embed-v1__docker.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "0c1cadb3-4d7f-583d-9cb6-f56780201e5d",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0004",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "2) Local Docker Deploy (compose)",
+      "doc_type": "layer-gateway-embed-v1__docker.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__docker.md",
+        "2)_local_docker_deploy_(compose)"
+      ],
+      "text": "Use compose from project root:\n\n```bash\ndocker compose up --build\n```\n\nRun in background:\n\n```bash\ndocker compose up -d --build\n```\n\nStop:\n\n```bash\ndocker compose down\n```",
+      "embed_text": "[SECTION: 2) Local Docker Deploy (compose)]\nUse compose from project root:\n\n```bash\ndocker compose up --build\n```\n\nRun in background:\n\n```bash\ndocker compose up -d --build\n```\n\nStop:\n\n```bash\ndocker compose down\n```\nQ: What command is used to start the Docker services with building?\nQ: How can one run Docker services in the background?\nQ: What command stops the running Docker services?",
+      "token_count": 27,
+      "embed_token_count": 63,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What command is used to start the Docker services with building?",
+        "How can one run Docker services in the background?",
+        "What command stops the running Docker services?"
+      ],
+      "content_hash": "d6c48d7b7c1e78f3f41fe37ffcb8e339c393fcca69a76605178da76066846ed2",
+      "source": "layer-gateway-embed-v1__docker.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "a4e66502-1e93-5866-9269-3eec1a80e5b8",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0005",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "3) Test the Embeddings Endpoint",
+      "doc_type": "layer-gateway-embed-v1__docker.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__docker.md",
+        "3)_test_the_embeddings_endpoint"
+      ],
+      "text": "```bash\ncurl -X POST http://localhost:30181/v1/embeddings \\\n  -H \"X-Request-Id: request_id_1\" \\\n  -H \"X-Trace-Id: trace_id_1\" \\\n  -H \"X-Session-Id: session_id_1\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"model\":\"BAAI/bge-m3\",\"input\":\"hello world\"}'\n```",
+      "embed_text": "[SECTION: 3) Test the Embeddings Endpoint]\n```bash\ncurl -X POST http://localhost:30181/v1/embeddings \\\n  -H \"X-Request-Id: request_id_1\" \\\n  -H \"X-Trace-Id: trace_id_1\" \\\n  -H \"X-Session-Id: session_id_1\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"model\":\"BAAI/bge-m3\",\"input\":\"hello world\"}'\n```\nQ: What is the URL used in the curl command?\nQ: Which model is specified in the curl command?\nQ: What is the input text for the embedding?",
+      "token_count": 26,
+      "embed_token_count": 60,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is the URL used in the curl command?",
+        "Which model is specified in the curl command?",
+        "What is the input text for the embedding?"
+      ],
+      "content_hash": "8cd9678b015ac7be4daab7810a6d8219b4632e325dee539896220b07eedb1fb9",
+      "source": "layer-gateway-embed-v1__docker.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "600e1335-5c33-556a-b8dc-58a37f56496b",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0006",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "4) Publish to Docker Hub",
+      "doc_type": "layer-gateway-embed-v1__docker.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__docker.md",
+        "4)_publish_to_docker_hub"
+      ],
+      "text": "Set your Docker Hub namespace and target tag:\n\n```bash\nexport DOCKERHUB_USER=<your-dockerhub-username>\nexport IMAGE_NAME=layer-gateway-embed-v1\nexport IMAGE_TAG=v1.0.0\n```\n\nBuild and tag:\n\n```bash\ndocker build -t ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG} .\ndocker tag ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG} ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```\n\nLogin and push:\n\n```bash\ndocker login\ndocker push ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG}\ndocker push ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```",
+      "embed_text": "[SECTION: 4) Publish to Docker Hub]\nSet your Docker Hub namespace and target tag:\n\n```bash\nexport DOCKERHUB_USER=<your-dockerhub-username>\nexport IMAGE_NAME=layer-gateway-embed-v1\nexport IMAGE_TAG=v1.0.0\n```\n\nBuild and tag:\n\n```bash\ndocker build -t ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG} .\ndocker tag ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG} ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```\n\nLogin and push:\n\n```bash\ndocker login\ndocker push ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG}\ndocker push ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```\nQ: What command is used to set the Docker Hub namespace and target tag?\nQ: How many Docker images are pushed to Docker Hub in this process?\nQ: What is the latest tag given to the Docker image?",
+      "token_count": 43,
+      "embed_token_count": 87,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What command is used to set the Docker Hub namespace and target tag?",
+        "How many Docker images are pushed to Docker Hub in this process?",
+        "What is the latest tag given to the Docker image?"
+      ],
+      "content_hash": "e935288c7a35cf3c609866e3a9cf93f6af1d7fc0720b5e29e781727c9da09a0b",
+      "source": "layer-gateway-embed-v1__docker.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "eb45d34f-7754-57cf-975a-073524929b33",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0007",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "5) Pull and Run from Docker Hub",
+      "doc_type": "layer-gateway-embed-v1__docker.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__docker.md",
+        "5)_pull_and_run_from_docker_hub"
+      ],
+      "text": "```bash\ndocker pull ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\ndocker run --rm \\\n  --name layer-gateway-embed-v1 \\\n  --env-file .env \\\n  -p 30181:30181 \\\n  ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```",
+      "embed_text": "[SECTION: 5) Pull and Run from Docker Hub]\n```bash\ndocker pull ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\ndocker run --rm \\\n  --name layer-gateway-embed-v1 \\\n  --env-file .env \\\n  -p 30181:30181 \\\n  ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```\nQ: What command is used to pull the Docker image?\nQ: Which environment file is used with the docker run command?\nQ: On which port is the container exposed?",
+      "token_count": 19,
+      "embed_token_count": 56,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What command is used to pull the Docker image?",
+        "Which environment file is used with the docker run command?",
+        "On which port is the container exposed?"
+      ],
+      "content_hash": "6dd46485454e18caa83b5b7db835463219406047e597286e34c8536641d14666",
+      "source": "layer-gateway-embed-v1__docker.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "7fd544d1-f837-58ae-b760-381ac7190deb",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0008",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Troubleshooting",
+      "doc_type": "layer-gateway-embed-v1__docker.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__docker.md",
+        "troubleshooting"
+      ],
+      "text": "- `503 No healthy backend available`: verify `EMBED_BACKENDS` and backend health.\n- `429 Gateway busy`: increase `ADMISSION_MAX_CONCURRENT` or `ADMISSION_WAIT_TIMEOUT_MS`.",
+      "embed_text": "[SECTION: Troubleshooting]\n- `503 No healthy backend available`: verify `EMBED_BACKENDS` and backend health.\n- `429 Gateway busy`: increase `ADMISSION_MAX_CONCURRENT` or `ADMISSION_WAIT_TIMEOUT_MS`.\nQ: What should be verified when encountering a '503 No healthy backend available' error?\nQ: How can the '429 Gateway busy' issue be resolved?\nQ: What parameters can be adjusted to handle '429 Gateway busy' errors?",
+      "token_count": 19,
+      "embed_token_count": 57,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What should be verified when encountering a '503 No healthy backend available' error?",
+        "How can the '429 Gateway busy' issue be resolved?",
+        "What parameters can be adjusted to handle '429 Gateway busy' errors?"
+      ],
+      "content_hash": "a206d8a70869ebebb8023063aa9526d260e8f0fa145384fcedb2fd1ce0a25972",
+      "source": "layer-gateway-embed-v1__docker.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  }
+]

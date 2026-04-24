@@ -1,0 +1,98 @@
+[
+  {
+    "chunk_id": "0001",
+    "section": "Layer Gateway SLA / SLO",
+    "text": "This document defines a practical SLA/SLO baseline for `layer-gateway-inference-v1`.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0002",
+    "section": "1) Scope",
+    "text": "The SLA applies to gateway API endpoints:\n\n- `POST /v1/chat/completions`\n- `GET /healthz`\n- `GET /metrics`\n\nThe SLA covers only gateway behavior. It does not guarantee upstream model quality/content.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0003",
+    "section": "2) Service Level Objective (SLO)",
+    "text": "2) Service Level Objective (SLO)",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0004",
+    "section": "Availability SLO",
+    "text": "- Monthly availability target: **99.9%** for `POST /v1/chat/completions`.\n- Availability means request is served without gateway-side failure.\n\nGateway-side failure includes:\n\n- `5xx` returned by gateway due to queue/scheduler/proxy failure\n- timeout before a successful upstream response",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0005",
+    "section": "Latency SLO",
+    "text": "- P95 end-to-end latency (`gateway_request_latency_ms`): **<= 2500 ms** over 5-minute windows under normal load.\n- P99 end-to-end latency (`gateway_request_latency_ms`): **<= 5000 ms** over 5-minute windows under normal load.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0006",
+    "section": "Queue SLO",
+    "text": "- `gateway_queue_age_ms` should remain **< queue_max_age_ms** during steady state.\n- `gateway_rejections_total{reason=\"queue_full\"}` and `{reason=\"queue_age\"}` should be near zero during normal operation.\n\n```mermaid\nflowchart LR\n    A[Traffic] --> B{Availability SLO 99.9%}\n    A --> C{Latency SLO}\n    A --> D{Queue SLO}\n    C --> C1[P95 <= 2500ms]\n    C --> C2[P99 <= 5000ms]\n    D --> D1[queue_age_ms < queue_max_age_ms]\n    D --> D2[queue_full/queue_age rejections near 0]\n```",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0007",
+    "section": "3) Error Budget",
+    "text": "For 99.9% monthly availability, allowed failure budget is approximately:\n\n- 0.1% of total monthly requests, or\n- ~43.2 minutes/month equivalent downtime\n\nIf budget burn is high, prioritize:\n\n- reducing retries caused by unhealthy backends\n- lowering queue pressure\n- draining unstable nodes\n\n```mermaid\nflowchart TD\n    SLO[99.9% monthly availability] --> EB[0.1% error budget]\n    EB --> BURN{burn rate high?}\n    BURN -- yes --> ACT1[reduce retries]\n    BURN -- yes --> ACT2[reduce queue pressure]\n    BURN -- yes --> ACT3[drain unstable backends]\n    BURN -- no --> KEEP[maintain baseline]\n```",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0008",
+    "section": "4) How to Measure",
+    "text": "Use `/metrics` with Prometheus.\n\nKey metrics:\n\n- `gateway_requests_total`\n- `gateway_request_errors_total{backend=...}`\n- `gateway_request_retries_total`\n- `gateway_request_latency_ms`\n- `gateway_queue_depth`\n- `gateway_queue_age_ms`\n- `gateway_rejections_total{reason=...}`\n- `gateway_backend_error_rate{backend=...}`\n- `gateway_backend_circuit_state{backend=...}`\n\nSuggested PromQL examples:\n\n```promql",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0009",
+    "section": "Request rate",
+    "text": "sum(rate(gateway_requests_total[5m]))\n```\n\n```promql",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0010",
+    "section": "Gateway-visible error rate proxy",
+    "text": "sum(rate(gateway_request_errors_total[5m])) / sum(rate(gateway_requests_total[5m]))\n```\n\n```promql",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0011",
+    "section": "P95 latency",
+    "text": "histogram_quantile(0.95, sum by (le) (rate(gateway_request_latency_ms_bucket[5m])))\n```\n\n```promql",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0012",
+    "section": "Queue age",
+    "text": "max(gateway_queue_age_ms)\n```\n\n```promql",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0013",
+    "section": "Rejections by reason",
+    "text": "sum by (reason) (rate(gateway_rejections_total[5m]))\n```",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0014",
+    "section": "5) Alerting Baseline",
+    "text": "Critical alerts:\n\n- Availability burn: estimated error ratio > 1% for 5 minutes\n- Queue age saturation: `gateway_queue_age_ms` > `queue_max_age_ms` for 5 minutes\n- No healthy backend: all backends in `open` circuit state\n\nWarning alerts:\n\n- Retry surge: `rate(gateway_request_retries_total[5m])` significantly above baseline\n- Rising backend error signal: `gateway_backend_error_rate` sustained above threshold",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0015",
+    "section": "6) Operational Notes",
+    "text": "- `trace_id`, `request_id`, and `session_id` are for log correlation, not metric labels.\n- Keep metric label cardinality low (do not add request/session IDs as labels).\n- When a backend is unstable, set `drained: true` in config to remove it from new scheduling.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0016",
+    "section": "7) Exclusions",
+    "text": "The SLA excludes:\n\n- planned maintenance windows\n- upstream provider/network outages outside gateway control\n- user-caused invalid requests (`4xx`)",
+    "synthetic_questions": []
+  }
+]

@@ -1,0 +1,146 @@
+[
+  {
+    "chunk_id": "0001",
+    "section": "Architecture Design",
+    "text": "This document describes the architecture of `layer-gateway-inference-v1`.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0002",
+    "section": "1. Goals",
+    "text": "- Provide an OpenAI-compatible inference gateway endpoint.\n- Route traffic across multiple vLLM backends with load-aware scheduling.\n- Protect upstream backends with queueing, circuit breaking, and retries.\n- Expose operational visibility through structured logs and Prometheus metrics.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0003",
+    "section": "2. System Overview",
+    "text": "The gateway is a single FastAPI service composed of these major subsystems:\n\n- API ingress and request validation\n- Admission queue\n- Scheduler and scoring engine\n- Backend registry and health/circuit state\n- Proxy client (non-streaming + streaming)\n- Logging and metrics pipeline\n\n```mermaid\nflowchart LR\n    C[Client] -->|POST /v1/chat/completions| API[FastAPI API Layer]\n    API --> Q[AdmissionQueue]\n    Q --> S[Scheduler + Scoring]\n    S --> R[BackendRegistry + Health]\n    S --> P[Proxy Client]\n    P --> B1[vLLM Backend 1]\n    P --> B2[vLLM Backend 2]\n    API --> L[Structured Logs]\n    API --> M[Prometheus Metrics]\n    S --> M\n    P --> M\n```",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0004",
+    "section": "3. Components",
+    "text": "3. Components",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0005",
+    "section": "3.1 API Layer",
+    "text": "`app/api/routes.py` handles:\n\n- `POST /v1/chat/completions`\n- `GET /healthz`\n- `GET /metrics`\n\nResponsibilities:\n\n- parse and validate request payload\n- extract correlation headers (`x-request-id`, `x-trace-id`, `x-session-id`)\n- classify request complexity\n- enqueue work for scheduling\n- return gateway rejections (queue full/age/no backend)",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0006",
+    "section": "3.2 Admission Queue",
+    "text": "`app/queue/admission_queue.py` provides a bounded FIFO queue:\n\n- `enqueue()`\n- `pop_batch()`\n- `requeue_front()`\n\nPurpose:\n\n- absorb short spikes\n- cap memory and queue growth\n- surface queue pressure through gauges",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0007",
+    "section": "3.3 Scheduler",
+    "text": "`app/scheduler/dispatcher.py` runs a periodic loop:\n\n- pops pending requests in batches\n- filters eligible backends\n- computes score and selects best backend\n- resolves each request with a `BackendTarget`\n\nScheduler cadence and queue policy are configured under `scheduler` in `config.yaml`.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0008",
+    "section": "3.4 Scoring Engine",
+    "text": "`app/scheduler/scoring.py` computes backend score from:\n\n- inflight load\n- queue estimate\n- latency EWMAs (TTFT/E2E)\n- recent error rate\n- hot-spot penalty\n- overload penalty\n- request-class penalty (small/medium requests avoid backends already holding large work)\n\nLower score wins.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0009",
+    "section": "3.5 Backend Registry and Runtime State",
+    "text": "- `app/backends/registry.py`\n- `app/backends/state.py`\n- `app/backends/health.py`\n\nTracks per-backend runtime state:\n\n- limits (`soft_limit`, `hard_limit`)\n- inflight counters\n- latency/error EWMAs\n- circuit state (`closed`, `open`, `half_open`)\n- admin flag (`drained`)\n\nEligibility checks include:\n\n- not drained\n- circuit not open\n- inflight below hard limit\n- recent error signal below threshold\n- half-open probe allowance",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0010",
+    "section": "3.6 Proxy Layer",
+    "text": "`app/proxy/client.py`:\n\n- forwards requests to selected backend\n- handles streaming and non-streaming responses\n- applies retry policy on configured failure conditions\n- updates runtime health signals on success/failure",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0011",
+    "section": "3.7 Observability",
+    "text": "- `app/core/logging.py` outputs structured JSON logs.\n- `app/metrics/prometheus.py` defines counters/gauges/histograms.\n- `app/metrics/sync.py` publishes backend runtime state to metrics.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0012",
+    "section": "4. End-to-End Request Lifecycle",
+    "text": "1. Client sends `POST /v1/chat/completions`.\n2. Gateway validates payload and logs `request_received`.\n3. Request is classified (`small`, `medium`, `large`, or `streaming_long`).\n4. Request is placed into `AdmissionQueue`.\n5. Scheduler selects an eligible backend.\n6. Proxy sends request upstream.\n7. On success, response is returned and latency metrics are updated.\n8. On failure, retry/circuit/error signals are applied and final error returned if exhausted.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0013",
+    "section": "4. End-to-End Request Lifecycle",
+    "text": "```mermaid\nsequenceDiagram\n    autonumber\n    participant Client\n    participant API as API Routes\n    participant Queue as AdmissionQueue\n    participant Sched as Scheduler\n    participant Proxy as Proxy Client\n    participant Backend as vLLM Backend\n\nClient->>API: POST /v1/chat/completions\n    API->>API: Validate + classify + log request_received\n    API->>Queue: enqueue(PendingRequest)\n    Sched->>Queue: pop_batch()\n    Sched->>Sched: filter eligible + score + choose backend\n    Sched-->>API: dispatch_future.set_result(target)\n    API->>Proxy: proxy_chat_completion(target)\n    Proxy->>Backend: upstream request\n    alt success\n        Backend-->>Proxy: 2xx response\n        Proxy-->>API: response\n        API-->>Client: response body\n    else retryable failure\n        Backend-->>Proxy: 5xx / timeout / connect error\n        Proxy->>Proxy: retry (if attempts remain)\n        Proxy->>Backend: retry to alternative backend\n        Backend-->>Proxy: response or final failure\n        Proxy-->>API: response or HTTPException\n        API-->>Client: success or 5xx\n    end\n```",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0014",
+    "section": "4.1 Dispatch Decision Flow",
+    "text": "```mermaid\nflowchart TD\n    A[PendingRequest from queue] --> B{cancelled or already resolved?}\n    B -- yes --> Z[skip]\n    B -- no --> C{age > queue_max_age_ms?}\n    C -- yes --> R1[reject queue_age]\n    C -- no --> D[collect eligible backends]\n    D --> E{any eligible?}\n    E -- no --> F[requeue_front]\n    E -- yes --> G[pick_backend by score]\n    G --> H{chosen backend exists?}\n    H -- no --> F\n    H -- yes --> I[on_request_start + inflight++]\n    I --> J[set dispatch_future(target)]\n```",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0015",
+    "section": "5. Reliability Design",
+    "text": "5. Reliability Design",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0016",
+    "section": "5.1 Backpressure",
+    "text": "- bounded queue size (`queue_max_size`)\n- queue age timeout (`queue_max_age_ms`)\n- rejection reasons tracked by metric labels",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0017",
+    "section": "5.2 Circuit Breaker",
+    "text": "State machine:\n\n- `closed` -> normal\n- `open` -> no new dispatch\n- `half_open` -> limited probe traffic (`half_open_max_inflight`)\n\nTransitions driven by consecutive failures and cooldown timing.\n\n```mermaid\nstateDiagram-v2\n    [*] --> closed\n    closed --> open: consecutive failures >= threshold\n    open --> half_open: cooldown elapsed\n    half_open --> closed: probe success\n    half_open --> open: probe failure\n```",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0018",
+    "section": "5.3 Retry Policy",
+    "text": "- retries capped by `retry.max_attempts`\n- retryable statuses from `retry.retryable_statuses`\n- transport errors are treated as retry candidates\n- best-effort switch to alternative backend\n\n```mermaid\nflowchart TD\n    A[proxy attempt N] --> B{response < 400?}\n    B -- yes --> OK[return success]\n    B -- no --> C{retryable status or transport error?}\n    C -- no --> FAIL[return failure]\n    C -- yes --> D{N < max_attempts?}\n    D -- no --> FAIL\n    D -- yes --> E[pick alternate backend]\n    E --> F{backend found?}\n    F -- no --> FAIL\n    F -- yes --> G[attempt N+1]\n    G --> B\n```",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0019",
+    "section": "6. Configuration Model",
+    "text": "Primary sections in `config.yaml`:\n\n- `server`\n- `scheduler`\n- `routing`\n- `backends`\n- `health`\n- `retry`\n\nConfig is loaded from:\n\n1. explicit path argument, else\n2. `GATEWAY_CONFIG` env var, else\n3. default `config.yaml`\n\n```mermaid\nflowchart LR\n    A[load_gateway_config(path)] --> B{path passed?}\n    B -- yes --> P[use explicit path]\n    B -- no --> C{GATEWAY_CONFIG set?}\n    C -- yes --> E[use env path]\n    C -- no --> D[use config.yaml]\n```",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0020",
+    "section": "7. Logging and Trace Context",
+    "text": "Gateway event logs include:\n\n- `event`, `service`, `env`\n- `trace_id`, `request_id`, `session_id`\n- optional `backend`, `latency_ms`, `status_code`, `error`\n\nGuideline:\n\n- use `request_id` for per-call debugging\n- use `trace_id` for cross-service tracing\n- use `session_id` for conversation/session grouping",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0021",
+    "section": "8. Metrics Design Summary",
+    "text": "Metrics are process-level aggregates and backend-level state snapshots:\n\n- traffic and failures (`gateway_requests_total`, `gateway_request_errors_total`)\n- queue pressure (`gateway_queue_depth`, `gateway_queue_age_ms`)\n- backend health/load (`gateway_backend_*`)\n- latency distribution (`gateway_request_latency_ms`)\n\nIDs like `request_id` and `trace_id` are not metric labels to avoid high-cardinality issues.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0022",
+    "section": "9. Deployment Notes",
+    "text": "- Run as stateless service instances behind a load balancer/ingress.\n- Keep backend URLs reachable from gateway network context.\n- Mount environment-specific `config.yaml`.\n- Scrape `/metrics` and ingest structured stdout logs into your log backend.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0023",
+    "section": "10. Known Trade-offs",
+    "text": "- queue age gauge is instantaneous, not a full percentile distribution\n- request classification is heuristic (token estimate), not exact tokenizer output\n- in-memory runtime state resets on restart",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0024",
+    "section": "11. Related Documents",
+    "text": "- `docs/docs.md` for general technical reference\n- `docs/sla.md` for SLO/SLA targets and alert baseline\n- `docs/plan.md` for detailed implementation planning context",
+    "synthetic_questions": []
+  }
+]

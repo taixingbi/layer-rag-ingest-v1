@@ -1,0 +1,50 @@
+[
+  {
+    "chunk_id": "0001",
+    "section": "Embedding Gateway Design",
+    "text": "Embedding Gateway Design",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0002",
+    "section": "Purpose",
+    "text": "`layer-gateway-embed-v1` is a standalone gateway for embedding traffic only. It exposes `POST /v1/embeddings`, resolves optional correlation headers (missing or blank values get UUIDs), routes requests to the best backend, and adds reliability/observability controls at request level.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0003",
+    "section": "Request Flow",
+    "text": "1. Client sends `POST /v1/embeddings` (optionally with `X-Request-Id`, `X-Trace-Id`, `X-Session-Id`; missing or empty values are filled with UUIDs).\n2. Gateway resolves correlation ids and parses payload.\n3. Routing selector scores available backends and picks the lowest score.\n4. Gateway forwards the request to the selected backend.\n5. Gateway returns backend response transparently.\n6. On timeout/retryable failure, gateway retries on alternate backend when possible.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0004",
+    "section": "Routing Model",
+    "text": "Backends are scored using:\n\n`score = inflight * W1 + latency * W2 + error_rate * W3`\n\nWhere:\n- `inflight`: current active requests\n- `latency`: rolling latency signal\n- `error_rate`: rolling failure signal\n\nLower score is preferred.\n\nTo avoid starvation while preserving latency preference, routing also uses two hybrid controls:\n- `ROUTING_EXPLORATION_RATE`: small probability to choose a random healthy backend for fresh samples.\n- `ROUTING_MAX_IDLE_MS`: if a healthy backend has not been selected recently, it is preferred to rebalance traffic.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0005",
+    "section": "Reliability Controls",
+    "text": "- Retry on timeout and retryable statuses (`502`, `503`, `504`)\n- Configurable retry attempts (`RETRY_MAX_ATTEMPTS`)\n- Per-backend circuit breaker:\n  - Opens after repeated failures\n  - Uses half-open probes after cool-down before full re-enable\n  - Limits concurrent half-open probes (`CB_HALF_OPEN_MAX_PROBES`)\n  - Closes circuit after enough probe successes (`CB_HALF_OPEN_SUCCESS_THRESHOLD`)\n  - Excludes backend from routing during cool-down\n  - Allows recovery after reset timeout",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0006",
+    "section": "Observability",
+    "text": "- Structured JSON logging with gateway event schema\n- Key events: startup, request finished, retry, request failed\n- `routing_pick` includes:\n  - `decision_reason` (`score`, `exploration`, `idle_rebalance`, `none`)\n  - per-backend circuit fields (`circuit_open`, `circuit_half_open`, `half_open_inflight`, `half_open_successes`)\n- Prometheus metrics:\n  - request totals\n  - request latency\n  - backend selection\n  - inflight requests\n  - failures\n  - retries\n  - admission queue wait and rejected counts\n- Operational endpoints:\n  - `GET /health`\n  - `GET /metrics`",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0007",
+    "section": "Configuration Surface",
+    "text": "Runtime behavior is environment-driven through:\n- server host/port\n- timeout values\n- retry policy\n- circuit breaker thresholds\n- half-open circuit breaker probe controls\n- routing weights\n- routing exploration and idle rebalance knobs\n- backend list\n- logging options\n\nSee `README.md` and `.env.example` for concrete runtime values.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0008",
+    "section": "Future Enhancements",
+    "text": "- Admission queue / rate limiting to protect backends during burst traffic\n- Dynamic backend discovery\n- Adaptive routing weights based on live traffic shape",
+    "synthetic_questions": []
+  }
+]

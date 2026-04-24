@@ -1,0 +1,254 @@
+[
+  {
+    "id": "3b1619f8-6e1f-5c3a-b986-8cbc2b63e5a0",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0001",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "layer-gateway-embed-v1__plan.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__plan.md",
+        "root"
+      ],
+      "text": "layer-gateway-embed-v1\n\nA lightweight, request-level routing gateway for embedding workloads across multiple vLLM backends.\n\nThis service complements\nlayer-gateway-inference-v1 by handling /v1/embeddings traffic independently.\n\nOverview\n\nlayer-gateway-embed-v1 provides:\n\nLoad-aware routing across embedding backends\nRequest-level scheduling (not connection-level)\nRetry and circuit breaker for reliability\nStructured logging and metrics\nSimple, production-ready architecture\nWhy a Separate Gateway?",
+      "embed_text": "[SECTION: ROOT]\nlayer-gateway-embed-v1\n\nA lightweight, request-level routing gateway for embedding workloads across multiple vLLM backends.\n\nThis service complements\nlayer-gateway-inference-v1 by handling /v1/embeddings traffic independently.\n\nOverview\n\nlayer-gateway-embed-v1 provides:\n\nLoad-aware routing across embedding backends\nRequest-level scheduling (not connection-level)\nRetry and circuit breaker for reliability\nStructured logging and metrics\nSimple, production-ready architecture\nWhy a Separate Gateway?",
+      "token_count": 51,
+      "embed_token_count": 53,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "db47718635ddfa9e605a9db3334e7a6d7f82876ee3a20b0dd5ca5783e80b90a9",
+      "source": "layer-gateway-embed-v1__plan.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "754bfe34-8220-5f0e-b7c9-dbaabed702c9",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0002",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "layer-gateway-embed-v1__plan.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__plan.md",
+        "root"
+      ],
+      "text": "Embedding workloads differ significantly from chat/inference:\n\nHigh QPS, short requests\nNo streaming / TTFT concerns\nDifferent latency and load characteristics\n\nSeparating gateways ensures:\n\nClean routing logic\nIndependent scaling and deployment\nNo interference between chat and embedding workloads\nAPI\nPOST /v1/embeddings\n\nCompatible with OpenAI-style embedding API.\n\nExample\ncurl -X POST http://<gateway-host>:30181/v1/embeddings \\\n  -H \"X-Request-Id: request_id_1\" \\\n  -H \"X-Session-Id: session_id_1\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"model\":\"BAAI/bge-m3\",\"input\":\"hello world\"}'\nGET /health",
+      "embed_text": "[SECTION: ROOT]\nEmbedding workloads differ significantly from chat/inference:\n\nHigh QPS, short requests\nNo streaming / TTFT concerns\nDifferent latency and load characteristics\n\nSeparating gateways ensures:\n\nClean routing logic\nIndependent scaling and deployment\nNo interference between chat and embedding workloads\nAPI\nPOST /v1/embeddings\n\nCompatible with OpenAI-style embedding API.\n\nExample\ncurl -X POST http://<gateway-host>:30181/v1/embeddings \\\n  -H \"X-Request-Id: request_id_1\" \\\n  -H \"X-Session-Id: session_id_1\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"model\":\"BAAI/bge-m3\",\"input\":\"hello world\"}'\nGET /health",
+      "token_count": 68,
+      "embed_token_count": 70,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "278b2fecc50361a5a5de543084e5bc58b749329eefe83d8a37ebc8b54e64ecbb",
+      "source": "layer-gateway-embed-v1__plan.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "c2a190a7-bc9f-533a-b498-3dc97e991a4f",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0003",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "layer-gateway-embed-v1__plan.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__plan.md",
+        "root"
+      ],
+      "text": "Returns service health.\n\nGET /metrics\n\nPrometheus-compatible metrics.\n\nArchitecture\nClient\n   ↓\nEmbedding Gateway (/v1/embeddings)\n   ↓\nRouting / Scheduler (load-aware)\n   ↓\nvLLM Embedding Backends\nBackends\n\nExample configuration:\n\nbackends:\n  - name: embed-node-1\n    url: http://192.168.86.173:8001\n  - name: embed-node-2\n    url: http://192.168.86.176:8001\n\nEach backend must expose:\n\nPOST /v1/embeddings\nRouting Strategy",
+      "embed_text": "[SECTION: ROOT]\nReturns service health.\n\nGET /metrics\n\nPrometheus-compatible metrics.\n\nArchitecture\nClient\n   ↓\nEmbedding Gateway (/v1/embeddings)\n   ↓\nRouting / Scheduler (load-aware)\n   ↓\nvLLM Embedding Backends\nBackends\n\nExample configuration:\n\nbackends:\n  - name: embed-node-1\n    url: http://192.168.86.173:8001\n  - name: embed-node-2\n    url: http://192.168.86.176:8001\n\nEach backend must expose:\n\nPOST /v1/embeddings\nRouting Strategy",
+      "token_count": 44,
+      "embed_token_count": 46,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "56b74d8c2fcba3119a3a204ded20beae739b74230f6aae7796ce5ae36b564fa5",
+      "source": "layer-gateway-embed-v1__plan.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "1d1c4f80-a9c2-51b4-8ba8-50999193ba05",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0004",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "layer-gateway-embed-v1__plan.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__plan.md",
+        "root"
+      ],
+      "text": "The gateway selects the best backend using a score-based approach:\n\nscore = inflight * W1 + latency * W2 + error_rate * W3\n\nWhere:\n\ninflight = current active requests\nlatency = recent response time\nerror_rate = recent failures\n\nLowest score wins.\n\nRequest Classification\n\nRequests are classified for observability and future tuning:\n\nSMALL_EMBED\nMEDIUM_EMBED\nLARGE_EMBED\n\nBased on:\n\nnumber of input items\ntotal character size\nReliability\nRetry",
+      "embed_text": "[SECTION: ROOT]\nThe gateway selects the best backend using a score-based approach:\n\nscore = inflight * W1 + latency * W2 + error_rate * W3\n\nWhere:\n\ninflight = current active requests\nlatency = recent response time\nerror_rate = recent failures\n\nLowest score wins.\n\nRequest Classification\n\nRequests are classified for observability and future tuning:\n\nSMALL_EMBED\nMEDIUM_EMBED\nLARGE_EMBED\n\nBased on:\n\nnumber of input items\ntotal character size\nReliability\nRetry",
+      "token_count": 65,
+      "embed_token_count": 67,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "820a2c50618e532f606d3cddb571e56d575eddccda0e75fe9d404abbbf4354a0",
+      "source": "layer-gateway-embed-v1__plan.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "41bf7c12-895f-57a4-9d3c-c69ac42a0a13",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0005",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "layer-gateway-embed-v1__plan.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__plan.md",
+        "root"
+      ],
+      "text": "Retries occur on:\n\ntimeouts\n502, 503, 504\n\nConfig:\n\nretry:\n  max_attempts: 2\n\nRetries will prefer a different backend.\n\nCircuit Breaker\n\nEach backend is protected by a circuit breaker:\n\nOpens after repeated failures\nTemporarily removes backend from routing\nAutomatically retries after cooldown\nConfiguration\n\nExample:\n\nserver:\n  host: 0.0.0.0\n  port: 30181\n\ntimeouts:\n  connect_ms: 1000\n  read_ms: 15000",
+      "embed_text": "[SECTION: ROOT]\nRetries occur on:\n\ntimeouts\n502, 503, 504\n\nConfig:\n\nretry:\n  max_attempts: 2\n\nRetries will prefer a different backend.\n\nCircuit Breaker\n\nEach backend is protected by a circuit breaker:\n\nOpens after repeated failures\nTemporarily removes backend from routing\nAutomatically retries after cooldown\nConfiguration\n\nExample:\n\nserver:\n  host: 0.0.0.0\n  port: 30181\n\ntimeouts:\n  connect_ms: 1000\n  read_ms: 15000",
+      "token_count": 52,
+      "embed_token_count": 54,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "c9b5e6535d1c942d7c27ff47f119c0be8fdc9e9335d2dfc23dbd951409033ce0",
+      "source": "layer-gateway-embed-v1__plan.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "a65b1ba3-b954-5ed5-9697-b88dc6129993",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0006",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "layer-gateway-embed-v1__plan.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__plan.md",
+        "root"
+      ],
+      "text": "retry:\n  max_attempts: 2\n  retryable_statuses: [502, 503, 504]\n\ncircuit_breaker:\n  failure_threshold: 5\n  reset_timeout_sec: 30\n\nrouting:\n  inflight_weight: 10.0\n  latency_weight: 1.0\n  error_weight: 100.0\n\nbackends:\n  - name: embed-node-1\n    url: http://192.168.86.173:8001\n  - name: embed-node-2\n    url: http://192.168.86.176:8001\nSecurity\n\nAll requests must include:\n\nX-Request-Id\nX-Session-Id\n\nMetrics",
+      "embed_text": "[SECTION: ROOT]\nretry:\n  max_attempts: 2\n  retryable_statuses: [502, 503, 504]\n\ncircuit_breaker:\n  failure_threshold: 5\n  reset_timeout_sec: 30\n\nrouting:\n  inflight_weight: 10.0\n  latency_weight: 1.0\n  error_weight: 100.0\n\nbackends:\n  - name: embed-node-1\n    url: http://192.168.86.173:8001\n  - name: embed-node-2\n    url: http://192.168.86.176:8001\nSecurity\n\nAll requests must include:\n\nX-Request-Id\nX-Session-Id\n\nMetrics",
+      "token_count": 38,
+      "embed_token_count": 40,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "5539cc5b8b5fca7155158469c9d36e15f4752decceac2c4f0e62d650986c9a7f",
+      "source": "layer-gateway-embed-v1__plan.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "6a89cd9e-e3e7-5321-8ffb-b44ea07d6a2f",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0007",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "layer-gateway-embed-v1__plan.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__plan.md",
+        "root"
+      ],
+      "text": "Prometheus metrics include:\n\ngateway_embed_requests_total\ngateway_embed_request_latency_ms\ngateway_embed_backend_selected_total\ngateway_embed_inflight\ngateway_embed_failures_total\ngateway_embed_retries_total\nLogging\n\nStructured logs include:\n\nrequest lifecycle events\nbackend selection\nretry attempts\nfailures and circuit breaker events\n\nFields:\n\nrequest_id\nsession_id\nbackend\nlatency_ms\nmodel\ninput size\nrequest class\nRepository Structure\napp/\n  api/\n  core/\n  routing/\n  proxy/\n  models/\n  metrics/",
+      "embed_text": "[SECTION: ROOT]\nPrometheus metrics include:\n\ngateway_embed_requests_total\ngateway_embed_request_latency_ms\ngateway_embed_backend_selected_total\ngateway_embed_inflight\ngateway_embed_failures_total\ngateway_embed_retries_total\nLogging\n\nStructured logs include:\n\nrequest lifecycle events\nbackend selection\nretry attempts\nfailures and circuit breaker events\n\nFields:\n\nrequest_id\nsession_id\nbackend\nlatency_ms\nmodel\ninput size\nrequest class\nRepository Structure\napp/\n  api/\n  core/\n  routing/\n  proxy/\n  models/\n  metrics/",
+      "token_count": 44,
+      "embed_token_count": 46,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "fc0e587b63568a54f9ce76503b227d00cc043c16aa8ad5cfbe33435edf11388c",
+      "source": "layer-gateway-embed-v1__plan.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "aa097153-5fdf-5ae1-9255-d2f0df014c59",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0008",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "layer-gateway-embed-v1__plan.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__plan.md",
+        "root"
+      ],
+      "text": "config/\ntests/\nDockerfile\nREADME.md\nDevelopment Plan\nPhase 1 — Bootstrap\nCreate repo\nCopy reusable components from inference gateway\nRemove chat-specific logic\nPhase 2 — Core Endpoint\nImplement /v1/embeddings\nAdd config + security\nAdd backend routing\nPhase 3 — Reliability\nRetry logic\nCircuit breaker\nBackend health tracking\nPhase 4 — Observability\nLogging\nMetrics\n/health\nPhase 5 — Deployment\nBuild Docker image\nRun locally or in cluster\nPhase 6 — Load Testing\nConcurrency tests\nFailover tests\nLatency validation\nDesign Principles\nRequest-level routing (not connection-level)\nKeep gateway simple — no batching\nLet vLLM handle batching\nFail fast, retry smart\nPrefer stability over complexity\nFuture Enhancements (Optional)\nOpenAI fallback for embeddings\nAdmission queue / rate limiting\nDynamic backend discovery\nAdaptive routing weights\nRequest batching (if needed)\nStatus",
+      "embed_text": "[SECTION: ROOT]\nconfig/\ntests/\nDockerfile\nREADME.md\nDevelopment Plan\nPhase 1 — Bootstrap\nCreate repo\nCopy reusable components from inference gateway\nRemove chat-specific logic\nPhase 2 — Core Endpoint\nImplement /v1/embeddings\nAdd config + security\nAdd backend routing\nPhase 3 — Reliability\nRetry logic\nCircuit breaker\nBackend health tracking\nPhase 4 — Observability\nLogging\nMetrics\n/health\nPhase 5 — Deployment\nBuild Docker image\nRun locally or in cluster\nPhase 6 — Load Testing\nConcurrency tests\nFailover tests\nLatency validation\nDesign Principles\nRequest-level routing (not connection-level)\nKeep gateway simple — no batching\nLet vLLM handle batching\nFail fast, retry smart\nPrefer stability over complexity\nFuture Enhancements (Optional)\nOpenAI fallback for embeddings\nAdmission queue / rate limiting\nDynamic backend discovery\nAdaptive routing weights\nRequest batching (if needed)\nStatus",
+      "token_count": 123,
+      "embed_token_count": 125,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "e13cc464a9d830f8fcf23739db3890463c3c9c9838dd10e44360e17d4a89c34b",
+      "source": "layer-gateway-embed-v1__plan.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "0ad4fe66-0587-594a-9a4a-aa4097f61fd4",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0009",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "layer-gateway-embed-v1__plan.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__plan.md",
+        "root"
+      ],
+      "text": "🚧 Initial version (v1) focuses on:\n\nStable routing\nReliability\nObservability\nSimple deployment",
+      "embed_text": "[SECTION: ROOT]\n🚧 Initial version (v1) focuses on:\n\nStable routing\nReliability\nObservability\nSimple deployment",
+      "token_count": 12,
+      "embed_token_count": 14,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "b62c6b96f4ed646f6cfa61606615ed3ca820ccda8258c97745d408112046be41",
+      "source": "layer-gateway-embed-v1__plan.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  }
+]

@@ -1,0 +1,258 @@
+[
+  {
+    "id": "ea7f9522-b285-5d8d-9f8a-6d26ea66846a",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0001",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Embedding Gateway Design",
+      "doc_type": "layer-gateway-embed-v1__design.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__design.md",
+        "embedding_gateway_design"
+      ],
+      "text": "Embedding Gateway Design",
+      "embed_text": "[SECTION: Embedding Gateway Design]\nEmbedding Gateway Design\nQ: What is the focus of the Embedding Gateway Design?\nQ: Does the text provide details about the design process?\nQ: Are implementation specifics mentioned in the Embedding Gateway Design?",
+      "token_count": 3,
+      "embed_token_count": 37,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is the focus of the Embedding Gateway Design?",
+        "Does the text provide details about the design process?",
+        "Are implementation specifics mentioned in the Embedding Gateway Design?"
+      ],
+      "content_hash": "2bf2b76c99c215e1185ff27e9801bbc715e1e1b2edfbcb58f1ba28657b1a7d55",
+      "source": "layer-gateway-embed-v1__design.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "9cbe546a-a3f1-51dd-ab6b-33c293b1bb50",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0002",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Purpose",
+      "doc_type": "layer-gateway-embed-v1__design.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__design.md",
+        "purpose"
+      ],
+      "text": "`layer-gateway-embed-v1` is a standalone gateway for embedding traffic only. It exposes `POST /v1/embeddings`, resolves optional correlation headers (missing or blank values get UUIDs), routes requests to the best backend, and adds reliability/observability controls at request level.",
+      "embed_text": "[SECTION: Purpose]\n`layer-gateway-embed-v1` is a standalone gateway for embedding traffic only. It exposes `POST /v1/embeddings`, resolves optional correlation headers (missing or blank values get UUIDs), routes requests to the best backend, and adds reliability/observability controls at request level.\nQ: What does layer-gateway-embed-v1 expose?\nQ: How does layer-gateway-embed-v1 handle correlation headers?\nQ: What kind of controls does layer-gateway-embed-v1 add at the request level?",
+      "token_count": 36,
+      "embed_token_count": 62,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What does layer-gateway-embed-v1 expose?",
+        "How does layer-gateway-embed-v1 handle correlation headers?",
+        "What kind of controls does layer-gateway-embed-v1 add at the request level?"
+      ],
+      "content_hash": "657675d19cb70e91c08929541a2a3d1069624e86b846a7d36ea832bed1ebc17d",
+      "source": "layer-gateway-embed-v1__design.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "1bef2a54-3c96-5138-a3ff-327f7605698d",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0003",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Request Flow",
+      "doc_type": "layer-gateway-embed-v1__design.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__design.md",
+        "request_flow"
+      ],
+      "text": "1. Client sends `POST /v1/embeddings` (optionally with `X-Request-Id`, `X-Trace-Id`, `X-Session-Id`; missing or empty values are filled with UUIDs).\n2. Gateway resolves correlation ids and parses payload.\n3. Routing selector scores available backends and picks the lowest score.\n4. Gateway forwards the request to the selected backend.\n5. Gateway returns backend response transparently.\n6. On timeout/retryable failure, gateway retries on alternate backend when possible.",
+      "embed_text": "[SECTION: Request Flow]\n1. Client sends `POST /v1/embeddings` (optionally with `X-Request-Id`, `X-Trace-Id`, `X-Session-Id`; missing or empty values are filled with UUIDs).\n2. Gateway resolves correlation ids and parses payload.\n3. Routing selector scores available backends and picks the lowest score.\n4. Gateway forwards the request to the selected backend.\n5. Gateway returns backend response transparently.\n6. On timeout/retryable failure, gateway retries on alternate backend when possible.\nQ: How does the client send the POST request?\nQ: What happens if the gateway encounters a timeout or retryable failure?\nQ: Which backend is chosen for processing the request?",
+      "token_count": 63,
+      "embed_token_count": 96,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "How does the client send the POST request?",
+        "What happens if the gateway encounters a timeout or retryable failure?",
+        "Which backend is chosen for processing the request?"
+      ],
+      "content_hash": "96056471f3fd5fa88dd05a5a5ef399fe8b690d770dde82d53576fb44a4387252",
+      "source": "layer-gateway-embed-v1__design.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "506b4fbc-1452-5715-8bd4-2d4ab4090ed1",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0004",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Routing Model",
+      "doc_type": "layer-gateway-embed-v1__design.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__design.md",
+        "routing_model"
+      ],
+      "text": "Backends are scored using:\n\n`score = inflight * W1 + latency * W2 + error_rate * W3`\n\nWhere:\n- `inflight`: current active requests\n- `latency`: rolling latency signal\n- `error_rate`: rolling failure signal\n\nLower score is preferred.\n\nTo avoid starvation while preserving latency preference, routing also uses two hybrid controls:\n- `ROUTING_EXPLORATION_RATE`: small probability to choose a random healthy backend for fresh samples.\n- `ROUTING_MAX_IDLE_MS`: if a healthy backend has not been selected recently, it is preferred to rebalance traffic.",
+      "embed_text": "[SECTION: Routing Model]\nBackends are scored using:\n\n`score = inflight * W1 + latency * W2 + error_rate * W3`\n\nWhere:\n- `inflight`: current active requests\n- `latency`: rolling latency signal\n- `error_rate`: rolling failure signal\n\nLower score is preferred.\n\nTo avoid starvation while preserving latency preference, routing also uses two hybrid controls:\n- `ROUTING_EXPLORATION_RATE`: small probability to choose a random healthy backend for fresh samples.\n- `ROUTING_MAX_IDLE_MS`: if a healthy backend has not been selected recently, it is preferred to rebalance traffic.\nQ: What factors are used to score backends?\nQ: What does the ROUTING_EXPLORATION_RATE control do?\nQ: How does ROUTING_MAX_IDLE_MS influence backend selection?",
+      "token_count": 80,
+      "embed_token_count": 105,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What factors are used to score backends?",
+        "What does the ROUTING_EXPLORATION_RATE control do?",
+        "How does ROUTING_MAX_IDLE_MS influence backend selection?"
+      ],
+      "content_hash": "fb9e0d4daa1c1f228fe09d9e8a945aeff459fa2d1fd8af6ee1109dafb182b575",
+      "source": "layer-gateway-embed-v1__design.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "5990fa05-499c-5d31-8aa7-0dd2fdc3dc4c",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0005",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Reliability Controls",
+      "doc_type": "layer-gateway-embed-v1__design.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__design.md",
+        "reliability_controls"
+      ],
+      "text": "- Retry on timeout and retryable statuses (`502`, `503`, `504`)\n- Configurable retry attempts (`RETRY_MAX_ATTEMPTS`)\n- Per-backend circuit breaker:\n  - Opens after repeated failures\n  - Uses half-open probes after cool-down before full re-enable\n  - Limits concurrent half-open probes (`CB_HALF_OPEN_MAX_PROBES`)\n  - Closes circuit after enough probe successes (`CB_HALF_OPEN_SUCCESS_THRESHOLD`)\n  - Excludes backend from routing during cool-down\n  - Allows recovery after reset timeout",
+      "embed_text": "[SECTION: Reliability Controls]\n- Retry on timeout and retryable statuses (`502`, `503`, `504`)\n- Configurable retry attempts (`RETRY_MAX_ATTEMPTS`)\n- Per-backend circuit breaker:\n  - Opens after repeated failures\n  - Uses half-open probes after cool-down before full re-enable\n  - Limits concurrent half-open probes (`CB_HALF_OPEN_MAX_PROBES`)\n  - Closes circuit after enough probe successes (`CB_HALF_OPEN_SUCCESS_THRESHOLD`)\n  - Excludes backend from routing during cool-down\n  - Allows recovery after reset timeout\nQ: How many configurable retry attempts are there?\nQ: What status codes trigger a retry?\nQ: What happens after a backend circuit breaker is opened?",
+      "token_count": 60,
+      "embed_token_count": 88,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "How many configurable retry attempts are there?",
+        "What status codes trigger a retry?",
+        "What happens after a backend circuit breaker is opened?"
+      ],
+      "content_hash": "e478df44d3a1c7ab15a094eccf8f7ce58cab6e6d1bea7ad102c5a2ed1d9e0c7e",
+      "source": "layer-gateway-embed-v1__design.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "31a667c0-d190-59ad-85bb-762faceaaa0a",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0006",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Observability",
+      "doc_type": "layer-gateway-embed-v1__design.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__design.md",
+        "observability"
+      ],
+      "text": "- Structured JSON logging with gateway event schema\n- Key events: startup, request finished, retry, request failed\n- `routing_pick` includes:\n  - `decision_reason` (`score`, `exploration`, `idle_rebalance`, `none`)\n  - per-backend circuit fields (`circuit_open`, `circuit_half_open`, `half_open_inflight`, `half_open_successes`)\n- Prometheus metrics:\n  - request totals\n  - request latency\n  - backend selection\n  - inflight requests\n  - failures\n  - retries\n  - admission queue wait and rejected counts\n- Operational endpoints:\n  - `GET /health`\n  - `GET /metrics`",
+      "embed_text": "[SECTION: Observability]\n- Structured JSON logging with gateway event schema\n- Key events: startup, request finished, retry, request failed\n- `routing_pick` includes:\n  - `decision_reason` (`score`, `exploration`, `idle_rebalance`, `none`)\n  - per-backend circuit fields (`circuit_open`, `circuit_half_open`, `half_open_inflight`, `half_open_successes`)\n- Prometheus metrics:\n  - request totals\n  - request latency\n  - backend selection\n  - inflight requests\n  - failures\n  - retries\n  - admission queue wait and rejected counts\n- Operational endpoints:\n  - `GET /health`\n  - `GET /metrics`\nQ: What types of events are logged in the gateway event schema?\nQ: What does the `routing_pick` include?\nQ: What operational endpoint provides system health information?",
+      "token_count": 69,
+      "embed_token_count": 97,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What types of events are logged in the gateway event schema?",
+        "What does the `routing_pick` include?",
+        "What operational endpoint provides system health information?"
+      ],
+      "content_hash": "04a747501da4bee21d9d5f3f73f02ddc0075cb1244af8f09cffe3872da6a55f5",
+      "source": "layer-gateway-embed-v1__design.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "b96d02a5-eb51-5d4f-b6c8-0e852b6e7537",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0007",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Configuration Surface",
+      "doc_type": "layer-gateway-embed-v1__design.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__design.md",
+        "configuration_surface"
+      ],
+      "text": "Runtime behavior is environment-driven through:\n- server host/port\n- timeout values\n- retry policy\n- circuit breaker thresholds\n- half-open circuit breaker probe controls\n- routing weights\n- routing exploration and idle rebalance knobs\n- backend list\n- logging options\n\nSee `README.md` and `.env.example` for concrete runtime values.",
+      "embed_text": "[SECTION: Configuration Surface]\nRuntime behavior is environment-driven through:\n- server host/port\n- timeout values\n- retry policy\n- circuit breaker thresholds\n- half-open circuit breaker probe controls\n- routing weights\n- routing exploration and idle rebalance knobs\n- backend list\n- logging options\n\nSee `README.md` and `.env.example` for concrete runtime values.\nQ: What drives the runtime behavior?\nQ: What does the circuit breaker thresholds control?\nQ: What files provide concrete runtime values?",
+      "token_count": 48,
+      "embed_token_count": 72,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What drives the runtime behavior?",
+        "What does the circuit breaker thresholds control?",
+        "What files provide concrete runtime values?"
+      ],
+      "content_hash": "3502274133863c0b8e5226aecac5e5547baa064d707157f3d87de9926e5411ba",
+      "source": "layer-gateway-embed-v1__design.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "a4cbccbf-3f4c-59e2-992d-fb4f4f9ba82c",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0008",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Future Enhancements",
+      "doc_type": "layer-gateway-embed-v1__design.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__design.md",
+        "future_enhancements"
+      ],
+      "text": "- Admission queue / rate limiting to protect backends during burst traffic\n- Dynamic backend discovery\n- Adaptive routing weights based on live traffic shape",
+      "embed_text": "[SECTION: Future Enhancements]\n- Admission queue / rate limiting to protect backends during burst traffic\n- Dynamic backend discovery\n- Adaptive routing weights based on live traffic shape\nQ: What measure is suggested to protect backends during burst traffic?\nQ: How does the system discover backends dynamically?\nQ: What feature adjusts routing weights based on current traffic?",
+      "token_count": 25,
+      "embed_token_count": 57,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What measure is suggested to protect backends during burst traffic?",
+        "How does the system discover backends dynamically?",
+        "What feature adjusts routing weights based on current traffic?"
+      ],
+      "content_hash": "1fbf1bbed14859d4d63d23b6d424751adfcedc6bf6ecc75a56ec1ce427546233",
+      "source": "layer-gateway-embed-v1__design.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  }
+]

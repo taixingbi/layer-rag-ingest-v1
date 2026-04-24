@@ -1,0 +1,30 @@
+[
+  {
+    "id": "29768302-4fa7-5735-ab13-f431aef9d47d",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0001",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "repo",
+      "language": "en",
+      "tags": [
+        "repo",
+        "root"
+      ],
+      "text": "https://github.com/taixingbi/layer-gateway-inference-v1/tree/main/docs\nhttps://github.com/taixingbi/layer-gateway-embed-v1/tree/main/docs",
+      "embed_text": "[SECTION: ROOT]\nhttps://github.com/taixingbi/layer-gateway-inference-v1/tree/main/docs\nhttps://github.com/taixingbi/layer-gateway-embed-v1/tree/main/docs",
+      "token_count": 2,
+      "embed_token_count": 4,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "e85963df4d10e55a4739b71d4582a4ca232fb720f85c786a71dd60e978406fcc",
+      "source": "repo_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  }
+]

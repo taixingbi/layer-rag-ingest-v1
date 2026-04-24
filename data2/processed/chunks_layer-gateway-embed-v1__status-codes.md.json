@@ -1,0 +1,38 @@
+[
+  {
+    "chunk_id": "0001",
+    "section": "Gateway 429 and 503 Conditions",
+    "text": "This document explains when the embedding gateway returns `429` and `503`.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0002",
+    "section": "When the gateway returns 429",
+    "text": "The gateway returns `429 Too Many Requests` when admission control cannot accept a request in time.\n\nCondition:\n\n- The admission semaphore is full (`ADMISSION_MAX_CONCURRENT` active requests), and\n- waiting to acquire a slot exceeds `ADMISSION_WAIT_TIMEOUT_MS`.\n\nBehavior:\n\n- Response: `{\"error\": \"Gateway busy, try again\"}`\n- Log event: `admission_rejected`\n- Metrics: `ADMISSION_REJECTED` incremented",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0003",
+    "section": "When the gateway returns 503",
+    "text": "The gateway can return `503 Service Unavailable` in two gateway-generated cases and one passthrough case.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0004",
+    "section": "1) No eligible backend at pick time",
+    "text": "If routing cannot find any backend to send the request to (for example, all are excluded or circuit-open), the gateway returns `503`.\n\nThis can also happen during half-open recovery when all remaining candidates are temporarily ineligible for additional probe traffic.\n\nBehavior:\n\n- Raises: `HTTPException(status_code=503, detail=\"No healthy backend available\")`\n- Log event: `routing_no_backend`",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0005",
+    "section": "2) All retry attempts fail with upstream transport errors",
+    "text": "If every attempt fails due to timeout/network HTTP client exceptions (`httpx.TimeoutException` / `httpx.HTTPError`), the gateway returns `503`.\n\nBehavior:\n\n- Response: `{\"error\": \"Backends unavailable\"}`\n- Log event: `request_failed`",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0006",
+    "section": "3) Upstream backend returns 503 on final attempt (passthrough)",
+    "text": "`503` is retryable, so the gateway retries while attempts remain. If the final attempt still gets upstream `503`, the gateway returns that upstream status to the client.\n\nBehavior:\n\n- Response status: `503` (passthrough from upstream)\n- Log event: `request_finished` with upstream status",
+    "synthetic_questions": []
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "id": "095e483b-73fc-58c9-9b4b-e9606e31531a",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0001",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "fixture_repo_docs_sample.md",
+      "language": "en",
+      "tags": [
+        "fixture_repo_docs_sample.md",
+        "root"
+      ],
+      "text": "# source: _fixture_repo/docs/sample.md",
+      "embed_text": "[SECTION: ROOT]\n# source: _fixture_repo/docs/sample.md\nQ: What is the source of the document?\nQ: Is there any specific file mentioned?\nQ: How many distinct strings are expected in the response?",
+      "token_count": 3,
+      "embed_token_count": 30,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is the source of the document?",
+        "Is there any specific file mentioned?",
+        "How many distinct strings are expected in the response?"
+      ],
+      "content_hash": "acb89df6499e1a73ad0675c20b6f9a2feebaa14b6236605068c09c3f4b14d3c5",
+      "source": "fixture_repo_docs_sample.md_source",
+      "ingest_run_id": "run_20260424_004737",
+      "ingest_ts": "2026-04-24T00:47:37Z"
+    }
+  },
+  {
+    "id": "47e741ba-39b8-5c0d-9c32-2fb1508d22e7",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0002",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "fixture_repo_docs_sample.md",
+      "language": "en",
+      "tags": [
+        "fixture_repo_docs_sample.md",
+        "root"
+      ],
+      "text": "# Hello\nBody here.",
+      "embed_text": "[SECTION: ROOT]\n# Hello\nBody here.\nQ: What is the title of this section?\nQ: Does this section contain any headings other than 'Hello'?\nQ: Is 'Body here.' part of the title or content?",
+      "token_count": 4,
+      "embed_token_count": 34,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is the title of this section?",
+        "Does this section contain any headings other than 'Hello'?",
+        "Is 'Body here.' part of the title or content?"
+      ],
+      "content_hash": "ca07d2577970476a03a093508249548abb958d8738404b35010a0169c1361c7c",
+      "source": "fixture_repo_docs_sample.md_source",
+      "ingest_run_id": "run_20260424_004737",
+      "ingest_ts": "2026-04-24T00:47:37Z"
+    }
+  }
+]

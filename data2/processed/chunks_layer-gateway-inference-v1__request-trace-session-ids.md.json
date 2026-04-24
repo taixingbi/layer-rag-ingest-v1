@@ -1,0 +1,62 @@
+[
+  {
+    "chunk_id": "0001",
+    "section": "Request ID, trace ID, and session ID",
+    "text": "This document describes how the gateway assigns and propagates correlation identifiers for logs and upstream calls. For a shorter summary, see [docs.md §6](docs.md#6-logging-and-tracing-ids).",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0002",
+    "section": "What each ID is for",
+    "text": "| Field | Typical use |\n| --- | --- |\n| `request_id` | One id per **HTTP request** through the gateway—support, debugging, and tying errors to a single call. |\n| `trace_id` | **Cross-service** correlation: the same value across multiple services for one distributed trace. |\n| `session_id` | **Longer-lived** grouping (for example a chat session or product session), spanning many requests. |",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0003",
+    "section": "How values are chosen (ingress)",
+    "text": "On `POST /v1/chat/completions` the gateway reads headers and applies this logic:\n\n- **`request_id`**: value of `x-request-id` if present; otherwise a new **UUID** is generated (`new_request_id()` in `app/core/logging.py`).\n- **`trace_id`**: from `x-trace-id` (header lookup is case-insensitive via Starlette). If omitted, the value is absent for logging and normalized to **`\"-\"`** in structured JSON output.\n- **`session_id`**: from `x-session-id`, same optional behavior as `trace_id`.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0004",
+    "section": "How values are chosen (ingress)",
+    "text": "```mermaid\nflowchart TD\n    H[Incoming headers] --> X1{x-request-id present?}\n    X1 -- yes --> RID[use x-request-id]\n    X1 -- no --> NEWRID[generate request_id]\n    H --> X2{x-trace-id present?}\n    X2 -- yes --> TID[use trace_id]\n    X2 -- no --> TID0[trace_id = '-' in JSON logs]\n    H --> X3{x-session-id present?}\n    X3 -- yes --> SID[use session_id]\n    X3 -- no --> SID0[session_id = '-' in JSON logs]\n```",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0005",
+    "section": "Strategy when an ID is missing",
+    "text": "Each header is handled **independently**: omitting one does not cause the gateway to synthesize the others.\n\n| Missing header | Gateway internal value | JSON log field | Upstream (`x-*` to vLLM) |\n| --- | --- | --- | --- |\n| `x-request-id` | New UUID per request | Always a real `request_id` | No `x-request-id` unless the client sent it (generated id is **not** injected) |\n| `x-trace-id` | Unset / none | `trace_id` serialized as **`\"-\"`** | No trace header forwarded |\n| `x-session-id` | Unset / none | `session_id` serialized as **`\"-\"`** | No session header forwarded |",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0006",
+    "section": "Strategy when an ID is missing",
+    "text": "An **empty** `x-request-id` is treated like missing (a new UUID is generated). Empty `x-trace-id` / `x-session-id` values still yield **`\"-\"`** in JSON logs when they reach the formatter as blank strings.\n\n**Processing guidance**\n\n- **Log pipelines and dashboards**: Treat **`\"-\"`** as “not provided” for `trace_id` and `session_id`. You can still correlate on `request_id`, which is always present in gateway event lines.\n- **Cross-service tracing**: If `trace_id` is missing, the gateway does not invent one; add `x-trace-id` at your edge or load balancer if traces must line up with upstream systems.\n- **Session analytics**: If `session_id` is missing, logs still carry `request_id` (and `trace_id` when set); session-scoped queries need the client to send `x-session-id` when that dimension matters.\n- **End-to-end request correlation**: If `x-request-id` is missing, rely on gateway logs and HTTP error bodies that include `request_id`; for the **same** id in upstream logs, clients must send `x-request-id` (or another layer must add it before the gateway proxies).",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0007",
+    "section": "Structured logs",
+    "text": "Gateway events are emitted as **one JSON object per line** via `log_gateway_event()` in `app/core/logging.py`. Relevant fields include `event`, `service`, `env`, and when set `request_id`, `trace_id`, `session_id`, plus optional `path`, `backend`, `latency_ms`, `status_code`, and structured `error`.\n\nMissing or empty `trace_id` / `session_id` appear as **`\"-\"`** in the serialized log line so parsers always see a string (see **Strategy when an ID is missing** above).",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0008",
+    "section": "Metrics",
+    "text": "These identifiers are for **log correlation only**. They are **not** Prometheus metric labels, to avoid high-cardinality series. See `docs/sla.md` and `docs/artichecture.md`.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0009",
+    "section": "Propagation to upstream (vLLM / OpenAI fallback)",
+    "text": "The proxy builds outbound headers with `_filter_headers()` in `app/proxy/client.py`: a small allowlist plus **any client header whose name starts with `x-`** (normalized to lowercase keys on the wire).\n\nImplications:\n\n- If the client sends **`x-request-id`**, **`x-trace-id`**, and **`x-session-id`**, they are typically **forwarded** to the backend unchanged (subject to that allowlist rule).\n- If the client **does not** send `x-request-id`, the gateway still assigns a **`request_id`** for logs and error payloads, but that generated id is **not automatically injected** into the upstream request headers unless the client sends it. For end-to-end correlation with the model server, clients should send `x-request-id` when they need the same id in upstream logs.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0010",
+    "section": "Recommendations for callers",
+    "text": "1. Send **`x-request-id`** on every call if you need the same id in gateway logs, client traces, and upstream (vLLM) logs.\n2. Send **`x-trace-id`** from the system edge (or trace root) and keep it stable across hops that belong to one trace.\n3. Send **`x-session-id`** when you want to query or filter logs by session or conversation across many requests.\n\nHeader names are conventional; the gateway expects the **`x-`** prefixed forms above on the chat completions route.",
+    "synthetic_questions": []
+  }
+]

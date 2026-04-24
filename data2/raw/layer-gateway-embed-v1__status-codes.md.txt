@@ -1,0 +1,56 @@
+source: github:layer-gateway-embed-v1
+path_in_archive: layer-gateway-embed-v1-main/docs/status-codes.md
+---
+
+# Gateway 429 and 503 Conditions
+
+This document explains when the embedding gateway returns `429` and `503`.
+
+## When the gateway returns 429
+
+The gateway returns `429 Too Many Requests` when admission control cannot accept a request in time.
+
+Condition:
+
+- The admission semaphore is full (`ADMISSION_MAX_CONCURRENT` active requests), and
+- waiting to acquire a slot exceeds `ADMISSION_WAIT_TIMEOUT_MS`.
+
+Behavior:
+
+- Response: `{"error": "Gateway busy, try again"}`
+- Log event: `admission_rejected`
+- Metrics: `ADMISSION_REJECTED` incremented
+
+## When the gateway returns 503
+
+The gateway can return `503 Service Unavailable` in two gateway-generated cases and one passthrough case.
+
+### 1) No eligible backend at pick time
+
+If routing cannot find any backend to send the request to (for example, all are excluded or circuit-open), the gateway returns `503`.
+
+This can also happen during half-open recovery when all remaining candidates are temporarily ineligible for additional probe traffic.
+
+Behavior:
+
+- Raises: `HTTPException(status_code=503, detail="No healthy backend available")`
+- Log event: `routing_no_backend`
+
+### 2) All retry attempts fail with upstream transport errors
+
+If every attempt fails due to timeout/network HTTP client exceptions (`httpx.TimeoutException` / `httpx.HTTPError`), the gateway returns `503`.
+
+Behavior:
+
+- Response: `{"error": "Backends unavailable"}`
+- Log event: `request_failed`
+
+### 3) Upstream backend returns 503 on final attempt (passthrough)
+
+`503` is retryable, so the gateway retries while attempts remain. If the final attempt still gets upstream `503`, the gateway returns that upstream status to the client.
+
+Behavior:
+
+- Response status: `503` (passthrough from upstream)
+- Log event: `request_finished` with upstream status
+

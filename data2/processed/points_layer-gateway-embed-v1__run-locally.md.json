@@ -1,0 +1,254 @@
+[
+  {
+    "id": "703da71d-8a58-5fe5-be2a-862245f956cb",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0001",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Local Run Guide",
+      "doc_type": "layer-gateway-embed-v1__run-locally.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__run-locally.md",
+        "local_run_guide"
+      ],
+      "text": "This guide runs `layer-gateway-embed-v1` locally without Docker.",
+      "embed_text": "[SECTION: Local Run Guide]\nThis guide runs `layer-gateway-embed-v1` locally without Docker.",
+      "token_count": 7,
+      "embed_token_count": 11,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "e816c08f02e81786825becc0fed40a663ffbfa2ef2d1fb5cd10411a405844229",
+      "source": "layer-gateway-embed-v1__run-locally.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "45bcc2f1-d5d5-52db-9d04-66f4e12c8e0f",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0002",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Prerequisites",
+      "doc_type": "layer-gateway-embed-v1__run-locally.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__run-locally.md",
+        "prerequisites"
+      ],
+      "text": "- Python 3.12+\n- Reachable embedding backends for `EMBED_BACKENDS`",
+      "embed_text": "[SECTION: Prerequisites]\n- Python 3.12+\n- Reachable embedding backends for `EMBED_BACKENDS`",
+      "token_count": 9,
+      "embed_token_count": 11,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "8fbfb196dfaadee4b534e86f57c585f186a4d42a717a8d07b84946c94b7a1508",
+      "source": "layer-gateway-embed-v1__run-locally.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "a8e8fb2d-1080-506d-9f98-8717beece84e",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0003",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "1) Create and Activate Virtual Environment",
+      "doc_type": "layer-gateway-embed-v1__run-locally.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__run-locally.md",
+        "1)_create_and_activate_virtual_environment"
+      ],
+      "text": "From repo root:\n\n```bash\npython3 -m venv .venv\nsource .venv/bin/activate\npython3 -m pip install --upgrade pip\n```",
+      "embed_text": "[SECTION: 1) Create and Activate Virtual Environment]\nFrom repo root:\n\n```bash\npython3 -m venv .venv\nsource .venv/bin/activate\npython3 -m pip install --upgrade pip\n```",
+      "token_count": 17,
+      "embed_token_count": 24,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "5ee2aff0b021c8c973e619725f90f8dd879f99102fb5edd4cd0eed819db4a467",
+      "source": "layer-gateway-embed-v1__run-locally.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "a3c4d5fc-9eda-52a4-9355-76ca56084bd1",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0004",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "2) Install the Project",
+      "doc_type": "layer-gateway-embed-v1__run-locally.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__run-locally.md",
+        "2)_install_the_project"
+      ],
+      "text": "```bash\npython3 -m pip install .\n```\n\nInstall dev dependencies (optional):\n\n```bash\npython3 -m pip install \".[dev]\"\n```",
+      "embed_text": "[SECTION: 2) Install the Project]\n```bash\npython3 -m pip install .\n```\n\nInstall dev dependencies (optional):\n\n```bash\npython3 -m pip install \".[dev]\"\n```",
+      "token_count": 18,
+      "embed_token_count": 23,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "941ee208b88539806b13e76e85e5eb7af54fd83d960d068051bbbf03200fb8f5",
+      "source": "layer-gateway-embed-v1__run-locally.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "333c80c9-f0bc-576e-90d3-8293d4990134",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0005",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "3) Configure Environment",
+      "doc_type": "layer-gateway-embed-v1__run-locally.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__run-locally.md",
+        "3)_configure_environment"
+      ],
+      "text": "Create local env file:\n\n```bash\ncp .env.example .env\n```\n\nLoad env vars into shell:\n\n```bash\nset -a\nsource .env\nset +a\n```\n\nAt minimum, ensure:\n\n- `EMBED_BACKENDS` points to healthy backend URLs\n- `GATEWAY_HOST` and `GATEWAY_PORT` are correct for local run",
+      "embed_text": "[SECTION: 3) Configure Environment]\nCreate local env file:\n\n```bash\ncp .env.example .env\n```\n\nLoad env vars into shell:\n\n```bash\nset -a\nsource .env\nset +a\n```\n\nAt minimum, ensure:\n\n- `EMBED_BACKENDS` points to healthy backend URLs\n- `GATEWAY_HOST` and `GATEWAY_PORT` are correct for local run",
+      "token_count": 41,
+      "embed_token_count": 45,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "5064074fc95e93e376c6f7bcfa272d62314dd751c6b1ad8fe63b5c991819f82f",
+      "source": "layer-gateway-embed-v1__run-locally.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "bc5aec49-1683-52ee-94cc-64301161db33",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0006",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "4) Start the Gateway",
+      "doc_type": "layer-gateway-embed-v1__run-locally.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__run-locally.md",
+        "4)_start_the_gateway"
+      ],
+      "text": "```bash\npython -m app.main\n```",
+      "embed_text": "[SECTION: 4) Start the Gateway]\n```bash\npython -m app.main\n```",
+      "token_count": 5,
+      "embed_token_count": 10,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "c75ec6d914931b12e3a3782e2147afb5eda444af93e0441a7ffbc17833e846f0",
+      "source": "layer-gateway-embed-v1__run-locally.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "befe04d8-72b6-5564-a76b-7a99019ec481",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0007",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "5) Verify Health and Metrics",
+      "doc_type": "layer-gateway-embed-v1__run-locally.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__run-locally.md",
+        "5)_verify_health_and_metrics"
+      ],
+      "text": "```bash\ncurl http://localhost:30181/health\ncurl http://localhost:30181/metrics\n```",
+      "embed_text": "[SECTION: 5) Verify Health and Metrics]\n```bash\ncurl http://localhost:30181/health\ncurl http://localhost:30181/metrics\n```",
+      "token_count": 6,
+      "embed_token_count": 12,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "78c1de5651363b1dfdbc79026954f3b39f0ff26b6ad297158037e9685a2e29f3",
+      "source": "layer-gateway-embed-v1__run-locally.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "66e93314-1f21-55c3-8d19-8f776dc993a8",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0008",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "6) Test Embeddings Endpoint",
+      "doc_type": "layer-gateway-embed-v1__run-locally.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__run-locally.md",
+        "6)_test_embeddings_endpoint"
+      ],
+      "text": "```bash\ncurl -X POST http://localhost:30181/v1/embeddings \\\n  -H \"Content-Type: application/json\" \\\n  -H \"X-Request-Id: request-id-1\" \\\n  -H \"X-Trace-Id: trace-id-1\" \\\n  -H \"X-Session-Id: session-id-1\" \\\n  -d '{\"model\":\"BAAI/bge-m3\",\"input\":\"hello world\"}'\n```",
+      "embed_text": "[SECTION: 6) Test Embeddings Endpoint]\n```bash\ncurl -X POST http://localhost:30181/v1/embeddings \\\n  -H \"Content-Type: application/json\" \\\n  -H \"X-Request-Id: request-id-1\" \\\n  -H \"X-Trace-Id: trace-id-1\" \\\n  -H \"X-Session-Id: session-id-1\" \\\n  -d '{\"model\":\"BAAI/bge-m3\",\"input\":\"hello world\"}'\n```",
+      "token_count": 26,
+      "embed_token_count": 31,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "eecd338bdea045640e42caf14d18a48b97d05b3e056b26c6d2339bacd0ca078a",
+      "source": "layer-gateway-embed-v1__run-locally.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "7e0cd726-439a-54a3-8caf-3be6b0087b5e",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0009",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Troubleshooting",
+      "doc_type": "layer-gateway-embed-v1__run-locally.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__run-locally.md",
+        "troubleshooting"
+      ],
+      "text": "- `externally-managed-environment`: use the `.venv` steps above instead of installing into system Python.\n- `503 No healthy backend available`: check `EMBED_BACKENDS` and backend service availability.\n- `429 Gateway busy`: increase `ADMISSION_MAX_CONCURRENT` or `ADMISSION_WAIT_TIMEOUT_MS`.",
+      "embed_text": "[SECTION: Troubleshooting]\n- `externally-managed-environment`: use the `.venv` steps above instead of installing into system Python.\n- `503 No healthy backend available`: check `EMBED_BACKENDS` and backend service availability.\n- `429 Gateway busy`: increase `ADMISSION_MAX_CONCURRENT` or `ADMISSION_WAIT_TIMEOUT_MS`.",
+      "token_count": 33,
+      "embed_token_count": 35,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "72de5d2d878ee678752f7343b39976bb5de609e7788471a35070d9a7b927d45a",
+      "source": "layer-gateway-embed-v1__run-locally.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  }
+]

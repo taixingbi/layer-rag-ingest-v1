@@ -1,0 +1,750 @@
+source: github:layer-gateway-inference-v1
+path_in_archive: layer-gateway-inference-v1-main/docs/plan.md
+---
+
+# Gateway Redesign Plan for `layer-gateway-inference-v1`
+
+## Goal
+
+Redesign the gateway from a simple per-request scorer/proxy into a **lightweight request-shaping scheduler** that improves multi-GPU utilization, reduces one-node-at-a-time wave patterns, and preserves good latency under load.
+
+```mermaid
+flowchart LR
+    IN[Incoming Requests] --> Q[Bounded Admission Queue]
+    Q --> D[Dispatch Loop]
+    D --> F[Eligibility Filters]
+    F --> S[Scoring + Selection]
+    S --> P[Proxy to vLLM Backends]
+    P --> OBS[Metrics + Structured Logs]
+```
+
+The current repository already positions the project as a FastAPI-based, GPU-aware routing gateway for vLLM on k3s, with request-level routing, load-aware scheduling, retries, circuit breaking, and health tracking. It also explicitly notes that default Kubernetes Services are connection-level while vLLM inference benefits from request-level routing, and its current routing formula is based on inflight requests, queue p95, TTFT p95, and error rate. citeturn914425view0
+
+## Why Redesign
+
+Recent test behavior suggests the current direction is correct, but the scheduling model needs one more step:
+
+- traffic still concentrates on one backend at a time
+- both GPUs are not consistently active together
+- latency is acceptable, but cluster utilization is not near saturation
+- the system needs **request shaping**, not just immediate backend selection
+
+The repo currently emphasizes keeping the gateway lightweight and avoiding a heavy queue unless needed. Based on the observed behavior, a **small bounded admission queue plus a dispatch loop** is now justified. citeturn914425view0
+
+## Target Outcome
+
+After the redesign, the gateway should:
+
+- keep **both GPU backends active concurrently** more often
+- reduce bursty backend dominance and wave patterns
+- maintain good TTFT while improving aggregate throughput
+- feed vLLM enough overlapping requests for better batching efficiency
+- degrade gracefully under overload with clear rejection behavior
+
+## Non-Goals
+
+The gateway should **not**:
+
+- reimplement vLLM batching
+- become a full durable job queue
+- perform GPU execution logic itself
+- require a complex control plane in the first version
+
+The repo’s current separation of concerns is still good: Kubernetes for lifecycle, gateway for routing, vLLM for batching and execution. citeturn914425view0
+
+---
+
+# 1. Design Principles
+
+## 1.1 Keep the gateway lightweight, but not purely stateless
+
+The gateway should stay simple and fast, but it should no longer do only:
+
+`request arrives -> score backends -> proxy immediately`
+
+Instead, it should do:
+
+`request arrives -> classify -> enqueue briefly -> scheduler dispatches -> proxy`
+
+This gives the system a short window to make better routing decisions across a burst of requests.
+
+## 1.2 Optimize for GPU efficiency, not just lowest immediate latency
+
+The current repo already states that the system is meant to be GPU-aware and optimize latency/utilization better than a plain k3s Service. citeturn914425view0
+
+The redesign should explicitly optimize for:
+
+- stable per-backend concurrency
+- smoother dispatch fairness
+- better batching opportunity on each vLLM instance
+- acceptable latency under load, not only lowest single-request latency
+
+## 1.3 Use fast local state for routing
+
+Routing should rely mainly on state the gateway directly knows in real time:
+
+- current inflight per backend
+- recent dispatch counts
+- recent failures and timeouts
+- EWMA TTFT and end-to-end latency
+- pending queue depth and queue age
+
+Use dashboard p95/p99 metrics for monitoring and validation, but not as the primary real-time routing signal.
+
+---
+
+# 2. Proposed Architecture
+
+## 2.1 High-level flow
+
+```text
+Client
+  -> FastAPI ingress
+  -> request validation / normalization
+  -> request classification
+  -> bounded in-memory pending queue
+  -> scheduler loop (every 5–20 ms)
+  -> backend selection
+  -> reverse proxy to selected vLLM backend
+  -> stream response back to client
+  -> update backend metrics/state
+```
+
+## 2.2 Components
+
+### A. API layer
+Responsibilities:
+
+- accept OpenAI-compatible requests
+- validate payload shape
+- estimate request size class
+- create internal request context
+- enqueue request for scheduling
+- return overload errors when queue is full or too old
+
+### B. Admission queue
+Responsibilities:
+
+- hold requests very briefly before dispatch
+- enable scheduler visibility across bursts
+- provide bounded backpressure
+
+Properties:
+
+- in-memory only
+- bounded capacity
+- max queue age, for example 100–300 ms
+- no persistence
+
+### C. Scheduler loop
+Responsibilities:
+
+- wake up on a short cadence, such as every 5–20 ms
+- pull eligible queued requests
+- choose backend using fresh backend state
+- enforce fairness and capacity policies
+
+### D. Backend state manager
+Responsibilities:
+
+- track per-backend health and recent performance
+- maintain inflight counters
+- maintain EWMA metrics
+- open/close circuit breakers
+- expose snapshot state for scheduling
+
+### E. Proxy layer
+Responsibilities:
+
+- forward request to chosen backend
+- stream body back to client when needed
+- collect outcome metrics
+- apply limited retry logic before body starts
+
+### F. Metrics layer
+Responsibilities:
+
+- Prometheus-compatible metrics
+- per-backend counters and gauges
+- queue depth, queue age, dispatch rate, inflight, errors, retries
+
+---
+
+# 3. Scheduling Model
+
+## 3.1 Move from direct scoring to queued dispatch
+
+Current repo routing is documented as a score-based direct selection model using inflight, queue p95, TTFT p95, and error rate. citeturn914425view0
+
+That is a good base, but the redesign should use **two-stage scheduling**.
+
+## 3.2 Stage A: eligibility filter
+
+A backend is eligible only if:
+
+- backend is healthy
+- circuit breaker is not open
+- inflight is below hard limit
+- recent timeout/error rate is below threshold
+- backend is not administratively drained
+
+If no backend is eligible:
+
+- request stays queued briefly until queue-age threshold
+- then reject with 503 if still unschedulable
+
+## 3.3 Stage B: placement score
+
+Among eligible backends, compute a score like:
+
+```text
+score =
+    inflight_weight * inflight
+  + queue_weight * ewma_queue_ms
+  + ttft_weight * ewma_ttft_ms
+  + e2e_weight * ewma_e2e_ms
+  + error_weight * recent_error_rate
+  + hot_penalty
+  + overload_penalty
+```
+
+### Recommended initial intuition
+
+- inflight should have strong weight
+- recent queue and TTFT should matter more than historical p95/p99
+- error rate should heavily penalize unstable nodes
+- hot penalty should suppress one-node dominance
+- overload penalty should push traffic away once soft capacity is crossed
+
+## 3.4 Hot-backend penalty
+
+Add a temporary penalty when the same backend receives too many recent dispatches.
+
+Example:
+
+- keep timestamps of recent dispatches for each backend
+- compute last 1–3 second dispatch share
+- if one backend exceeds target share significantly, add a penalty
+
+This directly addresses the observed wave pattern where one backend dominates traffic.
+
+## 3.5 Soft and hard inflight limits
+
+Each backend should have:
+
+- `soft_limit`: preferred operating range
+- `hard_limit`: absolute max before backend becomes ineligible
+
+Behavior:
+
+- below soft limit: normal scheduling
+- above soft limit: backend still eligible but receives overload penalty
+- at or above hard limit: backend ineligible
+
+This helps stabilize distribution and prevents one backend from staying “slightly better” and taking everything.
+
+---
+
+# 4. Request Classification
+
+The current repo mentions classifying requests such as chat, embed, and large. citeturn914425view0
+
+Make that classification operational.
+
+## 4.1 Classification inputs
+
+For chat completions, estimate:
+
+- prompt length or token estimate
+- `max_tokens`
+- `stream` true/false
+- model name
+
+## 4.2 Suggested classes
+
+- `small_chat`
+- `medium_chat`
+- `large_chat`
+- `streaming_long`
+- `embedding` (future if gateway serves embedding endpoints too)
+
+## 4.3 Why this matters
+
+Long requests can monopolize a backend. Classification enables:
+
+- fairer dispatch
+- optional short-request protection
+- easier future policy tuning
+
+## 4.4 Initial policy
+
+For phase 1, classification should be **advisory**, not strict partitioning.
+
+Use it to:
+
+- slightly raise score for backends already handling large requests
+- reserve a little headroom for short requests if TTFT becomes unstable
+
+---
+
+# 5. Queueing Strategy
+
+## 5.1 Use a bounded in-memory queue
+
+This is the biggest change.
+
+The queue should be:
+
+- lightweight
+- bounded
+- non-durable
+- short-lived only
+
+## 5.2 Queue settings
+
+Suggested starting values:
+
+- max queue length: 200–1000 requests, depending on host memory and test volume
+- max queue age: 100–300 ms
+- scheduler interval: 5–20 ms
+- per-tick dispatch budget: configurable, for example 10–50 requests
+
+## 5.3 Overload behavior
+
+If queue is full or request age exceeds threshold:
+
+- reject fast with 503
+- include machine-readable reason
+- increment overload metrics
+
+This is better than letting latency explode invisibly.
+
+---
+
+# 6. Health, Retry, and Circuit Breaking
+
+The current repo already includes health tracking, retry, timeout, and circuit breaker ideas. citeturn914425view0
+
+Keep them, but tighten the rules.
+
+## 6.1 Passive health tracking
+
+Track:
+
+- connect failures
+- timeouts
+- 5xx responses
+- malformed response errors
+- retry counts
+
+## 6.2 Optional active health checks
+
+Optional `/health` probing is fine, but scheduling should prioritize passive live traffic signals.
+
+## 6.3 Retry policy
+
+Retry only when safe:
+
+- connect failure
+- backend timeout before response body starts
+- 502/503/504 from backend
+
+Do **not** retry:
+
+- after streaming has started
+- after response body has partially returned
+- for client-side validation errors
+
+Use:
+
+- max one retry
+- preferably retry to a different backend
+
+## 6.4 Circuit breaker policy
+
+Each backend should move through:
+
+- `closed`
+- `open`
+- `half_open`
+
+Suggested behavior:
+
+- open after repeated failures over a rolling window
+- remain open for a cooldown window
+- allow limited probe traffic in half-open state
+- close only after successful recovery probes
+
+---
+
+# 7. Metrics and Observability
+
+## 7.1 Gateway metrics
+
+Expose at least:
+
+- `gateway_requests_total`
+- `gateway_request_errors_total`
+- `gateway_request_retries_total`
+- `gateway_queue_depth`
+- `gateway_queue_age_ms`
+- `gateway_dispatch_total{backend=...}`
+- `gateway_backend_inflight{backend=...}`
+- `gateway_backend_ewma_ttft_ms{backend=...}`
+- `gateway_backend_ewma_e2e_ms{backend=...}`
+- `gateway_backend_error_rate{backend=...}`
+- `gateway_backend_circuit_state{backend=...}`
+- `gateway_rejections_total{reason=...}`
+
+## 7.2 Dashboard goals
+
+Add dashboards that make it easy to answer:
+
+- are both GPUs being used at the same time?
+- are dispatches balanced over short windows?
+- is queue age stable?
+- is one backend repeatedly becoming hot?
+- are retries masking backend failures?
+
+## 7.3 Correlation IDs
+
+Add request IDs so one can correlate:
+
+- gateway logs
+- backend proxy logs
+- vLLM logs
+- Grafana panels
+
+---
+
+# 8. API and Config Design
+
+## 8.1 Gateway API compatibility
+
+Maintain OpenAI-compatible routes first:
+
+- `POST /v1/chat/completions`
+- future: `POST /v1/embeddings`
+- `GET /healthz`
+- `GET /metrics`
+
+## 8.2 Config file
+
+Suggested config structure:
+
+```yaml
+server:
+  host: 0.0.0.0
+  port: 8010
+  request_timeout_ms: 60000
+
+scheduler:
+  tick_ms: 10
+  queue_max_size: 500
+  queue_max_age_ms: 2000
+  dispatch_batch_size: 20
+
+routing:
+  inflight_weight: 8.0
+  queue_weight: 0.04
+  ttft_weight: 0.03
+  e2e_weight: 0.02
+  error_weight: 100.0
+  hot_penalty_weight: 20.0
+  overload_penalty_weight: 15.0
+
+backends:
+  - name: gpu-node-1
+    url: http://192.168.86.173:30080
+    soft_limit: 20
+    hard_limit: 28
+  - name: gpu-node-2
+    url: http://192.168.86.176:30080
+    soft_limit: 20
+    hard_limit: 28
+
+health:
+  consecutive_failures_open: 5
+  open_cooldown_ms: 15000
+  half_open_max_inflight: 1
+
+retry:
+  max_attempts: 2
+  retryable_statuses: [502, 503, 504]
+```
+
+The backend URLs and vLLM run model described in the current README can remain the starting point for local deployment. citeturn914425view0
+
+---
+
+# 9. Internal Code Structure
+
+Suggested structure:
+
+```text
+app/
+  main.py
+  api/
+    routes.py
+    schemas.py
+  core/
+    config.py
+    logging.py
+    types.py
+  queue/
+    admission_queue.py
+  scheduler/
+    dispatcher.py
+    scoring.py
+    classifier.py
+  backends/
+    state.py
+    health.py
+    registry.py
+  proxy/
+    client.py
+    stream.py
+  metrics/
+    prometheus.py
+```
+
+## 9.1 Key modules
+
+### `admission_queue.py`
+- bounded async queue
+- enqueue/dequeue APIs
+- queue age tracking
+
+### `dispatcher.py`
+- scheduler loop
+- eligibility filter
+- dispatch budget per tick
+- fairness logic
+
+### `scoring.py`
+- backend score function
+- hot-backend penalty
+- overload penalty
+
+### `state.py`
+- backend runtime state
+- inflight counts
+- EWMA updates
+- recent events
+
+### `client.py`
+- async HTTP client to vLLM backends
+- timeout and retry logic
+- streaming-safe handling
+
+---
+
+# 10. Implementation Phases
+
+## Phase 0: Baseline capture
+
+Before changing code, capture baseline with current gateway or k3s-only routing.
+
+Record:
+
+- TTFT p50/p95/p99
+- end-to-end p50/p95/p99
+- throughput
+- per-backend dispatch share
+- GPU utilization for both nodes
+- error rate
+
+## Phase 1: Core queue + scheduler
+
+Build:
+
+- bounded admission queue
+- scheduler loop
+- backend eligibility filter
+- simple score using inflight + EWMA TTFT + EWMA errors
+
+Success criteria:
+
+- both backends used more evenly
+- no correctness regressions
+- overload returns 503 quickly instead of hanging
+
+## Phase 2: Fairness and hot-backend control
+
+Add:
+
+- recent dispatch tracking
+- hot-backend penalty
+- soft/hard inflight limits
+
+Success criteria:
+
+- reduced one-node wave behavior
+- improved simultaneous GPU activity
+
+## Phase 3: Request classification
+
+Add:
+
+- request size estimation
+- class-aware penalties or limits
+
+Success criteria:
+
+- short requests retain good TTFT under mixed workloads
+
+## Phase 4: Metrics and dashboards
+
+Add:
+
+- Prometheus metrics endpoint
+- Grafana dashboards for gateway state
+- structured logs with request IDs
+
+Success criteria:
+
+- easy root-cause analysis during load tests
+
+## Phase 5: Recovery and resilience hardening
+
+Add:
+
+- half-open circuit behavior
+- safer retry rules
+- configurable backend draining
+
+Success criteria:
+
+- backend failures do not cascade into cluster-wide latency spikes
+
+## Phase 6: Optional Kubernetes integration
+
+Add later if needed:
+
+- backend discovery via Kubernetes API
+- dynamic endpoint updates
+- readiness-aware backend registry
+
+This aligns with future improvements already called out in the current README. citeturn914425view0
+
+---
+
+# 11. Testing Plan
+
+## 11.1 Unit tests
+
+Cover:
+
+- score calculation
+- eligibility filtering
+- queue age expiry
+- retry conditions
+- circuit breaker transitions
+- hot-backend penalty behavior
+
+## 11.2 Integration tests
+
+Use mocked backends with controlled latency and failure behavior.
+
+Test:
+
+- one slow backend, one healthy backend
+- one failing backend
+- both healthy, burst load
+- queue overflow
+- streaming responses
+
+## 11.3 Load tests
+
+Compare at least three modes:
+
+1. direct k3s Service routing
+2. current gateway design
+3. redesigned scheduler gateway
+
+Measure:
+
+- aggregate throughput
+- p95/p99 latency
+- per-backend dispatch fairness
+- simultaneous GPU utilization
+- rejection rate under overload
+
+## 11.4 Success metrics
+
+The redesign is working if:
+
+- both backends are active together more often
+- wave patterns are reduced
+- aggregate throughput rises
+- p99 latency stays acceptable
+- error and retry behavior are predictable
+
+---
+
+# 12. Risks and Tradeoffs
+
+## Risk 1: Queue adds latency
+
+Mitigation:
+
+- keep queue age cap low
+- keep scheduler tick short
+- reject early on overload
+
+## Risk 2: Too much fairness hurts best-node selection
+
+Mitigation:
+
+- hot penalty should be moderate, not dominant
+- keep backend health and error state as stronger signals
+
+## Risk 3: Retry amplifies load
+
+Mitigation:
+
+- only retry once
+- retry only before body starts
+- prefer alternate backend
+
+## Risk 4: Overfitting to one benchmark prompt
+
+Mitigation:
+
+- test mixed prompt sizes
+- test streaming and non-streaming
+- test longer generations
+
+---
+
+# 13. Recommended First Milestone
+
+If only one milestone is implemented now, it should be:
+
+## “Bounded queue + scheduler loop + hot-backend penalty”
+
+That gives the highest leverage with the least architectural complexity.
+
+Why:
+
+- it directly addresses the observed one-node-at-a-time behavior
+- it preserves the current repo’s lightweight gateway approach
+- it does not require a full control plane
+- it is compatible with the repo’s existing goals and README direction on request-level routing and smarter backend selection. citeturn914425view0
+
+---
+
+# 14. Final Recommendation
+
+Redesign `layer-gateway-inference-v1` into a **request-shaping inference gateway** with:
+
+- bounded in-memory admission queue
+- short-interval scheduler loop
+- eligibility filtering
+- EWMA-based scoring
+- hot-backend fairness penalty
+- soft/hard backend limits
+- strict retry and circuit-breaker rules
+- first-class metrics
+
+This keeps the original vision intact while making it much better aligned with the actual behavior observed in your k3s + vLLM load tests.

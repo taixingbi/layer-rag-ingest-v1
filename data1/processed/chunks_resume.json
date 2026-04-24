@@ -1,0 +1,218 @@
+[
+  {
+    "chunk_id": "0001",
+    "section": "ROOT",
+    "text": "Taixing Bi  ( Open to Remote / Hybrid / NYC)\nNew York, NY • 347-560-4308 • taixingbijob@gmail.com\nLinkedIn: https://www.linkedin.com/in/taixing-bi-757a4961",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0002",
+    "section": "SUMMARY",
+    "text": "Backend AI Engineer with 7+ years of experience building LLM-powered backend systems, RAG pipelines, agent orchestration, and large-scale distributed infrastructure. Expert in LLM tool-calling, multi-agent systems, retrieval architectures, high-throughput pipelines (Kafka/MSK), AWS serverless, DynamoDB performance engineering, and LLM evaluation frameworks for reliability.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0003",
+    "section": "CORE SKILLS",
+    "text": "LLMs & Agents(PEFT and RL), ReAct, multi-agent planning, tool routing, self-reflection, KV cache, graph pipelines.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0004",
+    "section": "CORE SKILLS",
+    "text": "RAG & Retrieval: FAISS, BM25, hybrid retrieval, embeddings, chunking, cross-encoder reranking, prompt engineering.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0005",
+    "section": "CORE SKILLS",
+    "text": "Infra: LangChain and LangGraph, Python, Typescript/NextJS, Java, AWS/Azure/GCP, DynamoDB , S3, Lambda, SQS, EC2, Spark, Kafka/MSK, EventBridge, Docker, Kubernetes ,API Gateway.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0006",
+    "section": "CORE SKILLS",
+    "text": "AI Serving: vLLM/Crew, SGLang, TGI, batching, caching, token streaming.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0007",
+    "section": "CORE SKILLS",
+    "text": "Observability: Datadog APM & logs, CloudWatch Insights, Prometheus, Grafana\nData & ML: TensorFlow, PyTorch, Keras, XGBoost, scikit- learn, Spark, BigQuery, Hadoop, HBase, transformer for classification.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0008",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Saks.com — AI Infrastructure Engineer",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0009",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "New York, NY • Aug 2021 – Present\nBuilt and operated production-grade RAG infrastructure using LangChain, including document ingestion, chunking, semantic ranking, and vector store orchestration, improving grounded response accuracy by +38%.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0010",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Designed LLM-to-database access layers using LangChain SQL and tool abstractions, enabling safe, structured querying over operational data and reducing manual lookup time by 65%.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0011",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Architected multi-agent orchestration frameworks with LangGraph, enabling task-specialized agents (retrieval, reasoning, validation) and increasing end-to-end task success rate by 28%.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0012",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Implemented LLM observability and evaluation pipelines with LangSmith, including regression testing, prompt/version diffing, and pairwise model evaluation, preventing 92% of quality regressions prior to production release.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0013",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Deployed low-latency LLM inference services with online tracing, evaluation hooks, and monitoring, maintaining P95 latency under 1.5s at production scale.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0014",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Designed and implemented Kubernetes GPU autoscaling and workload orchestration strategies (HPA/KEDA), enabling dynamic scaling of LLM inference services under variable load while optimizing GPU utilization and latency.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0015",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Built a centralized analytics and feature data platform on Snowflake to unify multi-source operational and event data for downstream AI and ML workloads.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0016",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Applied reinforcement learning techniques (PPO, DPO, GRPO) for LLM fine-tuning, leveraging offline evaluations, human and programmatic feedback signals to optimize response quality,\nDesigned and operated high-throughput Kafka event pipelines to support real-time ingestion, model signals, and agent execution triggers.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0017",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Developed serverless, distributed backend services using AWS Lambda to support scalable AI workflows and data processing.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0018",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Implemented resilience patterns (timeouts, retries, exponential backoff, circuit breakers) across AI and data services, significantly improving system reliability under load.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0019",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Kaden Health — ML Engineer",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0020",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Remote • Jul 2019 – Aug 2021\nDeveloped ML/NLP models using TensorFlow, PyTorch, Keras, XGBoost (classification, sentiment, Speech models), Spacy.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0021",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Built fine-tuning pipelines with automated voice data cleaning, feature extraction, evaluation loops.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0022",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Developed model-serving microservices for clinical inference.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0023",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Designed real-time streaming architecture using NATS + Kafka.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0024",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Built unified log ingestion (Cloud Run → BigQuery/S3).",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0025",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "CGMAX — ML Engineer",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0026",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "New York, NY • Jan 2018 – Jul 2019",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0027",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "• Built sentiment & price prediction models.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0028",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "• Developed ETL + real-time analytics w/ Spark, Hadoop, Kafka, HBase.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0029",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "NVIDIA — Full Stack Engineer",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0030",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Santa Clara, CA • Mar 2016 – Dec 2017",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0031",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "• Built telemetry services, dashboards, and analytics tools (C++/Python).",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0032",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Developed internal REST APIs supporting GPU engineering.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0033",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Built frontend interfaces using React within a Node.js environment.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0034",
+    "section": "EDUCATION",
+    "text": "Master of Science, Analytics (Machine Learning / NLP) — Harrisburg University (2019–2022)",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0035",
+    "section": "EDUCATION",
+    "text": "Master of Science, Computer Engineering — University of Alabama Huntsville (2013–2015)",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0036",
+    "section": "PUBLICATION",
+    "text": "A Novel Approach to Impedance-based Fault Location for High Voltage Cables — IEEE IAS, 2012\n(https://www.researchgate.net/publication/261239443_A_novel_approach_to_impedance-based_fault_location_for_high_voltage_cables)",
+    "synthetic_questions": []
+  }
+]

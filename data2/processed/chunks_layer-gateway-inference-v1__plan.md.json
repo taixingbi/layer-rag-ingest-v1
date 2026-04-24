@@ -1,0 +1,470 @@
+[
+  {
+    "chunk_id": "0001",
+    "section": "Gateway Redesign Plan for `layer-gateway-inference-v1`",
+    "text": "Gateway Redesign Plan for `layer-gateway-inference-v1`",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0002",
+    "section": "Goal",
+    "text": "Redesign the gateway from a simple per-request scorer/proxy into a **lightweight request-shaping scheduler** that improves multi-GPU utilization, reduces one-node-at-a-time wave patterns, and preserves good latency under load.\n\n```mermaid\nflowchart LR\n    IN[Incoming Requests] --> Q[Bounded Admission Queue]\n    Q --> D[Dispatch Loop]\n    D --> F[Eligibility Filters]\n    F --> S[Scoring + Selection]\n    S --> P[Proxy to vLLM Backends]\n    P --> OBS[Metrics + Structured Logs]\n```",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0003",
+    "section": "Goal",
+    "text": "The current repository already positions the project as a FastAPI-based, GPU-aware routing gateway for vLLM on k3s, with request-level routing, load-aware scheduling, retries, circuit breaking, and health tracking. It also explicitly notes that default Kubernetes Services are connection-level while vLLM inference benefits from request-level routing, and its current routing formula is based on inflight requests, queue p95, TTFT p95, and error rate. citeturn914425view0",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0004",
+    "section": "Why Redesign",
+    "text": "Recent test behavior suggests the current direction is correct, but the scheduling model needs one more step:\n\n- traffic still concentrates on one backend at a time\n- both GPUs are not consistently active together\n- latency is acceptable, but cluster utilization is not near saturation\n- the system needs **request shaping**, not just immediate backend selection\n\nThe repo currently emphasizes keeping the gateway lightweight and avoiding a heavy queue unless needed. Based on the observed behavior, a **small bounded admission queue plus a dispatch loop** is now justified. citeturn914425view0",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0005",
+    "section": "Target Outcome",
+    "text": "After the redesign, the gateway should:\n\n- keep **both GPU backends active concurrently** more often\n- reduce bursty backend dominance and wave patterns\n- maintain good TTFT while improving aggregate throughput\n- feed vLLM enough overlapping requests for better batching efficiency\n- degrade gracefully under overload with clear rejection behavior",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0006",
+    "section": "Non-Goals",
+    "text": "The gateway should **not**:\n\n- reimplement vLLM batching\n- become a full durable job queue\n- perform GPU execution logic itself\n- require a complex control plane in the first version\n\nThe repo’s current separation of concerns is still good: Kubernetes for lifecycle, gateway for routing, vLLM for batching and execution. citeturn914425view0\n\n---",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0007",
+    "section": "1. Design Principles",
+    "text": "1. Design Principles",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0008",
+    "section": "1.1 Keep the gateway lightweight, but not purely stateless",
+    "text": "The gateway should stay simple and fast, but it should no longer do only:\n\n`request arrives -> score backends -> proxy immediately`\n\nInstead, it should do:\n\n`request arrives -> classify -> enqueue briefly -> scheduler dispatches -> proxy`\n\nThis gives the system a short window to make better routing decisions across a burst of requests.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0009",
+    "section": "1.2 Optimize for GPU efficiency, not just lowest immediate latency",
+    "text": "The current repo already states that the system is meant to be GPU-aware and optimize latency/utilization better than a plain k3s Service. citeturn914425view0\n\nThe redesign should explicitly optimize for:\n\n- stable per-backend concurrency\n- smoother dispatch fairness\n- better batching opportunity on each vLLM instance\n- acceptable latency under load, not only lowest single-request latency",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0010",
+    "section": "1.3 Use fast local state for routing",
+    "text": "Routing should rely mainly on state the gateway directly knows in real time:\n\n- current inflight per backend\n- recent dispatch counts\n- recent failures and timeouts\n- EWMA TTFT and end-to-end latency\n- pending queue depth and queue age\n\nUse dashboard p95/p99 metrics for monitoring and validation, but not as the primary real-time routing signal.\n\n---",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0011",
+    "section": "2. Proposed Architecture",
+    "text": "2. Proposed Architecture",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0012",
+    "section": "2.1 High-level flow",
+    "text": "```text\nClient\n  -> FastAPI ingress\n  -> request validation / normalization\n  -> request classification\n  -> bounded in-memory pending queue\n  -> scheduler loop (every 5–20 ms)\n  -> backend selection\n  -> reverse proxy to selected vLLM backend\n  -> stream response back to client\n  -> update backend metrics/state\n```",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0013",
+    "section": "2.2 Components",
+    "text": "2.2 Components",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0014",
+    "section": "A. API layer",
+    "text": "Responsibilities:\n\n- accept OpenAI-compatible requests\n- validate payload shape\n- estimate request size class\n- create internal request context\n- enqueue request for scheduling\n- return overload errors when queue is full or too old",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0015",
+    "section": "B. Admission queue",
+    "text": "Responsibilities:\n\n- hold requests very briefly before dispatch\n- enable scheduler visibility across bursts\n- provide bounded backpressure\n\nProperties:\n\n- in-memory only\n- bounded capacity\n- max queue age, for example 100–300 ms\n- no persistence",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0016",
+    "section": "C. Scheduler loop",
+    "text": "Responsibilities:\n\n- wake up on a short cadence, such as every 5–20 ms\n- pull eligible queued requests\n- choose backend using fresh backend state\n- enforce fairness and capacity policies",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0017",
+    "section": "D. Backend state manager",
+    "text": "Responsibilities:\n\n- track per-backend health and recent performance\n- maintain inflight counters\n- maintain EWMA metrics\n- open/close circuit breakers\n- expose snapshot state for scheduling",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0018",
+    "section": "E. Proxy layer",
+    "text": "Responsibilities:\n\n- forward request to chosen backend\n- stream body back to client when needed\n- collect outcome metrics\n- apply limited retry logic before body starts",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0019",
+    "section": "F. Metrics layer",
+    "text": "Responsibilities:\n\n- Prometheus-compatible metrics\n- per-backend counters and gauges\n- queue depth, queue age, dispatch rate, inflight, errors, retries\n\n---",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0020",
+    "section": "3. Scheduling Model",
+    "text": "3. Scheduling Model",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0021",
+    "section": "3.1 Move from direct scoring to queued dispatch",
+    "text": "Current repo routing is documented as a score-based direct selection model using inflight, queue p95, TTFT p95, and error rate. citeturn914425view0\n\nThat is a good base, but the redesign should use **two-stage scheduling**.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0022",
+    "section": "3.2 Stage A: eligibility filter",
+    "text": "A backend is eligible only if:\n\n- backend is healthy\n- circuit breaker is not open\n- inflight is below hard limit\n- recent timeout/error rate is below threshold\n- backend is not administratively drained\n\nIf no backend is eligible:\n\n- request stays queued briefly until queue-age threshold\n- then reject with 503 if still unschedulable",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0023",
+    "section": "3.3 Stage B: placement score",
+    "text": "Among eligible backends, compute a score like:\n\n```text\nscore =\n    inflight_weight * inflight\n  + queue_weight * ewma_queue_ms\n  + ttft_weight * ewma_ttft_ms\n  + e2e_weight * ewma_e2e_ms\n  + error_weight * recent_error_rate\n  + hot_penalty\n  + overload_penalty\n```",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0024",
+    "section": "Recommended initial intuition",
+    "text": "- inflight should have strong weight\n- recent queue and TTFT should matter more than historical p95/p99\n- error rate should heavily penalize unstable nodes\n- hot penalty should suppress one-node dominance\n- overload penalty should push traffic away once soft capacity is crossed",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0025",
+    "section": "3.4 Hot-backend penalty",
+    "text": "Add a temporary penalty when the same backend receives too many recent dispatches.\n\nExample:\n\n- keep timestamps of recent dispatches for each backend\n- compute last 1–3 second dispatch share\n- if one backend exceeds target share significantly, add a penalty\n\nThis directly addresses the observed wave pattern where one backend dominates traffic.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0026",
+    "section": "3.5 Soft and hard inflight limits",
+    "text": "Each backend should have:\n\n- `soft_limit`: preferred operating range\n- `hard_limit`: absolute max before backend becomes ineligible\n\nBehavior:\n\n- below soft limit: normal scheduling\n- above soft limit: backend still eligible but receives overload penalty\n- at or above hard limit: backend ineligible\n\nThis helps stabilize distribution and prevents one backend from staying “slightly better” and taking everything.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0027",
+    "section": "3.5 Soft and hard inflight limits",
+    "text": "---",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0028",
+    "section": "4. Request Classification",
+    "text": "The current repo mentions classifying requests such as chat, embed, and large. citeturn914425view0\n\nMake that classification operational.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0029",
+    "section": "4.1 Classification inputs",
+    "text": "For chat completions, estimate:\n\n- prompt length or token estimate\n- `max_tokens`\n- `stream` true/false\n- model name",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0030",
+    "section": "4.2 Suggested classes",
+    "text": "- `small_chat`\n- `medium_chat`\n- `large_chat`\n- `streaming_long`\n- `embedding` (future if gateway serves embedding endpoints too)",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0031",
+    "section": "4.3 Why this matters",
+    "text": "Long requests can monopolize a backend. Classification enables:\n\n- fairer dispatch\n- optional short-request protection\n- easier future policy tuning",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0032",
+    "section": "4.4 Initial policy",
+    "text": "For phase 1, classification should be **advisory**, not strict partitioning.\n\nUse it to:\n\n- slightly raise score for backends already handling large requests\n- reserve a little headroom for short requests if TTFT becomes unstable\n\n---",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0033",
+    "section": "5. Queueing Strategy",
+    "text": "5. Queueing Strategy",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0034",
+    "section": "5.1 Use a bounded in-memory queue",
+    "text": "This is the biggest change.\n\nThe queue should be:\n\n- lightweight\n- bounded\n- non-durable\n- short-lived only",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0035",
+    "section": "5.2 Queue settings",
+    "text": "Suggested starting values:\n\n- max queue length: 200–1000 requests, depending on host memory and test volume\n- max queue age: 100–300 ms\n- scheduler interval: 5–20 ms\n- per-tick dispatch budget: configurable, for example 10–50 requests",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0036",
+    "section": "5.3 Overload behavior",
+    "text": "If queue is full or request age exceeds threshold:\n\n- reject fast with 503\n- include machine-readable reason\n- increment overload metrics\n\nThis is better than letting latency explode invisibly.\n\n---",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0037",
+    "section": "6. Health, Retry, and Circuit Breaking",
+    "text": "The current repo already includes health tracking, retry, timeout, and circuit breaker ideas. citeturn914425view0\n\nKeep them, but tighten the rules.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0038",
+    "section": "6.1 Passive health tracking",
+    "text": "Track:\n\n- connect failures\n- timeouts\n- 5xx responses\n- malformed response errors\n- retry counts",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0039",
+    "section": "6.2 Optional active health checks",
+    "text": "Optional `/health` probing is fine, but scheduling should prioritize passive live traffic signals.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0040",
+    "section": "6.3 Retry policy",
+    "text": "Retry only when safe:\n\n- connect failure\n- backend timeout before response body starts\n- 502/503/504 from backend\n\nDo **not** retry:\n\n- after streaming has started\n- after response body has partially returned\n- for client-side validation errors\n\nUse:\n\n- max one retry\n- preferably retry to a different backend",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0041",
+    "section": "6.4 Circuit breaker policy",
+    "text": "Each backend should move through:\n\n- `closed`\n- `open`\n- `half_open`\n\nSuggested behavior:\n\n- open after repeated failures over a rolling window\n- remain open for a cooldown window\n- allow limited probe traffic in half-open state\n- close only after successful recovery probes\n\n---",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0042",
+    "section": "7. Metrics and Observability",
+    "text": "7. Metrics and Observability",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0043",
+    "section": "7.1 Gateway metrics",
+    "text": "Expose at least:\n\n- `gateway_requests_total`\n- `gateway_request_errors_total`\n- `gateway_request_retries_total`\n- `gateway_queue_depth`\n- `gateway_queue_age_ms`\n- `gateway_dispatch_total{backend=...}`\n- `gateway_backend_inflight{backend=...}`\n- `gateway_backend_ewma_ttft_ms{backend=...}`\n- `gateway_backend_ewma_e2e_ms{backend=...}`\n- `gateway_backend_error_rate{backend=...}`\n- `gateway_backend_circuit_state{backend=...}`\n- `gateway_rejections_total{reason=...}`",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0044",
+    "section": "7.2 Dashboard goals",
+    "text": "Add dashboards that make it easy to answer:\n\n- are both GPUs being used at the same time?\n- are dispatches balanced over short windows?\n- is queue age stable?\n- is one backend repeatedly becoming hot?\n- are retries masking backend failures?",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0045",
+    "section": "7.3 Correlation IDs",
+    "text": "Add request IDs so one can correlate:\n\n- gateway logs\n- backend proxy logs\n- vLLM logs\n- Grafana panels\n\n---",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0046",
+    "section": "8. API and Config Design",
+    "text": "8. API and Config Design",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0047",
+    "section": "8.1 Gateway API compatibility",
+    "text": "Maintain OpenAI-compatible routes first:\n\n- `POST /v1/chat/completions`\n- future: `POST /v1/embeddings`\n- `GET /healthz`\n- `GET /metrics`",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0048",
+    "section": "8.2 Config file",
+    "text": "Suggested config structure:\n\n```yaml\nserver:\n  host: 0.0.0.0\n  port: 8010\n  request_timeout_ms: 60000\n\nscheduler:\n  tick_ms: 10\n  queue_max_size: 500\n  queue_max_age_ms: 2000\n  dispatch_batch_size: 20\n\nrouting:\n  inflight_weight: 8.0\n  queue_weight: 0.04\n  ttft_weight: 0.03\n  e2e_weight: 0.02\n  error_weight: 100.0\n  hot_penalty_weight: 20.0\n  overload_penalty_weight: 15.0\n\nbackends:\n  - name: gpu-node-1\n    url: http://192.168.86.173:30080\n    soft_limit: 20\n    hard_limit: 28\n  - name: gpu-node-2\n    url: http://192.168.86.176:30080\n    soft_limit: 20\n    hard_limit: 28",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0049",
+    "section": "8.2 Config file",
+    "text": "health:\n  consecutive_failures_open: 5\n  open_cooldown_ms: 15000\n  half_open_max_inflight: 1\n\nretry:\n  max_attempts: 2\n  retryable_statuses: [502, 503, 504]\n```\n\nThe backend URLs and vLLM run model described in the current README can remain the starting point for local deployment. citeturn914425view0\n\n---",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0050",
+    "section": "9. Internal Code Structure",
+    "text": "Suggested structure:\n\n```text\napp/\n  main.py\n  api/\n    routes.py\n    schemas.py\n  core/\n    config.py\n    logging.py\n    types.py\n  queue/\n    admission_queue.py\n  scheduler/\n    dispatcher.py\n    scoring.py\n    classifier.py\n  backends/\n    state.py\n    health.py\n    registry.py\n  proxy/\n    client.py\n    stream.py\n  metrics/\n    prometheus.py\n```",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0051",
+    "section": "9.1 Key modules",
+    "text": "9.1 Key modules",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0052",
+    "section": "`admission_queue.py`",
+    "text": "- bounded async queue\n- enqueue/dequeue APIs\n- queue age tracking",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0053",
+    "section": "`dispatcher.py`",
+    "text": "- scheduler loop\n- eligibility filter\n- dispatch budget per tick\n- fairness logic",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0054",
+    "section": "`scoring.py`",
+    "text": "- backend score function\n- hot-backend penalty\n- overload penalty",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0055",
+    "section": "`state.py`",
+    "text": "- backend runtime state\n- inflight counts\n- EWMA updates\n- recent events",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0056",
+    "section": "`client.py`",
+    "text": "- async HTTP client to vLLM backends\n- timeout and retry logic\n- streaming-safe handling\n\n---",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0057",
+    "section": "10. Implementation Phases",
+    "text": "10. Implementation Phases",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0058",
+    "section": "Phase 0: Baseline capture",
+    "text": "Before changing code, capture baseline with current gateway or k3s-only routing.\n\nRecord:\n\n- TTFT p50/p95/p99\n- end-to-end p50/p95/p99\n- throughput\n- per-backend dispatch share\n- GPU utilization for both nodes\n- error rate",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0059",
+    "section": "Phase 1: Core queue + scheduler",
+    "text": "Build:\n\n- bounded admission queue\n- scheduler loop\n- backend eligibility filter\n- simple score using inflight + EWMA TTFT + EWMA errors\n\nSuccess criteria:\n\n- both backends used more evenly\n- no correctness regressions\n- overload returns 503 quickly instead of hanging",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0060",
+    "section": "Phase 2: Fairness and hot-backend control",
+    "text": "Add:\n\n- recent dispatch tracking\n- hot-backend penalty\n- soft/hard inflight limits\n\nSuccess criteria:\n\n- reduced one-node wave behavior\n- improved simultaneous GPU activity",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0061",
+    "section": "Phase 3: Request classification",
+    "text": "Add:\n\n- request size estimation\n- class-aware penalties or limits\n\nSuccess criteria:\n\n- short requests retain good TTFT under mixed workloads",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0062",
+    "section": "Phase 4: Metrics and dashboards",
+    "text": "Add:\n\n- Prometheus metrics endpoint\n- Grafana dashboards for gateway state\n- structured logs with request IDs\n\nSuccess criteria:\n\n- easy root-cause analysis during load tests",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0063",
+    "section": "Phase 5: Recovery and resilience hardening",
+    "text": "Add:\n\n- half-open circuit behavior\n- safer retry rules\n- configurable backend draining\n\nSuccess criteria:\n\n- backend failures do not cascade into cluster-wide latency spikes",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0064",
+    "section": "Phase 6: Optional Kubernetes integration",
+    "text": "Add later if needed:\n\n- backend discovery via Kubernetes API\n- dynamic endpoint updates\n- readiness-aware backend registry\n\nThis aligns with future improvements already called out in the current README. citeturn914425view0\n\n---",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0065",
+    "section": "11. Testing Plan",
+    "text": "11. Testing Plan",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0066",
+    "section": "11.1 Unit tests",
+    "text": "Cover:\n\n- score calculation\n- eligibility filtering\n- queue age expiry\n- retry conditions\n- circuit breaker transitions\n- hot-backend penalty behavior",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0067",
+    "section": "11.2 Integration tests",
+    "text": "Use mocked backends with controlled latency and failure behavior.\n\nTest:\n\n- one slow backend, one healthy backend\n- one failing backend\n- both healthy, burst load\n- queue overflow\n- streaming responses",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0068",
+    "section": "11.3 Load tests",
+    "text": "Compare at least three modes:\n\n1. direct k3s Service routing\n2. current gateway design\n3. redesigned scheduler gateway\n\nMeasure:\n\n- aggregate throughput\n- p95/p99 latency\n- per-backend dispatch fairness\n- simultaneous GPU utilization\n- rejection rate under overload",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0069",
+    "section": "11.4 Success metrics",
+    "text": "The redesign is working if:\n\n- both backends are active together more often\n- wave patterns are reduced\n- aggregate throughput rises\n- p99 latency stays acceptable\n- error and retry behavior are predictable\n\n---",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0070",
+    "section": "12. Risks and Tradeoffs",
+    "text": "12. Risks and Tradeoffs",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0071",
+    "section": "Risk 1: Queue adds latency",
+    "text": "Mitigation:\n\n- keep queue age cap low\n- keep scheduler tick short\n- reject early on overload",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0072",
+    "section": "Risk 2: Too much fairness hurts best-node selection",
+    "text": "Mitigation:\n\n- hot penalty should be moderate, not dominant\n- keep backend health and error state as stronger signals",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0073",
+    "section": "Risk 3: Retry amplifies load",
+    "text": "Mitigation:\n\n- only retry once\n- retry only before body starts\n- prefer alternate backend",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0074",
+    "section": "Risk 4: Overfitting to one benchmark prompt",
+    "text": "Mitigation:\n\n- test mixed prompt sizes\n- test streaming and non-streaming\n- test longer generations\n\n---",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0075",
+    "section": "13. Recommended First Milestone",
+    "text": "If only one milestone is implemented now, it should be:",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0076",
+    "section": "“Bounded queue + scheduler loop + hot-backend penalty”",
+    "text": "That gives the highest leverage with the least architectural complexity.\n\nWhy:\n\n- it directly addresses the observed one-node-at-a-time behavior\n- it preserves the current repo’s lightweight gateway approach\n- it does not require a full control plane\n- it is compatible with the repo’s existing goals and README direction on request-level routing and smarter backend selection. citeturn914425view0",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0077",
+    "section": "“Bounded queue + scheduler loop + hot-backend penalty”",
+    "text": "---",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0078",
+    "section": "14. Final Recommendation",
+    "text": "Redesign `layer-gateway-inference-v1` into a **request-shaping inference gateway** with:\n\n- bounded in-memory admission queue\n- short-interval scheduler loop\n- eligibility filtering\n- EWMA-based scoring\n- hot-backend fairness penalty\n- soft/hard backend limits\n- strict retry and circuit-breaker rules\n- first-class metrics\n\nThis keeps the original vision intact while making it much better aligned with the actual behavior observed in your k3s + vLLM load tests.",
+    "synthetic_questions": []
+  }
+]

@@ -1,0 +1,562 @@
+[
+  {
+    "id": "11cb01df-cd6d-5198-af44-612495ff1da7",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0001",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Request, Response, and Logging Schema",
+      "doc_type": "layer-gateway-embed-v1__request-response-and-logging.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__request-response-and-logging.md",
+        "request,_response,_and_logging_schema"
+      ],
+      "text": "This document describes the **HTTP contract** for `POST /v1/embeddings` and the **structured JSON logs** emitted by the gateway when `LOG_JSON=true` (default in `.env.example`).\n\nImplementation references:\n\n- Handler: `app/api/embeddings.py`\n- Request body model: `app/models/schemas.py`\n- Log formatter: `app/core/logging.py`\n\n---",
+      "embed_text": "[SECTION: Request, Response, and Logging Schema]\nThis document describes the **HTTP contract** for `POST /v1/embeddings` and the **structured JSON logs** emitted by the gateway when `LOG_JSON=true` (default in `.env.example`).\n\nImplementation references:\n\n- Handler: `app/api/embeddings.py`\n- Request body model: `app/models/schemas.py`\n- Log formatter: `app/core/logging.py`\n\n---",
+      "token_count": 38,
+      "embed_token_count": 44,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "d6d36396cbc54b48ee810f92f0ce6210f4b85a7d57b3db2d8d37357f74249ade",
+      "source": "layer-gateway-embed-v1__request-response-and-logging.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "815b91c7-9065-55b6-ac8d-67715bf2c2b7",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0002",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "`POST /v1/embeddings`",
+      "doc_type": "layer-gateway-embed-v1__request-response-and-logging.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__request-response-and-logging.md",
+        "`post_/v1/embeddings`"
+      ],
+      "text": "`POST /v1/embeddings`",
+      "embed_text": "[SECTION: `POST /v1/embeddings`]\n`POST /v1/embeddings`",
+      "token_count": 2,
+      "embed_token_count": 5,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "68b6ba31a13c862d4c563a7beff7869c08c6cbfe37532d907c29e418acc95849",
+      "source": "layer-gateway-embed-v1__request-response-and-logging.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "bb99c77e-0345-57f8-8b81-b70fa9de4025",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0003",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Correlation headers (optional)",
+      "doc_type": "layer-gateway-embed-v1__request-response-and-logging.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__request-response-and-logging.md",
+        "correlation_headers_(optional)"
+      ],
+      "text": "`X-Request-Id`, `X-Trace-Id`, and `X-Session-Id` are **optional** on `POST /v1/embeddings`. The handler resolves each value from the incoming request (header names are case-insensitive). **Missing** or **whitespace-only** values are replaced with a **new UUID** (via `new_request_id()` in `app/core/logging.py`) before logging and before the upstream `httpx` call.\n\nAn **empty** `X-Request-Id` (after trimming) is treated like a missing header: a new UUID is generated. The **same** empty-as-missing rule applies to `X-Trace-Id` and `X-Session-Id` on this route.",
+      "embed_text": "[SECTION: Correlation headers (optional)]\n`X-Request-Id`, `X-Trace-Id`, and `X-Session-Id` are **optional** on `POST /v1/embeddings`. The handler resolves each value from the incoming request (header names are case-insensitive). **Missing** or **whitespace-only** values are replaced with a **new UUID** (via `new_request_id()` in `app/core/logging.py`) before logging and before the upstream `httpx` call.\n\nAn **empty** `X-Request-Id` (after trimming) is treated like a missing header: a new UUID is generated. The **same** empty-as-missing rule applies to `X-Trace-Id` and `X-Session-Id` on this route.",
+      "token_count": 72,
+      "embed_token_count": 76,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "4fa52710a79052da4d1c6bde44e7fc771e99565d083c8f43ba6a75cbbfab77d1",
+      "source": "layer-gateway-embed-v1__request-response-and-logging.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "098ba3bd-ce78-59f5-97cd-9801670454b1",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0004",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Correlation headers (optional)",
+      "doc_type": "layer-gateway-embed-v1__request-response-and-logging.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__request-response-and-logging.md",
+        "correlation_headers_(optional)"
+      ],
+      "text": "| Header | Purpose |\n|--------|---------|\n| `X-Request-Id` | Correlation id (logged and forwarded) |\n| `X-Trace-Id` | Trace id (logged and forwarded) |\n| `X-Session-Id` | Session id (logged and forwarded) |\n\n**JSON logs:** `JsonLogFormatter` writes `request_id`, `trace_id`, and `session_id` as **`\"-\"`** when the log record **omits** that field **or** the value is an **empty string** (see `_format_gateway` in `app/core/logging.py`). Empty `x-trace-id` / `x-session-id` values still yield **`\"-\"`** in JSON logs when they reach the formatter as blank strings (the same rule applies to `request_id`). Events that omit correlation kwargs show `\"-\"`; the `/v1/embeddings` handler normally passes resolved non-empty UUIDs for all three.",
+      "embed_text": "[SECTION: Correlation headers (optional)]\n| Header | Purpose |\n|--------|---------|\n| `X-Request-Id` | Correlation id (logged and forwarded) |\n| `X-Trace-Id` | Trace id (logged and forwarded) |\n| `X-Session-Id` | Session id (logged and forwarded) |\n\n**JSON logs:** `JsonLogFormatter` writes `request_id`, `trace_id`, and `session_id` as **`\"-\"`** when the log record **omits** that field **or** the value is an **empty string** (see `_format_gateway` in `app/core/logging.py`). Empty `x-trace-id` / `x-session-id` values still yield **`\"-\"`** in JSON logs when they reach the formatter as blank strings (the same rule applies to `request_id`). Events that omit correlation kwargs show `\"-\"`; the `/v1/embeddings` handler normally passes resolved non-empty UUIDs for all three.",
+      "token_count": 104,
+      "embed_token_count": 108,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "498838351c84328580eed8639718a16b4a8e064bc13576937ce04e19cd0e5361",
+      "source": "layer-gateway-embed-v1__request-response-and-logging.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "a704308f-0460-51c3-b87b-f04ceee34a14",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0005",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Request body (JSON)",
+      "doc_type": "layer-gateway-embed-v1__request-response-and-logging.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__request-response-and-logging.md",
+        "request_body_(json)"
+      ],
+      "text": "Validated as `EmbeddingRequest` in `app/models/schemas.py`:\n\n| Field | Type | Notes |\n|-------|------|--------|\n| `model` | string | Required |\n| `input` | string **or** list | Required; shape is passed through to backends |\n\nThe gateway uses `classify()` only for **metrics and logs** (`request_class`), not for routing:\n\n| `request_class` | Condition |\n|-----------------|-----------|\n| `SMALL_EMBED` | `count <= 2` and `total_chars <= 512` |\n| `MEDIUM_EMBED` | `count <= 16` and `total_chars <= 8192` |\n| `LARGE_EMBED` | otherwise |",
+      "embed_text": "[SECTION: Request body (JSON)]\nValidated as `EmbeddingRequest` in `app/models/schemas.py`:\n\n| Field | Type | Notes |\n|-------|------|--------|\n| `model` | string | Required |\n| `input` | string **or** list | Required; shape is passed through to backends |\n\nThe gateway uses `classify()` only for **metrics and logs** (`request_class`), not for routing:\n\n| `request_class` | Condition |\n|-----------------|-----------|\n| `SMALL_EMBED` | `count <= 2` and `total_chars <= 512` |\n| `MEDIUM_EMBED` | `count <= 16` and `total_chars <= 8192` |\n| `LARGE_EMBED` | otherwise |",
+      "token_count": 81,
+      "embed_token_count": 85,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "125484ec053e961034b81476fed6f0e6f2e2f61956eff83077c7cf8be84279bf",
+      "source": "layer-gateway-embed-v1__request-response-and-logging.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "b5e591ab-eb09-5692-ad7a-548fa3f0c662",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0006",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Request body (JSON)",
+      "doc_type": "layer-gateway-embed-v1__request-response-and-logging.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__request-response-and-logging.md",
+        "request_body_(json)"
+      ],
+      "text": "`count` is `len(input)` when `input` is a list, else `1`. `total_chars` is the sum of `len(str(item))` over items.",
+      "embed_text": "[SECTION: Request body (JSON)]\n`count` is `len(input)` when `input` is a list, else `1`. `total_chars` is the sum of `len(str(item))` over items.",
+      "token_count": 18,
+      "embed_token_count": 22,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "2c1b6f6955a127dbe1eec0a4e0a90655bd06e37e0257e261965df72ae8acc04e",
+      "source": "layer-gateway-embed-v1__request-response-and-logging.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "1df54575-c0d2-5675-a0b9-813fef6765d5",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0007",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Forwarded headers",
+      "doc_type": "layer-gateway-embed-v1__request-response-and-logging.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__request-response-and-logging.md",
+        "forwarded_headers"
+      ],
+      "text": "The gateway forwards **almost all** incoming headers to the selected upstream, except hop-by-hop fields blocked in code: `host`, `content-length` (see `_BLOCKED_HEADERS` in `app/api/embeddings.py`).",
+      "embed_text": "[SECTION: Forwarded headers]\nThe gateway forwards **almost all** incoming headers to the selected upstream, except hop-by-hop fields blocked in code: `host`, `content-length` (see `_BLOCKED_HEADERS` in `app/api/embeddings.py`).",
+      "token_count": 23,
+      "embed_token_count": 26,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "0d5ea4f091df5f88126e0d66aa582249acff6fbd2a48acdf3db58a6ebcc3c160",
+      "source": "layer-gateway-embed-v1__request-response-and-logging.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "ee05f832-a8cd-5685-8950-9086f59b8289",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0008",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Successful response shape",
+      "doc_type": "layer-gateway-embed-v1__request-response-and-logging.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__request-response-and-logging.md",
+        "successful_response_shape"
+      ],
+      "text": "On a completed upstream round-trip (including non-retryable HTTP errors from the backend), the gateway returns:\n\n- **HTTP status**: same as upstream response (`upstream.status_code`)\n- **Body**: raw upstream bytes (`upstream.content`)\n- **`Content-Type`**: upstream `content-type` header if present\n\nSo clients may receive **2xx**, **4xx**, or **5xx** bodies **from the backend** without the gateway rewriting them, except where documented below (429/503 JSON from the gateway itself).",
+      "embed_text": "[SECTION: Successful response shape]\nOn a completed upstream round-trip (including non-retryable HTTP errors from the backend), the gateway returns:\n\n- **HTTP status**: same as upstream response (`upstream.status_code`)\n- **Body**: raw upstream bytes (`upstream.content`)\n- **`Content-Type`**: upstream `content-type` header if present\n\nSo clients may receive **2xx**, **4xx**, or **5xx** bodies **from the backend** without the gateway rewriting them, except where documented below (429/503 JSON from the gateway itself).",
+      "token_count": 63,
+      "embed_token_count": 67,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "c975b2cf4d3705ff642195d848506a84b3f9d1123002e36aff61528b808d5864",
+      "source": "layer-gateway-embed-v1__request-response-and-logging.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "dc174716-84af-58db-a720-1d12deef629a",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0009",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Gateway-generated error responses",
+      "doc_type": "layer-gateway-embed-v1__request-response-and-logging.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__request-response-and-logging.md",
+        "gateway-generated_error_responses"
+      ],
+      "text": "| Status | When | Body (typical) |\n|--------|------|----------------|\n| **429** | Admission queue wait exceeded `ADMISSION_WAIT_TIMEOUT_MS` | `{\"error\":\"Gateway busy, try again\"}` |\n| **503** | No backend to route to after exclusions / breaker | `{\"detail\":\"No healthy backend available\"}` (FastAPI) |\n| **503** | All retry attempts failed with transport errors | `{\"error\":\"Backends unavailable\"}` |",
+      "embed_text": "[SECTION: Gateway-generated error responses]\n| Status | When | Body (typical) |\n|--------|------|----------------|\n| **429** | Admission queue wait exceeded `ADMISSION_WAIT_TIMEOUT_MS` | `{\"error\":\"Gateway busy, try again\"}` |\n| **503** | No backend to route to after exclusions / breaker | `{\"detail\":\"No healthy backend available\"}` (FastAPI) |\n| **503** | All retry attempts failed with transport errors | `{\"error\":\"Backends unavailable\"}` |",
+      "token_count": 56,
+      "embed_token_count": 60,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "23f2d190b76d839e992f18855b9de1daac4e0ebb8780b6d10535ec5076e142a2",
+      "source": "layer-gateway-embed-v1__request-response-and-logging.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "a955de8a-aab1-5b22-bf33-5dc74b1fed91",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0010",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Gateway-generated error responses",
+      "doc_type": "layer-gateway-embed-v1__request-response-and-logging.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__request-response-and-logging.md",
+        "gateway-generated_error_responses"
+      ],
+      "text": "See also `docs/status-codes.md` for 429/503 nuances (including upstream passthrough).",
+      "embed_text": "[SECTION: Gateway-generated error responses]\nSee also `docs/status-codes.md` for 429/503 nuances (including upstream passthrough).",
+      "token_count": 9,
+      "embed_token_count": 13,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "60bd757b15b569e003fd880115aa89946b4cc9967575a4452fe7b1871064426a",
+      "source": "layer-gateway-embed-v1__request-response-and-logging.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "69299fe8-44f5-5b53-9642-83184a501302",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0011",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Retries (client-visible behavior)",
+      "doc_type": "layer-gateway-embed-v1__request-response-and-logging.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__request-response-and-logging.md",
+        "retries_(client-visible_behavior)"
+      ],
+      "text": "Configured by `RETRY_MAX_ATTEMPTS` (minimum 1). For each attempt the gateway may pick a different backend; failed backends are added to an internal `excluded` set for the rest of that client request.\n\n- **Retry on HTTP status**: `502`, `503`, `504` when attempts remain (from `RetryConfig.retryable_statuses`).\n- **Retry on transport errors**: `httpx.TimeoutException`, `httpx.HTTPError` when attempts remain.",
+      "embed_text": "[SECTION: Retries (client-visible behavior)]\nConfigured by `RETRY_MAX_ATTEMPTS` (minimum 1). For each attempt the gateway may pick a different backend; failed backends are added to an internal `excluded` set for the rest of that client request.\n\n- **Retry on HTTP status**: `502`, `503`, `504` when attempts remain (from `RetryConfig.retryable_statuses`).\n- **Retry on transport errors**: `httpx.TimeoutException`, `httpx.HTTPError` when attempts remain.",
+      "token_count": 54,
+      "embed_token_count": 58,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "01b22f9c4c736bf41700c28655d33271cd07cee77abdd331d72c098fd2972fb3",
+      "source": "layer-gateway-embed-v1__request-response-and-logging.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "655f249d-1471-537d-bfb4-b8a3f5963655",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0012",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Retries (client-visible behavior)",
+      "doc_type": "layer-gateway-embed-v1__request-response-and-logging.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__request-response-and-logging.md",
+        "retries_(client-visible_behavior)"
+      ],
+      "text": "**Circuit breaker bookkeeping**: `success = (upstream.status_code < 500)` for the selector. So **5xx** counts as a **failure** for the breaker even if the gateway returns the upstream body on the final attempt.\n\n---",
+      "embed_text": "[SECTION: Retries (client-visible behavior)]\n**Circuit breaker bookkeeping**: `success = (upstream.status_code < 500)` for the selector. So **5xx** counts as a **failure** for the breaker even if the gateway returns the upstream body on the final attempt.\n\n---",
+      "token_count": 33,
+      "embed_token_count": 37,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "facabc029fdccdd2b113e173fd9b6f7784666c98356ec453207c8b583dc35273",
+      "source": "layer-gateway-embed-v1__request-response-and-logging.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "a15cd45d-23fe-522a-b206-ddf788c5b8e1",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0013",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Structured logging (JSON)",
+      "doc_type": "layer-gateway-embed-v1__request-response-and-logging.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__request-response-and-logging.md",
+        "structured_logging_(json)"
+      ],
+      "text": "When JSON logging is enabled, `JsonLogFormatter` emits **one JSON object per line** for gateway events.",
+      "embed_text": "[SECTION: Structured logging (JSON)]\nWhen JSON logging is enabled, `JsonLogFormatter` emits **one JSON object per line** for gateway events.",
+      "token_count": 15,
+      "embed_token_count": 19,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "9cba62253dee8f89516434b13cdeb2bd942ca1212c97043382f444668c8f27a6",
+      "source": "layer-gateway-embed-v1__request-response-and-logging.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "22d3746f-964f-5aa5-adaa-d4e90d3ffaed",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0014",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Common envelope fields",
+      "doc_type": "layer-gateway-embed-v1__request-response-and-logging.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__request-response-and-logging.md",
+        "common_envelope_fields"
+      ],
+      "text": "| Field | Type | Meaning |\n|-------|------|---------|\n| `ts` | string (ISO-8601) | Timestamp in configured timezone (`LOG_TIMEZONE`, default `America/New_York`) |\n| `level` | string | `INFO`, `WARN` (from `WARNING`), `ERROR`, … |\n| `event` | string | Logical event name (see table below) |\n| `service` | string | Always `gateway` for `log_gateway_event` |\n| `env` | string | `GATEWAY_ENV` or `ENV`, default `dev` |\n| `trace_id` | string or `\"-\"` | Resolved `X-Trace-Id` when set on the record; `\"-\"` if omitted or empty string on the record |\n| `request_id` | string or `\"-\"` | Resolved `X-Request-Id` when set on the record; `\"-\"` if omitted or empty string on the record |\n| `session_id` | string or `\"-\"` | Resolved `X-Session-Id` when set on the record; `\"-\"` if omitted or empty string on the record |\n| `path` | string or `\"-\"` | Gateway route path (e.g. `/v1/embeddings`) |\n| `backend` | string or `\"-\"` | Upstream backend **name** when relevant |\n| `latency_ms` | number (optional) | **Upstream-only** duration: from start of `httpx.post` to completion (excludes admission wait and JSON parse before the post) |\n| `queue_wait_ms` | number (optional) | Time spent waiting on the **admission semaphore** before handling |\n| `status_code` | number (optional) | HTTP status when relevant (e.g. admission 429, upstream status on finish) |\n| `error` | object (optional) | Structured error payload (`{\"kind\": ...}`) |\n| `gateway_meta` | object (optional) | Event-specific metadata |",
+      "embed_text": "[SECTION: Common envelope fields]\n| Field | Type | Meaning |\n|-------|------|---------|\n| `ts` | string (ISO-8601) | Timestamp in configured timezone (`LOG_TIMEZONE`, default `America/New_York`) |\n| `level` | string | `INFO`, `WARN` (from `WARNING`), `ERROR`, … |\n| `event` | string | Logical event name (see table below) |\n| `service` | string | Always `gateway` for `log_gateway_event` |\n| `env` | string | `GATEWAY_ENV` or `ENV`, default `dev` |\n| `trace_id` | string or `\"-\"` | Resolved `X-Trace-Id` when set on the record; `\"-\"` if omitted or empty string on the record |\n| `request_id` | string or `\"-\"` | Resolved `X-Request-Id` when set on the record; `\"-\"` if omitted or empty string on the record |\n| `session_id` | string or `\"-\"` | Resolved `X-Session-Id` when set on the record; `\"-\"` if omitted or empty string on the record |\n| `path` | string or `\"-\"` | Gateway route path (e.g. `/v1/embeddings`) |\n| `backend` | string or `\"-\"` | Upstream backend **name** when relevant |\n| `latency_ms` | number (optional) | **Upstream-only** duration: from start of `httpx.post` to completion (excludes admission wait and JSON parse before the post) |\n| `queue_wait_ms` | number (optional) | Time spent waiting on the **admission semaphore** before handling |\n| `status_code` | number (optional) | HTTP status when relevant (e.g. admission 429, upstream status on finish) |\n| `error` | object (optional) | Structured error payload (`{\"kind\": ...}`) |\n| `gateway_meta` | object (optional) | Event-specific metadata |",
+      "token_count": 244,
+      "embed_token_count": 248,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "9003860276e9ab8739eb412a212a083def450de3f3e8e48b4a20a3e784db285d",
+      "source": "layer-gateway-embed-v1__request-response-and-logging.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "5a6d5de0-7a90-56f0-a639-aeeb62f855d2",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0015",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Common envelope fields",
+      "doc_type": "layer-gateway-embed-v1__request-response-and-logging.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__request-response-and-logging.md",
+        "common_envelope_fields"
+      ],
+      "text": "**Note:** `log_gateway_event` stores errors internally as `structured_error`, but the JSON output field is **`error`**.",
+      "embed_text": "[SECTION: Common envelope fields]\n**Note:** `log_gateway_event` stores errors internally as `structured_error`, but the JSON output field is **`error`**.",
+      "token_count": 14,
+      "embed_token_count": 18,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "78ef9ff0999d13019ee1963d44492bbf666d3306c0605888cdcd326ef2b754ed",
+      "source": "layer-gateway-embed-v1__request-response-and-logging.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "eb8b3392-81ab-550c-ade7-760c4aa8b2ee",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0016",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Event catalog",
+      "doc_type": "layer-gateway-embed-v1__request-response-and-logging.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__request-response-and-logging.md",
+        "event_catalog"
+      ],
+      "text": "| `event` | Level | Typical `path` | `backend` | Key `gateway_meta` / other fields |\n|---------|-------|----------------|-----------|-----------------------------------|\n| `gateway_process_started` | INFO | — | — | `backends_count`, `admission_max_concurrent`, `admission_wait_timeout_ms` |\n| `gateway_started` | INFO | `/v1/embeddings` | — | `backends_count`, admission settings, `model`, `request_class`, `client_host` |\n| `routing_pick` | INFO | `/v1/embeddings` | chosen backend | `attempt`, `excluded`, **`decision_reason`**, **`backends`**, **`weights`** (see below) |\n| `routing_no_backend` | WARN | `/v1/embeddings` | — | `attempt`, `excluded`, same routing debug as `routing_pick` |\n| `backend_retry` | WARN | `/v1/embeddings` | failed backend | `attempt`; may include `latency_ms`, `status_code`, or `error` |\n| `request_finished` | INFO | `/v1/embeddings` | backend used | `model`, `request_class`, `attempt` |\n| `request_failed` | WARN | `/v1/embeddings` | — | `error.kind` after retries exhausted |\n| `admission_rejected` | WARN | `/v1/embeddings` | — | `wait_timeout_ms`, `status_code` 429 |",
+      "embed_text": "[SECTION: Event catalog]\n| `event` | Level | Typical `path` | `backend` | Key `gateway_meta` / other fields |\n|---------|-------|----------------|-----------|-----------------------------------|\n| `gateway_process_started` | INFO | — | — | `backends_count`, `admission_max_concurrent`, `admission_wait_timeout_ms` |\n| `gateway_started` | INFO | `/v1/embeddings` | — | `backends_count`, admission settings, `model`, `request_class`, `client_host` |\n| `routing_pick` | INFO | `/v1/embeddings` | chosen backend | `attempt`, `excluded`, **`decision_reason`**, **`backends`**, **`weights`** (see below) |\n| `routing_no_backend` | WARN | `/v1/embeddings` | — | `attempt`, `excluded`, same routing debug as `routing_pick` |\n| `backend_retry` | WARN | `/v1/embeddings` | failed backend | `attempt`; may include `latency_ms`, `status_code`, or `error` |\n| `request_finished` | INFO | `/v1/embeddings` | backend used | `model`, `request_class`, `attempt` |\n| `request_failed` | WARN | `/v1/embeddings` | — | `error.kind` after retries exhausted |\n| `admission_rejected` | WARN | `/v1/embeddings` | — | `wait_timeout_ms`, `status_code` 429 |",
+      "token_count": 140,
+      "embed_token_count": 143,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "4ebfdd18e4e31e99f6916d8cab8e7fa1517950ef0179044a108ce4e0d9fb2736",
+      "source": "layer-gateway-embed-v1__request-response-and-logging.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "56deabe6-c309-5313-907d-6aa3eef46187",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0017",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "`routing_pick` / `routing_no_backend`: `gateway_meta` routing snapshot",
+      "doc_type": "layer-gateway-embed-v1__request-response-and-logging.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__request-response-and-logging.md",
+        "`routing_pick`_/_`routing_no_backend`:_`gateway_meta`_routing_snapshot"
+      ],
+      "text": "`gateway_meta` includes:\n\n- **`decision_reason`** (`routing_pick` only): `score`, `exploration`, `idle_rebalance`, or `none`\n- **`attempt`**: retry attempt index (1-based)\n- **`excluded`**: sorted list of backend names skipped for this client request\n- **`backends`**: map of backend name → object:\n  - `score`, `inflight`, `latency_ms`, `error_rate`, `requests`, `errors`\n  - `circuit_open`, `circuit_half_open`, `half_open_inflight`, `half_open_successes`\n  - `excluded`, `eligible`\n- **`weights`**: routing weights used in score: `inflight`, `latency`, `error`",
+      "embed_text": "[SECTION: `routing_pick` / `routing_no_backend`: `gateway_meta` routing snapshot]\n`gateway_meta` includes:\n\n- **`decision_reason`** (`routing_pick` only): `score`, `exploration`, `idle_rebalance`, or `none`\n- **`attempt`**: retry attempt index (1-based)\n- **`excluded`**: sorted list of backend names skipped for this client request\n- **`backends`**: map of backend name → object:\n  - `score`, `inflight`, `latency_ms`, `error_rate`, `requests`, `errors`\n  - `circuit_open`, `circuit_half_open`, `half_open_inflight`, `half_open_successes`\n  - `excluded`, `eligible`\n- **`weights`**: routing weights used in score: `inflight`, `latency`, `error`",
+      "token_count": 62,
+      "embed_token_count": 69,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "2f0bdfbb1a68eb158656aa90564bf2d1cfd069e94d9e7ee4d29b309e556ead0c",
+      "source": "layer-gateway-embed-v1__request-response-and-logging.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "fd2752ac-05ac-511b-a4bb-731ac2f6fe7d",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0018",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "`routing_pick` / `routing_no_backend`: `gateway_meta` routing snapshot",
+      "doc_type": "layer-gateway-embed-v1__request-response-and-logging.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__request-response-and-logging.md",
+        "`routing_pick`_/_`routing_no_backend`:_`gateway_meta`_routing_snapshot"
+      ],
+      "text": "---",
+      "embed_text": "[SECTION: `routing_pick` / `routing_no_backend`: `gateway_meta` routing snapshot]\n---",
+      "token_count": 1,
+      "embed_token_count": 8,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "source": "layer-gateway-embed-v1__request-response-and-logging.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "0f9ae3fd-2c88-53dd-90f0-209466b20fbf",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0019",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Other endpoints (brief)",
+      "doc_type": "layer-gateway-embed-v1__request-response-and-logging.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__request-response-and-logging.md",
+        "other_endpoints_(brief)"
+      ],
+      "text": "| Endpoint | Response |\n|----------|----------|\n| `GET /health` | `{\"status\":\"ok\"}` |\n| `GET /metrics` | Prometheus text exposition |\n\n---",
+      "embed_text": "[SECTION: Other endpoints (brief)]\n| Endpoint | Response |\n|----------|----------|\n| `GET /health` | `{\"status\":\"ok\"}` |\n| `GET /metrics` | Prometheus text exposition |\n\n---",
+      "token_count": 21,
+      "embed_token_count": 25,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "c2cb46683cc1602aed0a30639035588166d58aba5a4cd8b003e31fe92b25ff2a",
+      "source": "layer-gateway-embed-v1__request-response-and-logging.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "656fea9c-2069-581d-a5c9-18ea1e3c4558",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0020",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Operational notes",
+      "doc_type": "layer-gateway-embed-v1__request-response-and-logging.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__request-response-and-logging.md",
+        "operational_notes"
+      ],
+      "text": "- **Log timezone**: controlled by `LOG_TIMEZONE` passed into `JsonLogFormatter` via `build_logging_config` in `app/main.py`.\n- **Non-gateway logs** (e.g. some uvicorn internals) may use the formatter’s **legacy** JSON branch; gateway events always include `event`.",
+      "embed_text": "[SECTION: Operational notes]\n- **Log timezone**: controlled by `LOG_TIMEZONE` passed into `JsonLogFormatter` via `build_logging_config` in `app/main.py`.\n- **Non-gateway logs** (e.g. some uvicorn internals) may use the formatter’s **legacy** JSON branch; gateway events always include `event`.",
+      "token_count": 32,
+      "embed_token_count": 35,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "1c92c209b22ff81276eba9ab051fe6b66e16aa6f69311aa908f3a73a133342cd",
+      "source": "layer-gateway-embed-v1__request-response-and-logging.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  }
+]

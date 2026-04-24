@@ -1,0 +1,56 @@
+[
+  {
+    "chunk_id": "0001",
+    "section": "Local Run Guide",
+    "text": "This guide runs `layer-gateway-embed-v1` locally without Docker.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0002",
+    "section": "Prerequisites",
+    "text": "- Python 3.12+\n- Reachable embedding backends for `EMBED_BACKENDS`",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0003",
+    "section": "1) Create and Activate Virtual Environment",
+    "text": "From repo root:\n\n```bash\npython3 -m venv .venv\nsource .venv/bin/activate\npython3 -m pip install --upgrade pip\n```",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0004",
+    "section": "2) Install the Project",
+    "text": "```bash\npython3 -m pip install .\n```\n\nInstall dev dependencies (optional):\n\n```bash\npython3 -m pip install \".[dev]\"\n```",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0005",
+    "section": "3) Configure Environment",
+    "text": "Create local env file:\n\n```bash\ncp .env.example .env\n```\n\nLoad env vars into shell:\n\n```bash\nset -a\nsource .env\nset +a\n```\n\nAt minimum, ensure:\n\n- `EMBED_BACKENDS` points to healthy backend URLs\n- `GATEWAY_HOST` and `GATEWAY_PORT` are correct for local run",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0006",
+    "section": "4) Start the Gateway",
+    "text": "```bash\npython -m app.main\n```",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0007",
+    "section": "5) Verify Health and Metrics",
+    "text": "```bash\ncurl http://localhost:30181/health\ncurl http://localhost:30181/metrics\n```",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0008",
+    "section": "6) Test Embeddings Endpoint",
+    "text": "```bash\ncurl -X POST http://localhost:30181/v1/embeddings \\\n  -H \"Content-Type: application/json\" \\\n  -H \"X-Request-Id: request-id-1\" \\\n  -H \"X-Trace-Id: trace-id-1\" \\\n  -H \"X-Session-Id: session-id-1\" \\\n  -d '{\"model\":\"BAAI/bge-m3\",\"input\":\"hello world\"}'\n```",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0009",
+    "section": "Troubleshooting",
+    "text": "- `externally-managed-environment`: use the `.venv` steps above instead of installing into system Python.\n- `503 No healthy backend available`: check `EMBED_BACKENDS` and backend service availability.\n- `429 Gateway busy`: increase `ADMISSION_MAX_CONCURRENT` or `ADMISSION_WAIT_TIMEOUT_MS`.",
+    "synthetic_questions": []
+  }
+]

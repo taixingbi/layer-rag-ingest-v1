@@ -1,0 +1,322 @@
+[
+  {
+    "id": "5ce43de1-d16d-5afb-b0f4-55a543a53c64",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0001",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "profile",
+      "language": "en",
+      "tags": [
+        "profile",
+        "root"
+      ],
+      "text": "Q: What is the candidate's current role?\nA: AI Infrastructure Engineer",
+      "embed_text": "[SECTION: ROOT]\nQ: What is the candidate's current role?\nA: AI Infrastructure Engineer\nQ: What is the candidate's current role?\nQ: What position does the candidate hold?\nQ: Can you state the candidate’s job title?",
+      "token_count": 11,
+      "embed_token_count": 35,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is the candidate's current role?",
+        "What position does the candidate hold?",
+        "Can you state the candidate’s job title?"
+      ],
+      "content_hash": "af125f02b9f48d2bb41213238890bc1a782f0dc1901bc129518f5b45c6ccca42",
+      "source": "profile_source",
+      "ingest_run_id": "run_20260424_004737",
+      "ingest_ts": "2026-04-24T00:47:37Z"
+    }
+  },
+  {
+    "id": "4ea3b1c0-c227-558c-8de9-319c3642e7c8",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0002",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "profile",
+      "language": "en",
+      "tags": [
+        "profile",
+        "root"
+      ],
+      "text": "Q: Where is the candidate currently working?\nA: Saks",
+      "embed_text": "[SECTION: ROOT]\nQ: Where is the candidate currently working?\nA: Saks\nQ: Where is the candidate currently working?\nQ: What is the candidate's current workplace?\nQ: Can you tell me where the candidate works?",
+      "token_count": 9,
+      "embed_token_count": 34,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "Where is the candidate currently working?",
+        "What is the candidate's current workplace?",
+        "Can you tell me where the candidate works?"
+      ],
+      "content_hash": "6c892ffd5a06e779cc1df5f1b1d3cb5343dfafe2278bb0019b3673ae22ca06d1",
+      "source": "profile_source",
+      "ingest_run_id": "run_20260424_004737",
+      "ingest_ts": "2026-04-24T00:47:37Z"
+    }
+  },
+  {
+    "id": "f92afb3e-5d27-569a-98b6-5b0c75858fc0",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0003",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "profile",
+      "language": "en",
+      "tags": [
+        "profile",
+        "root"
+      ],
+      "text": "Q: What work locations is the candidate open to?\nA: Remote, Hybrid, or Office",
+      "embed_text": "[SECTION: ROOT]\nQ: What work locations is the candidate open to?\nA: Remote, Hybrid, or Office\nQ: What work locations is the candidate open to?\nQ: Is the candidate open to remote work?\nQ: Does the candidate accept hybrid or office settings?",
+      "token_count": 14,
+      "embed_token_count": 42,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What work locations is the candidate open to?",
+        "Is the candidate open to remote work?",
+        "Does the candidate accept hybrid or office settings?"
+      ],
+      "content_hash": "1a271286bc125c014e707811a836aa8d3cec1ca8268216a393edd16922eae5c8",
+      "source": "profile_source",
+      "ingest_run_id": "run_20260424_004737",
+      "ingest_ts": "2026-04-24T00:47:37Z"
+    }
+  },
+  {
+    "id": "e90fa986-7ae6-534e-8f32-bf269f0d981b",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0004",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "profile",
+      "language": "en",
+      "tags": [
+        "profile",
+        "root"
+      ],
+      "text": "Q: What is the candidate's expected compensation range?\nA: $180,000 – $240,000 USD",
+      "embed_text": "[SECTION: ROOT]\nQ: What is the candidate's expected compensation range?\nA: $180,000 – $240,000 USD\nQ: What is the candidate's expected compensation range?\nQ: What is the highest salary in the range?\nQ: What is the lowest salary in the range?",
+      "token_count": 13,
+      "embed_token_count": 41,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is the candidate's expected compensation range?",
+        "What is the highest salary in the range?",
+        "What is the lowest salary in the range?"
+      ],
+      "content_hash": "3309092d0d2f678f9b1dce964b435281adeec73042377bfcb1eaaf29e62c8f07",
+      "source": "profile_source",
+      "ingest_run_id": "run_20260424_004737",
+      "ingest_ts": "2026-04-24T00:47:37Z"
+    }
+  },
+  {
+    "id": "3c2360ce-88db-5c0f-83db-fef9f3e1d63f",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0005",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "profile",
+      "language": "en",
+      "tags": [
+        "profile",
+        "root"
+      ],
+      "text": "Q: What is the candidate's visa status?\nA: H4 EAD",
+      "embed_text": "[SECTION: ROOT]\nQ: What is the candidate's visa status?\nA: H4 EAD\nQ: What type of visa does the candidate hold?\nQ: Does the candidate have an EAD?\nQ: What is the candidate's current visa status?",
+      "token_count": 10,
+      "embed_token_count": 36,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What type of visa does the candidate hold?",
+        "Does the candidate have an EAD?",
+        "What is the candidate's current visa status?"
+      ],
+      "content_hash": "1dfb56d7c2adb1b2a79e192b4b1363c47a14702316673fd4a0219370c6201eeb",
+      "source": "profile_source",
+      "ingest_run_id": "run_20260424_004737",
+      "ingest_ts": "2026-04-24T00:47:37Z"
+    }
+  },
+  {
+    "id": "74e39287-02bb-5e37-9e0b-84dabe00307c",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0006",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "profile",
+      "language": "en",
+      "tags": [
+        "profile",
+        "root"
+      ],
+      "text": "Q: Does the candidate require visa sponsorship?\nA: No",
+      "embed_text": "[SECTION: ROOT]\nQ: Does the candidate require visa sponsorship?\nA: No\nQ: Does the candidate need visa support?\nQ: Is visa sponsorship provided?\nQ: Will the candidate be sponsored for a visa?",
+      "token_count": 9,
+      "embed_token_count": 32,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "Does the candidate need visa support?",
+        "Is visa sponsorship provided?",
+        "Will the candidate be sponsored for a visa?"
+      ],
+      "content_hash": "0404f4ba177dcd708be0c01f36dc30d1c5e3b26aa2a5f9329a1a1f56f2fba2da",
+      "source": "profile_source",
+      "ingest_run_id": "run_20260424_004737",
+      "ingest_ts": "2026-04-24T00:47:37Z"
+    }
+  },
+  {
+    "id": "b48b25a1-3af8-5a00-9d19-9c0f387beb85",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0007",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "profile",
+      "language": "en",
+      "tags": [
+        "profile",
+        "root"
+      ],
+      "text": "Q: What roles is the candidate targeting?\nA: AI Infra / Backend / LLM Engineer",
+      "embed_text": "[SECTION: ROOT]\nQ: What roles is the candidate targeting?\nA: AI Infra / Backend / LLM Engineer\nQ: What roles is the candidate targeting?\nQ: Are there any specific roles mentioned?\nQ: Which positions is the candidate applying for?",
+      "token_count": 15,
+      "embed_token_count": 39,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What roles is the candidate targeting?",
+        "Are there any specific roles mentioned?",
+        "Which positions is the candidate applying for?"
+      ],
+      "content_hash": "1f557fcc25f3e77c72803626b9056f7b690d51676a058fe9dccae21740e0bed1",
+      "source": "profile_source",
+      "ingest_run_id": "run_20260424_004737",
+      "ingest_ts": "2026-04-24T00:47:37Z"
+    }
+  },
+  {
+    "id": "8b7a4d92-fe4e-5e0b-a56a-bd60659e8a4e",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0008",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "profile",
+      "language": "en",
+      "tags": [
+        "profile",
+        "root"
+      ],
+      "text": "Q: What is the candidate's LinkedIn profile?\nA: https://www.linkedin.com/in/taixing-bi-757a4961/",
+      "embed_text": "[SECTION: ROOT]\nQ: What is the candidate's LinkedIn profile?\nA: https://www.linkedin.com/in/taixing-bi-757a4961/\nQ: What is the candidate's LinkedIn profile?\nQ: Where can one find the candidate's professional profile?\nQ: How can one connect with the candidate professionally?",
+      "token_count": 9,
+      "embed_token_count": 36,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is the candidate's LinkedIn profile?",
+        "Where can one find the candidate's professional profile?",
+        "How can one connect with the candidate professionally?"
+      ],
+      "content_hash": "47f997d35183953d1d2ae33a40ca613d20c0a07bea1a548107e4a7cfbe74efc5",
+      "source": "profile_source",
+      "ingest_run_id": "run_20260424_004737",
+      "ingest_ts": "2026-04-24T00:47:37Z"
+    }
+  },
+  {
+    "id": "ff92cb4c-e239-5946-b607-9c14a8738027",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0009",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "profile",
+      "language": "en",
+      "tags": [
+        "profile",
+        "root"
+      ],
+      "text": "Q: What is the candidate's phone number?\nA: 347-560-4308",
+      "embed_text": "[SECTION: ROOT]\nQ: What is the candidate's phone number?\nA: 347-560-4308\nQ: What is the candidate's phone number?\nQ: Can you provide the contact number for the candidate?\nQ: Which telephone number corresponds to the candidate?",
+      "token_count": 9,
+      "embed_token_count": 36,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is the candidate's phone number?",
+        "Can you provide the contact number for the candidate?",
+        "Which telephone number corresponds to the candidate?"
+      ],
+      "content_hash": "9ef9488392dfbffa0095017c3b338727b9b9a511e027adfe56bf313855271786",
+      "source": "profile_source",
+      "ingest_run_id": "run_20260424_004737",
+      "ingest_ts": "2026-04-24T00:47:37Z"
+    }
+  },
+  {
+    "id": "076affab-bb85-52b8-b6c0-592521cbbb85",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0010",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "profile",
+      "language": "en",
+      "tags": [
+        "profile",
+        "root"
+      ],
+      "text": "Q: What is the candidate's email address?\nA: taixingbijob@gmail.com",
+      "embed_text": "[SECTION: ROOT]\nQ: What is the candidate's email address?\nA: taixingbijob@gmail.com\nQ: What is the candidate's email address?\nQ: What is taixingbijob@gmail.com?\nQ: Is there another contact method for the candidate?",
+      "token_count": 9,
+      "embed_token_count": 31,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is the candidate's email address?",
+        "What is taixingbijob@gmail.com?",
+        "Is there another contact method for the candidate?"
+      ],
+      "content_hash": "896c102b5e0eefd333ff15b3cacb8b11bedfb6966ad916ede77223b627e22cb2",
+      "source": "profile_source",
+      "ingest_run_id": "run_20260424_004737",
+      "ingest_ts": "2026-04-24T00:47:37Z"
+    }
+  }
+]

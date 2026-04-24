@@ -1,0 +1,122 @@
+[
+  {
+    "chunk_id": "0001",
+    "section": "Request, Response, and Logging Schema",
+    "text": "This document describes the **HTTP contract** for `POST /v1/embeddings` and the **structured JSON logs** emitted by the gateway when `LOG_JSON=true` (default in `.env.example`).\n\nImplementation references:\n\n- Handler: `app/api/embeddings.py`\n- Request body model: `app/models/schemas.py`\n- Log formatter: `app/core/logging.py`\n\n---",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0002",
+    "section": "`POST /v1/embeddings`",
+    "text": "`POST /v1/embeddings`",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0003",
+    "section": "Correlation headers (optional)",
+    "text": "`X-Request-Id`, `X-Trace-Id`, and `X-Session-Id` are **optional** on `POST /v1/embeddings`. The handler resolves each value from the incoming request (header names are case-insensitive). **Missing** or **whitespace-only** values are replaced with a **new UUID** (via `new_request_id()` in `app/core/logging.py`) before logging and before the upstream `httpx` call.\n\nAn **empty** `X-Request-Id` (after trimming) is treated like a missing header: a new UUID is generated. The **same** empty-as-missing rule applies to `X-Trace-Id` and `X-Session-Id` on this route.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0004",
+    "section": "Correlation headers (optional)",
+    "text": "| Header | Purpose |\n|--------|---------|\n| `X-Request-Id` | Correlation id (logged and forwarded) |\n| `X-Trace-Id` | Trace id (logged and forwarded) |\n| `X-Session-Id` | Session id (logged and forwarded) |\n\n**JSON logs:** `JsonLogFormatter` writes `request_id`, `trace_id`, and `session_id` as **`\"-\"`** when the log record **omits** that field **or** the value is an **empty string** (see `_format_gateway` in `app/core/logging.py`). Empty `x-trace-id` / `x-session-id` values still yield **`\"-\"`** in JSON logs when they reach the formatter as blank strings (the same rule applies to `request_id`). Events that omit correlation kwargs show `\"-\"`; the `/v1/embeddings` handler normally passes resolved non-empty UUIDs for all three.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0005",
+    "section": "Request body (JSON)",
+    "text": "Validated as `EmbeddingRequest` in `app/models/schemas.py`:\n\n| Field | Type | Notes |\n|-------|------|--------|\n| `model` | string | Required |\n| `input` | string **or** list | Required; shape is passed through to backends |\n\nThe gateway uses `classify()` only for **metrics and logs** (`request_class`), not for routing:\n\n| `request_class` | Condition |\n|-----------------|-----------|\n| `SMALL_EMBED` | `count <= 2` and `total_chars <= 512` |\n| `MEDIUM_EMBED` | `count <= 16` and `total_chars <= 8192` |\n| `LARGE_EMBED` | otherwise |",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0006",
+    "section": "Request body (JSON)",
+    "text": "`count` is `len(input)` when `input` is a list, else `1`. `total_chars` is the sum of `len(str(item))` over items.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0007",
+    "section": "Forwarded headers",
+    "text": "The gateway forwards **almost all** incoming headers to the selected upstream, except hop-by-hop fields blocked in code: `host`, `content-length` (see `_BLOCKED_HEADERS` in `app/api/embeddings.py`).",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0008",
+    "section": "Successful response shape",
+    "text": "On a completed upstream round-trip (including non-retryable HTTP errors from the backend), the gateway returns:\n\n- **HTTP status**: same as upstream response (`upstream.status_code`)\n- **Body**: raw upstream bytes (`upstream.content`)\n- **`Content-Type`**: upstream `content-type` header if present\n\nSo clients may receive **2xx**, **4xx**, or **5xx** bodies **from the backend** without the gateway rewriting them, except where documented below (429/503 JSON from the gateway itself).",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0009",
+    "section": "Gateway-generated error responses",
+    "text": "| Status | When | Body (typical) |\n|--------|------|----------------|\n| **429** | Admission queue wait exceeded `ADMISSION_WAIT_TIMEOUT_MS` | `{\"error\":\"Gateway busy, try again\"}` |\n| **503** | No backend to route to after exclusions / breaker | `{\"detail\":\"No healthy backend available\"}` (FastAPI) |\n| **503** | All retry attempts failed with transport errors | `{\"error\":\"Backends unavailable\"}` |",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0010",
+    "section": "Gateway-generated error responses",
+    "text": "See also `docs/status-codes.md` for 429/503 nuances (including upstream passthrough).",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0011",
+    "section": "Retries (client-visible behavior)",
+    "text": "Configured by `RETRY_MAX_ATTEMPTS` (minimum 1). For each attempt the gateway may pick a different backend; failed backends are added to an internal `excluded` set for the rest of that client request.\n\n- **Retry on HTTP status**: `502`, `503`, `504` when attempts remain (from `RetryConfig.retryable_statuses`).\n- **Retry on transport errors**: `httpx.TimeoutException`, `httpx.HTTPError` when attempts remain.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0012",
+    "section": "Retries (client-visible behavior)",
+    "text": "**Circuit breaker bookkeeping**: `success = (upstream.status_code < 500)` for the selector. So **5xx** counts as a **failure** for the breaker even if the gateway returns the upstream body on the final attempt.\n\n---",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0013",
+    "section": "Structured logging (JSON)",
+    "text": "When JSON logging is enabled, `JsonLogFormatter` emits **one JSON object per line** for gateway events.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0014",
+    "section": "Common envelope fields",
+    "text": "| Field | Type | Meaning |\n|-------|------|---------|\n| `ts` | string (ISO-8601) | Timestamp in configured timezone (`LOG_TIMEZONE`, default `America/New_York`) |\n| `level` | string | `INFO`, `WARN` (from `WARNING`), `ERROR`, … |\n| `event` | string | Logical event name (see table below) |\n| `service` | string | Always `gateway` for `log_gateway_event` |\n| `env` | string | `GATEWAY_ENV` or `ENV`, default `dev` |\n| `trace_id` | string or `\"-\"` | Resolved `X-Trace-Id` when set on the record; `\"-\"` if omitted or empty string on the record |\n| `request_id` | string or `\"-\"` | Resolved `X-Request-Id` when set on the record; `\"-\"` if omitted or empty string on the record |\n| `session_id` | string or `\"-\"` | Resolved `X-Session-Id` when set on the record; `\"-\"` if omitted or empty string on the record |\n| `path` | string or `\"-\"` | Gateway route path (e.g. `/v1/embeddings`) |\n| `backend` | string or `\"-\"` | Upstream backend **name** when relevant |\n| `latency_ms` | number (optional) | **Upstream-only** duration: from start of `httpx.post` to completion (excludes admission wait and JSON parse before the post) |\n| `queue_wait_ms` | number (optional) | Time spent waiting on the **admission semaphore** before handling |\n| `status_code` | number (optional) | HTTP status when relevant (e.g. admission 429, upstream status on finish) |\n| `error` | object (optional) | Structured error payload (`{\"kind\": ...}`) |\n| `gateway_meta` | object (optional) | Event-specific metadata |",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0015",
+    "section": "Common envelope fields",
+    "text": "**Note:** `log_gateway_event` stores errors internally as `structured_error`, but the JSON output field is **`error`**.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0016",
+    "section": "Event catalog",
+    "text": "| `event` | Level | Typical `path` | `backend` | Key `gateway_meta` / other fields |\n|---------|-------|----------------|-----------|-----------------------------------|\n| `gateway_process_started` | INFO | — | — | `backends_count`, `admission_max_concurrent`, `admission_wait_timeout_ms` |\n| `gateway_started` | INFO | `/v1/embeddings` | — | `backends_count`, admission settings, `model`, `request_class`, `client_host` |\n| `routing_pick` | INFO | `/v1/embeddings` | chosen backend | `attempt`, `excluded`, **`decision_reason`**, **`backends`**, **`weights`** (see below) |\n| `routing_no_backend` | WARN | `/v1/embeddings` | — | `attempt`, `excluded`, same routing debug as `routing_pick` |\n| `backend_retry` | WARN | `/v1/embeddings` | failed backend | `attempt`; may include `latency_ms`, `status_code`, or `error` |\n| `request_finished` | INFO | `/v1/embeddings` | backend used | `model`, `request_class`, `attempt` |\n| `request_failed` | WARN | `/v1/embeddings` | — | `error.kind` after retries exhausted |\n| `admission_rejected` | WARN | `/v1/embeddings` | — | `wait_timeout_ms`, `status_code` 429 |",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0017",
+    "section": "`routing_pick` / `routing_no_backend`: `gateway_meta` routing snapshot",
+    "text": "`gateway_meta` includes:\n\n- **`decision_reason`** (`routing_pick` only): `score`, `exploration`, `idle_rebalance`, or `none`\n- **`attempt`**: retry attempt index (1-based)\n- **`excluded`**: sorted list of backend names skipped for this client request\n- **`backends`**: map of backend name → object:\n  - `score`, `inflight`, `latency_ms`, `error_rate`, `requests`, `errors`\n  - `circuit_open`, `circuit_half_open`, `half_open_inflight`, `half_open_successes`\n  - `excluded`, `eligible`\n- **`weights`**: routing weights used in score: `inflight`, `latency`, `error`",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0018",
+    "section": "`routing_pick` / `routing_no_backend`: `gateway_meta` routing snapshot",
+    "text": "---",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0019",
+    "section": "Other endpoints (brief)",
+    "text": "| Endpoint | Response |\n|----------|----------|\n| `GET /health` | `{\"status\":\"ok\"}` |\n| `GET /metrics` | Prometheus text exposition |\n\n---",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0020",
+    "section": "Operational notes",
+    "text": "- **Log timezone**: controlled by `LOG_TIMEZONE` passed into `JsonLogFormatter` via `build_logging_config` in `app/main.py`.\n- **Non-gateway logs** (e.g. some uvicorn internals) may use the formatter’s **legacy** JSON branch; gateway events always include `event`.",
+    "synthetic_questions": []
+  }
+]

@@ -1,0 +1,58 @@
+{
+  "ingest_run_id": "run_20260424_004737",
+  "collection": "taixing_knowledge_dev",
+  "ingest_ts": "2026-04-24T00:47:37Z",
+  "files": [
+    {
+      "input_file": "data1/processed/chunks_fixture_repo__docs__sample.md.json",
+      "output_file": "data1/processed/points_fixture_repo__docs__sample.md.json",
+      "doc_type": "fixture_repo__docs__sample.md",
+      "source": "fixture_repo__docs__sample.md_source",
+      "chunks_input": 2,
+      "chunks_prepared": 2,
+      "chunks_failed": 0
+    },
+    {
+      "input_file": "data1/processed/chunks_fixture_repo_docs_sample.md.json",
+      "output_file": "data1/processed/points_fixture_repo_docs_sample.md.json",
+      "doc_type": "fixture_repo_docs_sample.md",
+      "source": "fixture_repo_docs_sample.md_source",
+      "chunks_input": 2,
+      "chunks_prepared": 2,
+      "chunks_failed": 0
+    },
+    {
+      "input_file": "data1/processed/chunks_profile.json",
+      "output_file": "data1/processed/points_profile.json",
+      "doc_type": "profile",
+      "source": "profile_source",
+      "chunks_input": 10,
+      "chunks_prepared": 10,
+      "chunks_failed": 0
+    },
+    {
+      "input_file": "data1/processed/chunks_qa.json",
+      "output_file": "data1/processed/points_qa.json",
+      "doc_type": "qa",
+      "source": "qa_source",
+      "chunks_input": 14,
+      "chunks_prepared": 14,
+      "chunks_failed": 0
+    },
+    {
+      "input_file": "data1/processed/chunks_resume.json",
+      "output_file": "data1/processed/points_resume.json",
+      "doc_type": "resume",
+      "source": "resume_source",
+      "chunks_input": 36,
+      "chunks_prepared": 36,
+      "chunks_failed": 0
+    }
+  ],
+  "stats": {
+    "files_total": 5,
+    "chunks_input": 64,
+    "chunks_total_prepared": 64,
+    "chunks_failed": 0
+  }
+}

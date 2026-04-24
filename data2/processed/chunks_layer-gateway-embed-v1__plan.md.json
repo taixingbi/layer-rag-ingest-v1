@@ -1,0 +1,56 @@
+[
+  {
+    "chunk_id": "0001",
+    "section": "ROOT",
+    "text": "layer-gateway-embed-v1\n\nA lightweight, request-level routing gateway for embedding workloads across multiple vLLM backends.\n\nThis service complements\nlayer-gateway-inference-v1 by handling /v1/embeddings traffic independently.\n\nOverview\n\nlayer-gateway-embed-v1 provides:\n\nLoad-aware routing across embedding backends\nRequest-level scheduling (not connection-level)\nRetry and circuit breaker for reliability\nStructured logging and metrics\nSimple, production-ready architecture\nWhy a Separate Gateway?",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0002",
+    "section": "ROOT",
+    "text": "Embedding workloads differ significantly from chat/inference:\n\nHigh QPS, short requests\nNo streaming / TTFT concerns\nDifferent latency and load characteristics\n\nSeparating gateways ensures:\n\nClean routing logic\nIndependent scaling and deployment\nNo interference between chat and embedding workloads\nAPI\nPOST /v1/embeddings\n\nCompatible with OpenAI-style embedding API.\n\nExample\ncurl -X POST http://<gateway-host>:30181/v1/embeddings \\\n  -H \"X-Request-Id: request_id_1\" \\\n  -H \"X-Session-Id: session_id_1\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"model\":\"BAAI/bge-m3\",\"input\":\"hello world\"}'\nGET /health",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0003",
+    "section": "ROOT",
+    "text": "Returns service health.\n\nGET /metrics\n\nPrometheus-compatible metrics.\n\nArchitecture\nClient\n   ↓\nEmbedding Gateway (/v1/embeddings)\n   ↓\nRouting / Scheduler (load-aware)\n   ↓\nvLLM Embedding Backends\nBackends\n\nExample configuration:\n\nbackends:\n  - name: embed-node-1\n    url: http://192.168.86.173:8001\n  - name: embed-node-2\n    url: http://192.168.86.176:8001\n\nEach backend must expose:\n\nPOST /v1/embeddings\nRouting Strategy",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0004",
+    "section": "ROOT",
+    "text": "The gateway selects the best backend using a score-based approach:\n\nscore = inflight * W1 + latency * W2 + error_rate * W3\n\nWhere:\n\ninflight = current active requests\nlatency = recent response time\nerror_rate = recent failures\n\nLowest score wins.\n\nRequest Classification\n\nRequests are classified for observability and future tuning:\n\nSMALL_EMBED\nMEDIUM_EMBED\nLARGE_EMBED\n\nBased on:\n\nnumber of input items\ntotal character size\nReliability\nRetry",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0005",
+    "section": "ROOT",
+    "text": "Retries occur on:\n\ntimeouts\n502, 503, 504\n\nConfig:\n\nretry:\n  max_attempts: 2\n\nRetries will prefer a different backend.\n\nCircuit Breaker\n\nEach backend is protected by a circuit breaker:\n\nOpens after repeated failures\nTemporarily removes backend from routing\nAutomatically retries after cooldown\nConfiguration\n\nExample:\n\nserver:\n  host: 0.0.0.0\n  port: 30181\n\ntimeouts:\n  connect_ms: 1000\n  read_ms: 15000",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0006",
+    "section": "ROOT",
+    "text": "retry:\n  max_attempts: 2\n  retryable_statuses: [502, 503, 504]\n\ncircuit_breaker:\n  failure_threshold: 5\n  reset_timeout_sec: 30\n\nrouting:\n  inflight_weight: 10.0\n  latency_weight: 1.0\n  error_weight: 100.0\n\nbackends:\n  - name: embed-node-1\n    url: http://192.168.86.173:8001\n  - name: embed-node-2\n    url: http://192.168.86.176:8001\nSecurity\n\nAll requests must include:\n\nX-Request-Id\nX-Session-Id\n\nMetrics",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0007",
+    "section": "ROOT",
+    "text": "Prometheus metrics include:\n\ngateway_embed_requests_total\ngateway_embed_request_latency_ms\ngateway_embed_backend_selected_total\ngateway_embed_inflight\ngateway_embed_failures_total\ngateway_embed_retries_total\nLogging\n\nStructured logs include:\n\nrequest lifecycle events\nbackend selection\nretry attempts\nfailures and circuit breaker events\n\nFields:\n\nrequest_id\nsession_id\nbackend\nlatency_ms\nmodel\ninput size\nrequest class\nRepository Structure\napp/\n  api/\n  core/\n  routing/\n  proxy/\n  models/\n  metrics/",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0008",
+    "section": "ROOT",
+    "text": "config/\ntests/\nDockerfile\nREADME.md\nDevelopment Plan\nPhase 1 — Bootstrap\nCreate repo\nCopy reusable components from inference gateway\nRemove chat-specific logic\nPhase 2 — Core Endpoint\nImplement /v1/embeddings\nAdd config + security\nAdd backend routing\nPhase 3 — Reliability\nRetry logic\nCircuit breaker\nBackend health tracking\nPhase 4 — Observability\nLogging\nMetrics\n/health\nPhase 5 — Deployment\nBuild Docker image\nRun locally or in cluster\nPhase 6 — Load Testing\nConcurrency tests\nFailover tests\nLatency validation\nDesign Principles\nRequest-level routing (not connection-level)\nKeep gateway simple — no batching\nLet vLLM handle batching\nFail fast, retry smart\nPrefer stability over complexity\nFuture Enhancements (Optional)\nOpenAI fallback for embeddings\nAdmission queue / rate limiting\nDynamic backend discovery\nAdaptive routing weights\nRequest batching (if needed)\nStatus",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0009",
+    "section": "ROOT",
+    "text": "🚧 Initial version (v1) focuses on:\n\nStable routing\nReliability\nObservability\nSimple deployment",
+    "synthetic_questions": []
+  }
+]

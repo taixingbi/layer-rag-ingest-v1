@@ -1,0 +1,170 @@
+[
+  {
+    "id": "4047ca07-f136-52eb-9332-2a59231325d2",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0001",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "OpenAI overload fallback (logs)",
+      "doc_type": "layer-gateway-inference-v1__fallback.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-inference-v1__fallback.md",
+        "openai_overload_fallback_(logs)"
+      ],
+      "text": "When the gateway routes a request to OpenAI because GPU backends are overloaded or unavailable, it emits structured JSON logs (`app/core/logging.py`).",
+      "embed_text": "[SECTION: OpenAI overload fallback (logs)]\nWhen the gateway routes a request to OpenAI because GPU backends are overloaded or unavailable, it emits structured JSON logs (`app/core/logging.py`).",
+      "token_count": 21,
+      "embed_token_count": 26,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "3cb416020c74aeb8d5d2ebcfa1019f28a34bd3d6c0864b1a56b3c7636ef44de1",
+      "source": "layer-gateway-inference-v1__fallback.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "03305885-5d59-5924-a749-78624b50d497",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0002",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Dispatch to fallback (`app/api/routes.py`)",
+      "doc_type": "layer-gateway-inference-v1__fallback.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-inference-v1__fallback.md",
+        "dispatch_to_fallback_(`app/api/routes.py`)"
+      ],
+      "text": "Look for `event: \"request_dispatched\"` at level `WARN`.\n\n| Field | Meaning |\n| --- | --- |\n| `backend` | Fallback backend name (default `openai-fallback`; matches `openai_fallback.backend_name` in `config.yaml`) |\n| `gateway_meta.openai_fallback_enabled` | Whether `openai_fallback.enabled` is true for this process |\n| `gateway_meta.provider` | Always `openai` for this path |\n| `gateway_meta.reason` | Why fallback was chosen (see below) |",
+      "embed_text": "[SECTION: Dispatch to fallback (`app/api/routes.py`)]\nLook for `event: \"request_dispatched\"` at level `WARN`.\n\n| Field | Meaning |\n| --- | --- |\n| `backend` | Fallback backend name (default `openai-fallback`; matches `openai_fallback.backend_name` in `config.yaml`) |\n| `gateway_meta.openai_fallback_enabled` | Whether `openai_fallback.enabled` is true for this process |\n| `gateway_meta.provider` | Always `openai` for this path |\n| `gateway_meta.reason` | Why fallback was chosen (see below) |",
+      "token_count": 60,
+      "embed_token_count": 65,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "d137c17650874bcb6bd9c4e234647a8961c4bf71a7554f0be5e8731e63ea365b",
+      "source": "layer-gateway-inference-v1__fallback.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "d84dc762-615d-5fb0-bf07-30d54c2db437",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0003",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Dispatch to fallback (`app/api/routes.py`)",
+      "doc_type": "layer-gateway-inference-v1__fallback.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-inference-v1__fallback.md",
+        "dispatch_to_fallback_(`app/api/routes.py`)"
+      ],
+      "text": "**`gateway_meta.reason` values**\n\n- `queue_full_fallback` — admission queue is full.\n- `queue_age_fallback` — dispatch did not complete within `scheduler.queue_max_age_ms`.\n- `no_backend_fallback` — scheduler could not assign a backend (`ScheduleError`).",
+      "embed_text": "[SECTION: Dispatch to fallback (`app/api/routes.py`)]\n**`gateway_meta.reason` values**\n\n- `queue_full_fallback` — admission queue is full.\n- `queue_age_fallback` — dispatch did not complete within `scheduler.queue_max_age_ms`.\n- `no_backend_fallback` — scheduler could not assign a backend (`ScheduleError`).",
+      "token_count": 28,
+      "embed_token_count": 33,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "abfb9a3a6beb5f528c289253114ed2849c9729f222320cee8e48b43015270734",
+      "source": "layer-gateway-inference-v1__fallback.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "a1d3fe12-9088-5cfe-b805-85248efe5ce3",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0004",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "After dispatch (`app/proxy/client.py`)",
+      "doc_type": "layer-gateway-inference-v1__fallback.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-inference-v1__fallback.md",
+        "after_dispatch_(`app/proxy/client.py`)"
+      ],
+      "text": "The same request continues with proxy events, all carrying `gateway_meta.openai_fallback_enabled` where `gateway_meta` is present, for example:\n\n- `proxy_start`, `proxy_retry`, `proxy_response`\n- On failure: `proxy_transport_error`, `proxy_final_failure`\n- Streaming: `stream_first_byte`, `stream_complete`",
+      "embed_text": "[SECTION: After dispatch (`app/proxy/client.py`)]\nThe same request continues with proxy events, all carrying `gateway_meta.openai_fallback_enabled` where `gateway_meta` is present, for example:\n\n- `proxy_start`, `proxy_retry`, `proxy_response`\n- On failure: `proxy_transport_error`, `proxy_final_failure`\n- Streaming: `stream_first_byte`, `stream_complete`",
+      "token_count": 29,
+      "embed_token_count": 33,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "3863400ce1a26e1d30be30480fd0ec24b1ba7ac23166cfb5fef89391f5ce1fe8",
+      "source": "layer-gateway-inference-v1__fallback.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "5a3c1ced-2f21-5692-b979-22f78fba12ca",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0005",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Quick Loki-style filter",
+      "doc_type": "layer-gateway-inference-v1__fallback.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-inference-v1__fallback.md",
+        "quick_loki-style_filter"
+      ],
+      "text": "Match fallback dispatch lines:\n\n```text\n|=\"\\\"event\\\":\\\"request_dispatched\\\"\" |=\"\\\"provider\\\":\\\"openai\\\"\"\n```\n\nNarrow by reason:\n\n```text\n|=\"queue_age_fallback\"\n```",
+      "embed_text": "[SECTION: Quick Loki-style filter]\nMatch fallback dispatch lines:\n\n```text\n|=\"\\\"event\\\":\\\"request_dispatched\\\"\" |=\"\\\"provider\\\":\\\"openai\\\"\"\n```\n\nNarrow by reason:\n\n```text\n|=\"queue_age_fallback\"\n```",
+      "token_count": 14,
+      "embed_token_count": 18,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "5c90ddad7a0d5fcda5afcbd031e9bbea1f4ece81d10ed6b62322446c76e5b01b",
+      "source": "layer-gateway-inference-v1__fallback.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  },
+  {
+    "id": "78fd5f0b-5d20-5a6b-ba19-a5317a83bb4a",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0006",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Related metric",
+      "doc_type": "layer-gateway-inference-v1__fallback.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-inference-v1__fallback.md",
+        "related_metric"
+      ],
+      "text": "`gateway_fallback_requests_total{provider=\"openai\"}` increments when a request is dispatched to OpenAI fallback (`app/metrics/prometheus.py`).",
+      "embed_text": "[SECTION: Related metric]\n`gateway_fallback_requests_total{provider=\"openai\"}` increments when a request is dispatched to OpenAI fallback (`app/metrics/prometheus.py`).",
+      "token_count": 11,
+      "embed_token_count": 14,
+      "synthetic_questions_used": 0,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [],
+      "content_hash": "83c3d2a25d11969afd931fe6a614c361c6e969b8a92fa1ae574da42a238e7ca3",
+      "source": "layer-gateway-inference-v1__fallback.md_source",
+      "ingest_run_id": "run_20260424_002659",
+      "ingest_ts": "2026-04-24T00:26:59Z"
+    }
+  }
+]

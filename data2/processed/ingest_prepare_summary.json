@@ -1,0 +1,130 @@
+{
+  "ingest_run_id": "run_20260424_002659",
+  "collection": "taixing_knowledge_dev",
+  "ingest_ts": "2026-04-24T00:26:59Z",
+  "files": [
+    {
+      "input_file": "data2/processed/chunks_layer-gateway-embed-v1__design.md.json",
+      "output_file": "data2/processed/points_layer-gateway-embed-v1__design.md.json",
+      "doc_type": "layer-gateway-embed-v1__design.md",
+      "source": "layer-gateway-embed-v1__design.md_source",
+      "chunks_input": 8,
+      "chunks_prepared": 8,
+      "chunks_failed": 0
+    },
+    {
+      "input_file": "data2/processed/chunks_layer-gateway-embed-v1__docker.md.json",
+      "output_file": "data2/processed/points_layer-gateway-embed-v1__docker.md.json",
+      "doc_type": "layer-gateway-embed-v1__docker.md",
+      "source": "layer-gateway-embed-v1__docker.md_source",
+      "chunks_input": 8,
+      "chunks_prepared": 8,
+      "chunks_failed": 0
+    },
+    {
+      "input_file": "data2/processed/chunks_layer-gateway-embed-v1__plan.md.json",
+      "output_file": "data2/processed/points_layer-gateway-embed-v1__plan.md.json",
+      "doc_type": "layer-gateway-embed-v1__plan.md",
+      "source": "layer-gateway-embed-v1__plan.md_source",
+      "chunks_input": 9,
+      "chunks_prepared": 9,
+      "chunks_failed": 0
+    },
+    {
+      "input_file": "data2/processed/chunks_layer-gateway-embed-v1__request-response-and-logging.md.json",
+      "output_file": "data2/processed/points_layer-gateway-embed-v1__request-response-and-logging.md.json",
+      "doc_type": "layer-gateway-embed-v1__request-response-and-logging.md",
+      "source": "layer-gateway-embed-v1__request-response-and-logging.md_source",
+      "chunks_input": 20,
+      "chunks_prepared": 20,
+      "chunks_failed": 0
+    },
+    {
+      "input_file": "data2/processed/chunks_layer-gateway-embed-v1__run-locally.md.json",
+      "output_file": "data2/processed/points_layer-gateway-embed-v1__run-locally.md.json",
+      "doc_type": "layer-gateway-embed-v1__run-locally.md",
+      "source": "layer-gateway-embed-v1__run-locally.md_source",
+      "chunks_input": 9,
+      "chunks_prepared": 9,
+      "chunks_failed": 0
+    },
+    {
+      "input_file": "data2/processed/chunks_layer-gateway-embed-v1__status-codes.md.json",
+      "output_file": "data2/processed/points_layer-gateway-embed-v1__status-codes.md.json",
+      "doc_type": "layer-gateway-embed-v1__status-codes.md",
+      "source": "layer-gateway-embed-v1__status-codes.md_source",
+      "chunks_input": 6,
+      "chunks_prepared": 6,
+      "chunks_failed": 0
+    },
+    {
+      "input_file": "data2/processed/chunks_layer-gateway-inference-v1__artichecture.md.json",
+      "output_file": "data2/processed/points_layer-gateway-inference-v1__artichecture.md.json",
+      "doc_type": "layer-gateway-inference-v1__artichecture.md",
+      "source": "layer-gateway-inference-v1__artichecture.md_source",
+      "chunks_input": 24,
+      "chunks_prepared": 24,
+      "chunks_failed": 0
+    },
+    {
+      "input_file": "data2/processed/chunks_layer-gateway-inference-v1__docs.md.json",
+      "output_file": "data2/processed/points_layer-gateway-inference-v1__docs.md.json",
+      "doc_type": "layer-gateway-inference-v1__docs.md",
+      "source": "layer-gateway-inference-v1__docs.md_source",
+      "chunks_input": 13,
+      "chunks_prepared": 13,
+      "chunks_failed": 0
+    },
+    {
+      "input_file": "data2/processed/chunks_layer-gateway-inference-v1__fallback.md.json",
+      "output_file": "data2/processed/points_layer-gateway-inference-v1__fallback.md.json",
+      "doc_type": "layer-gateway-inference-v1__fallback.md",
+      "source": "layer-gateway-inference-v1__fallback.md_source",
+      "chunks_input": 6,
+      "chunks_prepared": 6,
+      "chunks_failed": 0
+    },
+    {
+      "input_file": "data2/processed/chunks_layer-gateway-inference-v1__plan.md.json",
+      "output_file": "data2/processed/points_layer-gateway-inference-v1__plan.md.json",
+      "doc_type": "layer-gateway-inference-v1__plan.md",
+      "source": "layer-gateway-inference-v1__plan.md_source",
+      "chunks_input": 78,
+      "chunks_prepared": 78,
+      "chunks_failed": 0
+    },
+    {
+      "input_file": "data2/processed/chunks_layer-gateway-inference-v1__request-trace-session-ids.md.json",
+      "output_file": "data2/processed/points_layer-gateway-inference-v1__request-trace-session-ids.md.json",
+      "doc_type": "layer-gateway-inference-v1__request-trace-session-ids.md",
+      "source": "layer-gateway-inference-v1__request-trace-session-ids.md_source",
+      "chunks_input": 10,
+      "chunks_prepared": 10,
+      "chunks_failed": 0
+    },
+    {
+      "input_file": "data2/processed/chunks_layer-gateway-inference-v1__sla.md.json",
+      "output_file": "data2/processed/points_layer-gateway-inference-v1__sla.md.json",
+      "doc_type": "layer-gateway-inference-v1__sla.md",
+      "source": "layer-gateway-inference-v1__sla.md_source",
+      "chunks_input": 16,
+      "chunks_prepared": 16,
+      "chunks_failed": 0
+    },
+    {
+      "input_file": "data2/processed/chunks_repo.json",
+      "output_file": "data2/processed/points_repo.json",
+      "doc_type": "repo",
+      "source": "repo_source",
+      "chunks_input": 1,
+      "chunks_prepared": 1,
+      "chunks_failed": 0
+    }
+  ],
+  "stats": {
+    "files_total": 13,
+    "chunks_input": 208,
+    "chunks_total_prepared": 208,
+    "chunks_failed": 0
+  }
+}

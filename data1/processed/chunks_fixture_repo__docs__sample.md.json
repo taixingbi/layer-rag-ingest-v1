@@ -1,0 +1,14 @@
+[
+  {
+    "chunk_id": "0001",
+    "section": "ROOT",
+    "text": "# source: _fixture_repo/docs/sample.md",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0002",
+    "section": "ROOT",
+    "text": "# Hello\nBody here.",
+    "synthetic_questions": []
+  }
+]

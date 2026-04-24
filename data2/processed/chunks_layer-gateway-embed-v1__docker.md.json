@@ -1,0 +1,50 @@
+[
+  {
+    "chunk_id": "0001",
+    "section": "Docker Guide",
+    "text": "This guide covers:\n- Running the gateway locally with Docker\n- Publishing the image to Docker Hub",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0002",
+    "section": "Prerequisites",
+    "text": "- Docker Desktop (or Docker Engine + Compose plugin)\n- A `.env` file in repo root (you can start from `.env.example`)\n- Reachable embedding backends configured in `EMBED_BACKENDS`",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0003",
+    "section": "1) Local Docker Deploy (single container)",
+    "text": "Build image from project root:\n\n```bash\ndocker build -t layer-gateway-embed-v1:local .\n```\n\nRun container:\n\n```bash\ndocker run --rm \\\n  --name layer-gateway-embed-v1 \\\n  --env-file .env \\\n  -p 30181:30181 \\\n  layer-gateway-embed-v1:local\n```\n\nVerify:\n\n```bash\ncurl http://localhost:30181/health\n```\n\nExpected response:\n\n```json\n{\"status\":\"ok\"}\n```",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0004",
+    "section": "2) Local Docker Deploy (compose)",
+    "text": "Use compose from project root:\n\n```bash\ndocker compose up --build\n```\n\nRun in background:\n\n```bash\ndocker compose up -d --build\n```\n\nStop:\n\n```bash\ndocker compose down\n```",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0005",
+    "section": "3) Test the Embeddings Endpoint",
+    "text": "```bash\ncurl -X POST http://localhost:30181/v1/embeddings \\\n  -H \"X-Request-Id: request_id_1\" \\\n  -H \"X-Trace-Id: trace_id_1\" \\\n  -H \"X-Session-Id: session_id_1\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"model\":\"BAAI/bge-m3\",\"input\":\"hello world\"}'\n```",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0006",
+    "section": "4) Publish to Docker Hub",
+    "text": "Set your Docker Hub namespace and target tag:\n\n```bash\nexport DOCKERHUB_USER=<your-dockerhub-username>\nexport IMAGE_NAME=layer-gateway-embed-v1\nexport IMAGE_TAG=v1.0.0\n```\n\nBuild and tag:\n\n```bash\ndocker build -t ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG} .\ndocker tag ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG} ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```\n\nLogin and push:\n\n```bash\ndocker login\ndocker push ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG}\ndocker push ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0007",
+    "section": "5) Pull and Run from Docker Hub",
+    "text": "```bash\ndocker pull ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\ndocker run --rm \\\n  --name layer-gateway-embed-v1 \\\n  --env-file .env \\\n  -p 30181:30181 \\\n  ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0008",
+    "section": "Troubleshooting",
+    "text": "- `503 No healthy backend available`: verify `EMBED_BACKENDS` and backend health.\n- `429 Gateway busy`: increase `ADMISSION_MAX_CONCURRENT` or `ADMISSION_WAIT_TIMEOUT_MS`.",
+    "synthetic_questions": []
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "chunk_id": "0001",
+    "section": "OpenAI overload fallback (logs)",
+    "text": "When the gateway routes a request to OpenAI because GPU backends are overloaded or unavailable, it emits structured JSON logs (`app/core/logging.py`).",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0002",
+    "section": "Dispatch to fallback (`app/api/routes.py`)",
+    "text": "Look for `event: \"request_dispatched\"` at level `WARN`.\n\n| Field | Meaning |\n| --- | --- |\n| `backend` | Fallback backend name (default `openai-fallback`; matches `openai_fallback.backend_name` in `config.yaml`) |\n| `gateway_meta.openai_fallback_enabled` | Whether `openai_fallback.enabled` is true for this process |\n| `gateway_meta.provider` | Always `openai` for this path |\n| `gateway_meta.reason` | Why fallback was chosen (see below) |",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0003",
+    "section": "Dispatch to fallback (`app/api/routes.py`)",
+    "text": "**`gateway_meta.reason` values**\n\n- `queue_full_fallback` — admission queue is full.\n- `queue_age_fallback` — dispatch did not complete within `scheduler.queue_max_age_ms`.\n- `no_backend_fallback` — scheduler could not assign a backend (`ScheduleError`).",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0004",
+    "section": "After dispatch (`app/proxy/client.py`)",
+    "text": "The same request continues with proxy events, all carrying `gateway_meta.openai_fallback_enabled` where `gateway_meta` is present, for example:\n\n- `proxy_start`, `proxy_retry`, `proxy_response`\n- On failure: `proxy_transport_error`, `proxy_final_failure`\n- Streaming: `stream_first_byte`, `stream_complete`",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0005",
+    "section": "Quick Loki-style filter",
+    "text": "Match fallback dispatch lines:\n\n```text\n|=\"\\\"event\\\":\\\"request_dispatched\\\"\" |=\"\\\"provider\\\":\\\"openai\\\"\"\n```\n\nNarrow by reason:\n\n```text\n|=\"queue_age_fallback\"\n```",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0006",
+    "section": "Related metric",
+    "text": "`gateway_fallback_requests_total{provider=\"openai\"}` increments when a request is dispatched to OpenAI fallback (`app/metrics/prometheus.py`).",
+    "synthetic_questions": []
+  }
+]
