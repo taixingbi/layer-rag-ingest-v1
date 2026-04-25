@@ -132,7 +132,7 @@ def _default_failed_report_path(*, out_dir: Path | None, data_dir: Path) -> Path
 
 
 def enrich_point_payload(payload: dict[str, Any], *, questions: list[str]) -> None:
-    from prepare_points import _build_embed_text, _token_count
+    from prepare_payloads import _build_embed_text, _token_count
 
     section = str(payload.get("section") or "ROOT")
     text = str(payload.get("text") or "").strip()

@@ -203,7 +203,7 @@ def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(
         description=(
             "Chunk Markdown by ATX headings (#..######), strip github_tree_to_txt "
-            "preamble, pack small paragraphs — same JSON shape as text_to_chunks.py."
+            "preamble, pack small paragraphs — same JSON shape as plain_text_chunks.py."
         )
     )
     p.add_argument(

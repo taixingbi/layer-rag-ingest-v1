@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Convert plain text into Stage 1 raw-input JSON chunks."""
+"""Convert plain text into Stage 1 raw-input JSON chunks (prose / resume-style sources)."""
 
 from __future__ import annotations
 
@@ -36,7 +36,7 @@ def parse_args() -> argparse.Namespace:
         description=(
             "Convert a text file into Stage 1 chunks "
             "(split by section headings and paragraphs). "
-            "synthetic_questions are always empty; use synthetic_questions.py on points after prepare."
+            "synthetic_questions are always empty; use synthetic_questions.py on points after prepare_payloads."
         )
     )
     parser.add_argument(
@@ -228,7 +228,7 @@ def main() -> None:
     output_path = Path(args.output_path) if args.output_path else None
 
     logger.info(
-        "Starting text_to_chunks: input=%s output=%s chunk_id_width=%d",
+        "Starting plain_text_chunks: input=%s output=%s chunk_id_width=%d",
         input_path,
         output_path,
         args.chunk_id_width,
@@ -272,7 +272,7 @@ def main() -> None:
             chunk_id_width=args.chunk_id_width,
         )
     elapsed_ms = (time.perf_counter() - started) * 1000
-    logger.info("text_to_chunks total_latency_ms=%.1f", elapsed_ms)
+    logger.info("plain_text_chunks total_latency_ms=%.1f", elapsed_ms)
 
 
 if __name__ == "__main__":

@@ -27,8 +27,8 @@
       ],
       "content_hash": "1b658e9cc561116cbc3af2ac7e8a8ed5d52f1557c288bc6e76de3477f46bf661",
       "source": "personal_qa",
-      "ingest_run_id": "run_20260424_183307",
-      "ingest_ts": "2026-04-24T18:33:07Z"
+      "ingest_run_id": "run_20260425_010217",
+      "ingest_ts": "2026-04-25T01:02:17Z"
     }
   },
   {
@@ -47,20 +47,20 @@
         "root"
       ],
       "text": "Q: What is Taixing Bi's primary expertise?\nA: Taixing specializes in deploying scalable LLM infrastructure, including retrieval systems, agent orchestration, and real-time AI data pipelines.",
-      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's primary expertise?\nA: Taixing specializes in deploying scalable LLM infrastructure, including retrieval systems, agent orchestration, and real-time AI data pipelines.\nQ: What areas of expertise does Taixing specialize in?\nQ: What kind of LLM infrastructure does Taixing deploy?\nQ: What specific components are included in the LLM infrastructure deployment by Taixing?",
+      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's primary expertise?\nA: Taixing specializes in deploying scalable LLM infrastructure, including retrieval systems, agent orchestration, and real-time AI data pipelines.\nQ: What areas of expertise does Taixing specialize in?\nQ: What kind of infrastructure does Taixing deploy?\nQ: What specific technologies does Taixing work with?",
       "token_count": 25,
-      "embed_token_count": 58,
+      "embed_token_count": 52,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What areas of expertise does Taixing specialize in?",
-        "What kind of LLM infrastructure does Taixing deploy?",
-        "What specific components are included in the LLM infrastructure deployment by Taixing?"
+        "What kind of infrastructure does Taixing deploy?",
+        "What specific technologies does Taixing work with?"
       ],
       "content_hash": "bef4a01610e062c6e2e35beb47692dda9be3b05915b36a171ee4bd93192f4d7f",
       "source": "personal_qa",
-      "ingest_run_id": "run_20260424_183307",
-      "ingest_ts": "2026-04-24T18:33:07Z"
+      "ingest_run_id": "run_20260425_010217",
+      "ingest_ts": "2026-04-25T01:02:17Z"
     }
   },
   {
@@ -91,8 +91,8 @@
       ],
       "content_hash": "ea69c7088537e1b8ec9dc244cfcf4416ae94bcaf5ab6b0b828544029b623b951",
       "source": "personal_qa",
-      "ingest_run_id": "run_20260424_183307",
-      "ingest_ts": "2026-04-24T18:33:07Z"
+      "ingest_run_id": "run_20260425_010217",
+      "ingest_ts": "2026-04-25T01:02:17Z"
     }
   },
   {
@@ -123,8 +123,8 @@
       ],
       "content_hash": "9aa64a5fdf10830bc7070f56088f75524fe978452c4dc8f2c6215a61f6adc53d",
       "source": "personal_qa",
-      "ingest_run_id": "run_20260424_183307",
-      "ingest_ts": "2026-04-24T18:33:07Z"
+      "ingest_run_id": "run_20260425_010217",
+      "ingest_ts": "2026-04-25T01:02:17Z"
     }
   },
   {
@@ -155,8 +155,8 @@
       ],
       "content_hash": "f72455e59349a9c26b5f2a635f37afc6408025d70253425521916b3dfad82bad",
       "source": "personal_qa",
-      "ingest_run_id": "run_20260424_183307",
-      "ingest_ts": "2026-04-24T18:33:07Z"
+      "ingest_run_id": "run_20260425_010217",
+      "ingest_ts": "2026-04-25T01:02:17Z"
     }
   },
   {
@@ -187,8 +187,8 @@
       ],
       "content_hash": "069275cdb84847d5edf7e4486dc82a5909452b14760b3ce30a029afc1212ec2f",
       "source": "personal_qa",
-      "ingest_run_id": "run_20260424_183307",
-      "ingest_ts": "2026-04-24T18:33:07Z"
+      "ingest_run_id": "run_20260425_010217",
+      "ingest_ts": "2026-04-25T01:02:17Z"
     }
   },
   {
@@ -207,20 +207,20 @@
         "root"
       ],
       "text": "Q: What technologies does Taixing Bi commonly use?\nA: Taixing works extensively with LangChain, LangGraph, Python, Kafka, AWS, vector retrieval systems, and modern ML frameworks like PyTorch and TensorFlow.",
-      "embed_text": "[SECTION: ROOT]\nQ: What technologies does Taixing Bi commonly use?\nA: Taixing works extensively with LangChain, LangGraph, Python, Kafka, AWS, vector retrieval systems, and modern ML frameworks like PyTorch and TensorFlow.\nQ: What are some of the technologies used by Taixing Bi?\nQ: Which vector retrieval systems does Taixing Bi use?\nQ: Besides LangChain and LangGraph, what other programming languages and tools does Taixing Bi work with?",
+      "embed_text": "[SECTION: ROOT]\nQ: What technologies does Taixing Bi commonly use?\nA: Taixing works extensively with LangChain, LangGraph, Python, Kafka, AWS, vector retrieval systems, and modern ML frameworks like PyTorch and TensorFlow.\nQ: What programming languages does Taixing Bi use?\nQ: Which machine learning frameworks does Taixing Bi work with?\nQ: What cloud services does Taixing Bi utilize?",
       "token_count": 29,
-      "embed_token_count": 67,
+      "embed_token_count": 57,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What are some of the technologies used by Taixing Bi?",
-        "Which vector retrieval systems does Taixing Bi use?",
-        "Besides LangChain and LangGraph, what other programming languages and tools does Taixing Bi work with?"
+        "What programming languages does Taixing Bi use?",
+        "Which machine learning frameworks does Taixing Bi work with?",
+        "What cloud services does Taixing Bi utilize?"
       ],
       "content_hash": "e416ed6fb90368136d7b35e32fca42ec2a61ca30894ba8b2f73eece731f88665",
       "source": "personal_qa",
-      "ingest_run_id": "run_20260424_183307",
-      "ingest_ts": "2026-04-24T18:33:07Z"
+      "ingest_run_id": "run_20260425_010217",
+      "ingest_ts": "2026-04-25T01:02:17Z"
     }
   },
   {
@@ -239,20 +239,20 @@
         "root"
       ],
       "text": "Q: Does Taixing Bi have experience scaling AI systems?\nA: Yes, Taixing has built high-throughput event-driven architectures and low-latency inference services designed to scale in enterprise environments.",
-      "embed_text": "[SECTION: ROOT]\nQ: Does Taixing Bi have experience scaling AI systems?\nA: Yes, Taixing has built high-throughput event-driven architectures and low-latency inference services designed to scale in enterprise environments.\nQ: Does Taixing Bi have experience in scaling AI systems?\nQ: What types of architectures has Taixing Bi built for scaling?\nQ: What kind of inference services has Taixing Bi developed?",
+      "embed_text": "[SECTION: ROOT]\nQ: Does Taixing Bi have experience scaling AI systems?\nA: Yes, Taixing has built high-throughput event-driven architectures and low-latency inference services designed to scale in enterprise environments.\nQ: Does Taixing Bi have experience in scaling AI systems?\nQ: What types of architectures has Taixing Bi built for scaling AI systems?\nQ: In what kind of environments are these architectures designed to scale?",
       "token_count": 27,
-      "embed_token_count": 60,
+      "embed_token_count": 64,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "Does Taixing Bi have experience in scaling AI systems?",
-        "What types of architectures has Taixing Bi built for scaling?",
-        "What kind of inference services has Taixing Bi developed?"
+        "What types of architectures has Taixing Bi built for scaling AI systems?",
+        "In what kind of environments are these architectures designed to scale?"
       ],
       "content_hash": "a493ffde3c727e657963d688161b5f03bbcfb5f81bbd0ca427b4f6edda044438",
       "source": "personal_qa",
-      "ingest_run_id": "run_20260424_183307",
-      "ingest_ts": "2026-04-24T18:33:07Z"
+      "ingest_run_id": "run_20260425_010217",
+      "ingest_ts": "2026-04-25T01:02:17Z"
     }
   },
   {
@@ -283,8 +283,8 @@
       ],
       "content_hash": "40ee7518328bceabf77a8910489d7743af6e17cb83ccc7a39b2a5653de718f43",
       "source": "personal_qa",
-      "ingest_run_id": "run_20260424_183307",
-      "ingest_ts": "2026-04-24T18:33:07Z"
+      "ingest_run_id": "run_20260425_010217",
+      "ingest_ts": "2026-04-25T01:02:17Z"
     }
   },
   {
@@ -303,20 +303,20 @@
         "root"
       ],
       "text": "Q: What roles is Taixing Bi best suited for?\nA: Taixing is best suited for Senior or Staff AI Engineer roles focused on LLM platforms, applied AI infrastructure, and scalable intelligent systems.",
-      "embed_text": "[SECTION: ROOT]\nQ: What roles is Taixing Bi best suited for?\nA: Taixing is best suited for Senior or Staff AI Engineer roles focused on LLM platforms, applied AI infrastructure, and scalable intelligent systems.\nQ: What types of roles is Taixing Bi best suited for?\nQ: What specific areas does Taixing Bi excel in as an AI Engineer?\nQ: Which level of AI Engineer role is Taixing Bi most suitable for?",
+      "embed_text": "[SECTION: ROOT]\nQ: What roles is Taixing Bi best suited for?\nA: Taixing is best suited for Senior or Staff AI Engineer roles focused on LLM platforms, applied AI infrastructure, and scalable intelligent systems.\nQ: What roles is Taixing Bi best suited for?\nQ: For which types of AI engineering roles is Taixing Bi well-suited?\nQ: In what areas of AI infrastructure is Taixing Bi proficient?",
       "token_count": 32,
-      "embed_token_count": 71,
+      "embed_token_count": 66,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What types of roles is Taixing Bi best suited for?",
-        "What specific areas does Taixing Bi excel in as an AI Engineer?",
-        "Which level of AI Engineer role is Taixing Bi most suitable for?"
+        "What roles is Taixing Bi best suited for?",
+        "For which types of AI engineering roles is Taixing Bi well-suited?",
+        "In what areas of AI infrastructure is Taixing Bi proficient?"
       ],
       "content_hash": "47b11595e03dac7157a789ce2d3196c075389cf41c832a5e53afc4042a8eb0f5",
       "source": "personal_qa",
-      "ingest_run_id": "run_20260424_183307",
-      "ingest_ts": "2026-04-24T18:33:07Z"
+      "ingest_run_id": "run_20260425_010217",
+      "ingest_ts": "2026-04-25T01:02:17Z"
     }
   },
   {
@@ -347,8 +347,8 @@
       ],
       "content_hash": "afffbcabc4ee02e87a56a23966151c47e5e5154d4d4788c7e814aff40a0098ab",
       "source": "personal_qa",
-      "ingest_run_id": "run_20260424_183307",
-      "ingest_ts": "2026-04-24T18:33:07Z"
+      "ingest_run_id": "run_20260425_010217",
+      "ingest_ts": "2026-04-25T01:02:17Z"
     }
   },
   {
@@ -379,8 +379,8 @@
       ],
       "content_hash": "4a3bb50388f1977fd9b9b72f4d0b80dc8982b3b216c8c4ee44e181a45293da76",
       "source": "personal_qa",
-      "ingest_run_id": "run_20260424_183307",
-      "ingest_ts": "2026-04-24T18:33:07Z"
+      "ingest_run_id": "run_20260425_010217",
+      "ingest_ts": "2026-04-25T01:02:17Z"
     }
   },
   {
@@ -411,8 +411,8 @@
       ],
       "content_hash": "562e43c36f4ed379c864c900336d112cada3ef34b23060f4ce1b72af9b697290",
       "source": "personal_qa",
-      "ingest_run_id": "run_20260424_183307",
-      "ingest_ts": "2026-04-24T18:33:07Z"
+      "ingest_run_id": "run_20260425_010217",
+      "ingest_ts": "2026-04-25T01:02:17Z"
     }
   },
   {
@@ -431,20 +431,20 @@
         "root"
       ],
       "text": "Q: Why is Taixing Bi looking for a new opportunity?\nA: Taixing is looking to focus fully on applied AI systems. A lot of Taixing's recent work has naturally moved into LLM orchestration, retrieval pipelines, and scalable AI tooling, and Taixing wants the next role to be centered on building those systems end-to-end rather than as an add-on.",
-      "embed_text": "[SECTION: ROOT]\nQ: Why is Taixing Bi looking for a new opportunity?\nA: Taixing is looking to focus fully on applied AI systems. A lot of Taixing's recent work has naturally moved into LLM orchestration, retrieval pipelines, and scalable AI tooling, and Taixing wants the next role to be centered on building those systems end-to-end rather than as an add-on.\nQ: What is Taixing Bi's primary goal in seeking a new opportunity?\nQ: What areas has Taixing's recent work naturally moved into?\nQ: What kind of systems does Taixing want to build end-to-end in the next role?",
+      "embed_text": "[SECTION: ROOT]\nQ: Why is Taixing Bi looking for a new opportunity?\nA: Taixing is looking to focus fully on applied AI systems. A lot of Taixing's recent work has naturally moved into LLM orchestration, retrieval pipelines, and scalable AI tooling, and Taixing wants the next role to be centered on building those systems end-to-end rather than as an add-on.\nQ: What is Taixing Bi's primary goal in seeking a new opportunity?\nQ: What areas has Taixing's recent work naturally moved into?\nQ: What does Taixing want the next role to focus on?",
       "token_count": 58,
-      "embed_token_count": 97,
+      "embed_token_count": 93,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is Taixing Bi's primary goal in seeking a new opportunity?",
         "What areas has Taixing's recent work naturally moved into?",
-        "What kind of systems does Taixing want to build end-to-end in the next role?"
+        "What does Taixing want the next role to focus on?"
       ],
       "content_hash": "e30a0d98564be5e0cee126f2858153992d893a0184f568ea9acf8402bc5d4139",
       "source": "personal_qa",
-      "ingest_run_id": "run_20260424_183307",
-      "ingest_ts": "2026-04-24T18:33:07Z"
+      "ingest_run_id": "run_20260425_010217",
+      "ingest_ts": "2026-04-25T01:02:17Z"
     }
   }
 ]

@@ -27,8 +27,8 @@
       ],
       "content_hash": "db47718635ddfa9e605a9db3334e7a6d7f82876ee3a20b0dd5ca5783e80b90a9",
       "source": "repo_layer-gateway-embed-v1__plan.md",
-      "ingest_run_id": "run_20260424_183552",
-      "ingest_ts": "2026-04-24T18:35:52Z"
+      "ingest_run_id": "run_20260425_010443",
+      "ingest_ts": "2026-04-25T01:04:43Z"
     }
   },
   {
@@ -59,8 +59,8 @@
       ],
       "content_hash": "278b2fecc50361a5a5de543084e5bc58b749329eefe83d8a37ebc8b54e64ecbb",
       "source": "repo_layer-gateway-embed-v1__plan.md",
-      "ingest_run_id": "run_20260424_183552",
-      "ingest_ts": "2026-04-24T18:35:52Z"
+      "ingest_run_id": "run_20260425_010443",
+      "ingest_ts": "2026-04-25T01:04:43Z"
     }
   },
   {
@@ -91,8 +91,8 @@
       ],
       "content_hash": "56b74d8c2fcba3119a3a204ded20beae739b74230f6aae7796ce5ae36b564fa5",
       "source": "repo_layer-gateway-embed-v1__plan.md",
-      "ingest_run_id": "run_20260424_183552",
-      "ingest_ts": "2026-04-24T18:35:52Z"
+      "ingest_run_id": "run_20260425_010443",
+      "ingest_ts": "2026-04-25T01:04:43Z"
     }
   },
   {
@@ -123,8 +123,8 @@
       ],
       "content_hash": "820a2c50618e532f606d3cddb571e56d575eddccda0e75fe9d404abbbf4354a0",
       "source": "repo_layer-gateway-embed-v1__plan.md",
-      "ingest_run_id": "run_20260424_183552",
-      "ingest_ts": "2026-04-24T18:35:52Z"
+      "ingest_run_id": "run_20260425_010443",
+      "ingest_ts": "2026-04-25T01:04:43Z"
     }
   },
   {
@@ -143,20 +143,20 @@
         "root"
       ],
       "text": "Retries occur on:\n\ntimeouts\n502, 503, 504\n\nConfig:\n\nretry:\n  max_attempts: 2\n\nRetries will prefer a different backend.\n\nCircuit Breaker\n\nEach backend is protected by a circuit breaker:\n\nOpens after repeated failures\nTemporarily removes backend from routing\nAutomatically retries after cooldown\nConfiguration\n\nExample:\n\nserver:\n  host: 0.0.0.0\n  port: 30181\n\ntimeouts:\n  connect_ms: 1000\n  read_ms: 15000",
-      "embed_text": "[SECTION: ROOT]\nRetries occur on:\n\ntimeouts\n502, 503, 504\n\nConfig:\n\nretry:\n  max_attempts: 2\n\nRetries will prefer a different backend.\n\nCircuit Breaker\n\nEach backend is protected by a circuit breaker:\n\nOpens after repeated failures\nTemporarily removes backend from routing\nAutomatically retries after cooldown\nConfiguration\n\nExample:\n\nserver:\n  host: 0.0.0.0\n  port: 30181\n\ntimeouts:\n  connect_ms: 1000\n  read_ms: 15000\nQ: What types of errors trigger retries?\nQ: How many times can a retry attempt be made?\nQ: What happens after a backend is protected by a circuit breaker?",
+      "embed_text": "[SECTION: ROOT]\nRetries occur on:\n\ntimeouts\n502, 503, 504\n\nConfig:\n\nretry:\n  max_attempts: 2\n\nRetries will prefer a different backend.\n\nCircuit Breaker\n\nEach backend is protected by a circuit breaker:\n\nOpens after repeated failures\nTemporarily removes backend from routing\nAutomatically retries after cooldown\nConfiguration\n\nExample:\n\nserver:\n  host: 0.0.0.0\n  port: 30181\n\ntimeouts:\n  connect_ms: 1000\n  read_ms: 15000\nQ: What types of errors trigger retries?\nQ: How many maximum attempts are set for retries?\nQ: What happens after a backend fails repeatedly?",
       "token_count": 52,
-      "embed_token_count": 83,
+      "embed_token_count": 78,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What types of errors trigger retries?",
-        "How many times can a retry attempt be made?",
-        "What happens after a backend is protected by a circuit breaker?"
+        "How many maximum attempts are set for retries?",
+        "What happens after a backend fails repeatedly?"
       ],
       "content_hash": "c9b5e6535d1c942d7c27ff47f119c0be8fdc9e9335d2dfc23dbd951409033ce0",
       "source": "repo_layer-gateway-embed-v1__plan.md",
-      "ingest_run_id": "run_20260424_183552",
-      "ingest_ts": "2026-04-24T18:35:52Z"
+      "ingest_run_id": "run_20260425_010443",
+      "ingest_ts": "2026-04-25T01:04:43Z"
     }
   },
   {
@@ -187,8 +187,8 @@
       ],
       "content_hash": "5539cc5b8b5fca7155158469c9d36e15f4752decceac2c4f0e62d650986c9a7f",
       "source": "repo_layer-gateway-embed-v1__plan.md",
-      "ingest_run_id": "run_20260424_183552",
-      "ingest_ts": "2026-04-24T18:35:52Z"
+      "ingest_run_id": "run_20260425_010443",
+      "ingest_ts": "2026-04-25T01:04:43Z"
     }
   },
   {
@@ -207,20 +207,20 @@
         "root"
       ],
       "text": "Prometheus metrics include:\n\ngateway_embed_requests_total\ngateway_embed_request_latency_ms\ngateway_embed_backend_selected_total\ngateway_embed_inflight\ngateway_embed_failures_total\ngateway_embed_retries_total\nLogging\n\nStructured logs include:\n\nrequest lifecycle events\nbackend selection\nretry attempts\nfailures and circuit breaker events\n\nFields:\n\nrequest_id\nsession_id\nbackend\nlatency_ms\nmodel\ninput size\nrequest class\nRepository Structure\napp/\n  api/\n  core/\n  routing/\n  proxy/\n  models/\n  metrics/",
-      "embed_text": "[SECTION: ROOT]\nPrometheus metrics include:\n\ngateway_embed_requests_total\ngateway_embed_request_latency_ms\ngateway_embed_backend_selected_total\ngateway_embed_inflight\ngateway_embed_failures_total\ngateway_embed_retries_total\nLogging\n\nStructured logs include:\n\nrequest lifecycle events\nbackend selection\nretry attempts\nfailures and circuit breaker events\n\nFields:\n\nrequest_id\nsession_id\nbackend\nlatency_ms\nmodel\ninput size\nrequest class\nRepository Structure\napp/\n  api/\n  core/\n  routing/\n  proxy/\n  models/\n  metrics/\nQ: What types of metrics does Prometheus track for the gateway embed functionality?\nQ: What events are included in structured logs?\nQ: What is the purpose of the 'metrics/' directory in the repository structure?",
+      "embed_text": "[SECTION: ROOT]\nPrometheus metrics include:\n\ngateway_embed_requests_total\ngateway_embed_request_latency_ms\ngateway_embed_backend_selected_total\ngateway_embed_inflight\ngateway_embed_failures_total\ngateway_embed_retries_total\nLogging\n\nStructured logs include:\n\nrequest lifecycle events\nbackend selection\nretry attempts\nfailures and circuit breaker events\n\nFields:\n\nrequest_id\nsession_id\nbackend\nlatency_ms\nmodel\ninput size\nrequest class\nRepository Structure\napp/\n  api/\n  core/\n  routing/\n  proxy/\n  models/\n  metrics/\nQ: What metrics are included in Prometheus metrics?\nQ: What types of events are included in structured logs?\nQ: Which directories are part of the repository structure?",
       "token_count": 44,
-      "embed_token_count": 80,
+      "embed_token_count": 73,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What types of metrics does Prometheus track for the gateway embed functionality?",
-        "What events are included in structured logs?",
-        "What is the purpose of the 'metrics/' directory in the repository structure?"
+        "What metrics are included in Prometheus metrics?",
+        "What types of events are included in structured logs?",
+        "Which directories are part of the repository structure?"
       ],
       "content_hash": "fc0e587b63568a54f9ce76503b227d00cc043c16aa8ad5cfbe33435edf11388c",
       "source": "repo_layer-gateway-embed-v1__plan.md",
-      "ingest_run_id": "run_20260424_183552",
-      "ingest_ts": "2026-04-24T18:35:52Z"
+      "ingest_run_id": "run_20260425_010443",
+      "ingest_ts": "2026-04-25T01:04:43Z"
     }
   },
   {
@@ -239,20 +239,20 @@
         "root"
       ],
       "text": "config/\ntests/\nDockerfile\nREADME.md\nDevelopment Plan\nPhase 1 — Bootstrap\nCreate repo\nCopy reusable components from inference gateway\nRemove chat-specific logic\nPhase 2 — Core Endpoint\nImplement /v1/embeddings\nAdd config + security\nAdd backend routing\nPhase 3 — Reliability\nRetry logic\nCircuit breaker\nBackend health tracking\nPhase 4 — Observability\nLogging\nMetrics\n/health\nPhase 5 — Deployment\nBuild Docker image\nRun locally or in cluster\nPhase 6 — Load Testing\nConcurrency tests\nFailover tests\nLatency validation\nDesign Principles\nRequest-level routing (not connection-level)\nKeep gateway simple — no batching\nLet vLLM handle batching\nFail fast, retry smart\nPrefer stability over complexity\nFuture Enhancements (Optional)\nOpenAI fallback for embeddings\nAdmission queue / rate limiting\nDynamic backend discovery\nAdaptive routing weights\nRequest batching (if needed)\nStatus",
-      "embed_text": "[SECTION: ROOT]\nconfig/\ntests/\nDockerfile\nREADME.md\nDevelopment Plan\nPhase 1 — Bootstrap\nCreate repo\nCopy reusable components from inference gateway\nRemove chat-specific logic\nPhase 2 — Core Endpoint\nImplement /v1/embeddings\nAdd config + security\nAdd backend routing\nPhase 3 — Reliability\nRetry logic\nCircuit breaker\nBackend health tracking\nPhase 4 — Observability\nLogging\nMetrics\n/health\nPhase 5 — Deployment\nBuild Docker image\nRun locally or in cluster\nPhase 6 — Load Testing\nConcurrency tests\nFailover tests\nLatency validation\nDesign Principles\nRequest-level routing (not connection-level)\nKeep gateway simple — no batching\nLet vLLM handle batching\nFail fast, retry smart\nPrefer stability over complexity\nFuture Enhancements (Optional)\nOpenAI fallback for embeddings\nAdmission queue / rate limiting\nDynamic backend discovery\nAdaptive routing weights\nRequest batching (if needed)\nStatus\nQ: What are the phases of development mentioned in the document?\nQ: What is the last phase of deployment described?\nQ: Which design principle suggests to prefer stability over complexity?",
+      "embed_text": "[SECTION: ROOT]\nconfig/\ntests/\nDockerfile\nREADME.md\nDevelopment Plan\nPhase 1 — Bootstrap\nCreate repo\nCopy reusable components from inference gateway\nRemove chat-specific logic\nPhase 2 — Core Endpoint\nImplement /v1/embeddings\nAdd config + security\nAdd backend routing\nPhase 3 — Reliability\nRetry logic\nCircuit breaker\nBackend health tracking\nPhase 4 — Observability\nLogging\nMetrics\n/health\nPhase 5 — Deployment\nBuild Docker image\nRun locally or in cluster\nPhase 6 — Load Testing\nConcurrency tests\nFailover tests\nLatency validation\nDesign Principles\nRequest-level routing (not connection-level)\nKeep gateway simple — no batching\nLet vLLM handle batching\nFail fast, retry smart\nPrefer stability over complexity\nFuture Enhancements (Optional)\nOpenAI fallback for embeddings\nAdmission queue / rate limiting\nDynamic backend discovery\nAdaptive routing weights\nRequest batching (if needed)\nStatus\nQ: What are the phases of development mentioned in the document?\nQ: What is the first phase of development and what tasks are included?\nQ: Which design principle states to prefer stability over complexity?",
       "token_count": 123,
-      "embed_token_count": 155,
+      "embed_token_count": 159,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What are the phases of development mentioned in the document?",
-        "What is the last phase of deployment described?",
-        "Which design principle suggests to prefer stability over complexity?"
+        "What is the first phase of development and what tasks are included?",
+        "Which design principle states to prefer stability over complexity?"
       ],
       "content_hash": "e13cc464a9d830f8fcf23739db3890463c3c9c9838dd10e44360e17d4a89c34b",
       "source": "repo_layer-gateway-embed-v1__plan.md",
-      "ingest_run_id": "run_20260424_183552",
-      "ingest_ts": "2026-04-24T18:35:52Z"
+      "ingest_run_id": "run_20260425_010443",
+      "ingest_ts": "2026-04-25T01:04:43Z"
     }
   },
   {
@@ -271,20 +271,20 @@
         "root"
       ],
       "text": "🚧 Initial version (v1) focuses on:\n\nStable routing\nReliability\nObservability\nSimple deployment",
-      "embed_text": "[SECTION: ROOT]\n🚧 Initial version (v1) focuses on:\n\nStable routing\nReliability\nObservability\nSimple deployment\nQ: What are the main focuses of the initial version (v1)?\nQ: Does the initial version prioritize routing stability?\nQ: Which aspects does the initial version ensure besides routing stability?",
+      "embed_text": "[SECTION: ROOT]\n🚧 Initial version (v1) focuses on:\n\nStable routing\nReliability\nObservability\nSimple deployment\nQ: What are the main focuses of the initial version (v1)?\nQ: Does the initial version prioritize routing stability?\nQ: Which aspects does the initial version ensure besides routing?",
       "token_count": 12,
-      "embed_token_count": 44,
+      "embed_token_count": 43,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What are the main focuses of the initial version (v1)?",
         "Does the initial version prioritize routing stability?",
-        "Which aspects does the initial version ensure besides routing stability?"
+        "Which aspects does the initial version ensure besides routing?"
       ],
       "content_hash": "b62c6b96f4ed646f6cfa61606615ed3ca820ccda8258c97745d408112046be41",
       "source": "repo_layer-gateway-embed-v1__plan.md",
-      "ingest_run_id": "run_20260424_183552",
-      "ingest_ts": "2026-04-24T18:35:52Z"
+      "ingest_run_id": "run_20260425_010443",
+      "ingest_ts": "2026-04-25T01:04:43Z"
     }
   }
 ]

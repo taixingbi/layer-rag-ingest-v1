@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build metadata-rich, filter-ready ingest payloads from `data/chunks_*.json`."""
+"""Build metadata-rich, filter-ready ingest payloads from chunk JSON (`chunks_*.json`)."""
 
 from __future__ import annotations
 
@@ -198,9 +198,11 @@ def _to_point(
     return {"id": point_id, "vector": [], "payload": payload}
 
 
-def main() -> None:
-    started = time.perf_counter()
-    args = parse_args()
+def run_prepare(args: argparse.Namespace) -> dict[str, Any]:
+    """
+    Build points_*.json from chunk JSON under data_dir; write ingest_prepare_summary.json.
+    Returns the summary dict (same structure as written to disk).
+    """
     data_dir = Path(args.data_dir)
     out_dir = Path(args.output_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -273,10 +275,18 @@ def main() -> None:
 
     summary_path = out_dir / "ingest_prepare_summary.json"
     summary_path.write_text(json.dumps(summary, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return summary
+
+
+def main() -> None:
+    started = time.perf_counter()
+    args = parse_args()
+    summary = run_prepare(args)
+    summary_path = Path(args.output_dir) / "ingest_prepare_summary.json"
     print(f"Prepared {summary['stats']['chunks_total_prepared']} chunks across {summary['stats']['files_total']} files")
     print(f"Wrote summary to {summary_path}")
     elapsed_ms = (time.perf_counter() - started) * 1000
-    print(f"prepare_points total_latency_ms={elapsed_ms:.1f}")
+    print(f"prepare_payloads total_latency_ms={elapsed_ms:.1f}")
 
 
 if __name__ == "__main__":
