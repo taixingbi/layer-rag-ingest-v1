@@ -15,20 +15,20 @@
         "request,_response,_and_logging_schema"
       ],
       "text": "This document describes the **HTTP contract** for `POST /v1/embeddings` and the **structured JSON logs** emitted by the gateway when `LOG_JSON=true` (default in `.env.example`).\n\nImplementation references:\n\n- Handler: `app/api/embeddings.py`\n- Request body model: `app/models/schemas.py`\n- Log formatter: `app/core/logging.py`\n\n---",
-      "embed_text": "[SECTION: Request, Response, and Logging Schema]\nThis document describes the **HTTP contract** for `POST /v1/embeddings` and the **structured JSON logs** emitted by the gateway when `LOG_JSON=true` (default in `.env.example`).\n\nImplementation references:\n\n- Handler: `app/api/embeddings.py`\n- Request body model: `app/models/schemas.py`\n- Log formatter: `app/core/logging.py`\n\n---\nQ: What does this document describe?\nQ: What is the default setting for LOG_JSON in .env.example?\nQ: Where can implementation references be found?",
+      "embed_text": "[SECTION: Request, Response, and Logging Schema]\nThis document describes the **HTTP contract** for `POST /v1/embeddings` and the **structured JSON logs** emitted by the gateway when `LOG_JSON=true` (default in `.env.example`).\n\nImplementation references:\n\n- Handler: `app/api/embeddings.py`\n- Request body model: `app/models/schemas.py`\n- Log formatter: `app/core/logging.py`\n\n---\nQ: What does this document describe?\nQ: What environment variable controls JSON logging?\nQ: Where is the log formatter defined?",
       "token_count": 38,
-      "embed_token_count": 67,
+      "embed_token_count": 64,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What does this document describe?",
-        "What is the default setting for LOG_JSON in .env.example?",
-        "Where can implementation references be found?"
+        "What environment variable controls JSON logging?",
+        "Where is the log formatter defined?"
       ],
       "content_hash": "d6d36396cbc54b48ee810f92f0ce6210f4b85a7d57b3db2d8d37357f74249ade",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -59,8 +59,8 @@
       ],
       "content_hash": "68b6ba31a13c862d4c563a7beff7869c08c6cbfe37532d907c29e418acc95849",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -79,20 +79,20 @@
         "correlation_headers_(optional)"
       ],
       "text": "`X-Request-Id`, `X-Trace-Id`, and `X-Session-Id` are **optional** on `POST /v1/embeddings`. The handler resolves each value from the incoming request (header names are case-insensitive). **Missing** or **whitespace-only** values are replaced with a **new UUID** (via `new_request_id()` in `app/core/logging.py`) before logging and before the upstream `httpx` call.\n\nAn **empty** `X-Request-Id` (after trimming) is treated like a missing header: a new UUID is generated. The **same** empty-as-missing rule applies to `X-Trace-Id` and `X-Session-Id` on this route.",
-      "embed_text": "[SECTION: Correlation headers (optional)]\n`X-Request-Id`, `X-Trace-Id`, and `X-Session-Id` are **optional** on `POST /v1/embeddings`. The handler resolves each value from the incoming request (header names are case-insensitive). **Missing** or **whitespace-only** values are replaced with a **new UUID** (via `new_request_id()` in `app/core/logging.py`) before logging and before the upstream `httpx` call.\n\nAn **empty** `X-Request-Id` (after trimming) is treated like a missing header: a new UUID is generated. The **same** empty-as-missing rule applies to `X-Trace-Id` and `X-Session-Id` on this route.\nQ: What happens if an X-Request-Id header is missing or contains only whitespace?\nQ: How are X-Trace-Id and X-Session-Id headers handled similarly to X-Request-Id?\nQ: Which Python function generates a new UUID in the logging module?",
+      "embed_text": "[SECTION: Correlation headers (optional)]\n`X-Request-Id`, `X-Trace-Id`, and `X-Session-Id` are **optional** on `POST /v1/embeddings`. The handler resolves each value from the incoming request (header names are case-insensitive). **Missing** or **whitespace-only** values are replaced with a **new UUID** (via `new_request_id()` in `app/core/logging.py`) before logging and before the upstream `httpx` call.\n\nAn **empty** `X-Request-Id` (after trimming) is treated like a missing header: a new UUID is generated. The **same** empty-as-missing rule applies to `X-Trace-Id` and `X-Session-Id` on this route.\nQ: What happens if an X-Request-Id header is missing or whitespace-only?\nQ: How are X-Trace-Id and X-Session-Id handled similarly to X-Request-Id?\nQ: Which Python function generates a new UUID in the logging process?",
       "token_count": 72,
-      "embed_token_count": 112,
+      "embed_token_count": 109,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What happens if an X-Request-Id header is missing or contains only whitespace?",
-        "How are X-Trace-Id and X-Session-Id headers handled similarly to X-Request-Id?",
-        "Which Python function generates a new UUID in the logging module?"
+        "What happens if an X-Request-Id header is missing or whitespace-only?",
+        "How are X-Trace-Id and X-Session-Id handled similarly to X-Request-Id?",
+        "Which Python function generates a new UUID in the logging process?"
       ],
       "content_hash": "4fa52710a79052da4d1c6bde44e7fc771e99565d083c8f43ba6a75cbbfab77d1",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -111,20 +111,20 @@
         "correlation_headers_(optional)"
       ],
       "text": "| Header | Purpose |\n|--------|---------|\n| `X-Request-Id` | Correlation id (logged and forwarded) |\n| `X-Trace-Id` | Trace id (logged and forwarded) |\n| `X-Session-Id` | Session id (logged and forwarded) |\n\n**JSON logs:** `JsonLogFormatter` writes `request_id`, `trace_id`, and `session_id` as **`\"-\"`** when the log record **omits** that field **or** the value is an **empty string** (see `_format_gateway` in `app/core/logging.py`). Empty `x-trace-id` / `x-session-id` values still yield **`\"-\"`** in JSON logs when they reach the formatter as blank strings (the same rule applies to `request_id`). Events that omit correlation kwargs show `\"-\"`; the `/v1/embeddings` handler normally passes resolved non-empty UUIDs for all three.",
-      "embed_text": "[SECTION: Correlation headers (optional)]\n| Header | Purpose |\n|--------|---------|\n| `X-Request-Id` | Correlation id (logged and forwarded) |\n| `X-Trace-Id` | Trace id (logged and forwarded) |\n| `X-Session-Id` | Session id (logged and forwarded) |\n\n**JSON logs:** `JsonLogFormatter` writes `request_id`, `trace_id`, and `session_id` as **`\"-\"`** when the log record **omits** that field **or** the value is an **empty string** (see `_format_gateway` in `app/core/logging.py`). Empty `x-trace-id` / `x-session-id` values still yield **`\"-\"`** in JSON logs when they reach the formatter as blank strings (the same rule applies to `request_id`). Events that omit correlation kwargs show `\"-\"`; the `/v1/embeddings` handler normally passes resolved non-empty UUIDs for all three.\nQ: What does the JsonLogFormatter use for omitted or empty fields?\nQ: How are empty 'x-trace-id' and 'x-session-id' represented in JSON logs?\nQ: Which handlers typically pass resolved non-empty UUIDs for all three correlation IDs?",
+      "embed_text": "[SECTION: Correlation headers (optional)]\n| Header | Purpose |\n|--------|---------|\n| `X-Request-Id` | Correlation id (logged and forwarded) |\n| `X-Trace-Id` | Trace id (logged and forwarded) |\n| `X-Session-Id` | Session id (logged and forwarded) |\n\n**JSON logs:** `JsonLogFormatter` writes `request_id`, `trace_id`, and `session_id` as **`\"-\"`** when the log record **omits** that field **or** the value is an **empty string** (see `_format_gateway` in `app/core/logging.py`). Empty `x-trace-id` / `x-session-id` values still yield **`\"-\"`** in JSON logs when they reach the formatter as blank strings (the same rule applies to `request_id`). Events that omit correlation kwargs show `\"-\"`; the `/v1/embeddings` handler normally passes resolved non-empty UUIDs for all three.\nQ: What does the JsonLogFormatter use for omitted fields in JSON logs?\nQ: How are empty 'x-trace-id' and 'x-session-id' values represented in JSON logs?\nQ: Which handlers typically pass resolved non-empty UUIDs for all three correlation IDs?",
       "token_count": 104,
-      "embed_token_count": 143,
+      "embed_token_count": 145,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What does the JsonLogFormatter use for omitted or empty fields?",
-        "How are empty 'x-trace-id' and 'x-session-id' represented in JSON logs?",
+        "What does the JsonLogFormatter use for omitted fields in JSON logs?",
+        "How are empty 'x-trace-id' and 'x-session-id' values represented in JSON logs?",
         "Which handlers typically pass resolved non-empty UUIDs for all three correlation IDs?"
       ],
       "content_hash": "498838351c84328580eed8639718a16b4a8e064bc13576937ce04e19cd0e5361",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -155,8 +155,8 @@
       ],
       "content_hash": "125484ec053e961034b81476fed6f0e6f2e2f61956eff83077c7cf8be84279bf",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -175,20 +175,20 @@
         "request_body_(json)"
       ],
       "text": "`count` is `len(input)` when `input` is a list, else `1`. `total_chars` is the sum of `len(str(item))` over items.",
-      "embed_text": "[SECTION: Request body (JSON)]\n`count` is `len(input)` when `input` is a list, else `1`. `total_chars` is the sum of `len(str(item))` over items.\nQ: What is the value of `count` when `input` is a list?\nQ: What is the value of `count` when `input` is not a list?\nQ: How is `total_chars` calculated?",
+      "embed_text": "[SECTION: Request body (JSON)]\n`count` is `len(input)` when `input` is a list, else `1`. `total_chars` is the sum of `len(str(item))` over items.\nQ: What is the value of count when input is a list?\nQ: How is total_chars calculated?\nQ: What happens if input is not a list?",
       "token_count": 18,
-      "embed_token_count": 52,
+      "embed_token_count": 48,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is the value of `count` when `input` is a list?",
-        "What is the value of `count` when `input` is not a list?",
-        "How is `total_chars` calculated?"
+        "What is the value of count when input is a list?",
+        "How is total_chars calculated?",
+        "What happens if input is not a list?"
       ],
       "content_hash": "2c1b6f6955a127dbe1eec0a4e0a90655bd06e37e0257e261965df72ae8acc04e",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -207,20 +207,20 @@
         "forwarded_headers"
       ],
       "text": "The gateway forwards **almost all** incoming headers to the selected upstream, except hop-by-hop fields blocked in code: `host`, `content-length` (see `_BLOCKED_HEADERS` in `app/api/embeddings.py`).",
-      "embed_text": "[SECTION: Forwarded headers]\nThe gateway forwards **almost all** incoming headers to the selected upstream, except hop-by-hop fields blocked in code: `host`, `content-length` (see `_BLOCKED_HEADERS` in `app/api/embeddings.py`).\nQ: Which headers are forwarded by the gateway?\nQ: What hop-by-hop fields are blocked and not forwarded?\nQ: Where can I find the list of blocked headers?",
+      "embed_text": "[SECTION: Forwarded headers]\nThe gateway forwards **almost all** incoming headers to the selected upstream, except hop-by-hop fields blocked in code: `host`, `content-length` (see `_BLOCKED_HEADERS` in `app/api/embeddings.py`).\nQ: Which headers are forwarded by the gateway?\nQ: What hop-by-hop fields are blocked and not forwarded?\nQ: Where can _BLOCKED_HEADERS be found?",
       "token_count": 23,
-      "embed_token_count": 53,
+      "embed_token_count": 49,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "Which headers are forwarded by the gateway?",
         "What hop-by-hop fields are blocked and not forwarded?",
-        "Where can I find the list of blocked headers?"
+        "Where can _BLOCKED_HEADERS be found?"
       ],
       "content_hash": "0d5ea4f091df5f88126e0d66aa582249acff6fbd2a48acdf3db58a6ebcc3c160",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -239,20 +239,20 @@
         "successful_response_shape"
       ],
       "text": "On a completed upstream round-trip (including non-retryable HTTP errors from the backend), the gateway returns:\n\n- **HTTP status**: same as upstream response (`upstream.status_code`)\n- **Body**: raw upstream bytes (`upstream.content`)\n- **`Content-Type`**: upstream `content-type` header if present\n\nSo clients may receive **2xx**, **4xx**, or **5xx** bodies **from the backend** without the gateway rewriting them, except where documented below (429/503 JSON from the gateway itself).",
-      "embed_text": "[SECTION: Successful response shape]\nOn a completed upstream round-trip (including non-retryable HTTP errors from the backend), the gateway returns:\n\n- **HTTP status**: same as upstream response (`upstream.status_code`)\n- **Body**: raw upstream bytes (`upstream.content`)\n- **`Content-Type`**: upstream `content-type` header if present\n\nSo clients may receive **2xx**, **4xx**, or **5xx** bodies **from the backend** without the gateway rewriting them, except where documented below (429/503 JSON from the gateway itself).\nQ: What HTTP status does the gateway return on a completed upstream round-trip?\nQ: What does the gateway return in the body of its response?\nQ: Under what conditions might clients receive 429 or 503 responses?",
+      "embed_text": "[SECTION: Successful response shape]\nOn a completed upstream round-trip (including non-retryable HTTP errors from the backend), the gateway returns:\n\n- **HTTP status**: same as upstream response (`upstream.status_code`)\n- **Body**: raw upstream bytes (`upstream.content`)\n- **`Content-Type`**: upstream `content-type` header if present\n\nSo clients may receive **2xx**, **4xx**, or **5xx** bodies **from the backend** without the gateway rewriting them, except where documented below (429/503 JSON from the gateway itself).\nQ: What HTTP status does the gateway return on a completed upstream round-trip?\nQ: What content does the gateway return in the body of its response?\nQ: Which HTTP status codes might clients receive directly from the backend?",
       "token_count": 63,
-      "embed_token_count": 103,
+      "embed_token_count": 105,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What HTTP status does the gateway return on a completed upstream round-trip?",
-        "What does the gateway return in the body of its response?",
-        "Under what conditions might clients receive 429 or 503 responses?"
+        "What content does the gateway return in the body of its response?",
+        "Which HTTP status codes might clients receive directly from the backend?"
       ],
       "content_hash": "c975b2cf4d3705ff642195d848506a84b3f9d1123002e36aff61528b808d5864",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -271,20 +271,20 @@
         "gateway-generated_error_responses"
       ],
       "text": "| Status | When | Body (typical) |\n|--------|------|----------------|\n| **429** | Admission queue wait exceeded `ADMISSION_WAIT_TIMEOUT_MS` | `{\"error\":\"Gateway busy, try again\"}` |\n| **503** | No backend to route to after exclusions / breaker | `{\"detail\":\"No healthy backend available\"}` (FastAPI) |\n| **503** | All retry attempts failed with transport errors | `{\"error\":\"Backends unavailable\"}` |",
-      "embed_text": "[SECTION: Gateway-generated error responses]\n| Status | When | Body (typical) |\n|--------|------|----------------|\n| **429** | Admission queue wait exceeded `ADMISSION_WAIT_TIMEOUT_MS` | `{\"error\":\"Gateway busy, try again\"}` |\n| **503** | No backend to route to after exclusions / breaker | `{\"detail\":\"No healthy backend available\"}` (FastAPI) |\n| **503** | All retry attempts failed with transport errors | `{\"error\":\"Backends unavailable\"}` |\nQ: What is the body of the 429 status response?\nQ: When does a 503 status with 'No healthy backend available' detail occur?\nQ: What does the error message 'Backends unavailable' indicate?",
+      "embed_text": "[SECTION: Gateway-generated error responses]\n| Status | When | Body (typical) |\n|--------|------|----------------|\n| **429** | Admission queue wait exceeded `ADMISSION_WAIT_TIMEOUT_MS` | `{\"error\":\"Gateway busy, try again\"}` |\n| **503** | No backend to route to after exclusions / breaker | `{\"detail\":\"No healthy backend available\"}` (FastAPI) |\n| **503** | All retry attempts failed with transport errors | `{\"error\":\"Backends unavailable\"}` |\nQ: What is the body of the 429 status response?\nQ: When does a 503 status with 'No healthy backend available' detail occur?\nQ: What causes the 'Backends unavailable' error in a 503 status?",
       "token_count": 56,
-      "embed_token_count": 92,
+      "embed_token_count": 94,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is the body of the 429 status response?",
         "When does a 503 status with 'No healthy backend available' detail occur?",
-        "What does the error message 'Backends unavailable' indicate?"
+        "What causes the 'Backends unavailable' error in a 503 status?"
       ],
       "content_hash": "23f2d190b76d839e992f18855b9de1daac4e0ebb8780b6d10535ec5076e142a2",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -315,8 +315,8 @@
       ],
       "content_hash": "60bd757b15b569e003fd880115aa89946b4cc9967575a4452fe7b1871064426a",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -335,20 +335,20 @@
         "retries_(client-visible_behavior)"
       ],
       "text": "Configured by `RETRY_MAX_ATTEMPTS` (minimum 1). For each attempt the gateway may pick a different backend; failed backends are added to an internal `excluded` set for the rest of that client request.\n\n- **Retry on HTTP status**: `502`, `503`, `504` when attempts remain (from `RetryConfig.retryable_statuses`).\n- **Retry on transport errors**: `httpx.TimeoutException`, `httpx.HTTPError` when attempts remain.",
-      "embed_text": "[SECTION: Retries (client-visible behavior)]\nConfigured by `RETRY_MAX_ATTEMPTS` (minimum 1). For each attempt the gateway may pick a different backend; failed backends are added to an internal `excluded` set for the rest of that client request.\n\n- **Retry on HTTP status**: `502`, `503`, `504` when attempts remain (from `RetryConfig.retryable_statuses`).\n- **Retry on transport errors**: `httpx.TimeoutException`, `httpx.HTTPError` when attempts remain.\nQ: What are the retryable HTTP statuses?\nQ: What types of transport errors trigger retries?\nQ: How many minimum attempts can be configured for retries?",
+      "embed_text": "[SECTION: Retries (client-visible behavior)]\nConfigured by `RETRY_MAX_ATTEMPTS` (minimum 1). For each attempt the gateway may pick a different backend; failed backends are added to an internal `excluded` set for the rest of that client request.\n\n- **Retry on HTTP status**: `502`, `503`, `504` when attempts remain (from `RetryConfig.retryable_statuses`).\n- **Retry on transport errors**: `httpx.TimeoutException`, `httpx.HTTPError` when attempts remain.\nQ: What HTTP status codes trigger retries?\nQ: Which transport errors can cause retries?\nQ: How many retry attempts are configured at minimum?",
       "token_count": 54,
-      "embed_token_count": 83,
+      "embed_token_count": 81,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What are the retryable HTTP statuses?",
-        "What types of transport errors trigger retries?",
-        "How many minimum attempts can be configured for retries?"
+        "What HTTP status codes trigger retries?",
+        "Which transport errors can cause retries?",
+        "How many retry attempts are configured at minimum?"
       ],
       "content_hash": "01b22f9c4c736bf41700c28655d33271cd07cee77abdd331d72c098fd2972fb3",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -367,20 +367,20 @@
         "retries_(client-visible_behavior)"
       ],
       "text": "**Circuit breaker bookkeeping**: `success = (upstream.status_code < 500)` for the selector. So **5xx** counts as a **failure** for the breaker even if the gateway returns the upstream body on the final attempt.\n\n---",
-      "embed_text": "[SECTION: Retries (client-visible behavior)]\n**Circuit breaker bookkeeping**: `success = (upstream.status_code < 500)` for the selector. So **5xx** counts as a **failure** for the breaker even if the gateway returns the upstream body on the final attempt.\n\n---\nQ: What status code range is considered a failure for the circuit breaker?\nQ: How does the gateway handle 5xx responses in relation to the circuit breaker?\nQ: What does success mean for the circuit breaker's selector?",
+      "embed_text": "[SECTION: Retries (client-visible behavior)]\n**Circuit breaker bookkeeping**: `success = (upstream.status_code < 500)` for the selector. So **5xx** counts as a **failure** for the breaker even if the gateway returns the upstream body on the final attempt.\n\n---\nQ: What status code range is considered a failure for the circuit breaker?\nQ: How does the gateway handle 5xx responses in relation to the circuit breaker?\nQ: What condition must be met for success in the selector?",
       "token_count": 33,
-      "embed_token_count": 74,
+      "embed_token_count": 75,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What status code range is considered a failure for the circuit breaker?",
         "How does the gateway handle 5xx responses in relation to the circuit breaker?",
-        "What does success mean for the circuit breaker's selector?"
+        "What condition must be met for success in the selector?"
       ],
       "content_hash": "facabc029fdccdd2b113e173fd9b6f7784666c98356ec453207c8b583dc35273",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -411,8 +411,8 @@
       ],
       "content_hash": "9cba62253dee8f89516434b13cdeb2bd942ca1212c97043382f444668c8f27a6",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -443,8 +443,8 @@
       ],
       "content_hash": "9003860276e9ab8739eb412a212a083def450de3f3e8e48b4a20a3e784db285d",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -475,8 +475,8 @@
       ],
       "content_hash": "78ef9ff0999d13019ee1963d44492bbf666d3306c0605888cdcd326ef2b754ed",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -495,20 +495,20 @@
         "event_catalog"
       ],
       "text": "| `event` | Level | Typical `path` | `backend` | Key `gateway_meta` / other fields |\n|---------|-------|----------------|-----------|-----------------------------------|\n| `gateway_process_started` | INFO | — | — | `backends_count`, `admission_max_concurrent`, `admission_wait_timeout_ms` |\n| `gateway_started` | INFO | `/v1/embeddings` | — | `backends_count`, admission settings, `model`, `request_class`, `client_host` |\n| `routing_pick` | INFO | `/v1/embeddings` | chosen backend | `attempt`, `excluded`, **`decision_reason`**, **`backends`**, **`weights`** (see below) |\n| `routing_no_backend` | WARN | `/v1/embeddings` | — | `attempt`, `excluded`, same routing debug as `routing_pick` |\n| `backend_retry` | WARN | `/v1/embeddings` | failed backend | `attempt`; may include `latency_ms`, `status_code`, or `error` |\n| `request_finished` | INFO | `/v1/embeddings` | backend used | `model`, `request_class`, `attempt` |\n| `request_failed` | WARN | `/v1/embeddings` | — | `error.kind` after retries exhausted |\n| `admission_rejected` | WARN | `/v1/embeddings` | — | `wait_timeout_ms`, `status_code` 429 |",
-      "embed_text": "[SECTION: Event catalog]\n| `event` | Level | Typical `path` | `backend` | Key `gateway_meta` / other fields |\n|---------|-------|----------------|-----------|-----------------------------------|\n| `gateway_process_started` | INFO | — | — | `backends_count`, `admission_max_concurrent`, `admission_wait_timeout_ms` |\n| `gateway_started` | INFO | `/v1/embeddings` | — | `backends_count`, admission settings, `model`, `request_class`, `client_host` |\n| `routing_pick` | INFO | `/v1/embeddings` | chosen backend | `attempt`, `excluded`, **`decision_reason`**, **`backends`**, **`weights`** (see below) |\n| `routing_no_backend` | WARN | `/v1/embeddings` | — | `attempt`, `excluded`, same routing debug as `routing_pick` |\n| `backend_retry` | WARN | `/v1/embeddings` | failed backend | `attempt`; may include `latency_ms`, `status_code`, or `error` |\n| `request_finished` | INFO | `/v1/embeddings` | backend used | `model`, `request_class`, `attempt` |\n| `request_failed` | WARN | `/v1/embeddings` | — | `error.kind` after retries exhausted |\n| `admission_rejected` | WARN | `/v1/embeddings` | — | `wait_timeout_ms`, `status_code` 429 |\nQ: What fields are included in the 'routing_pick' event?\nQ: What is the typical path for the 'gateway_started' event?\nQ: Which event level is assigned to the 'backend_retry' event?",
+      "embed_text": "[SECTION: Event catalog]\n| `event` | Level | Typical `path` | `backend` | Key `gateway_meta` / other fields |\n|---------|-------|----------------|-----------|-----------------------------------|\n| `gateway_process_started` | INFO | — | — | `backends_count`, `admission_max_concurrent`, `admission_wait_timeout_ms` |\n| `gateway_started` | INFO | `/v1/embeddings` | — | `backends_count`, admission settings, `model`, `request_class`, `client_host` |\n| `routing_pick` | INFO | `/v1/embeddings` | chosen backend | `attempt`, `excluded`, **`decision_reason`**, **`backends`**, **`weights`** (see below) |\n| `routing_no_backend` | WARN | `/v1/embeddings` | — | `attempt`, `excluded`, same routing debug as `routing_pick` |\n| `backend_retry` | WARN | `/v1/embeddings` | failed backend | `attempt`; may include `latency_ms`, `status_code`, or `error` |\n| `request_finished` | INFO | `/v1/embeddings` | backend used | `model`, `request_class`, `attempt` |\n| `request_failed` | WARN | `/v1/embeddings` | — | `error.kind` after retries exhausted |\n| `admission_rejected` | WARN | `/v1/embeddings` | — | `wait_timeout_ms`, `status_code` 429 |\nQ: What fields are included in the `routing_pick` event?\nQ: What is the typical path for the `gateway_started` event?\nQ: Which event level is assigned to the `backend_retry` event?",
       "token_count": 140,
       "embed_token_count": 172,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What fields are included in the 'routing_pick' event?",
-        "What is the typical path for the 'gateway_started' event?",
-        "Which event level is assigned to the 'backend_retry' event?"
+        "What fields are included in the `routing_pick` event?",
+        "What is the typical path for the `gateway_started` event?",
+        "Which event level is assigned to the `backend_retry` event?"
       ],
       "content_hash": "4ebfdd18e4e31e99f6916d8cab8e7fa1517950ef0179044a108ce4e0d9fb2736",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -527,20 +527,20 @@
         "`routing_pick`_/_`routing_no_backend`:_`gateway_meta`_routing_snapshot"
       ],
       "text": "`gateway_meta` includes:\n\n- **`decision_reason`** (`routing_pick` only): `score`, `exploration`, `idle_rebalance`, or `none`\n- **`attempt`**: retry attempt index (1-based)\n- **`excluded`**: sorted list of backend names skipped for this client request\n- **`backends`**: map of backend name → object:\n  - `score`, `inflight`, `latency_ms`, `error_rate`, `requests`, `errors`\n  - `circuit_open`, `circuit_half_open`, `half_open_inflight`, `half_open_successes`\n  - `excluded`, `eligible`\n- **`weights`**: routing weights used in score: `inflight`, `latency`, `error`",
-      "embed_text": "[SECTION: `routing_pick` / `routing_no_backend`: `gateway_meta` routing snapshot]\n`gateway_meta` includes:\n\n- **`decision_reason`** (`routing_pick` only): `score`, `exploration`, `idle_rebalance`, or `none`\n- **`attempt`**: retry attempt index (1-based)\n- **`excluded`**: sorted list of backend names skipped for this client request\n- **`backends`**: map of backend name → object:\n  - `score`, `inflight`, `latency_ms`, `error_rate`, `requests`, `errors`\n  - `circuit_open`, `circuit_half_open`, `half_open_inflight`, `half_open_successes`\n  - `excluded`, `eligible`\n- **`weights`**: routing weights used in score: `inflight`, `latency`, `error`\nQ: What information does the `gateway_meta` include?\nQ: What does the `decision_reason` field indicate in `routing_pick`?\nQ: What are the components of the `backends` map?",
+      "embed_text": "[SECTION: `routing_pick` / `routing_no_backend`: `gateway_meta` routing snapshot]\n`gateway_meta` includes:\n\n- **`decision_reason`** (`routing_pick` only): `score`, `exploration`, `idle_rebalance`, or `none`\n- **`attempt`**: retry attempt index (1-based)\n- **`excluded`**: sorted list of backend names skipped for this client request\n- **`backends`**: map of backend name → object:\n  - `score`, `inflight`, `latency_ms`, `error_rate`, `requests`, `errors`\n  - `circuit_open`, `circuit_half_open`, `half_open_inflight`, `half_open_successes`\n  - `excluded`, `eligible`\n- **`weights`**: routing weights used in score: `inflight`, `latency`, `error`\nQ: What information does the `gateway_meta` include?\nQ: What are the possible values for `decision_reason` in `routing_pick`?\nQ: How is the `backends` field structured within `gateway_meta`?",
       "token_count": 62,
-      "embed_token_count": 94,
+      "embed_token_count": 95,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What information does the `gateway_meta` include?",
-        "What does the `decision_reason` field indicate in `routing_pick`?",
-        "What are the components of the `backends` map?"
+        "What are the possible values for `decision_reason` in `routing_pick`?",
+        "How is the `backends` field structured within `gateway_meta`?"
       ],
       "content_hash": "2f0bdfbb1a68eb158656aa90564bf2d1cfd069e94d9e7ee4d29b309e556ead0c",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -559,20 +559,20 @@
         "`routing_pick`_/_`routing_no_backend`:_`gateway_meta`_routing_snapshot"
       ],
       "text": "---",
-      "embed_text": "[SECTION: `routing_pick` / `routing_no_backend`: `gateway_meta` routing snapshot]\n---\nQ: What is the routing snapshot for?\nQ: Which routing options are mentioned?\nQ: What does `gateway_meta` refer to in this context?",
+      "embed_text": "[SECTION: `routing_pick` / `routing_no_backend`: `gateway_meta` routing snapshot]\n---\nQ: What is the routing snapshot for?\nQ: Which routing paths are mentioned?\nQ: What does `gateway_meta` refer to in this context?",
       "token_count": 1,
       "embed_token_count": 30,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is the routing snapshot for?",
-        "Which routing options are mentioned?",
+        "Which routing paths are mentioned?",
         "What does `gateway_meta` refer to in this context?"
       ],
       "content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -603,8 +603,8 @@
       ],
       "content_hash": "c2cb46683cc1602aed0a30639035588166d58aba5a4cd8b003e31fe92b25ff2a",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -635,8 +635,8 @@
       ],
       "content_hash": "1c92c209b22ff81276eba9ab051fe6b66e16aa6f69311aa908f3a73a133342cd",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   }
 ]

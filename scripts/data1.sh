@@ -32,8 +32,17 @@ echo "==> data1: embed + upsert to Qdrant"
 if [[ "${RUN_SMOKE_VALIDATE:-1}" == "0" ]]; then
   echo "==> data1: skipping smoke validation (RUN_SMOKE_VALIDATE=0)"
 else
-  echo "==> data1: post-upsert smoke validation (warn-only by default)"
-  "$PYTHON" app/smoke_validate.py --data-dir data1/processed --pattern "points_*.json"
+  if [[ "${RUN_SMOKE_JUDGE:-1}" == "0" ]]; then
+    echo "==> data1: post-upsert smoke validation (judge disabled via RUN_SMOKE_JUDGE=0)"
+    "$PYTHON" app/smoke_validate.py --data-dir data1/processed --pattern "points_*.json"
+  else
+    echo "==> data1: post-upsert smoke validation (LLM judge enabled)"
+    "$PYTHON" app/smoke_validate.py \
+      --data-dir data1/processed \
+      --pattern "points_*.json" \
+      --judge-enabled \
+      --judge-rescue-floor "${SMOKE_JUDGE_RESCUE_FLOOR:-0.58}"
+  fi
 fi
 
 echo "==> data1 pipeline finished"

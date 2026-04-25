@@ -15,7 +15,7 @@
         "request_id,_trace_id,_and_session_id"
       ],
       "text": "This document describes how the gateway assigns and propagates correlation identifiers for logs and upstream calls. For a shorter summary, see [docs.md §6](docs.md#6-logging-and-tracing-ids).",
-      "embed_text": "[SECTION: Request ID, trace ID, and session ID]\nThis document describes how the gateway assigns and propagates correlation identifiers for logs and upstream calls. For a shorter summary, see [docs.md §6](docs.md#6-logging-and-tracing-ids).\nQ: What does this document describe?\nQ: Where can one find a shorter summary?\nQ: What identifiers are mentioned in the text?",
+      "embed_text": "[SECTION: Request ID, trace ID, and session ID]\nThis document describes how the gateway assigns and propagates correlation identifiers for logs and upstream calls. For a shorter summary, see [docs.md §6](docs.md#6-logging-and-tracing-ids).\nQ: What does this document describe?\nQ: Where can one find a shorter summary?\nQ: What identifiers are discussed in this section?",
       "token_count": 23,
       "embed_token_count": 53,
       "synthetic_questions_used": 3,
@@ -23,12 +23,12 @@
       "synthetic_questions": [
         "What does this document describe?",
         "Where can one find a shorter summary?",
-        "What identifiers are mentioned in the text?"
+        "What identifiers are discussed in this section?"
       ],
       "content_hash": "61a30d5799420427e3f36636eaa39e085e38bfb2f111508a4cd05d241a533895",
       "source": "repo_layer-gateway-inference-v1__request-trace-session-ids.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -47,20 +47,20 @@
         "what_each_id_is_for"
       ],
       "text": "| Field | Typical use |\n| --- | --- |\n| `request_id` | One id per **HTTP request** through the gateway—support, debugging, and tying errors to a single call. |\n| `trace_id` | **Cross-service** correlation: the same value across multiple services for one distributed trace. |\n| `session_id` | **Longer-lived** grouping (for example a chat session or product session), spanning many requests. |",
-      "embed_text": "[SECTION: What each ID is for]\n| Field | Typical use |\n| --- | --- |\n| `request_id` | One id per **HTTP request** through the gateway—support, debugging, and tying errors to a single call. |\n| `trace_id` | **Cross-service** correlation: the same value across multiple services for one distributed trace. |\n| `session_id` | **Longer-lived** grouping (for example a chat session or product session), spanning many requests. |\nQ: What is the typical use of request_id?\nQ: What does trace_id enable across services?\nQ: How does session_id differ from request_id?",
+      "embed_text": "[SECTION: What each ID is for]\n| Field | Typical use |\n| --- | --- |\n| `request_id` | One id per **HTTP request** through the gateway—support, debugging, and tying errors to a single call. |\n| `trace_id` | **Cross-service** correlation: the same value across multiple services for one distributed trace. |\n| `session_id` | **Longer-lived** grouping (for example a chat session or product session), spanning many requests. |\nQ: What is the purpose of the request_id?\nQ: How does trace_id facilitate communication between services?\nQ: What kind of sessions does session_id track?",
       "token_count": 64,
-      "embed_token_count": 92,
+      "embed_token_count": 94,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is the typical use of request_id?",
-        "What does trace_id enable across services?",
-        "How does session_id differ from request_id?"
+        "What is the purpose of the request_id?",
+        "How does trace_id facilitate communication between services?",
+        "What kind of sessions does session_id track?"
       ],
       "content_hash": "928a7e4dc74f6667e512a7b6edd8cee1a9a6e1894507326d4d9d87dfecfe0992",
       "source": "repo_layer-gateway-inference-v1__request-trace-session-ids.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -79,20 +79,20 @@
         "how_values_are_chosen_(ingress)"
       ],
       "text": "On `POST /v1/chat/completions` the gateway reads headers and applies this logic:\n\n- **`request_id`**: value of `x-request-id` if present; otherwise a new **UUID** is generated (`new_request_id()` in `app/core/logging.py`).\n- **`trace_id`**: from `x-trace-id` (header lookup is case-insensitive via Starlette). If omitted, the value is absent for logging and normalized to **`\"-\"`** in structured JSON output.\n- **`session_id`**: from `x-session-id`, same optional behavior as `trace_id`.",
-      "embed_text": "[SECTION: How values are chosen (ingress)]\nOn `POST /v1/chat/completions` the gateway reads headers and applies this logic:\n\n- **`request_id`**: value of `x-request-id` if present; otherwise a new **UUID** is generated (`new_request_id()` in `app/core/logging.py`).\n- **`trace_id`**: from `x-trace-id` (header lookup is case-insensitive via Starlette). If omitted, the value is absent for logging and normalized to **`\"-\"`** in structured JSON output.\n- **`session_id`**: from `x-session-id`, same optional behavior as `trace_id`.\nQ: What happens if 'x-request-id' is not present in the headers?\nQ: How is the 'trace_id' handled if it is not provided?\nQ: What is the default value for 'session_id' if it is not included in the headers?",
+      "embed_text": "[SECTION: How values are chosen (ingress)]\nOn `POST /v1/chat/completions` the gateway reads headers and applies this logic:\n\n- **`request_id`**: value of `x-request-id` if present; otherwise a new **UUID** is generated (`new_request_id()` in `app/core/logging.py`).\n- **`trace_id`**: from `x-trace-id` (header lookup is case-insensitive via Starlette). If omitted, the value is absent for logging and normalized to **`\"-\"`** in structured JSON output.\n- **`session_id`**: from `x-session-id`, same optional behavior as `trace_id`.\nQ: What happens if 'x-request-id' is not present in the headers?\nQ: 'trace_id' is omitted, what value is used for logging?\nQ: What is the default value for 'session_id' if it is not provided?",
       "token_count": 62,
-      "embed_token_count": 106,
+      "embed_token_count": 102,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What happens if 'x-request-id' is not present in the headers?",
-        "How is the 'trace_id' handled if it is not provided?",
-        "What is the default value for 'session_id' if it is not included in the headers?"
+        "'trace_id' is omitted, what value is used for logging?",
+        "What is the default value for 'session_id' if it is not provided?"
       ],
       "content_hash": "33bd7a8d4879093c2c72e7ece164babd724725ac81ab253356dc0af4e57ea1df",
       "source": "repo_layer-gateway-inference-v1__request-trace-session-ids.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -123,8 +123,8 @@
       ],
       "content_hash": "b8be85766fb0951b168efe18756eaf5f63a2bd8fb18634b1100b772e2a8aada5",
       "source": "repo_layer-gateway-inference-v1__request-trace-session-ids.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -155,8 +155,8 @@
       ],
       "content_hash": "b86c1678dbd20de4054df39ccf782bbcd7549a0889d31be02c1bd9e93fdc3db5",
       "source": "repo_layer-gateway-inference-v1__request-trace-session-ids.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -175,20 +175,20 @@
         "strategy_when_an_id_is_missing"
       ],
       "text": "An **empty** `x-request-id` is treated like missing (a new UUID is generated). Empty `x-trace-id` / `x-session-id` values still yield **`\"-\"`** in JSON logs when they reach the formatter as blank strings.\n\n**Processing guidance**\n\n- **Log pipelines and dashboards**: Treat **`\"-\"`** as “not provided” for `trace_id` and `session_id`. You can still correlate on `request_id`, which is always present in gateway event lines.\n- **Cross-service tracing**: If `trace_id` is missing, the gateway does not invent one; add `x-trace-id` at your edge or load balancer if traces must line up with upstream systems.\n- **Session analytics**: If `session_id` is missing, logs still carry `request_id` (and `trace_id` when set); session-scoped queries need the client to send `x-session-id` when that dimension matters.\n- **End-to-end request correlation**: If `x-request-id` is missing, rely on gateway logs and HTTP error bodies that include `request_id`; for the **same** id in upstream logs, clients must send `x-request-id` (or another layer must add it before the gateway proxies).",
-      "embed_text": "[SECTION: Strategy when an ID is missing]\nAn **empty** `x-request-id` is treated like missing (a new UUID is generated). Empty `x-trace-id` / `x-session-id` values still yield **`\"-\"`** in JSON logs when they reach the formatter as blank strings.\n\n**Processing guidance**\n\n- **Log pipelines and dashboards**: Treat **`\"-\"`** as “not provided” for `trace_id` and `session_id`. You can still correlate on `request_id`, which is always present in gateway event lines.\n- **Cross-service tracing**: If `trace_id` is missing, the gateway does not invent one; add `x-trace-id` at your edge or load balancer if traces must line up with upstream systems.\n- **Session analytics**: If `session_id` is missing, logs still carry `request_id` (and `trace_id` when set); session-scoped queries need the client to send `x-session-id` when that dimension matters.\n- **End-to-end request correlation**: If `x-request-id` is missing, rely on gateway logs and HTTP error bodies that include `request_id`; for the **same** id in upstream logs, clients must send `x-request-id` (or another layer must add it before the gateway proxies).\nQ: What value is used for x-trace-id/x-session-id when they are empty?\nQ: How should log pipelines and dashboards treat '-' for trace_id and session_id?\nQ: What action is recommended if trace_id is missing for cross-service tracing?",
+      "embed_text": "[SECTION: Strategy when an ID is missing]\nAn **empty** `x-request-id` is treated like missing (a new UUID is generated). Empty `x-trace-id` / `x-session-id` values still yield **`\"-\"`** in JSON logs when they reach the formatter as blank strings.\n\n**Processing guidance**\n\n- **Log pipelines and dashboards**: Treat **`\"-\"`** as “not provided” for `trace_id` and `session_id`. You can still correlate on `request_id`, which is always present in gateway event lines.\n- **Cross-service tracing**: If `trace_id` is missing, the gateway does not invent one; add `x-trace-id` at your edge or load balancer if traces must line up with upstream systems.\n- **Session analytics**: If `session_id` is missing, logs still carry `request_id` (and `trace_id` when set); session-scoped queries need the client to send `x-session-id` when that dimension matters.\n- **End-to-end request correlation**: If `x-request-id` is missing, rely on gateway logs and HTTP error bodies that include `request_id`; for the **same** id in upstream logs, clients must send `x-request-id` (or another layer must add it before the gateway proxies).\nQ: What value is yielded for empty x-trace-id/x-session-id in JSON logs?\nQ: How should log pipelines and dashboards treat '-' for trace_id and session_id?\nQ: What action is recommended if trace_id is missing for cross-service tracing?",
       "token_count": 157,
       "embed_token_count": 200,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What value is used for x-trace-id/x-session-id when they are empty?",
+        "What value is yielded for empty x-trace-id/x-session-id in JSON logs?",
         "How should log pipelines and dashboards treat '-' for trace_id and session_id?",
         "What action is recommended if trace_id is missing for cross-service tracing?"
       ],
       "content_hash": "08eadb15f43ce7194e15a1235b17cbbc97c0630d970e78f320ada316d72d4366",
       "source": "repo_layer-gateway-inference-v1__request-trace-session-ids.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -207,20 +207,20 @@
         "structured_logs"
       ],
       "text": "Gateway events are emitted as **one JSON object per line** via `log_gateway_event()` in `app/core/logging.py`. Relevant fields include `event`, `service`, `env`, and when set `request_id`, `trace_id`, `session_id`, plus optional `path`, `backend`, `latency_ms`, `status_code`, and structured `error`.\n\nMissing or empty `trace_id` / `session_id` appear as **`\"-\"`** in the serialized log line so parsers always see a string (see **Strategy when an ID is missing** above).",
-      "embed_text": "[SECTION: Structured logs]\nGateway events are emitted as **one JSON object per line** via `log_gateway_event()` in `app/core/logging.py`. Relevant fields include `event`, `service`, `env`, and when set `request_id`, `trace_id`, `session_id`, plus optional `path`, `backend`, `latency_ms`, `status_code`, and structured `error`.\n\nMissing or empty `trace_id` / `session_id` appear as **`\"-\"`** in the serialized log line so parsers always see a string (see **Strategy when an ID is missing** above).\nQ: How are gateway events emitted?\nQ: What values do missing or empty trace_id and session_id take in the log?\nQ: Which fields are considered relevant in the log?",
+      "embed_text": "[SECTION: Structured logs]\nGateway events are emitted as **one JSON object per line** via `log_gateway_event()` in `app/core/logging.py`. Relevant fields include `event`, `service`, `env`, and when set `request_id`, `trace_id`, `session_id`, plus optional `path`, `backend`, `latency_ms`, `status_code`, and structured `error`.\n\nMissing or empty `trace_id` / `session_id` appear as **`\"-\"`** in the serialized log line so parsers always see a string (see **Strategy when an ID is missing** above).\nQ: How are gateway events emitted?\nQ: What values do missing or empty trace_id and session_id take in the serialized log line?\nQ: Which fields are relevant in the JSON objects emitted by log_gateway_event()?",
       "token_count": 63,
-      "embed_token_count": 95,
+      "embed_token_count": 100,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "How are gateway events emitted?",
-        "What values do missing or empty trace_id and session_id take in the log?",
-        "Which fields are considered relevant in the log?"
+        "What values do missing or empty trace_id and session_id take in the serialized log line?",
+        "Which fields are relevant in the JSON objects emitted by log_gateway_event()?"
       ],
       "content_hash": "a3c879f0b6cb5d18acd96ae4362403e15918aa40848bc91e4acf20f58244099c",
       "source": "repo_layer-gateway-inference-v1__request-trace-session-ids.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -239,20 +239,20 @@
         "metrics"
       ],
       "text": "These identifiers are for **log correlation only**. They are **not** Prometheus metric labels, to avoid high-cardinality series. See `docs/sla.md` and `docs/artichecture.md`.",
-      "embed_text": "[SECTION: Metrics]\nThese identifiers are for **log correlation only**. They are **not** Prometheus metric labels, to avoid high-cardinality series. See `docs/sla.md` and `docs/artichecture.md`.\nQ: What is the purpose of these identifiers?\nQ: Are these identifiers Prometheus metric labels?\nQ: Where can I find more information about log correlation and architecture?",
+      "embed_text": "[SECTION: Metrics]\nThese identifiers are for **log correlation only**. They are **not** Prometheus metric labels, to avoid high-cardinality series. See `docs/sla.md` and `docs/artichecture.md`.\nQ: What are these identifiers used for?\nQ: Are these identifiers Prometheus metric labels?\nQ: Where can I find more information about log correlation and architecture?",
       "token_count": 21,
-      "embed_token_count": 50,
+      "embed_token_count": 49,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is the purpose of these identifiers?",
+        "What are these identifiers used for?",
         "Are these identifiers Prometheus metric labels?",
         "Where can I find more information about log correlation and architecture?"
       ],
       "content_hash": "affc84503cb8a7ccb6521f1ef5b27af15fe82f41326b0051ea7b418dbbc127a5",
       "source": "repo_layer-gateway-inference-v1__request-trace-session-ids.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -271,20 +271,20 @@
         "propagation_to_upstream_(vllm_/_openai_fallback)"
       ],
       "text": "The proxy builds outbound headers with `_filter_headers()` in `app/proxy/client.py`: a small allowlist plus **any client header whose name starts with `x-`** (normalized to lowercase keys on the wire).\n\nImplications:\n\n- If the client sends **`x-request-id`**, **`x-trace-id`**, and **`x-session-id`**, they are typically **forwarded** to the backend unchanged (subject to that allowlist rule).\n- If the client **does not** send `x-request-id`, the gateway still assigns a **`request_id`** for logs and error payloads, but that generated id is **not automatically injected** into the upstream request headers unless the client sends it. For end-to-end correlation with the model server, clients should send `x-request-id` when they need the same id in upstream logs.",
-      "embed_text": "[SECTION: Propagation to upstream (vLLM / OpenAI fallback)]\nThe proxy builds outbound headers with `_filter_headers()` in `app/proxy/client.py`: a small allowlist plus **any client header whose name starts with `x-`** (normalized to lowercase keys on the wire).\n\nImplications:\n\n- If the client sends **`x-request-id`**, **`x-trace-id`**, and **`x-session-id`**, they are typically **forwarded** to the backend unchanged (subject to that allowlist rule).\n- If the client **does not** send `x-request-id`, the gateway still assigns a **`request_id`** for logs and error payloads, but that generated id is **not automatically injected** into the upstream request headers unless the client sends it. For end-to-end correlation with the model server, clients should send `x-request-id` when they need the same id in upstream logs.\nQ: What are the conditions under which 'x-request-id', 'x-trace-id', and 'x-session-id' are forwarded to the backend?\nQ: What happens if the client does not send 'x-request-id'?\nQ: Which headers are allowed to be forwarded based on the allowlist rule?",
+      "embed_text": "[SECTION: Propagation to upstream (vLLM / OpenAI fallback)]\nThe proxy builds outbound headers with `_filter_headers()` in `app/proxy/client.py`: a small allowlist plus **any client header whose name starts with `x-`** (normalized to lowercase keys on the wire).\n\nImplications:\n\n- If the client sends **`x-request-id`**, **`x-trace-id`**, and **`x-session-id`**, they are typically **forwarded** to the backend unchanged (subject to that allowlist rule).\n- If the client **does not** send `x-request-id`, the gateway still assigns a **`request_id`** for logs and error payloads, but that generated id is **not automatically injected** into the upstream request headers unless the client sends it. For end-to-end correlation with the model server, clients should send `x-request-id` when they need the same id in upstream logs.\nQ: What are the conditions under which the client's 'x-request-id' is forwarded to the backend?\nQ: Which headers are typically forwarded to the backend unchanged according to the allowlist rule?\nQ: What happens if the client does not send 'x-request-id' and how can end-to-end correlation be maintained?",
       "token_count": 108,
-      "embed_token_count": 155,
+      "embed_token_count": 163,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What are the conditions under which 'x-request-id', 'x-trace-id', and 'x-session-id' are forwarded to the backend?",
-        "What happens if the client does not send 'x-request-id'?",
-        "Which headers are allowed to be forwarded based on the allowlist rule?"
+        "What are the conditions under which the client's 'x-request-id' is forwarded to the backend?",
+        "Which headers are typically forwarded to the backend unchanged according to the allowlist rule?",
+        "What happens if the client does not send 'x-request-id' and how can end-to-end correlation be maintained?"
       ],
       "content_hash": "25ca06892408d2ea5d2c5618f95e91c1f838ed03b2831da7a873c4c0d7629fda",
       "source": "repo_layer-gateway-inference-v1__request-trace-session-ids.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -303,20 +303,20 @@
         "recommendations_for_callers"
       ],
       "text": "1. Send **`x-request-id`** on every call if you need the same id in gateway logs, client traces, and upstream (vLLM) logs.\n2. Send **`x-trace-id`** from the system edge (or trace root) and keep it stable across hops that belong to one trace.\n3. Send **`x-session-id`** when you want to query or filter logs by session or conversation across many requests.\n\nHeader names are conventional; the gateway expects the **`x-`** prefixed forms above on the chat completions route.",
-      "embed_text": "[SECTION: Recommendations for callers]\n1. Send **`x-request-id`** on every call if you need the same id in gateway logs, client traces, and upstream (vLLM) logs.\n2. Send **`x-trace-id`** from the system edge (or trace root) and keep it stable across hops that belong to one trace.\n3. Send **`x-session-id`** when you want to query or filter logs by session or conversation across many requests.\n\nHeader names are conventional; the gateway expects the **`x-`** prefixed forms above on the chat completions route.\nQ: What header should be sent on every call to maintain the same ID across different logs?\nQ: How should the `x-trace-id` be managed across hops belonging to one trace?\nQ: Which header is recommended for querying or filtering logs by session or conversation?",
+      "embed_text": "[SECTION: Recommendations for callers]\n1. Send **`x-request-id`** on every call if you need the same id in gateway logs, client traces, and upstream (vLLM) logs.\n2. Send **`x-trace-id`** from the system edge (or trace root) and keep it stable across hops that belong to one trace.\n3. Send **`x-session-id`** when you want to query or filter logs by session or conversation across many requests.\n\nHeader names are conventional; the gateway expects the **`x-`** prefixed forms above on the chat completions route.\nQ: What header should be sent on every call if the same id is needed in gateway logs, client traces, and upstream logs?\nQ: From where should the x-trace-id be sent according to the recommendations?\nQ: What header is used for querying or filtering logs by session or conversation across many requests?",
       "token_count": 77,
-      "embed_token_count": 125,
+      "embed_token_count": 133,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What header should be sent on every call to maintain the same ID across different logs?",
-        "How should the `x-trace-id` be managed across hops belonging to one trace?",
-        "Which header is recommended for querying or filtering logs by session or conversation?"
+        "What header should be sent on every call if the same id is needed in gateway logs, client traces, and upstream logs?",
+        "From where should the x-trace-id be sent according to the recommendations?",
+        "What header is used for querying or filtering logs by session or conversation across many requests?"
       ],
       "content_hash": "9432d30ec135a6014abbf314ead400f04c78c9700a5a47fa4d03fd712f52912b",
       "source": "repo_layer-gateway-inference-v1__request-trace-session-ids.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   }
 ]

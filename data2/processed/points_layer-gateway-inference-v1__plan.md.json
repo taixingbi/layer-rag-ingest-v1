@@ -15,20 +15,20 @@
         "gateway_redesign_plan_for_`layer-gateway-inference-v1`"
       ],
       "text": "Gateway Redesign Plan for `layer-gateway-inference-v1`",
-      "embed_text": "[SECTION: Gateway Redesign Plan for `layer-gateway-inference-v1`]\nGateway Redesign Plan for `layer-gateway-inference-v1`\nQ: What is the name of the gateway redesign plan?\nQ: Which version does the gateway redesign plan pertain to?\nQ: Is there any specific detail provided about the content or objectives of the redesign plan?",
+      "embed_text": "[SECTION: Gateway Redesign Plan for `layer-gateway-inference-v1`]\nGateway Redesign Plan for `layer-gateway-inference-v1`\nQ: What is the name of the gateway redesign plan?\nQ: Which version does the gateway redesign plan pertain to?\nQ: Is there any specific detail provided about the content or objectives of the plan?",
       "token_count": 5,
-      "embed_token_count": 47,
+      "embed_token_count": 46,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is the name of the gateway redesign plan?",
         "Which version does the gateway redesign plan pertain to?",
-        "Is there any specific detail provided about the content or objectives of the redesign plan?"
+        "Is there any specific detail provided about the content or objectives of the plan?"
       ],
       "content_hash": "b488c6bd30561b15ea29bff593b852e5dad0b33ead62caf842ed7d0afa6d0cbe",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -47,20 +47,20 @@
         "goal"
       ],
       "text": "Redesign the gateway from a simple per-request scorer/proxy into a **lightweight request-shaping scheduler** that improves multi-GPU utilization, reduces one-node-at-a-time wave patterns, and preserves good latency under load.\n\n```mermaid\nflowchart LR\n    IN[Incoming Requests] --> Q[Bounded Admission Queue]\n    Q --> D[Dispatch Loop]\n    D --> F[Eligibility Filters]\n    F --> S[Scoring + Selection]\n    S --> P[Proxy to vLLM Backends]\n    P --> OBS[Metrics + Structured Logs]\n```",
-      "embed_text": "[SECTION: Goal]\nRedesign the gateway from a simple per-request scorer/proxy into a **lightweight request-shaping scheduler** that improves multi-GPU utilization, reduces one-node-at-a-time wave patterns, and preserves good latency under load.\n\n```mermaid\nflowchart LR\n    IN[Incoming Requests] --> Q[Bounded Admission Queue]\n    Q --> D[Dispatch Loop]\n    D --> F[Eligibility Filters]\n    F --> S[Scoring + Selection]\n    S --> P[Proxy to vLLM Backends]\n    P --> OBS[Metrics + Structured Logs]\n```\nQ: What is the goal of redesigning the gateway?\nQ: What does the lightweight request-shaping scheduler improve?\nQ: How many stages are there in the dispatch loop?",
+      "embed_text": "[SECTION: Goal]\nRedesign the gateway from a simple per-request scorer/proxy into a **lightweight request-shaping scheduler** that improves multi-GPU utilization, reduces one-node-at-a-time wave patterns, and preserves good latency under load.\n\n```mermaid\nflowchart LR\n    IN[Incoming Requests] --> Q[Bounded Admission Queue]\n    Q --> D[Dispatch Loop]\n    D --> F[Eligibility Filters]\n    F --> S[Scoring + Selection]\n    S --> P[Proxy to vLLM Backends]\n    P --> OBS[Metrics + Structured Logs]\n```\nQ: What is the new design goal for the gateway?\nQ: What does the lightweight request-shaping scheduler improve?\nQ: How many stages are there in the dispatch loop?",
       "token_count": 62,
-      "embed_token_count": 91,
+      "embed_token_count": 92,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is the goal of redesigning the gateway?",
+        "What is the new design goal for the gateway?",
         "What does the lightweight request-shaping scheduler improve?",
         "How many stages are there in the dispatch loop?"
       ],
       "content_hash": "2055f0ee2d042be0f6c6fba0e40ece29cafaec03671d66c57fac3ea3f8b1a45b",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -79,20 +79,20 @@
         "goal"
       ],
       "text": "The current repository already positions the project as a FastAPI-based, GPU-aware routing gateway for vLLM on k3s, with request-level routing, load-aware scheduling, retries, circuit breaking, and health tracking. It also explicitly notes that default Kubernetes Services are connection-level while vLLM inference benefits from request-level routing, and its current routing formula is based on inflight requests, queue p95, TTFT p95, and error rate. citeturn914425view0",
-      "embed_text": "[SECTION: Goal]\nThe current repository already positions the project as a FastAPI-based, GPU-aware routing gateway for vLLM on k3s, with request-level routing, load-aware scheduling, retries, circuit breaking, and health tracking. It also explicitly notes that default Kubernetes Services are connection-level while vLLM inference benefits from request-level routing, and its current routing formula is based on inflight requests, queue p95, TTFT p95, and error rate. citeturn914425view0\nQ: What type of framework does the project use?\nQ: Which specific metrics does the routing formula consider?\nQ: How does the system handle vLLM inference compared to default Kubernetes Services?",
+      "embed_text": "[SECTION: Goal]\nThe current repository already positions the project as a FastAPI-based, GPU-aware routing gateway for vLLM on k3s, with request-level routing, load-aware scheduling, retries, circuit breaking, and health tracking. It also explicitly notes that default Kubernetes Services are connection-level while vLLM inference benefits from request-level routing, and its current routing formula is based on inflight requests, queue p95, TTFT p95, and error rate. citeturn914425view0\nQ: What type of framework does the project use?\nQ: Which specific metrics does the project use in its current routing formula?\nQ: How does the project differentiate between Kubernetes Services and vLLM inference in terms of routing?",
       "token_count": 63,
-      "embed_token_count": 96,
+      "embed_token_count": 103,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What type of framework does the project use?",
-        "Which specific metrics does the routing formula consider?",
-        "How does the system handle vLLM inference compared to default Kubernetes Services?"
+        "Which specific metrics does the project use in its current routing formula?",
+        "How does the project differentiate between Kubernetes Services and vLLM inference in terms of routing?"
       ],
       "content_hash": "3de44436a083ed4839242c5c7b5efdecd6f4d2ab36bae5c0662244c6dafd12ea",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -123,8 +123,8 @@
       ],
       "content_hash": "d2dd0ebf7c24b7441c02b37bf776f3d35c8b28ee1446e5dd34820ebd344e379b",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -155,8 +155,8 @@
       ],
       "content_hash": "e253ec2e45fd17d6c86e1e0658096c2f78272d91dc9a8fdb5b6784aa82147819",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -175,20 +175,20 @@
         "non-goals"
       ],
       "text": "The gateway should **not**:\n\n- reimplement vLLM batching\n- become a full durable job queue\n- perform GPU execution logic itself\n- require a complex control plane in the first version\n\nThe repo’s current separation of concerns is still good: Kubernetes for lifecycle, gateway for routing, vLLM for batching and execution. citeturn914425view0\n\n---",
-      "embed_text": "[SECTION: Non-Goals]\nThe gateway should **not**:\n\n- reimplement vLLM batching\n- become a full durable job queue\n- perform GPU execution logic itself\n- require a complex control plane in the first version\n\nThe repo’s current separation of concerns is still good: Kubernetes for lifecycle, gateway for routing, vLLM for batching and execution. citeturn914425view0\n\n---\nQ: What should the gateway not do?\nQ: Why shouldn't the gateway perform GPU execution logic itself?\nQ: What does the repo's current separation of concerns include?",
+      "embed_text": "[SECTION: Non-Goals]\nThe gateway should **not**:\n\n- reimplement vLLM batching\n- become a full durable job queue\n- perform GPU execution logic itself\n- require a complex control plane in the first version\n\nThe repo’s current separation of concerns is still good: Kubernetes for lifecycle, gateway for routing, vLLM for batching and execution. citeturn914425view0\n\n---\nQ: What should the gateway not do?\nQ: Why shouldn't the gateway perform GPU execution logic itself?\nQ: What parts of the system are currently well-separated?",
       "token_count": 53,
-      "embed_token_count": 82,
+      "embed_token_count": 81,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What should the gateway not do?",
         "Why shouldn't the gateway perform GPU execution logic itself?",
-        "What does the repo's current separation of concerns include?"
+        "What parts of the system are currently well-separated?"
       ],
       "content_hash": "c6d36c0542313c7047140f8398baccdb0de0049e6a8dd605fa8209187f67b981",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -207,20 +207,20 @@
         "1._design_principles"
       ],
       "text": "1. Design Principles",
-      "embed_text": "[SECTION: 1. Design Principles]\n1. Design Principles\nQ: What section is this text from?\nQ: How many principles are discussed in this section?\nQ: What does this section seem to cover?",
+      "embed_text": "[SECTION: 1. Design Principles]\n1. Design Principles\nQ: What section is this text part of?\nQ: Does this text contain any specific design principles?\nQ: Is this the beginning of the document?",
       "token_count": 3,
-      "embed_token_count": 31,
+      "embed_token_count": 32,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What section is this text from?",
-        "How many principles are discussed in this section?",
-        "What does this section seem to cover?"
+        "What section is this text part of?",
+        "Does this text contain any specific design principles?",
+        "Is this the beginning of the document?"
       ],
       "content_hash": "d2e9fe2c13781947919cc2e8a6b48acd8bd89a2a7a42b5c2d1dc5b4e9532eebe",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -251,8 +251,8 @@
       ],
       "content_hash": "bbd79500ad30021efc6b10929ebc50c084c48f8280a1c5500ffb1f487da4cb56",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -283,8 +283,8 @@
       ],
       "content_hash": "964d457756b9987eb5ca0e9404313f4d51416d0f7939a0169f2f5395553c0fdb",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -303,20 +303,20 @@
         "1.3_use_fast_local_state_for_routing"
       ],
       "text": "Routing should rely mainly on state the gateway directly knows in real time:\n\n- current inflight per backend\n- recent dispatch counts\n- recent failures and timeouts\n- EWMA TTFT and end-to-end latency\n- pending queue depth and queue age\n\nUse dashboard p95/p99 metrics for monitoring and validation, but not as the primary real-time routing signal.\n\n---",
-      "embed_text": "[SECTION: 1.3 Use fast local state for routing]\nRouting should rely mainly on state the gateway directly knows in real time:\n\n- current inflight per backend\n- recent dispatch counts\n- recent failures and timeouts\n- EWMA TTFT and end-to-end latency\n- pending queue depth and queue age\n\nUse dashboard p95/p99 metrics for monitoring and validation, but not as the primary real-time routing signal.\n\n---\nQ: What types of state should be used for routing?\nQ: Which metrics are recommended for monitoring and validation?\nQ: What should not be used as the primary real-time routing signal?",
+      "embed_text": "[SECTION: 1.3 Use fast local state for routing]\nRouting should rely mainly on state the gateway directly knows in real time:\n\n- current inflight per backend\n- recent dispatch counts\n- recent failures and timeouts\n- EWMA TTFT and end-to-end latency\n- pending queue depth and queue age\n\nUse dashboard p95/p99 metrics for monitoring and validation, but not as the primary real-time routing signal.\n\n---\nQ: What types of state should be used for routing?\nQ: Which metrics should be used for monitoring and validation?\nQ: What should not be used as the primary real-time routing signal?",
       "token_count": 57,
-      "embed_token_count": 96,
+      "embed_token_count": 97,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What types of state should be used for routing?",
-        "Which metrics are recommended for monitoring and validation?",
+        "Which metrics should be used for monitoring and validation?",
         "What should not be used as the primary real-time routing signal?"
       ],
       "content_hash": "109a57aee80c3e3fb23076e9506d9c29317dedd66de1ad47e51475af799af2eb",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -347,8 +347,8 @@
       ],
       "content_hash": "e7d0d018db98a5c90c2c50d6bb58f67833e9c240cebddf3f2a5419a527173575",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -367,20 +367,20 @@
         "2.1_high-level_flow"
       ],
       "text": "```text\nClient\n  -> FastAPI ingress\n  -> request validation / normalization\n  -> request classification\n  -> bounded in-memory pending queue\n  -> scheduler loop (every 5–20 ms)\n  -> backend selection\n  -> reverse proxy to selected vLLM backend\n  -> stream response back to client\n  -> update backend metrics/state\n```",
-      "embed_text": "[SECTION: 2.1 High-level flow]\n```text\nClient\n  -> FastAPI ingress\n  -> request validation / normalization\n  -> request classification\n  -> bounded in-memory pending queue\n  -> scheduler loop (every 5–20 ms)\n  -> backend selection\n  -> reverse proxy to selected vLLM backend\n  -> stream response back to client\n  -> update backend metrics/state\n```\nQ: What is the first step when a client sends a request?\nQ: How often does the scheduler loop run?\nQ: What happens after the request is classified?",
+      "embed_text": "[SECTION: 2.1 High-level flow]\n```text\nClient\n  -> FastAPI ingress\n  -> request validation / normalization\n  -> request classification\n  -> bounded in-memory pending queue\n  -> scheduler loop (every 5–20 ms)\n  -> backend selection\n  -> reverse proxy to selected vLLM backend\n  -> stream response back to client\n  -> update backend metrics/state\n```\nQ: What is the first step when a client sends a request?\nQ: How often does the scheduler loop run?\nQ: What happens after the backend selection?",
       "token_count": 45,
-      "embed_token_count": 77,
+      "embed_token_count": 76,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is the first step when a client sends a request?",
         "How often does the scheduler loop run?",
-        "What happens after the request is classified?"
+        "What happens after the backend selection?"
       ],
       "content_hash": "e0eaf67fd11739b54307dadc1b0fb8b0d8d84fe5ad4e88882aad451587f9e8be",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -399,20 +399,20 @@
         "2.2_components"
       ],
       "text": "2.2 Components",
-      "embed_text": "[SECTION: 2.2 Components]\n2.2 Components\nQ: What section is this?\nQ: What does the text start with?\nQ: How many components are mentioned?",
+      "embed_text": "[SECTION: 2.2 Components]\n2.2 Components\nQ: What section is this?\nQ: What is the title of this section?\nQ: How many components are mentioned?",
       "token_count": 2,
-      "embed_token_count": 23,
+      "embed_token_count": 24,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What section is this?",
-        "What does the text start with?",
+        "What is the title of this section?",
         "How many components are mentioned?"
       ],
       "content_hash": "fe9db2f631948b6b9666fece6453ff9b54fed0fce94b6d692efd019f87bfbca5",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -431,20 +431,20 @@
         "a._api_layer"
       ],
       "text": "Responsibilities:\n\n- accept OpenAI-compatible requests\n- validate payload shape\n- estimate request size class\n- create internal request context\n- enqueue request for scheduling\n- return overload errors when queue is full or too old",
-      "embed_text": "[SECTION: A. API layer]\nResponsibilities:\n\n- accept OpenAI-compatible requests\n- validate payload shape\n- estimate request size class\n- create internal request context\n- enqueue request for scheduling\n- return overload errors when queue is full or too old\nQ: What actions does the API layer perform?\nQ: How does the API layer handle queue满载或过旧的情况?\nQ: How many specific responsibilities does the API layer have?",
+      "embed_text": "[SECTION: A. API layer]\nResponsibilities:\n\n- accept OpenAI-compatible requests\n- validate payload shape\n- estimate request size class\n- create internal request context\n- enqueue request for scheduling\n- return overload errors when queue is full or too old\nQ: What actions does the API layer perform?\nQ: How does the API layer handle queue满载或过时的情况?\nQ: How does the API layer estimate request size class?",
       "token_count": 35,
       "embed_token_count": 65,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What actions does the API layer perform?",
-        "How does the API layer handle queue满载或过旧的情况?",
-        "How many specific responsibilities does the API layer have?"
+        "How does the API layer handle queue满载或过时的情况?",
+        "How does the API layer estimate request size class?"
       ],
       "content_hash": "9324fc9db57cfbd056364de4b1de51d4af9e340318c077117214a3f053f9b018",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -463,20 +463,20 @@
         "b._admission_queue"
       ],
       "text": "Responsibilities:\n\n- hold requests very briefly before dispatch\n- enable scheduler visibility across bursts\n- provide bounded backpressure\n\nProperties:\n\n- in-memory only\n- bounded capacity\n- max queue age, for example 100–300 ms\n- no persistence",
-      "embed_text": "[SECTION: B. Admission queue]\nResponsibilities:\n\n- hold requests very briefly before dispatch\n- enable scheduler visibility across bursts\n- provide bounded backpressure\n\nProperties:\n\n- in-memory only\n- bounded capacity\n- max queue age, for example 100–300 ms\n- no persistence\nQ: What is the maximum queue age for the admission queue?\nQ: Does the admission queue persist data?\nQ: How many responsibilities does the admission queue have?",
+      "embed_text": "[SECTION: B. Admission queue]\nResponsibilities:\n\n- hold requests very briefly before dispatch\n- enable scheduler visibility across bursts\n- provide bounded backpressure\n\nProperties:\n\n- in-memory only\n- bounded capacity\n- max queue age, for example 100–300 ms\n- no persistence\nQ: What is the maximum queue age for the admission queue?\nQ: Does the admission queue have persistence?\nQ: How many responsibilities does the admission queue have?",
       "token_count": 36,
       "embed_token_count": 67,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is the maximum queue age for the admission queue?",
-        "Does the admission queue persist data?",
+        "Does the admission queue have persistence?",
         "How many responsibilities does the admission queue have?"
       ],
       "content_hash": "44c18bf33cfe69d76581fa6f43d56fe7a8f94879e6ab056cbe87b15e2dad81b5",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -495,20 +495,20 @@
         "c._scheduler_loop"
       ],
       "text": "Responsibilities:\n\n- wake up on a short cadence, such as every 5–20 ms\n- pull eligible queued requests\n- choose backend using fresh backend state\n- enforce fairness and capacity policies",
-      "embed_text": "[SECTION: C. Scheduler loop]\nResponsibilities:\n\n- wake up on a short cadence, such as every 5–20 ms\n- pull eligible queued requests\n- choose backend using fresh backend state\n- enforce fairness and capacity policies\nQ: How often does the scheduler loop wake up?\nQ: What does the scheduler loop do after waking up?\nQ: What policy does the scheduler loop use to choose backends?",
+      "embed_text": "[SECTION: C. Scheduler loop]\nResponsibilities:\n\n- wake up on a short cadence, such as every 5–20 ms\n- pull eligible queued requests\n- choose backend using fresh backend state\n- enforce fairness and capacity policies\nQ: How often does the scheduler loop wake up?\nQ: What does the scheduler loop do after waking up?\nQ: What policy does the scheduler loop enforce?",
       "token_count": 31,
-      "embed_token_count": 65,
+      "embed_token_count": 62,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "How often does the scheduler loop wake up?",
         "What does the scheduler loop do after waking up?",
-        "What policy does the scheduler loop use to choose backends?"
+        "What policy does the scheduler loop enforce?"
       ],
       "content_hash": "f08db3555098adbca5c0197fca52754e5a257fa4a68550c005e774ef444a8812",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -527,20 +527,20 @@
         "d._backend_state_manager"
       ],
       "text": "Responsibilities:\n\n- track per-backend health and recent performance\n- maintain inflight counters\n- maintain EWMA metrics\n- open/close circuit breakers\n- expose snapshot state for scheduling",
-      "embed_text": "[SECTION: D. Backend state manager]\nResponsibilities:\n\n- track per-backend health and recent performance\n- maintain inflight counters\n- maintain EWMA metrics\n- open/close circuit breakers\n- expose snapshot state for scheduling\nQ: What does the backend state manager track?\nQ: What kind of metrics does the backend state manager maintain?\nQ: What actions can the backend state manager perform?",
+      "embed_text": "[SECTION: D. Backend state manager]\nResponsibilities:\n\n- track per-backend health and recent performance\n- maintain inflight counters\n- maintain EWMA metrics\n- open/close circuit breakers\n- expose snapshot state for scheduling\nQ: What are the responsibilities of the backend state manager?\nQ: How does the backend state manager handle circuit breakers?\nQ: What type of metrics does the backend state manager maintain?",
       "token_count": 26,
-      "embed_token_count": 59,
+      "embed_token_count": 62,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What does the backend state manager track?",
-        "What kind of metrics does the backend state manager maintain?",
-        "What actions can the backend state manager perform?"
+        "What are the responsibilities of the backend state manager?",
+        "How does the backend state manager handle circuit breakers?",
+        "What type of metrics does the backend state manager maintain?"
       ],
       "content_hash": "360c0aef3cc0d07ffb669294e55263a47f33156a6193ba6226ce6b8b97b77057",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -559,20 +559,20 @@
         "e._proxy_layer"
       ],
       "text": "Responsibilities:\n\n- forward request to chosen backend\n- stream body back to client when needed\n- collect outcome metrics\n- apply limited retry logic before body starts",
-      "embed_text": "[SECTION: E. Proxy layer]\nResponsibilities:\n\n- forward request to chosen backend\n- stream body back to client when needed\n- collect outcome metrics\n- apply limited retry logic before body starts\nQ: What are the responsibilities of a proxy layer?\nQ: What does the proxy layer do before the body starts?\nQ: How does the proxy layer handle requests?",
+      "embed_text": "[SECTION: E. Proxy layer]\nResponsibilities:\n\n- forward request to chosen backend\n- stream body back to client when needed\n- collect outcome metrics\n- apply limited retry logic before body starts\nQ: What are the responsibilities of a proxy layer?\nQ: What does the proxy layer do with the request?\nQ: How does the proxy layer handle the request body?",
       "token_count": 27,
-      "embed_token_count": 59,
+      "embed_token_count": 60,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What are the responsibilities of a proxy layer?",
-        "What does the proxy layer do before the body starts?",
-        "How does the proxy layer handle requests?"
+        "What does the proxy layer do with the request?",
+        "How does the proxy layer handle the request body?"
       ],
       "content_hash": "5d727c0b2bbc4aff79fe7392e6569184dd8db81309a5f6d2015cb4bae905c65a",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -591,20 +591,20 @@
         "f._metrics_layer"
       ],
       "text": "Responsibilities:\n\n- Prometheus-compatible metrics\n- per-backend counters and gauges\n- queue depth, queue age, dispatch rate, inflight, errors, retries\n\n---",
-      "embed_text": "[SECTION: F. Metrics layer]\nResponsibilities:\n\n- Prometheus-compatible metrics\n- per-backend counters and gauges\n- queue depth, queue age, dispatch rate, inflight, errors, retries\n\n---\nQ: What metrics does the system support?\nQ: What kind of counters and gauges are included per-backend?\nQ: What specific metrics are tracked for the queue?",
+      "embed_text": "[SECTION: F. Metrics layer]\nResponsibilities:\n\n- Prometheus-compatible metrics\n- per-backend counters and gauges\n- queue depth, queue age, dispatch rate, inflight, errors, retries\n\n---\nQ: What kind of metrics does the system support?\nQ: What specific metrics are tracked for each backend?\nQ: Which metrics are related to the queue?",
       "token_count": 20,
       "embed_token_count": 50,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What metrics does the system support?",
-        "What kind of counters and gauges are included per-backend?",
-        "What specific metrics are tracked for the queue?"
+        "What kind of metrics does the system support?",
+        "What specific metrics are tracked for each backend?",
+        "Which metrics are related to the queue?"
       ],
       "content_hash": "9c52e4d50c52c19453ee2ce7c7a10e735ffa2ca647b755551026ef140927bcae",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -623,20 +623,20 @@
         "3._scheduling_model"
       ],
       "text": "3. Scheduling Model",
-      "embed_text": "[SECTION: 3. Scheduling Model]\n3. Scheduling Model\nQ: What is the topic of section 3?\nQ: Does the section discuss any specific scheduling details?\nQ: Is there any information provided about the scheduling model in this section?",
+      "embed_text": "[SECTION: 3. Scheduling Model]\n3. Scheduling Model\nQ: What is the title of this section?\nQ: How many sections are mentioned here?\nQ: Is there any detailed description in this section?",
       "token_count": 3,
-      "embed_token_count": 37,
+      "embed_token_count": 31,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is the topic of section 3?",
-        "Does the section discuss any specific scheduling details?",
-        "Is there any information provided about the scheduling model in this section?"
+        "What is the title of this section?",
+        "How many sections are mentioned here?",
+        "Is there any detailed description in this section?"
       ],
       "content_hash": "2a3bd6dd4039ebbceddbedecd13190d85290d99f18195fcb700c974158fdcd1d",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -667,8 +667,8 @@
       ],
       "content_hash": "27e65bcafd716c11b628e35e3083f1e703f763ce23a4fd7489250971f9dccb28",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -687,20 +687,20 @@
         "3.2_stage_a:_eligibility_filter"
       ],
       "text": "A backend is eligible only if:\n\n- backend is healthy\n- circuit breaker is not open\n- inflight is below hard limit\n- recent timeout/error rate is below threshold\n- backend is not administratively drained\n\nIf no backend is eligible:\n\n- request stays queued briefly until queue-age threshold\n- then reject with 503 if still unschedulable",
-      "embed_text": "[SECTION: 3.2 Stage A: eligibility filter]\nA backend is eligible only if:\n\n- backend is healthy\n- circuit breaker is not open\n- inflight is below hard limit\n- recent timeout/error rate is below threshold\n- backend is not administratively drained\n\nIf no backend is eligible:\n\n- request stays queued briefly until queue-age threshold\n- then reject with 503 if still unschedulable\nQ: What conditions must a backend meet to be eligible?\nQ: What happens if no backend is eligible and the request is still unschedulable after queuing?\nQ: How long does a request stay queued before being rejected?",
+      "embed_text": "[SECTION: 3.2 Stage A: eligibility filter]\nA backend is eligible only if:\n\n- backend is healthy\n- circuit breaker is not open\n- inflight is below hard limit\n- recent timeout/error rate is below threshold\n- backend is not administratively drained\n\nIf no backend is eligible:\n\n- request stays queued briefly until queue-age threshold\n- then reject with 503 if still unschedulable\nQ: What conditions must a backend meet to be eligible?\nQ: What happens if no backend is eligible?\nQ: How long does a request stay queued before being rejected?",
       "token_count": 56,
-      "embed_token_count": 99,
+      "embed_token_count": 91,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What conditions must a backend meet to be eligible?",
-        "What happens if no backend is eligible and the request is still unschedulable after queuing?",
+        "What happens if no backend is eligible?",
         "How long does a request stay queued before being rejected?"
       ],
       "content_hash": "aeea0cf3771564137264798a0536da9a8acd4644b3f6847b00a0ffc769a8f6da",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -731,8 +731,8 @@
       ],
       "content_hash": "7c658a2f7843d104a2e0371964d4484c0beb7ee17494a34d096aefa02899b00f",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -751,20 +751,20 @@
         "recommended_initial_intuition"
       ],
       "text": "- inflight should have strong weight\n- recent queue and TTFT should matter more than historical p95/p99\n- error rate should heavily penalize unstable nodes\n- hot penalty should suppress one-node dominance\n- overload penalty should push traffic away once soft capacity is crossed",
-      "embed_text": "[SECTION: Recommended initial intuition]\n- inflight should have strong weight\n- recent queue and TTFT should matter more than historical p95/p99\n- error rate should heavily penalize unstable nodes\n- hot penalty should suppress one-node dominance\n- overload penalty should push traffic away once soft capacity is crossed\nQ: What should heavily penalize unstable nodes?\nQ: How should the hot penalty function?\nQ: What happens when the soft capacity is crossed by overload penalty?",
+      "embed_text": "[SECTION: Recommended initial intuition]\n- inflight should have strong weight\n- recent queue and TTFT should matter more than historical p95/p99\n- error rate should heavily penalize unstable nodes\n- hot penalty should suppress one-node dominance\n- overload penalty should push traffic away once soft capacity is crossed\nQ: What should heavily penalize unstable nodes?\nQ: How should the hot penalty function?\nQ: What action should the overload penalty take when soft capacity is crossed?",
       "token_count": 44,
-      "embed_token_count": 74,
+      "embed_token_count": 75,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What should heavily penalize unstable nodes?",
         "How should the hot penalty function?",
-        "What happens when the soft capacity is crossed by overload penalty?"
+        "What action should the overload penalty take when soft capacity is crossed?"
       ],
       "content_hash": "5ff8d8b56b5584c7ed6170717eb7d57e81bae98501c09dc4f5e3edde596388c6",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -783,20 +783,20 @@
         "3.4_hot-backend_penalty"
       ],
       "text": "Add a temporary penalty when the same backend receives too many recent dispatches.\n\nExample:\n\n- keep timestamps of recent dispatches for each backend\n- compute last 1–3 second dispatch share\n- if one backend exceeds target share significantly, add a penalty\n\nThis directly addresses the observed wave pattern where one backend dominates traffic.",
-      "embed_text": "[SECTION: 3.4 Hot-backend penalty]\nAdd a temporary penalty when the same backend receives too many recent dispatches.\n\nExample:\n\n- keep timestamps of recent dispatches for each backend\n- compute last 1–3 second dispatch share\n- if one backend exceeds target share significantly, add a penalty\n\nThis directly addresses the observed wave pattern where one backend dominates traffic.\nQ: What is the purpose of adding a temporary penalty?\nQ: How are recent dispatches tracked for each backend?\nQ: What time frame is used to compute the dispatch share?",
+      "embed_text": "[SECTION: 3.4 Hot-backend penalty]\nAdd a temporary penalty when the same backend receives too many recent dispatches.\n\nExample:\n\n- keep timestamps of recent dispatches for each backend\n- compute last 1–3 second dispatch share\n- if one backend exceeds target share significantly, add a penalty\n\nThis directly addresses the observed wave pattern where one backend dominates traffic.\nQ: What is the purpose of adding a temporary penalty?\nQ: How is the dispatch share computed?\nQ: What time frame is considered for the dispatch share calculation?",
       "token_count": 53,
-      "embed_token_count": 87,
+      "embed_token_count": 85,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is the purpose of adding a temporary penalty?",
-        "How are recent dispatches tracked for each backend?",
-        "What time frame is used to compute the dispatch share?"
+        "How is the dispatch share computed?",
+        "What time frame is considered for the dispatch share calculation?"
       ],
       "content_hash": "73a221ac4d187e3dd5dc7e9aae91add8ebdb3eb4c0e6976b9b5636bfd0fa1180",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -815,20 +815,20 @@
         "3.5_soft_and_hard_inflight_limits"
       ],
       "text": "Each backend should have:\n\n- `soft_limit`: preferred operating range\n- `hard_limit`: absolute max before backend becomes ineligible\n\nBehavior:\n\n- below soft limit: normal scheduling\n- above soft limit: backend still eligible but receives overload penalty\n- at or above hard limit: backend ineligible\n\nThis helps stabilize distribution and prevents one backend from staying “slightly better” and taking everything.",
-      "embed_text": "[SECTION: 3.5 Soft and hard inflight limits]\nEach backend should have:\n\n- `soft_limit`: preferred operating range\n- `hard_limit`: absolute max before backend becomes ineligible\n\nBehavior:\n\n- below soft limit: normal scheduling\n- above soft limit: backend still eligible but receives overload penalty\n- at or above hard limit: backend ineligible\n\nThis helps stabilize distribution and prevents one backend from staying “slightly better” and taking everything.\nQ: What does the `soft_limit` represent?\nQ: What happens if a backend is above the `soft_limit`?\nQ: What is the consequence of a backend reaching the `hard_limit`?",
+      "embed_text": "[SECTION: 3.5 Soft and hard inflight limits]\nEach backend should have:\n\n- `soft_limit`: preferred operating range\n- `hard_limit`: absolute max before backend becomes ineligible\n\nBehavior:\n\n- below soft limit: normal scheduling\n- above soft limit: backend still eligible but receives overload penalty\n- at or above hard limit: backend ineligible\n\nThis helps stabilize distribution and prevents one backend from staying “slightly better” and taking everything.\nQ: What does the soft limit represent?\nQ: What happens if a backend is above the soft limit?\nQ: What is the consequence of a backend reaching the hard limit?",
       "token_count": 58,
-      "embed_token_count": 92,
+      "embed_token_count": 95,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What does the `soft_limit` represent?",
-        "What happens if a backend is above the `soft_limit`?",
-        "What is the consequence of a backend reaching the `hard_limit`?"
+        "What does the soft limit represent?",
+        "What happens if a backend is above the soft limit?",
+        "What is the consequence of a backend reaching the hard limit?"
       ],
       "content_hash": "3e82ee95fb4760c2c709fa3456e220104a003e4d126ac62cfbf06634e0749d90",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -847,20 +847,20 @@
         "3.5_soft_and_hard_inflight_limits"
       ],
       "text": "---",
-      "embed_text": "[SECTION: 3.5 Soft and hard inflight limits]\n---\nQ: What is discussed in section 3.5?\nQ: Are there soft or hard inflight limits mentioned?\nQ: What type of limits are covered in this section?",
+      "embed_text": "[SECTION: 3.5 Soft and hard inflight limits]\n---\nQ: What is the focus of Section 3.5?\nQ: Does the text contain specific details about inflight limits?\nQ: Are soft and hard limits discussed in this section?",
       "token_count": 1,
-      "embed_token_count": 34,
+      "embed_token_count": 36,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is discussed in section 3.5?",
-        "Are there soft or hard inflight limits mentioned?",
-        "What type of limits are covered in this section?"
+        "What is the focus of Section 3.5?",
+        "Does the text contain specific details about inflight limits?",
+        "Are soft and hard limits discussed in this section?"
       ],
       "content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -879,20 +879,20 @@
         "4._request_classification"
       ],
       "text": "The current repo mentions classifying requests such as chat, embed, and large. citeturn914425view0\n\nMake that classification operational.",
-      "embed_text": "[SECTION: 4. Request Classification]\nThe current repo mentions classifying requests such as chat, embed, and large. citeturn914425view0\n\nMake that classification operational.\nQ: What types of requests need to be classified?\nQ: How many categories are mentioned for request classification?\nQ: What are the specific request categories discussed?",
+      "embed_text": "[SECTION: 4. Request Classification]\nThe current repo mentions classifying requests such as chat, embed, and large. citeturn914425view0\n\nMake that classification operational.\nQ: What types of requests are mentioned for classification?\nQ: How should the request classification be implemented?\nQ: Which categories are included in the request classification?",
       "token_count": 17,
       "embed_token_count": 47,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What types of requests need to be classified?",
-        "How many categories are mentioned for request classification?",
-        "What are the specific request categories discussed?"
+        "What types of requests are mentioned for classification?",
+        "How should the request classification be implemented?",
+        "Which categories are included in the request classification?"
       ],
       "content_hash": "78c9b0cec357898a2b3992cb642359ecb1368a7bc50ae2ad00efa4cba2a4181a",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -911,20 +911,20 @@
         "4.1_classification_inputs"
       ],
       "text": "For chat completions, estimate:\n\n- prompt length or token estimate\n- `max_tokens`\n- `stream` true/false\n- model name",
-      "embed_text": "[SECTION: 4.1 Classification inputs]\nFor chat completions, estimate:\n\n- prompt length or token estimate\n- `max_tokens`\n- `stream` true/false\n- model name\nQ: What estimation is required for chat completions?\nQ: What are the specific items to estimate for chat completions?\nQ: Which parameters need to be estimated for prompt length or token estimate?",
+      "embed_text": "[SECTION: 4.1 Classification inputs]\nFor chat completions, estimate:\n\n- prompt length or token estimate\n- `max_tokens`\n- `stream` true/false\n- model name\nQ: What estimation is needed for chat completions?\nQ: What are the parameters to estimate for chat completions?\nQ: Which parameters are required for chat completions estimations?",
       "token_count": 18,
-      "embed_token_count": 54,
+      "embed_token_count": 49,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What estimation is required for chat completions?",
-        "What are the specific items to estimate for chat completions?",
-        "Which parameters need to be estimated for prompt length or token estimate?"
+        "What estimation is needed for chat completions?",
+        "What are the parameters to estimate for chat completions?",
+        "Which parameters are required for chat completions estimations?"
       ],
       "content_hash": "a3b70e06fffc2570e9c218246a9144359afbe0189aab7233f3e0671cfb97abce",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -955,8 +955,8 @@
       ],
       "content_hash": "8483730bf59e78c35f481a5603ebb77671e8458a197fb4df7e35c67a433a1f7e",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -975,20 +975,20 @@
         "4.3_why_this_matters"
       ],
       "text": "Long requests can monopolize a backend. Classification enables:\n\n- fairer dispatch\n- optional short-request protection\n- easier future policy tuning",
-      "embed_text": "[SECTION: 4.3 Why this matters]\nLong requests can monopolize a backend. Classification enables:\n\n- fairer dispatch\n- optional short-request protection\n- easier future policy tuning\nQ: What does classification enable in the context of long requests?\nQ: How does classification help with request management?\nQ: What future benefits does classification offer regarding policy tuning?",
+      "embed_text": "[SECTION: 4.3 Why this matters]\nLong requests can monopolize a backend. Classification enables:\n\n- fairer dispatch\n- optional short-request protection\n- easier future policy tuning\nQ: What does classification enable in the context of long requests?\nQ: How does classification help with request dispatch?\nQ: What future benefits does classification offer regarding policies?",
       "token_count": 20,
-      "embed_token_count": 54,
+      "embed_token_count": 53,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What does classification enable in the context of long requests?",
-        "How does classification help with request management?",
-        "What future benefits does classification offer regarding policy tuning?"
+        "How does classification help with request dispatch?",
+        "What future benefits does classification offer regarding policies?"
       ],
       "content_hash": "cccd0e4494f7e8148473e1f308c0412bcb9895d73dc604d52b2db089cde84449",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1007,20 +1007,20 @@
         "4.4_initial_policy"
       ],
       "text": "For phase 1, classification should be **advisory**, not strict partitioning.\n\nUse it to:\n\n- slightly raise score for backends already handling large requests\n- reserve a little headroom for short requests if TTFT becomes unstable\n\n---",
-      "embed_text": "[SECTION: 4.4 Initial policy]\nFor phase 1, classification should be **advisory**, not strict partitioning.\n\nUse it to:\n\n- slightly raise score for backends already handling large requests\n- reserve a little headroom for short requests if TTFT becomes unstable\n\n---\nQ: What type of classification should be used for phase 1?\nQ: What is the purpose of reserving headroom for short requests?\nQ: How can this policy help with backends handling large requests?",
+      "embed_text": "[SECTION: 4.4 Initial policy]\nFor phase 1, classification should be **advisory**, not strict partitioning.\n\nUse it to:\n\n- slightly raise score for backends already handling large requests\n- reserve a little headroom for short requests if TTFT becomes unstable\n\n---\nQ: What is the recommended classification for phase 1?\nQ: What is the purpose of reserving headroom for short requests?\nQ: How can backends already handling large requests benefit?",
       "token_count": 36,
-      "embed_token_count": 73,
+      "embed_token_count": 69,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What type of classification should be used for phase 1?",
+        "What is the recommended classification for phase 1?",
         "What is the purpose of reserving headroom for short requests?",
-        "How can this policy help with backends handling large requests?"
+        "How can backends already handling large requests benefit?"
       ],
       "content_hash": "7c6979517f2f47bb7c1338a2982f6b76a28027cf1664c6a83e77b2d773bac3c2",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1039,20 +1039,20 @@
         "5._queueing_strategy"
       ],
       "text": "5. Queueing Strategy",
-      "embed_text": "[SECTION: 5. Queueing Strategy]\n5. Queueing Strategy\nQ: What section is this about?\nQ: Does this section discuss any specific queueing strategy details?\nQ: Is there any information provided in this section?",
+      "embed_text": "[SECTION: 5. Queueing Strategy]\n5. Queueing Strategy\nQ: What is the topic of this section?\nQ: Does this section contain detailed information about queueing strategy?\nQ: Is there any specific queueing strategy mentioned in this text?",
       "token_count": 3,
-      "embed_token_count": 32,
+      "embed_token_count": 36,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What section is this about?",
-        "Does this section discuss any specific queueing strategy details?",
-        "Is there any information provided in this section?"
+        "What is the topic of this section?",
+        "Does this section contain detailed information about queueing strategy?",
+        "Is there any specific queueing strategy mentioned in this text?"
       ],
       "content_hash": "242eb4fe7d3e0c124a8c8a46829b7e65ecd51594e0761464bce2ebd8104d528c",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1071,20 +1071,20 @@
         "5.1_use_a_bounded_in-memory_queue"
       ],
       "text": "This is the biggest change.\n\nThe queue should be:\n\n- lightweight\n- bounded\n- non-durable\n- short-lived only",
-      "embed_text": "[SECTION: 5.1 Use a bounded in-memory queue]\nThis is the biggest change.\n\nThe queue should be:\n\n- lightweight\n- bounded\n- non-durable\n- short-lived only\nQ: What are the key characteristics of the queue?\nQ: Is the queue durable or non-durable?\nQ: How long does the queue exist?",
+      "embed_text": "[SECTION: 5.1 Use a bounded in-memory queue]\nThis is the biggest change.\n\nThe queue should be:\n\n- lightweight\n- bounded\n- non-durable\n- short-lived only\nQ: What characteristics should the queue have?\nQ: Is the queue durable or non-durable?\nQ: How long should the queue live?",
       "token_count": 18,
-      "embed_token_count": 48,
+      "embed_token_count": 46,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What are the key characteristics of the queue?",
+        "What characteristics should the queue have?",
         "Is the queue durable or non-durable?",
-        "How long does the queue exist?"
+        "How long should the queue live?"
       ],
       "content_hash": "087addf1c823b283bfd41cef89885ade380c13c4bebfc985883859d12f911242",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1103,20 +1103,20 @@
         "5.2_queue_settings"
       ],
       "text": "Suggested starting values:\n\n- max queue length: 200–1000 requests, depending on host memory and test volume\n- max queue age: 100–300 ms\n- scheduler interval: 5–20 ms\n- per-tick dispatch budget: configurable, for example 10–50 requests",
-      "embed_text": "[SECTION: 5.2 Queue settings]\nSuggested starting values:\n\n- max queue length: 200–1000 requests, depending on host memory and test volume\n- max queue age: 100–300 ms\n- scheduler interval: 5–20 ms\n- per-tick dispatch budget: configurable, for example 10–50 requests\nQ: What is the suggested range for max queue length?\nQ: What is the recommended range for max queue age in milliseconds?\nQ: What is the suggested range for scheduler interval in milliseconds?",
+      "embed_text": "[SECTION: 5.2 Queue settings]\nSuggested starting values:\n\n- max queue length: 200–1000 requests, depending on host memory and test volume\n- max queue age: 100–300 ms\n- scheduler interval: 5–20 ms\n- per-tick dispatch budget: configurable, for example 10–50 requests\nQ: What is the suggested range for max queue length?\nQ: What is the recommended max queue age in milliseconds?\nQ: What is the suggested range for per-tick dispatch budget?",
       "token_count": 36,
-      "embed_token_count": 73,
+      "embed_token_count": 70,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is the suggested range for max queue length?",
-        "What is the recommended range for max queue age in milliseconds?",
-        "What is the suggested range for scheduler interval in milliseconds?"
+        "What is the recommended max queue age in milliseconds?",
+        "What is the suggested range for per-tick dispatch budget?"
       ],
       "content_hash": "080f012ca0d5410dbfecf994f98b3b0f3ccda5af06309a404512d6aecaadb9d8",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1135,20 +1135,20 @@
         "5.3_overload_behavior"
       ],
       "text": "If queue is full or request age exceeds threshold:\n\n- reject fast with 503\n- include machine-readable reason\n- increment overload metrics\n\nThis is better than letting latency explode invisibly.\n\n---",
-      "embed_text": "[SECTION: 5.3 Overload behavior]\nIf queue is full or request age exceeds threshold:\n\n- reject fast with 503\n- include machine-readable reason\n- increment overload metrics\n\nThis is better than letting latency explode invisibly.\n\n---\nQ: What actions are taken if the queue is full or request age exceeds the threshold?\nQ: How does rejecting requests with 503 help compared to other methods?\nQ: What metrics are incremented when the queue is full or request age exceeds the threshold?",
+      "embed_text": "[SECTION: 5.3 Overload behavior]\nIf queue is full or request age exceeds threshold:\n\n- reject fast with 503\n- include machine-readable reason\n- increment overload metrics\n\nThis is better than letting latency explode invisibly.\n\n---\nQ: What actions are taken if the queue is full?\nQ: How is the reason for rejection communicated?\nQ: What metric is incremented when there is an overload?",
       "token_count": 31,
-      "embed_token_count": 79,
+      "embed_token_count": 63,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What actions are taken if the queue is full or request age exceeds the threshold?",
-        "How does rejecting requests with 503 help compared to other methods?",
-        "What metrics are incremented when the queue is full or request age exceeds the threshold?"
+        "What actions are taken if the queue is full?",
+        "How is the reason for rejection communicated?",
+        "What metric is incremented when there is an overload?"
       ],
       "content_hash": "2fbf1d9663a1bb4da57a993eae66cb2f335fbd4469d3b81fc23b8b5ca504615e",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1167,20 +1167,20 @@
         "6._health,_retry,_and_circuit_breaking"
       ],
       "text": "The current repo already includes health tracking, retry, timeout, and circuit breaker ideas. citeturn914425view0\n\nKeep them, but tighten the rules.",
-      "embed_text": "[SECTION: 6. Health, Retry, and Circuit Breaking]\nThe current repo already includes health tracking, retry, timeout, and circuit breaker ideas. citeturn914425view0\n\nKeep them, but tighten the rules.\nQ: What does the current repo include?\nQ: What should be done to the existing health tracking, retry, timeout, and circuit breaker ideas?\nQ: How should the rules be adjusted?",
+      "embed_text": "[SECTION: 6. Health, Retry, and Circuit Breaking]\nThe current repo already includes health tracking, retry, timeout, and circuit breaker ideas. citeturn914425view0\n\nKeep them, but tighten the rules.\nQ: What does the current repo include?\nQ: What action is suggested for the existing health tracking, retry, timeout, and circuit breaker ideas?\nQ: What needs to be done to the current rules?",
       "token_count": 20,
-      "embed_token_count": 57,
+      "embed_token_count": 60,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What does the current repo include?",
-        "What should be done to the existing health tracking, retry, timeout, and circuit breaker ideas?",
-        "How should the rules be adjusted?"
+        "What action is suggested for the existing health tracking, retry, timeout, and circuit breaker ideas?",
+        "What needs to be done to the current rules?"
       ],
       "content_hash": "cf93c57344e64fcb66841a96cd72955b885a349944021036cae7002da19c1fb7",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1199,20 +1199,20 @@
         "6.1_passive_health_tracking"
       ],
       "text": "Track:\n\n- connect failures\n- timeouts\n- 5xx responses\n- malformed response errors\n- retry counts",
-      "embed_text": "[SECTION: 6.1 Passive health tracking]\nTrack:\n\n- connect failures\n- timeouts\n- 5xx responses\n- malformed response errors\n- retry counts\nQ: What types of errors does the system track?\nQ: Which HTTP response codes are tracked?\nQ: What specific issues does the tracking include?",
+      "embed_text": "[SECTION: 6.1 Passive health tracking]\nTrack:\n\n- connect failures\n- timeouts\n- 5xx responses\n- malformed response errors\n- retry counts\nQ: What types of errors does the system track?\nQ: Which HTTP response codes are tracked?\nQ: What specific issues related to response errors are monitored?",
       "token_count": 16,
-      "embed_token_count": 45,
+      "embed_token_count": 47,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What types of errors does the system track?",
         "Which HTTP response codes are tracked?",
-        "What specific issues does the tracking include?"
+        "What specific issues related to response errors are monitored?"
       ],
       "content_hash": "ee947e95391b5ce00031253b0b2989b528264c279c71b57dfdb0c4e9391576b2",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1243,8 +1243,8 @@
       ],
       "content_hash": "85abf7fabae671d54193ef61c217d2907fab61c445242607f3ebb627417ac3a6",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1263,20 +1263,20 @@
         "6.3_retry_policy"
       ],
       "text": "Retry only when safe:\n\n- connect failure\n- backend timeout before response body starts\n- 502/503/504 from backend\n\nDo **not** retry:\n\n- after streaming has started\n- after response body has partially returned\n- for client-side validation errors\n\nUse:\n\n- max one retry\n- preferably retry to a different backend",
-      "embed_text": "[SECTION: 6.3 Retry policy]\nRetry only when safe:\n\n- connect failure\n- backend timeout before response body starts\n- 502/503/504 from backend\n\nDo **not** retry:\n\n- after streaming has started\n- after response body has partially returned\n- for client-side validation errors\n\nUse:\n\n- max one retry\n- preferably retry to a different backend\nQ: When should you retry according to the policy?\nQ: What should not trigger a retry according to the policy?\nQ: How many retries are recommended according to the policy?",
+      "embed_text": "[SECTION: 6.3 Retry policy]\nRetry only when safe:\n\n- connect failure\n- backend timeout before response body starts\n- 502/503/504 from backend\n\nDo **not** retry:\n\n- after streaming has started\n- after response body has partially returned\n- for client-side validation errors\n\nUse:\n\n- max one retry\n- preferably retry to a different backend\nQ: When should retries be performed according to the policy?\nQ: What conditions trigger a retry?\nQ: What should not cause a retry according to the policy?",
       "token_count": 50,
-      "embed_token_count": 84,
+      "embed_token_count": 81,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "When should you retry according to the policy?",
-        "What should not trigger a retry according to the policy?",
-        "How many retries are recommended according to the policy?"
+        "When should retries be performed according to the policy?",
+        "What conditions trigger a retry?",
+        "What should not cause a retry according to the policy?"
       ],
       "content_hash": "6d9c7e537b157c570b08caaa2ddf89fe4c93c66b9da8cc5b69d963ceb3a0f3b4",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1295,20 +1295,20 @@
         "6.4_circuit_breaker_policy"
       ],
       "text": "Each backend should move through:\n\n- `closed`\n- `open`\n- `half_open`\n\nSuggested behavior:\n\n- open after repeated failures over a rolling window\n- remain open for a cooldown window\n- allow limited probe traffic in half-open state\n- close only after successful recovery probes\n\n---",
-      "embed_text": "[SECTION: 6.4 Circuit breaker policy]\nEach backend should move through:\n\n- `closed`\n- `open`\n- `half_open`\n\nSuggested behavior:\n\n- open after repeated failures over a rolling window\n- remain open for a cooldown window\n- allow limited probe traffic in half-open state\n- close only after successful recovery probes\n\n---\nQ: What are the three states a backend moves through?\nQ: What happens after repeated failures?\nQ: How does the system handle the half-open state?",
+      "embed_text": "[SECTION: 6.4 Circuit breaker policy]\nEach backend should move through:\n\n- `closed`\n- `open`\n- `half_open`\n\nSuggested behavior:\n\n- open after repeated failures over a rolling window\n- remain open for a cooldown window\n- allow limited probe traffic in half-open state\n- close only after successful recovery probes\n\n---\nQ: What are the three states a backend moves through?\nQ: What happens after repeated failures?\nQ: How does the system behave in the half-open state?",
       "token_count": 45,
-      "embed_token_count": 75,
+      "embed_token_count": 76,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What are the three states a backend moves through?",
         "What happens after repeated failures?",
-        "How does the system handle the half-open state?"
+        "How does the system behave in the half-open state?"
       ],
       "content_hash": "9c1e600e7833e17ed33aa6cdbdb574f926c4831c78ebd9936622d7eeb73cecaa",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1339,8 +1339,8 @@
       ],
       "content_hash": "b4867918c1e455a10ac43614459785b0f2be1e50b27f774c6cb4ad87a7d5b8e5",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1359,7 +1359,7 @@
         "7.1_gateway_metrics"
       ],
       "text": "Expose at least:\n\n- `gateway_requests_total`\n- `gateway_request_errors_total`\n- `gateway_request_retries_total`\n- `gateway_queue_depth`\n- `gateway_queue_age_ms`\n- `gateway_dispatch_total{backend=...}`\n- `gateway_backend_inflight{backend=...}`\n- `gateway_backend_ewma_ttft_ms{backend=...}`\n- `gateway_backend_ewma_e2e_ms{backend=...}`\n- `gateway_backend_error_rate{backend=...}`\n- `gateway_backend_circuit_state{backend=...}`\n- `gateway_rejections_total{reason=...}`",
-      "embed_text": "[SECTION: 7.1 Gateway metrics]\nExpose at least:\n\n- `gateway_requests_total`\n- `gateway_request_errors_total`\n- `gateway_request_retries_total`\n- `gateway_queue_depth`\n- `gateway_queue_age_ms`\n- `gateway_dispatch_total{backend=...}`\n- `gateway_backend_inflight{backend=...}`\n- `gateway_backend_ewma_ttft_ms{backend=...}`\n- `gateway_backend_ewma_e2e_ms{backend=...}`\n- `gateway_backend_error_rate{backend=...}`\n- `gateway_backend_circuit_state{backend=...}`\n- `gateway_rejections_total{reason=...}`\nQ: What metrics are exposed by the gateway?\nQ: How many distinct gateway backend metrics are listed?\nQ: What does the metric 'gateway_rejections_total' indicate?",
+      "embed_text": "[SECTION: 7.1 Gateway metrics]\nExpose at least:\n\n- `gateway_requests_total`\n- `gateway_request_errors_total`\n- `gateway_request_retries_total`\n- `gateway_queue_depth`\n- `gateway_queue_age_ms`\n- `gateway_dispatch_total{backend=...}`\n- `gateway_backend_inflight{backend=...}`\n- `gateway_backend_ewma_ttft_ms{backend=...}`\n- `gateway_backend_ewma_e2e_ms{backend=...}`\n- `gateway_backend_error_rate{backend=...}`\n- `gateway_backend_circuit_state{backend=...}`\n- `gateway_rejections_total{reason=...}`\nQ: What metrics are exposed by the gateway?\nQ: How many distinct gateway backend metrics are listed?\nQ: What does the metric 'gateway_rejections_total{reason=...}' indicate?",
       "token_count": 27,
       "embed_token_count": 55,
       "synthetic_questions_used": 3,
@@ -1367,12 +1367,12 @@
       "synthetic_questions": [
         "What metrics are exposed by the gateway?",
         "How many distinct gateway backend metrics are listed?",
-        "What does the metric 'gateway_rejections_total' indicate?"
+        "What does the metric 'gateway_rejections_total{reason=...}' indicate?"
       ],
       "content_hash": "c995dfc1f8abb7d988ea38d80770c2134d7fe5eabe48184a260c2db6bde1f89b",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1403,8 +1403,8 @@
       ],
       "content_hash": "9c85de10620bf3368183ceaf35e97735fa573eac2a7fd832a023f103fee4ce42",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1423,20 +1423,20 @@
         "7.3_correlation_ids"
       ],
       "text": "Add request IDs so one can correlate:\n\n- gateway logs\n- backend proxy logs\n- vLLM logs\n- Grafana panels\n\n---",
-      "embed_text": "[SECTION: 7.3 Correlation IDs]\nAdd request IDs so one can correlate:\n\n- gateway logs\n- backend proxy logs\n- vLLM logs\n- Grafana panels\n\n---\nQ: What types of logs can be correlated using request IDs?\nQ: What tool can display these correlated logs?\nQ: What is added to requests for correlation purposes?",
+      "embed_text": "[SECTION: 7.3 Correlation IDs]\nAdd request IDs so one can correlate:\n\n- gateway logs\n- backend proxy logs\n- vLLM logs\n- Grafana panels\n\n---\nQ: What types of logs can be correlated using request IDs?\nQ: Which tool's logs can be correlated with request IDs?\nQ: What visualization tool is mentioned for displaying these correlated logs?",
       "token_count": 21,
-      "embed_token_count": 53,
+      "embed_token_count": 57,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What types of logs can be correlated using request IDs?",
-        "What tool can display these correlated logs?",
-        "What is added to requests for correlation purposes?"
+        "Which tool's logs can be correlated with request IDs?",
+        "What visualization tool is mentioned for displaying these correlated logs?"
       ],
       "content_hash": "40f4d8d9aaca1fbfdaac2a90cf2fccf1f698d22620f0653ec737a4da6bbcf919",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1467,8 +1467,8 @@
       ],
       "content_hash": "c93dc4fe54910a1b37cac09671e29d9463625eec3763ff713dede37462977138",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1499,8 +1499,8 @@
       ],
       "content_hash": "06952ab456b113ba40f04b15db91ab698fb4779bb09e8ba30069cf7500a1d454",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1519,20 +1519,20 @@
         "8.2_config_file"
       ],
       "text": "Suggested config structure:\n\n```yaml\nserver:\n  host: 0.0.0.0\n  port: 8010\n  request_timeout_ms: 60000\n\nscheduler:\n  tick_ms: 10\n  queue_max_size: 500\n  queue_max_age_ms: 2000\n  dispatch_batch_size: 20\n\nrouting:\n  inflight_weight: 8.0\n  queue_weight: 0.04\n  ttft_weight: 0.03\n  e2e_weight: 0.02\n  error_weight: 100.0\n  hot_penalty_weight: 20.0\n  overload_penalty_weight: 15.0\n\nbackends:\n  - name: gpu-node-1\n    url: http://192.168.86.173:30080\n    soft_limit: 20\n    hard_limit: 28\n  - name: gpu-node-2\n    url: http://192.168.86.176:30080\n    soft_limit: 20\n    hard_limit: 28",
-      "embed_text": "[SECTION: 8.2 Config file]\nSuggested config structure:\n\n```yaml\nserver:\n  host: 0.0.0.0\n  port: 8010\n  request_timeout_ms: 60000\n\nscheduler:\n  tick_ms: 10\n  queue_max_size: 500\n  queue_max_age_ms: 2000\n  dispatch_batch_size: 20\n\nrouting:\n  inflight_weight: 8.0\n  queue_weight: 0.04\n  ttft_weight: 0.03\n  e2e_weight: 0.02\n  error_weight: 100.0\n  hot_penalty_weight: 20.0\n  overload_penalty_weight: 15.0\n\nbackends:\n  - name: gpu-node-1\n    url: http://192.168.86.173:30080\n    soft_limit: 20\n    hard_limit: 28\n  - name: gpu-node-2\n    url: http://192.168.86.176:30080\n    soft_limit: 20\n    hard_limit: 28\nQ: What is the default host value in the server configuration?\nQ: How many backends are listed in the config?\nQ: What is the error_weight for routing?",
+      "embed_text": "[SECTION: 8.2 Config file]\nSuggested config structure:\n\n```yaml\nserver:\n  host: 0.0.0.0\n  port: 8010\n  request_timeout_ms: 60000\n\nscheduler:\n  tick_ms: 10\n  queue_max_size: 500\n  queue_max_age_ms: 2000\n  dispatch_batch_size: 20\n\nrouting:\n  inflight_weight: 8.0\n  queue_weight: 0.04\n  ttft_weight: 0.03\n  e2e_weight: 0.02\n  error_weight: 100.0\n  hot_penalty_weight: 20.0\n  overload_penalty_weight: 15.0\n\nbackends:\n  - name: gpu-node-1\n    url: http://192.168.86.173:30080\n    soft_limit: 20\n    hard_limit: 28\n  - name: gpu-node-2\n    url: http://192.168.86.176:30080\n    soft_limit: 20\n    hard_limit: 28\nQ: What is the default host value in the server configuration?\nQ: How many backends are defined in the config?\nQ: What is the error weight in the routing section?",
       "token_count": 54,
-      "embed_token_count": 85,
+      "embed_token_count": 88,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is the default host value in the server configuration?",
-        "How many backends are listed in the config?",
-        "What is the error_weight for routing?"
+        "How many backends are defined in the config?",
+        "What is the error weight in the routing section?"
       ],
       "content_hash": "4d6aa13c9ee62869559082e774694d6898837b0f202acd8b8997cbc43744c7e1",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1563,8 +1563,8 @@
       ],
       "content_hash": "ac8f1bfbd048a4ebcf578ef80ab21a6f9f4b1969fe906425b56e5fefb59f9d74",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1583,20 +1583,20 @@
         "9._internal_code_structure"
       ],
       "text": "Suggested structure:\n\n```text\napp/\n  main.py\n  api/\n    routes.py\n    schemas.py\n  core/\n    config.py\n    logging.py\n    types.py\n  queue/\n    admission_queue.py\n  scheduler/\n    dispatcher.py\n    scoring.py\n    classifier.py\n  backends/\n    state.py\n    health.py\n    registry.py\n  proxy/\n    client.py\n    stream.py\n  metrics/\n    prometheus.py\n```",
-      "embed_text": "[SECTION: 9. Internal Code Structure]\nSuggested structure:\n\n```text\napp/\n  main.py\n  api/\n    routes.py\n    schemas.py\n  core/\n    config.py\n    logging.py\n    types.py\n  queue/\n    admission_queue.py\n  scheduler/\n    dispatcher.py\n    scoring.py\n    classifier.py\n  backends/\n    state.py\n    health.py\n    registry.py\n  proxy/\n    client.py\n    stream.py\n  metrics/\n    prometheus.py\n```\nQ: What is the suggested directory structure for the application?\nQ: Which file is responsible for the main application logic?\nQ: What module handles the admission queue process?",
+      "embed_text": "[SECTION: 9. Internal Code Structure]\nSuggested structure:\n\n```text\napp/\n  main.py\n  api/\n    routes.py\n    schemas.py\n  core/\n    config.py\n    logging.py\n    types.py\n  queue/\n    admission_queue.py\n  scheduler/\n    dispatcher.py\n    scoring.py\n    classifier.py\n  backends/\n    state.py\n    health.py\n    registry.py\n  proxy/\n    client.py\n    stream.py\n  metrics/\n    prometheus.py\n```\nQ: What is the suggested directory structure for the application?\nQ: Which file is responsible for the main application logic?\nQ: What module handles the admission queue?",
       "token_count": 28,
-      "embed_token_count": 61,
+      "embed_token_count": 60,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is the suggested directory structure for the application?",
         "Which file is responsible for the main application logic?",
-        "What module handles the admission queue process?"
+        "What module handles the admission queue?"
       ],
       "content_hash": "75d602a7fae052ebe2302cb9bce41eb94d043cd22f6835c4524841dfc7ad54fb",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1615,7 +1615,7 @@
         "9.1_key_modules"
       ],
       "text": "9.1 Key modules",
-      "embed_text": "[SECTION: 9.1 Key modules]\n9.1 Key modules\nQ: What section does this text belong to?\nQ: What is the title of this section?\nQ: Are there any listed modules in this section?",
+      "embed_text": "[SECTION: 9.1 Key modules]\n9.1 Key modules\nQ: What section does this text belong to?\nQ: What is the title of this section?\nQ: Are there any sub-modules mentioned in this section?",
       "token_count": 3,
       "embed_token_count": 32,
       "synthetic_questions_used": 3,
@@ -1623,12 +1623,12 @@
       "synthetic_questions": [
         "What section does this text belong to?",
         "What is the title of this section?",
-        "Are there any listed modules in this section?"
+        "Are there any sub-modules mentioned in this section?"
       ],
       "content_hash": "9bd136014757a94c3f2fa2549a64e3e367f8bb6418c857acc4de30c1cb1842da",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1647,20 +1647,20 @@
         "`admission_queue.py`"
       ],
       "text": "- bounded async queue\n- enqueue/dequeue APIs\n- queue age tracking",
-      "embed_text": "[SECTION: `admission_queue.py`]\n- bounded async queue\n- enqueue/dequeue APIs\n- queue age tracking\nQ: What features does the admission_queue.py support?\nQ: What are the main APIs provided by the admission_queue.py?\nQ: How is queue age tracked in the admission_queue.py?",
+      "embed_text": "[SECTION: `admission_queue.py`]\n- bounded async queue\n- enqueue/dequeue APIs\n- queue age tracking\nQ: What features does the admission_queue.py include?\nQ: What APIs are provided for interacting with the queue?\nQ: How is queue age tracked?",
       "token_count": 11,
-      "embed_token_count": 39,
+      "embed_token_count": 36,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What features does the admission_queue.py support?",
-        "What are the main APIs provided by the admission_queue.py?",
-        "How is queue age tracked in the admission_queue.py?"
+        "What features does the admission_queue.py include?",
+        "What APIs are provided for interacting with the queue?",
+        "How is queue age tracked?"
       ],
       "content_hash": "fc48786d8cab4e6b49d095fe9d68ac8b7bfd37a2cd34cbd603792acb201f8e17",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1691,8 +1691,8 @@
       ],
       "content_hash": "8a555db0da9c3cc8171936600ed76d7b638d68b4b2038f26cbc43663b8b396e6",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1723,8 +1723,8 @@
       ],
       "content_hash": "730e42be37d421db96324cf49669f1a9c5bec5c370ccf14599c01aa75112a0aa",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1743,20 +1743,20 @@
         "`state.py`"
       ],
       "text": "- backend runtime state\n- inflight counts\n- EWMA updates\n- recent events",
-      "embed_text": "[SECTION: `state.py`]\n- backend runtime state\n- inflight counts\n- EWMA updates\n- recent events\nQ: What does the section cover?\nQ: What type of data is tracked?\nQ: What kind of metrics are updated?",
+      "embed_text": "[SECTION: `state.py`]\n- backend runtime state\n- inflight counts\n- EWMA updates\n- recent events\nQ: What does the section cover?\nQ: What kind of data is tracked?\nQ: Which types of updates are included?",
       "token_count": 13,
       "embed_token_count": 35,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What does the section cover?",
-        "What type of data is tracked?",
-        "What kind of metrics are updated?"
+        "What kind of data is tracked?",
+        "Which types of updates are included?"
       ],
       "content_hash": "6525c269368462dea1fc72250100f9f3cd1ed99c77779e0bd4342e0700a2671f",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1775,20 +1775,20 @@
         "`client.py`"
       ],
       "text": "- async HTTP client to vLLM backends\n- timeout and retry logic\n- streaming-safe handling\n\n---",
-      "embed_text": "[SECTION: `client.py`]\n- async HTTP client to vLLM backends\n- timeout and retry logic\n- streaming-safe handling\n\n---\nQ: What functionalities does the async HTTP client in client.py support?\nQ: Does client.py include timeout and retry mechanisms?\nQ: Is client.py designed to handle streaming data safely?",
+      "embed_text": "[SECTION: `client.py`]\n- async HTTP client to vLLM backends\n- timeout and retry logic\n- streaming-safe handling\n\n---\nQ: What functionalities does the client.py include?\nQ: Does client.py support timeout and retry logic?\nQ: Is client.py designed for streaming-safe handling?",
       "token_count": 16,
-      "embed_token_count": 46,
+      "embed_token_count": 40,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What functionalities does the async HTTP client in client.py support?",
-        "Does client.py include timeout and retry mechanisms?",
-        "Is client.py designed to handle streaming data safely?"
+        "What functionalities does the client.py include?",
+        "Does client.py support timeout and retry logic?",
+        "Is client.py designed for streaming-safe handling?"
       ],
       "content_hash": "b95b57aa53aaf14aa457428d4f963f0aa16b8d313f493319251380324fe8fdfa",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1807,20 +1807,20 @@
         "10._implementation_phases"
       ],
       "text": "10. Implementation Phases",
-      "embed_text": "[SECTION: 10. Implementation Phases]\n10. Implementation Phases\nQ: What does the section 10 cover?\nQ: How many implementation phases are discussed?\nQ: Is this section about the detailed steps of implementation?",
+      "embed_text": "[SECTION: 10. Implementation Phases]\n10. Implementation Phases\nQ: What does the section 10 cover?\nQ: How many implementation phases are discussed?\nQ: Is this section about the details of implementation or an overview?",
       "token_count": 3,
-      "embed_token_count": 31,
+      "embed_token_count": 33,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What does the section 10 cover?",
         "How many implementation phases are discussed?",
-        "Is this section about the detailed steps of implementation?"
+        "Is this section about the details of implementation or an overview?"
       ],
       "content_hash": "155328cd573ac4aa9aba4bba5d6ed62feadbfdedcf71dca9ec6d1aa6a8a8b925",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1839,20 +1839,20 @@
         "phase_0:_baseline_capture"
       ],
       "text": "Before changing code, capture baseline with current gateway or k3s-only routing.\n\nRecord:\n\n- TTFT p50/p95/p99\n- end-to-end p50/p95/p99\n- throughput\n- per-backend dispatch share\n- GPU utilization for both nodes\n- error rate",
-      "embed_text": "[SECTION: Phase 0: Baseline capture]\nBefore changing code, capture baseline with current gateway or k3s-only routing.\n\nRecord:\n\n- TTFT p50/p95/p99\n- end-to-end p50/p95/p99\n- throughput\n- per-backend dispatch share\n- GPU utilization for both nodes\n- error rate\nQ: What metrics should be recorded during the baseline capture?\nQ: Which performance percentiles need to be recorded?\nQ: What specific resources' utilizations need to be tracked?",
+      "embed_text": "[SECTION: Phase 0: Baseline capture]\nBefore changing code, capture baseline with current gateway or k3s-only routing.\n\nRecord:\n\n- TTFT p50/p95/p99\n- end-to-end p50/p95/p99\n- throughput\n- per-backend dispatch share\n- GPU utilization for both nodes\n- error rate\nQ: What metrics should be recorded during the baseline capture?\nQ: Which specific percentiles of TTFT should be recorded?\nQ: What is being measured for GPU utilization?",
       "token_count": 33,
       "embed_token_count": 65,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What metrics should be recorded during the baseline capture?",
-        "Which performance percentiles need to be recorded?",
-        "What specific resources' utilizations need to be tracked?"
+        "Which specific percentiles of TTFT should be recorded?",
+        "What is being measured for GPU utilization?"
       ],
       "content_hash": "2b4d218eebd4298e33aaaf83099f9963e6105264d783a478a4eb1d0ea6a162cb",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1871,20 +1871,20 @@
         "phase_1:_core_queue_+_scheduler"
       ],
       "text": "Build:\n\n- bounded admission queue\n- scheduler loop\n- backend eligibility filter\n- simple score using inflight + EWMA TTFT + EWMA errors\n\nSuccess criteria:\n\n- both backends used more evenly\n- no correctness regressions\n- overload returns 503 quickly instead of hanging",
-      "embed_text": "[SECTION: Phase 1: Core queue + scheduler]\nBuild:\n\n- bounded admission queue\n- scheduler loop\n- backend eligibility filter\n- simple score using inflight + EWMA TTFT + EWMA errors\n\nSuccess criteria:\n\n- both backends used more evenly\n- no correctness regressions\n- overload returns 503 quickly instead of hanging\nQ: What are the components of the core queue in phase 1?\nQ: What is the success criterion related to backend usage?\nQ: How does the system handle overload according to the success criteria?",
+      "embed_text": "[SECTION: Phase 1: Core queue + scheduler]\nBuild:\n\n- bounded admission queue\n- scheduler loop\n- backend eligibility filter\n- simple score using inflight + EWMA TTFT + EWMA errors\n\nSuccess criteria:\n\n- both backends used more evenly\n- no correctness regressions\n- overload returns 503 quickly instead of hanging\nQ: What are the components of the core queue in phase 1?\nQ: How does the system handle overload according to the success criteria?\nQ: What methods are used for scoring in the backend eligibility filter?",
       "token_count": 43,
-      "embed_token_count": 84,
+      "embed_token_count": 86,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What are the components of the core queue in phase 1?",
-        "What is the success criterion related to backend usage?",
-        "How does the system handle overload according to the success criteria?"
+        "How does the system handle overload according to the success criteria?",
+        "What methods are used for scoring in the backend eligibility filter?"
       ],
       "content_hash": "af4163cf01d3da8e35ac03c0d71801ab3524ca074284f4c243f024a03c8691ed",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1903,20 +1903,20 @@
         "phase_2:_fairness_and_hot-backend_control"
       ],
       "text": "Add:\n\n- recent dispatch tracking\n- hot-backend penalty\n- soft/hard inflight limits\n\nSuccess criteria:\n\n- reduced one-node wave behavior\n- improved simultaneous GPU activity",
-      "embed_text": "[SECTION: Phase 2: Fairness and hot-backend control]\nAdd:\n\n- recent dispatch tracking\n- hot-backend penalty\n- soft/hard inflight limits\n\nSuccess criteria:\n\n- reduced one-node wave behavior\n- improved simultaneous GPU activity\nQ: What is added in Phase 2?\nQ: What is the hot-backend penalty?\nQ: What are the success criteria for Phase 2?",
+      "embed_text": "[SECTION: Phase 2: Fairness and hot-backend control]\nAdd:\n\n- recent dispatch tracking\n- hot-backend penalty\n- soft/hard inflight limits\n\nSuccess criteria:\n\n- reduced one-node wave behavior\n- improved simultaneous GPU activity\nQ: What was added in Phase 2?\nQ: What is the hot-backend penalty?\nQ: What are the success criteria for Phase 2?",
       "token_count": 24,
       "embed_token_count": 53,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is added in Phase 2?",
+        "What was added in Phase 2?",
         "What is the hot-backend penalty?",
         "What are the success criteria for Phase 2?"
       ],
       "content_hash": "40b3ec27811d7b8b655a29f77e9e8103c2866cadc113013d3dce0af5d1828e7f",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1935,20 +1935,20 @@
         "phase_3:_request_classification"
       ],
       "text": "Add:\n\n- request size estimation\n- class-aware penalties or limits\n\nSuccess criteria:\n\n- short requests retain good TTFT under mixed workloads",
-      "embed_text": "[SECTION: Phase 3: Request classification]\nAdd:\n\n- request size estimation\n- class-aware penalties or limits\n\nSuccess criteria:\n\n- short requests retain good TTFT under mixed workloads\nQ: What is included in Phase 3?\nQ: What new elements should be added in Phase 3?\nQ: What are the success criteria for Phase 3?",
+      "embed_text": "[SECTION: Phase 3: Request classification]\nAdd:\n\n- request size estimation\n- class-aware penalties or limits\n\nSuccess criteria:\n\n- short requests retain good TTFT under mixed workloads\nQ: What is included in Phase 3?\nQ: What are the two new additions to request classification?\nQ: What is the success criterion for short requests?",
       "token_count": 21,
       "embed_token_count": 52,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is included in Phase 3?",
-        "What new elements should be added in Phase 3?",
-        "What are the success criteria for Phase 3?"
+        "What are the two new additions to request classification?",
+        "What is the success criterion for short requests?"
       ],
       "content_hash": "ffcf17f4d2c44816e7c707c71d5b0706df0e7104c53f0779d076c93a574c0cd8",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1979,8 +1979,8 @@
       ],
       "content_hash": "883347b950458b850dfe411843ef43bf3cb684e4b26d2aed375d5d80126e124d",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -1999,20 +1999,20 @@
         "phase_5:_recovery_and_resilience_hardening"
       ],
       "text": "Add:\n\n- half-open circuit behavior\n- safer retry rules\n- configurable backend draining\n\nSuccess criteria:\n\n- backend failures do not cascade into cluster-wide latency spikes",
-      "embed_text": "[SECTION: Phase 5: Recovery and resilience hardening]\nAdd:\n\n- half-open circuit behavior\n- safer retry rules\n- configurable backend draining\n\nSuccess criteria:\n\n- backend failures do not cascade into cluster-wide latency spikes\nQ: What behaviors are added to improve recovery and resilience in Phase 5?\nQ: How does the success criterion for Phase 5 prevent backend failures from causing cluster-wide issues?\nQ: What kind of backend management features are introduced in Phase 5?",
+      "embed_text": "[SECTION: Phase 5: Recovery and resilience hardening]\nAdd:\n\n- half-open circuit behavior\n- safer retry rules\n- configurable backend draining\n\nSuccess criteria:\n\n- backend failures do not cascade into cluster-wide latency spikes\nQ: What behaviors are added to improve recovery and resilience in phase 5?\nQ: How does the success criterion for phase 5 contribute to system stability?\nQ: What kind of backend management features are introduced?",
       "token_count": 25,
-      "embed_token_count": 73,
+      "embed_token_count": 67,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What behaviors are added to improve recovery and resilience in Phase 5?",
-        "How does the success criterion for Phase 5 prevent backend failures from causing cluster-wide issues?",
-        "What kind of backend management features are introduced in Phase 5?"
+        "What behaviors are added to improve recovery and resilience in phase 5?",
+        "How does the success criterion for phase 5 contribute to system stability?",
+        "What kind of backend management features are introduced?"
       ],
       "content_hash": "cf5040b39dfea1705d840ec482eb591fe8d047fb555be8553ef1ab9cd16ca81b",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -2043,8 +2043,8 @@
       ],
       "content_hash": "13fcb43fe3c960a8466919abe90e155b3c5ac6eef59e1abfe702190e0baa9992",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -2075,8 +2075,8 @@
       ],
       "content_hash": "e30e023ef6a8f226c6b2c4e0fb8d260323406f457c71ad7e663dd73961411574",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -2095,20 +2095,20 @@
         "11.1_unit_tests"
       ],
       "text": "Cover:\n\n- score calculation\n- eligibility filtering\n- queue age expiry\n- retry conditions\n- circuit breaker transitions\n- hot-backend penalty behavior",
-      "embed_text": "[SECTION: 11.1 Unit tests]\nCover:\n\n- score calculation\n- eligibility filtering\n- queue age expiry\n- retry conditions\n- circuit breaker transitions\n- hot-backend penalty behavior\nQ: What are the unit test topics covered?\nQ: Which behaviors are tested for circuit breakers?\nQ: How is hot-backend penalty behavior tested?",
+      "embed_text": "[SECTION: 11.1 Unit tests]\nCover:\n\n- score calculation\n- eligibility filtering\n- queue age expiry\n- retry conditions\n- circuit breaker transitions\n- hot-backend penalty behavior\nQ: What are the main topics covered in unit tests?\nQ: Which functionalities are tested in unit tests?\nQ: How many functionalities are mentioned to be tested in unit tests?",
       "token_count": 22,
-      "embed_token_count": 49,
+      "embed_token_count": 56,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What are the unit test topics covered?",
-        "Which behaviors are tested for circuit breakers?",
-        "How is hot-backend penalty behavior tested?"
+        "What are the main topics covered in unit tests?",
+        "Which functionalities are tested in unit tests?",
+        "How many functionalities are mentioned to be tested in unit tests?"
       ],
       "content_hash": "05a7294804de33d2b7def9f043cfc75ee2d96a912bae4d539ae87cb8ffb1dfeb",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -2127,20 +2127,20 @@
         "11.2_integration_tests"
       ],
       "text": "Use mocked backends with controlled latency and failure behavior.\n\nTest:\n\n- one slow backend, one healthy backend\n- one failing backend\n- both healthy, burst load\n- queue overflow\n- streaming responses",
-      "embed_text": "[SECTION: 11.2 Integration tests]\nUse mocked backends with controlled latency and failure behavior.\n\nTest:\n\n- one slow backend, one healthy backend\n- one failing backend\n- both healthy, burst load\n- queue overflow\n- streaming responses\nQ: What types of backends are tested for latency?\nQ: How many backends are tested when both are healthy?\nQ: What kind of response is tested in the test scenarios?",
+      "embed_text": "[SECTION: 11.2 Integration tests]\nUse mocked backends with controlled latency and failure behavior.\n\nTest:\n\n- one slow backend, one healthy backend\n- one failing backend\n- both healthy, burst load\n- queue overflow\n- streaming responses\nQ: What types of backends are tested for latency?\nQ: How many backends are tested in the burst load scenario?\nQ: What condition is tested for streaming responses?",
       "token_count": 32,
-      "embed_token_count": 66,
+      "embed_token_count": 64,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What types of backends are tested for latency?",
-        "How many backends are tested when both are healthy?",
-        "What kind of response is tested in the test scenarios?"
+        "How many backends are tested in the burst load scenario?",
+        "What condition is tested for streaming responses?"
       ],
       "content_hash": "45b06ed795958d274a4f02460afab225b6797e5f997c0c11b572815c4419e71d",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -2159,20 +2159,20 @@
         "11.3_load_tests"
       ],
       "text": "Compare at least three modes:\n\n1. direct k3s Service routing\n2. current gateway design\n3. redesigned scheduler gateway\n\nMeasure:\n\n- aggregate throughput\n- p95/p99 latency\n- per-backend dispatch fairness\n- simultaneous GPU utilization\n- rejection rate under overload",
-      "embed_text": "[SECTION: 11.3 Load tests]\nCompare at least three modes:\n\n1. direct k3s Service routing\n2. current gateway design\n3. redesigned scheduler gateway\n\nMeasure:\n\n- aggregate throughput\n- p95/p99 latency\n- per-backend dispatch fairness\n- simultaneous GPU utilization\n- rejection rate under overload\nQ: What are the three modes being compared in load tests?\nQ: What metric is used to measure aggregate throughput?\nQ: Which metric evaluates the fairness of dispatch per-backend?",
+      "embed_text": "[SECTION: 11.3 Load tests]\nCompare at least three modes:\n\n1. direct k3s Service routing\n2. current gateway design\n3. redesigned scheduler gateway\n\nMeasure:\n\n- aggregate throughput\n- p95/p99 latency\n- per-backend dispatch fairness\n- simultaneous GPU utilization\n- rejection rate under overload\nQ: What are the three modes being compared in the load tests?\nQ: What metric is used to measure aggregate throughput?\nQ: What metric is used to measure rejection rate under overload?",
       "token_count": 38,
-      "embed_token_count": 71,
+      "embed_token_count": 74,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What are the three modes being compared in load tests?",
+        "What are the three modes being compared in the load tests?",
         "What metric is used to measure aggregate throughput?",
-        "Which metric evaluates the fairness of dispatch per-backend?"
+        "What metric is used to measure rejection rate under overload?"
       ],
       "content_hash": "165a1352e0631862fb61b8a282a260040ef15c30a432d4fed69d9e9fc61aeda0",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -2191,20 +2191,20 @@
         "11.4_success_metrics"
       ],
       "text": "The redesign is working if:\n\n- both backends are active together more often\n- wave patterns are reduced\n- aggregate throughput rises\n- p99 latency stays acceptable\n- error and retry behavior are predictable\n\n---",
-      "embed_text": "[SECTION: 11.4 Success metrics]\nThe redesign is working if:\n\n- both backends are active together more often\n- wave patterns are reduced\n- aggregate throughput rises\n- p99 latency stays acceptable\n- error and retry behavior are predictable\n\n---\nQ: What indicates that the redesign is successful?\nQ: How does the redesign affect backend activity?\nQ: Which metric ensures the system’s predictability?",
+      "embed_text": "[SECTION: 11.4 Success metrics]\nThe redesign is working if:\n\n- both backends are active together more often\n- wave patterns are reduced\n- aggregate throughput rises\n- p99 latency stays acceptable\n- error and retry behavior are predictable\n\n---\nQ: What indicates that the redesign is successful?\nQ: How is aggregate throughput measured in this context?\nQ: What does 'p99 latency stays acceptable' imply about the system?",
       "token_count": 35,
-      "embed_token_count": 62,
+      "embed_token_count": 67,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What indicates that the redesign is successful?",
-        "How does the redesign affect backend activity?",
-        "Which metric ensures the system’s predictability?"
+        "How is aggregate throughput measured in this context?",
+        "What does 'p99 latency stays acceptable' imply about the system?"
       ],
       "content_hash": "0f12e6fdc3df8ddd1b251a1ce2fad82bba1652d66eeb1491b75990e77891b458",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -2223,20 +2223,20 @@
         "12._risks_and_tradeoffs"
       ],
       "text": "12. Risks and Tradeoffs",
-      "embed_text": "[SECTION: 12. Risks and Tradeoffs]\n12. Risks and Tradeoffs\nQ: What section number is dedicated to risks and tradeoffs?\nQ: What does this section title discuss?\nQ: Which topic is covered in section 12?",
+      "embed_text": "[SECTION: 12. Risks and Tradeoffs]\n12. Risks and Tradeoffs\nQ: What section number is dedicated to risks and tradeoffs?\nQ: What does this section title discuss?\nQ: Which specific topic is covered in section 12?",
       "token_count": 4,
-      "embed_token_count": 34,
+      "embed_token_count": 35,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What section number is dedicated to risks and tradeoffs?",
         "What does this section title discuss?",
-        "Which topic is covered in section 12?"
+        "Which specific topic is covered in section 12?"
       ],
       "content_hash": "35567f310b81272789f8172e91769ab91973ca7c2199a9dceb76ff30e416403d",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -2255,20 +2255,20 @@
         "risk_1:_queue_adds_latency"
       ],
       "text": "Mitigation:\n\n- keep queue age cap low\n- keep scheduler tick short\n- reject early on overload",
-      "embed_text": "[SECTION: Risk 1: Queue adds latency]\nMitigation:\n\n- keep queue age cap low\n- keep scheduler tick short\n- reject early on overload\nQ: What actions can be taken to mitigate queue adds latency?\nQ: How can the scheduler tick be managed to reduce queue adds latency?\nQ: What is the consequence of not rejecting early on overload?",
+      "embed_text": "[SECTION: Risk 1: Queue adds latency]\nMitigation:\n\n- keep queue age cap low\n- keep scheduler tick short\n- reject early on overload\nQ: What actions can be taken to mitigate queue adds latency?\nQ: How can the scheduler tick be managed to reduce queue adds latency?\nQ: What should be done when there is an overload to minimize queue adds latency?",
       "token_count": 17,
-      "embed_token_count": 58,
+      "embed_token_count": 62,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What actions can be taken to mitigate queue adds latency?",
         "How can the scheduler tick be managed to reduce queue adds latency?",
-        "What is the consequence of not rejecting early on overload?"
+        "What should be done when there is an overload to minimize queue adds latency?"
       ],
       "content_hash": "336d09d49940c82bc5306780bd20fb8f8780a7ced9f7a136c25a442c62d32a0b",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -2287,20 +2287,20 @@
         "risk_2:_too_much_fairness_hurts_best-node_selection"
       ],
       "text": "Mitigation:\n\n- hot penalty should be moderate, not dominant\n- keep backend health and error state as stronger signals",
-      "embed_text": "[SECTION: Risk 2: Too much fairness hurts best-node selection]\nMitigation:\n\n- hot penalty should be moderate, not dominant\n- keep backend health and error state as stronger signals\nQ: What should the hot penalty be according to the mitigation?\nQ: Which signals should be stronger than the hot penalty according to the mitigation?\nQ: How many signals are mentioned as being stronger than the hot penalty?",
+      "embed_text": "[SECTION: Risk 2: Too much fairness hurts best-node selection]\nMitigation:\n\n- hot penalty should be moderate, not dominant\n- keep backend health and error state as stronger signals\nQ: What should the hot penalty be according to the mitigation?\nQ: Which signals should be stronger than the hot penalty?\nQ: What are the two signals mentioned in the mitigation?",
       "token_count": 19,
-      "embed_token_count": 66,
+      "embed_token_count": 59,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What should the hot penalty be according to the mitigation?",
-        "Which signals should be stronger than the hot penalty according to the mitigation?",
-        "How many signals are mentioned as being stronger than the hot penalty?"
+        "Which signals should be stronger than the hot penalty?",
+        "What are the two signals mentioned in the mitigation?"
       ],
       "content_hash": "bc17207e81402bed95e1690b564ac2033a5887ebe180857cbfa20cd8589e5346",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -2319,20 +2319,20 @@
         "risk_3:_retry_amplifies_load"
       ],
       "text": "Mitigation:\n\n- only retry once\n- retry only before body starts\n- prefer alternate backend",
-      "embed_text": "[SECTION: Risk 3: Retry amplifies load]\nMitigation:\n\n- only retry once\n- retry only before body starts\n- prefer alternate backend\nQ: How many times should you retry according to the mitigation?\nQ: When should you retry before according to the mitigation?\nQ: What is the preferred action instead of retrying according to the mitigation?",
+      "embed_text": "[SECTION: Risk 3: Retry amplifies load]\nMitigation:\n\n- only retry once\n- retry only before body starts\n- prefer alternate backend\nQ: How many times should you retry?\nQ: When should the retry happen in relation to the body?\nQ: What is the preferred action instead of retrying?",
       "token_count": 15,
-      "embed_token_count": 55,
+      "embed_token_count": 48,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "How many times should you retry according to the mitigation?",
-        "When should you retry before according to the mitigation?",
-        "What is the preferred action instead of retrying according to the mitigation?"
+        "How many times should you retry?",
+        "When should the retry happen in relation to the body?",
+        "What is the preferred action instead of retrying?"
       ],
       "content_hash": "25f0ac0b738be7774f9a91e89fa126a04531e0bf37c2210db9d4c205dbc46e16",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -2351,20 +2351,20 @@
         "risk_4:_overfitting_to_one_benchmark_prompt"
       ],
       "text": "Mitigation:\n\n- test mixed prompt sizes\n- test streaming and non-streaming\n- test longer generations\n\n---",
-      "embed_text": "[SECTION: Risk 4: Overfitting to one benchmark prompt]\nMitigation:\n\n- test mixed prompt sizes\n- test streaming and non-streaming\n- test longer generations\n\n---\nQ: What mitigation strategies can be used to address overfitting to one benchmark prompt?\nQ: How many specific mitigation strategies are mentioned in the text?\nQ: What does testing longer generations aim to achieve in the context of mitigating overfitting?",
+      "embed_text": "[SECTION: Risk 4: Overfitting to one benchmark prompt]\nMitigation:\n\n- test mixed prompt sizes\n- test streaming and non-streaming\n- test longer generations\n\n---\nQ: What mitigation strategies can be used to address overfitting to one benchmark prompt?\nQ: How many specific mitigation methods are mentioned for testing different conditions?\nQ: What aspects of prompt testing are suggested to mitigate overfitting?",
       "token_count": 16,
-      "embed_token_count": 64,
+      "embed_token_count": 61,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What mitigation strategies can be used to address overfitting to one benchmark prompt?",
-        "How many specific mitigation strategies are mentioned in the text?",
-        "What does testing longer generations aim to achieve in the context of mitigating overfitting?"
+        "How many specific mitigation methods are mentioned for testing different conditions?",
+        "What aspects of prompt testing are suggested to mitigate overfitting?"
       ],
       "content_hash": "b3666054289ce8672fb02539c317edada189ca87006ba4ba17e33b35a5ea6cf7",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -2383,20 +2383,20 @@
         "13._recommended_first_milestone"
       ],
       "text": "If only one milestone is implemented now, it should be:",
-      "embed_text": "[SECTION: 13. Recommended First Milestone]\nIf only one milestone is implemented now, it should be:\nQ: What milestone should be implemented if only one is to be implemented now?\nQ: Is there a recommended first milestone to implement?\nQ: What does the text suggest about implementing only one milestone?",
+      "embed_text": "[SECTION: 13. Recommended First Milestone]\nIf only one milestone is implemented now, it should be:\nQ: What milestone should be implemented if only one is to be implemented now?\nQ: Is there a recommendation for which single milestone to prioritize?\nQ: What is suggested as the first milestone to implement?",
       "token_count": 10,
-      "embed_token_count": 49,
+      "embed_token_count": 50,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What milestone should be implemented if only one is to be implemented now?",
-        "Is there a recommended first milestone to implement?",
-        "What does the text suggest about implementing only one milestone?"
+        "Is there a recommendation for which single milestone to prioritize?",
+        "What is suggested as the first milestone to implement?"
       ],
       "content_hash": "094fdd6b600bc3671b15c6a4faeb848b3361b342f3aed12e6087671ef8d17d7a",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -2415,20 +2415,20 @@
         "“bounded_queue_+_scheduler_loop_+_hot-backend_penalty”"
       ],
       "text": "That gives the highest leverage with the least architectural complexity.\n\nWhy:\n\n- it directly addresses the observed one-node-at-a-time behavior\n- it preserves the current repo’s lightweight gateway approach\n- it does not require a full control plane\n- it is compatible with the repo’s existing goals and README direction on request-level routing and smarter backend selection. citeturn914425view0",
-      "embed_text": "[SECTION: “Bounded queue + scheduler loop + hot-backend penalty”]\nThat gives the highest leverage with the least architectural complexity.\n\nWhy:\n\n- it directly addresses the observed one-node-at-a-time behavior\n- it preserves the current repo’s lightweight gateway approach\n- it does not require a full control plane\n- it is compatible with the repo’s existing goals and README direction on request-level routing and smarter backend selection. citeturn914425view0\nQ: What does the bounded queue + scheduler loop + hot-backend penalty approach address?\nQ: How does this approach preserve the current repo’s lightweight gateway?\nQ: In what way is this approach compatible with the repo’s existing goals?",
+      "embed_text": "[SECTION: “Bounded queue + scheduler loop + hot-backend penalty”]\nThat gives the highest leverage with the least architectural complexity.\n\nWhy:\n\n- it directly addresses the observed one-node-at-a-time behavior\n- it preserves the current repo’s lightweight gateway approach\n- it does not require a full control plane\n- it is compatible with the repo’s existing goals and README direction on request-level routing and smarter backend selection. citeturn914425view0\nQ: What does the bounded queue + scheduler loop + hot-backend penalty method address?\nQ: How does this method preserve the current repo’s lightweight gateway approach?\nQ: In what way is this method compatible with the repo’s existing goals?",
       "token_count": 57,
-      "embed_token_count": 104,
+      "embed_token_count": 105,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What does the bounded queue + scheduler loop + hot-backend penalty approach address?",
-        "How does this approach preserve the current repo’s lightweight gateway?",
-        "In what way is this approach compatible with the repo’s existing goals?"
+        "What does the bounded queue + scheduler loop + hot-backend penalty method address?",
+        "How does this method preserve the current repo’s lightweight gateway approach?",
+        "In what way is this method compatible with the repo’s existing goals?"
       ],
       "content_hash": "c0a098809c8fadae88d2d5d55533855f1f5286a639751e980338c10e9cc20999",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -2459,8 +2459,8 @@
       ],
       "content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   },
   {
@@ -2479,20 +2479,20 @@
         "14._final_recommendation"
       ],
       "text": "Redesign `layer-gateway-inference-v1` into a **request-shaping inference gateway** with:\n\n- bounded in-memory admission queue\n- short-interval scheduler loop\n- eligibility filtering\n- EWMA-based scoring\n- hot-backend fairness penalty\n- soft/hard backend limits\n- strict retry and circuit-breaker rules\n- first-class metrics\n\nThis keeps the original vision intact while making it much better aligned with the actual behavior observed in your k3s + vLLM load tests.",
-      "embed_text": "[SECTION: 14. Final Recommendation]\nRedesign `layer-gateway-inference-v1` into a **request-shaping inference gateway** with:\n\n- bounded in-memory admission queue\n- short-interval scheduler loop\n- eligibility filtering\n- EWMA-based scoring\n- hot-backend fairness penalty\n- soft/hard backend limits\n- strict retry and circuit-breaker rules\n- first-class metrics\n\nThis keeps the original vision intact while making it much better aligned with the actual behavior observed in your k3s + vLLM load tests.\nQ: What are the key features of the redesigned layer-gateway-inference-v1?\nQ: How does the redesign improve the original vision?\nQ: What specific rules are implemented for retries and circuit breakers?",
+      "embed_text": "[SECTION: 14. Final Recommendation]\nRedesign `layer-gateway-inference-v1` into a **request-shaping inference gateway** with:\n\n- bounded in-memory admission queue\n- short-interval scheduler loop\n- eligibility filtering\n- EWMA-based scoring\n- hot-backend fairness penalty\n- soft/hard backend limits\n- strict retry and circuit-breaker rules\n- first-class metrics\n\nThis keeps the original vision intact while making it much better aligned with the actual behavior observed in your k3s + vLLM load tests.\nQ: What are the key features of the redesigned `layer-gateway-inference-v1`?\nQ: How does the redesign improve alignment with observed behavior in load tests?\nQ: What metrics will be implemented in the redesigned gateway?",
       "token_count": 64,
-      "embed_token_count": 98,
+      "embed_token_count": 101,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What are the key features of the redesigned layer-gateway-inference-v1?",
-        "How does the redesign improve the original vision?",
-        "What specific rules are implemented for retries and circuit breakers?"
+        "What are the key features of the redesigned `layer-gateway-inference-v1`?",
+        "How does the redesign improve alignment with observed behavior in load tests?",
+        "What metrics will be implemented in the redesigned gateway?"
       ],
       "content_hash": "14da0fb5d66bfaa940c5da2bd6f2dbfde2f42e53924fbb193796c42e05cc84bd",
       "source": "repo_layer-gateway-inference-v1__plan.md",
-      "ingest_run_id": "run_20260425_145405",
-      "ingest_ts": "2026-04-25T14:54:05Z"
+      "ingest_run_id": "run_20260425_182218_EST",
+      "ingest_ts": "2026-04-25T18:22:18-05:00"
     }
   }
 ]

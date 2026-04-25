@@ -1,20 +1,22 @@
 {
-  "generated_at": "2026-04-25T17:51:03.003857Z",
+  "generated_at": "2026-04-25T18:11:25.142865-05:00",
   "summary": {
     "files": 3,
     "probes_total": 8,
-    "probes_passed": 2,
-    "probes_failed": 6,
-    "threshold": 0.65,
+    "probes_passed": 0,
+    "probes_failed": 8,
+    "vector_passed": 0,
+    "llm_rescued": 0,
+    "threshold": 0.75,
     "collection": "taixing_knowledge_dev",
     "failure_reasons": {
-      "below_threshold": 6
+      "below_threshold": 8
     },
     "score_stats": {
-      "min": 0.6269789,
-      "p50": 0.639431825,
-      "p90": 0.7055608449999999,
-      "max": 0.73856175
+      "min": 0.60242647,
+      "p50": 0.64029815,
+      "p90": 0.7004798799999999,
+      "max": 0.7216252
     },
     "worst_groups": [
       {
@@ -29,17 +31,17 @@
       },
       {
         "source": "personal_resume",
+        "section": "ROOT",
+        "failed": 1
+      },
+      {
+        "source": "personal_resume",
+        "section": "SUMMARY",
+        "failed": 1
+      },
+      {
+        "source": "personal_resume",
         "section": "CORE SKILLS",
-        "failed": 1
-      },
-      {
-        "source": "personal_resume",
-        "section": "PROFESSIONAL EXPERIENCE",
-        "failed": 1
-      },
-      {
-        "source": "personal_resume",
-        "section": "EDUCATION",
         "failed": 1
       }
     ]
@@ -54,12 +56,17 @@
       "source": "personal_profile",
       "section": "ROOT",
       "doc_type": "profile",
-      "probe_text": "What is Taixing Bi's current role?",
-      "score": 0.63756955,
+      "probe_text": "What is Taixing Bi's current position?",
+      "score": 0.6393068,
       "scope_match": true,
       "passed": false,
-      "threshold": 0.65,
+      "threshold": 0.75,
       "reason": "below_threshold",
+      "vector_passed": false,
+      "judge_invoked": false,
+      "judge_label": null,
+      "judge_reason": null,
+      "final_reason": "below_threshold",
       "top_hit_id": "2d1b6fb6-8a1e-503d-8f60-569f192dad60"
     },
     {
@@ -70,8 +77,13 @@
       "score": 0.6443634,
       "scope_match": true,
       "passed": false,
-      "threshold": 0.65,
+      "threshold": 0.75,
       "reason": "below_threshold",
+      "vector_passed": false,
+      "judge_invoked": false,
+      "judge_label": null,
+      "judge_reason": null,
+      "final_reason": "below_threshold",
       "top_hit_id": "b786b2fa-eea5-5809-a945-95889adbdf52"
     },
     {
@@ -81,9 +93,14 @@
       "probe_text": "What is the phone number for Taixing Bi?",
       "score": 0.6914176,
       "scope_match": true,
-      "passed": true,
-      "threshold": 0.65,
-      "reason": null,
+      "passed": false,
+      "threshold": 0.75,
+      "reason": "below_threshold",
+      "vector_passed": false,
+      "judge_invoked": false,
+      "judge_label": null,
+      "judge_reason": null,
+      "final_reason": "below_threshold",
       "top_hit_id": "bd7a283f-bd80-5d9e-ae8a-df6fe25e13d5"
     },
     {
@@ -91,11 +108,16 @@
       "section": "SUMMARY",
       "doc_type": "resume",
       "probe_text": "How many years of experience does the Backend AI Engineer have?",
-      "score": 0.73856175,
+      "score": 0.7216252,
       "scope_match": true,
-      "passed": true,
-      "threshold": 0.65,
-      "reason": null,
+      "passed": false,
+      "threshold": 0.75,
+      "reason": "below_threshold",
+      "vector_passed": false,
+      "judge_invoked": false,
+      "judge_label": null,
+      "judge_reason": null,
+      "final_reason": "below_threshold",
       "top_hit_id": "cf521e4f-c045-5a69-bca3-b96ba499cbce"
     },
     {
@@ -106,8 +128,13 @@
       "score": 0.6280284,
       "scope_match": true,
       "passed": false,
-      "threshold": 0.65,
+      "threshold": 0.75,
       "reason": "below_threshold",
+      "vector_passed": false,
+      "judge_invoked": false,
+      "judge_label": null,
+      "judge_reason": null,
+      "final_reason": "below_threshold",
       "top_hit_id": "0fafef13-92fa-5fbf-95bd-23207409d3e3"
     },
     {
@@ -115,11 +142,16 @@
       "section": "PROFESSIONAL EXPERIENCE",
       "doc_type": "resume",
       "probe_text": "What was the role held at Saks.com?",
-      "score": 0.6269789,
+      "score": 0.60242647,
       "scope_match": true,
       "passed": false,
-      "threshold": 0.65,
+      "threshold": 0.75,
       "reason": "below_threshold",
+      "vector_passed": false,
+      "judge_invoked": false,
+      "judge_label": null,
+      "judge_reason": null,
+      "final_reason": "below_threshold",
       "top_hit_id": "14347b84-af03-5e88-bfce-8c96d8f28c1d"
     },
     {
@@ -127,11 +159,16 @@
       "section": "EDUCATION",
       "doc_type": "resume",
       "probe_text": "What degree was obtained?",
-      "score": 0.6289475,
+      "score": 0.6289149,
       "scope_match": true,
       "passed": false,
-      "threshold": 0.65,
+      "threshold": 0.75,
       "reason": "below_threshold",
+      "vector_passed": false,
+      "judge_invoked": false,
+      "judge_label": null,
+      "judge_reason": null,
+      "final_reason": "below_threshold",
       "top_hit_id": "1abfbd45-9e76-59c1-b0c8-a40e80399e0b"
     },
     {
@@ -139,11 +176,16 @@
       "section": "PUBLICATION",
       "doc_type": "resume",
       "probe_text": "What is the title of the publication?",
-      "score": 0.6412941,
+      "score": 0.6412895,
       "scope_match": true,
       "passed": false,
-      "threshold": 0.65,
+      "threshold": 0.75,
       "reason": "below_threshold",
+      "vector_passed": false,
+      "judge_invoked": false,
+      "judge_label": null,
+      "judge_reason": null,
+      "final_reason": "below_threshold",
       "top_hit_id": "cf63ef19-699a-5ffc-a3bc-2e8b387d1bd3"
     }
   ]

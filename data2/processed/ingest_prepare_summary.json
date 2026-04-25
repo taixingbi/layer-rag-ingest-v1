@@ -1,7 +1,7 @@
 {
-  "ingest_run_id": "run_20260425_145405",
+  "ingest_run_id": "run_20260425_182218_EST",
   "collection": "taixing_knowledge_dev",
-  "ingest_ts": "2026-04-25T14:54:05Z",
+  "ingest_ts": "2026-04-25T18:22:18-05:00",
   "files": [
     {
       "input_file": "data2/processed/chunks_layer-gateway-embed-v1__design.md.json",

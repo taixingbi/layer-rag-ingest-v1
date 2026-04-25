@@ -194,9 +194,17 @@ python3 app/smoke_validate.py --data-dir data1/processed --pattern "points_*.jso
 
 # strict mode (non-zero exit on failures)
 python3 app/smoke_validate.py --data-dir data1/processed --pattern "points_*.json" --strict
+
+# optional: enable LLM judge as secondary rescue signal for borderline failures
+python3 app/smoke_validate.py \
+  --data-dir data1/processed \
+  --pattern "points_*.json" \
+  --threshold 0.65 \
+  --judge-enabled \
+  --judge-rescue-floor 0.58
 ```
 
-Common flags: `--threshold` (default `0.75`), `--max-probes`, `--report-path`, `--strict`.
+Common flags: `--threshold` (default `0.75`), `--max-probes`, `--report-path`, `--strict`, `--judge-enabled`, `--judge-rescue-floor`, `--chat-base-url`, `--chat-model`, `--chat-api-key`.
 
 ## Collection naming rule
 

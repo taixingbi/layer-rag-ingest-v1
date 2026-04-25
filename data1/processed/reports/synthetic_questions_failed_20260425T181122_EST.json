@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-04-25T08:29:15.491249-05:00",
+  "generated_at": "2026-04-25T18:11:22.137661-05:00",
   "summary": {
-    "files": 13,
-    "updated_payloads": 208,
+    "files": 3,
+    "updated_payloads": 60,
     "gen_failures": 0
   },
   "run_args": {
-    "data_dir": "data2/processed",
+    "data_dir": "data1/processed",
     "pattern": "points_*.json",
     "questions_per_chunk": 3,
     "max_concurrency": 40,
