@@ -1,111 +1,108 @@
-# Ingest + Embed Plan
+# Ingest + Embed Plan (Code-Aligned)
 
-This plan describes a robust, idempotent ingest pipeline for resume chunk data.
+This plan reflects the current implementation in `app/` and `scripts/`.
 
-## Stage 1 - Normalize and Validate
+## End-to-End Pipeline
 
-- Load raw JSON and validate required fields.
-- Normalize whitespace and strip control characters.
-- Fail fast with per-chunk error reporting; do not silently drop bad records.
+From repo root, the primary entrypoints are:
 
-## Stage 2 - Token Counting (No Split for Current Dataset)
+- `./scripts/data1.sh` for personal/plain-text ingest
+- `./scripts/data2.sh` for GitHub/Markdown ingest
 
-- Tokenize each chunk using `tiktoken` (`cl100k`) as a close proxy for `bge-m3`.
-- If exact tokenizer parity is needed, use `transformers.AutoTokenizer`.
-- For current resume data, all chunks are under 1500 tokens, so no split is required.
-- For future chunks over 1500 tokens:
-  - Apply recursive character splitting with 150-token overlap.
-  - Preserve parent lineage (`3_0 -> 3_0_a`, `3_0_b`).
-  - Re-validate each child is under 1500 tokens.
-- Flag any chunk under 20 tokens as degenerate.
+Both scripts run synthetic-question enrichment by default. Set `RUN_SYNTHETIC_QUESTIONS=0` to skip it.
 
-## Stage 3 - `embed_text` Construction
+## Stage 1 - Build Chunk Files
 
-- Build `embed_text` by concatenating section header, chunk text, and synthetic questions.
+Two chunkers are used depending on source shape:
 
-```text
-[SECTION: PROFESSIONAL EXPERIENCE]
-{text}
-Q: What infrastructure did the engineer build at Saks?
-Q: What was the P95 latency maintained?
-...
-```
+- `app/plain_text_chunks.py` for prose/resume-style text
+- `app/markdown_to_chunks.py` for Markdown and GitHub export `.txt`
 
-- Re-count tokens on `embed_text`.
-- If augmented content exceeds 1500 tokens, trim synthetic questions from the bottom up until it fits.
-- Never truncate the core `text`.
-- Store both:
-  - `text` (clean display content)
-  - `embed_text` (augmented embedding content)
+Outputs are `chunks_*.json` under `<data>/processed/`.
 
-## Stage 4 - Content Hashing and Dedup
+## Stage 2 - Prepare Point Payloads
 
-- Compute SHA-256 over the raw `text` field to produce `content_hash`.
-- Generate deterministic UUID5 from `content_hash` for stable Qdrant `point_id`.
-- Re-ingesting the same document produces the same ID, making Qdrant upserts idempotent.
+`app/prepare_payloads.py` converts chunk rows to Qdrant-ready point dictionaries with:
 
-## Stage 4b - Metadata Normalization and Filter Strategy
+- deterministic `id` (UUID5 over SHA-256 `content_hash` of `payload.text`)
+- empty `vector` placeholder (filled later unless already present)
+- normalized payload metadata for filtering and traceability
 
-- Add canonical metadata to every chunk before PointStruct mapping:
-  - `source` (document source id)
-  - `doc_type` (`resume`, `profile`, `qa`, etc.)
-  - `section` (already present; keep normalized)
-  - `language` (for example `en`)
-  - `tags` (optional list for domain/user filters)
-  - `ingest_run_id`, `ingest_ts` (traceability/audit)
-- Define filter semantics:
-  - exact keyword filters: `source`, `doc_type`, `section`, `content_hash`, `chunk_id_parent`
-  - boolean filters: `was_split`
-  - numeric range filters: `token_count`, `embed_token_count`, `split_index`
-  - time filters: `ingest_ts`
-- Keep metadata values stable and low-cardinality where possible (especially for `section`, `doc_type`) to improve filter performance.
-- Ensure metadata generation is deterministic for re-runs of the same source.
+Current payload fields include:
 
-## Stage 5 - Qdrant Payload Mapping
+- identity/lineage: `chunk_id`, `chunk_id_parent`, `was_split`, `split_index`
+- content: `text`, `embed_text`, `synthetic_questions`
+- counters: `token_count`, `embed_token_count`, `synthetic_questions_used`, `synthetic_questions_trimmed`
+- filter/audit: `source`, `doc_type`, `section`, `language`, `tags`, `content_hash`, `ingest_run_id`, `ingest_ts`
 
-```python
-PointStruct(
-  id=uuid5(NAMESPACE, content_hash),
-  vector=[],  # filled in stage 6
-  payload={
-    "chunk_id": "3_0",
-    "chunk_id_parent": None,       # "3_0" if this is a split child
-    "was_split": False,
-    "split_index": None,           # 0, 1, 2... if split
-    "section": "PROFESSIONAL EXPERIENCE",
-    "doc_type": "resume",
-    "language": "en",
-    "tags": ["candidate", "backend", "ai"],
-    "text": "...",                 # original, stored for retrieval display
-    "embed_text": "...",           # augmented, what was actually embedded
-    "char_count": 2901,
-    "token_count": 687,            # exact, from tokenizer
-    "embed_token_count": 712,      # token count of embed_text
-    "content_hash": "abc123...",
-    "synthetic_questions": [...],
-    "source": "resume_taixing_bi",
-    "ingest_run_id": "run_20260422_100000",
-    "ingest_ts": "2026-04-22T..."
-  }
-)
-```
+Implementation notes:
 
-## Stage 6 - Batch Embed
+- token counting is whitespace-based (`re.findall(r"\S+", text)`), not model-tokenizer exact
+- `embed_text` format is:
+  - `[SECTION: <section>]`
+  - raw `text`
+  - `Q: ...` lines from `synthetic_questions`
+- no token-budget trimming is currently applied (`synthetic_questions_trimmed` is always `0` in current builder)
 
-- Collect all `embed_text` values.
-- Make one batched call to `bge-m3` through the vLLM `/v1/embeddings` endpoint.
-- Attach returned vectors back to `PointStruct` entries by index.
-- Avoid serial per-chunk embedding calls.
+## Stage 3 - Optional Synthetic Question Enrichment
 
-## Stage 7 - Qdrant Upsert
+`app/synthetic_questions.py` enriches `points_*.json` rows by calling chat completions and then recomputing:
 
-- Upsert to `taixing_knowledge_dev` with `wait=True`.
-- Log per chunk: `chunk_id`, `token_count`, `was_split`, `point_id`, `upsert_status`.
-- Collect and surface failures without crashing the full batch.
+- `payload.synthetic_questions`
+- `payload.embed_text`
+- `payload.embed_token_count`
+- `payload.synthetic_questions_used` / `payload.synthetic_questions_trimmed`
 
-## Stage 8 - Smoke Validation
+Operational behavior in code:
 
-- After upsert, run one query per section using the first synthetic question as the probe.
-- Assert each section scores above a minimum similarity threshold (for example, `0.75`).
-- Log warnings for failed sections to catch embedding or ingest quality issues early.
-- Apply deterministic filters during smoke checks (at minimum `source`, `section`, `doc_type`) so validation measures the intended slice of data.
+- async concurrency with shared `httpx.AsyncClient` and semaphore (`--max-concurrency`, default `40`)
+- transient retry policy (`--retry-max-attempts` default `3`, `--retry-base-delay` default `0.5`)
+- per-request and per-section latency logging
+- failed-item report JSON written under `<data-or-output>/reports/` by default, with EST timestamp suffix
+- `--skip-existing` supports incremental enrich runs
+
+## Stage 4 - Embed Missing Vectors
+
+`app/upsert_qdrant.py` loads all matched `points_*.json` and embeds only rows with empty vectors (unless `--skip-embedding` is set).
+
+Embedding source is `payload.embed_text` and requests are sent through `app/client_embeddings.py` integration.
+
+Guardrails:
+
+- if `--skip-embedding` is set for real upsert, script fails when any vector is missing
+- vector length is validated against `--vector-size` (default `1024`)
+
+## Stage 5 - Ensure Collection + Indexes
+
+Before upsert, the script:
+
+- resolves collection name from `COLLECTION_NAME` (+ `_dev` suffix when `ENV=dev`)
+- creates collection if missing (unless `--skip-create-collection`)
+- creates payload indexes (unless `--skip-indexes`) for:
+  - keywords: `source`, `doc_type`, `section`, `content_hash`, `chunk_id_parent`
+  - bool: `was_split`
+  - integers: `token_count`, `embed_token_count`, `split_index`
+  - datetime: `ingest_ts`
+
+## Stage 6 - Batch Upsert
+
+Points are converted to `qdrant_client.models.PointStruct` and upserted in batches (`--batch-size`, default `20`) with `wait=True`.
+
+The command logs running progress and total latency at the end.
+
+## Data Set Conventions
+
+- `data1` flow uses `--source-prefix personal`
+- `data2` flow uses `--source-prefix repo`
+
+This keeps payload `source` namespaced (for example `personal_profile`, `repo_layer-gateway-embed-v1__design.md`).
+
+## Non-Goals / Not Yet Implemented
+
+The current codebase does **not** implement:
+
+- automatic recursive chunk splitting in `prepare_payloads.py`
+- strict model-tokenizer counting for the primary token metrics
+- post-upsert retrieval smoke tests
+
+If needed, these can be added as follow-up enhancements.
