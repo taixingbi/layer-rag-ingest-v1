@@ -37,6 +37,7 @@ Optional:
 - Chunks: `data1/processed/chunks_<stem>.json`
 - Points: `data1/processed/points_<stem>.json`
 - Summary: `data1/processed/ingest_prepare_summary.json`
+- Manifest: `data1/processed/ingest_manifest_<ingest_run_id>.json` and `data1/processed/ingest_manifest_latest.json`
 
 Use **`--source-prefix personal`** so `payload.source` values look like `personal_<doc_type>` (easy to filter vs `repo_*` from `data2`).
 
@@ -94,6 +95,38 @@ python3 app/smoke_validate.py --data-dir data1/processed --pattern "points_*.jso
 Useful flags: `--threshold`, `--max-probes`, `--report-path`.
 
 Embedding gateway auth uses standard `--embedding-api-key` / `EMBEDDING_API_KEY` when required.
+
+## Lifecycle reconcile / purge / rollback
+
+```bash
+# preview stale candidates (no mutation)
+python3 app/reconcile_qdrant.py \
+  --manifest-path data1/processed/ingest_manifest_latest.json \
+  --scope-key collection \
+  --dry-run
+
+# apply soft-delete for stale points
+python3 app/reconcile_qdrant.py \
+  --manifest-path data1/processed/ingest_manifest_latest.json \
+  --scope-key collection \
+  --delete-mode soft \
+  --apply-soft-delete
+
+# purge old tombstones
+python3 app/reconcile_qdrant.py \
+  --manifest-path data1/processed/ingest_manifest_latest.json \
+  --scope-key collection \
+  --delete-mode hard \
+  --retention-days 30 \
+  --apply-hard-delete
+
+# rollback to one ingest run
+python3 app/rollback_ingest_run.py \
+  --target-run-id run_20260425_180000_EST \
+  --manifest-dir data1/processed \
+  --scope-key collection \
+  --dry-run
+```
 
 ## Single-file chunking
 

@@ -49,7 +49,7 @@ From repo root:
 ./scripts/data2.sh
 ```
 
-Shell wrappers [`scripts/data1.sh`](scripts/data1.sh) and [`scripts/data2.sh`](scripts/data2.sh) run synthetic questions and smoke validation by default; set `RUN_SYNTHETIC_QUESTIONS=0` and/or `RUN_SMOKE_VALIDATE=0` to skip stages. See [data1.md](data1.md) / [data2.md](data2.md).
+Shell wrappers [`scripts/data1.sh`](scripts/data1.sh) and [`scripts/data2.sh`](scripts/data2.sh) run synthetic questions and smoke validation by default; set `RUN_SYNTHETIC_QUESTIONS=0` and/or `RUN_SMOKE_VALIDATE=0` to skip stages. Optional lifecycle reconcile can be enabled with `RUN_RECONCILE=1` (default dry-run; use `RECONCILE_APPLY_SOFT_DELETE=1` to mutate). See [data1.md](data1.md) / [data2.md](data2.md).
 
 Run chunking, prepare, then upsert (adjust paths as needed):
 
@@ -116,11 +116,14 @@ This writes:
 - `data1/processed/points_qa.json`
 - `data1/processed/points_profile.json`
 - `data1/processed/ingest_prepare_summary.json`
+- `data1/processed/ingest_manifest_<ingest_run_id>.json`
+- `data1/processed/ingest_manifest_latest.json`
 
 Each point includes filter-ready payload fields such as:
 - `source`, `doc_type`, `section`, `language`, `tags`
 - `was_split`, `split_index`, `token_count`, `embed_token_count`
 - `content_hash`, `ingest_run_id`, `ingest_ts`
+- lifecycle: `lifecycle_status` (`active|deleted`), `deleted_at`, `deleted_by_run_id`
 
 ### 2b) Add synthetic questions to `points_*.json` (optional)
 
@@ -205,6 +208,59 @@ python3 app/smoke_validate.py \
 ```
 
 Common flags: `--threshold` (default `0.75`), `--max-probes`, `--report-path`, `--strict`, `--judge-enabled`, `--judge-rescue-floor`, `--chat-base-url`, `--chat-model`, `--chat-api-key`.
+
+### 5) Lifecycle reconcile / purge / rollback
+
+Reconcile (dry-run by default) compares active points in a scope vs the current manifest IDs and writes:
+- `stale_candidates_<run_id>.json`
+- `delete_actions_<run_id>.json`
+
+```bash
+# preview stale points (no mutation)
+python3 app/reconcile_qdrant.py \
+  --manifest-path data1/processed/ingest_manifest_latest.json \
+  --scope-key collection \
+  --dry-run
+
+# apply soft-delete to stale points
+python3 app/reconcile_qdrant.py \
+  --manifest-path data1/processed/ingest_manifest_latest.json \
+  --scope-key collection \
+  --delete-mode soft \
+  --apply-soft-delete
+
+# hard purge tombstoned points older than retention
+python3 app/reconcile_qdrant.py \
+  --manifest-path data1/processed/ingest_manifest_latest.json \
+  --scope-key collection \
+  --delete-mode hard \
+  --retention-days 30 \
+  --apply-hard-delete
+```
+
+Rollback restores one target ingest run and tombstones non-target points in scope:
+
+```bash
+# preview rollback
+python3 app/rollback_ingest_run.py \
+  --target-run-id run_20260425_180000_EST \
+  --manifest-dir data1/processed \
+  --scope-key collection \
+  --dry-run
+
+# apply rollback
+python3 app/rollback_ingest_run.py \
+  --target-run-id run_20260425_180000_EST \
+  --manifest-dir data1/processed \
+  --scope-key collection \
+  --apply
+```
+
+### 6) GitHub Actions lifecycle automation
+
+Workflows under `.github/workflows`:
+- `lifecycle-reconcile.yml`: nightly scheduled dry-run reconcile + manual soft-delete apply (approval + `confirm_apply=YES`).
+- `lifecycle-phase2.yml`: manual hard purge / rollback dry-run and apply actions (approval + `confirm_apply=YES`).
 
 ## Collection naming rule
 

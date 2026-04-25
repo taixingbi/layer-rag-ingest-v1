@@ -54,13 +54,17 @@ Both scripts:
 - `app/markdown_to_chunks.py`
   - Converts Markdown (and GitHub-export `.txt`) into `chunks_*.json` with heading-aware segmentation.
 - `app/prepare_payloads.py`
-  - Transforms chunks into Qdrant point dictionaries (`points_*.json`) and writes `ingest_prepare_summary.json`.
+  - Transforms chunks into Qdrant point dictionaries (`points_*.json`) and writes run summary + ingest manifests.
 - `app/synthetic_questions.py`
   - Async chat-enrichment pass for existing `points_*.json`; recomputes `embed_text` fields.
 - `app/upsert_qdrant.py`
   - Embeds missing vectors and upserts points into Qdrant, with collection/index bootstrap options.
 - `app/smoke_validate.py`
   - Runs post-upsert retrieval smoke checks and writes JSON reports.
+- `app/reconcile_qdrant.py`
+  - Reconciles active points against ingest manifest IDs and supports soft-delete / retention purge operations.
+- `app/rollback_ingest_run.py`
+  - Restores lifecycle state to a target ingest run and writes rollback action reports.
 
 ## End-to-End Data Flow
 
@@ -90,6 +94,8 @@ Output:
 
 - `points_*.json`
 - `ingest_prepare_summary.json`
+- `ingest_manifest_<ingest_run_id>.json`
+- `ingest_manifest_latest.json`
 
 Responsibilities:
 
@@ -102,6 +108,7 @@ Responsibilities:
   - lineage: `chunk_id_parent`, `was_split`, `split_index`
   - filter fields: `source`, `doc_type`, `section`, `language`, `tags`
   - audit fields: `ingest_run_id`, `ingest_ts`
+- lifecycle fields: `lifecycle_status`, `deleted_at`, `deleted_by_run_id`
 
 Important invariant: if `text` is unchanged, `content_hash` and `id` remain unchanged across reruns.
 
@@ -174,6 +181,29 @@ Responsibilities:
   - top hit payload remains within expected scope (`source`, `section`, `doc_type`)
 - Emit warning-only summary by default; support strict failure mode.
 
+### Stage F: Reconcile + Purge (`reconcile_qdrant.py`)
+
+Responsibilities:
+
+- Load one ingest manifest and compare current active IDs in scope (`collection`/`source`/`doc_type`).
+- Write stale candidate report before any mutation.
+- Soft-delete stale IDs only when explicitly requested.
+- Hard-delete only tombstoned points older than configured retention when explicitly requested.
+
+Safety defaults:
+
+- dry-run semantics by default (apply flags required for mutation)
+- artifacts are always written to support auditability
+
+### Stage G: Rollback (`rollback_ingest_run.py`)
+
+Responsibilities:
+
+- Select target `ingest_run_id` by manifest.
+- Reactivate IDs from target run.
+- Tombstone non-target IDs in same scope.
+- Write rollback action report for reproducibility.
+
 ## Data Model and Queryability
 
 ### Why metadata is embedded in payload
@@ -186,6 +216,7 @@ Indexed filter keys currently include:
 - bool: `was_split`
 - integer: `token_count`, `embed_token_count`, `split_index`
 - datetime: `ingest_ts`
+- lifecycle keys: `lifecycle_status`, `deleted_at`, `deleted_by_run_id`
 
 ### Source namespacing convention
 

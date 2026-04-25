@@ -34,6 +34,7 @@ Current payload fields include:
 - content: `text`, `embed_text`, `synthetic_questions`
 - counters: `token_count`, `embed_token_count`, `synthetic_questions_used`, `synthetic_questions_trimmed`
 - filter/audit: `source`, `doc_type`, `section`, `language`, `tags`, `content_hash`, `ingest_run_id`, `ingest_ts`
+- lifecycle: `lifecycle_status`, `deleted_at`, `deleted_by_run_id`
 
 Implementation notes:
 
@@ -127,5 +128,22 @@ The current codebase does **not** implement:
 
 - automatic recursive chunk splitting in `prepare_payloads.py`
 - automatic smoke-validation execution inside `upsert_qdrant.py` unless `--run-smoke-validate` is passed
+
+## Stage 8 - Reconcile Lifecycle (Phase 1)
+
+`app/reconcile_qdrant.py` compares active points in a chosen scope against one run manifest (`ingest_manifest_<run_id>.json`):
+
+- default behavior is dry-run style preview (no mutation unless explicit apply flags are passed)
+- writes `stale_candidates_<reconcile_run_id>.json`
+- supports soft-delete apply for stale IDs with payload tombstone fields
+- writes `delete_actions_<reconcile_run_id>.json` with action counts and IDs
+
+## Stage 9 - Hard Purge + Rollback (Phase 2)
+
+Phase-2 operations are available with explicit operator intent:
+
+- hard purge in `reconcile_qdrant.py` (`--delete-mode hard --retention-days N --apply-hard-delete`) deletes only tombstoned points older than retention
+- rollback in `app/rollback_ingest_run.py` restores a target run's IDs to `active` and tombstones non-target IDs in scope
+- rollback writes `rollback_actions_<rollback_run_id>.json`
 
 If needed, these can be added as follow-up enhancements.

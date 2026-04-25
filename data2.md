@@ -28,6 +28,7 @@ For optional synthetic questions:
 - Raw exports: `data2/raw/*.txt` (from `github_tree_to_txt.py`, or your chosen `--out-dir`)
 - Chunks: `data2/processed/chunks_<stem>.json`
 - Points: `data2/processed/points_<stem>.json`
+- Manifest: `data2/processed/ingest_manifest_<ingest_run_id>.json` and `data2/processed/ingest_manifest_latest.json`
 
 Use **`--source-prefix repo`** so `payload.source` values look like `repo_<doc_type>` (filter vs `personal_*` from `data1`).
 
@@ -84,6 +85,31 @@ python3 app/smoke_validate.py --data-dir data2/processed --pattern "points_*.jso
 ```
 
 Useful flags: `--threshold`, `--max-probes`, `--report-path`.
+
+## Lifecycle reconcile / purge / rollback
+
+```bash
+# preview stale candidates
+python3 app/reconcile_qdrant.py \
+  --manifest-path data2/processed/ingest_manifest_latest.json \
+  --scope-key collection \
+  --dry-run
+
+# apply soft-delete in repo-only scope
+python3 app/reconcile_qdrant.py \
+  --manifest-path data2/processed/ingest_manifest_latest.json \
+  --scope-key source \
+  --scope-value repo_layer-gateway-embed-v1__design.md \
+  --delete-mode soft \
+  --apply-soft-delete
+
+# rollback (preview)
+python3 app/rollback_ingest_run.py \
+  --target-run-id run_20260425_180000_EST \
+  --manifest-dir data2/processed \
+  --scope-key collection \
+  --dry-run
+```
 
 ## Single-file chunking
 

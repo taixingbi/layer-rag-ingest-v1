@@ -1,0 +1,118 @@
+name: lifecycle-phase2
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "purge_dry_run | purge_apply | rollback_dry_run | rollback_apply"
+        required: true
+        default: "purge_dry_run"
+      manifest_path:
+        description: "Manifest for purge/rollback reference"
+        required: false
+        default: "data/processed/ingest_manifest_latest.json"
+      target_run_id:
+        description: "Target ingest_run_id for rollback"
+        required: false
+        default: ""
+      scope_key:
+        description: "collection | source | doc_type"
+        required: true
+        default: "collection"
+      scope_value:
+        description: "Scope value for source/doc_type"
+        required: false
+        default: ""
+      retention_days:
+        description: "Retention for hard purge"
+        required: false
+        default: "30"
+      confirm_apply:
+        description: "Type YES to allow apply actions"
+        required: false
+        default: "NO"
+
+jobs:
+  phase2:
+    runs-on: ubuntu-latest
+    environment: ingest-apply
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Purge dry run
+        if: github.event.inputs.action == 'purge_dry_run'
+        env:
+          QDRANT_URL: ${{ secrets.QDRANT_URL }}
+          QDRANT_API_KEY: ${{ secrets.QDRANT_API_KEY }}
+          COLLECTION_NAME: ${{ secrets.COLLECTION_NAME }}
+          ENV: ${{ secrets.ENV }}
+        run: |
+          python app/reconcile_qdrant.py \
+            --manifest-path "${{ github.event.inputs.manifest_path }}" \
+            --scope-key "${{ github.event.inputs.scope_key }}" \
+            --scope-value "${{ github.event.inputs.scope_value }}" \
+            --delete-mode hard \
+            --retention-days "${{ github.event.inputs.retention_days }}" \
+            --dry-run
+
+      - name: Purge apply
+        if: github.event.inputs.action == 'purge_apply' && github.event.inputs.confirm_apply == 'YES'
+        env:
+          QDRANT_URL: ${{ secrets.QDRANT_URL }}
+          QDRANT_API_KEY: ${{ secrets.QDRANT_API_KEY }}
+          COLLECTION_NAME: ${{ secrets.COLLECTION_NAME }}
+          ENV: ${{ secrets.ENV }}
+        run: |
+          python app/reconcile_qdrant.py \
+            --manifest-path "${{ github.event.inputs.manifest_path }}" \
+            --scope-key "${{ github.event.inputs.scope_key }}" \
+            --scope-value "${{ github.event.inputs.scope_value }}" \
+            --delete-mode hard \
+            --retention-days "${{ github.event.inputs.retention_days }}" \
+            --apply-hard-delete
+
+      - name: Rollback dry run
+        if: github.event.inputs.action == 'rollback_dry_run'
+        env:
+          QDRANT_URL: ${{ secrets.QDRANT_URL }}
+          QDRANT_API_KEY: ${{ secrets.QDRANT_API_KEY }}
+          COLLECTION_NAME: ${{ secrets.COLLECTION_NAME }}
+          ENV: ${{ secrets.ENV }}
+        run: |
+          python app/rollback_ingest_run.py \
+            --target-run-id "${{ github.event.inputs.target_run_id }}" \
+            --scope-key "${{ github.event.inputs.scope_key }}" \
+            --scope-value "${{ github.event.inputs.scope_value }}" \
+            --dry-run
+
+      - name: Rollback apply
+        if: github.event.inputs.action == 'rollback_apply' && github.event.inputs.confirm_apply == 'YES'
+        env:
+          QDRANT_URL: ${{ secrets.QDRANT_URL }}
+          QDRANT_API_KEY: ${{ secrets.QDRANT_API_KEY }}
+          COLLECTION_NAME: ${{ secrets.COLLECTION_NAME }}
+          ENV: ${{ secrets.ENV }}
+        run: |
+          python app/rollback_ingest_run.py \
+            --target-run-id "${{ github.event.inputs.target_run_id }}" \
+            --scope-key "${{ github.event.inputs.scope_key }}" \
+            --scope-value "${{ github.event.inputs.scope_value }}" \
+            --apply
+
+      - name: Upload phase2 artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase2-artifacts-${{ github.run_id }}
+          path: |
+            **/reports/delete_actions_*.json
+            **/reports/rollback_actions_*.json
+            **/reports/stale_candidates_*.json
+          if-no-files-found: ignore

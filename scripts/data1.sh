@@ -45,4 +45,23 @@ else
   fi
 fi
 
+if [[ "${RUN_RECONCILE:-0}" == "1" ]]; then
+  echo "==> data1: lifecycle reconcile"
+  RECONCILE_MANIFEST="${RECONCILE_MANIFEST:-data1/processed/ingest_manifest_latest.json}"
+  if [[ "${RECONCILE_APPLY_SOFT_DELETE:-0}" == "1" ]]; then
+    "$PYTHON" app/reconcile_qdrant.py \
+      --manifest-path "$RECONCILE_MANIFEST" \
+      --scope-key "${RECONCILE_SCOPE_KEY:-collection}" \
+      --scope-value "${RECONCILE_SCOPE_VALUE:-}" \
+      --delete-mode soft \
+      --apply-soft-delete
+  else
+    "$PYTHON" app/reconcile_qdrant.py \
+      --manifest-path "$RECONCILE_MANIFEST" \
+      --scope-key "${RECONCILE_SCOPE_KEY:-collection}" \
+      --scope-value "${RECONCILE_SCOPE_VALUE:-}" \
+      --dry-run
+  fi
+fi
+
 echo "==> data1 pipeline finished"

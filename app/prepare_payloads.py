@@ -214,6 +214,9 @@ def _to_point(
         "source": source,
         "ingest_run_id": ingest_run_id,
         "ingest_ts": ingest_ts,
+        "lifecycle_status": "active",
+        "deleted_at": None,
+        "deleted_by_run_id": None,
     }
     return {"id": point_id, "vector": [], "payload": payload}
 
@@ -250,6 +253,13 @@ def run_prepare(args: argparse.Namespace) -> dict[str, Any]:
             "chunks_total_prepared": 0,
             "chunks_failed": 0,
         },
+    }
+    manifest: dict[str, Any] = {
+        "ingest_run_id": ingest_run_id,
+        "collection": collection,
+        "ingest_ts": ingest_ts,
+        "items": [],
+        "stats": {"points_total": 0, "by_source": {}},
     }
 
     for file_path in files:
@@ -292,9 +302,29 @@ def run_prepare(args: argparse.Namespace) -> dict[str, Any]:
         summary["stats"]["chunks_input"] += len(chunks)
         summary["stats"]["chunks_total_prepared"] += len(points)
         summary["stats"]["chunks_failed"] += file_failed
+        for point in points:
+            payload = point.get("payload") if isinstance(point, dict) else None
+            if not isinstance(payload, dict):
+                continue
+            source_name = str(payload.get("source") or "")
+            item = {
+                "id": point.get("id"),
+                "source": source_name,
+                "doc_type": payload.get("doc_type"),
+                "section": payload.get("section"),
+                "content_hash": payload.get("content_hash"),
+            }
+            manifest["items"].append(item)
+            manifest["stats"]["points_total"] += 1
+            by_source = manifest["stats"]["by_source"]
+            by_source[source_name] = int(by_source.get(source_name, 0)) + 1
 
     summary_path = out_dir / "ingest_prepare_summary.json"
     summary_path.write_text(json.dumps(summary, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    manifest_path = out_dir / f"ingest_manifest_{ingest_run_id}.json"
+    manifest_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    latest_manifest_path = out_dir / "ingest_manifest_latest.json"
+    latest_manifest_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     return summary
 
 

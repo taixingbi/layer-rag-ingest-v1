@@ -1,0 +1,93 @@
+name: lifecycle-reconcile
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "dry_run | soft_delete_apply"
+        required: true
+        default: "dry_run"
+      manifest_path:
+        description: "Path to manifest file in workspace"
+        required: true
+        default: "data/processed/ingest_manifest_latest.json"
+      scope_key:
+        description: "collection | source | doc_type"
+        required: true
+        default: "collection"
+      scope_value:
+        description: "Scope value for source/doc_type"
+        required: false
+        default: ""
+      confirm_apply:
+        description: "Type YES to allow soft-delete apply"
+        required: false
+        default: "NO"
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    environment: ingest-apply
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Reconcile dry-run (scheduled)
+        if: github.event_name == 'schedule'
+        env:
+          QDRANT_URL: ${{ secrets.QDRANT_URL }}
+          QDRANT_API_KEY: ${{ secrets.QDRANT_API_KEY }}
+          COLLECTION_NAME: ${{ secrets.COLLECTION_NAME }}
+          ENV: ${{ secrets.ENV }}
+        run: |
+          python app/reconcile_qdrant.py \
+            --manifest-path "${{ github.event.inputs.manifest_path || 'data/processed/ingest_manifest_latest.json' }}" \
+            --scope-key collection \
+            --dry-run
+
+      - name: Reconcile dry-run (manual)
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.mode == 'dry_run'
+        env:
+          QDRANT_URL: ${{ secrets.QDRANT_URL }}
+          QDRANT_API_KEY: ${{ secrets.QDRANT_API_KEY }}
+          COLLECTION_NAME: ${{ secrets.COLLECTION_NAME }}
+          ENV: ${{ secrets.ENV }}
+        run: |
+          python app/reconcile_qdrant.py \
+            --manifest-path "${{ github.event.inputs.manifest_path }}" \
+            --scope-key "${{ github.event.inputs.scope_key }}" \
+            --scope-value "${{ github.event.inputs.scope_value }}" \
+            --dry-run
+
+      - name: Reconcile soft-delete apply (manual + confirmed)
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.mode == 'soft_delete_apply' && github.event.inputs.confirm_apply == 'YES'
+        env:
+          QDRANT_URL: ${{ secrets.QDRANT_URL }}
+          QDRANT_API_KEY: ${{ secrets.QDRANT_API_KEY }}
+          COLLECTION_NAME: ${{ secrets.COLLECTION_NAME }}
+          ENV: ${{ secrets.ENV }}
+        run: |
+          python app/reconcile_qdrant.py \
+            --manifest-path "${{ github.event.inputs.manifest_path }}" \
+            --scope-key "${{ github.event.inputs.scope_key }}" \
+            --scope-value "${{ github.event.inputs.scope_value }}" \
+            --delete-mode soft \
+            --apply-soft-delete
+
+      - name: Upload reconcile artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reconcile-artifacts-${{ github.run_id }}
+          path: |
+            **/reports/stale_candidates_*.json
+            **/reports/delete_actions_*.json
+          if-no-files-found: ignore

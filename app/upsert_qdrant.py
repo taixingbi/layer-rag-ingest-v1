@@ -213,6 +213,9 @@ def ensure_indexes(client: QdrantClient, collection: str) -> None:
         ("embed_token_count", models.PayloadSchemaType.INTEGER),
         ("split_index", models.PayloadSchemaType.INTEGER),
         ("ingest_ts", models.PayloadSchemaType.DATETIME),
+        ("lifecycle_status", models.PayloadSchemaType.KEYWORD),
+        ("deleted_at", models.PayloadSchemaType.DATETIME),
+        ("deleted_by_run_id", models.PayloadSchemaType.KEYWORD),
     ]
     for field_name, field_schema in index_specs:
         try:
@@ -294,6 +297,17 @@ def _count_missing_vectors(points: list[dict[str, Any]]) -> int:
     return missing
 
 
+def _normalize_lifecycle_fields(points: list[dict[str, Any]]) -> None:
+    for point in points:
+        payload = point.get("payload")
+        if not isinstance(payload, dict):
+            continue
+        if not payload.get("lifecycle_status"):
+            payload["lifecycle_status"] = "active"
+        payload.setdefault("deleted_at", None)
+        payload.setdefault("deleted_by_run_id", None)
+
+
 def main() -> None:
     started = time.perf_counter()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s [%(name)s] %(message)s")
@@ -310,6 +324,7 @@ def main() -> None:
     all_points: list[dict[str, Any]] = []
     for fp in files:
         all_points.extend(_load_points(fp))
+    _normalize_lifecycle_fields(all_points)
 
     if not args.skip_embedding:
         _ensure_vectors(
