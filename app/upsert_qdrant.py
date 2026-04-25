@@ -16,6 +16,7 @@ from dotenv import load_dotenv
 from qdrant_client import QdrantClient, models
 
 from client_embeddings import EMBEDDINGS_BASE_URL, embed_texts
+from smoke_validate import run_smoke_validation
 
 logger = logging.getLogger(__name__)
 
@@ -95,11 +96,6 @@ def parse_args() -> argparse.Namespace:
         help="Optional Bearer token for embeddings API.",
     )
     parser.add_argument(
-        "--embedding-internal-key",
-        default=(os.getenv("EMBEDDING_INTERNAL_KEY") or "").strip(),
-        help="Optional X-Internal-Key for embeddings API.",
-    )
-    parser.add_argument(
         "--vector-size",
         type=int,
         default=int((os.getenv("VECTOR_SIZE") or "1024").strip()),
@@ -136,6 +132,28 @@ def parse_args() -> argparse.Namespace:
         "--skip-embedding",
         action="store_true",
         help="Do not call embeddings API; requires vectors already present for real upsert.",
+    )
+    parser.add_argument(
+        "--run-smoke-validate",
+        action="store_true",
+        help="Run post-upsert retrieval smoke validation.",
+    )
+    parser.add_argument(
+        "--smoke-threshold",
+        type=float,
+        default=0.75,
+        help="Minimum top score for smoke validation pass (default: 0.75).",
+    )
+    parser.add_argument(
+        "--smoke-max-probes",
+        type=int,
+        default=0,
+        help="Maximum smoke probes; 0 means all groups.",
+    )
+    parser.add_argument(
+        "--smoke-strict",
+        action="store_true",
+        help="Exit non-zero if any smoke probe fails.",
     )
     return parser.parse_args()
 
@@ -208,20 +226,12 @@ def ensure_indexes(client: QdrantClient, collection: str) -> None:
             continue
 
 
-def _build_headers(internal_key: str) -> dict[str, str]:
-    headers: dict[str, str] = {}
-    if internal_key:
-        headers["X-Internal-Key"] = internal_key
-    return headers
-
-
 def _ensure_vectors(
     points: list[dict[str, Any]],
     *,
     model: str,
     base_url: str,
     api_key: str,
-    internal_key: str,
 ) -> None:
     missing_idx: list[int] = []
     texts: list[str] = []
@@ -249,13 +259,12 @@ def _ensure_vectors(
                 texts=texts,
                 api_key=api_key or None,
                 client=http_client,
-                extra_headers=_build_headers(internal_key),
                 timeout=120.0,
             )
     except httpx.HTTPStatusError as exc:
         raise RuntimeError(
             "Embedding request failed. Check EMBEDDINGS_BASE_URL and auth settings "
-            "(--embedding-api-key / --embedding-internal-key or .env values). "
+            "(--embedding-api-key or .env values). "
             f"HTTP {exc.response.status_code}: {exc.response.text}"
         ) from exc
 
@@ -308,7 +317,6 @@ def main() -> None:
             model=args.embedding_model,
             base_url=args.embedding_base_url,
             api_key=args.embedding_api_key,
-            internal_key=args.embedding_internal_key,
         )
 
     for point in all_points:
@@ -358,6 +366,22 @@ def main() -> None:
         logger.info("Upserted %d/%d", upserted, len(all_points))
 
     logger.info("Done: upserted %d point(s) into collection %r", upserted, collection)
+    if args.run_smoke_validate:
+        run_smoke_validation(
+            data_dir=str(data_dir),
+            pattern=args.pattern,
+            collection=collection,
+            env=args.env,
+            qdrant_url=qdrant_url,
+            qdrant_api_key=args.qdrant_api_key,
+            embedding_base_url=args.embedding_base_url,
+            embedding_model=args.embedding_model,
+            embedding_api_key=args.embedding_api_key,
+            threshold=args.smoke_threshold,
+            max_probes=args.smoke_max_probes,
+            report_path=None,
+            strict=args.smoke_strict,
+        )
     elapsed_ms = (time.perf_counter() - started) * 1000
     logger.info("upsert_qdrant total_latency_ms=%.1f", elapsed_ms)
 

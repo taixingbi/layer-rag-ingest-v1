@@ -27,8 +27,8 @@
       ],
       "content_hash": "696914bbd11901f6cbaf272b955c470a03eb3e9f5137a295e1865b6898547eb2",
       "source": "repo_layer-gateway-embed-v1__docker.md",
-      "ingest_run_id": "run_20260425_133951",
-      "ingest_ts": "2026-04-25T13:39:51Z"
+      "ingest_run_id": "run_20260425_145405",
+      "ingest_ts": "2026-04-25T14:54:05Z"
     }
   },
   {
@@ -47,20 +47,20 @@
         "prerequisites"
       ],
       "text": "- Docker Desktop (or Docker Engine + Compose plugin)\n- A `.env` file in repo root (you can start from `.env.example`)\n- Reachable embedding backends configured in `EMBED_BACKENDS`",
-      "embed_text": "[SECTION: Prerequisites]\n- Docker Desktop (or Docker Engine + Compose plugin)\n- A `.env` file in repo root (you can start from `.env.example`)\n- Reachable embedding backends configured in `EMBED_BACKENDS`\nQ: What is required for the embedding backends to be configured?\nQ: What file can be used as a starting point for creating a .env file?\nQ: Which tool can be used instead of Docker Desktop?",
+      "embed_text": "[SECTION: Prerequisites]\n- Docker Desktop (or Docker Engine + Compose plugin)\n- A `.env` file in repo root (you can start from `.env.example`)\n- Reachable embedding backends configured in `EMBED_BACKENDS`\nQ: What prerequisites are mentioned in the section?\nQ: What is the purpose of the .env file?\nQ: What should you configure in EMBED_BACKENDS?",
       "token_count": 28,
-      "embed_token_count": 66,
+      "embed_token_count": 54,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is required for the embedding backends to be configured?",
-        "What file can be used as a starting point for creating a .env file?",
-        "Which tool can be used instead of Docker Desktop?"
+        "What prerequisites are mentioned in the section?",
+        "What is the purpose of the .env file?",
+        "What should you configure in EMBED_BACKENDS?"
       ],
       "content_hash": "a0b56e1803a6f1a9aa0e656f48431cf6f6cf26ddb7f50c22402a6d33ef3bc630",
       "source": "repo_layer-gateway-embed-v1__docker.md",
-      "ingest_run_id": "run_20260425_133951",
-      "ingest_ts": "2026-04-25T13:39:51Z"
+      "ingest_run_id": "run_20260425_145405",
+      "ingest_ts": "2026-04-25T14:54:05Z"
     }
   },
   {
@@ -79,20 +79,20 @@
         "1)_local_docker_deploy_(single_container)"
       ],
       "text": "Build image from project root:\n\n```bash\ndocker build -t layer-gateway-embed-v1:local .\n```\n\nRun container:\n\n```bash\ndocker run --rm \\\n  --name layer-gateway-embed-v1 \\\n  --env-file .env \\\n  -p 30181:30181 \\\n  layer-gateway-embed-v1:local\n```\n\nVerify:\n\n```bash\ncurl http://localhost:30181/health\n```\n\nExpected response:\n\n```json\n{\"status\":\"ok\"}\n```",
-      "embed_text": "[SECTION: 1) Local Docker Deploy (single container)]\nBuild image from project root:\n\n```bash\ndocker build -t layer-gateway-embed-v1:local .\n```\n\nRun container:\n\n```bash\ndocker run --rm \\\n  --name layer-gateway-embed-v1 \\\n  --env-file .env \\\n  -p 30181:30181 \\\n  layer-gateway-embed-v1:local\n```\n\nVerify:\n\n```bash\ncurl http://localhost:30181/health\n```\n\nExpected response:\n\n```json\n{\"status\":\"ok\"}\n```\nQ: What command is used to build the Docker image?\nQ: How is the Docker container named when running?\nQ: Which port is exposed by the Docker container?",
+      "embed_text": "[SECTION: 1) Local Docker Deploy (single container)]\nBuild image from project root:\n\n```bash\ndocker build -t layer-gateway-embed-v1:local .\n```\n\nRun container:\n\n```bash\ndocker run --rm \\\n  --name layer-gateway-embed-v1 \\\n  --env-file .env \\\n  -p 30181:30181 \\\n  layer-gateway-embed-v1:local\n```\n\nVerify:\n\n```bash\ncurl http://localhost:30181/health\n```\n\nExpected response:\n\n```json\n{\"status\":\"ok\"}\n```\nQ: What command is used to build the Docker image?\nQ: How is the container named when running?\nQ: Which port is exposed by the Docker container?",
       "token_count": 40,
-      "embed_token_count": 75,
+      "embed_token_count": 74,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What command is used to build the Docker image?",
-        "How is the Docker container named when running?",
+        "How is the container named when running?",
         "Which port is exposed by the Docker container?"
       ],
       "content_hash": "6836533670d5ae00f231072deb5597aed306a2e984446eb567528b86bb48ddd2",
       "source": "repo_layer-gateway-embed-v1__docker.md",
-      "ingest_run_id": "run_20260425_133951",
-      "ingest_ts": "2026-04-25T13:39:51Z"
+      "ingest_run_id": "run_20260425_145405",
+      "ingest_ts": "2026-04-25T14:54:05Z"
     }
   },
   {
@@ -111,20 +111,20 @@
         "2)_local_docker_deploy_(compose)"
       ],
       "text": "Use compose from project root:\n\n```bash\ndocker compose up --build\n```\n\nRun in background:\n\n```bash\ndocker compose up -d --build\n```\n\nStop:\n\n```bash\ndocker compose down\n```",
-      "embed_text": "[SECTION: 2) Local Docker Deploy (compose)]\nUse compose from project root:\n\n```bash\ndocker compose up --build\n```\n\nRun in background:\n\n```bash\ndocker compose up -d --build\n```\n\nStop:\n\n```bash\ndocker compose down\n```\nQ: What command is used to start the Docker containers using compose?\nQ: How can you run the Docker containers in the background?\nQ: What command stops the Docker containers?",
+      "embed_text": "[SECTION: 2) Local Docker Deploy (compose)]\nUse compose from project root:\n\n```bash\ndocker compose up --build\n```\n\nRun in background:\n\n```bash\ndocker compose up -d --build\n```\n\nStop:\n\n```bash\ndocker compose down\n```\nQ: What command is used to start the Docker services with building?\nQ: How can one run Docker services in the background?\nQ: What command stops the running Docker services?",
       "token_count": 27,
       "embed_token_count": 63,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What command is used to start the Docker containers using compose?",
-        "How can you run the Docker containers in the background?",
-        "What command stops the Docker containers?"
+        "What command is used to start the Docker services with building?",
+        "How can one run Docker services in the background?",
+        "What command stops the running Docker services?"
       ],
       "content_hash": "d6c48d7b7c1e78f3f41fe37ffcb8e339c393fcca69a76605178da76066846ed2",
       "source": "repo_layer-gateway-embed-v1__docker.md",
-      "ingest_run_id": "run_20260425_133951",
-      "ingest_ts": "2026-04-25T13:39:51Z"
+      "ingest_run_id": "run_20260425_145405",
+      "ingest_ts": "2026-04-25T14:54:05Z"
     }
   },
   {
@@ -143,20 +143,20 @@
         "3)_test_the_embeddings_endpoint"
       ],
       "text": "```bash\ncurl -X POST http://localhost:30181/v1/embeddings \\\n  -H \"X-Request-Id: request_id_1\" \\\n  -H \"X-Trace-Id: trace_id_1\" \\\n  -H \"X-Session-Id: session_id_1\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"model\":\"BAAI/bge-m3\",\"input\":\"hello world\"}'\n```",
-      "embed_text": "[SECTION: 3) Test the Embeddings Endpoint]\n```bash\ncurl -X POST http://localhost:30181/v1/embeddings \\\n  -H \"X-Request-Id: request_id_1\" \\\n  -H \"X-Trace-Id: trace_id_1\" \\\n  -H \"X-Session-Id: session_id_1\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"model\":\"BAAI/bge-m3\",\"input\":\"hello world\"}'\n```\nQ: What is the URL used in the curl command?\nQ: Which model is specified in the curl command?\nQ: What is the input provided in the curl command?",
+      "embed_text": "[SECTION: 3) Test the Embeddings Endpoint]\n```bash\ncurl -X POST http://localhost:30181/v1/embeddings \\\n  -H \"X-Request-Id: request_id_1\" \\\n  -H \"X-Trace-Id: trace_id_1\" \\\n  -H \"X-Session-Id: session_id_1\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"model\":\"BAAI/bge-m3\",\"input\":\"hello world\"}'\n```\nQ: What is the URL used in the curl command?\nQ: Which model is specified in the curl command?\nQ: What is the input text for the embedding?",
       "token_count": 26,
-      "embed_token_count": 61,
+      "embed_token_count": 60,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is the URL used in the curl command?",
         "Which model is specified in the curl command?",
-        "What is the input provided in the curl command?"
+        "What is the input text for the embedding?"
       ],
       "content_hash": "8cd9678b015ac7be4daab7810a6d8219b4632e325dee539896220b07eedb1fb9",
       "source": "repo_layer-gateway-embed-v1__docker.md",
-      "ingest_run_id": "run_20260425_133951",
-      "ingest_ts": "2026-04-25T13:39:51Z"
+      "ingest_run_id": "run_20260425_145405",
+      "ingest_ts": "2026-04-25T14:54:05Z"
     }
   },
   {
@@ -187,8 +187,8 @@
       ],
       "content_hash": "e935288c7a35cf3c609866e3a9cf93f6af1d7fc0720b5e29e781727c9da09a0b",
       "source": "repo_layer-gateway-embed-v1__docker.md",
-      "ingest_run_id": "run_20260425_133951",
-      "ingest_ts": "2026-04-25T13:39:51Z"
+      "ingest_run_id": "run_20260425_145405",
+      "ingest_ts": "2026-04-25T14:54:05Z"
     }
   },
   {
@@ -219,8 +219,8 @@
       ],
       "content_hash": "6dd46485454e18caa83b5b7db835463219406047e597286e34c8536641d14666",
       "source": "repo_layer-gateway-embed-v1__docker.md",
-      "ingest_run_id": "run_20260425_133951",
-      "ingest_ts": "2026-04-25T13:39:51Z"
+      "ingest_run_id": "run_20260425_145405",
+      "ingest_ts": "2026-04-25T14:54:05Z"
     }
   },
   {
@@ -239,20 +239,20 @@
         "troubleshooting"
       ],
       "text": "- `503 No healthy backend available`: verify `EMBED_BACKENDS` and backend health.\n- `429 Gateway busy`: increase `ADMISSION_MAX_CONCURRENT` or `ADMISSION_WAIT_TIMEOUT_MS`.",
-      "embed_text": "[SECTION: Troubleshooting]\n- `503 No healthy backend available`: verify `EMBED_BACKENDS` and backend health.\n- `429 Gateway busy`: increase `ADMISSION_MAX_CONCURRENT` or `ADMISSION_WAIT_TIMEOUT_MS`.\nQ: What should I check if I encounter '503 No healthy backend available'?\nQ: How can I address the '429 Gateway busy' error?\nQ: What settings can be adjusted to handle '429 Gateway busy' errors?",
+      "embed_text": "[SECTION: Troubleshooting]\n- `503 No healthy backend available`: verify `EMBED_BACKENDS` and backend health.\n- `429 Gateway busy`: increase `ADMISSION_MAX_CONCURRENT` or `ADMISSION_WAIT_TIMEOUT_MS`.\nQ: What should I check if I encounter a '503 No healthy backend available' error?\nQ: How can I address a '429 Gateway busy' error?\nQ: What settings are related to backend health in the troubleshooting section?",
       "token_count": 19,
-      "embed_token_count": 56,
+      "embed_token_count": 58,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What should I check if I encounter '503 No healthy backend available'?",
-        "How can I address the '429 Gateway busy' error?",
-        "What settings can be adjusted to handle '429 Gateway busy' errors?"
+        "What should I check if I encounter a '503 No healthy backend available' error?",
+        "How can I address a '429 Gateway busy' error?",
+        "What settings are related to backend health in the troubleshooting section?"
       ],
       "content_hash": "a206d8a70869ebebb8023063aa9526d260e8f0fa145384fcedb2fd1ce0a25972",
       "source": "repo_layer-gateway-embed-v1__docker.md",
-      "ingest_run_id": "run_20260425_133951",
-      "ingest_ts": "2026-04-25T13:39:51Z"
+      "ingest_run_id": "run_20260425_145405",
+      "ingest_ts": "2026-04-25T14:54:05Z"
     }
   }
 ]

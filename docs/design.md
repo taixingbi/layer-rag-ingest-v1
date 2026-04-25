@@ -21,7 +21,7 @@ It complements:
 
 - Retrieval-time ranking/reranking logic.
 - Online query orchestration and response composition.
-- Automatic long-chunk recursive split and smoke retrieval tests (not implemented yet).
+- Automatic long-chunk recursive split.
 
 ## System Context
 
@@ -44,7 +44,8 @@ Both scripts:
 
 - run from any cwd by resolving repo root
 - default to running synthetic enrichment (`RUN_SYNTHETIC_QUESTIONS=0` disables)
-- orchestrate chunk -> prepare -> enrich (optional) -> upsert
+- default to running smoke validation (`RUN_SMOKE_VALIDATE=0` disables)
+- orchestrate chunk -> prepare -> enrich (optional) -> upsert -> smoke validate
 
 ### Core Modules
 
@@ -58,6 +59,8 @@ Both scripts:
   - Async chat-enrichment pass for existing `points_*.json`; recomputes `embed_text` fields.
 - `app/upsert_qdrant.py`
   - Embeds missing vectors and upserts points into Qdrant, with collection/index bootstrap options.
+- `app/smoke_validate.py`
+  - Runs post-upsert retrieval smoke checks and writes JSON reports.
 
 ## End-to-End Data Flow
 
@@ -146,6 +149,31 @@ Responsibilities:
 - Optionally create collection and payload indexes.
 - Upsert in batches (`--batch-size`, default `20`) with `wait=True`.
 
+Optional in-upsert smoke hook:
+
+- `--run-smoke-validate` runs smoke checks immediately after upsert.
+- `--smoke-strict` converts smoke failures into non-zero command exit.
+
+### Stage E: Post-Upsert Smoke Validation (`smoke_validate.py`)
+
+Input:
+
+- `points_*.json`
+- target Qdrant collection and embedding endpoint
+
+Output:
+
+- smoke report JSON under `<data-dir>/reports/` by default
+
+Responsibilities:
+
+- Select one probe per `(source, section, doc_type)` group.
+- Use first synthetic question as probe text when available, otherwise fallback text prefix.
+- Embed probes, run filtered vector search, and validate:
+  - score meets threshold (default `0.75`)
+  - top hit payload remains within expected scope (`source`, `section`, `doc_type`)
+- Emit warning-only summary by default; support strict failure mode.
+
 ## Data Model and Queryability
 
 ### Why metadata is embedded in payload
@@ -188,7 +216,7 @@ This avoids collisions and enables strict filtering between personal and reposit
 Primary environment controls:
 
 - Qdrant: `QDRANT_URL`, `QDRANT_API_KEY`, `COLLECTION_NAME`, `ENV`
-- Embedding API: `EMBEDDINGS_BASE_URL`, `EMBEDDING_MODEL`, `EMBEDDING_INTERNAL_KEY`
+- Embedding API: `EMBEDDINGS_BASE_URL`, `EMBEDDING_MODEL`, `EMBEDDING_API_KEY`
 - Chat API: `CHAT_BASE_URL`, `CHAT_MODEL`, `CHAT_API_KEY` (or `INFERENCE_BASE_URL` fallback)
 
 Design principle: CLI flags override env values for run-scoped adjustments without changing shared `.env`.
@@ -202,6 +230,7 @@ The pipeline emits operator-facing logs for:
 - total latency per command
 - chat latency per call and per section totals
 - synthetic-enrichment failure reports with run args and timestamps
+- smoke-validation pass/fail summaries and per-probe report artifacts
 
 This is intentionally lightweight (structured-enough text logs + JSON artifacts) to keep local and CI execution simple.
 
@@ -211,10 +240,10 @@ This is intentionally lightweight (structured-enough text logs + JSON artifacts)
 - **Deterministic IDs from text only:** stable identity; does not reflect enrichment changes in ID.
 - **Approximate token counting in prepare stage:** low dependency overhead; less exact than model tokenizer counts.
 - **Default-on synthetic enrichment in shell wrappers:** better out-of-box retrieval context; more API/runtime cost unless disabled.
+- **Default-on smoke validation in shell wrappers:** immediate quality signal after upsert; adds extra API and Qdrant checks.
 
 ## Future Enhancements
 
 - Token-budget-aware trimming in `prepare_payloads.py` (currently no trimming).
 - Optional exact tokenizer mode for parity with embedding model.
-- Post-upsert smoke retrieval checks as a first-class validation stage.
 - Stronger dead-letter handling and retry classification across all networked stages.

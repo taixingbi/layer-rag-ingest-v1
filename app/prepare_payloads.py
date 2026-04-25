@@ -11,13 +11,14 @@ import os
 import re
 import time
 import uuid
-from datetime import UTC, datetime
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
 from dotenv import load_dotenv
 
 logger = logging.getLogger(__name__)
+_EST = timezone(timedelta(hours=-5), name="EST")
 
 
 UUID_NAMESPACE = uuid.NAMESPACE_URL
@@ -95,17 +96,17 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--ingest-ts",
         default="",
-        help="Optional fixed ingest timestamp (ISO-8601). Default: now UTC.",
+        help="Optional fixed ingest timestamp (ISO-8601). Default: now EST.",
     )
     return parser.parse_args()
 
 
-def _now_iso_utc() -> str:
-    return datetime.now(UTC).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+def _now_iso_est() -> str:
+    return datetime.now(_EST).replace(microsecond=0).isoformat()
 
 
 def _default_run_id() -> str:
-    return datetime.now(UTC).strftime("run_%Y%m%d_%H%M%S")
+    return datetime.now(_EST).strftime("run_%Y%m%d_%H%M%S_EST")
 
 
 def _token_count(text: str) -> int:
@@ -220,7 +221,7 @@ def run_prepare(args: argparse.Namespace) -> dict[str, Any]:
     out_dir.mkdir(parents=True, exist_ok=True)
 
     ingest_run_id = args.ingest_run_id.strip() or _default_run_id()
-    ingest_ts = args.ingest_ts.strip() or _now_iso_utc()
+    ingest_ts = args.ingest_ts.strip() or _now_iso_est()
 
     files = sorted(data_dir.glob(args.pattern))
     if not files:

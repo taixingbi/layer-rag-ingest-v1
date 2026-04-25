@@ -8,7 +8,7 @@ Personal-style text (resume, Q&A, profile) under `data1/raw/*.txt`. Outputs land
 ./scripts/data1.sh
 ```
 
-Synthetic questions run by default; use **`RUN_SYNTHETIC_QUESTIONS=0 ./scripts/data1.sh`** to skip them.
+Synthetic questions and smoke validation run by default; use **`RUN_SYNTHETIC_QUESTIONS=0`** and/or **`RUN_SMOKE_VALIDATE=0`** to skip stages.
 
 ## Prerequisites
 
@@ -81,7 +81,19 @@ Embed + upsert:
 python3 app/upsert_qdrant.py --data-dir data1/processed --pattern "points_*.json"
 ```
 
-If the embedding gateway needs `X-Internal-Key`, set `EMBEDDING_INTERNAL_KEY` in `.env` or pass `--embedding-internal-key`.
+Run smoke validation explicitly:
+
+```bash
+# warning-only default
+python3 app/smoke_validate.py --data-dir data1/processed --pattern "points_*.json"
+
+# strict mode
+python3 app/smoke_validate.py --data-dir data1/processed --pattern "points_*.json" --strict
+```
+
+Useful flags: `--threshold`, `--max-probes`, `--report-path`.
+
+Embedding gateway auth uses standard `--embedding-api-key` / `EMBEDDING_API_KEY` when required.
 
 ## Single-file chunking
 

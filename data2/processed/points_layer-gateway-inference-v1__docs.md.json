@@ -15,20 +15,20 @@
         "layer_gateway_reference"
       ],
       "text": "This document is a quick technical reference for `layer-gateway-inference-v1`.",
-      "embed_text": "[SECTION: Layer Gateway Reference]\nThis document is a quick technical reference for `layer-gateway-inference-v1`.\nQ: What is the purpose of this document?\nQ: Which version of layer gateway inference is referenced?\nQ: Is there any other version mentioned?",
+      "embed_text": "[SECTION: Layer Gateway Reference]\nThis document is a quick technical reference for `layer-gateway-inference-v1`.\nQ: What is the purpose of this document?\nQ: Which version of layer gateway inference is referenced?\nQ: Is there any information about features or usage within this text?",
       "token_count": 9,
-      "embed_token_count": 37,
+      "embed_token_count": 42,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is the purpose of this document?",
         "Which version of layer gateway inference is referenced?",
-        "Is there any other version mentioned?"
+        "Is there any information about features or usage within this text?"
       ],
       "content_hash": "d2e87e586605ae9f9a5289b5b972490c3d4d366c8d0ef79c360910721765ac07",
       "source": "repo_layer-gateway-inference-v1__docs.md",
-      "ingest_run_id": "run_20260425_133951",
-      "ingest_ts": "2026-04-25T13:39:51Z"
+      "ingest_run_id": "run_20260425_145405",
+      "ingest_ts": "2026-04-25T14:54:05Z"
     }
   },
   {
@@ -47,20 +47,20 @@
         "1)_what_this_service_does"
       ],
       "text": "The gateway accepts OpenAI-compatible chat requests and routes them to healthy vLLM backends.\n\nPrimary route:\n\n- `POST /v1/chat/completions`\n\nOperational routes:\n\n- `GET /healthz`\n- `GET /metrics`",
-      "embed_text": "[SECTION: 1) What this service does]\nThe gateway accepts OpenAI-compatible chat requests and routes them to healthy vLLM backends.\n\nPrimary route:\n\n- `POST /v1/chat/completions`\n\nOperational routes:\n\n- `GET /healthz`\n- `GET /metrics`\nQ: What HTTP method is used for the primary route?\nQ: What is the purpose of the gateway?\nQ: Which backends does the gateway route chat requests to?",
+      "embed_text": "[SECTION: 1) What this service does]\nThe gateway accepts OpenAI-compatible chat requests and routes them to healthy vLLM backends.\n\nPrimary route:\n\n- `POST /v1/chat/completions`\n\nOperational routes:\n\n- `GET /healthz`\n- `GET /metrics`\nQ: What HTTP method is used for the primary route?\nQ: What does the gateway accept?\nQ: Which backends does the gateway route chat requests to?",
       "token_count": 26,
-      "embed_token_count": 60,
+      "embed_token_count": 58,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What HTTP method is used for the primary route?",
-        "What is the purpose of the gateway?",
+        "What does the gateway accept?",
         "Which backends does the gateway route chat requests to?"
       ],
       "content_hash": "0b92c1f981ff3bc3b5498556812edde26d99684102bc3e41b79738af23f348c7",
       "source": "repo_layer-gateway-inference-v1__docs.md",
-      "ingest_run_id": "run_20260425_133951",
-      "ingest_ts": "2026-04-25T13:39:51Z"
+      "ingest_run_id": "run_20260425_145405",
+      "ingest_ts": "2026-04-25T14:54:05Z"
     }
   },
   {
@@ -91,8 +91,8 @@
       ],
       "content_hash": "134388a6ccc9319a194e48562ed0c7032249f743c693d9ff4d8f68f1aac72ee7",
       "source": "repo_layer-gateway-inference-v1__docs.md",
-      "ingest_run_id": "run_20260425_133951",
-      "ingest_ts": "2026-04-25T13:39:51Z"
+      "ingest_run_id": "run_20260425_145405",
+      "ingest_ts": "2026-04-25T14:54:05Z"
     }
   },
   {
@@ -111,20 +111,20 @@
         "2)_high-level_request_flow"
       ],
       "text": "```mermaid\nflowchart LR\n    C[Client] --> A[API Routes]\n    A --> Q[AdmissionQueue]\n    Q --> S[Scheduler]\n    S --> R[Backend Registry]\n    S --> P[Proxy Client]\n    P --> B1[vLLM Backend 1]\n    P --> B2[vLLM Backend 2]\n    A --> L[Structured Logs]\n    A --> M[Prometheus Metrics]\n```",
-      "embed_text": "[SECTION: 2) High-level request flow]\n```mermaid\nflowchart LR\n    C[Client] --> A[API Routes]\n    A --> Q[AdmissionQueue]\n    Q --> S[Scheduler]\n    S --> R[Backend Registry]\n    S --> P[Proxy Client]\n    P --> B1[vLLM Backend 1]\n    P --> B2[vLLM Backend 2]\n    A --> L[Structured Logs]\n    A --> M[Prometheus Metrics]\n```\nQ: What are the main components involved in the high-level request flow?\nQ: Which component handles admission queueing?\nQ: How many vLLM backends are there?",
+      "embed_text": "[SECTION: 2) High-level request flow]\n```mermaid\nflowchart LR\n    C[Client] --> A[API Routes]\n    A --> Q[AdmissionQueue]\n    Q --> S[Scheduler]\n    S --> R[Backend Registry]\n    S --> P[Proxy Client]\n    P --> B1[vLLM Backend 1]\n    P --> B2[vLLM Backend 2]\n    A --> L[Structured Logs]\n    A --> M[Prometheus Metrics]\n```\nQ: What are the main components involved in the high-level request flow?\nQ: Which components are part of the AdmissionQueue path?\nQ: How many vLLM backends are there?",
       "token_count": 40,
-      "embed_token_count": 70,
+      "embed_token_count": 73,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What are the main components involved in the high-level request flow?",
-        "Which component handles admission queueing?",
+        "Which components are part of the AdmissionQueue path?",
         "How many vLLM backends are there?"
       ],
       "content_hash": "23b5e62c994a0f87f93b8867bc6ac24704b7f9edf2b8afd5155c1b034db12ac0",
       "source": "repo_layer-gateway-inference-v1__docs.md",
-      "ingest_run_id": "run_20260425_133951",
-      "ingest_ts": "2026-04-25T13:39:51Z"
+      "ingest_run_id": "run_20260425_145405",
+      "ingest_ts": "2026-04-25T14:54:05Z"
     }
   },
   {
@@ -143,20 +143,20 @@
         "3)_core_modules"
       ],
       "text": "- `app/api/routes.py`: API handlers, request validation, queue admission.\n- `app/queue/admission_queue.py`: bounded queue + queue gauges.\n- `app/scheduler/dispatcher.py`: dispatch loop and scheduling decisions.\n- `app/scheduler/scoring.py`: backend score function (inflight/latency/error/hot/overload).\n- `app/proxy/client.py`: upstream HTTP call path, retries, streaming handling.\n- `app/backends/registry.py`: backend state registry and eligibility checks.\n- `app/backends/health.py`: circuit-breaker transitions (`closed`, `open`, `half_open`).\n- `app/core/logging.py`: structured JSON logging format + gateway event logger.\n- `app/metrics/prometheus.py`: metric definitions and helpers.\n- `app/metrics/sync.py`: sync in-memory backend state to Prometheus gauges.",
-      "embed_text": "[SECTION: 3) Core modules]\n- `app/api/routes.py`: API handlers, request validation, queue admission.\n- `app/queue/admission_queue.py`: bounded queue + queue gauges.\n- `app/scheduler/dispatcher.py`: dispatch loop and scheduling decisions.\n- `app/scheduler/scoring.py`: backend score function (inflight/latency/error/hot/overload).\n- `app/proxy/client.py`: upstream HTTP call path, retries, streaming handling.\n- `app/backends/registry.py`: backend state registry and eligibility checks.\n- `app/backends/health.py`: circuit-breaker transitions (`closed`, `open`, `half_open`).\n- `app/core/logging.py`: structured JSON logging format + gateway event logger.\n- `app/metrics/prometheus.py`: metric definitions and helpers.\n- `app/metrics/sync.py`: sync in-memory backend state to Prometheus gauges.\nQ: What is the purpose of app/api/routes.py?\nQ: Which file handles backend score function in the scheduler?\nQ: What does app/proxy/client.py manage?",
+      "embed_text": "[SECTION: 3) Core modules]\n- `app/api/routes.py`: API handlers, request validation, queue admission.\n- `app/queue/admission_queue.py`: bounded queue + queue gauges.\n- `app/scheduler/dispatcher.py`: dispatch loop and scheduling decisions.\n- `app/scheduler/scoring.py`: backend score function (inflight/latency/error/hot/overload).\n- `app/proxy/client.py`: upstream HTTP call path, retries, streaming handling.\n- `app/backends/registry.py`: backend state registry and eligibility checks.\n- `app/backends/health.py`: circuit-breaker transitions (`closed`, `open`, `half_open`).\n- `app/core/logging.py`: structured JSON logging format + gateway event logger.\n- `app/metrics/prometheus.py`: metric definitions and helpers.\n- `app/metrics/sync.py`: sync in-memory backend state to Prometheus gauges.\nQ: What is the purpose of `app/api/routes.py`?\nQ: Which file handles backend score function in the scheduler?\nQ: What does `app/backends/health.py` manage?",
       "token_count": 77,
       "embed_token_count": 103,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is the purpose of app/api/routes.py?",
+        "What is the purpose of `app/api/routes.py`?",
         "Which file handles backend score function in the scheduler?",
-        "What does app/proxy/client.py manage?"
+        "What does `app/backends/health.py` manage?"
       ],
       "content_hash": "b94381195873586a086127721f64823af7090d7e297a844cdbbf1d7a67ffcf09",
       "source": "repo_layer-gateway-inference-v1__docs.md",
-      "ingest_run_id": "run_20260425_133951",
-      "ingest_ts": "2026-04-25T13:39:51Z"
+      "ingest_run_id": "run_20260425_145405",
+      "ingest_ts": "2026-04-25T14:54:05Z"
     }
   },
   {
@@ -175,7 +175,7 @@
         "4)_important_runtime_concepts"
       ],
       "text": "- **AdmissionQueue**: bounded staging queue before dispatch; protects system under burst.\n- **Request class**: estimated work size from request body; used in routing fairness.\n- **Circuit breaker**:\n  - `closed`: normal traffic\n  - `open`: backend temporarily blocked\n  - `half_open`: limited probe traffic after cooldown\n- **drained**: administrative flag to stop new scheduling to a backend.\n- **recent_error_rate**: EWMA failure signal for eligibility/scoring.",
-      "embed_text": "[SECTION: 4) Important runtime concepts]\n- **AdmissionQueue**: bounded staging queue before dispatch; protects system under burst.\n- **Request class**: estimated work size from request body; used in routing fairness.\n- **Circuit breaker**:\n  - `closed`: normal traffic\n  - `open`: backend temporarily blocked\n  - `half_open`: limited probe traffic after cooldown\n- **drained**: administrative flag to stop new scheduling to a backend.\n- **recent_error_rate**: EWMA failure signal for eligibility/scoring.\nQ: What is the purpose of the AdmissionQueue?\nQ: What does the Circuit breaker do when it is in the half_open state?\nQ: What does the drained administrative flag indicate?",
+      "embed_text": "[SECTION: 4) Important runtime concepts]\n- **AdmissionQueue**: bounded staging queue before dispatch; protects system under burst.\n- **Request class**: estimated work size from request body; used in routing fairness.\n- **Circuit breaker**:\n  - `closed`: normal traffic\n  - `open`: backend temporarily blocked\n  - `half_open`: limited probe traffic after cooldown\n- **drained**: administrative flag to stop new scheduling to a backend.\n- **recent_error_rate**: EWMA failure signal for eligibility/scoring.\nQ: What is the purpose of the AdmissionQueue?\nQ: What does the Circuit breaker do when it is in the half_open state?\nQ: What does the drained administrative flag mean?",
       "token_count": 61,
       "embed_token_count": 96,
       "synthetic_questions_used": 3,
@@ -183,12 +183,12 @@
       "synthetic_questions": [
         "What is the purpose of the AdmissionQueue?",
         "What does the Circuit breaker do when it is in the half_open state?",
-        "What does the drained administrative flag indicate?"
+        "What does the drained administrative flag mean?"
       ],
       "content_hash": "1512ba115718c56959295c1dd605b8b3d31aa16ee92f3a1da57e979db1c8fee8",
       "source": "repo_layer-gateway-inference-v1__docs.md",
-      "ingest_run_id": "run_20260425_133951",
-      "ingest_ts": "2026-04-25T13:39:51Z"
+      "ingest_run_id": "run_20260425_145405",
+      "ingest_ts": "2026-04-25T14:54:05Z"
     }
   },
   {
@@ -219,8 +219,8 @@
       ],
       "content_hash": "eb81098691ce97c473002bc038447ed27ebb69ead2936cc3ba5425690662d4ab",
       "source": "repo_layer-gateway-inference-v1__docs.md",
-      "ingest_run_id": "run_20260425_133951",
-      "ingest_ts": "2026-04-25T13:39:51Z"
+      "ingest_run_id": "run_20260425_145405",
+      "ingest_ts": "2026-04-25T14:54:05Z"
     }
   },
   {
@@ -239,20 +239,20 @@
         "6)_logging_and_tracing_ids"
       ],
       "text": "Structured logs are emitted as one JSON line per event.\n\nGateway event fields include:\n\n- `event`, `service`, `env`, `trace_id`, `request_id`, `session_id`,\n- optional `backend`, `latency_ms`, `status_code`, and `error`.\n\nID behavior:\n\n- `request_id`: from `x-request-id` or generated by gateway.\n- `trace_id`: from `x-trace-id` if provided by caller.\n- `session_id`: from `x-session-id` if provided by caller.",
-      "embed_text": "[SECTION: 6) Logging and tracing IDs]\nStructured logs are emitted as one JSON line per event.\n\nGateway event fields include:\n\n- `event`, `service`, `env`, `trace_id`, `request_id`, `session_id`,\n- optional `backend`, `latency_ms`, `status_code`, and `error`.\n\nID behavior:\n\n- `request_id`: from `x-request-id` or generated by gateway.\n- `trace_id`: from `x-trace-id` if provided by caller.\n- `session_id`: from `x-session-id` if provided by caller.\nQ: What does the `request_id` field in the Gateway event fields represent?\nQ: Where can the `trace_id` value come from according to the ID behavior?\nQ: Which headers can provide values for the `session_id` field?",
+      "embed_text": "[SECTION: 6) Logging and tracing IDs]\nStructured logs are emitted as one JSON line per event.\n\nGateway event fields include:\n\n- `event`, `service`, `env`, `trace_id`, `request_id`, `session_id`,\n- optional `backend`, `latency_ms`, `status_code`, and `error`.\n\nID behavior:\n\n- `request_id`: from `x-request-id` or generated by gateway.\n- `trace_id`: from `x-trace-id` if provided by caller.\n- `session_id`: from `x-session-id` if provided by caller.\nQ: What is the source of the request_id field?\nQ: Which HTTP header can provide the trace_id?\nQ: What happens if x-session-id is not provided by the caller?",
       "token_count": 54,
-      "embed_token_count": 95,
+      "embed_token_count": 88,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What does the `request_id` field in the Gateway event fields represent?",
-        "Where can the `trace_id` value come from according to the ID behavior?",
-        "Which headers can provide values for the `session_id` field?"
+        "What is the source of the request_id field?",
+        "Which HTTP header can provide the trace_id?",
+        "What happens if x-session-id is not provided by the caller?"
       ],
       "content_hash": "fbbe9f6bc3da51b90756c6e93eb00764a908f4102df237370f8b10c4f09a2462",
       "source": "repo_layer-gateway-inference-v1__docs.md",
-      "ingest_run_id": "run_20260425_133951",
-      "ingest_ts": "2026-04-25T13:39:51Z"
+      "ingest_run_id": "run_20260425_145405",
+      "ingest_ts": "2026-04-25T14:54:05Z"
     }
   },
   {
@@ -283,8 +283,8 @@
       ],
       "content_hash": "72b6d3e3fe4ee5b8a151bba8db6cbf955ecc073cd4e0d4b336d4c4bfa5b3561d",
       "source": "repo_layer-gateway-inference-v1__docs.md",
-      "ingest_run_id": "run_20260425_133951",
-      "ingest_ts": "2026-04-25T13:39:51Z"
+      "ingest_run_id": "run_20260425_145405",
+      "ingest_ts": "2026-04-25T14:54:05Z"
     }
   },
   {
@@ -303,20 +303,20 @@
         "7)_metrics_quick_map"
       ],
       "text": "Traffic and reliability:\n\n- `gateway_requests_total`\n- `gateway_request_errors_total{backend=...}`\n- `gateway_request_retries_total`\n- `gateway_rejections_total{reason=...}`\n\nQueue pressure:\n\n- `gateway_queue_depth`\n- `gateway_queue_age_ms`\n\nBackend state:\n\n- `gateway_backend_inflight{backend=...}`\n- `gateway_backend_error_rate{backend=...}`\n- `gateway_backend_circuit_state{backend=...}`\n- `gateway_backend_ewma_ttft_ms{backend=...}`\n- `gateway_backend_ewma_e2e_ms{backend=...}`",
-      "embed_text": "[SECTION: 7) Metrics quick map]\nTraffic and reliability:\n\n- `gateway_requests_total`\n- `gateway_request_errors_total{backend=...}`\n- `gateway_request_retries_total`\n- `gateway_rejections_total{reason=...}`\n\nQueue pressure:\n\n- `gateway_queue_depth`\n- `gateway_queue_age_ms`\n\nBackend state:\n\n- `gateway_backend_inflight{backend=...}`\n- `gateway_backend_error_rate{backend=...}`\n- `gateway_backend_circuit_state{backend=...}`\n- `gateway_backend_ewma_ttft_ms{backend=...}`\n- `gateway_backend_ewma_e2e_ms{backend=...}`\nQ: What metrics are used to measure traffic and reliability?\nQ: How is queue pressure monitored?\nQ: What does gateway_backend_circuit_state measure?",
+      "embed_text": "[SECTION: 7) Metrics quick map]\nTraffic and reliability:\n\n- `gateway_requests_total`\n- `gateway_request_errors_total{backend=...}`\n- `gateway_request_retries_total`\n- `gateway_rejections_total{reason=...}`\n\nQueue pressure:\n\n- `gateway_queue_depth`\n- `gateway_queue_age_ms`\n\nBackend state:\n\n- `gateway_backend_inflight{backend=...}`\n- `gateway_backend_error_rate{backend=...}`\n- `gateway_backend_circuit_state{backend=...}`\n- `gateway_backend_ewma_ttft_ms{backend=...}`\n- `gateway_backend_ewma_e2e_ms{backend=...}`\nQ: What metrics are used to measure traffic and reliability?\nQ: How is queue pressure monitored through metrics?\nQ: What does the `gateway_backend_circuit_state` metric indicate?",
       "token_count": 29,
-      "embed_token_count": 55,
+      "embed_token_count": 59,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What metrics are used to measure traffic and reliability?",
-        "How is queue pressure monitored?",
-        "What does gateway_backend_circuit_state measure?"
+        "How is queue pressure monitored through metrics?",
+        "What does the `gateway_backend_circuit_state` metric indicate?"
       ],
       "content_hash": "972591b56dfe125615cf3c153fde8ee006f4829c936b0945672925d53bf433bc",
       "source": "repo_layer-gateway-inference-v1__docs.md",
-      "ingest_run_id": "run_20260425_133951",
-      "ingest_ts": "2026-04-25T13:39:51Z"
+      "ingest_run_id": "run_20260425_145405",
+      "ingest_ts": "2026-04-25T14:54:05Z"
     }
   },
   {
@@ -347,8 +347,8 @@
       ],
       "content_hash": "d0cb9f97f959c2182ce0dc2765073035908b5d508cf2e6e4551898cddb6f6680",
       "source": "repo_layer-gateway-inference-v1__docs.md",
-      "ingest_run_id": "run_20260425_133951",
-      "ingest_ts": "2026-04-25T13:39:51Z"
+      "ingest_run_id": "run_20260425_145405",
+      "ingest_ts": "2026-04-25T14:54:05Z"
     }
   },
   {
@@ -367,20 +367,20 @@
         "8)_common_failure_patterns"
       ],
       "text": "- **Queue full / age exceeded**: gateway returns 503; tune queue/scheduler or reduce load.\n- **Transport errors/timeouts**: upstream unreachable or slow; check backend URLs and network path.\n- **Frequent retries**: one backend unstable; check `recent_error_rate`, circuit state, and backend logs.\n- **Circuit open**: backend failing repeatedly; wait cooldown or drain backend for investigation.",
-      "embed_text": "[SECTION: 8) Common failure patterns]\n- **Queue full / age exceeded**: gateway returns 503; tune queue/scheduler or reduce load.\n- **Transport errors/timeouts**: upstream unreachable or slow; check backend URLs and network path.\n- **Frequent retries**: one backend unstable; check `recent_error_rate`, circuit state, and backend logs.\n- **Circuit open**: backend failing repeatedly; wait cooldown or drain backend for investigation.\nQ: What should be done if the queue is full or exceeds age?\nQ: How can transport errors or timeouts be addressed?\nQ: What steps are recommended for handling frequent retries?",
+      "embed_text": "[SECTION: 8) Common failure patterns]\n- **Queue full / age exceeded**: gateway returns 503; tune queue/scheduler or reduce load.\n- **Transport errors/timeouts**: upstream unreachable or slow; check backend URLs and network path.\n- **Frequent retries**: one backend unstable; check `recent_error_rate`, circuit state, and backend logs.\n- **Circuit open**: backend failing repeatedly; wait cooldown or drain backend for investigation.\nQ: What should be done if the queue is full or exceeds age?\nQ: How can transport errors or timeouts be addressed?\nQ: What actions are recommended for frequent retries?",
       "token_count": 53,
-      "embed_token_count": 89,
+      "embed_token_count": 88,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What should be done if the queue is full or exceeds age?",
         "How can transport errors or timeouts be addressed?",
-        "What steps are recommended for handling frequent retries?"
+        "What actions are recommended for frequent retries?"
       ],
       "content_hash": "ea38df086f072b5eb7ee8ae73e3f52e1aa5ac5c580f4f8d4f316ab996b487376",
       "source": "repo_layer-gateway-inference-v1__docs.md",
-      "ingest_run_id": "run_20260425_133951",
-      "ingest_ts": "2026-04-25T13:39:51Z"
+      "ingest_run_id": "run_20260425_145405",
+      "ingest_ts": "2026-04-25T14:54:05Z"
     }
   },
   {
@@ -399,20 +399,20 @@
         "9)_related_docs"
       ],
       "text": "- `README.md`: setup, run, and deployment basics.\n- `sla.md`: SLO/SLA targets and alerting baseline.",
-      "embed_text": "[SECTION: 9) Related docs]\n- `README.md`: setup, run, and deployment basics.\n- `sla.md`: SLO/SLA targets and alerting baseline.\nQ: What documents cover setup, run, and deployment basics?\nQ: What document contains SLO/SLA targets and alerting baseline?\nQ: Are there any other documents mentioned besides README.md and sla.md?",
+      "embed_text": "[SECTION: 9) Related docs]\n- `README.md`: setup, run, and deployment basics.\n- `sla.md`: SLO/SLA targets and alerting baseline.\nQ: What documents cover setup, run, and deployment basics?\nQ: What document contains SLO/SLA targets and alerting baselines?\nQ: Are there any other documents mentioned besides README.md and sla.md?",
       "token_count": 14,
       "embed_token_count": 47,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What documents cover setup, run, and deployment basics?",
-        "What document contains SLO/SLA targets and alerting baseline?",
+        "What document contains SLO/SLA targets and alerting baselines?",
         "Are there any other documents mentioned besides README.md and sla.md?"
       ],
       "content_hash": "107d9c9662eafb3053f39730a48cae6c9a30753ad180386e79b4d3a7041b8410",
       "source": "repo_layer-gateway-inference-v1__docs.md",
-      "ingest_run_id": "run_20260425_133951",
-      "ingest_ts": "2026-04-25T13:39:51Z"
+      "ingest_run_id": "run_20260425_145405",
+      "ingest_ts": "2026-04-25T14:54:05Z"
     }
   }
 ]

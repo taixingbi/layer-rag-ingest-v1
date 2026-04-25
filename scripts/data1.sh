@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# data1 pipeline: plain text -> chunks -> points -> (optional synthetic Q) -> Qdrant upsert
+# data1 pipeline: plain text -> chunks -> (default synthetic Q) -> Qdrant upsert -> smoke validate
 # Run from anywhere; repo root is the parent of this scripts/ directory.
 # Synthetic questions run by default unless RUN_SYNTHETIC_QUESTIONS=0 (skips chat API).
 set -euo pipefail
@@ -28,5 +28,12 @@ fi
 
 echo "==> data1: embed + upsert to Qdrant"
 "$PYTHON" app/upsert_qdrant.py --data-dir data1/processed --pattern "points_*.json"
+
+if [[ "${RUN_SMOKE_VALIDATE:-1}" == "0" ]]; then
+  echo "==> data1: skipping smoke validation (RUN_SMOKE_VALIDATE=0)"
+else
+  echo "==> data1: post-upsert smoke validation (warn-only by default)"
+  "$PYTHON" app/smoke_validate.py --data-dir data1/processed --pattern "points_*.json"
+fi
 
 echo "==> data1 pipeline finished"

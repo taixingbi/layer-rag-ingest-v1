@@ -1,0 +1,106 @@
+{
+  "generated_at": "2026-04-25T17:47:55.450579Z",
+  "summary": {
+    "files": 3,
+    "probes_total": 8,
+    "probes_passed": 2,
+    "probes_failed": 6,
+    "threshold": 0.65,
+    "collection": "taixing_knowledge_dev"
+  },
+  "run_args": {
+    "data_dir": "data1/processed",
+    "pattern": "points_*.json",
+    "max_probes": 0
+  },
+  "probes": [
+    {
+      "source": "personal_profile",
+      "section": "ROOT",
+      "doc_type": "profile",
+      "probe_text": "What is Taixing Bi's current role?",
+      "score": 0.63756955,
+      "scope_match": true,
+      "passed": false,
+      "threshold": 0.65,
+      "top_hit_id": "2d1b6fb6-8a1e-503d-8f60-569f192dad60"
+    },
+    {
+      "source": "personal_qa",
+      "section": "ROOT",
+      "doc_type": "qa",
+      "probe_text": "What is Taixing Bi's profession?",
+      "score": 0.6443634,
+      "scope_match": true,
+      "passed": false,
+      "threshold": 0.65,
+      "top_hit_id": "b786b2fa-eea5-5809-a945-95889adbdf52"
+    },
+    {
+      "source": "personal_resume",
+      "section": "ROOT",
+      "doc_type": "resume",
+      "probe_text": "What is the phone number for Taixing Bi?",
+      "score": 0.6914176,
+      "scope_match": true,
+      "passed": true,
+      "threshold": 0.65,
+      "top_hit_id": "bd7a283f-bd80-5d9e-ae8a-df6fe25e13d5"
+    },
+    {
+      "source": "personal_resume",
+      "section": "SUMMARY",
+      "doc_type": "resume",
+      "probe_text": "How many years of experience does the Backend AI Engineer have?",
+      "score": 0.73856175,
+      "scope_match": true,
+      "passed": true,
+      "threshold": 0.65,
+      "top_hit_id": "cf521e4f-c045-5a69-bca3-b96ba499cbce"
+    },
+    {
+      "source": "personal_resume",
+      "section": "CORE SKILLS",
+      "doc_type": "resume",
+      "probe_text": "What are some of the core skills mentioned?",
+      "score": 0.6280284,
+      "scope_match": true,
+      "passed": false,
+      "threshold": 0.65,
+      "top_hit_id": "0fafef13-92fa-5fbf-95bd-23207409d3e3"
+    },
+    {
+      "source": "personal_resume",
+      "section": "PROFESSIONAL EXPERIENCE",
+      "doc_type": "resume",
+      "probe_text": "What was the role held at Saks.com?",
+      "score": 0.6269789,
+      "scope_match": true,
+      "passed": false,
+      "threshold": 0.65,
+      "top_hit_id": "14347b84-af03-5e88-bfce-8c96d8f28c1d"
+    },
+    {
+      "source": "personal_resume",
+      "section": "EDUCATION",
+      "doc_type": "resume",
+      "probe_text": "What degree was obtained?",
+      "score": 0.6289475,
+      "scope_match": true,
+      "passed": false,
+      "threshold": 0.65,
+      "top_hit_id": "1abfbd45-9e76-59c1-b0c8-a40e80399e0b"
+    },
+    {
+      "source": "personal_resume",
+      "section": "PUBLICATION",
+      "doc_type": "resume",
+      "probe_text": "What is the title of the publication?",
+      "score": 0.6412941,
+      "scope_match": true,
+      "passed": false,
+      "threshold": 0.65,
+      "top_hit_id": "cf63ef19-699a-5ffc-a3bc-2e8b387d1bd3"
+    }
+  ]
+}

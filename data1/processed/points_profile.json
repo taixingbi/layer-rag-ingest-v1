@@ -15,20 +15,20 @@
         "root"
       ],
       "text": "Q: What is Taixing Bi's current role?\nA: AI Infrastructure Engineer",
-      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's current role?\nA: AI Infrastructure Engineer\nQ: What is Taixing Bi's current position?\nQ: What role does Taixing Bi hold now?\nQ: Who is Taixing Bi's current job title?",
+      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's current role?\nA: AI Infrastructure Engineer\nQ: What is Taixing Bi's current role?\nQ: What does Taixing Bi do at their job?\nQ: Which position does Taixing Bi hold?",
       "token_count": 11,
       "embed_token_count": 36,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is Taixing Bi's current position?",
-        "What role does Taixing Bi hold now?",
-        "Who is Taixing Bi's current job title?"
+        "What is Taixing Bi's current role?",
+        "What does Taixing Bi do at their job?",
+        "Which position does Taixing Bi hold?"
       ],
       "content_hash": "2103d77f4a42685f262a25f4a8f48301eadda0fc88f330c5919d4508d54a0085",
       "source": "personal_profile",
-      "ingest_run_id": "run_20260425_133942",
-      "ingest_ts": "2026-04-25T13:39:42Z"
+      "ingest_run_id": "run_20260425_125440_EST",
+      "ingest_ts": "2026-04-25T12:54:40-05:00"
     }
   },
   {
@@ -47,20 +47,20 @@
         "root"
       ],
       "text": "Q: Where does Taixing Bi currently work?\nA: Saks",
-      "embed_text": "[SECTION: ROOT]\nQ: Where does Taixing Bi currently work?\nA: Saks\nQ: Where does Taixing Bi currently work?\nQ: What company is Taixing Bi associated with?\nQ: Can you name the current workplace of Taixing Bi?",
+      "embed_text": "[SECTION: ROOT]\nQ: Where does Taixing Bi currently work?\nA: Saks\nQ: Where does Taixing Bi currently work?\nQ: What is the current job of Taixing Bi?\nQ: Which company is Taixing Bi working for?",
       "token_count": 9,
-      "embed_token_count": 36,
+      "embed_token_count": 35,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "Where does Taixing Bi currently work?",
-        "What company is Taixing Bi associated with?",
-        "Can you name the current workplace of Taixing Bi?"
+        "What is the current job of Taixing Bi?",
+        "Which company is Taixing Bi working for?"
       ],
       "content_hash": "cd28aa84bddf61a05eb8fd37fe6aedc12c2e5d2e80c20eb5f585047d67b457b4",
       "source": "personal_profile",
-      "ingest_run_id": "run_20260425_133942",
-      "ingest_ts": "2026-04-25T13:39:42Z"
+      "ingest_run_id": "run_20260425_125440_EST",
+      "ingest_ts": "2026-04-25T12:54:40-05:00"
     }
   },
   {
@@ -91,8 +91,8 @@
       ],
       "content_hash": "4e796a9c993b09b145770775edaf7e022b6b746ccd3e7bad070aa76090f82309",
       "source": "personal_profile",
-      "ingest_run_id": "run_20260425_133942",
-      "ingest_ts": "2026-04-25T13:39:42Z"
+      "ingest_run_id": "run_20260425_125440_EST",
+      "ingest_ts": "2026-04-25T12:54:40-05:00"
     }
   },
   {
@@ -111,20 +111,20 @@
         "root"
       ],
       "text": "Q: What is Taixing Bi's expected compensation range?\nA: $180,000 – $240,000 USD",
-      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's expected compensation range?\nA: $180,000 – $240,000 USD\nQ: What is the expected compensation range for Taixing Bi?\nQ: What is the minimum expected compensation for Taixing Bi?\nQ: What is the maximum expected compensation for Taixing Bi?",
+      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's expected compensation range?\nA: $180,000 – $240,000 USD\nQ: What is the expected compensation range for Taixing Bi?\nQ: What is the maximum expected compensation for Taixing Bi?\nQ: What is the minimum expected compensation for Taixing Bi?",
       "token_count": 13,
       "embed_token_count": 45,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is the expected compensation range for Taixing Bi?",
-        "What is the minimum expected compensation for Taixing Bi?",
-        "What is the maximum expected compensation for Taixing Bi?"
+        "What is the maximum expected compensation for Taixing Bi?",
+        "What is the minimum expected compensation for Taixing Bi?"
       ],
       "content_hash": "100a672a74efd05c3700566c2c3bd5f90568d46672d2a569c9417aec5729dc04",
       "source": "personal_profile",
-      "ingest_run_id": "run_20260425_133942",
-      "ingest_ts": "2026-04-25T13:39:42Z"
+      "ingest_run_id": "run_20260425_125440_EST",
+      "ingest_ts": "2026-04-25T12:54:40-05:00"
     }
   },
   {
@@ -155,8 +155,8 @@
       ],
       "content_hash": "a793ae571f66cb4784b912fc89f06f0aacb90a45e1a74c260b8f7ae0540dea62",
       "source": "personal_profile",
-      "ingest_run_id": "run_20260425_133942",
-      "ingest_ts": "2026-04-25T13:39:42Z"
+      "ingest_run_id": "run_20260425_125440_EST",
+      "ingest_ts": "2026-04-25T12:54:40-05:00"
     }
   },
   {
@@ -175,20 +175,20 @@
         "root"
       ],
       "text": "Q: Does Taixing Bi require visa sponsorship?\nA: No",
-      "embed_text": "[SECTION: ROOT]\nQ: Does Taixing Bi require visa sponsorship?\nA: No\nQ: Does Taixing Bi need visa sponsorship?\nQ: Is visa sponsorship required for Taixing Bi?\nQ: Do Taixing Bi employees need visa support?",
+      "embed_text": "[SECTION: ROOT]\nQ: Does Taixing Bi require visa sponsorship?\nA: No\nQ: Does Taixing Bi need a visa sponsor?\nQ: Is visa sponsorship required for Taixing Bi?\nQ: Do they require visa support for Taixing Bi?",
       "token_count": 9,
-      "embed_token_count": 34,
+      "embed_token_count": 36,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "Does Taixing Bi need visa sponsorship?",
+        "Does Taixing Bi need a visa sponsor?",
         "Is visa sponsorship required for Taixing Bi?",
-        "Do Taixing Bi employees need visa support?"
+        "Do they require visa support for Taixing Bi?"
       ],
       "content_hash": "3bd3a445ac648e6129c66c305462e057c85363f639fb4f47bcbb4763415b9941",
       "source": "personal_profile",
-      "ingest_run_id": "run_20260425_133942",
-      "ingest_ts": "2026-04-25T13:39:42Z"
+      "ingest_run_id": "run_20260425_125440_EST",
+      "ingest_ts": "2026-04-25T12:54:40-05:00"
     }
   },
   {
@@ -219,8 +219,8 @@
       ],
       "content_hash": "64836b6bf10078ec46964a3bf33e99b8e7e7f944cc47b10461c2e7409412b7cc",
       "source": "personal_profile",
-      "ingest_run_id": "run_20260425_133942",
-      "ingest_ts": "2026-04-25T13:39:42Z"
+      "ingest_run_id": "run_20260425_125440_EST",
+      "ingest_ts": "2026-04-25T12:54:40-05:00"
     }
   },
   {
@@ -251,8 +251,8 @@
       ],
       "content_hash": "92f4acf3abcb6ba1a1d1907faad89594766ac362da2b35895e0ef05e79cd5064",
       "source": "personal_profile",
-      "ingest_run_id": "run_20260425_133942",
-      "ingest_ts": "2026-04-25T13:39:42Z"
+      "ingest_run_id": "run_20260425_125440_EST",
+      "ingest_ts": "2026-04-25T12:54:40-05:00"
     }
   },
   {
@@ -271,20 +271,20 @@
         "root"
       ],
       "text": "Q: What is Taixing Bi's phone number?\nA: 347-560-4308",
-      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's phone number?\nA: 347-560-4308\nQ: What is Taixing Bi's phone number?\nQ: What phone number can be used to contact Taixing Bi?\nQ: How can one reach Taixing Bi?",
+      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's phone number?\nA: 347-560-4308\nQ: What is the phone number of Taixing Bi?\nQ: Can you provide Taixing Bi's contact number?\nQ: How can I reach out to Taixing Bi?",
       "token_count": 9,
-      "embed_token_count": 36,
+      "embed_token_count": 37,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is Taixing Bi's phone number?",
-        "What phone number can be used to contact Taixing Bi?",
-        "How can one reach Taixing Bi?"
+        "What is the phone number of Taixing Bi?",
+        "Can you provide Taixing Bi's contact number?",
+        "How can I reach out to Taixing Bi?"
       ],
       "content_hash": "10c4d13c14303145301dd77f8a9e19335fc4219fb8c08967f18ebe611367c480",
       "source": "personal_profile",
-      "ingest_run_id": "run_20260425_133942",
-      "ingest_ts": "2026-04-25T13:39:42Z"
+      "ingest_run_id": "run_20260425_125440_EST",
+      "ingest_ts": "2026-04-25T12:54:40-05:00"
     }
   },
   {
@@ -303,20 +303,20 @@
         "root"
       ],
       "text": "Q: What is Taixing Bi's email address?\nA: taixingbijob@gmail.com",
-      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's email address?\nA: taixingbijob@gmail.com\nQ: What is Taixing Bi's email address?\nQ: Where can you find Taixing Bi's job-related email?\nQ: How can one contact Taixing Bi professionally?",
+      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's email address?\nA: taixingbijob@gmail.com\nQ: What is Taixing Bi's email address?\nQ: Where can one find Taixing Bi's contact information?\nQ: How can someone reach out to Taixing Bi?",
       "token_count": 9,
-      "embed_token_count": 35,
+      "embed_token_count": 36,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is Taixing Bi's email address?",
-        "Where can you find Taixing Bi's job-related email?",
-        "How can one contact Taixing Bi professionally?"
+        "Where can one find Taixing Bi's contact information?",
+        "How can someone reach out to Taixing Bi?"
       ],
       "content_hash": "fe9e001550886289692f2cb6f7d28a2e2e241d7ccfa682e7adfd8b32533ab4ea",
       "source": "personal_profile",
-      "ingest_run_id": "run_20260425_133942",
-      "ingest_ts": "2026-04-25T13:39:42Z"
+      "ingest_run_id": "run_20260425_125440_EST",
+      "ingest_ts": "2026-04-25T12:54:40-05:00"
     }
   }
 ]

@@ -25,7 +25,7 @@ Create `.env` at repo root.
 | `VECTOR_SIZE` | no | Embedding vector dimension for `upsert_qdrant.py` (default: `1024`; override with `--vector-size`) |
 | `BATCH_SIZE` | no | Upsert batch size for `upsert_qdrant.py` (default: `20`; override with `--batch-size`) |
 | `EMBEDDING_MODEL` | no | Embedding model id (`BAAI/bge-m3` fallback) |
-| `EMBEDDING_INTERNAL_KEY` | no | Sent as `X-Internal-Key` to embeddings endpoint |
+
 | `CHAT_BASE_URL` | no | Chat API root; if unset, `synthetic_questions.py` uses `INFERENCE_BASE_URL` |
 | `CHAT_MODEL` | no | Chat model id for `synthetic_questions.py` |
 | `CHAT_API_KEY` | no | Optional Bearer token for chat (`synthetic_questions.py`) |
@@ -35,7 +35,8 @@ Create `.env` at repo root.
 1) Build chunk JSON from raw text (see below: `plain_text_chunks.py` for prose/resume-style sources, `markdown_to_chunks.py` for Markdown and GitHub-exported `.txt`)  
 2) Prepare metadata-rich PointStruct payload files (`points_*.json`)  
 2b) *(Optional)* Add synthetic questions to points with `synthetic_questions.py` (updates `embed_text`; re-upsert so vectors match)  
-3) Embed missing vectors and upsert to Qdrant
+3) Embed missing vectors and upsert to Qdrant  
+4) Run post-upsert smoke retrieval validation (warning-only by default in shell wrappers)
 
 ## Example: full pipeline (`data1`)
 
@@ -48,7 +49,7 @@ From repo root:
 ./scripts/data2.sh
 ```
 
-Shell wrappers [`scripts/data1.sh`](scripts/data1.sh) and [`scripts/data2.sh`](scripts/data2.sh) run synthetic questions by default; set `RUN_SYNTHETIC_QUESTIONS=0` to skip. See [data1.md](data1.md) / [data2.md](data2.md).
+Shell wrappers [`scripts/data1.sh`](scripts/data1.sh) and [`scripts/data2.sh`](scripts/data2.sh) run synthetic questions and smoke validation by default; set `RUN_SYNTHETIC_QUESTIONS=0` and/or `RUN_SMOKE_VALIDATE=0` to skip stages. See [data1.md](data1.md) / [data2.md](data2.md).
 
 Run chunking, prepare, then upsert (adjust paths as needed):
 
@@ -177,11 +178,25 @@ Normal run (embed + upsert):
 python3 app/upsert_qdrant.py --data-dir data1/processed --pattern "points_*.json"
 ```
 
-If your embeddings endpoint requires internal auth:
+Optional: run smoke validation from inside upsert:
 
 ```bash
-python3 app/upsert_qdrant.py --embedding-internal-key "your-key"
+python3 app/upsert_qdrant.py --data-dir data1/processed --pattern "points_*.json" --run-smoke-validate
 ```
+
+### 4) Smoke validation (`smoke_validate.py`)
+
+Run retrieval smoke checks after upsert using one probe per `(source, section, doc_type)` group. Probe text uses the first synthetic question when available, otherwise falls back to chunk text prefix. Search is filtered by `source`, `section`, and `doc_type`.
+
+```bash
+# warning-only by default (exits 0, writes report)
+python3 app/smoke_validate.py --data-dir data1/processed --pattern "points_*.json"
+
+# strict mode (non-zero exit on failures)
+python3 app/smoke_validate.py --data-dir data1/processed --pattern "points_*.json" --strict
+```
+
+Common flags: `--threshold` (default `0.75`), `--max-probes`, `--report-path`, `--strict`.
 
 ## Collection naming rule
 

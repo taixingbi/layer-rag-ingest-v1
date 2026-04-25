@@ -27,8 +27,8 @@
       ],
       "content_hash": "e816c08f02e81786825becc0fed40a663ffbfa2ef2d1fb5cd10411a405844229",
       "source": "repo_layer-gateway-embed-v1__run-locally.md",
-      "ingest_run_id": "run_20260425_133951",
-      "ingest_ts": "2026-04-25T13:39:51Z"
+      "ingest_run_id": "run_20260425_145405",
+      "ingest_ts": "2026-04-25T14:54:05Z"
     }
   },
   {
@@ -47,20 +47,20 @@
         "prerequisites"
       ],
       "text": "- Python 3.12+\n- Reachable embedding backends for `EMBED_BACKENDS`",
-      "embed_text": "[SECTION: Prerequisites]\n- Python 3.12+\n- Reachable embedding backends for `EMBED_BACKENDS`\nQ: What version of Python is required?\nQ: What does EMBED_BACKENDS require?\nQ: Are there any specific embedding backends needed?",
+      "embed_text": "[SECTION: Prerequisites]\n- Python 3.12+\n- Reachable embedding backends for `EMBED_BACKENDS`\nQ: What version of Python is required?\nQ: What does EMBED_BACKENDS require?\nQ: Are there any other prerequisites mentioned?",
       "token_count": 9,
-      "embed_token_count": 31,
+      "embed_token_count": 30,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What version of Python is required?",
         "What does EMBED_BACKENDS require?",
-        "Are there any specific embedding backends needed?"
+        "Are there any other prerequisites mentioned?"
       ],
       "content_hash": "8fbfb196dfaadee4b534e86f57c585f186a4d42a717a8d07b84946c94b7a1508",
       "source": "repo_layer-gateway-embed-v1__run-locally.md",
-      "ingest_run_id": "run_20260425_133951",
-      "ingest_ts": "2026-04-25T13:39:51Z"
+      "ingest_run_id": "run_20260425_145405",
+      "ingest_ts": "2026-04-25T14:54:05Z"
     }
   },
   {
@@ -79,20 +79,20 @@
         "1)_create_and_activate_virtual_environment"
       ],
       "text": "From repo root:\n\n```bash\npython3 -m venv .venv\nsource .venv/bin/activate\npython3 -m pip install --upgrade pip\n```",
-      "embed_text": "[SECTION: 1) Create and Activate Virtual Environment]\nFrom repo root:\n\n```bash\npython3 -m venv .venv\nsource .venv/bin/activate\npython3 -m pip install --upgrade pip\n```\nQ: What command is used to create a virtual environment?\nQ: How do you activate the virtual environment?\nQ: Which command is used to upgrade pip within the virtual environment?",
+      "embed_text": "[SECTION: 1) Create and Activate Virtual Environment]\nFrom repo root:\n\n```bash\npython3 -m venv .venv\nsource .venv/bin/activate\npython3 -m pip install --upgrade pip\n```\nQ: What command is used to create a virtual environment?\nQ: How do you activate the virtual environment?\nQ: Which command ensures that pip is up-to-date?",
       "token_count": 17,
-      "embed_token_count": 54,
+      "embed_token_count": 50,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What command is used to create a virtual environment?",
         "How do you activate the virtual environment?",
-        "Which command is used to upgrade pip within the virtual environment?"
+        "Which command ensures that pip is up-to-date?"
       ],
       "content_hash": "5ee2aff0b021c8c973e619725f90f8dd879f99102fb5edd4cd0eed819db4a467",
       "source": "repo_layer-gateway-embed-v1__run-locally.md",
-      "ingest_run_id": "run_20260425_133951",
-      "ingest_ts": "2026-04-25T13:39:51Z"
+      "ingest_run_id": "run_20260425_145405",
+      "ingest_ts": "2026-04-25T14:54:05Z"
     }
   },
   {
@@ -111,7 +111,7 @@
         "2)_install_the_project"
       ],
       "text": "```bash\npython3 -m pip install .\n```\n\nInstall dev dependencies (optional):\n\n```bash\npython3 -m pip install \".[dev]\"\n```",
-      "embed_text": "[SECTION: 2) Install the Project]\n```bash\npython3 -m pip install .\n```\n\nInstall dev dependencies (optional):\n\n```bash\npython3 -m pip install \".[dev]\"\n```\nQ: What command is used to install the project?\nQ: How can one install development dependencies?\nQ: What does the second command install?",
+      "embed_text": "[SECTION: 2) Install the Project]\n```bash\npython3 -m pip install .\n```\n\nInstall dev dependencies (optional):\n\n```bash\npython3 -m pip install \".[dev]\"\n```\nQ: What command is used to install the project?\nQ: How can one install development dependencies?\nQ: What does the second command do?",
       "token_count": 18,
       "embed_token_count": 46,
       "synthetic_questions_used": 3,
@@ -119,12 +119,12 @@
       "synthetic_questions": [
         "What command is used to install the project?",
         "How can one install development dependencies?",
-        "What does the second command install?"
+        "What does the second command do?"
       ],
       "content_hash": "941ee208b88539806b13e76e85e5eb7af54fd83d960d068051bbbf03200fb8f5",
       "source": "repo_layer-gateway-embed-v1__run-locally.md",
-      "ingest_run_id": "run_20260425_133951",
-      "ingest_ts": "2026-04-25T13:39:51Z"
+      "ingest_run_id": "run_20260425_145405",
+      "ingest_ts": "2026-04-25T14:54:05Z"
     }
   },
   {
@@ -143,20 +143,20 @@
         "3)_configure_environment"
       ],
       "text": "Create local env file:\n\n```bash\ncp .env.example .env\n```\n\nLoad env vars into shell:\n\n```bash\nset -a\nsource .env\nset +a\n```\n\nAt minimum, ensure:\n\n- `EMBED_BACKENDS` points to healthy backend URLs\n- `GATEWAY_HOST` and `GATEWAY_PORT` are correct for local run",
-      "embed_text": "[SECTION: 3) Configure Environment]\nCreate local env file:\n\n```bash\ncp .env.example .env\n```\n\nLoad env vars into shell:\n\n```bash\nset -a\nsource .env\nset +a\n```\n\nAt minimum, ensure:\n\n- `EMBED_BACKENDS` points to healthy backend URLs\n- `GATEWAY_HOST` and `GATEWAY_PORT` are correct for local run\nQ: What command is used to create a local env file?\nQ: What does the set -a and set +a commands do in the context of loading environment variables?\nQ: What are the minimum configurations needed in the .env file?",
+      "embed_text": "[SECTION: 3) Configure Environment]\nCreate local env file:\n\n```bash\ncp .env.example .env\n```\n\nLoad env vars into shell:\n\n```bash\nset -a\nsource .env\nset +a\n```\n\nAt minimum, ensure:\n\n- `EMBED_BACKENDS` points to healthy backend URLs\n- `GATEWAY_HOST` and `GATEWAY_PORT` are correct for local run\nQ: What command is used to create a local env file?\nQ: What does the set -a and set +a commands do in the context of loading environment variables?\nQ: What are the minimum requirements to ensure when configuring the environment?",
       "token_count": 41,
-      "embed_token_count": 85,
+      "embed_token_count": 86,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What command is used to create a local env file?",
         "What does the set -a and set +a commands do in the context of loading environment variables?",
-        "What are the minimum configurations needed in the .env file?"
+        "What are the minimum requirements to ensure when configuring the environment?"
       ],
       "content_hash": "5064074fc95e93e376c6f7bcfa272d62314dd751c6b1ad8fe63b5c991819f82f",
       "source": "repo_layer-gateway-embed-v1__run-locally.md",
-      "ingest_run_id": "run_20260425_133951",
-      "ingest_ts": "2026-04-25T13:39:51Z"
+      "ingest_run_id": "run_20260425_145405",
+      "ingest_ts": "2026-04-25T14:54:05Z"
     }
   },
   {
@@ -175,20 +175,20 @@
         "4)_start_the_gateway"
       ],
       "text": "```bash\npython -m app.main\n```",
-      "embed_text": "[SECTION: 4) Start the Gateway]\n```bash\npython -m app.main\n```\nQ: What command starts the Gateway?\nQ: Which Python module is used to start the Gateway?\nQ: How do you run the Gateway?",
+      "embed_text": "[SECTION: 4) Start the Gateway]\n```bash\npython -m app.main\n```\nQ: What command starts the Gateway?\nQ: Which Python module is used to start the Gateway?\nQ: How do you run the Gateway application?",
       "token_count": 5,
-      "embed_token_count": 33,
+      "embed_token_count": 34,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What command starts the Gateway?",
         "Which Python module is used to start the Gateway?",
-        "How do you run the Gateway?"
+        "How do you run the Gateway application?"
       ],
       "content_hash": "c75ec6d914931b12e3a3782e2147afb5eda444af93e0441a7ffbc17833e846f0",
       "source": "repo_layer-gateway-embed-v1__run-locally.md",
-      "ingest_run_id": "run_20260425_133951",
-      "ingest_ts": "2026-04-25T13:39:51Z"
+      "ingest_run_id": "run_20260425_145405",
+      "ingest_ts": "2026-04-25T14:54:05Z"
     }
   },
   {
@@ -207,20 +207,20 @@
         "5)_verify_health_and_metrics"
       ],
       "text": "```bash\ncurl http://localhost:30181/health\ncurl http://localhost:30181/metrics\n```",
-      "embed_text": "[SECTION: 5) Verify Health and Metrics]\n```bash\ncurl http://localhost:30181/health\ncurl http://localhost:30181/metrics\n```\nQ: What HTTP requests are used to verify health and metrics?\nQ: Which endpoint is used to check the health?\nQ: Which endpoint is used to retrieve metrics?",
+      "embed_text": "[SECTION: 5) Verify Health and Metrics]\n```bash\ncurl http://localhost:30181/health\ncurl http://localhost:30181/metrics\n```\nQ: What HTTP requests are used to verify health and metrics?\nQ: Which endpoint is used to verify health?\nQ: Which endpoint is used to retrieve metrics?",
       "token_count": 6,
-      "embed_token_count": 40,
+      "embed_token_count": 39,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What HTTP requests are used to verify health and metrics?",
-        "Which endpoint is used to check the health?",
+        "Which endpoint is used to verify health?",
         "Which endpoint is used to retrieve metrics?"
       ],
       "content_hash": "78c1de5651363b1dfdbc79026954f3b39f0ff26b6ad297158037e9685a2e29f3",
       "source": "repo_layer-gateway-embed-v1__run-locally.md",
-      "ingest_run_id": "run_20260425_133951",
-      "ingest_ts": "2026-04-25T13:39:51Z"
+      "ingest_run_id": "run_20260425_145405",
+      "ingest_ts": "2026-04-25T14:54:05Z"
     }
   },
   {
@@ -239,20 +239,20 @@
         "6)_test_embeddings_endpoint"
       ],
       "text": "```bash\ncurl -X POST http://localhost:30181/v1/embeddings \\\n  -H \"Content-Type: application/json\" \\\n  -H \"X-Request-Id: request-id-1\" \\\n  -H \"X-Trace-Id: trace-id-1\" \\\n  -H \"X-Session-Id: session-id-1\" \\\n  -d '{\"model\":\"BAAI/bge-m3\",\"input\":\"hello world\"}'\n```",
-      "embed_text": "[SECTION: 6) Test Embeddings Endpoint]\n```bash\ncurl -X POST http://localhost:30181/v1/embeddings \\\n  -H \"Content-Type: application/json\" \\\n  -H \"X-Request-Id: request-id-1\" \\\n  -H \"X-Trace-Id: trace-id-1\" \\\n  -H \"X-Session-Id: session-id-1\" \\\n  -d '{\"model\":\"BAAI/bge-m3\",\"input\":\"hello world\"}'\n```\nQ: What is the endpoint for testing embeddings?\nQ: Which model is used in the example?\nQ: What is the input to the embedding model?",
+      "embed_text": "[SECTION: 6) Test Embeddings Endpoint]\n```bash\ncurl -X POST http://localhost:30181/v1/embeddings \\\n  -H \"Content-Type: application/json\" \\\n  -H \"X-Request-Id: request-id-1\" \\\n  -H \"X-Trace-Id: trace-id-1\" \\\n  -H \"X-Session-Id: session-id-1\" \\\n  -d '{\"model\":\"BAAI/bge-m3\",\"input\":\"hello world\"}'\n```\nQ: What is the URL used in the curl command?\nQ: What model is specified in the curl command?\nQ: What is the input to the embedding model?",
       "token_count": 26,
-      "embed_token_count": 56,
+      "embed_token_count": 59,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is the endpoint for testing embeddings?",
-        "Which model is used in the example?",
+        "What is the URL used in the curl command?",
+        "What model is specified in the curl command?",
         "What is the input to the embedding model?"
       ],
       "content_hash": "eecd338bdea045640e42caf14d18a48b97d05b3e056b26c6d2339bacd0ca078a",
       "source": "repo_layer-gateway-embed-v1__run-locally.md",
-      "ingest_run_id": "run_20260425_133951",
-      "ingest_ts": "2026-04-25T13:39:51Z"
+      "ingest_run_id": "run_20260425_145405",
+      "ingest_ts": "2026-04-25T14:54:05Z"
     }
   },
   {
@@ -271,20 +271,20 @@
         "troubleshooting"
       ],
       "text": "- `externally-managed-environment`: use the `.venv` steps above instead of installing into system Python.\n- `503 No healthy backend available`: check `EMBED_BACKENDS` and backend service availability.\n- `429 Gateway busy`: increase `ADMISSION_MAX_CONCURRENT` or `ADMISSION_WAIT_TIMEOUT_MS`.",
-      "embed_text": "[SECTION: Troubleshooting]\n- `externally-managed-environment`: use the `.venv` steps above instead of installing into system Python.\n- `503 No healthy backend available`: check `EMBED_BACKENDS` and backend service availability.\n- `429 Gateway busy`: increase `ADMISSION_MAX_CONCURRENT` or `ADMISSION_WAIT_TIMEOUT_MS`.\nQ: What should be done if the externally-managed-environment is encountered?\nQ: How can the '503 No healthy backend available' error be resolved?\nQ: What are the possible solutions for the '429 Gateway busy' issue?",
+      "embed_text": "[SECTION: Troubleshooting]\n- `externally-managed-environment`: use the `.venv` steps above instead of installing into system Python.\n- `503 No healthy backend available`: check `EMBED_BACKENDS` and backend service availability.\n- `429 Gateway busy`: increase `ADMISSION_MAX_CONCURRENT` or `ADMISSION_WAIT_TIMEOUT_MS`.\nQ: What should be done if the environment is externally managed?\nQ: How can the '503 No healthy backend available' error be resolved?\nQ: What settings can be adjusted to handle '429 Gateway busy' errors?",
       "token_count": 33,
-      "embed_token_count": 69,
+      "embed_token_count": 70,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What should be done if the externally-managed-environment is encountered?",
+        "What should be done if the environment is externally managed?",
         "How can the '503 No healthy backend available' error be resolved?",
-        "What are the possible solutions for the '429 Gateway busy' issue?"
+        "What settings can be adjusted to handle '429 Gateway busy' errors?"
       ],
       "content_hash": "72de5d2d878ee678752f7343b39976bb5de609e7788471a35070d9a7b927d45a",
       "source": "repo_layer-gateway-embed-v1__run-locally.md",
-      "ingest_run_id": "run_20260425_133951",
-      "ingest_ts": "2026-04-25T13:39:51Z"
+      "ingest_run_id": "run_20260425_145405",
+      "ingest_ts": "2026-04-25T14:54:05Z"
     }
   }
 ]

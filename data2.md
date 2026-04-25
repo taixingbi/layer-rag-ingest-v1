@@ -8,7 +8,7 @@ Repo docs: list GitHub `/tree/` URLs, download as text exports, chunk with Markd
 ./scripts/data2.sh
 ```
 
-Synthetic questions run by default; use **`RUN_SYNTHETIC_QUESTIONS=0 ./scripts/data2.sh`** to skip them.
+Synthetic questions and smoke validation run by default; use **`RUN_SYNTHETIC_QUESTIONS=0`** and/or **`RUN_SMOKE_VALIDATE=0`** to skip stages.
 
 ## Prerequisites
 
@@ -72,6 +72,18 @@ Embed + upsert:
 ```bash
 python3 app/upsert_qdrant.py --data-dir data2/processed --pattern "points_*.json"
 ```
+
+Run smoke validation explicitly:
+
+```bash
+# warning-only default
+python3 app/smoke_validate.py --data-dir data2/processed --pattern "points_*.json"
+
+# strict mode
+python3 app/smoke_validate.py --data-dir data2/processed --pattern "points_*.json" --strict
+```
+
+Useful flags: `--threshold`, `--max-probes`, `--report-path`.
 
 ## Single-file chunking
 

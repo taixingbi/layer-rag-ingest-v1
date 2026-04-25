@@ -9,7 +9,7 @@ From repo root, the primary entrypoints are:
 - `./scripts/data1.sh` for personal/plain-text ingest
 - `./scripts/data2.sh` for GitHub/Markdown ingest
 
-Both scripts run synthetic-question enrichment by default. Set `RUN_SYNTHETIC_QUESTIONS=0` to skip it.
+Both scripts run synthetic-question enrichment and smoke validation by default. Set `RUN_SYNTHETIC_QUESTIONS=0` and/or `RUN_SMOKE_VALIDATE=0` to skip stages.
 
 ## Stage 1 - Build Chunk Files
 
@@ -90,6 +90,30 @@ Points are converted to `qdrant_client.models.PointStruct` and upserted in batch
 
 The command logs running progress and total latency at the end.
 
+Optional in-script smoke execution is available via `upsert_qdrant.py` flags:
+
+- `--run-smoke-validate`
+- `--smoke-threshold`
+- `--smoke-max-probes`
+- `--smoke-strict`
+
+## Stage 7 - Post-Upsert Smoke Validation
+
+`app/smoke_validate.py` validates retrieval quality by generating one probe per `(source, section, doc_type)` group from `points_*.json`.
+
+Probe construction:
+
+- first `synthetic_questions` item when available
+- fallback to prefix of `payload.text`
+
+Validation behavior:
+
+- embed probe text using embeddings API
+- search Qdrant with deterministic filter (`source`, `section`, `doc_type`)
+- pass when top score meets threshold (default `0.75`) and payload remains in expected scope
+- write JSON report under `<data-dir>/reports/` by default
+- warning-only by default; strict mode exits non-zero (`--strict`)
+
 ## Data Set Conventions
 
 - `data1` flow uses `--source-prefix personal`
@@ -103,6 +127,6 @@ The current codebase does **not** implement:
 
 - automatic recursive chunk splitting in `prepare_payloads.py`
 - strict model-tokenizer counting for the primary token metrics
-- post-upsert retrieval smoke tests
+- automatic smoke-validation execution inside `upsert_qdrant.py` unless `--run-smoke-validate` is passed
 
 If needed, these can be added as follow-up enhancements.
