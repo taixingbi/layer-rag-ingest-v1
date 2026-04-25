@@ -76,7 +76,7 @@ Guardrails:
 
 Before upsert, the script:
 
-- resolves collection name from `COLLECTION_NAME` (+ `_dev` suffix when `ENV=dev`)
+- resolves collection name from `COLLECTION_NAME` (+ `_<env>` suffix when `ENV` is `dev`/`qa`/`prod`)
 - creates collection if missing (unless `--skip-create-collection`)
 - creates payload indexes (unless `--skip-indexes`) for:
   - keywords: `source`, `doc_type`, `section`, `content_hash`, `chunk_id_parent`

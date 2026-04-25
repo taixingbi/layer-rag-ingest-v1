@@ -21,7 +21,7 @@ Create `.env` at repo root.
 | `INFERENCE_BASE_URL` | no | Chat inference root (without `/v1`) |
 | `EMBEDDINGS_BASE_URL` | yes (for embedding step) | Embeddings root (without `/v1`) |
 | `COLLECTION_NAME` | yes | Base collection name (for example `taixing_knowledge`) |
-| `ENV` | no | Environment label; if `dev`, collection auto-resolves to `<COLLECTION_NAME>_dev` |
+| `ENV` | no | Environment label; if `dev`/`qa`/`prod`, collection auto-resolves to `<COLLECTION_NAME>_<env>` |
 | `VECTOR_SIZE` | no | Embedding vector dimension for `upsert_qdrant.py` (default: `1024`; override with `--vector-size`) |
 | `BATCH_SIZE` | no | Upsert batch size for `upsert_qdrant.py` (default: `20`; override with `--batch-size`) |
 | `EMBEDDING_MODEL` | no | Embedding model id (`BAAI/bge-m3` fallback) |
@@ -41,15 +41,10 @@ Create `.env` at repo root.
 
 From repo root:
 
-**Data1** (plain text pipeline):
+**Data** (plain text pipeline):
 
 ```bash
 ./scripts/data1.sh
-```
-
-**Data2** (GitHub / markdown pipeline):
-
-```bash
 ./scripts/data2.sh
 ```
 
@@ -191,6 +186,6 @@ python3 app/upsert_qdrant.py --embedding-internal-key "your-key"
 ## Collection naming rule
 
 - Base name: `COLLECTION_NAME`
-- If `ENV=dev`, scripts auto-use `<COLLECTION_NAME>_dev`
-  - example: `taixing_knowledge` -> `taixing_knowledge_dev`
+- If `ENV` is `dev`, `qa`, or `prod`, scripts auto-use `<COLLECTION_NAME>_<env>`
+  - examples: `taixing_knowledge_dev`, `taixing_knowledge_qa`, `taixing_knowledge_prod`
 - CLI `--collection` overrides the base name.

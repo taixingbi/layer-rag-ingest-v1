@@ -15,20 +15,20 @@
         "openai_overload_fallback_(logs)"
       ],
       "text": "When the gateway routes a request to OpenAI because GPU backends are overloaded or unavailable, it emits structured JSON logs (`app/core/logging.py`).",
-      "embed_text": "[SECTION: OpenAI overload fallback (logs)]\nWhen the gateway routes a request to OpenAI because GPU backends are overloaded or unavailable, it emits structured JSON logs (`app/core/logging.py`).\nQ: What does the gateway emit when routing a request to OpenAI due to GPU overload?\nQ: Where can the structured JSON logs be found?\nQ: What specific information is logged when GPU backends are overloaded or unavailable?",
+      "embed_text": "[SECTION: OpenAI overload fallback (logs)]\nWhen the gateway routes a request to OpenAI because GPU backends are overloaded or unavailable, it emits structured JSON logs (`app/core/logging.py`).\nQ: What does the gateway emit when routing a request to OpenAI due to GPU overload?\nQ: Where are the emitted logs stored?\nQ: What type of logs are generated?",
       "token_count": 21,
-      "embed_token_count": 64,
+      "embed_token_count": 56,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What does the gateway emit when routing a request to OpenAI due to GPU overload?",
-        "Where can the structured JSON logs be found?",
-        "What specific information is logged when GPU backends are overloaded or unavailable?"
+        "Where are the emitted logs stored?",
+        "What type of logs are generated?"
       ],
       "content_hash": "3cb416020c74aeb8d5d2ebcfa1019f28a34bd3d6c0864b1a56b3c7636ef44de1",
       "source": "repo_layer-gateway-inference-v1__fallback.md",
-      "ingest_run_id": "run_20260425_010443",
-      "ingest_ts": "2026-04-25T01:04:43Z"
+      "ingest_run_id": "run_20260425_133951",
+      "ingest_ts": "2026-04-25T13:39:51Z"
     }
   },
   {
@@ -59,8 +59,8 @@
       ],
       "content_hash": "d137c17650874bcb6bd9c4e234647a8961c4bf71a7554f0be5e8731e63ea365b",
       "source": "repo_layer-gateway-inference-v1__fallback.md",
-      "ingest_run_id": "run_20260425_010443",
-      "ingest_ts": "2026-04-25T01:04:43Z"
+      "ingest_run_id": "run_20260425_133951",
+      "ingest_ts": "2026-04-25T13:39:51Z"
     }
   },
   {
@@ -91,8 +91,8 @@
       ],
       "content_hash": "abfb9a3a6beb5f528c289253114ed2849c9729f222320cee8e48b43015270734",
       "source": "repo_layer-gateway-inference-v1__fallback.md",
-      "ingest_run_id": "run_20260425_010443",
-      "ingest_ts": "2026-04-25T01:04:43Z"
+      "ingest_run_id": "run_20260425_133951",
+      "ingest_ts": "2026-04-25T13:39:51Z"
     }
   },
   {
@@ -123,8 +123,8 @@
       ],
       "content_hash": "3863400ce1a26e1d30be30480fd0ec24b1ba7ac23166cfb5fef89391f5ce1fe8",
       "source": "repo_layer-gateway-inference-v1__fallback.md",
-      "ingest_run_id": "run_20260425_010443",
-      "ingest_ts": "2026-04-25T01:04:43Z"
+      "ingest_run_id": "run_20260425_133951",
+      "ingest_ts": "2026-04-25T13:39:51Z"
     }
   },
   {
@@ -143,20 +143,20 @@
         "quick_loki-style_filter"
       ],
       "text": "Match fallback dispatch lines:\n\n```text\n|=\"\\\"event\\\":\\\"request_dispatched\\\"\" |=\"\\\"provider\\\":\\\"openai\\\"\"\n```\n\nNarrow by reason:\n\n```text\n|=\"queue_age_fallback\"\n```",
-      "embed_text": "[SECTION: Quick Loki-style filter]\nMatch fallback dispatch lines:\n\n```text\n|=\"\\\"event\\\":\\\"request_dispatched\\\"\" |=\"\\\"provider\\\":\\\"openai\\\"\"\n```\n\nNarrow by reason:\n\n```text\n|=\"queue_age_fallback\"\n```\nQ: What are the filter conditions for matching fallback dispatch lines?\nQ: How can we narrow down the results by reason?\nQ: What specific field is used to narrow by reason?",
+      "embed_text": "[SECTION: Quick Loki-style filter]\nMatch fallback dispatch lines:\n\n```text\n|=\"\\\"event\\\":\\\"request_dispatched\\\"\" |=\"\\\"provider\\\":\\\"openai\\\"\"\n```\n\nNarrow by reason:\n\n```text\n|=\"queue_age_fallback\"\n```\nQ: What are the fallback dispatch lines?\nQ: How can we narrow by reason using a filter?\nQ: What specific filter is used to narrow by reason?",
       "token_count": 14,
-      "embed_token_count": 49,
+      "embed_token_count": 45,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What are the filter conditions for matching fallback dispatch lines?",
-        "How can we narrow down the results by reason?",
-        "What specific field is used to narrow by reason?"
+        "What are the fallback dispatch lines?",
+        "How can we narrow by reason using a filter?",
+        "What specific filter is used to narrow by reason?"
       ],
       "content_hash": "5c90ddad7a0d5fcda5afcbd031e9bbea1f4ece81d10ed6b62322446c76e5b01b",
       "source": "repo_layer-gateway-inference-v1__fallback.md",
-      "ingest_run_id": "run_20260425_010443",
-      "ingest_ts": "2026-04-25T01:04:43Z"
+      "ingest_run_id": "run_20260425_133951",
+      "ingest_ts": "2026-04-25T13:39:51Z"
     }
   },
   {
@@ -175,20 +175,20 @@
         "related_metric"
       ],
       "text": "`gateway_fallback_requests_total{provider=\"openai\"}` increments when a request is dispatched to OpenAI fallback (`app/metrics/prometheus.py`).",
-      "embed_text": "[SECTION: Related metric]\n`gateway_fallback_requests_total{provider=\"openai\"}` increments when a request is dispatched to OpenAI fallback (`app/metrics/prometheus.py`).\nQ: What does the `gateway_fallback_requests_total{provider=\"openai\"}` metric increment when?\nQ: Where is the definition of `gateway_fallback_requests_total{provider=\"openai\"}` located?\nQ: Which provider is associated with the `gateway_fallback_requests_total` metric?",
+      "embed_text": "[SECTION: Related metric]\n`gateway_fallback_requests_total{provider=\"openai\"}` increments when a request is dispatched to OpenAI fallback (`app/metrics/prometheus.py`).\nQ: What does the `gateway_fallback_requests_total{provider=\"openai\"}` metric increment when?\nQ: Where is the code for dispatching requests to OpenAI fallback located?\nQ: Which provider is associated with the `gateway_fallback_requests_total` metric?",
       "token_count": 11,
-      "embed_token_count": 39,
+      "embed_token_count": 43,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What does the `gateway_fallback_requests_total{provider=\"openai\"}` metric increment when?",
-        "Where is the definition of `gateway_fallback_requests_total{provider=\"openai\"}` located?",
+        "Where is the code for dispatching requests to OpenAI fallback located?",
         "Which provider is associated with the `gateway_fallback_requests_total` metric?"
       ],
       "content_hash": "83c3d2a25d11969afd931fe6a614c361c6e969b8a92fa1ae574da42a238e7ca3",
       "source": "repo_layer-gateway-inference-v1__fallback.md",
-      "ingest_run_id": "run_20260425_010443",
-      "ingest_ts": "2026-04-25T01:04:43Z"
+      "ingest_run_id": "run_20260425_133951",
+      "ingest_ts": "2026-04-25T13:39:51Z"
     }
   }
 ]

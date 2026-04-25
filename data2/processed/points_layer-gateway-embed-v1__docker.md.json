@@ -27,8 +27,8 @@
       ],
       "content_hash": "696914bbd11901f6cbaf272b955c470a03eb3e9f5137a295e1865b6898547eb2",
       "source": "repo_layer-gateway-embed-v1__docker.md",
-      "ingest_run_id": "run_20260425_010443",
-      "ingest_ts": "2026-04-25T01:04:43Z"
+      "ingest_run_id": "run_20260425_133951",
+      "ingest_ts": "2026-04-25T13:39:51Z"
     }
   },
   {
@@ -59,8 +59,8 @@
       ],
       "content_hash": "a0b56e1803a6f1a9aa0e656f48431cf6f6cf26ddb7f50c22402a6d33ef3bc630",
       "source": "repo_layer-gateway-embed-v1__docker.md",
-      "ingest_run_id": "run_20260425_010443",
-      "ingest_ts": "2026-04-25T01:04:43Z"
+      "ingest_run_id": "run_20260425_133951",
+      "ingest_ts": "2026-04-25T13:39:51Z"
     }
   },
   {
@@ -91,8 +91,8 @@
       ],
       "content_hash": "6836533670d5ae00f231072deb5597aed306a2e984446eb567528b86bb48ddd2",
       "source": "repo_layer-gateway-embed-v1__docker.md",
-      "ingest_run_id": "run_20260425_010443",
-      "ingest_ts": "2026-04-25T01:04:43Z"
+      "ingest_run_id": "run_20260425_133951",
+      "ingest_ts": "2026-04-25T13:39:51Z"
     }
   },
   {
@@ -111,20 +111,20 @@
         "2)_local_docker_deploy_(compose)"
       ],
       "text": "Use compose from project root:\n\n```bash\ndocker compose up --build\n```\n\nRun in background:\n\n```bash\ndocker compose up -d --build\n```\n\nStop:\n\n```bash\ndocker compose down\n```",
-      "embed_text": "[SECTION: 2) Local Docker Deploy (compose)]\nUse compose from project root:\n\n```bash\ndocker compose up --build\n```\n\nRun in background:\n\n```bash\ndocker compose up -d --build\n```\n\nStop:\n\n```bash\ndocker compose down\n```\nQ: What command is used to start the Docker containers with building?\nQ: How can you run Docker containers in the background?\nQ: What command stops the running Docker containers?",
+      "embed_text": "[SECTION: 2) Local Docker Deploy (compose)]\nUse compose from project root:\n\n```bash\ndocker compose up --build\n```\n\nRun in background:\n\n```bash\ndocker compose up -d --build\n```\n\nStop:\n\n```bash\ndocker compose down\n```\nQ: What command is used to start the Docker containers using compose?\nQ: How can you run the Docker containers in the background?\nQ: What command stops the Docker containers?",
       "token_count": 27,
       "embed_token_count": 63,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What command is used to start the Docker containers with building?",
-        "How can you run Docker containers in the background?",
-        "What command stops the running Docker containers?"
+        "What command is used to start the Docker containers using compose?",
+        "How can you run the Docker containers in the background?",
+        "What command stops the Docker containers?"
       ],
       "content_hash": "d6c48d7b7c1e78f3f41fe37ffcb8e339c393fcca69a76605178da76066846ed2",
       "source": "repo_layer-gateway-embed-v1__docker.md",
-      "ingest_run_id": "run_20260425_010443",
-      "ingest_ts": "2026-04-25T01:04:43Z"
+      "ingest_run_id": "run_20260425_133951",
+      "ingest_ts": "2026-04-25T13:39:51Z"
     }
   },
   {
@@ -143,7 +143,7 @@
         "3)_test_the_embeddings_endpoint"
       ],
       "text": "```bash\ncurl -X POST http://localhost:30181/v1/embeddings \\\n  -H \"X-Request-Id: request_id_1\" \\\n  -H \"X-Trace-Id: trace_id_1\" \\\n  -H \"X-Session-Id: session_id_1\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"model\":\"BAAI/bge-m3\",\"input\":\"hello world\"}'\n```",
-      "embed_text": "[SECTION: 3) Test the Embeddings Endpoint]\n```bash\ncurl -X POST http://localhost:30181/v1/embeddings \\\n  -H \"X-Request-Id: request_id_1\" \\\n  -H \"X-Trace-Id: trace_id_1\" \\\n  -H \"X-Session-Id: session_id_1\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"model\":\"BAAI/bge-m3\",\"input\":\"hello world\"}'\n```\nQ: What is the URL used in the curl command?\nQ: Which model is specified in the curl command?\nQ: What is the content type of the curl request?",
+      "embed_text": "[SECTION: 3) Test the Embeddings Endpoint]\n```bash\ncurl -X POST http://localhost:30181/v1/embeddings \\\n  -H \"X-Request-Id: request_id_1\" \\\n  -H \"X-Trace-Id: trace_id_1\" \\\n  -H \"X-Session-Id: session_id_1\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"model\":\"BAAI/bge-m3\",\"input\":\"hello world\"}'\n```\nQ: What is the URL used in the curl command?\nQ: Which model is specified in the curl command?\nQ: What is the input provided in the curl command?",
       "token_count": 26,
       "embed_token_count": 61,
       "synthetic_questions_used": 3,
@@ -151,12 +151,12 @@
       "synthetic_questions": [
         "What is the URL used in the curl command?",
         "Which model is specified in the curl command?",
-        "What is the content type of the curl request?"
+        "What is the input provided in the curl command?"
       ],
       "content_hash": "8cd9678b015ac7be4daab7810a6d8219b4632e325dee539896220b07eedb1fb9",
       "source": "repo_layer-gateway-embed-v1__docker.md",
-      "ingest_run_id": "run_20260425_010443",
-      "ingest_ts": "2026-04-25T01:04:43Z"
+      "ingest_run_id": "run_20260425_133951",
+      "ingest_ts": "2026-04-25T13:39:51Z"
     }
   },
   {
@@ -175,20 +175,20 @@
         "4)_publish_to_docker_hub"
       ],
       "text": "Set your Docker Hub namespace and target tag:\n\n```bash\nexport DOCKERHUB_USER=<your-dockerhub-username>\nexport IMAGE_NAME=layer-gateway-embed-v1\nexport IMAGE_TAG=v1.0.0\n```\n\nBuild and tag:\n\n```bash\ndocker build -t ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG} .\ndocker tag ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG} ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```\n\nLogin and push:\n\n```bash\ndocker login\ndocker push ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG}\ndocker push ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```",
-      "embed_text": "[SECTION: 4) Publish to Docker Hub]\nSet your Docker Hub namespace and target tag:\n\n```bash\nexport DOCKERHUB_USER=<your-dockerhub-username>\nexport IMAGE_NAME=layer-gateway-embed-v1\nexport IMAGE_TAG=v1.0.0\n```\n\nBuild and tag:\n\n```bash\ndocker build -t ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG} .\ndocker tag ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG} ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```\n\nLogin and push:\n\n```bash\ndocker login\ndocker push ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG}\ndocker push ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```\nQ: What command is used to build and tag the Docker image?\nQ: Which Docker Hub user environment variable is set before building the image?\nQ: What is the name of the image being published?",
+      "embed_text": "[SECTION: 4) Publish to Docker Hub]\nSet your Docker Hub namespace and target tag:\n\n```bash\nexport DOCKERHUB_USER=<your-dockerhub-username>\nexport IMAGE_NAME=layer-gateway-embed-v1\nexport IMAGE_TAG=v1.0.0\n```\n\nBuild and tag:\n\n```bash\ndocker build -t ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG} .\ndocker tag ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG} ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```\n\nLogin and push:\n\n```bash\ndocker login\ndocker push ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG}\ndocker push ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```\nQ: What command is used to build and tag the Docker image?\nQ: Which Docker Hub username variable is exported before building the image?\nQ: What is the name of the image being published?",
       "token_count": 43,
-      "embed_token_count": 84,
+      "embed_token_count": 83,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What command is used to build and tag the Docker image?",
-        "Which Docker Hub user environment variable is set before building the image?",
+        "Which Docker Hub username variable is exported before building the image?",
         "What is the name of the image being published?"
       ],
       "content_hash": "e935288c7a35cf3c609866e3a9cf93f6af1d7fc0720b5e29e781727c9da09a0b",
       "source": "repo_layer-gateway-embed-v1__docker.md",
-      "ingest_run_id": "run_20260425_010443",
-      "ingest_ts": "2026-04-25T01:04:43Z"
+      "ingest_run_id": "run_20260425_133951",
+      "ingest_ts": "2026-04-25T13:39:51Z"
     }
   },
   {
@@ -207,20 +207,20 @@
         "5)_pull_and_run_from_docker_hub"
       ],
       "text": "```bash\ndocker pull ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\ndocker run --rm \\\n  --name layer-gateway-embed-v1 \\\n  --env-file .env \\\n  -p 30181:30181 \\\n  ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```",
-      "embed_text": "[SECTION: 5) Pull and Run from Docker Hub]\n```bash\ndocker pull ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\ndocker run --rm \\\n  --name layer-gateway-embed-v1 \\\n  --env-file .env \\\n  -p 30181:30181 \\\n  ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```\nQ: What command is used to pull the Docker image?\nQ: What does the --rm flag do in the docker run command?\nQ: Which port is exposed by the docker run command?",
+      "embed_text": "[SECTION: 5) Pull and Run from Docker Hub]\n```bash\ndocker pull ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\ndocker run --rm \\\n  --name layer-gateway-embed-v1 \\\n  --env-file .env \\\n  -p 30181:30181 \\\n  ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```\nQ: What command is used to pull the Docker image?\nQ: Which environment file is used with the docker run command?\nQ: On which port is the container exposed?",
       "token_count": 19,
-      "embed_token_count": 59,
+      "embed_token_count": 56,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What command is used to pull the Docker image?",
-        "What does the --rm flag do in the docker run command?",
-        "Which port is exposed by the docker run command?"
+        "Which environment file is used with the docker run command?",
+        "On which port is the container exposed?"
       ],
       "content_hash": "6dd46485454e18caa83b5b7db835463219406047e597286e34c8536641d14666",
       "source": "repo_layer-gateway-embed-v1__docker.md",
-      "ingest_run_id": "run_20260425_010443",
-      "ingest_ts": "2026-04-25T01:04:43Z"
+      "ingest_run_id": "run_20260425_133951",
+      "ingest_ts": "2026-04-25T13:39:51Z"
     }
   },
   {
@@ -239,20 +239,20 @@
         "troubleshooting"
       ],
       "text": "- `503 No healthy backend available`: verify `EMBED_BACKENDS` and backend health.\n- `429 Gateway busy`: increase `ADMISSION_MAX_CONCURRENT` or `ADMISSION_WAIT_TIMEOUT_MS`.",
-      "embed_text": "[SECTION: Troubleshooting]\n- `503 No healthy backend available`: verify `EMBED_BACKENDS` and backend health.\n- `429 Gateway busy`: increase `ADMISSION_MAX_CONCURRENT` or `ADMISSION_WAIT_TIMEOUT_MS`.\nQ: What should I check if I encounter '503 No healthy backend available'?\nQ: How can I address the '429 Gateway busy' error?\nQ: What settings can be adjusted for '429 Gateway busy'?",
+      "embed_text": "[SECTION: Troubleshooting]\n- `503 No healthy backend available`: verify `EMBED_BACKENDS` and backend health.\n- `429 Gateway busy`: increase `ADMISSION_MAX_CONCURRENT` or `ADMISSION_WAIT_TIMEOUT_MS`.\nQ: What should I check if I encounter '503 No healthy backend available'?\nQ: How can I address the '429 Gateway busy' error?\nQ: What settings can be adjusted to handle '429 Gateway busy' errors?",
       "token_count": 19,
-      "embed_token_count": 54,
+      "embed_token_count": 56,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What should I check if I encounter '503 No healthy backend available'?",
         "How can I address the '429 Gateway busy' error?",
-        "What settings can be adjusted for '429 Gateway busy'?"
+        "What settings can be adjusted to handle '429 Gateway busy' errors?"
       ],
       "content_hash": "a206d8a70869ebebb8023063aa9526d260e8f0fa145384fcedb2fd1ce0a25972",
       "source": "repo_layer-gateway-embed-v1__docker.md",
-      "ingest_run_id": "run_20260425_010443",
-      "ingest_ts": "2026-04-25T01:04:43Z"
+      "ingest_run_id": "run_20260425_133951",
+      "ingest_ts": "2026-04-25T13:39:51Z"
     }
   }
 ]

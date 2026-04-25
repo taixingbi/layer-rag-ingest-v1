@@ -28,7 +28,7 @@ Create `.env` (see `env.example` and [README.md](README.md)). For ingest you nee
 
 Optional:
 
-- `ENV=dev` → collection resolves to `<COLLECTION_NAME>_dev`
+- `ENV=dev|qa|prod` → collection resolves to `<COLLECTION_NAME>_<env>`
 - `INFERENCE_BASE_URL`, `CHAT_*` → only if you run `synthetic_questions.py`
 
 ## Layout

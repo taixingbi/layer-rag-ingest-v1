@@ -15,20 +15,20 @@
         "embedding_gateway_design"
       ],
       "text": "Embedding Gateway Design",
-      "embed_text": "[SECTION: Embedding Gateway Design]\nEmbedding Gateway Design\nQ: What is the focus of the Embedding Gateway Design section?\nQ: Does the text provide details about the design process?\nQ: Is there any information on specific design elements?",
+      "embed_text": "[SECTION: Embedding Gateway Design]\nEmbedding Gateway Design\nQ: What is the focus of the Embedding Gateway Design?\nQ: Does the text provide details about the design process?\nQ: Is there any information on the components of the Embedding Gateway?",
       "token_count": 3,
-      "embed_token_count": 37,
+      "embed_token_count": 39,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is the focus of the Embedding Gateway Design section?",
+        "What is the focus of the Embedding Gateway Design?",
         "Does the text provide details about the design process?",
-        "Is there any information on specific design elements?"
+        "Is there any information on the components of the Embedding Gateway?"
       ],
       "content_hash": "2bf2b76c99c215e1185ff27e9801bbc715e1e1b2edfbcb58f1ba28657b1a7d55",
       "source": "repo_layer-gateway-embed-v1__design.md",
-      "ingest_run_id": "run_20260425_010443",
-      "ingest_ts": "2026-04-25T01:04:43Z"
+      "ingest_run_id": "run_20260425_133951",
+      "ingest_ts": "2026-04-25T13:39:51Z"
     }
   },
   {
@@ -59,8 +59,8 @@
       ],
       "content_hash": "657675d19cb70e91c08929541a2a3d1069624e86b846a7d36ea832bed1ebc17d",
       "source": "repo_layer-gateway-embed-v1__design.md",
-      "ingest_run_id": "run_20260425_010443",
-      "ingest_ts": "2026-04-25T01:04:43Z"
+      "ingest_run_id": "run_20260425_133951",
+      "ingest_ts": "2026-04-25T13:39:51Z"
     }
   },
   {
@@ -79,7 +79,7 @@
         "request_flow"
       ],
       "text": "1. Client sends `POST /v1/embeddings` (optionally with `X-Request-Id`, `X-Trace-Id`, `X-Session-Id`; missing or empty values are filled with UUIDs).\n2. Gateway resolves correlation ids and parses payload.\n3. Routing selector scores available backends and picks the lowest score.\n4. Gateway forwards the request to the selected backend.\n5. Gateway returns backend response transparently.\n6. On timeout/retryable failure, gateway retries on alternate backend when possible.",
-      "embed_text": "[SECTION: Request Flow]\n1. Client sends `POST /v1/embeddings` (optionally with `X-Request-Id`, `X-Trace-Id`, `X-Session-Id`; missing or empty values are filled with UUIDs).\n2. Gateway resolves correlation ids and parses payload.\n3. Routing selector scores available backends and picks the lowest score.\n4. Gateway forwards the request to the selected backend.\n5. Gateway returns backend response transparently.\n6. On timeout/retryable failure, gateway retries on alternate backend when possible.\nQ: What HTTP method does the client use to send POST requests?\nQ: How does the gateway handle missing or empty correlation IDs?\nQ: What action does the routing selector take based on backend scores?",
+      "embed_text": "[SECTION: Request Flow]\n1. Client sends `POST /v1/embeddings` (optionally with `X-Request-Id`, `X-Trace-Id`, `X-Session-Id`; missing or empty values are filled with UUIDs).\n2. Gateway resolves correlation ids and parses payload.\n3. Routing selector scores available backends and picks the lowest score.\n4. Gateway forwards the request to the selected backend.\n5. Gateway returns backend response transparently.\n6. On timeout/retryable failure, gateway retries on alternate backend when possible.\nQ: What HTTP method does the client use to send POST requests?\nQ: How does the gateway handle missing or empty correlation IDs?\nQ: What action does the routing selector take after scoring available backends?",
       "token_count": 63,
       "embed_token_count": 101,
       "synthetic_questions_used": 3,
@@ -87,12 +87,12 @@
       "synthetic_questions": [
         "What HTTP method does the client use to send POST requests?",
         "How does the gateway handle missing or empty correlation IDs?",
-        "What action does the routing selector take based on backend scores?"
+        "What action does the routing selector take after scoring available backends?"
       ],
       "content_hash": "96056471f3fd5fa88dd05a5a5ef399fe8b690d770dde82d53576fb44a4387252",
       "source": "repo_layer-gateway-embed-v1__design.md",
-      "ingest_run_id": "run_20260425_010443",
-      "ingest_ts": "2026-04-25T01:04:43Z"
+      "ingest_run_id": "run_20260425_133951",
+      "ingest_ts": "2026-04-25T13:39:51Z"
     }
   },
   {
@@ -111,7 +111,7 @@
         "routing_model"
       ],
       "text": "Backends are scored using:\n\n`score = inflight * W1 + latency * W2 + error_rate * W3`\n\nWhere:\n- `inflight`: current active requests\n- `latency`: rolling latency signal\n- `error_rate`: rolling failure signal\n\nLower score is preferred.\n\nTo avoid starvation while preserving latency preference, routing also uses two hybrid controls:\n- `ROUTING_EXPLORATION_RATE`: small probability to choose a random healthy backend for fresh samples.\n- `ROUTING_MAX_IDLE_MS`: if a healthy backend has not been selected recently, it is preferred to rebalance traffic.",
-      "embed_text": "[SECTION: Routing Model]\nBackends are scored using:\n\n`score = inflight * W1 + latency * W2 + error_rate * W3`\n\nWhere:\n- `inflight`: current active requests\n- `latency`: rolling latency signal\n- `error_rate`: rolling failure signal\n\nLower score is preferred.\n\nTo avoid starvation while preserving latency preference, routing also uses two hybrid controls:\n- `ROUTING_EXPLORATION_RATE`: small probability to choose a random healthy backend for fresh samples.\n- `ROUTING_MAX_IDLE_MS`: if a healthy backend has not been selected recently, it is preferred to rebalance traffic.\nQ: What factors are used to score backends?\nQ: What does the ROUTING_EXPLORATION_RATE control do?\nQ: How does ROUTING_MAX_IDLE_MS influence backend selection?",
+      "embed_text": "[SECTION: Routing Model]\nBackends are scored using:\n\n`score = inflight * W1 + latency * W2 + error_rate * W3`\n\nWhere:\n- `inflight`: current active requests\n- `latency`: rolling latency signal\n- `error_rate`: rolling failure signal\n\nLower score is preferred.\n\nTo avoid starvation while preserving latency preference, routing also uses two hybrid controls:\n- `ROUTING_EXPLORATION_RATE`: small probability to choose a random healthy backend for fresh samples.\n- `ROUTING_MAX_IDLE_MS`: if a healthy backend has not been selected recently, it is preferred to rebalance traffic.\nQ: What factors are used to score backends?\nQ: What does the ROUTING_EXPLORATION_RATE control do?\nQ: What is the purpose of ROUTING_MAX_IDLE_MS?",
       "token_count": 80,
       "embed_token_count": 105,
       "synthetic_questions_used": 3,
@@ -119,12 +119,12 @@
       "synthetic_questions": [
         "What factors are used to score backends?",
         "What does the ROUTING_EXPLORATION_RATE control do?",
-        "How does ROUTING_MAX_IDLE_MS influence backend selection?"
+        "What is the purpose of ROUTING_MAX_IDLE_MS?"
       ],
       "content_hash": "fb9e0d4daa1c1f228fe09d9e8a945aeff459fa2d1fd8af6ee1109dafb182b575",
       "source": "repo_layer-gateway-embed-v1__design.md",
-      "ingest_run_id": "run_20260425_010443",
-      "ingest_ts": "2026-04-25T01:04:43Z"
+      "ingest_run_id": "run_20260425_133951",
+      "ingest_ts": "2026-04-25T13:39:51Z"
     }
   },
   {
@@ -143,20 +143,20 @@
         "reliability_controls"
       ],
       "text": "- Retry on timeout and retryable statuses (`502`, `503`, `504`)\n- Configurable retry attempts (`RETRY_MAX_ATTEMPTS`)\n- Per-backend circuit breaker:\n  - Opens after repeated failures\n  - Uses half-open probes after cool-down before full re-enable\n  - Limits concurrent half-open probes (`CB_HALF_OPEN_MAX_PROBES`)\n  - Closes circuit after enough probe successes (`CB_HALF_OPEN_SUCCESS_THRESHOLD`)\n  - Excludes backend from routing during cool-down\n  - Allows recovery after reset timeout",
-      "embed_text": "[SECTION: Reliability Controls]\n- Retry on timeout and retryable statuses (`502`, `503`, `504`)\n- Configurable retry attempts (`RETRY_MAX_ATTEMPTS`)\n- Per-backend circuit breaker:\n  - Opens after repeated failures\n  - Uses half-open probes after cool-down before full re-enable\n  - Limits concurrent half-open probes (`CB_HALF_OPEN_MAX_PROBES`)\n  - Closes circuit after enough probe successes (`CB_HALF_OPEN_SUCCESS_THRESHOLD`)\n  - Excludes backend from routing during cool-down\n  - Allows recovery after reset timeout\nQ: How many types of retryable statuses are mentioned for retries?\nQ: What does the circuit breaker exclude from routing during its cool-down period?\nQ: What happens if a backend is reset?",
+      "embed_text": "[SECTION: Reliability Controls]\n- Retry on timeout and retryable statuses (`502`, `503`, `504`)\n- Configurable retry attempts (`RETRY_MAX_ATTEMPTS`)\n- Per-backend circuit breaker:\n  - Opens after repeated failures\n  - Uses half-open probes after cool-down before full re-enable\n  - Limits concurrent half-open probes (`CB_HALF_OPEN_MAX_PROBES`)\n  - Closes circuit after enough probe successes (`CB_HALF_OPEN_SUCCESS_THRESHOLD`)\n  - Excludes backend from routing during cool-down\n  - Allows recovery after reset timeout\nQ: How many configurable retry attempts are there?\nQ: What status codes trigger a retry?\nQ: What is the purpose of per-backend circuit breaker's cool-down period?",
       "token_count": 60,
-      "embed_token_count": 95,
+      "embed_token_count": 89,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "How many types of retryable statuses are mentioned for retries?",
-        "What does the circuit breaker exclude from routing during its cool-down period?",
-        "What happens if a backend is reset?"
+        "How many configurable retry attempts are there?",
+        "What status codes trigger a retry?",
+        "What is the purpose of per-backend circuit breaker's cool-down period?"
       ],
       "content_hash": "e478df44d3a1c7ab15a094eccf8f7ce58cab6e6d1bea7ad102c5a2ed1d9e0c7e",
       "source": "repo_layer-gateway-embed-v1__design.md",
-      "ingest_run_id": "run_20260425_010443",
-      "ingest_ts": "2026-04-25T01:04:43Z"
+      "ingest_run_id": "run_20260425_133951",
+      "ingest_ts": "2026-04-25T13:39:51Z"
     }
   },
   {
@@ -175,7 +175,7 @@
         "observability"
       ],
       "text": "- Structured JSON logging with gateway event schema\n- Key events: startup, request finished, retry, request failed\n- `routing_pick` includes:\n  - `decision_reason` (`score`, `exploration`, `idle_rebalance`, `none`)\n  - per-backend circuit fields (`circuit_open`, `circuit_half_open`, `half_open_inflight`, `half_open_successes`)\n- Prometheus metrics:\n  - request totals\n  - request latency\n  - backend selection\n  - inflight requests\n  - failures\n  - retries\n  - admission queue wait and rejected counts\n- Operational endpoints:\n  - `GET /health`\n  - `GET /metrics`",
-      "embed_text": "[SECTION: Observability]\n- Structured JSON logging with gateway event schema\n- Key events: startup, request finished, retry, request failed\n- `routing_pick` includes:\n  - `decision_reason` (`score`, `exploration`, `idle_rebalance`, `none`)\n  - per-backend circuit fields (`circuit_open`, `circuit_half_open`, `half_open_inflight`, `half_open_successes`)\n- Prometheus metrics:\n  - request totals\n  - request latency\n  - backend selection\n  - inflight requests\n  - failures\n  - retries\n  - admission queue wait and rejected counts\n- Operational endpoints:\n  - `GET /health`\n  - `GET /metrics`\nQ: What types of events are logged?\nQ: What does the `routing_pick` include?\nQ: What Prometheus metrics are available?",
+      "embed_text": "[SECTION: Observability]\n- Structured JSON logging with gateway event schema\n- Key events: startup, request finished, retry, request failed\n- `routing_pick` includes:\n  - `decision_reason` (`score`, `exploration`, `idle_rebalance`, `none`)\n  - per-backend circuit fields (`circuit_open`, `circuit_half_open`, `half_open_inflight`, `half_open_successes`)\n- Prometheus metrics:\n  - request totals\n  - request latency\n  - backend selection\n  - inflight requests\n  - failures\n  - retries\n  - admission queue wait and rejected counts\n- Operational endpoints:\n  - `GET /health`\n  - `GET /metrics`\nQ: What types of events are logged?\nQ: What does the `routing_pick` include?\nQ: What operational endpoints are available?",
       "token_count": 69,
       "embed_token_count": 90,
       "synthetic_questions_used": 3,
@@ -183,12 +183,12 @@
       "synthetic_questions": [
         "What types of events are logged?",
         "What does the `routing_pick` include?",
-        "What Prometheus metrics are available?"
+        "What operational endpoints are available?"
       ],
       "content_hash": "04a747501da4bee21d9d5f3f73f02ddc0075cb1244af8f09cffe3872da6a55f5",
       "source": "repo_layer-gateway-embed-v1__design.md",
-      "ingest_run_id": "run_20260425_010443",
-      "ingest_ts": "2026-04-25T01:04:43Z"
+      "ingest_run_id": "run_20260425_133951",
+      "ingest_ts": "2026-04-25T13:39:51Z"
     }
   },
   {
@@ -207,20 +207,20 @@
         "configuration_surface"
       ],
       "text": "Runtime behavior is environment-driven through:\n- server host/port\n- timeout values\n- retry policy\n- circuit breaker thresholds\n- half-open circuit breaker probe controls\n- routing weights\n- routing exploration and idle rebalance knobs\n- backend list\n- logging options\n\nSee `README.md` and `.env.example` for concrete runtime values.",
-      "embed_text": "[SECTION: Configuration Surface]\nRuntime behavior is environment-driven through:\n- server host/port\n- timeout values\n- retry policy\n- circuit breaker thresholds\n- half-open circuit breaker probe controls\n- routing weights\n- routing exploration and idle rebalance knobs\n- backend list\n- logging options\n\nSee `README.md` and `.env.example` for concrete runtime values.\nQ: What drives the runtime behavior?\nQ: What does the .env.example file contain?\nQ: What are some of the configuration options mentioned?",
+      "embed_text": "[SECTION: Configuration Surface]\nRuntime behavior is environment-driven through:\n- server host/port\n- timeout values\n- retry policy\n- circuit breaker thresholds\n- half-open circuit breaker probe controls\n- routing weights\n- routing exploration and idle rebalance knobs\n- backend list\n- logging options\n\nSee `README.md` and `.env.example` for concrete runtime values.\nQ: What drives the runtime behavior?\nQ: What does the circuit breaker thresholds control?\nQ: What files provide concrete runtime values?",
       "token_count": 48,
-      "embed_token_count": 73,
+      "embed_token_count": 72,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What drives the runtime behavior?",
-        "What does the .env.example file contain?",
-        "What are some of the configuration options mentioned?"
+        "What does the circuit breaker thresholds control?",
+        "What files provide concrete runtime values?"
       ],
       "content_hash": "3502274133863c0b8e5226aecac5e5547baa064d707157f3d87de9926e5411ba",
       "source": "repo_layer-gateway-embed-v1__design.md",
-      "ingest_run_id": "run_20260425_010443",
-      "ingest_ts": "2026-04-25T01:04:43Z"
+      "ingest_run_id": "run_20260425_133951",
+      "ingest_ts": "2026-04-25T13:39:51Z"
     }
   },
   {
@@ -239,20 +239,20 @@
         "future_enhancements"
       ],
       "text": "- Admission queue / rate limiting to protect backends during burst traffic\n- Dynamic backend discovery\n- Adaptive routing weights based on live traffic shape",
-      "embed_text": "[SECTION: Future Enhancements]\n- Admission queue / rate limiting to protect backends during burst traffic\n- Dynamic backend discovery\n- Adaptive routing weights based on live traffic shape\nQ: What measure is suggested to protect backends during burst traffic?\nQ: How does the system discover backends dynamically?\nQ: What does adaptive routing weights depend on?",
+      "embed_text": "[SECTION: Future Enhancements]\n- Admission queue / rate limiting to protect backends during burst traffic\n- Dynamic backend discovery\n- Adaptive routing weights based on live traffic shape\nQ: What feature is suggested to protect backends during burst traffic?\nQ: How does the system discover backends dynamically?\nQ: What does adaptive routing weights depend on?",
       "token_count": 25,
       "embed_token_count": 55,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What measure is suggested to protect backends during burst traffic?",
+        "What feature is suggested to protect backends during burst traffic?",
         "How does the system discover backends dynamically?",
         "What does adaptive routing weights depend on?"
       ],
       "content_hash": "1fbf1bbed14859d4d63d23b6d424751adfcedc6bf6ecc75a56ec1ce427546233",
       "source": "repo_layer-gateway-embed-v1__design.md",
-      "ingest_run_id": "run_20260425_010443",
-      "ingest_ts": "2026-04-25T01:04:43Z"
+      "ingest_run_id": "run_20260425_133951",
+      "ingest_ts": "2026-04-25T13:39:51Z"
     }
   }
 ]

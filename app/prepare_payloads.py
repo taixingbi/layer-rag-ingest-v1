@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import logging
 import os
 import re
 import time
@@ -15,6 +16,8 @@ from pathlib import Path
 from typing import Any
 
 from dotenv import load_dotenv
+
+logger = logging.getLogger(__name__)
 
 
 UUID_NAMESPACE = uuid.NAMESPACE_URL
@@ -28,8 +31,11 @@ def _resolve_collection_name(collection_name: str, env_name: str) -> str:
     c = (collection_name or "").strip()
     if not c:
         raise RuntimeError("Collection name is empty. Set COLLECTION_NAME or pass --collection.")
-    if env_name.strip().lower() == "dev" and not c.endswith("_dev"):
-        return f"{c}_dev"
+    env = env_name.strip().lower()
+    if env in {"dev", "qa", "prod"}:
+        suffix = f"_{env}"
+        if not c.endswith(suffix):
+            return f"{c}{suffix}"
     return c
 
 
@@ -68,12 +74,18 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--collection",
         default=(os.getenv("COLLECTION_NAME") or "").strip(),
-        help="Base collection name for run summary (default: COLLECTION_NAME env; ENV=dev adds _dev).",
+        help=(
+            "Base collection name for run summary "
+            "(default: COLLECTION_NAME env; ENV in {dev,qa,prod} adds matching suffix)."
+        ),
     )
     parser.add_argument(
         "--env",
         default=(os.getenv("ENV") or "").strip(),
-        help="Environment name (default: ENV env). If 'dev', collection becomes <name>_dev.",
+        help=(
+            "Environment name (default: ENV env). "
+            "If set to dev/qa/prod, collection becomes <name>_<env>."
+        ),
     )
     parser.add_argument(
         "--ingest-run-id",
@@ -280,13 +292,18 @@ def run_prepare(args: argparse.Namespace) -> dict[str, Any]:
 
 def main() -> None:
     started = time.perf_counter()
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s [%(name)s] %(message)s")
     args = parse_args()
     summary = run_prepare(args)
     summary_path = Path(args.output_dir) / "ingest_prepare_summary.json"
-    print(f"Prepared {summary['stats']['chunks_total_prepared']} chunks across {summary['stats']['files_total']} files")
-    print(f"Wrote summary to {summary_path}")
+    logger.info(
+        "Prepared %d chunks across %d files",
+        summary["stats"]["chunks_total_prepared"],
+        summary["stats"]["files_total"],
+    )
+    logger.info("Wrote summary to %s", summary_path)
     elapsed_ms = (time.perf_counter() - started) * 1000
-    print(f"prepare_payloads total_latency_ms={elapsed_ms:.1f}")
+    logger.info("prepare_payloads total_latency_ms=%.1f", elapsed_ms)
 
 
 if __name__ == "__main__":

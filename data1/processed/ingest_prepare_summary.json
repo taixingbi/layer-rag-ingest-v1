@@ -1,7 +1,7 @@
 {
-  "ingest_run_id": "run_20260425_010217",
+  "ingest_run_id": "run_20260425_133942",
   "collection": "taixing_knowledge_dev",
-  "ingest_ts": "2026-04-25T01:02:17Z",
+  "ingest_ts": "2026-04-25T13:39:42Z",
   "files": [
     {
       "input_file": "data1/processed/chunks_profile.json",

@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import logging
 import os
 import time
 from pathlib import Path
@@ -15,6 +16,8 @@ from dotenv import load_dotenv
 from qdrant_client import QdrantClient, models
 
 from client_embeddings import EMBEDDINGS_BASE_URL, embed_texts
+
+logger = logging.getLogger(__name__)
 
 _APP_DIR = Path(__file__).resolve().parent
 _ROOT_DIR = _APP_DIR.parent
@@ -33,8 +36,11 @@ def _resolve_collection_name(collection_name: str, env_name: str) -> str:
     c = (collection_name or "").strip()
     if not c:
         raise RuntimeError("Collection name is empty. Set COLLECTION_NAME or pass --collection.")
-    if env_name.strip().lower() == "dev" and not c.endswith("_dev"):
-        return f"{c}_dev"
+    env = env_name.strip().lower()
+    if env in {"dev", "qa", "prod"}:
+        suffix = f"_{env}"
+        if not c.endswith(suffix):
+            return f"{c}{suffix}"
     return c
 
 
@@ -50,7 +56,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--collection",
         default=(os.getenv("COLLECTION_NAME") or "").strip(),
-        help="Base collection name (default: COLLECTION_NAME env; ENV=dev adds _dev suffix).",
+        help=(
+            "Base collection name "
+            "(default: COLLECTION_NAME env; ENV in {dev,qa,prod} adds matching suffix)."
+        ),
     )
     parser.add_argument(
         "--qdrant-url",
@@ -65,7 +74,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--env",
         default=(os.getenv("ENV") or "").strip(),
-        help="Environment name (default: ENV env). If 'dev', collection becomes <name>_dev.",
+        help=(
+            "Environment name (default: ENV env). "
+            "If set to dev/qa/prod, collection becomes <name>_<env>."
+        ),
     )
     parser.add_argument(
         "--embedding-base-url",
@@ -275,6 +287,7 @@ def _count_missing_vectors(points: list[dict[str, Any]]) -> int:
 
 def main() -> None:
     started = time.perf_counter()
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s [%(name)s] %(message)s")
     args = parse_args()
     data_dir = Path(args.data_dir)
     files = sorted(data_dir.glob(args.pattern))
@@ -308,9 +321,12 @@ def main() -> None:
 
     if args.dry_run:
         missing_vectors = _count_missing_vectors(all_points)
-        print(
-            f"Dry run OK: prepared {len(all_points)} points from {len(files)} files "
-            f"(missing_vectors={missing_vectors}, skip_embedding={args.skip_embedding})"
+        logger.info(
+            "Dry run OK: prepared %d points from %d files (missing_vectors=%d, skip_embedding=%s)",
+            len(all_points),
+            len(files),
+            missing_vectors,
+            args.skip_embedding,
         )
         return
 
@@ -339,11 +355,11 @@ def main() -> None:
         point_structs = [_to_point_struct(p) for p in batch]
         client.upsert(collection_name=collection, points=point_structs, wait=True)
         upserted += len(point_structs)
-        print(f"Upserted {upserted}/{len(all_points)}")
+        logger.info("Upserted %d/%d", upserted, len(all_points))
 
-    print(f"Done: upserted {upserted} point(s) into collection {collection!r}")
+    logger.info("Done: upserted %d point(s) into collection %r", upserted, collection)
     elapsed_ms = (time.perf_counter() - started) * 1000
-    print(f"upsert_qdrant total_latency_ms={elapsed_ms:.1f}")
+    logger.info("upsert_qdrant total_latency_ms=%.1f", elapsed_ms)
 
 
 if __name__ == "__main__":
