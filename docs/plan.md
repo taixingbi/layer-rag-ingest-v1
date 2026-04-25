@@ -37,7 +37,7 @@ Current payload fields include:
 
 Implementation notes:
 
-- token counting is whitespace-based (`re.findall(r"\S+", text)`), not model-tokenizer exact
+- token counting uses the embedding model tokenizer (`transformers.AutoTokenizer`, model from `EMBEDDING_MODEL`)
 - `embed_text` format is:
   - `[SECTION: <section>]`
   - raw `text`
@@ -126,7 +126,6 @@ This keeps payload `source` namespaced (for example `personal_profile`, `repo_la
 The current codebase does **not** implement:
 
 - automatic recursive chunk splitting in `prepare_payloads.py`
-- strict model-tokenizer counting for the primary token metrics
 - automatic smoke-validation execution inside `upsert_qdrant.py` unless `--run-smoke-validate` is passed
 
 If needed, these can be added as follow-up enhancements.

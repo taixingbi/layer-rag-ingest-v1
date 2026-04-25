@@ -238,12 +238,11 @@ This is intentionally lightweight (structured-enough text logs + JSON artifacts)
 
 - **File-based stages over direct streaming:** easier debugging and restartability; costs extra disk I/O.
 - **Deterministic IDs from text only:** stable identity; does not reflect enrichment changes in ID.
-- **Approximate token counting in prepare stage:** low dependency overhead; less exact than model tokenizer counts.
+- **Tokenizer dependency for counting:** token metrics now depend on loading the embedding model tokenizer (`transformers`), which is more accurate but adds startup/dependency cost.
 - **Default-on synthetic enrichment in shell wrappers:** better out-of-box retrieval context; more API/runtime cost unless disabled.
 - **Default-on smoke validation in shell wrappers:** immediate quality signal after upsert; adds extra API and Qdrant checks.
 
 ## Future Enhancements
 
 - Token-budget-aware trimming in `prepare_payloads.py` (currently no trimming).
-- Optional exact tokenizer mode for parity with embedding model.
 - Stronger dead-letter handling and retry classification across all networked stages.

@@ -8,7 +8,6 @@ import hashlib
 import json
 import logging
 import os
-import re
 import time
 import uuid
 from datetime import datetime, timedelta, timezone
@@ -16,9 +15,12 @@ from pathlib import Path
 from typing import Any
 
 from dotenv import load_dotenv
+from transformers import AutoTokenizer
 
 logger = logging.getLogger(__name__)
 _EST = timezone(timedelta(hours=-5), name="EST")
+_TOKENIZER = None
+_TOKENIZER_MODEL = ""
 
 
 UUID_NAMESPACE = uuid.NAMESPACE_URL
@@ -110,8 +112,13 @@ def _default_run_id() -> str:
 
 
 def _token_count(text: str) -> int:
-    # Lightweight approximation without extra dependencies.
-    return len(re.findall(r"\S+", text))
+    global _TOKENIZER, _TOKENIZER_MODEL
+    if _TOKENIZER is None:
+        model_name = (os.getenv("EMBEDDING_MODEL") or "BAAI/bge-m3").strip() or "BAAI/bge-m3"
+        _TOKENIZER_MODEL = model_name
+        _TOKENIZER = AutoTokenizer.from_pretrained(model_name, use_fast=True)
+        logger.info("Loaded tokenizer model for token counting: %s", _TOKENIZER_MODEL)
+    return int(len(_TOKENIZER.encode(text, add_special_tokens=False)))
 
 
 def _build_embed_text(section: str, text: str, synthetic_questions: list[str]) -> tuple[str, int, int]:
