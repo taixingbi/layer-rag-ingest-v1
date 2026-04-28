@@ -1,9 +1,10 @@
 [
   {
-    "id": "97ff5d2c-f8cf-5756-a476-cc7c73475791",
+    "id": "40189021-d59b-5dce-ac05-9a4ed1737bad",
     "vector": [],
     "payload": {
       "chunk_id": "0001",
+      "document_id": "layer-gateway-inference-v1__sla.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -15,27 +16,45 @@
         "layer_gateway_sla_/_slo"
       ],
       "text": "This document defines a practical SLA/SLO baseline for `layer-gateway-inference-v1`.",
-      "embed_text": "[SECTION: Layer Gateway SLA / SLO]\nThis document defines a practical SLA/SLO baseline for `layer-gateway-inference-v1`.\nQ: What does this document define?\nQ: Which version of layer-gateway is referenced?\nQ: Is this an SLA or SLO or both?",
-      "token_count": 9,
-      "embed_token_count": 37,
+      "embed_text": "[SECTION: Layer Gateway SLA / SLO]\nThis document defines a practical SLA/SLO baseline for `layer-gateway-inference-v1`.\nQ: What does this document define?\nQ: Which version of layer-gateway is referenced?\nQ: Is this an SLA or SLO?",
+      "token_count": 29,
+      "embed_token_count": 75,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What does this document define?",
         "Which version of layer-gateway is referenced?",
-        "Is this an SLA or SLO or both?"
+        "Is this an SLA or SLO?"
       ],
       "content_hash": "a40962b9fb31d93853059886e570315fb12bc904bece9c01f7af4296fb35238c",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "806f680d-73e5-575a-b642-f4256cf02694",
+    "id": "14db466a-03c1-5800-abd7-ae39e61162c4",
     "vector": [],
     "payload": {
       "chunk_id": "0002",
+      "document_id": "layer-gateway-inference-v1__sla.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -47,27 +66,45 @@
         "1)_scope"
       ],
       "text": "The SLA applies to gateway API endpoints:\n\n- `POST /v1/chat/completions`\n- `GET /healthz`\n- `GET /metrics`\n\nThe SLA covers only gateway behavior. It does not guarantee upstream model quality/content.",
-      "embed_text": "[SECTION: 1) Scope]\nThe SLA applies to gateway API endpoints:\n\n- `POST /v1/chat/completions`\n- `GET /healthz`\n- `GET /metrics`\n\nThe SLA covers only gateway behavior. It does not guarantee upstream model quality/content.\nQ: Which API endpoints are covered by the SLA?\nQ: What does the SLA not guarantee?\nQ: Are there any other API endpoints besides those listed under the SLA?",
-      "token_count": 29,
-      "embed_token_count": 61,
+      "embed_text": "[SECTION: 1) Scope]\nThe SLA applies to gateway API endpoints:\n\n- `POST /v1/chat/completions`\n- `GET /healthz`\n- `GET /metrics`\n\nThe SLA covers only gateway behavior. It does not guarantee upstream model quality/content.\nQ: What API endpoints are covered by the SLA?\nQ: Does the SLA guarantee the quality of the upstream models?\nQ: Which API endpoints are excluded from the SLA's coverage?",
+      "token_count": 61,
+      "embed_token_count": 117,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "Which API endpoints are covered by the SLA?",
-        "What does the SLA not guarantee?",
-        "Are there any other API endpoints besides those listed under the SLA?"
+        "What API endpoints are covered by the SLA?",
+        "Does the SLA guarantee the quality of the upstream models?",
+        "Which API endpoints are excluded from the SLA's coverage?"
       ],
       "content_hash": "e9775e19de8ec7b5062f68c0e4d9d44fcb72e7800e1a5fb8e51f5e60bb338afe",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "476d1667-6592-5bc4-a180-c38cfa3996c8",
+    "id": "c8295fe8-1a10-57a5-b2ac-5ca844e80f90",
     "vector": [],
     "payload": {
       "chunk_id": "0003",
+      "document_id": "layer-gateway-inference-v1__sla.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -79,27 +116,45 @@
         "2)_service_level_objective_(slo)"
       ],
       "text": "2) Service Level Objective (SLO)",
-      "embed_text": "[SECTION: 2) Service Level Objective (SLO)]\n2) Service Level Objective (SLO)\nQ: What is the topic of section 2?\nQ: What does SLO stand for in this context?\nQ: How many sections are mentioned before this one?",
-      "token_count": 5,
-      "embed_token_count": 37,
+      "embed_text": "[SECTION: 2) Service Level Objective (SLO)]\n2) Service Level Objective (SLO)\nQ: What does SLO stand for in this context?\nQ: Which section is about Service Level Objective?\nQ: Is SLO defined in this text?",
+      "token_count": 9,
+      "embed_token_count": 58,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is the topic of section 2?",
         "What does SLO stand for in this context?",
-        "How many sections are mentioned before this one?"
+        "Which section is about Service Level Objective?",
+        "Is SLO defined in this text?"
       ],
       "content_hash": "ce2374a17fb080b3abd8a2b33d07304c5f4729b316a3564684f4e22183c6e2cf",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "243ebc7e-1f6c-525f-82a4-e0ed495d3bf7",
+    "id": "6f227bb3-7ddc-533b-9648-a706f250daa9",
     "vector": [],
     "payload": {
       "chunk_id": "0004",
+      "document_id": "layer-gateway-inference-v1__sla.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -111,27 +166,45 @@
         "availability_slo"
       ],
       "text": "- Monthly availability target: **99.9%** for `POST /v1/chat/completions`.\n- Availability means request is served without gateway-side failure.\n\nGateway-side failure includes:\n\n- `5xx` returned by gateway due to queue/scheduler/proxy failure\n- timeout before a successful upstream response",
-      "embed_text": "[SECTION: Availability SLO]\n- Monthly availability target: **99.9%** for `POST /v1/chat/completions`.\n- Availability means request is served without gateway-side failure.\n\nGateway-side failure includes:\n\n- `5xx` returned by gateway due to queue/scheduler/proxy failure\n- timeout before a successful upstream response\nQ: What is the monthly availability target for POST /v1/chat/completions?\nQ: What does availability mean in this context?\nQ: What are the types of gateway-side failure mentioned?",
-      "token_count": 36,
-      "embed_token_count": 66,
+      "embed_text": "[SECTION: Availability SLO]\n- Monthly availability target: **99.9%** for `POST /v1/chat/completions`.\n- Availability means request is served without gateway-side failure.\n\nGateway-side failure includes:\n\n- `5xx` returned by gateway due to queue/scheduler/proxy failure\n- timeout before a successful upstream response\nQ: What is the monthly availability target for POST /v1/chat/completions?\nQ: What does availability mean in this context?\nQ: What constitutes a gateway-side failure?",
+      "token_count": 79,
+      "embed_token_count": 135,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is the monthly availability target for POST /v1/chat/completions?",
         "What does availability mean in this context?",
-        "What are the types of gateway-side failure mentioned?"
+        "What constitutes a gateway-side failure?"
       ],
       "content_hash": "a8f6c52c1347092aca19880473a3f4101ab829406c0a3b2ebe669db8aac13fa2",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "cfd33522-04c4-545f-9973-0bbcf7c81b07",
+    "id": "8b2a61aa-da7c-53fe-9f02-14d93903d74b",
     "vector": [],
     "payload": {
       "chunk_id": "0005",
+      "document_id": "layer-gateway-inference-v1__sla.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -144,8 +217,8 @@
       ],
       "text": "- P95 end-to-end latency (`gateway_request_latency_ms`): **<= 2500 ms** over 5-minute windows under normal load.\n- P99 end-to-end latency (`gateway_request_latency_ms`): **<= 5000 ms** over 5-minute windows under normal load.",
       "embed_text": "[SECTION: Latency SLO]\n- P95 end-to-end latency (`gateway_request_latency_ms`): **<= 2500 ms** over 5-minute windows under normal load.\n- P99 end-to-end latency (`gateway_request_latency_ms`): **<= 5000 ms** over 5-minute windows under normal load.\nQ: What is the maximum P95 end-to-end latency under normal load?\nQ: What is the maximum P99 end-to-end latency under normal load?\nQ: Over what time window is the latency measured?",
-      "token_count": 28,
-      "embed_token_count": 62,
+      "token_count": 78,
+      "embed_token_count": 140,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
@@ -155,15 +228,33 @@
       ],
       "content_hash": "b19669a392e4abc92a5d4fa5a3d961adee6e817308c8a8d8cc7fda41d35c1812",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "152c7704-8c26-5ece-8ed4-ac8cc47f0b83",
+    "id": "673805e8-3d94-5f82-bb10-6af5dee68c06",
     "vector": [],
     "payload": {
       "chunk_id": "0006",
+      "document_id": "layer-gateway-inference-v1__sla.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -175,27 +266,45 @@
         "queue_slo"
       ],
       "text": "- `gateway_queue_age_ms` should remain **< queue_max_age_ms** during steady state.\n- `gateway_rejections_total{reason=\"queue_full\"}` and `{reason=\"queue_age\"}` should be near zero during normal operation.\n\n```mermaid\nflowchart LR\n    A[Traffic] --> B{Availability SLO 99.9%}\n    A --> C{Latency SLO}\n    A --> D{Queue SLO}\n    C --> C1[P95 <= 2500ms]\n    C --> C2[P99 <= 5000ms]\n    D --> D1[queue_age_ms < queue_max_age_ms]\n    D --> D2[queue_full/queue_age rejections near 0]\n```",
-      "embed_text": "[SECTION: Queue SLO]\n- `gateway_queue_age_ms` should remain **< queue_max_age_ms** during steady state.\n- `gateway_rejections_total{reason=\"queue_full\"}` and `{reason=\"queue_age\"}` should be near zero during normal operation.\n\n```mermaid\nflowchart LR\n    A[Traffic] --> B{Availability SLO 99.9%}\n    A --> C{Latency SLO}\n    A --> D{Queue SLO}\n    C --> C1[P95 <= 2500ms]\n    C --> C2[P99 <= 5000ms]\n    D --> D1[queue_age_ms < queue_max_age_ms]\n    D --> D2[queue_full/queue_age rejections near 0]\n```\nQ: What is the condition for `gateway_queue_age_ms`?\nQ: Which metrics should be near zero during normal operation?\nQ: What does the Queue SLO include?",
-      "token_count": 58,
-      "embed_token_count": 85,
+      "embed_text": "[SECTION: Queue SLO]\n- `gateway_queue_age_ms` should remain **< queue_max_age_ms** during steady state.\n- `gateway_rejections_total{reason=\"queue_full\"}` and `{reason=\"queue_age\"}` should be near zero during normal operation.\n\n```mermaid\nflowchart LR\n    A[Traffic] --> B{Availability SLO 99.9%}\n    A --> C{Latency SLO}\n    A --> D{Queue SLO}\n    C --> C1[P95 <= 2500ms]\n    C --> C2[P99 <= 5000ms]\n    D --> D1[queue_age_ms < queue_max_age_ms]\n    D --> D2[queue_full/queue_age rejections near 0]\n```\nQ: What should `gateway_queue_age_ms` remain below during steady state?\nQ: What should the values of `gateway_rejections_total{reason=\"queue_full\"}` and `{reason=\"queue_age\"}` be during normal operation?\nQ: What does the Queue SLO consist of according to the flowchart?",
+      "token_count": 185,
+      "embed_token_count": 281,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is the condition for `gateway_queue_age_ms`?",
-        "Which metrics should be near zero during normal operation?",
-        "What does the Queue SLO include?"
+        "What should `gateway_queue_age_ms` remain below during steady state?",
+        "What should the values of `gateway_rejections_total{reason=\"queue_full\"}` and `{reason=\"queue_age\"}` be during normal operation?",
+        "What does the Queue SLO consist of according to the flowchart?"
       ],
       "content_hash": "22e200202c44b6d388338cdf9f7252900ac3c28f99c3f361dcdf9b4a756ed0c9",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "5aeb3af4-cb4a-543c-aa58-a2f128452086",
+    "id": "cc1e49de-5153-5adb-90dc-e3bffcb1a613",
     "vector": [],
     "payload": {
       "chunk_id": "0007",
+      "document_id": "layer-gateway-inference-v1__sla.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -208,8 +317,8 @@
       ],
       "text": "For 99.9% monthly availability, allowed failure budget is approximately:\n\n- 0.1% of total monthly requests, or\n- ~43.2 minutes/month equivalent downtime\n\nIf budget burn is high, prioritize:\n\n- reducing retries caused by unhealthy backends\n- lowering queue pressure\n- draining unstable nodes\n\n```mermaid\nflowchart TD\n    SLO[99.9% monthly availability] --> EB[0.1% error budget]\n    EB --> BURN{burn rate high?}\n    BURN -- yes --> ACT1[reduce retries]\n    BURN -- yes --> ACT2[reduce queue pressure]\n    BURN -- yes --> ACT3[drain unstable backends]\n    BURN -- no --> KEEP[maintain baseline]\n```",
       "embed_text": "[SECTION: 3) Error Budget]\nFor 99.9% monthly availability, allowed failure budget is approximately:\n\n- 0.1% of total monthly requests, or\n- ~43.2 minutes/month equivalent downtime\n\nIf budget burn is high, prioritize:\n\n- reducing retries caused by unhealthy backends\n- lowering queue pressure\n- draining unstable nodes\n\n```mermaid\nflowchart TD\n    SLO[99.9% monthly availability] --> EB[0.1% error budget]\n    EB --> BURN{burn rate high?}\n    BURN -- yes --> ACT1[reduce retries]\n    BURN -- yes --> ACT2[reduce queue pressure]\n    BURN -- yes --> ACT3[drain unstable backends]\n    BURN -- no --> KEEP[maintain baseline]\n```\nQ: What is the allowed failure budget for 99.9% monthly availability?\nQ: How much downtime in minutes per month is equivalent to the allowed failure budget?\nQ: What actions should be prioritized if the budget burn is high?",
-      "token_count": 84,
-      "embed_token_count": 126,
+      "token_count": 171,
+      "embed_token_count": 230,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
@@ -219,15 +328,33 @@
       ],
       "content_hash": "0e6ec29ea328aea0f2fe5eca8a8959b9cfa604c2f00ce2792b302f740541298f",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "ec61cc39-ec3b-5cbd-967a-74676e3d1921",
+    "id": "578d3fee-72f9-5e73-963f-47bbd351be4d",
     "vector": [],
     "payload": {
       "chunk_id": "0008",
+      "document_id": "layer-gateway-inference-v1__sla.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -239,27 +366,45 @@
         "4)_how_to_measure"
       ],
       "text": "Use `/metrics` with Prometheus.\n\nKey metrics:\n\n- `gateway_requests_total`\n- `gateway_request_errors_total{backend=...}`\n- `gateway_request_retries_total`\n- `gateway_request_latency_ms`\n- `gateway_queue_depth`\n- `gateway_queue_age_ms`\n- `gateway_rejections_total{reason=...}`\n- `gateway_backend_error_rate{backend=...}`\n- `gateway_backend_circuit_state{backend=...}`\n\nSuggested PromQL examples:\n\n```promql",
-      "embed_text": "[SECTION: 4) How to Measure]\nUse `/metrics` with Prometheus.\n\nKey metrics:\n\n- `gateway_requests_total`\n- `gateway_request_errors_total{backend=...}`\n- `gateway_request_retries_total`\n- `gateway_request_latency_ms`\n- `gateway_queue_depth`\n- `gateway_queue_age_ms`\n- `gateway_rejections_total{reason=...}`\n- `gateway_backend_error_rate{backend=...}`\n- `gateway_backend_circuit_state{backend=...}`\n\nSuggested PromQL examples:\n\n```promql\nQ: What metrics are used to measure gateway performance?\nQ: How can PromQL be utilized to monitor gateway requests?\nQ: What does the `gateway_backend_error_rate` metric indicate?",
-      "token_count": 28,
-      "embed_token_count": 59,
+      "embed_text": "[SECTION: 4) How to Measure]\nUse `/metrics` with Prometheus.\n\nKey metrics:\n\n- `gateway_requests_total`\n- `gateway_request_errors_total{backend=...}`\n- `gateway_request_retries_total`\n- `gateway_request_latency_ms`\n- `gateway_queue_depth`\n- `gateway_queue_age_ms`\n- `gateway_rejections_total{reason=...}`\n- `gateway_backend_error_rate{backend=...}`\n- `gateway_backend_circuit_state{backend=...}`\n\nSuggested PromQL examples:\n\n```promql\nQ: What is the total number of gateway requests?\nQ: How many gateway request errors occurred for a specific backend?\nQ: What is the current gateway queue depth?",
+      "token_count": 167,
+      "embed_token_count": 222,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What metrics are used to measure gateway performance?",
-        "How can PromQL be utilized to monitor gateway requests?",
-        "What does the `gateway_backend_error_rate` metric indicate?"
+        "What is the total number of gateway requests?",
+        "How many gateway request errors occurred for a specific backend?",
+        "What is the current gateway queue depth?"
       ],
       "content_hash": "35c617fec8f9ad2a98f8aaccac7f0e6e7173984c762041fc05edc7e54eec2acd",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "4279723e-85e0-5f2a-924d-d38a5444f206",
+    "id": "80aa4ef1-7395-50d4-ba86-ada6b6cf07fa",
     "vector": [],
     "payload": {
       "chunk_id": "0009",
+      "document_id": "layer-gateway-inference-v1__sla.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -271,27 +416,45 @@
         "request_rate"
       ],
       "text": "sum(rate(gateway_requests_total[5m]))\n```\n\n```promql",
-      "embed_text": "[SECTION: Request rate]\nsum(rate(gateway_requests_total[5m]))\n```\n\n```promql\nQ: What Prometheus query returns the request rate over the last 5 minutes?\nQ: How is the request rate calculated using Prometheus in this context?\nQ: What metric is used to calculate the request rate in this query?",
-      "token_count": 3,
-      "embed_token_count": 44,
+      "embed_text": "[SECTION: Request rate]\nsum(rate(gateway_requests_total[5m]))\n```\n\n```promql\nQ: What does the Prometheus query calculate?\nQ: What time range does the query use?\nQ: How often is the request rate calculated?",
+      "token_count": 26,
+      "embed_token_count": 71,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What Prometheus query returns the request rate over the last 5 minutes?",
-        "How is the request rate calculated using Prometheus in this context?",
-        "What metric is used to calculate the request rate in this query?"
+        "What does the Prometheus query calculate?",
+        "What time range does the query use?",
+        "How often is the request rate calculated?"
       ],
       "content_hash": "84cc0abb2ffe0c11cacd84d989dc76174f389e700a2329c3f7a296ad8ea03e98",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "98f9d81d-c1a7-5fe4-a55a-d38390818882",
+    "id": "0cb03e92-ffdb-5e7e-8dd3-068402c800f5",
     "vector": [],
     "payload": {
       "chunk_id": "0010",
+      "document_id": "layer-gateway-inference-v1__sla.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -303,27 +466,45 @@
         "gateway-visible_error_rate_proxy"
       ],
       "text": "sum(rate(gateway_request_errors_total[5m])) / sum(rate(gateway_requests_total[5m]))\n```\n\n```promql",
-      "embed_text": "[SECTION: Gateway-visible error rate proxy]\nsum(rate(gateway_request_errors_total[5m])) / sum(rate(gateway_requests_total[5m]))\n```\n\n```promql\nQ: What does this expression calculate?\nQ: What time range does this expression use?\nQ: How is the gateway error rate represented?",
-      "token_count": 5,
-      "embed_token_count": 32,
+      "embed_text": "[SECTION: Gateway-visible error rate proxy]\nsum(rate(gateway_request_errors_total[5m])) / sum(rate(gateway_requests_total[5m]))\n```\n\n```promql\nQ: What does this Prometheus query calculate?\nQ: What time range does this query use for its calculation?\nQ: Which two metrics are used in this query?",
+      "token_count": 48,
+      "embed_token_count": 103,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What does this expression calculate?",
-        "What time range does this expression use?",
-        "How is the gateway error rate represented?"
+        "What does this Prometheus query calculate?",
+        "What time range does this query use for its calculation?",
+        "Which two metrics are used in this query?"
       ],
       "content_hash": "dbe6fc9498160a0bae0faed2a21d73a15e2d08a48eaacab1fdac000b4f69cd92",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "48d47f14-9e6b-5cde-86b0-17cab3f41239",
+    "id": "27ac62ab-cdaa-5778-8700-58e7f7fa2b64",
     "vector": [],
     "payload": {
       "chunk_id": "0011",
+      "document_id": "layer-gateway-inference-v1__sla.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -335,27 +516,45 @@
         "p95_latency"
       ],
       "text": "histogram_quantile(0.95, sum by (le) (rate(gateway_request_latency_ms_bucket[5m])))\n```\n\n```promql",
-      "embed_text": "[SECTION: P95 latency]\nhistogram_quantile(0.95, sum by (le) (rate(gateway_request_latency_ms_bucket[5m])))\n```\n\n```promql\nQ: What does the histogram_quantile function represent?\nQ: What is the time window for the gateway_request_latency_ms_bucket?\nQ: Which quantile is being measured?",
-      "token_count": 7,
-      "embed_token_count": 32,
+      "embed_text": "[SECTION: P95 latency]\nhistogram_quantile(0.95, sum by (le) (rate(gateway_request_latency_ms_bucket[5m])))\n```\n\n```promql\nQ: What does the histogram_quantile function represent in this context?\nQ: What time range is used for the rate function?\nQ: What metric is being analyzed for P95 latency?",
+      "token_count": 43,
+      "embed_token_count": 98,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What does the histogram_quantile function represent?",
-        "What is the time window for the gateway_request_latency_ms_bucket?",
-        "Which quantile is being measured?"
+        "What does the histogram_quantile function represent in this context?",
+        "What time range is used for the rate function?",
+        "What metric is being analyzed for P95 latency?"
       ],
       "content_hash": "98d7ac5011f8553c7f9d1755fe6de1b93e64bfee637a520a1a832f63425fef6d",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "3a10054e-cf7d-525a-890f-b01c5732f927",
+    "id": "16631dec-b1fa-5cd3-896e-c507d25e8b1b",
     "vector": [],
     "payload": {
       "chunk_id": "0012",
+      "document_id": "layer-gateway-inference-v1__sla.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -367,27 +566,45 @@
         "queue_age"
       ],
       "text": "max(gateway_queue_age_ms)\n```\n\n```promql",
-      "embed_text": "[SECTION: Queue age]\nmax(gateway_queue_age_ms)\n```\n\n```promql\nQ: What is the maximum gateway queue age in milliseconds?\nQ: How long can the gateway queue age be at most?\nQ: What does the max(gateway_queue_age_ms) metric represent?",
-      "token_count": 3,
-      "embed_token_count": 34,
+      "embed_text": "[SECTION: Queue age]\nmax(gateway_queue_age_ms)\n```\n\n```promql\nQ: What is the maximum gateway queue age in milliseconds?\nQ: How long is the longest queue age for gateways?\nQ: What does the max(gateway_queue_age_ms) metric represent?",
+      "token_count": 19,
+      "embed_token_count": 80,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is the maximum gateway queue age in milliseconds?",
-        "How long can the gateway queue age be at most?",
+        "How long is the longest queue age for gateways?",
         "What does the max(gateway_queue_age_ms) metric represent?"
       ],
       "content_hash": "58f3edbb4da8422023af5ffe875597841f991aa089b28101322fba41ae4398b5",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "d2fd181d-58c4-5505-aa29-895ed53afe11",
+    "id": "d0099dd3-4531-55c4-99d1-7b98cfd14935",
     "vector": [],
     "payload": {
       "chunk_id": "0013",
+      "document_id": "layer-gateway-inference-v1__sla.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -399,27 +616,45 @@
         "rejections_by_reason"
       ],
       "text": "sum by (reason) (rate(gateway_rejections_total[5m]))\n```",
-      "embed_text": "[SECTION: Rejections by reason]\nsum by (reason) (rate(gateway_rejections_total[5m]))\n```\nQ: What reasons are given for gateway rejections?\nQ: How many rejections are there by reason in the last 5 minutes?\nQ: Can we identify specific causes for rejections based on the given data?",
-      "token_count": 5,
-      "embed_token_count": 43,
+      "embed_text": "[SECTION: Rejections by reason]\nsum by (reason) (rate(gateway_rejections_total[5m]))\n```\nQ: What reasons are given for gateway rejections?\nQ: How many rejections are there by reason in the last 5 minutes?\nQ: Can we summarize the rejections by reason?",
+      "token_count": 26,
+      "embed_token_count": 81,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What reasons are given for gateway rejections?",
         "How many rejections are there by reason in the last 5 minutes?",
-        "Can we identify specific causes for rejections based on the given data?"
+        "Can we summarize the rejections by reason?"
       ],
       "content_hash": "d56e919a19d1652a9f136b945078ccfee5283bd7f03c9afdae551f7dedd0ae8e",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "0379c5e0-6c58-56eb-a79b-f95e26716b87",
+    "id": "0f0193a0-8459-54cc-ac5d-82609fbc30c2",
     "vector": [],
     "payload": {
       "chunk_id": "0014",
+      "document_id": "layer-gateway-inference-v1__sla.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -431,27 +666,45 @@
         "5)_alerting_baseline"
       ],
       "text": "Critical alerts:\n\n- Availability burn: estimated error ratio > 1% for 5 minutes\n- Queue age saturation: `gateway_queue_age_ms` > `queue_max_age_ms` for 5 minutes\n- No healthy backend: all backends in `open` circuit state\n\nWarning alerts:\n\n- Retry surge: `rate(gateway_request_retries_total[5m])` significantly above baseline\n- Rising backend error signal: `gateway_backend_error_rate` sustained above threshold",
-      "embed_text": "[SECTION: 5) Alerting Baseline]\nCritical alerts:\n\n- Availability burn: estimated error ratio > 1% for 5 minutes\n- Queue age saturation: `gateway_queue_age_ms` > `queue_max_age_ms` for 5 minutes\n- No healthy backend: all backends in `open` circuit state\n\nWarning alerts:\n\n- Retry surge: `rate(gateway_request_retries_total[5m])` significantly above baseline\n- Rising backend error signal: `gateway_backend_error_rate` sustained above threshold\nQ: What is the critical alert for availability burn?\nQ: How long must the gateway_queue_age_ms exceed the queue_max_age_ms for it to trigger an alert?\nQ: Which metric indicates a rising backend error signal?",
-      "token_count": 51,
-      "embed_token_count": 88,
+      "embed_text": "[SECTION: 5) Alerting Baseline]\nCritical alerts:\n\n- Availability burn: estimated error ratio > 1% for 5 minutes\n- Queue age saturation: `gateway_queue_age_ms` > `queue_max_age_ms` for 5 minutes\n- No healthy backend: all backends in `open` circuit state\n\nWarning alerts:\n\n- Retry surge: `rate(gateway_request_retries_total[5m])` significantly above baseline\n- Rising backend error signal: `gateway_backend_error_rate` sustained above threshold\nQ: What is the critical alert for availability burn?\nQ: How long must the gateway_queue_age_ms exceed the queue_max_age_ms for it to trigger a critical alert?\nQ: Which metric indicates a rising backend error signal?",
+      "token_count": 127,
+      "embed_token_count": 199,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is the critical alert for availability burn?",
-        "How long must the gateway_queue_age_ms exceed the queue_max_age_ms for it to trigger an alert?",
+        "How long must the gateway_queue_age_ms exceed the queue_max_age_ms for it to trigger a critical alert?",
         "Which metric indicates a rising backend error signal?"
       ],
       "content_hash": "1c67775c6f31ab1a23f9bb7b30e1b5bed624df591ebfd41d63f32bce4943b9be",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "47d7fa13-8bcc-55db-a361-4c7ead9bdb21",
+    "id": "0e27e2f4-cb10-51be-9f13-e54f561edaf0",
     "vector": [],
     "payload": {
       "chunk_id": "0015",
+      "document_id": "layer-gateway-inference-v1__sla.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -463,27 +716,45 @@
         "6)_operational_notes"
       ],
       "text": "- `trace_id`, `request_id`, and `session_id` are for log correlation, not metric labels.\n- Keep metric label cardinality low (do not add request/session IDs as labels).\n- When a backend is unstable, set `drained: true` in config to remove it from new scheduling.",
-      "embed_text": "[SECTION: 6) Operational Notes]\n- `trace_id`, `request_id`, and `session_id` are for log correlation, not metric labels.\n- Keep metric label cardinality low (do not add request/session IDs as labels).\n- When a backend is unstable, set `drained: true` in config to remove it from new scheduling.\nQ: What should be done when a backend is unstable?\nQ: Which configuration setting should be changed to remove a backend from new scheduling?\nQ: Why should `trace_id`, `request_id`, and `session_id` not be used as metric labels?",
-      "token_count": 42,
-      "embed_token_count": 83,
+      "embed_text": "[SECTION: 6) Operational Notes]\n- `trace_id`, `request_id`, and `session_id` are for log correlation, not metric labels.\n- Keep metric label cardinality low (do not add request/session IDs as labels).\n- When a backend is unstable, set `drained: true` in config to remove it from new scheduling.\nQ: What should be done when a backend is unstable?\nQ: Which configuration parameter should be set to remove a backend from new scheduling?\nQ: Why should `trace_id`, `request_id`, and `session_id` not be used as metric labels?",
+      "token_count": 82,
+      "embed_token_count": 159,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What should be done when a backend is unstable?",
-        "Which configuration setting should be changed to remove a backend from new scheduling?",
+        "Which configuration parameter should be set to remove a backend from new scheduling?",
         "Why should `trace_id`, `request_id`, and `session_id` not be used as metric labels?"
       ],
       "content_hash": "29cc256a0d740b12c5ce12869774dcb6d56a6df6e2485d890dbfea02d153737f",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "ec4ce29c-68ef-5280-af97-36725a8d4635",
+    "id": "df5bf9d5-c7f9-5075-80ae-a38568817e67",
     "vector": [],
     "payload": {
       "chunk_id": "0016",
+      "document_id": "layer-gateway-inference-v1__sla.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -495,20 +766,37 @@
         "7)_exclusions"
       ],
       "text": "The SLA excludes:\n\n- planned maintenance windows\n- upstream provider/network outages outside gateway control\n- user-caused invalid requests (`4xx`)",
-      "embed_text": "[SECTION: 7) Exclusions]\nThe SLA excludes:\n\n- planned maintenance windows\n- upstream provider/network outages outside gateway control\n- user-caused invalid requests (`4xx`)\nQ: What are the exclusions mentioned in the SLA?\nQ: Does the SLA cover user-caused invalid requests?\nQ: Are upstream provider/network outages always excluded?",
-      "token_count": 19,
-      "embed_token_count": 46,
+      "embed_text": "[SECTION: 7) Exclusions]\nThe SLA excludes:\n\n- planned maintenance windows\n- upstream provider/network outages outside gateway control\n- user-caused invalid requests (`4xx`)\nQ: What are the exclusions mentioned in the SLA?\nQ: Does the SLA cover planned maintenance windows?\nQ: Are user-caused errors included in the SLA coverage?",
+      "token_count": 37,
+      "embed_token_count": 87,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What are the exclusions mentioned in the SLA?",
-        "Does the SLA cover user-caused invalid requests?",
-        "Are upstream provider/network outages always excluded?"
+        "Does the SLA cover planned maintenance windows?",
+        "Are user-caused errors included in the SLA coverage?"
       ],
       "content_hash": "bb5beed2b2ff51d1b97644af3d0fe15e0e2b3056ca9cc0283be586ec8b46f12f",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   }
 ]

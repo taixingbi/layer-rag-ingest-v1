@@ -35,6 +35,7 @@ load_dotenv()
 
 
 def _required_env(name: str) -> str:
+    """ required env."""
     v = (os.getenv(name) or "").strip()
     if not v:
         raise RuntimeError(f"Missing required environment variable: {name}")
@@ -42,6 +43,7 @@ def _required_env(name: str) -> str:
 
 
 def _resolve_collection_name(collection_name: str, env_name: str) -> str:
+    """ resolve collection name."""
     c = (collection_name or "").strip()
     if not c:
         raise RuntimeError("Collection name is empty. Set COLLECTION_NAME or pass --collection.")
@@ -54,6 +56,7 @@ def _resolve_collection_name(collection_name: str, env_name: str) -> str:
 
 
 def _load_points(path: Path) -> list[dict[str, Any]]:
+    """ load points."""
     raw = path.read_text(encoding="utf-8")
     data = json.loads(raw)
     if not isinstance(data, list):
@@ -62,11 +65,13 @@ def _load_points(path: Path) -> list[dict[str, Any]]:
 
 
 def _default_report_path(data_dir: Path) -> Path:
+    """ default report path."""
     ts = datetime.now(_EST).strftime("%Y%m%dT%H%M%S_EST")
     return data_dir / "reports" / f"smoke_validate_{ts}.json"
 
 
 def _percentile(sorted_values: list[float], p: float) -> float:
+    """ percentile."""
     if not sorted_values:
         return 0.0
     if len(sorted_values) == 1:
@@ -79,6 +84,7 @@ def _percentile(sorted_values: list[float], p: float) -> float:
 
 
 def _probe_text(payload: dict[str, Any]) -> str:
+    """ probe text."""
     qs_raw = payload.get("synthetic_questions")
     if isinstance(qs_raw, list):
         for q in qs_raw:
@@ -92,6 +98,7 @@ def _probe_text(payload: dict[str, Any]) -> str:
 
 
 def _judge_prompt(*, probe_text: str, payload: dict[str, Any]) -> tuple[str, str]:
+    """ judge prompt."""
     context_text = str(payload.get("text") or "").strip()
     if not context_text:
         context_text = str(payload.get("embed_text") or "").strip()
@@ -109,6 +116,7 @@ def _judge_prompt(*, probe_text: str, payload: dict[str, Any]) -> tuple[str, str
 
 
 def _parse_judge_response(content: str) -> tuple[str, str]:
+    """ parse judge response."""
     parsed = json.loads(content)
     verdict = str(parsed.get("verdict") or "uncertain").strip().lower()
     reason = str(parsed.get("reason") or "").strip()
@@ -127,6 +135,7 @@ async def _judge_with_llm_async(
     chat_model: str,
     chat_api_key: str | None,
 ) -> tuple[str, str]:
+    """ judge with llm async."""
     system, user = _judge_prompt(probe_text=probe_text, payload=payload)
     async with sem:
         data = await async_chat_completions(
@@ -155,6 +164,7 @@ async def _run_llm_judges(
     chat_api_key: str | None,
     max_concurrency: int = 12,
 ) -> dict[int, tuple[str, str]]:
+    """ run llm judges."""
     sem = asyncio.Semaphore(max(1, max_concurrency))
     timeout = httpx.Timeout(120.0, connect=15.0)
     limits = httpx.Limits(max_connections=max(20, max_concurrency * 2))
@@ -184,6 +194,7 @@ async def _run_llm_judges(
 
 
 def _build_filter(source: str, section: str, doc_type: str) -> models.Filter:
+    """ build filter."""
     return models.Filter(
         must=[
             models.FieldCondition(key="source", match=models.MatchValue(value=source)),
@@ -194,6 +205,7 @@ def _build_filter(source: str, section: str, doc_type: str) -> models.Filter:
 
 
 def _matches_scope(hit_payload: dict[str, Any], *, source: str, section: str, doc_type: str) -> bool:
+    """ matches scope."""
     return (
         str(hit_payload.get("source") or "") == source
         and str(hit_payload.get("section") or "") == section
@@ -211,6 +223,7 @@ def _search_hits(
 ) -> list[Any]:
     # Qdrant client API differs across versions: older clients expose `search`,
     # newer clients expose `query_points`.
+    """ search hits."""
     if hasattr(client, "query_points"):
         resp = client.query_points(
             collection_name=collection,
@@ -235,6 +248,7 @@ def _search_hits(
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse args."""
     p = argparse.ArgumentParser(
         description=(
             "Run post-upsert retrieval smoke validation against points_*.json "
@@ -321,6 +335,7 @@ def _run_smoke(
     threshold: float,
     max_probes: int,
 ) -> dict[str, Any]:
+    """ run smoke."""
     files = sorted(data_dir.glob(pattern))
     if not files:
         raise SystemExit(f"No files matched {pattern!r} under {data_dir}")
@@ -543,6 +558,7 @@ def run_smoke_validation(
     report_path: str | None,
     strict: bool,
 ) -> tuple[dict[str, Any], Path]:
+    """Run smoke validation."""
     resolved_collection = _resolve_collection_name(collection, env)
     report = _run_smoke(
         data_dir=Path(data_dir),
@@ -598,6 +614,7 @@ def run_smoke_validation(
 
 
 def main() -> None:
+    """Main."""
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s [%(name)s] %(message)s")
     args = parse_args()
     run_smoke_validation(

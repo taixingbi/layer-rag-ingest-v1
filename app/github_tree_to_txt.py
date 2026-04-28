@@ -52,6 +52,7 @@ _TEXT_SUFFIXES = frozenset(
 
 
 def configure_logging(*, verbose: bool) -> None:
+    """Configure logging."""
     level = logging.DEBUG if verbose else logging.INFO
     logging.basicConfig(
         level=level,
@@ -81,6 +82,7 @@ def parse_github_tree_url(url: str) -> tuple[str, str, str, str]:
 
 
 def _archive_urls(owner: str, repo: str, ref: str) -> list[str]:
+    """ archive urls."""
     ref_enc = ref.replace("/", "%2F")
     return [
         f"https://codeload.github.com/{owner}/{repo}/zip/refs/heads/{ref_enc}",
@@ -90,6 +92,7 @@ def _archive_urls(owner: str, repo: str, ref: str) -> list[str]:
 
 
 def _zip_root_dir(namelist: Iterable[str]) -> str:
+    """ zip root dir."""
     first = next((n for n in namelist if n.strip()), "")
     if not first or "/" not in first:
         raise RuntimeError("Unexpected archive layout: no root directory in zip")
@@ -97,6 +100,7 @@ def _zip_root_dir(namelist: Iterable[str]) -> str:
 
 
 def _headers() -> dict[str, str]:
+    """ headers."""
     token = (os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN") or "").strip()
     if not token:
         return {}
@@ -104,6 +108,7 @@ def _headers() -> dict[str, str]:
 
 
 def download_repo_zip(client: httpx.Client, owner: str, repo: str, ref: str) -> bytes:
+    """Download repo zip."""
     last_err: Exception | None = None
     for url in _archive_urls(owner, repo, ref):
         logger.debug("GET %s", url)
@@ -125,11 +130,13 @@ def download_repo_zip(client: httpx.Client, owner: str, repo: str, ref: str) -> 
 
 
 def _is_text_candidate(name: str) -> bool:
+    """ is text candidate."""
     lower = name.lower()
     return any(lower.endswith(sfx) for sfx in _TEXT_SUFFIXES)
 
 
 def _safe_output_stem(repo: str, rel_under_docs: str) -> str:
+    """ safe output stem."""
     base = f"{repo}__{rel_under_docs}"
     base = base.replace("/", "_").replace("\\", "_")
     for ch in '<>:"|?*':
@@ -184,6 +191,7 @@ def extract_tree_to_txt(
 
 
 def read_repo_list(path: Path) -> list[str]:
+    """Read repo list."""
     lines: list[str] = []
     for raw in path.read_text(encoding="utf-8").splitlines():
         line = raw.strip()
@@ -194,6 +202,7 @@ def read_repo_list(path: Path) -> list[str]:
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse args."""
     p = argparse.ArgumentParser(
         description=(
             "Read GitHub /tree/ URLs from a repo list file and export each "
@@ -221,6 +230,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> None:
+    """Main."""
     started = time.perf_counter()
     args = parse_args()
     configure_logging(verbose=args.verbose)

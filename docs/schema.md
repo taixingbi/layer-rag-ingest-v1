@@ -15,6 +15,7 @@ Recommended metadata keys:
 - `tags`: optional tag list for product/domain filters
 - `ingest_ts`: ingest timestamp
 - `ingest_run_id`: run identifier for traceability
+- `profile.role`: optional profile role metadata (for selected sources)
 
 Recommended filterable keys:
 
@@ -155,6 +156,9 @@ Recommended filterable keys:
     "synthetic_questions": [...],
     "content_hash": "e3b0c44298fc1c149afbf4c8996fb924...",
     "source": "resume_taixing_bi",
+    "profile": {
+      "role": "AI Infrastructure Engineer"
+    },
     "ingest_run_id": "run_20260422_100000",
     "ingest_ts": "2026-04-22T10:00:00Z"
   }
@@ -185,6 +189,9 @@ Recommended filterable keys:
     "synthetic_questions": [...],
     "content_hash": "e3b0c44298fc1c149afbf4c8996fb924...",
     "source": "resume_taixing_bi",
+    "profile": {
+      "role": "AI Infrastructure Engineer"
+    },
     "ingest_run_id": "run_20260422_100000",
     "ingest_ts": "2026-04-22T10:00:00Z"
   }

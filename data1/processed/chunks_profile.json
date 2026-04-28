@@ -1,60 +1,70 @@
 [
   {
     "chunk_id": "0001",
+    "document_id": "profile",
     "section": "ROOT",
     "text": "Q: What is Taixing Bi's current role?\nA: AI Infrastructure Engineer",
     "synthetic_questions": []
   },
   {
     "chunk_id": "0002",
+    "document_id": "profile",
     "section": "ROOT",
     "text": "Q: Where does Taixing Bi currently work?\nA: Saks",
     "synthetic_questions": []
   },
   {
     "chunk_id": "0003",
+    "document_id": "profile",
     "section": "ROOT",
     "text": "Q: Which work locations is Taixing Bi open to?\nA: Remote, Hybrid, or Office",
     "synthetic_questions": []
   },
   {
     "chunk_id": "0004",
+    "document_id": "profile",
     "section": "ROOT",
     "text": "Q: What is Taixing Bi's expected compensation range?\nA: $180,000 – $240,000 USD",
     "synthetic_questions": []
   },
   {
     "chunk_id": "0005",
+    "document_id": "profile",
     "section": "ROOT",
     "text": "Q: What is Taixing Bi's visa status?\nA: H4 EAD",
     "synthetic_questions": []
   },
   {
     "chunk_id": "0006",
+    "document_id": "profile",
     "section": "ROOT",
     "text": "Q: Does Taixing Bi require visa sponsorship?\nA: No",
     "synthetic_questions": []
   },
   {
     "chunk_id": "0007",
+    "document_id": "profile",
     "section": "ROOT",
     "text": "Q: Which roles is Taixing Bi targeting?\nA: AI Infra / Backend / LLM Engineer",
     "synthetic_questions": []
   },
   {
     "chunk_id": "0008",
+    "document_id": "profile",
     "section": "ROOT",
     "text": "Q: What is Taixing Bi's LinkedIn profile?\nA: https://www.linkedin.com/in/taixing-bi-757a4961/",
     "synthetic_questions": []
   },
   {
     "chunk_id": "0009",
+    "document_id": "profile",
     "section": "ROOT",
     "text": "Q: What is Taixing Bi's phone number?\nA: 347-560-4308",
     "synthetic_questions": []
   },
   {
     "chunk_id": "0010",
+    "document_id": "profile",
     "section": "ROOT",
     "text": "Q: What is Taixing Bi's email address?\nA: taixingbijob@gmail.com",
     "synthetic_questions": []

@@ -35,6 +35,7 @@ def _build_headers(
     api_key: str | None,
     extra_headers: dict[str, str] | None,
 ) -> dict[str, str]:
+    """ build headers."""
     headers: dict[str, str] = {"Content-Type": "application/json"}
     if api_key:
         headers["Authorization"] = f"Bearer {api_key}"
@@ -51,6 +52,7 @@ def _build_payload(
     temperature: float | None,
     response_format: dict[str, Any] | None,
 ) -> dict[str, Any]:
+    """ build payload."""
     payload: dict[str, Any] = {"model": model, "messages": messages}
     if max_tokens is not None:
         payload["max_tokens"] = max_tokens
@@ -86,6 +88,7 @@ async def async_chat_completions(
     )
 
     async def _do(c: httpx.AsyncClient) -> dict[str, Any]:
+        """ do."""
         r = await c.post(url, json=payload, headers=headers, timeout=timeout)
         r.raise_for_status()
         return r.json()

@@ -24,6 +24,7 @@ _TOKENIZER_MODEL = ""
 
 
 UUID_NAMESPACE = uuid.NAMESPACE_URL
+ID_KEY_VERSION = "v2"
 _APP_DIR = Path(__file__).resolve().parent
 _ROOT_DIR = _APP_DIR.parent
 load_dotenv(_ROOT_DIR / ".env")
@@ -31,6 +32,7 @@ load_dotenv()
 
 
 def _resolve_collection_name(collection_name: str, env_name: str) -> str:
+    """ resolve collection name."""
     c = (collection_name or "").strip()
     if not c:
         raise RuntimeError("Collection name is empty. Set COLLECTION_NAME or pass --collection.")
@@ -43,6 +45,7 @@ def _resolve_collection_name(collection_name: str, env_name: str) -> str:
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse args."""
     parser = argparse.ArgumentParser(
         description=(
             "Read chunk JSON files from data/, attach metadata/filter fields, "
@@ -100,18 +103,47 @@ def parse_args() -> argparse.Namespace:
         default="",
         help="Optional fixed ingest timestamp (ISO-8601). Default: now EST.",
     )
+    parser.add_argument(
+        "--profile-role-map",
+        default="",
+        help=(
+            "Optional JSON object mapping role by source/document "
+            '(example: \'{"personal_profile":"AI Infrastructure Engineer",'
+            '"personal_profile:profile":"AI Infrastructure Engineer"}\').'
+        ),
+    )
+    parser.add_argument(
+        "--profile-role-map-file",
+        default="",
+        help=(
+            "Optional path to JSON object mapping role by source/document. "
+            "Merge order: file first, then --profile-role-map overrides."
+        ),
+    )
+    parser.add_argument(
+        "--access-control-file",
+        default="",
+        help=(
+            "Optional JSON file mapping source/document -> access policy object "
+            '(keys: roles, groups, teams). If omitted, auto-loads '
+            "<dataset-root>/raw/access_control.json when present."
+        ),
+    )
     return parser.parse_args()
 
 
 def _now_iso_est() -> str:
+    """ now iso est."""
     return datetime.now(_EST).replace(microsecond=0).isoformat()
 
 
 def _default_run_id() -> str:
+    """ default run id."""
     return datetime.now(_EST).strftime("run_%Y%m%d_%H%M%S_EST")
 
 
 def _token_count(text: str) -> int:
+    """ token count."""
     global _TOKENIZER, _TOKENIZER_MODEL
     if _TOKENIZER is None:
         model_name = (os.getenv("EMBEDDING_MODEL") or "BAAI/bge-m3").strip() or "BAAI/bge-m3"
@@ -122,6 +154,7 @@ def _token_count(text: str) -> int:
 
 
 def _build_embed_text(section: str, text: str, synthetic_questions: list[str]) -> tuple[str, int, int]:
+    """ build embed text."""
     header = f"[SECTION: {section}]"
     question_lines = [f"Q: {q.strip()}" for q in synthetic_questions if q and q.strip()]
     embed_text = "\n".join([header, text, *question_lines]).strip()
@@ -129,6 +162,7 @@ def _build_embed_text(section: str, text: str, synthetic_questions: list[str]) -
 
 
 def _doc_type_from_name(path: Path) -> str:
+    """ doc type from name."""
     stem = path.stem
     if stem.startswith("chunks_"):
         return stem[len("chunks_") :]
@@ -136,24 +170,30 @@ def _doc_type_from_name(path: Path) -> str:
 
 
 def _source_name(doc_type: str, source_prefix: str) -> str:
+    """ source name."""
     if source_prefix:
         return f"{source_prefix}_{doc_type}"
     return f"{doc_type}_source"
 
 
 def _tags_for(doc_type: str, section: str) -> list[str]:
+    """ tags for."""
     return [doc_type, section.lower().replace(" ", "_")]
 
 
 def _content_hash(text: str) -> str:
+    """ content hash."""
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
-def _point_id(content_hash: str) -> str:
-    return str(uuid.uuid5(UUID_NAMESPACE, content_hash))
+def _v2_point_id(*, source: str, document_id: str, chunk_id: str) -> str:
+    """ v2 point id."""
+    canonical = f"{ID_KEY_VERSION}|source={source}|document_id={document_id}|chunk_id={chunk_id}"
+    return str(uuid.uuid5(UUID_NAMESPACE, canonical))
 
 
 def _load_chunks(path: Path) -> list[dict[str, Any]]:
+    """ load chunks."""
     raw = path.read_text(encoding="utf-8")
     data = json.loads(raw)
     if not isinstance(data, list):
@@ -166,6 +206,139 @@ def _load_chunks(path: Path) -> list[dict[str, Any]]:
     return out
 
 
+def _parse_role_map_json(raw: str, label: str) -> dict[str, str]:
+    """Parse and validate role mapping JSON object."""
+    text = (raw or "").strip()
+    if not text:
+        return {}
+    try:
+        data = json.loads(text)
+    except json.JSONDecodeError as exc:
+        raise ValueError(f"Invalid {label} JSON: {exc}") from exc
+    if not isinstance(data, dict):
+        raise ValueError(f"{label} must be a JSON object of key -> role")
+    out: dict[str, str] = {}
+    for key, value in data.items():
+        k = str(key).strip()
+        v = str(value).strip()
+        if not k or not v:
+            continue
+        out[k] = v
+    return out
+
+
+def _load_profile_role_map(args: argparse.Namespace) -> dict[str, str]:
+    """Load optional profile role mapping from file and inline JSON."""
+    merged: dict[str, str] = {}
+    map_file = (args.profile_role_map_file or "").strip()
+    if map_file:
+        file_path = Path(map_file)
+        raw = file_path.read_text(encoding="utf-8")
+        merged.update(_parse_role_map_json(raw, "--profile-role-map-file"))
+    merged.update(_parse_role_map_json(args.profile_role_map, "--profile-role-map"))
+    return merged
+
+
+def _resolve_profile_role(*, source: str, document_id: str, profile_role_map: dict[str, str]) -> str:
+    """Resolve profile role by source first, then document fallback."""
+    if not profile_role_map:
+        return ""
+    src = source.strip()
+    doc = document_id.strip()
+    lookup_keys = []
+    if src and doc:
+        lookup_keys.append(f"{src}:{doc}")
+    if src:
+        lookup_keys.append(src)
+    if doc:
+        lookup_keys.append(doc)
+    for key in lookup_keys:
+        role = str(profile_role_map.get(key) or "").strip()
+        if role:
+            return role
+    return "role"
+
+
+def _as_clean_list(value: Any) -> list[str]:
+    """Normalize ACL list-like values to clean string list."""
+    if isinstance(value, list):
+        return [str(x).strip() for x in value if str(x).strip()]
+    v = str(value).strip()
+    return [v] if v else []
+
+
+def _parse_access_control_json(raw: str, label: str) -> dict[str, dict[str, Any]]:
+    """Parse and validate access control mapping JSON."""
+    text = (raw or "").strip()
+    if not text:
+        return {}
+    try:
+        data = json.loads(text)
+    except json.JSONDecodeError as exc:
+        raise ValueError(f"Invalid {label} JSON: {exc}") from exc
+    if not isinstance(data, dict):
+        raise ValueError(f"{label} must be a JSON object of key -> access policy")
+    out: dict[str, dict[str, Any]] = {}
+    for key, policy in data.items():
+        k = str(key).strip()
+        if not k or not isinstance(policy, dict):
+            continue
+        roles = _as_clean_list(policy.get("roles"))
+        groups = _as_clean_list(policy.get("groups"))
+        teams = _as_clean_list(policy.get("teams"))
+        normalized: dict[str, Any] = {}
+        if roles:
+            normalized["roles"] = roles
+        if groups:
+            normalized["groups"] = groups
+        if teams:
+            normalized["teams"] = teams
+        if normalized:
+            out[k] = normalized
+    return out
+
+
+def _default_access_control_path(data_dir: Path) -> Path:
+    """Resolve default access_control.json beside dataset raw folder."""
+    dataset_root = data_dir.parent
+    return dataset_root / "raw" / "access_control.json"
+
+
+def _load_access_control_map(args: argparse.Namespace, data_dir: Path) -> dict[str, dict[str, Any]]:
+    """Load optional access control mapping from explicit/default file."""
+    map_path = (args.access_control_file or "").strip()
+    candidate = Path(map_path) if map_path else _default_access_control_path(data_dir)
+    if not candidate.exists():
+        return {}
+    raw = candidate.read_text(encoding="utf-8")
+    acl_map = _parse_access_control_json(raw, "--access-control-file")
+    if acl_map:
+        logger.info("Loaded access control map entries=%d from %s", len(acl_map), candidate)
+    return acl_map
+
+
+def _resolve_access_policy(
+    *, source: str, document_id: str, access_control_map: dict[str, dict[str, Any]]
+) -> dict[str, Any]:
+    """Resolve ACL policy by source/document lookup precedence."""
+    if not access_control_map:
+        return {}
+    src = source.strip()
+    doc = document_id.strip()
+    lookup_keys = []
+    if src and doc:
+        lookup_keys.append(f"{src}:{doc}")
+    if src:
+        lookup_keys.append(src)
+    if doc:
+        lookup_keys.append(doc)
+    for key in lookup_keys:
+        policy = access_control_map.get(key)
+        if isinstance(policy, dict) and policy:
+            return policy
+    return {}
+
+
 def _to_point(
     *,
     chunk: dict[str, Any],
@@ -174,7 +347,10 @@ def _to_point(
     language: str,
     ingest_run_id: str,
     ingest_ts: str,
+    profile_role_map: dict[str, str],
+    access_control_map: dict[str, dict[str, Any]],
 ) -> dict[str, Any]:
+    """ to point."""
     section = str(chunk.get("section") or "ROOT")
     text = str(chunk.get("text") or "").strip()
     if not text:
@@ -182,6 +358,10 @@ def _to_point(
     chunk_id = str(chunk.get("chunk_id") or "")
     if not chunk_id:
         raise ValueError("chunk_id is required")
+    document_id = str(chunk.get("document_id") or "").strip()
+    if not document_id:
+        # Backward compatibility for existing chunks_*.json generated before document_id was introduced.
+        document_id = doc_type
 
     synthetic_questions_raw = chunk.get("synthetic_questions", [])
     if not isinstance(synthetic_questions_raw, list):
@@ -192,10 +372,11 @@ def _to_point(
     embed_text, used_q, trimmed_q = _build_embed_text(section, text, synthetic_questions)
     embed_token_count = _token_count(embed_text)
     content_hash = _content_hash(text)
-    point_id = _point_id(content_hash)
+    point_id = _v2_point_id(source=source, document_id=document_id, chunk_id=chunk_id)
 
     payload = {
         "chunk_id": chunk_id,
+        "document_id": document_id,
         "chunk_id_parent": chunk.get("chunk_id_parent"),
         "was_split": bool(chunk.get("was_split", False)),
         "split_index": chunk.get("split_index"),
@@ -218,6 +399,16 @@ def _to_point(
         "deleted_at": None,
         "deleted_by_run_id": None,
     }
+    profile_role = _resolve_profile_role(
+        source=source, document_id=document_id, profile_role_map=profile_role_map
+    )
+    if profile_role:
+        payload["profile"] = {"role": profile_role}
+    access_policy = _resolve_access_policy(
+        source=source, document_id=document_id, access_control_map=access_control_map
+    )
+    if access_policy:
+        payload["access"] = access_policy
     return {"id": point_id, "vector": [], "payload": payload}
 
 
@@ -261,6 +452,8 @@ def run_prepare(args: argparse.Namespace) -> dict[str, Any]:
         "items": [],
         "stats": {"points_total": 0, "by_source": {}},
     }
+    profile_role_map = _load_profile_role_map(args)
+    access_control_map = _load_access_control_map(args, data_dir)
 
     for file_path in files:
         doc_type = _doc_type_from_name(file_path)
@@ -279,6 +472,8 @@ def run_prepare(args: argparse.Namespace) -> dict[str, Any]:
                         language=args.default_language,
                         ingest_run_id=ingest_run_id,
                         ingest_ts=ingest_ts,
+                        profile_role_map=profile_role_map,
+                        access_control_map=access_control_map,
                     )
                 )
             except Exception:
@@ -311,6 +506,8 @@ def run_prepare(args: argparse.Namespace) -> dict[str, Any]:
                 "id": point.get("id"),
                 "source": source_name,
                 "doc_type": payload.get("doc_type"),
+                "document_id": payload.get("document_id"),
+                "chunk_id": payload.get("chunk_id"),
                 "section": payload.get("section"),
                 "content_hash": payload.get("content_hash"),
             }
@@ -329,6 +526,7 @@ def run_prepare(args: argparse.Namespace) -> dict[str, Any]:
 
 
 def main() -> None:
+    """Main."""
     started = time.perf_counter()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s [%(name)s] %(message)s")
     args = parse_args()

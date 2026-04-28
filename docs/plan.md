@@ -24,17 +24,20 @@ Outputs are `chunks_*.json` under `<data>/processed/`.
 
 `app/prepare_payloads.py` converts chunk rows to Qdrant-ready point dictionaries with:
 
-- deterministic `id` (UUID5 over SHA-256 `content_hash` of `payload.text`)
+- deterministic `id` (UUID5 over v2 composite key: `source + document_id + chunk_id`)
 - empty `vector` placeholder (filled later unless already present)
 - normalized payload metadata for filtering and traceability
 
 Current payload fields include:
 
-- identity/lineage: `chunk_id`, `chunk_id_parent`, `was_split`, `split_index`
+- identity/lineage: `document_id`, `chunk_id`, `chunk_id_parent`, `was_split`, `split_index`
 - content: `text`, `embed_text`, `synthetic_questions`
 - counters: `token_count`, `embed_token_count`, `synthetic_questions_used`, `synthetic_questions_trimmed`
 - filter/audit: `source`, `doc_type`, `section`, `language`, `tags`, `content_hash`, `ingest_run_id`, `ingest_ts`
 - lifecycle: `lifecycle_status`, `deleted_at`, `deleted_by_run_id`
+
+Migration note:
+- clean-cut replacement mode uses only v2 `id` as authoritative identity and reconcile input.
 
 Implementation notes:
 

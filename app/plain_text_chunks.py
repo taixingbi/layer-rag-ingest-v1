@@ -22,6 +22,7 @@ logger = logging.getLogger(__name__)
 
 
 def configure_logging(*, verbose: bool) -> None:
+    """Configure logging."""
     level = logging.DEBUG if verbose else logging.INFO
     logging.basicConfig(
         level=level,
@@ -32,6 +33,7 @@ def configure_logging(*, verbose: bool) -> None:
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse args."""
     parser = argparse.ArgumentParser(
         description=(
             "Convert a text file into Stage 1 chunks "
@@ -68,6 +70,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def read_text(path: Path) -> str:
+    """Read text."""
     if not path.exists():
         raise FileNotFoundError(f"Input file not found: {path}")
     logger.info("Reading input file: %s", path.resolve())
@@ -85,6 +88,7 @@ def read_text(path: Path) -> str:
 
 
 def is_heading(line: str) -> bool:
+    """Is heading."""
     s = line.strip()
     if not s or len(s) > 80:
         return False
@@ -99,6 +103,7 @@ def is_heading(line: str) -> bool:
 
 
 def _starts_new_paragraph(line: str, prev_line: str) -> bool:
+    """ starts new paragraph."""
     if not prev_line:
         return False
     if line.startswith(("•", "-", "*")):
@@ -113,6 +118,7 @@ def _starts_new_paragraph(line: str, prev_line: str) -> bool:
 
 
 def _split_dense_block(block: str) -> list[str]:
+    """ split dense block."""
     lines = [ln.strip() for ln in block.splitlines() if ln.strip()]
     if not lines:
         return []
@@ -133,12 +139,14 @@ def _split_dense_block(block: str) -> list[str]:
 
 
 def split_sections_and_paragraphs(text: str) -> list[tuple[str, str]]:
+    """Split sections and paragraphs."""
     lines = text.splitlines()
     current_section = "ROOT"
     current_lines: list[str] = []
     chunks: list[tuple[str, str]] = []
 
     def flush_section(section: str, section_lines: list[str]) -> None:
+        """Flush section."""
         section_text = "\n".join(section_lines).strip()
         if not section_text:
             return
@@ -174,13 +182,16 @@ def split_sections_and_paragraphs(text: str) -> list[tuple[str, str]]:
 def build_stage1_chunks(
     section_paragraphs: list[tuple[str, str]],
     chunk_id_width: int,
+    document_id: str,
 ) -> list[dict[str, Any]]:
+    """Build stage1 chunks."""
     chunks: list[dict[str, Any]] = []
     for idx, (section, paragraph) in enumerate(section_paragraphs, start=1):
         chunk_id = str(idx).zfill(chunk_id_width)
         chunks.append(
             {
                 "chunk_id": chunk_id,
+                "document_id": document_id,
                 "section": section,
                 "text": paragraph,
                 "synthetic_questions": [],
@@ -190,6 +201,7 @@ def build_stage1_chunks(
 
 
 def write_json(path: Path, payload: list[dict[str, Any]]) -> None:
+    """Write json."""
     logger.info("Writing %d chunk(s) to %s", len(payload), path.resolve())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(
@@ -204,6 +216,7 @@ def _process_single_file(
     output_path: Path,
     chunk_id_width: int,
 ) -> int:
+    """ process single file."""
     text = read_text(input_path)
     section_paragraphs = split_sections_and_paragraphs(text)
     if not section_paragraphs:
@@ -211,9 +224,11 @@ def _process_single_file(
 
     logger.info("Building %d Stage 1 chunk record(s)", len(section_paragraphs))
 
+    document_id = input_path.stem
     payload = build_stage1_chunks(
         section_paragraphs=section_paragraphs,
         chunk_id_width=chunk_id_width,
+        document_id=document_id,
     )
     write_json(output_path, payload)
     logger.info("Done: wrote %d Stage 1 chunk(s) to %s", len(payload), output_path.resolve())
@@ -221,6 +236,7 @@ def _process_single_file(
 
 
 def main() -> None:
+    """Main."""
     started = time.perf_counter()
     args = parse_args()
     configure_logging(verbose=args.verbose)

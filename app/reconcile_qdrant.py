@@ -23,6 +23,7 @@ load_dotenv()
 
 
 def _required_env(name: str) -> str:
+    """ required env."""
     v = (os.getenv(name) or "").strip()
     if not v:
         raise RuntimeError(f"Missing required environment variable: {name}")
@@ -30,6 +31,7 @@ def _required_env(name: str) -> str:
 
 
 def _resolve_collection_name(collection_name: str, env_name: str) -> str:
+    """ resolve collection name."""
     c = (collection_name or "").strip()
     if not c:
         raise RuntimeError("Collection name is empty. Set COLLECTION_NAME or pass --collection.")
@@ -42,14 +44,17 @@ def _resolve_collection_name(collection_name: str, env_name: str) -> str:
 
 
 def _now_est_iso() -> str:
+    """ now est iso."""
     return datetime.now(_EST).isoformat()
 
 
 def _default_run_id() -> str:
+    """ default run id."""
     return datetime.now(_EST).strftime("reconcile_%Y%m%d_%H%M%S_EST")
 
 
 def _parse_deleted_at(value: Any) -> datetime | None:
+    """ parse deleted at."""
     if not value:
         return None
     s = str(value).strip()
@@ -62,6 +67,7 @@ def _parse_deleted_at(value: Any) -> datetime | None:
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse args."""
     p = argparse.ArgumentParser(description="Reconcile stale points against a run manifest.")
     p.add_argument("--manifest-path", required=True, help="Path to ingest_manifest_<run_id>.json")
     p.add_argument("--collection", default=(os.getenv("COLLECTION_NAME") or "").strip())
@@ -94,6 +100,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def _load_manifest(path: Path) -> dict[str, Any]:
+    """ load manifest."""
     data = json.loads(path.read_text(encoding="utf-8"))
     if not isinstance(data, dict):
         raise ValueError("Manifest must be a JSON object.")
@@ -101,12 +108,14 @@ def _load_manifest(path: Path) -> dict[str, Any]:
 
 
 def _scope_matches_item(item: dict[str, Any], *, scope_key: str, scope_value: str) -> bool:
+    """ scope matches item."""
     if scope_key == "collection":
         return True
     return str(item.get(scope_key) or "") == scope_value
 
 
 def _fetch_points(client: QdrantClient, *, collection: str, flt: models.Filter | None) -> list[Any]:
+    """ fetch points."""
     out: list[Any] = []
     offset: Any = None
     while True:
@@ -131,6 +140,7 @@ def _fetch_points(client: QdrantClient, *, collection: str, flt: models.Filter |
 
 
 def _scope_filter(*, scope_key: str, scope_value: str, lifecycle_status: str | None = None) -> models.Filter | None:
+    """ scope filter."""
     must: list[models.FieldCondition] = []
     if scope_key in {"source", "doc_type"}:
         must.append(models.FieldCondition(key=scope_key, match=models.MatchValue(value=scope_value)))
@@ -144,6 +154,7 @@ def _scope_filter(*, scope_key: str, scope_value: str, lifecycle_status: str | N
 def _set_payload_in_batches(
     client: QdrantClient, *, collection: str, ids: list[Any], payload: dict[str, Any], batch_size: int = 256
 ) -> None:
+    """ set payload in batches."""
     for i in range(0, len(ids), batch_size):
         batch = ids[i : i + batch_size]
         client.set_payload(
@@ -154,6 +165,7 @@ def _set_payload_in_batches(
 
 
 def _delete_in_batches(client: QdrantClient, *, collection: str, ids: list[Any], batch_size: int = 256) -> None:
+    """ delete in batches."""
     for i in range(0, len(ids), batch_size):
         batch = ids[i : i + batch_size]
         client.delete(
@@ -164,6 +176,7 @@ def _delete_in_batches(client: QdrantClient, *, collection: str, ids: list[Any],
 
 
 def main() -> None:
+    """Main."""
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s [%(name)s] %(message)s")
     args = parse_args()
     run_id = args.run_id.strip() or _default_run_id()

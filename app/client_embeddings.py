@@ -21,6 +21,7 @@ EMBEDDINGS_BASE_URL = (
 
 
 def _order_embeddings(items: list[dict[str, Any]], n: int) -> list[list[float]]:
+    """ order embeddings."""
     if len(items) != n:
         return [e["embedding"] for e in sorted(items, key=lambda x: x["index"])]
     try:
@@ -64,6 +65,7 @@ def embeddings(
         payload = {"model": model, "input": input_text}
 
     def _do(c: httpx.Client) -> dict[str, Any]:
+        """ do."""
         r = c.post(url, json=payload, headers=headers, timeout=timeout)
         r.raise_for_status()
         return r.json()

@@ -1,9 +1,10 @@
 [
   {
-    "id": "0312bee0-8d90-5c47-afd2-4d034e2794d1",
+    "id": "2a85321e-b681-5604-83da-6e6694be5914",
     "vector": [],
     "payload": {
       "chunk_id": "0001",
+      "document_id": "layer-gateway-inference-v1__docs.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -16,8 +17,8 @@
       ],
       "text": "This document is a quick technical reference for `layer-gateway-inference-v1`.",
       "embed_text": "[SECTION: Layer Gateway Reference]\nThis document is a quick technical reference for `layer-gateway-inference-v1`.\nQ: What is the purpose of this document?\nQ: Which version of layer gateway inference is referenced?\nQ: Is there any information about features or usage within this text?",
-      "token_count": 9,
-      "embed_token_count": 42,
+      "token_count": 23,
+      "embed_token_count": 71,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
@@ -27,15 +28,33 @@
       ],
       "content_hash": "d2e87e586605ae9f9a5289b5b972490c3d4d366c8d0ef79c360910721765ac07",
       "source": "repo_layer-gateway-inference-v1__docs.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "b2cd1ebb-3921-5440-abbe-6dd743a5ddeb",
+    "id": "39369561-86ea-54d8-9df7-b19bd0e2f1e2",
     "vector": [],
     "payload": {
       "chunk_id": "0002",
+      "document_id": "layer-gateway-inference-v1__docs.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -47,27 +66,45 @@
         "1)_what_this_service_does"
       ],
       "text": "The gateway accepts OpenAI-compatible chat requests and routes them to healthy vLLM backends.\n\nPrimary route:\n\n- `POST /v1/chat/completions`\n\nOperational routes:\n\n- `GET /healthz`\n- `GET /metrics`",
-      "embed_text": "[SECTION: 1) What this service does]\nThe gateway accepts OpenAI-compatible chat requests and routes them to healthy vLLM backends.\n\nPrimary route:\n\n- `POST /v1/chat/completions`\n\nOperational routes:\n\n- `GET /healthz`\n- `GET /metrics`\nQ: What HTTP method is used for the primary route?\nQ: What is the purpose of the gateway?\nQ: Which backends does the gateway route chat requests to?",
-      "token_count": 26,
-      "embed_token_count": 60,
+      "embed_text": "[SECTION: 1) What this service does]\nThe gateway accepts OpenAI-compatible chat requests and routes them to healthy vLLM backends.\n\nPrimary route:\n\n- `POST /v1/chat/completions`\n\nOperational routes:\n\n- `GET /healthz`\n- `GET /metrics`\nQ: What HTTP method is used for the primary route?\nQ: What does the gateway accept?\nQ: Which backends does the gateway route chat requests to?",
+      "token_count": 63,
+      "embed_token_count": 111,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What HTTP method is used for the primary route?",
-        "What is the purpose of the gateway?",
+        "What does the gateway accept?",
         "Which backends does the gateway route chat requests to?"
       ],
       "content_hash": "0b92c1f981ff3bc3b5498556812edde26d99684102bc3e41b79738af23f348c7",
       "source": "repo_layer-gateway-inference-v1__docs.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "5ea1b0a5-185e-595f-840f-5c6f5f2f4964",
+    "id": "d904aa63-91de-5d9c-9fd3-9752f7b93f88",
     "vector": [],
     "payload": {
       "chunk_id": "0003",
+      "document_id": "layer-gateway-inference-v1__docs.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -80,8 +117,8 @@
       ],
       "text": "1. Request arrives at `routes.py`.\n2. Gateway validates payload and assigns/requests correlation IDs.\n3. Request is classified (small/medium/large/streaming_long).\n4. Request enters `AdmissionQueue`.\n5. Scheduler picks an eligible backend using score + health policies.\n6. Proxy forwards request to selected backend (with retry policy).\n7. Runtime health/latency signals are updated.\n8. Structured logs and Prometheus metrics are emitted.",
       "embed_text": "[SECTION: 2) High-level request flow]\n1. Request arrives at `routes.py`.\n2. Gateway validates payload and assigns/requests correlation IDs.\n3. Request is classified (small/medium/large/streaming_long).\n4. Request enters `AdmissionQueue`.\n5. Scheduler picks an eligible backend using score + health policies.\n6. Proxy forwards request to selected backend (with retry policy).\n7. Runtime health/latency signals are updated.\n8. Structured logs and Prometheus metrics are emitted.\nQ: What is the first step when a request arrives?\nQ: Which queue does the request enter after classification?\nQ: What policy does the scheduler use to pick an eligible backend?",
-      "token_count": 57,
-      "embed_token_count": 93,
+      "token_count": 124,
+      "embed_token_count": 178,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
@@ -91,15 +128,33 @@
       ],
       "content_hash": "134388a6ccc9319a194e48562ed0c7032249f743c693d9ff4d8f68f1aac72ee7",
       "source": "repo_layer-gateway-inference-v1__docs.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "6bcd2e28-62e0-549d-a1d9-1d2b6874807b",
+    "id": "77bb35cd-357f-5425-be2d-19ed970b7f9e",
     "vector": [],
     "payload": {
       "chunk_id": "0004",
+      "document_id": "layer-gateway-inference-v1__docs.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -111,27 +166,45 @@
         "2)_high-level_request_flow"
       ],
       "text": "```mermaid\nflowchart LR\n    C[Client] --> A[API Routes]\n    A --> Q[AdmissionQueue]\n    Q --> S[Scheduler]\n    S --> R[Backend Registry]\n    S --> P[Proxy Client]\n    P --> B1[vLLM Backend 1]\n    P --> B2[vLLM Backend 2]\n    A --> L[Structured Logs]\n    A --> M[Prometheus Metrics]\n```",
-      "embed_text": "[SECTION: 2) High-level request flow]\n```mermaid\nflowchart LR\n    C[Client] --> A[API Routes]\n    A --> Q[AdmissionQueue]\n    Q --> S[Scheduler]\n    S --> R[Backend Registry]\n    S --> P[Proxy Client]\n    P --> B1[vLLM Backend 1]\n    P --> B2[vLLM Backend 2]\n    A --> L[Structured Logs]\n    A --> M[Prometheus Metrics]\n```\nQ: What are the main components involved in the high-level request flow?\nQ: Which component handles the admission queue?\nQ: How many vLLM backends are there?",
-      "token_count": 40,
-      "embed_token_count": 71,
+      "embed_text": "[SECTION: 2) High-level request flow]\n```mermaid\nflowchart LR\n    C[Client] --> A[API Routes]\n    A --> Q[AdmissionQueue]\n    Q --> S[Scheduler]\n    S --> R[Backend Registry]\n    S --> P[Proxy Client]\n    P --> B1[vLLM Backend 1]\n    P --> B2[vLLM Backend 2]\n    A --> L[Structured Logs]\n    A --> M[Prometheus Metrics]\n```\nQ: What are the main components involved in the high-level request flow?\nQ: Which component is responsible for handling structured logs?\nQ: How many vLLM backends are there in the system?",
+      "token_count": 104,
+      "embed_token_count": 162,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What are the main components involved in the high-level request flow?",
-        "Which component handles the admission queue?",
-        "How many vLLM backends are there?"
+        "Which component is responsible for handling structured logs?",
+        "How many vLLM backends are there in the system?"
       ],
       "content_hash": "23b5e62c994a0f87f93b8867bc6ac24704b7f9edf2b8afd5155c1b034db12ac0",
       "source": "repo_layer-gateway-inference-v1__docs.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "e5e3f675-d0da-595a-9f93-7aaab91a08c1",
+    "id": "099420f9-282b-590a-a28a-b40bbb9b0fad",
     "vector": [],
     "payload": {
       "chunk_id": "0005",
+      "document_id": "layer-gateway-inference-v1__docs.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -143,27 +216,45 @@
         "3)_core_modules"
       ],
       "text": "- `app/api/routes.py`: API handlers, request validation, queue admission.\n- `app/queue/admission_queue.py`: bounded queue + queue gauges.\n- `app/scheduler/dispatcher.py`: dispatch loop and scheduling decisions.\n- `app/scheduler/scoring.py`: backend score function (inflight/latency/error/hot/overload).\n- `app/proxy/client.py`: upstream HTTP call path, retries, streaming handling.\n- `app/backends/registry.py`: backend state registry and eligibility checks.\n- `app/backends/health.py`: circuit-breaker transitions (`closed`, `open`, `half_open`).\n- `app/core/logging.py`: structured JSON logging format + gateway event logger.\n- `app/metrics/prometheus.py`: metric definitions and helpers.\n- `app/metrics/sync.py`: sync in-memory backend state to Prometheus gauges.",
-      "embed_text": "[SECTION: 3) Core modules]\n- `app/api/routes.py`: API handlers, request validation, queue admission.\n- `app/queue/admission_queue.py`: bounded queue + queue gauges.\n- `app/scheduler/dispatcher.py`: dispatch loop and scheduling decisions.\n- `app/scheduler/scoring.py`: backend score function (inflight/latency/error/hot/overload).\n- `app/proxy/client.py`: upstream HTTP call path, retries, streaming handling.\n- `app/backends/registry.py`: backend state registry and eligibility checks.\n- `app/backends/health.py`: circuit-breaker transitions (`closed`, `open`, `half_open`).\n- `app/core/logging.py`: structured JSON logging format + gateway event logger.\n- `app/metrics/prometheus.py`: metric definitions and helpers.\n- `app/metrics/sync.py`: sync in-memory backend state to Prometheus gauges.\nQ: What is the purpose of app/api/routes.py?\nQ: Which file handles backend score function in the scheduler?\nQ: What does app/backends/health.py manage?",
-      "token_count": 77,
-      "embed_token_count": 103,
+      "embed_text": "[SECTION: 3) Core modules]\n- `app/api/routes.py`: API handlers, request validation, queue admission.\n- `app/queue/admission_queue.py`: bounded queue + queue gauges.\n- `app/scheduler/dispatcher.py`: dispatch loop and scheduling decisions.\n- `app/scheduler/scoring.py`: backend score function (inflight/latency/error/hot/overload).\n- `app/proxy/client.py`: upstream HTTP call path, retries, streaming handling.\n- `app/backends/registry.py`: backend state registry and eligibility checks.\n- `app/backends/health.py`: circuit-breaker transitions (`closed`, `open`, `half_open`).\n- `app/core/logging.py`: structured JSON logging format + gateway event logger.\n- `app/metrics/prometheus.py`: metric definitions and helpers.\n- `app/metrics/sync.py`: sync in-memory backend state to Prometheus gauges.\nQ: What is the purpose of app/api/routes.py?\nQ: Which file handles circuit-breaker transitions for backend health?\nQ: What does app/core/logging.py manage?",
+      "token_count": 273,
+      "embed_token_count": 330,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is the purpose of app/api/routes.py?",
-        "Which file handles backend score function in the scheduler?",
-        "What does app/backends/health.py manage?"
+        "Which file handles circuit-breaker transitions for backend health?",
+        "What does app/core/logging.py manage?"
       ],
       "content_hash": "b94381195873586a086127721f64823af7090d7e297a844cdbbf1d7a67ffcf09",
       "source": "repo_layer-gateway-inference-v1__docs.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "9ac958d0-5818-5261-9c3a-865fdc6a3178",
+    "id": "00e6c83f-abc4-58db-b8b1-6cc90eff7606",
     "vector": [],
     "payload": {
       "chunk_id": "0006",
+      "document_id": "layer-gateway-inference-v1__docs.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -175,27 +266,45 @@
         "4)_important_runtime_concepts"
       ],
       "text": "- **AdmissionQueue**: bounded staging queue before dispatch; protects system under burst.\n- **Request class**: estimated work size from request body; used in routing fairness.\n- **Circuit breaker**:\n  - `closed`: normal traffic\n  - `open`: backend temporarily blocked\n  - `half_open`: limited probe traffic after cooldown\n- **drained**: administrative flag to stop new scheduling to a backend.\n- **recent_error_rate**: EWMA failure signal for eligibility/scoring.",
-      "embed_text": "[SECTION: 4) Important runtime concepts]\n- **AdmissionQueue**: bounded staging queue before dispatch; protects system under burst.\n- **Request class**: estimated work size from request body; used in routing fairness.\n- **Circuit breaker**:\n  - `closed`: normal traffic\n  - `open`: backend temporarily blocked\n  - `half_open`: limited probe traffic after cooldown\n- **drained**: administrative flag to stop new scheduling to a backend.\n- **recent_error_rate**: EWMA failure signal for eligibility/scoring.\nQ: What is the purpose of the AdmissionQueue?\nQ: What does the Circuit breaker do when it is in the half_open state?\nQ: What does the drained flag indicate?",
-      "token_count": 61,
-      "embed_token_count": 95,
+      "embed_text": "[SECTION: 4) Important runtime concepts]\n- **AdmissionQueue**: bounded staging queue before dispatch; protects system under burst.\n- **Request class**: estimated work size from request body; used in routing fairness.\n- **Circuit breaker**:\n  - `closed`: normal traffic\n  - `open`: backend temporarily blocked\n  - `half_open`: limited probe traffic after cooldown\n- **drained**: administrative flag to stop new scheduling to a backend.\n- **recent_error_rate**: EWMA failure signal for eligibility/scoring.\nQ: What is the purpose of the AdmissionQueue?\nQ: What does the Circuit breaker do when it is in the half_open state?\nQ: What does the drained administrative flag signify?",
+      "token_count": 134,
+      "embed_token_count": 190,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is the purpose of the AdmissionQueue?",
         "What does the Circuit breaker do when it is in the half_open state?",
-        "What does the drained flag indicate?"
+        "What does the drained administrative flag signify?"
       ],
       "content_hash": "1512ba115718c56959295c1dd605b8b3d31aa16ee92f3a1da57e979db1c8fee8",
       "source": "repo_layer-gateway-inference-v1__docs.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "a81d5c1a-9aba-5fc7-ad55-6b9a6749af6b",
+    "id": "91ad37bc-dd55-5862-bf04-e4676cd2f9fd",
     "vector": [],
     "payload": {
       "chunk_id": "0007",
+      "document_id": "layer-gateway-inference-v1__docs.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -208,8 +317,8 @@
       ],
       "text": "Config is loaded by `load_gateway_config()` from:\n\n1. explicit path argument (if passed),\n2. `GATEWAY_CONFIG` env var,\n3. default `config.yaml`.\n\nMain config sections:\n\n- `server`: bind host/port, request timeout.\n- `scheduler`: queue sizing and dispatch cadence.\n- `routing`: scoring weights and anti-hotspot controls.\n- `backends`: upstream endpoints and concurrency limits.\n- `health`: circuit-breaker thresholds.\n- `retry`: retry attempts and retryable status codes.",
       "embed_text": "[SECTION: 5) Config usage]\nConfig is loaded by `load_gateway_config()` from:\n\n1. explicit path argument (if passed),\n2. `GATEWAY_CONFIG` env var,\n3. default `config.yaml`.\n\nMain config sections:\n\n- `server`: bind host/port, request timeout.\n- `scheduler`: queue sizing and dispatch cadence.\n- `routing`: scoring weights and anti-hotspot controls.\n- `backends`: upstream endpoints and concurrency limits.\n- `health`: circuit-breaker thresholds.\n- `retry`: retry attempts and retryable status codes.\nQ: What function loads the config?\nQ: What are the sources for loading the config?\nQ: What are the main sections in the config?",
-      "token_count": 61,
-      "embed_token_count": 89,
+      "token_count": 156,
+      "embed_token_count": 202,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
@@ -219,15 +328,33 @@
       ],
       "content_hash": "eb81098691ce97c473002bc038447ed27ebb69ead2936cc3ba5425690662d4ab",
       "source": "repo_layer-gateway-inference-v1__docs.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "2a53b855-f00f-506c-9297-1e630fa70cb9",
+    "id": "b234d1ab-206d-5958-afb7-934c7e52b199",
     "vector": [],
     "payload": {
       "chunk_id": "0008",
+      "document_id": "layer-gateway-inference-v1__docs.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -239,27 +366,45 @@
         "6)_logging_and_tracing_ids"
       ],
       "text": "Structured logs are emitted as one JSON line per event.\n\nGateway event fields include:\n\n- `event`, `service`, `env`, `trace_id`, `request_id`, `session_id`,\n- optional `backend`, `latency_ms`, `status_code`, and `error`.\n\nID behavior:\n\n- `request_id`: from `x-request-id` or generated by gateway.\n- `trace_id`: from `x-trace-id` if provided by caller.\n- `session_id`: from `x-session-id` if provided by caller.",
-      "embed_text": "[SECTION: 6) Logging and tracing IDs]\nStructured logs are emitted as one JSON line per event.\n\nGateway event fields include:\n\n- `event`, `service`, `env`, `trace_id`, `request_id`, `session_id`,\n- optional `backend`, `latency_ms`, `status_code`, and `error`.\n\nID behavior:\n\n- `request_id`: from `x-request-id` or generated by gateway.\n- `trace_id`: from `x-trace-id` if provided by caller.\n- `session_id`: from `x-session-id` if provided by caller.\nQ: What is the source of the request_id?\nQ: Which header can provide the trace_id?\nQ: What happens if x-session-id is provided by the caller?",
-      "token_count": 54,
-      "embed_token_count": 85,
+      "embed_text": "[SECTION: 6) Logging and tracing IDs]\nStructured logs are emitted as one JSON line per event.\n\nGateway event fields include:\n\n- `event`, `service`, `env`, `trace_id`, `request_id`, `session_id`,\n- optional `backend`, `latency_ms`, `status_code`, and `error`.\n\nID behavior:\n\n- `request_id`: from `x-request-id` or generated by gateway.\n- `trace_id`: from `x-trace-id` if provided by caller.\n- `session_id`: from `x-session-id` if provided by caller.\nQ: What is the source of the request_id field?\nQ: Which HTTP header can provide the trace_id?\nQ: What happens if x-session-id is not provided by the caller?",
+      "token_count": 153,
+      "embed_token_count": 211,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is the source of the request_id?",
-        "Which header can provide the trace_id?",
-        "What happens if x-session-id is provided by the caller?"
+        "What is the source of the request_id field?",
+        "Which HTTP header can provide the trace_id?",
+        "What happens if x-session-id is not provided by the caller?"
       ],
       "content_hash": "fbbe9f6bc3da51b90756c6e93eb00764a908f4102df237370f8b10c4f09a2462",
       "source": "repo_layer-gateway-inference-v1__docs.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "cd31972f-f084-5d34-a3a7-49d484d66cc2",
+    "id": "d1c4882a-26d4-5332-a070-024fca56d055",
     "vector": [],
     "payload": {
       "chunk_id": "0009",
+      "document_id": "layer-gateway-inference-v1__docs.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -271,27 +416,45 @@
         "6)_logging_and_tracing_ids"
       ],
       "text": "```mermaid\nflowchart TD\n    H[Incoming headers] --> X1{x-request-id present?}\n    X1 -- yes --> RID[use x-request-id]\n    X1 -- no --> NEWRID[generate request_id]\n    H --> X2{x-trace-id present?}\n    X2 -- yes --> TID[use trace_id]\n    X2 -- no --> TID0[trace_id = '-']\n    H --> X3{x-session-id present?}\n    X3 -- yes --> SID[use session_id]\n    X3 -- no --> SID0[session_id = '-']\n```",
-      "embed_text": "[SECTION: 6) Logging and tracing IDs]\n```mermaid\nflowchart TD\n    H[Incoming headers] --> X1{x-request-id present?}\n    X1 -- yes --> RID[use x-request-id]\n    X1 -- no --> NEWRID[generate request_id]\n    H --> X2{x-trace-id present?}\n    X2 -- yes --> TID[use trace_id]\n    X2 -- no --> TID0[trace_id = '-']\n    H --> X3{x-session-id present?}\n    X3 -- yes --> SID[use session_id]\n    X3 -- no --> SID0[session_id = '-']\n```\nQ: What happens if the x-request-id is present?\nQ: What value does session_id take if it is not present?\nQ: How is trace_id handled if it is not present?",
-      "token_count": 55,
-      "embed_token_count": 90,
+      "embed_text": "[SECTION: 6) Logging and tracing IDs]\n```mermaid\nflowchart TD\n    H[Incoming headers] --> X1{x-request-id present?}\n    X1 -- yes --> RID[use x-request-id]\n    X1 -- no --> NEWRID[generate request_id]\n    H --> X2{x-trace-id present?}\n    X2 -- yes --> TID[use trace_id]\n    X2 -- no --> TID0[trace_id = '-']\n    H --> X3{x-session-id present?}\n    X3 -- yes --> SID[use session_id]\n    X3 -- no --> SID0[session_id = '-']\n```\nQ: What happens if the x-request-id is present?\nQ: What value does session_id take if it's not present?\nQ: What is the trace_id set to if it's not present?",
+      "token_count": 149,
+      "embed_token_count": 211,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What happens if the x-request-id is present?",
-        "What value does session_id take if it is not present?",
-        "How is trace_id handled if it is not present?"
+        "What value does session_id take if it's not present?",
+        "What is the trace_id set to if it's not present?"
       ],
       "content_hash": "72b6d3e3fe4ee5b8a151bba8db6cbf955ecc073cd4e0d4b336d4c4bfa5b3561d",
       "source": "repo_layer-gateway-inference-v1__docs.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "99de7c83-376c-5662-844b-1fdff13782a4",
+    "id": "b73dd4c5-9007-5b47-a778-15c3c0e8b9ac",
     "vector": [],
     "payload": {
       "chunk_id": "0010",
+      "document_id": "layer-gateway-inference-v1__docs.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -304,8 +467,8 @@
       ],
       "text": "Traffic and reliability:\n\n- `gateway_requests_total`\n- `gateway_request_errors_total{backend=...}`\n- `gateway_request_retries_total`\n- `gateway_rejections_total{reason=...}`\n\nQueue pressure:\n\n- `gateway_queue_depth`\n- `gateway_queue_age_ms`\n\nBackend state:\n\n- `gateway_backend_inflight{backend=...}`\n- `gateway_backend_error_rate{backend=...}`\n- `gateway_backend_circuit_state{backend=...}`\n- `gateway_backend_ewma_ttft_ms{backend=...}`\n- `gateway_backend_ewma_e2e_ms{backend=...}`",
       "embed_text": "[SECTION: 7) Metrics quick map]\nTraffic and reliability:\n\n- `gateway_requests_total`\n- `gateway_request_errors_total{backend=...}`\n- `gateway_request_retries_total`\n- `gateway_rejections_total{reason=...}`\n\nQueue pressure:\n\n- `gateway_queue_depth`\n- `gateway_queue_age_ms`\n\nBackend state:\n\n- `gateway_backend_inflight{backend=...}`\n- `gateway_backend_error_rate{backend=...}`\n- `gateway_backend_circuit_state{backend=...}`\n- `gateway_backend_ewma_ttft_ms{backend=...}`\n- `gateway_backend_ewma_e2e_ms{backend=...}`\nQ: What metrics are used to measure traffic and reliability?\nQ: How is queue pressure monitored?\nQ: What does gateway_backend_ewma_ttft_ms measure?",
-      "token_count": 29,
-      "embed_token_count": 55,
+      "token_count": 198,
+      "embed_token_count": 253,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
@@ -315,15 +478,33 @@
       ],
       "content_hash": "972591b56dfe125615cf3c153fde8ee006f4829c936b0945672925d53bf433bc",
       "source": "repo_layer-gateway-inference-v1__docs.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "cddb7eae-ef4a-55e9-8cde-12a62d91486d",
+    "id": "0999e609-6e8e-5573-9fa8-87535746152b",
     "vector": [],
     "payload": {
       "chunk_id": "0011",
+      "document_id": "layer-gateway-inference-v1__docs.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -336,8 +517,8 @@
       ],
       "text": "Latency:\n\n- `gateway_request_latency_ms` (histogram)",
       "embed_text": "[SECTION: 7) Metrics quick map]\nLatency:\n\n- `gateway_request_latency_ms` (histogram)\nQ: What is the metric for gateway request latency in milliseconds?\nQ: Is there a histogram metric for gateway request latency?\nQ: Does the latency metric include gateway_request_latency_ms?",
-      "token_count": 4,
-      "embed_token_count": 37,
+      "token_count": 21,
+      "embed_token_count": 88,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
@@ -347,15 +528,33 @@
       ],
       "content_hash": "d0cb9f97f959c2182ce0dc2765073035908b5d508cf2e6e4551898cddb6f6680",
       "source": "repo_layer-gateway-inference-v1__docs.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "83025891-f699-5df5-9b10-74bb5d1614c0",
+    "id": "d15754f7-08a3-5904-b440-1ce3d885e2c6",
     "vector": [],
     "payload": {
       "chunk_id": "0012",
+      "document_id": "layer-gateway-inference-v1__docs.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -367,27 +566,45 @@
         "8)_common_failure_patterns"
       ],
       "text": "- **Queue full / age exceeded**: gateway returns 503; tune queue/scheduler or reduce load.\n- **Transport errors/timeouts**: upstream unreachable or slow; check backend URLs and network path.\n- **Frequent retries**: one backend unstable; check `recent_error_rate`, circuit state, and backend logs.\n- **Circuit open**: backend failing repeatedly; wait cooldown or drain backend for investigation.",
-      "embed_text": "[SECTION: 8) Common failure patterns]\n- **Queue full / age exceeded**: gateway returns 503; tune queue/scheduler or reduce load.\n- **Transport errors/timeouts**: upstream unreachable or slow; check backend URLs and network path.\n- **Frequent retries**: one backend unstable; check `recent_error_rate`, circuit state, and backend logs.\n- **Circuit open**: backend failing repeatedly; wait cooldown or drain backend for investigation.\nQ: What should be done if the queue is full or exceeds age limits?\nQ: How can transport errors or timeouts be addressed?\nQ: What steps are recommended when encountering frequent retries?",
-      "token_count": 53,
-      "embed_token_count": 90,
+      "embed_text": "[SECTION: 8) Common failure patterns]\n- **Queue full / age exceeded**: gateway returns 503; tune queue/scheduler or reduce load.\n- **Transport errors/timeouts**: upstream unreachable or slow; check backend URLs and network path.\n- **Frequent retries**: one backend unstable; check `recent_error_rate`, circuit state, and backend logs.\n- **Circuit open**: backend failing repeatedly; wait cooldown or drain backend for investigation.\nQ: What actions should be taken if the queue is full or exceeds age limits?\nQ: How should transport errors or timeouts be addressed?\nQ: What steps are recommended when encountering frequent retries?",
+      "token_count": 121,
+      "embed_token_count": 180,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What should be done if the queue is full or exceeds age limits?",
-        "How can transport errors or timeouts be addressed?",
+        "What actions should be taken if the queue is full or exceeds age limits?",
+        "How should transport errors or timeouts be addressed?",
         "What steps are recommended when encountering frequent retries?"
       ],
       "content_hash": "ea38df086f072b5eb7ee8ae73e3f52e1aa5ac5c580f4f8d4f316ab996b487376",
       "source": "repo_layer-gateway-inference-v1__docs.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "83a3fd7b-e6fb-5752-b4de-31e3468d7bf6",
+    "id": "02fed12c-5652-5b17-8e8a-fe7a0610f7b4",
     "vector": [],
     "payload": {
       "chunk_id": "0013",
+      "document_id": "layer-gateway-inference-v1__docs.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -399,20 +616,37 @@
         "9)_related_docs"
       ],
       "text": "- `README.md`: setup, run, and deployment basics.\n- `sla.md`: SLO/SLA targets and alerting baseline.",
-      "embed_text": "[SECTION: 9) Related docs]\n- `README.md`: setup, run, and deployment basics.\n- `sla.md`: SLO/SLA targets and alerting baseline.\nQ: What documents cover setup, run, and deployment basics?\nQ: What document details SLO/SLA targets and alerting baselines?\nQ: Are there any other documents mentioned besides README.md and sla.md?",
-      "token_count": 14,
-      "embed_token_count": 47,
+      "embed_text": "[SECTION: 9) Related docs]\n- `README.md`: setup, run, and deployment basics.\n- `sla.md`: SLO/SLA targets and alerting baseline.\nQ: What documents cover setup, run, and deployment basics?\nQ: What document contains SLO/SLA targets and alerting baselines?\nQ: Are there any other documents mentioned besides README.md and sla.md?",
+      "token_count": 42,
+      "embed_token_count": 107,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What documents cover setup, run, and deployment basics?",
-        "What document details SLO/SLA targets and alerting baselines?",
+        "What document contains SLO/SLA targets and alerting baselines?",
         "Are there any other documents mentioned besides README.md and sla.md?"
       ],
       "content_hash": "107d9c9662eafb3053f39730a48cae6c9a30753ad180386e79b4d3a7041b8410",
       "source": "repo_layer-gateway-inference-v1__docs.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   }
 ]

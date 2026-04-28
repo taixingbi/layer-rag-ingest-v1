@@ -121,9 +121,14 @@ This writes:
 
 Each point includes filter-ready payload fields such as:
 - `source`, `doc_type`, `section`, `language`, `tags`
+- `document_id`, `chunk_id`
 - `was_split`, `split_index`, `token_count`, `embed_token_count`
 - `content_hash`, `ingest_run_id`, `ingest_ts`
 - lifecycle: `lifecycle_status` (`active|deleted`), `deleted_at`, `deleted_by_run_id`
+
+Point identity contract (v2):
+- canonical key: `v2|source=<source>|document_id=<document_id>|chunk_id=<chunk_id>`
+- `id` is UUID5 of that key (idempotent reruns for same doc/chunk)
 
 ### 2b) Add synthetic questions to `points_*.json` (optional)
 
@@ -261,6 +266,20 @@ python3 app/rollback_ingest_run.py \
 Workflows under `.github/workflows`:
 - `lifecycle-reconcile.yml`: nightly scheduled dry-run reconcile + manual soft-delete apply (approval + `confirm_apply=YES`).
 - `lifecycle-phase2.yml`: manual hard purge / rollback dry-run and apply actions (approval + `confirm_apply=YES`).
+
+### 7) ID migration rollout (v1 -> v2)
+
+Dry-run-first sequence:
+1. Run prepare/upsert with current identity IDs.
+2. Run reconcile preview and verify stale candidates before any mutation.
+3. Apply soft-delete only after preview is reviewed.
+4. Purge old tombstones after retention window.
+
+Validation checklist:
+- same doc rerun -> no duplicate inserts (same `id`)
+- same text in two docs -> distinct `id` values
+- chunk movement in one doc -> only affected chunk IDs change
+- reconcile dry-run shows expected stale v1 candidates before apply
 
 ## Collection naming rule
 

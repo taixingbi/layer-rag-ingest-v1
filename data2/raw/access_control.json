@@ -1,0 +1,68 @@
+{
+  "repo_layer-gateway-embed-v1__design.md": {
+    "roles": ["anyuser", "hr", "recruiter", "other_employer"],
+    "groups": ["engineering"],
+    "teams": ["rag-platform"]
+  },
+  "repo_layer-gateway-embed-v1__docker.md": {
+    "roles": ["anyuser", "hr", "recruiter", "other_employer"],
+    "groups": ["engineering"],
+    "teams": ["rag-platform"]
+  },
+  "repo_layer-gateway-embed-v1__plan.md": {
+    "roles": ["anyuser", "hr", "recruiter", "other_employer"],
+    "groups": ["engineering"],
+    "teams": ["rag-platform"]
+  },
+  "repo_layer-gateway-embed-v1__request-response-and-logging.md": {
+    "roles": ["anyuser", "hr", "recruiter", "other_employer"],
+    "groups": ["engineering"],
+    "teams": ["rag-platform"]
+  },
+  "repo_layer-gateway-embed-v1__run-locally.md": {
+    "roles": ["anyuser", "hr", "recruiter", "other_employer"],
+    "groups": ["engineering"],
+    "teams": ["rag-platform"]
+  },
+  "repo_layer-gateway-embed-v1__status-codes.md": {
+    "roles": ["anyuser", "hr", "recruiter", "other_employer"],
+    "groups": ["engineering"],
+    "teams": ["rag-platform"]
+  },
+  "repo_layer-gateway-inference-v1__artichecture.md": {
+    "roles": ["anyuser", "hr", "recruiter", "other_employer"],
+    "groups": ["engineering"],
+    "teams": ["rag-platform"]
+  },
+  "repo_layer-gateway-inference-v1__docs.md": {
+    "roles": ["anyuser", "hr", "recruiter", "other_employer"],
+    "groups": ["engineering"],
+    "teams": ["rag-platform"]
+  },
+  "repo_layer-gateway-inference-v1__fallback.md": {
+    "roles": ["anyuser", "hr", "recruiter", "other_employer"],
+    "groups": ["engineering"],
+    "teams": ["rag-platform"]
+  },
+  "repo_layer-gateway-inference-v1__plan.md": {
+    "roles": ["anyuser", "hr", "recruiter", "other_employer"],
+    "groups": ["engineering"],
+    "teams": ["rag-platform"]
+  },
+  "repo_layer-gateway-inference-v1__request-trace-session-ids.md": {
+    "roles": ["anyuser", "hr", "recruiter", "other_employer"],
+    "groups": ["engineering"],
+    "teams": ["rag-platform"]
+  },
+  "repo_layer-gateway-inference-v1__sla.md": {
+    "roles": ["anyuser", "hr", "recruiter", "other_employer"],
+    "groups": ["engineering"],
+    "teams": ["rag-platform"]
+  },
+  "repo_repo": {
+    "roles": ["anyuser", "hr", "recruiter", "other_employer"],
+    "groups": ["engineering"],
+    "teams": ["rag-platform"]
+  }
+}
+

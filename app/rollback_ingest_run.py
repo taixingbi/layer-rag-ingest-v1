@@ -23,6 +23,7 @@ load_dotenv()
 
 
 def _required_env(name: str) -> str:
+    """ required env."""
     v = (os.getenv(name) or "").strip()
     if not v:
         raise RuntimeError(f"Missing required environment variable: {name}")
@@ -30,6 +31,7 @@ def _required_env(name: str) -> str:
 
 
 def _resolve_collection_name(collection_name: str, env_name: str) -> str:
+    """ resolve collection name."""
     c = (collection_name or "").strip()
     if not c:
         raise RuntimeError("Collection name is empty. Set COLLECTION_NAME or pass --collection.")
@@ -42,10 +44,12 @@ def _resolve_collection_name(collection_name: str, env_name: str) -> str:
 
 
 def _default_rollback_run_id() -> str:
+    """ default rollback run id."""
     return datetime.now(_EST).strftime("rollback_%Y%m%d_%H%M%S_EST")
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse args."""
     p = argparse.ArgumentParser(description="Rollback active lifecycle state to a target ingest run.")
     p.add_argument("--target-run-id", required=True, help="Target ingest run id to restore.")
     p.add_argument("--manifest-path", default="", help="Optional explicit manifest path.")
@@ -64,6 +68,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def _load_manifest(path: Path) -> dict[str, Any]:
+    """ load manifest."""
     data = json.loads(path.read_text(encoding="utf-8"))
     if not isinstance(data, dict):
         raise ValueError("Manifest must be JSON object.")
@@ -71,18 +76,21 @@ def _load_manifest(path: Path) -> dict[str, Any]:
 
 
 def _manifest_path(args: argparse.Namespace) -> Path:
+    """ manifest path."""
     if args.manifest_path.strip():
         return Path(args.manifest_path)
     return Path(args.manifest_dir) / f"ingest_manifest_{args.target_run_id}.json"
 
 
 def _scope_filter(*, scope_key: str, scope_value: str) -> models.Filter | None:
+    """ scope filter."""
     if scope_key == "collection":
         return None
     return models.Filter(must=[models.FieldCondition(key=scope_key, match=models.MatchValue(value=scope_value))])
 
 
 def _fetch_points(client: QdrantClient, *, collection: str, flt: models.Filter | None) -> list[Any]:
+    """ fetch points."""
     out: list[Any] = []
     offset: Any = None
     while True:
@@ -107,11 +115,13 @@ def _fetch_points(client: QdrantClient, *, collection: str, flt: models.Filter |
 
 
 def _set_payload(client: QdrantClient, *, collection: str, ids: list[Any], payload: dict[str, Any], batch_size: int = 256) -> None:
+    """ set payload."""
     for i in range(0, len(ids), batch_size):
         client.set_payload(collection_name=collection, payload=payload, points=ids[i : i + batch_size])
 
 
 def main() -> None:
+    """Main."""
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s [%(name)s] %(message)s")
     args = parse_args()
     if args.scope_key in {"source", "doc_type"} and not args.scope_value.strip():

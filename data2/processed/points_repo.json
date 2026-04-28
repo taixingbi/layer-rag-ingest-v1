@@ -1,9 +1,10 @@
 [
   {
-    "id": "29768302-4fa7-5735-ab13-f431aef9d47d",
+    "id": "fd8a38c4-5d8b-5556-8441-98c9f767a168",
     "vector": [],
     "payload": {
       "chunk_id": "0001",
+      "document_id": "repo",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -15,20 +16,37 @@
         "root"
       ],
       "text": "https://github.com/taixingbi/layer-gateway-inference-v1/tree/main/docs\nhttps://github.com/taixingbi/layer-gateway-embed-v1/tree/main/docs",
-      "embed_text": "[SECTION: ROOT]\nhttps://github.com/taixingbi/layer-gateway-inference-v1/tree/main/docs\nhttps://github.com/taixingbi/layer-gateway-embed-v1/tree/main/docs\nQ: What are the documentation links for layer-gateway-inference-v1?\nQ: What are the documentation links for layer-gateway-embed-v1?\nQ: Are there any other repositories mentioned?",
-      "token_count": 2,
-      "embed_token_count": 27,
+      "embed_text": "[SECTION: ROOT]\nhttps://github.com/taixingbi/layer-gateway-inference-v1/tree/main/docs\nhttps://github.com/taixingbi/layer-gateway-embed-v1/tree/main/docs\nQ: What URLs are mentioned in the text?\nQ: Which repositories are documented?\nQ: Where can I find the documentation for layer-gateway-inference-v1?",
+      "token_count": 59,
+      "embed_token_count": 109,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What are the documentation links for layer-gateway-inference-v1?",
-        "What are the documentation links for layer-gateway-embed-v1?",
-        "Are there any other repositories mentioned?"
+        "What URLs are mentioned in the text?",
+        "Which repositories are documented?",
+        "Where can I find the documentation for layer-gateway-inference-v1?"
       ],
       "content_hash": "e85963df4d10e55a4739b71d4582a4ca232fb720f85c786a71dd60e978406fcc",
       "source": "repo_repo",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   }
 ]

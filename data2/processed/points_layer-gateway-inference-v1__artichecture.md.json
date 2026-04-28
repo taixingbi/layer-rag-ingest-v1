@@ -1,9 +1,10 @@
 [
   {
-    "id": "ec3a7853-6e73-56a8-8db2-9486755008a0",
+    "id": "5a882deb-0c9c-599b-8647-82b4f396acf0",
     "vector": [],
     "payload": {
       "chunk_id": "0001",
+      "document_id": "layer-gateway-inference-v1__artichecture.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -15,27 +16,45 @@
         "architecture_design"
       ],
       "text": "This document describes the architecture of `layer-gateway-inference-v1`.",
-      "embed_text": "[SECTION: Architecture Design]\nThis document describes the architecture of `layer-gateway-inference-v1`.\nQ: What is described in this document?\nQ: Which layer's gateway inference version is discussed?\nQ: Is this document about a specific architecture version?",
-      "token_count": 7,
-      "embed_token_count": 34,
+      "embed_text": "[SECTION: Architecture Design]\nThis document describes the architecture of `layer-gateway-inference-v1`.\nQ: What is described in this document?\nQ: Which layer's gateway inference version is discussed?\nQ: Can you name the specific version of the layer-gateway inference mentioned?",
+      "token_count": 23,
+      "embed_token_count": 74,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is described in this document?",
         "Which layer's gateway inference version is discussed?",
-        "Is this document about a specific architecture version?"
+        "Can you name the specific version of the layer-gateway inference mentioned?"
       ],
       "content_hash": "d74df2962717a1890696e022c7c030220c2b8416f73b98ef171397e5f64a7908",
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "d9174ed0-51cc-539d-9d80-7753ed653922",
+    "id": "52897809-82f4-5cb1-a815-02e6be264a6d",
     "vector": [],
     "payload": {
       "chunk_id": "0002",
+      "document_id": "layer-gateway-inference-v1__artichecture.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -48,8 +67,8 @@
       ],
       "text": "- Provide an OpenAI-compatible inference gateway endpoint.\n- Route traffic across multiple vLLM backends with load-aware scheduling.\n- Protect upstream backends with queueing, circuit breaking, and retries.\n- Expose operational visibility through structured logs and Prometheus metrics.",
       "embed_text": "[SECTION: 1. Goals]\n- Provide an OpenAI-compatible inference gateway endpoint.\n- Route traffic across multiple vLLM backends with load-aware scheduling.\n- Protect upstream backends with queueing, circuit breaking, and retries.\n- Expose operational visibility through structured logs and Prometheus metrics.\nQ: What is the purpose of the OpenAI-compatible inference gateway endpoint?\nQ: How is traffic managed across multiple vLLM backends?\nQ: What methods are used to protect upstream backends?",
-      "token_count": 37,
-      "embed_token_count": 69,
+      "token_count": 76,
+      "embed_token_count": 135,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
@@ -59,15 +78,33 @@
       ],
       "content_hash": "744aed7cdb9006d6e1a80f44f30c562b96f7544d46722d2409727c3e6983f4df",
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "a7d719ee-99cc-5a41-a5ed-753fd44655f6",
+    "id": "cf9c287f-876d-50ab-9e23-8ea673a37df9",
     "vector": [],
     "payload": {
       "chunk_id": "0003",
+      "document_id": "layer-gateway-inference-v1__artichecture.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -80,8 +117,8 @@
       ],
       "text": "The gateway is a single FastAPI service composed of these major subsystems:\n\n- API ingress and request validation\n- Admission queue\n- Scheduler and scoring engine\n- Backend registry and health/circuit state\n- Proxy client (non-streaming + streaming)\n- Logging and metrics pipeline\n\n```mermaid\nflowchart LR\n    C[Client] -->|POST /v1/chat/completions| API[FastAPI API Layer]\n    API --> Q[AdmissionQueue]\n    Q --> S[Scheduler + Scoring]\n    S --> R[BackendRegistry + Health]\n    S --> P[Proxy Client]\n    P --> B1[vLLM Backend 1]\n    P --> B2[vLLM Backend 2]\n    API --> L[Structured Logs]\n    API --> M[Prometheus Metrics]\n    S --> M\n    P --> M\n```",
       "embed_text": "[SECTION: 2. System Overview]\nThe gateway is a single FastAPI service composed of these major subsystems:\n\n- API ingress and request validation\n- Admission queue\n- Scheduler and scoring engine\n- Backend registry and health/circuit state\n- Proxy client (non-streaming + streaming)\n- Logging and metrics pipeline\n\n```mermaid\nflowchart LR\n    C[Client] -->|POST /v1/chat/completions| API[FastAPI API Layer]\n    API --> Q[AdmissionQueue]\n    Q --> S[Scheduler + Scoring]\n    S --> R[BackendRegistry + Health]\n    S --> P[Proxy Client]\n    P --> B1[vLLM Backend 1]\n    P --> B2[vLLM Backend 2]\n    API --> L[Structured Logs]\n    API --> M[Prometheus Metrics]\n    S --> M\n    P --> M\n```\nQ: What are the major subsystems in the gateway service?\nQ: Which subsystem handles API ingress and request validation?\nQ: How many vLLM backends are mentioned in the system?",
-      "token_count": 94,
-      "embed_token_count": 127,
+      "token_count": 200,
+      "embed_token_count": 256,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
@@ -91,15 +128,33 @@
       ],
       "content_hash": "2b7b587d4a9b60f5cc35e38005c5dbe38d2099d5bb26daf4e03a9f59088af58e",
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "fbf7abcd-a5f6-5077-9537-9d63e20dcf14",
+    "id": "e2b5cccc-06b5-5ee4-aef7-87b4e86b18eb",
     "vector": [],
     "payload": {
       "chunk_id": "0004",
+      "document_id": "layer-gateway-inference-v1__artichecture.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -111,27 +166,45 @@
         "3._components"
       ],
       "text": "3. Components",
-      "embed_text": "[SECTION: 3. Components]\n3. Components\nQ: What section is this text part of?\nQ: How many distinct strings should the answer contain?\nQ: What is the title of this section?",
-      "token_count": 2,
-      "embed_token_count": 30,
+      "embed_text": "[SECTION: 3. Components]\n3. Components\nQ: What is the section number?\nQ: What does this section discuss?\nQ: How many distinct strings should the answer be formatted as?",
+      "token_count": 4,
+      "embed_token_count": 45,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What section is this text part of?",
-        "How many distinct strings should the answer contain?",
-        "What is the title of this section?"
+        "What is the section number?",
+        "What does this section discuss?",
+        "How many distinct strings should the answer be formatted as?"
       ],
       "content_hash": "a229795438beb091eb32c72e21e3507a9c0f784c144ae622f99d1c8e900384d7",
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "038be741-830d-5641-a6b2-963dbe72618a",
+    "id": "99067509-965f-51d6-b6f2-2ae165bea001",
     "vector": [],
     "payload": {
       "chunk_id": "0005",
+      "document_id": "layer-gateway-inference-v1__artichecture.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -143,27 +216,45 @@
         "3.1_api_layer"
       ],
       "text": "`app/api/routes.py` handles:\n\n- `POST /v1/chat/completions`\n- `GET /healthz`\n- `GET /metrics`\n\nResponsibilities:\n\n- parse and validate request payload\n- extract correlation headers (`x-request-id`, `x-trace-id`, `x-session-id`)\n- classify request complexity\n- enqueue work for scheduling\n- return gateway rejections (queue full/age/no backend)",
-      "embed_text": "[SECTION: 3.1 API Layer]\n`app/api/routes.py` handles:\n\n- `POST /v1/chat/completions`\n- `GET /healthz`\n- `GET /metrics`\n\nResponsibilities:\n\n- parse and validate request payload\n- extract correlation headers (`x-request-id`, `x-trace-id`, `x-session-id`)\n- classify request complexity\n- enqueue work for scheduling\n- return gateway rejections (queue full/age/no backend)\nQ: How many API endpoints are handled by app/api/routes.py?\nQ: What headers does the API layer extract from requests?\nQ: What actions does the API layer take if the queue is full?",
-      "token_count": 41,
-      "embed_token_count": 77,
+      "embed_text": "[SECTION: 3.1 API Layer]\n`app/api/routes.py` handles:\n\n- `POST /v1/chat/completions`\n- `GET /healthz`\n- `GET /metrics`\n\nResponsibilities:\n\n- parse and validate request payload\n- extract correlation headers (`x-request-id`, `x-trace-id`, `x-session-id`)\n- classify request complexity\n- enqueue work for scheduling\n- return gateway rejections (queue full/age/no backend)\nQ: How many API endpoints are handled by app/api/routes.py?\nQ: What headers does the API layer extract from requests?\nQ: What actions are taken if the queue is full?",
+      "token_count": 120,
+      "embed_token_count": 178,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "How many API endpoints are handled by app/api/routes.py?",
         "What headers does the API layer extract from requests?",
-        "What actions does the API layer take if the queue is full?"
+        "What actions are taken if the queue is full?"
       ],
       "content_hash": "426ee40bc0cbfaf3532d8d61bc8c911aa77cc5dfae4c9117fecc2b80b9e9ea19",
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "5a35ffdd-ea90-588b-b395-0c3ae29763cb",
+    "id": "114e8ae0-07a8-543b-8159-f6e6bfe1a991",
     "vector": [],
     "payload": {
       "chunk_id": "0006",
+      "document_id": "layer-gateway-inference-v1__artichecture.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -176,8 +267,8 @@
       ],
       "text": "`app/queue/admission_queue.py` provides a bounded FIFO queue:\n\n- `enqueue()`\n- `pop_batch()`\n- `requeue_front()`\n\nPurpose:\n\n- absorb short spikes\n- cap memory and queue growth\n- surface queue pressure through gauges",
       "embed_text": "[SECTION: 3.2 Admission Queue]\n`app/queue/admission_queue.py` provides a bounded FIFO queue:\n\n- `enqueue()`\n- `pop_batch()`\n- `requeue_front()`\n\nPurpose:\n\n- absorb short spikes\n- cap memory and queue growth\n- surface queue pressure through gauges\nQ: What is the purpose of the admission queue?\nQ: How does the admission queue absorb short spikes?\nQ: What methods does the admission queue provide?",
-      "token_count": 29,
-      "embed_token_count": 59,
+      "token_count": 73,
+      "embed_token_count": 123,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
@@ -187,15 +278,33 @@
       ],
       "content_hash": "bbcbae9f4ffbac9c04230a28f35cef130479a78039b38d46ca4027f5952d2f82",
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "e5769850-6206-5630-9dff-2571308603a5",
+    "id": "a34a5b6a-63ca-53e4-a303-3355a29b29c7",
     "vector": [],
     "payload": {
       "chunk_id": "0007",
+      "document_id": "layer-gateway-inference-v1__artichecture.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -208,8 +317,8 @@
       ],
       "text": "`app/scheduler/dispatcher.py` runs a periodic loop:\n\n- pops pending requests in batches\n- filters eligible backends\n- computes score and selects best backend\n- resolves each request with a `BackendTarget`\n\nScheduler cadence and queue policy are configured under `scheduler` in `config.yaml`.",
       "embed_text": "[SECTION: 3.3 Scheduler]\n`app/scheduler/dispatcher.py` runs a periodic loop:\n\n- pops pending requests in batches\n- filters eligible backends\n- computes score and selects best backend\n- resolves each request with a `BackendTarget`\n\nScheduler cadence and queue policy are configured under `scheduler` in `config.yaml`.\nQ: What does the dispatcher.py file do?\nQ: How many backends can be selected by the scheduler?\nQ: Where are the scheduler's cadence and queue policy configured?",
-      "token_count": 40,
-      "embed_token_count": 70,
+      "token_count": 84,
+      "embed_token_count": 139,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
@@ -219,15 +328,33 @@
       ],
       "content_hash": "67a8f7d37daa6533f0f3a3358cef9f93093401b8fc08e8d25240c16741c59aeb",
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "0283144f-501b-5597-a3f9-d8aa2bb477d7",
+    "id": "71a07ccf-3113-5a49-bfcf-8f554d8dbd3f",
     "vector": [],
     "payload": {
       "chunk_id": "0008",
+      "document_id": "layer-gateway-inference-v1__artichecture.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -240,8 +367,8 @@
       ],
       "text": "`app/scheduler/scoring.py` computes backend score from:\n\n- inflight load\n- queue estimate\n- latency EWMAs (TTFT/E2E)\n- recent error rate\n- hot-spot penalty\n- overload penalty\n- request-class penalty (small/medium requests avoid backends already holding large work)\n\nLower score wins.",
       "embed_text": "[SECTION: 3.4 Scoring Engine]\n`app/scheduler/scoring.py` computes backend score from:\n\n- inflight load\n- queue estimate\n- latency EWMAs (TTFT/E2E)\n- recent error rate\n- hot-spot penalty\n- overload penalty\n- request-class penalty (small/medium requests avoid backends already holding large work)\n\nLower score wins.\nQ: How is the backend score computed?\nQ: What factors influence the backend score?\nQ: Does a lower or higher score indicate a better backend?",
-      "token_count": 39,
-      "embed_token_count": 68,
+      "token_count": 84,
+      "embed_token_count": 130,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
@@ -251,15 +378,33 @@
       ],
       "content_hash": "4ec2cfed2a2fc681c6b175ff9dc483beba11fcc7f66c4e4796eeeb40b548b335",
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "cf5b041c-c350-5c43-b575-2310a270ad0d",
+    "id": "7ba5254d-48e4-5e16-b14c-812311ed8f0d",
     "vector": [],
     "payload": {
       "chunk_id": "0009",
+      "document_id": "layer-gateway-inference-v1__artichecture.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -271,27 +416,45 @@
         "3.5_backend_registry_and_runtime_state"
       ],
       "text": "- `app/backends/registry.py`\n- `app/backends/state.py`\n- `app/backends/health.py`\n\nTracks per-backend runtime state:\n\n- limits (`soft_limit`, `hard_limit`)\n- inflight counters\n- latency/error EWMAs\n- circuit state (`closed`, `open`, `half_open`)\n- admin flag (`drained`)\n\nEligibility checks include:\n\n- not drained\n- circuit not open\n- inflight below hard limit\n- recent error signal below threshold\n- half-open probe allowance",
-      "embed_text": "[SECTION: 3.5 Backend Registry and Runtime State]\n- `app/backends/registry.py`\n- `app/backends/state.py`\n- `app/backends/health.py`\n\nTracks per-backend runtime state:\n\n- limits (`soft_limit`, `hard_limit`)\n- inflight counters\n- latency/error EWMAs\n- circuit state (`closed`, `open`, `half_open`)\n- admin flag (`drained`)\n\nEligibility checks include:\n\n- not drained\n- circuit not open\n- inflight below hard limit\n- recent error signal below threshold\n- half-open probe allowance\nQ: What state is tracked for each backend?\nQ: What does the 'drained' admin flag indicate?\nQ: How many eligibility checks are mentioned?",
-      "token_count": 55,
-      "embed_token_count": 85,
+      "embed_text": "[SECTION: 3.5 Backend Registry and Runtime State]\n- `app/backends/registry.py`\n- `app/backends/state.py`\n- `app/backends/health.py`\n\nTracks per-backend runtime state:\n\n- limits (`soft_limit`, `hard_limit`)\n- inflight counters\n- latency/error EWMAs\n- circuit state (`closed`, `open`, `half_open`)\n- admin flag (`drained`)\n\nEligibility checks include:\n\n- not drained\n- circuit not open\n- inflight below hard limit\n- recent error signal below threshold\n- half-open probe allowance\nQ: What states are tracked for each backend?\nQ: Which flags indicate that a backend is not eligible?\nQ: What does the 'circuit state' track?",
+      "token_count": 142,
+      "embed_token_count": 195,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What state is tracked for each backend?",
-        "What does the 'drained' admin flag indicate?",
-        "How many eligibility checks are mentioned?"
+        "What states are tracked for each backend?",
+        "Which flags indicate that a backend is not eligible?",
+        "What does the 'circuit state' track?"
       ],
       "content_hash": "e21aad126326bf1f14383c206bf2295fc8d9a2b8f8990290691b81bf43bfd222",
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "9fbbca02-0c16-5528-823b-277ab06e87fa",
+    "id": "8b1bd1eb-9c22-54fb-8d3e-6b9ec322cacd",
     "vector": [],
     "payload": {
       "chunk_id": "0010",
+      "document_id": "layer-gateway-inference-v1__artichecture.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -303,27 +466,45 @@
         "3.6_proxy_layer"
       ],
       "text": "`app/proxy/client.py`:\n\n- forwards requests to selected backend\n- handles streaming and non-streaming responses\n- applies retry policy on configured failure conditions\n- updates runtime health signals on success/failure",
-      "embed_text": "[SECTION: 3.6 Proxy Layer]\n`app/proxy/client.py`:\n\n- forwards requests to selected backend\n- handles streaming and non-streaming responses\n- applies retry policy on configured failure conditions\n- updates runtime health signals on success/failure\nQ: What does the proxy layer in client.py do?\nQ: How does the proxy layer handle responses?\nQ: What policies does the proxy layer apply?",
-      "token_count": 28,
-      "embed_token_count": 57,
+      "embed_text": "[SECTION: 3.6 Proxy Layer]\n`app/proxy/client.py`:\n\n- forwards requests to selected backend\n- handles streaming and non-streaming responses\n- applies retry policy on configured failure conditions\n- updates runtime health signals on success/failure\nQ: What does the proxy layer in client.py do?\nQ: How does the proxy layer handle responses?\nQ: What policy does the proxy layer apply on failure?",
+      "token_count": 54,
+      "embed_token_count": 105,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What does the proxy layer in client.py do?",
         "How does the proxy layer handle responses?",
-        "What policies does the proxy layer apply?"
+        "What policy does the proxy layer apply on failure?"
       ],
       "content_hash": "c9ca99ae7ccd389622a0bf75b16313fdf467eb784bbfc37a99ebd59ec8d4f1f8",
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "1c104c77-10f1-5b52-93da-11408d601d7d",
+    "id": "1839f50f-5f00-55b6-bfb8-a292bfbd083b",
     "vector": [],
     "payload": {
       "chunk_id": "0011",
+      "document_id": "layer-gateway-inference-v1__artichecture.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -335,27 +516,45 @@
         "3.7_observability"
       ],
       "text": "- `app/core/logging.py` outputs structured JSON logs.\n- `app/metrics/prometheus.py` defines counters/gauges/histograms.\n- `app/metrics/sync.py` publishes backend runtime state to metrics.",
-      "embed_text": "[SECTION: 3.7 Observability]\n- `app/core/logging.py` outputs structured JSON logs.\n- `app/metrics/prometheus.py` defines counters/gauges/histograms.\n- `app/metrics/sync.py` publishes backend runtime state to metrics.\nQ: What type of logs does app/core/logging.py output?\nQ: Which Python file defines counters/gauges/histograms?\nQ: What does app/metrics/sync.py publish to the metrics?",
-      "token_count": 18,
-      "embed_token_count": 43,
+      "embed_text": "[SECTION: 3.7 Observability]\n- `app/core/logging.py` outputs structured JSON logs.\n- `app/metrics/prometheus.py` defines counters/gauges/histograms.\n- `app/metrics/sync.py` publishes backend runtime state to metrics.\nQ: What format do the logs in app/core/logging.py output?\nQ: Which file defines counters/gauges/histograms for metrics?\nQ: What does app/metrics/sync.py publish to the metrics?",
+      "token_count": 69,
+      "embed_token_count": 136,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What type of logs does app/core/logging.py output?",
-        "Which Python file defines counters/gauges/histograms?",
+        "What format do the logs in app/core/logging.py output?",
+        "Which file defines counters/gauges/histograms for metrics?",
         "What does app/metrics/sync.py publish to the metrics?"
       ],
       "content_hash": "29b3a27034a4c3c59c8ab78394bd9fb8b80cd1b22c8ad062fe92ec1baf6fe82d",
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "4889175f-88f2-5525-89ab-9782dfd10368",
+    "id": "0defef1b-15f6-5ea3-a88e-709297ce3b89",
     "vector": [],
     "payload": {
       "chunk_id": "0012",
+      "document_id": "layer-gateway-inference-v1__artichecture.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -367,27 +566,45 @@
         "4._end-to-end_request_lifecycle"
       ],
       "text": "1. Client sends `POST /v1/chat/completions`.\n2. Gateway validates payload and logs `request_received`.\n3. Request is classified (`small`, `medium`, `large`, or `streaming_long`).\n4. Request is placed into `AdmissionQueue`.\n5. Scheduler selects an eligible backend.\n6. Proxy sends request upstream.\n7. On success, response is returned and latency metrics are updated.\n8. On failure, retry/circuit/error signals are applied and final error returned if exhausted.",
-      "embed_text": "[SECTION: 4. End-to-End Request Lifecycle]\n1. Client sends `POST /v1/chat/completions`.\n2. Gateway validates payload and logs `request_received`.\n3. Request is classified (`small`, `medium`, `large`, or `streaming_long`).\n4. Request is placed into `AdmissionQueue`.\n5. Scheduler selects an eligible backend.\n6. Proxy sends request upstream.\n7. On success, response is returned and latency metrics are updated.\n8. On failure, retry/circuit/error signals are applied and final error returned if exhausted.\nQ: What is the first step when a client sends a request?\nQ: What happens after the gateway validates the payload?\nQ: Which queue does the request get placed into after validation?",
-      "token_count": 62,
-      "embed_token_count": 99,
+      "embed_text": "[SECTION: 4. End-to-End Request Lifecycle]\n1. Client sends `POST /v1/chat/completions`.\n2. Gateway validates payload and logs `request_received`.\n3. Request is classified (`small`, `medium`, `large`, or `streaming_long`).\n4. Request is placed into `AdmissionQueue`.\n5. Scheduler selects an eligible backend.\n6. Proxy sends request upstream.\n7. On success, response is returned and latency metrics are updated.\n8. On failure, retry/circuit/error signals are applied and final error returned if exhausted.\nQ: What is the first step when a client sends a request?\nQ: What queue does the request get placed into after validation?\nQ: What happens if the request fails after being sent upstream?",
+      "token_count": 135,
+      "embed_token_count": 196,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is the first step when a client sends a request?",
-        "What happens after the gateway validates the payload?",
-        "Which queue does the request get placed into after validation?"
+        "What queue does the request get placed into after validation?",
+        "What happens if the request fails after being sent upstream?"
       ],
       "content_hash": "81aa8125b3e68b1c5f3861dcdb8ce3b6ee5418548d93a724a8e85e0c62d525ba",
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "8a0f76f9-0f2c-516f-ac59-922aa60fdac8",
+    "id": "2c1f432e-ba5c-51ba-b360-94768c5d241a",
     "vector": [],
     "payload": {
       "chunk_id": "0013",
+      "document_id": "layer-gateway-inference-v1__artichecture.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -399,27 +616,45 @@
         "4._end-to-end_request_lifecycle"
       ],
       "text": "```mermaid\nsequenceDiagram\n    autonumber\n    participant Client\n    participant API as API Routes\n    participant Queue as AdmissionQueue\n    participant Sched as Scheduler\n    participant Proxy as Proxy Client\n    participant Backend as vLLM Backend\n\nClient->>API: POST /v1/chat/completions\n    API->>API: Validate + classify + log request_received\n    API->>Queue: enqueue(PendingRequest)\n    Sched->>Queue: pop_batch()\n    Sched->>Sched: filter eligible + score + choose backend\n    Sched-->>API: dispatch_future.set_result(target)\n    API->>Proxy: proxy_chat_completion(target)\n    Proxy->>Backend: upstream request\n    alt success\n        Backend-->>Proxy: 2xx response\n        Proxy-->>API: response\n        API-->>Client: response body\n    else retryable failure\n        Backend-->>Proxy: 5xx / timeout / connect error\n        Proxy->>Proxy: retry (if attempts remain)\n        Proxy->>Backend: retry to alternative backend\n        Backend-->>Proxy: response or final failure\n        Proxy-->>API: response or HTTPException\n        API-->>Client: success or 5xx\n    end\n```",
-      "embed_text": "[SECTION: 4. End-to-End Request Lifecycle]\n```mermaid\nsequenceDiagram\n    autonumber\n    participant Client\n    participant API as API Routes\n    participant Queue as AdmissionQueue\n    participant Sched as Scheduler\n    participant Proxy as Proxy Client\n    participant Backend as vLLM Backend\n\nClient->>API: POST /v1/chat/completions\n    API->>API: Validate + classify + log request_received\n    API->>Queue: enqueue(PendingRequest)\n    Sched->>Queue: pop_batch()\n    Sched->>Sched: filter eligible + score + choose backend\n    Sched-->>API: dispatch_future.set_result(target)\n    API->>Proxy: proxy_chat_completion(target)\n    Proxy->>Backend: upstream request\n    alt success\n        Backend-->>Proxy: 2xx response\n        Proxy-->>API: response\n        API-->>Client: response body\n    else retryable failure\n        Backend-->>Proxy: 5xx / timeout / connect error\n        Proxy->>Proxy: retry (if attempts remain)\n        Proxy->>Backend: retry to alternative backend\n        Backend-->>Proxy: response or final failure\n        Proxy-->>API: response or HTTPException\n        API-->>Client: success or 5xx\n    end\n```\nQ: What is the sequence of interactions between the client and the API in the request lifecycle?\nQ: Which components are involved in filtering and choosing the backend for processing requests?\nQ: How does the system handle retryable failures in the request processing pipeline?",
-      "token_count": 102,
-      "embed_token_count": 151,
+      "embed_text": "[SECTION: 4. End-to-End Request Lifecycle]\n```mermaid\nsequenceDiagram\n    autonumber\n    participant Client\n    participant API as API Routes\n    participant Queue as AdmissionQueue\n    participant Sched as Scheduler\n    participant Proxy as Proxy Client\n    participant Backend as vLLM Backend\n\nClient->>API: POST /v1/chat/completions\n    API->>API: Validate + classify + log request_received\n    API->>Queue: enqueue(PendingRequest)\n    Sched->>Queue: pop_batch()\n    Sched->>Sched: filter eligible + score + choose backend\n    Sched-->>API: dispatch_future.set_result(target)\n    API->>Proxy: proxy_chat_completion(target)\n    Proxy->>Backend: upstream request\n    alt success\n        Backend-->>Proxy: 2xx response\n        Proxy-->>API: response\n        API-->>Client: response body\n    else retryable failure\n        Backend-->>Proxy: 5xx / timeout / connect error\n        Proxy->>Proxy: retry (if attempts remain)\n        Proxy->>Backend: retry to alternative backend\n        Backend-->>Proxy: response or final failure\n        Proxy-->>API: response or HTTPException\n        API-->>Client: success or 5xx\n    end\n```\nQ: What is the first step when a client sends a POST request to the API?\nQ: Which component is responsible for filtering, scoring, and choosing the backend?\nQ: What happens if the backend returns a 5xx error?",
+      "token_count": 293,
+      "embed_token_count": 362,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is the sequence of interactions between the client and the API in the request lifecycle?",
-        "Which components are involved in filtering and choosing the backend for processing requests?",
-        "How does the system handle retryable failures in the request processing pipeline?"
+        "What is the first step when a client sends a POST request to the API?",
+        "Which component is responsible for filtering, scoring, and choosing the backend?",
+        "What happens if the backend returns a 5xx error?"
       ],
       "content_hash": "4101ebf5863662b0dcabfbd161d6bb74c2a5fc3a82df0e85569ea34aa1d06307",
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "175b45b6-a8e3-52b6-abea-eb014ae3b934",
+    "id": "73ed4d19-bf8f-56a8-9622-6e9cdf264878",
     "vector": [],
     "payload": {
       "chunk_id": "0014",
+      "document_id": "layer-gateway-inference-v1__artichecture.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -431,27 +666,45 @@
         "4.1_dispatch_decision_flow"
       ],
       "text": "```mermaid\nflowchart TD\n    A[PendingRequest from queue] --> B{cancelled or already resolved?}\n    B -- yes --> Z[skip]\n    B -- no --> C{age > queue_max_age_ms?}\n    C -- yes --> R1[reject queue_age]\n    C -- no --> D[collect eligible backends]\n    D --> E{any eligible?}\n    E -- no --> F[requeue_front]\n    E -- yes --> G[pick_backend by score]\n    G --> H{chosen backend exists?}\n    H -- no --> F\n    H -- yes --> I[on_request_start + inflight++]\n    I --> J[set dispatch_future(target)]\n```",
-      "embed_text": "[SECTION: 4.1 Dispatch Decision Flow]\n```mermaid\nflowchart TD\n    A[PendingRequest from queue] --> B{cancelled or already resolved?}\n    B -- yes --> Z[skip]\n    B -- no --> C{age > queue_max_age_ms?}\n    C -- yes --> R1[reject queue_age]\n    C -- no --> D[collect eligible backends]\n    D --> E{any eligible?}\n    E -- no --> F[requeue_front]\n    E -- yes --> G[pick_backend by score]\n    G --> H{chosen backend exists?}\n    H -- no --> F\n    H -- yes --> I[on_request_start + inflight++]\n    I --> J[set dispatch_future(target)]\n```\nQ: What action is taken if the request is cancelled or already resolved?\nQ: What happens if there are no eligible backends after collecting them?\nQ: Which step is executed if the chosen backend does not exist?",
-      "token_count": 74,
-      "embed_token_count": 116,
+      "embed_text": "[SECTION: 4.1 Dispatch Decision Flow]\n```mermaid\nflowchart TD\n    A[PendingRequest from queue] --> B{cancelled or already resolved?}\n    B -- yes --> Z[skip]\n    B -- no --> C{age > queue_max_age_ms?}\n    C -- yes --> R1[reject queue_age]\n    C -- no --> D[collect eligible backends]\n    D --> E{any eligible?}\n    E -- no --> F[requeue_front]\n    E -- yes --> G[pick_backend by score]\n    G --> H{chosen backend exists?}\n    H -- no --> F\n    H -- yes --> I[on_request_start + inflight++]\n    I --> J[set dispatch_future(target)]\n```\nQ: What actions are taken if the request is cancelled or already resolved?\nQ: What happens if there are no eligible backends after collecting them?\nQ: Which step is executed if the chosen backend does not exist?",
+      "token_count": 168,
+      "embed_token_count": 233,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What action is taken if the request is cancelled or already resolved?",
+        "What actions are taken if the request is cancelled or already resolved?",
         "What happens if there are no eligible backends after collecting them?",
         "Which step is executed if the chosen backend does not exist?"
       ],
       "content_hash": "a0cd511b6c3778cb0c928764922b39b61801b32775442605476e813609b647c9",
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "9dbb91e0-e74b-56a9-b13b-fd4a8522849e",
+    "id": "5567824f-55dc-5f90-ab21-97465c1ed259",
     "vector": [],
     "payload": {
       "chunk_id": "0015",
+      "document_id": "layer-gateway-inference-v1__artichecture.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -463,27 +716,45 @@
         "5._reliability_design"
       ],
       "text": "5. Reliability Design",
-      "embed_text": "[SECTION: 5. Reliability Design]\n5. Reliability Design\nQ: What is the topic of this section?\nQ: Does the text provide specific details about reliability design?\nQ: How many distinct strings are expected in the answer?",
-      "token_count": 3,
-      "embed_token_count": 35,
+      "embed_text": "[SECTION: 5. Reliability Design]\n5. Reliability Design\nQ: What is the topic of section 5?\nQ: Does the section start with a specific design type?\nQ: Is there content about reliability in the given text?",
+      "token_count": 5,
+      "embed_token_count": 51,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is the topic of this section?",
-        "Does the text provide specific details about reliability design?",
-        "How many distinct strings are expected in the answer?"
+        "What is the topic of section 5?",
+        "Does the section start with a specific design type?",
+        "Is there content about reliability in the given text?"
       ],
       "content_hash": "0ce4d6eb9bfaac63b065f9796beb214a78b950fd96a649f202305b8951f1845d",
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "e347f05b-a9ac-5293-9ce8-348546e9e7d2",
+    "id": "197aa522-8f58-5911-86e2-a3dc5f8e21c0",
     "vector": [],
     "payload": {
       "chunk_id": "0016",
+      "document_id": "layer-gateway-inference-v1__artichecture.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -495,27 +766,45 @@
         "5.1_backpressure"
       ],
       "text": "- bounded queue size (`queue_max_size`)\n- queue age timeout (`queue_max_age_ms`)\n- rejection reasons tracked by metric labels",
-      "embed_text": "[SECTION: 5.1 Backpressure]\n- bounded queue size (`queue_max_size`)\n- queue age timeout (`queue_max_age_ms`)\n- rejection reasons tracked by metric labels\nQ: What is the name of the metric used to track rejection reasons?\nQ: What does `queue_max_age_ms` represent?\nQ: What limits the size of the bounded queue?",
-      "token_count": 17,
-      "embed_token_count": 47,
+      "embed_text": "[SECTION: 5.1 Backpressure]\n- bounded queue size (`queue_max_size`)\n- queue age timeout (`queue_max_age_ms`)\n- rejection reasons tracked by metric labels\nQ: What is the name of the metric used to track rejection reasons?\nQ: What limits the size of the bounded queue?\nQ: How long can messages stay in the queue before timing out?",
+      "token_count": 46,
+      "embed_token_count": 104,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is the name of the metric used to track rejection reasons?",
-        "What does `queue_max_age_ms` represent?",
-        "What limits the size of the bounded queue?"
+        "What limits the size of the bounded queue?",
+        "How long can messages stay in the queue before timing out?"
       ],
       "content_hash": "87b9b4c447adac0313983ed00102abde75cf53d4398dd093f5311cc49ace11d4",
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "62006fe4-d260-5db2-ad1a-180c432346fc",
+    "id": "1295a231-6597-5b06-86fd-4b367d53a482",
     "vector": [],
     "payload": {
       "chunk_id": "0017",
+      "document_id": "layer-gateway-inference-v1__artichecture.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -528,8 +817,8 @@
       ],
       "text": "State machine:\n\n- `closed` -> normal\n- `open` -> no new dispatch\n- `half_open` -> limited probe traffic (`half_open_max_inflight`)\n\nTransitions driven by consecutive failures and cooldown timing.\n\n```mermaid\nstateDiagram-v2\n    [*] --> closed\n    closed --> open: consecutive failures >= threshold\n    open --> half_open: cooldown elapsed\n    half_open --> closed: probe success\n    half_open --> open: probe failure\n```",
       "embed_text": "[SECTION: 5.2 Circuit Breaker]\nState machine:\n\n- `closed` -> normal\n- `open` -> no new dispatch\n- `half_open` -> limited probe traffic (`half_open_max_inflight`)\n\nTransitions driven by consecutive failures and cooldown timing.\n\n```mermaid\nstateDiagram-v2\n    [*] --> closed\n    closed --> open: consecutive failures >= threshold\n    open --> half_open: cooldown elapsed\n    half_open --> closed: probe success\n    half_open --> open: probe failure\n```\nQ: What are the states of the circuit breaker state machine?\nQ: How does the circuit breaker transition from the closed state?\nQ: What happens when the circuit breaker is in the half_open state?",
-      "token_count": 55,
-      "embed_token_count": 93,
+      "token_count": 119,
+      "embed_token_count": 174,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
@@ -539,15 +828,33 @@
       ],
       "content_hash": "e830d9f7e1249d035532f343bc37096b52cd9e1f9830ce5d623285d973eef47b",
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "d3cfa2c0-d101-5b86-be1d-892ba28b8a18",
+    "id": "293eac46-d9c3-5c5a-8ae1-36c117181f0b",
     "vector": [],
     "payload": {
       "chunk_id": "0018",
+      "document_id": "layer-gateway-inference-v1__artichecture.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -560,8 +867,8 @@
       ],
       "text": "- retries capped by `retry.max_attempts`\n- retryable statuses from `retry.retryable_statuses`\n- transport errors are treated as retry candidates\n- best-effort switch to alternative backend\n\n```mermaid\nflowchart TD\n    A[proxy attempt N] --> B{response < 400?}\n    B -- yes --> OK[return success]\n    B -- no --> C{retryable status or transport error?}\n    C -- no --> FAIL[return failure]\n    C -- yes --> D{N < max_attempts?}\n    D -- no --> FAIL\n    D -- yes --> E[pick alternate backend]\n    E --> F{backend found?}\n    F -- no --> FAIL\n    F -- yes --> G[attempt N+1]\n    G --> B\n```",
       "embed_text": "[SECTION: 5.3 Retry Policy]\n- retries capped by `retry.max_attempts`\n- retryable statuses from `retry.retryable_statuses`\n- transport errors are treated as retry candidates\n- best-effort switch to alternative backend\n\n```mermaid\nflowchart TD\n    A[proxy attempt N] --> B{response < 400?}\n    B -- yes --> OK[return success]\n    B -- no --> C{retryable status or transport error?}\n    C -- no --> FAIL[return failure]\n    C -- yes --> D{N < max_attempts?}\n    D -- no --> FAIL\n    D -- yes --> E[pick alternate backend]\n    E --> F{backend found?}\n    F -- no --> FAIL\n    F -- yes --> G[attempt N+1]\n    G --> B\n```\nQ: What determines the maximum number of retries?\nQ: Which types of errors can lead to a retry?\nQ: What happens if an alternative backend cannot be found?",
-      "token_count": 93,
-      "embed_token_count": 125,
+      "token_count": 181,
+      "embed_token_count": 230,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
@@ -571,15 +878,33 @@
       ],
       "content_hash": "2788e063ca9b89eb8d5d526402e7b48939b300fd10a040cc7c5403b5881dc76c",
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "f6da6483-b6c1-5e39-9521-2f6697ac4c3f",
+    "id": "d2560111-c51e-54ef-ae87-115ab70a24ff",
     "vector": [],
     "payload": {
       "chunk_id": "0019",
+      "document_id": "layer-gateway-inference-v1__artichecture.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -591,27 +916,45 @@
         "6._configuration_model"
       ],
       "text": "Primary sections in `config.yaml`:\n\n- `server`\n- `scheduler`\n- `routing`\n- `backends`\n- `health`\n- `retry`\n\nConfig is loaded from:\n\n1. explicit path argument, else\n2. `GATEWAY_CONFIG` env var, else\n3. default `config.yaml`\n\n```mermaid\nflowchart LR\n    A[load_gateway_config(path)] --> B{path passed?}\n    B -- yes --> P[use explicit path]\n    B -- no --> C{GATEWAY_CONFIG set?}\n    C -- yes --> E[use env path]\n    C -- no --> D[use config.yaml]\n```",
-      "embed_text": "[SECTION: 6. Configuration Model]\nPrimary sections in `config.yaml`:\n\n- `server`\n- `scheduler`\n- `routing`\n- `backends`\n- `health`\n- `retry`\n\nConfig is loaded from:\n\n1. explicit path argument, else\n2. `GATEWAY_CONFIG` env var, else\n3. default `config.yaml`\n\n```mermaid\nflowchart LR\n    A[load_gateway_config(path)] --> B{path passed?}\n    B -- yes --> P[use explicit path]\n    B -- no --> C{GATEWAY_CONFIG set?}\n    C -- yes --> E[use env path]\n    C -- no --> D[use config.yaml]\n```\nQ: What are the primary sections in config.yaml?\nQ: From which sources is the config loaded?\nQ: What does the flowchart represent in terms of loading the gateway configuration?",
-      "token_count": 67,
-      "embed_token_count": 100,
+      "embed_text": "[SECTION: 6. Configuration Model]\nPrimary sections in `config.yaml`:\n\n- `server`\n- `scheduler`\n- `routing`\n- `backends`\n- `health`\n- `retry`\n\nConfig is loaded from:\n\n1. explicit path argument, else\n2. `GATEWAY_CONFIG` env var, else\n3. default `config.yaml`\n\n```mermaid\nflowchart LR\n    A[load_gateway_config(path)] --> B{path passed?}\n    B -- yes --> P[use explicit path]\n    B -- no --> C{GATEWAY_CONFIG set?}\n    C -- yes --> E[use env path]\n    C -- no --> D[use config.yaml]\n```\nQ: What are the primary sections in config.yaml?\nQ: From which sources is the config loaded?\nQ: What does the flowchart illustrate?",
+      "token_count": 157,
+      "embed_token_count": 206,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What are the primary sections in config.yaml?",
         "From which sources is the config loaded?",
-        "What does the flowchart represent in terms of loading the gateway configuration?"
+        "What does the flowchart illustrate?"
       ],
       "content_hash": "6a0e970881ddcf32a96ef0e55849cbc040d19615123dc77a63502ae2fea88e17",
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "bb7e6426-2817-5d64-a9f7-34d41ae1ff13",
+    "id": "e5963b4e-ce2e-52cc-89bc-49cda6d4a624",
     "vector": [],
     "payload": {
       "chunk_id": "0020",
+      "document_id": "layer-gateway-inference-v1__artichecture.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -624,8 +967,8 @@
       ],
       "text": "Gateway event logs include:\n\n- `event`, `service`, `env`\n- `trace_id`, `request_id`, `session_id`\n- optional `backend`, `latency_ms`, `status_code`, `error`\n\nGuideline:\n\n- use `request_id` for per-call debugging\n- use `trace_id` for cross-service tracing\n- use `session_id` for conversation/session grouping",
       "embed_text": "[SECTION: 7. Logging and Trace Context]\nGateway event logs include:\n\n- `event`, `service`, `env`\n- `trace_id`, `request_id`, `session_id`\n- optional `backend`, `latency_ms`, `status_code`, `error`\n\nGuideline:\n\n- use `request_id` for per-call debugging\n- use `trace_id` for cross-service tracing\n- use `session_id` for conversation/session grouping\nQ: What is used for per-call debugging?\nQ: What is used for cross-service tracing?\nQ: What is used for conversation/session grouping?",
-      "token_count": 37,
-      "embed_token_count": 64,
+      "token_count": 108,
+      "embed_token_count": 159,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
@@ -635,15 +978,33 @@
       ],
       "content_hash": "6a840b229cce757bf5b57a0c8ad89752df15580af89c13f9494c5e92401d714a",
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "3aca6eca-ee2b-539f-8a66-674e1f5a9b7a",
+    "id": "048ee47e-e9f0-5380-a933-897a8c771206",
     "vector": [],
     "payload": {
       "chunk_id": "0021",
+      "document_id": "layer-gateway-inference-v1__artichecture.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -655,27 +1016,45 @@
         "8._metrics_design_summary"
       ],
       "text": "Metrics are process-level aggregates and backend-level state snapshots:\n\n- traffic and failures (`gateway_requests_total`, `gateway_request_errors_total`)\n- queue pressure (`gateway_queue_depth`, `gateway_queue_age_ms`)\n- backend health/load (`gateway_backend_*`)\n- latency distribution (`gateway_request_latency_ms`)\n\nIDs like `request_id` and `trace_id` are not metric labels to avoid high-cardinality issues.",
-      "embed_text": "[SECTION: 8. Metrics Design Summary]\nMetrics are process-level aggregates and backend-level state snapshots:\n\n- traffic and failures (`gateway_requests_total`, `gateway_request_errors_total`)\n- queue pressure (`gateway_queue_depth`, `gateway_queue_age_ms`)\n- backend health/load (`gateway_backend_*`)\n- latency distribution (`gateway_request_latency_ms`)\n\nIDs like `request_id` and `trace_id` are not metric labels to avoid high-cardinality issues.\nQ: What types of metrics are mentioned in the text?\nQ: Which metric is used to track backend health/load?\nQ: Why are IDs like request_id and trace_id not considered metric labels?",
-      "token_count": 40,
-      "embed_token_count": 76,
+      "embed_text": "[SECTION: 8. Metrics Design Summary]\nMetrics are process-level aggregates and backend-level state snapshots:\n\n- traffic and failures (`gateway_requests_total`, `gateway_request_errors_total`)\n- queue pressure (`gateway_queue_depth`, `gateway_queue_age_ms`)\n- backend health/load (`gateway_backend_*`)\n- latency distribution (`gateway_request_latency_ms`)\n\nIDs like `request_id` and `trace_id` are not metric labels to avoid high-cardinality issues.\nQ: What types of metrics are mentioned in the text?\nQ: Which metric is used to track gateway request errors?\nQ: Why are IDs like request_id and trace_id not considered metric labels?",
+      "token_count": 145,
+      "embed_token_count": 207,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What types of metrics are mentioned in the text?",
-        "Which metric is used to track backend health/load?",
+        "Which metric is used to track gateway request errors?",
         "Why are IDs like request_id and trace_id not considered metric labels?"
       ],
       "content_hash": "d9cc926b847a49c687969a4db7e04f7424d57d75220920ff342e887ad49a70ae",
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "b506d264-39e9-5d4e-904a-27d229f45042",
+    "id": "8655f254-6e7a-5cd5-a3a5-803e8373c0d9",
     "vector": [],
     "payload": {
       "chunk_id": "0022",
+      "document_id": "layer-gateway-inference-v1__artichecture.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -687,27 +1066,45 @@
         "9._deployment_notes"
       ],
       "text": "- Run as stateless service instances behind a load balancer/ingress.\n- Keep backend URLs reachable from gateway network context.\n- Mount environment-specific `config.yaml`.\n- Scrape `/metrics` and ingest structured stdout logs into your log backend.",
-      "embed_text": "[SECTION: 9. Deployment Notes]\n- Run as stateless service instances behind a load balancer/ingress.\n- Keep backend URLs reachable from gateway network context.\n- Mount environment-specific `config.yaml`.\n- Scrape `/metrics` and ingest structured stdout logs into your log backend.\nQ: What is the recommended way to run the service instances?\nQ: What should be ensured about backend URLs?\nQ: What should be mounted for environment-specific configuration?",
-      "token_count": 35,
-      "embed_token_count": 66,
+      "embed_text": "[SECTION: 9. Deployment Notes]\n- Run as stateless service instances behind a load balancer/ingress.\n- Keep backend URLs reachable from gateway network context.\n- Mount environment-specific `config.yaml`.\n- Scrape `/metrics` and ingest structured stdout logs into your log backend.\nQ: What is the recommended way to run the service instances?\nQ: What should be ensured about backend URLs?\nQ: What should be mounted for the service instances?",
+      "token_count": 67,
+      "embed_token_count": 121,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is the recommended way to run the service instances?",
         "What should be ensured about backend URLs?",
-        "What should be mounted for environment-specific configuration?"
+        "What should be mounted for the service instances?"
       ],
       "content_hash": "62d3e5060065ad6247ab7baa936f20919165d3428f1534ba11f2686b355f1460",
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "c52b46f7-8ee9-54c4-9f23-bae557718baa",
+    "id": "13ce532c-e2c2-551e-92ae-5fffa53405c2",
     "vector": [],
     "payload": {
       "chunk_id": "0023",
+      "document_id": "layer-gateway-inference-v1__artichecture.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -720,8 +1117,8 @@
       ],
       "text": "- queue age gauge is instantaneous, not a full percentile distribution\n- request classification is heuristic (token estimate), not exact tokenizer output\n- in-memory runtime state resets on restart",
       "embed_text": "[SECTION: 10. Known Trade-offs]\n- queue age gauge is instantaneous, not a full percentile distribution\n- request classification is heuristic (token estimate), not exact tokenizer output\n- in-memory runtime state resets on restart\nQ: What is the nature of the queue age gauge?\nQ: How is request classification determined?\nQ: What happens to in-memory runtime state upon restart?",
-      "token_count": 29,
-      "embed_token_count": 58,
+      "token_count": 50,
+      "embed_token_count": 103,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
@@ -731,15 +1128,33 @@
       ],
       "content_hash": "b8deabdb334d0845958fdf9d6d85bae0bb815e9e9f3f8092bd29a82f841297da",
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   },
   {
-    "id": "d4089a92-0b0f-56b6-ab27-a487cf87e556",
+    "id": "9e001afb-2a6c-53ee-b4ba-ff74bc6f4784",
     "vector": [],
     "payload": {
       "chunk_id": "0024",
+      "document_id": "layer-gateway-inference-v1__artichecture.md",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
@@ -751,20 +1166,37 @@
         "11._related_documents"
       ],
       "text": "- `docs/docs.md` for general technical reference\n- `docs/sla.md` for SLO/SLA targets and alert baseline\n- `docs/plan.md` for detailed implementation planning context",
-      "embed_text": "[SECTION: 11. Related Documents]\n- `docs/docs.md` for general technical reference\n- `docs/sla.md` for SLO/SLA targets and alert baseline\n- `docs/plan.md` for detailed implementation planning context\nQ: What documents are listed for general technical reference?\nQ: Where can one find SLO/SLA targets and alert baseline information?\nQ: What document provides detailed implementation planning context?",
-      "token_count": 21,
-      "embed_token_count": 53,
+      "embed_text": "[SECTION: 11. Related Documents]\n- `docs/docs.md` for general technical reference\n- `docs/sla.md` for SLO/SLA targets and alert baseline\n- `docs/plan.md` for detailed implementation planning context\nQ: What is the purpose of docs/sla.md?\nQ: Where can I find general technical reference?\nQ: What document contains detailed implementation planning context?",
+      "token_count": 50,
+      "embed_token_count": 96,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What documents are listed for general technical reference?",
-        "Where can one find SLO/SLA targets and alert baseline information?",
-        "What document provides detailed implementation planning context?"
+        "What is the purpose of docs/sla.md?",
+        "Where can I find general technical reference?",
+        "What document contains detailed implementation planning context?"
       ],
       "content_hash": "dbd94608152b2c5250663f2f3ce19f847a6ec1340fc28d0025acd8fe299c3018",
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
-      "ingest_run_id": "run_20260425_182218_EST",
-      "ingest_ts": "2026-04-25T18:22:18-05:00"
+      "ingest_run_id": "run_20260428_135147_EST",
+      "ingest_ts": "2026-04-28T13:51:47-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
     }
   }
 ]

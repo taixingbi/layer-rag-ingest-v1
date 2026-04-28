@@ -28,6 +28,7 @@ _ATX_HEADING = re.compile(r"^(#{1,6})\s+(.+?)\s*$", re.MULTILINE)
 
 
 def configure_logging(*, verbose: bool) -> None:
+    """Configure logging."""
     level = logging.DEBUG if verbose else logging.INFO
     logging.basicConfig(
         level=level,
@@ -50,6 +51,7 @@ def strip_github_export_preamble(text: str) -> str:
 
 
 def read_text(path: Path) -> str:
+    """Read text."""
     if not path.exists():
         raise FileNotFoundError(f"Input file not found: {path}")
     logger.info("Reading input file: %s", path.resolve())
@@ -96,6 +98,7 @@ def split_atx_sections(text: str) -> list[tuple[str, str]]:
 
 
 def _paragraphs_from_body(body: str) -> list[str]:
+    """ paragraphs from body."""
     parts = re.split(r"\n{2,}", body.strip())
     return [p.strip() for p in parts if p.strip()]
 
@@ -115,6 +118,7 @@ def pack_paragraphs(
     buf_len = 0
 
     def flush() -> None:
+        """Flush."""
         nonlocal buf, buf_len
         if buf:
             chunks.append("\n\n".join(buf))
@@ -175,13 +179,16 @@ def markdown_to_section_chunks(
 def build_stage1_chunks(
     section_chunks: list[tuple[str, str]],
     chunk_id_width: int,
+    document_id: str,
 ) -> list[dict[str, Any]]:
+    """Build stage1 chunks."""
     chunks: list[dict[str, Any]] = []
     for idx, (section, paragraph) in enumerate(section_chunks, start=1):
         chunk_id = str(idx).zfill(chunk_id_width)
         chunks.append(
             {
                 "chunk_id": chunk_id,
+                "document_id": document_id,
                 "section": section,
                 "text": paragraph,
                 "synthetic_questions": [],
@@ -191,6 +198,7 @@ def build_stage1_chunks(
 
 
 def write_json(path: Path, payload: list[dict[str, Any]]) -> None:
+    """Write json."""
     logger.info("Writing %d chunk(s) to %s", len(payload), path.resolve())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(
@@ -200,6 +208,7 @@ def write_json(path: Path, payload: list[dict[str, Any]]) -> None:
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse args."""
     p = argparse.ArgumentParser(
         description=(
             "Chunk Markdown by ATX headings (#..######), strip github_tree_to_txt "
@@ -254,6 +263,7 @@ def _process_single_file(
     min_chars: int,
     max_chars: int,
 ) -> int:
+    """ process single file."""
     text = read_text(input_path)
     section_chunks = markdown_to_section_chunks(
         text, min_chars=min_chars, max_chars=max_chars
@@ -269,9 +279,11 @@ def _process_single_file(
         max_chars,
     )
 
+    document_id = input_path.stem
     payload = build_stage1_chunks(
         section_chunks=section_chunks,
         chunk_id_width=chunk_id_width,
+        document_id=document_id,
     )
     write_json(output_path, payload)
     logger.info("Done: wrote %d chunk(s) to %s", len(payload), output_path.resolve())
@@ -279,6 +291,7 @@ def _process_single_file(
 
 
 def main() -> None:
+    """Main."""
     started = time.perf_counter()
     args = parse_args()
     configure_logging(verbose=args.verbose)

@@ -30,6 +30,8 @@ For optional synthetic questions:
 - Points: `data2/processed/points_<stem>.json`
 - Manifest: `data2/processed/ingest_manifest_<ingest_run_id>.json` and `data2/processed/ingest_manifest_latest.json`
 
+ID contract (v2): point id is UUID5 of `v2|source=<source>|document_id=<document_id>|chunk_id=<chunk_id>`.
+
 Use **`--source-prefix repo`** so `payload.source` values look like `repo_<doc_type>` (filter vs `personal_*` from `data1`).
 
 ## Full pipeline

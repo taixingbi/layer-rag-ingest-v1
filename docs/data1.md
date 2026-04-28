@@ -39,6 +39,8 @@ Optional:
 - Summary: `data1/processed/ingest_prepare_summary.json`
 - Manifest: `data1/processed/ingest_manifest_<ingest_run_id>.json` and `data1/processed/ingest_manifest_latest.json`
 
+ID contract (v2): point id is UUID5 of `v2|source=<source>|document_id=<document_id>|chunk_id=<chunk_id>`.
+
 Use **`--source-prefix personal`** so `payload.source` values look like `personal_<doc_type>` (easy to filter vs `repo_*` from `data2`).
 
 ## Full pipeline
@@ -53,6 +55,35 @@ python3 app/prepare_payloads.py \
   --pattern "chunks_*.json" \
   --source-prefix personal
 ```
+
+Optional role mapping (adds `payload.profile.role` only for mapped sources/documents):
+
+```bash
+python3 app/prepare_payloads.py \
+  --data-dir data1/processed \
+  --output-dir data1/processed \
+  --pattern "chunks_*.json" \
+  --source-prefix personal \
+  --profile-role-map '{"personal_profile":"AI Infrastructure Engineer"}'
+```
+
+You can also load mappings from a file:
+
+```bash
+python3 app/prepare_payloads.py \
+  --data-dir data1/processed \
+  --output-dir data1/processed \
+  --pattern "chunks_*.json" \
+  --source-prefix personal \
+  --profile-role-map-file data1/processed/profile_roles.json
+```
+
+Key lookup order for role resolution:
+
+- `source:document_id` (most specific)
+- `source`
+- `document_id` (fallback)
+- default literal `role` when no mapping key matches
 
 ### Optional: synthetic questions (chat API)
 

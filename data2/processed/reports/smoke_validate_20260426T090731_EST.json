@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-04-25T18:23:02.520991-05:00",
+  "generated_at": "2026-04-26T09:07:31.911297-05:00",
   "summary": {
     "files": 13,
     "probes_total": 183,
-    "probes_passed": 121,
-    "probes_failed": 62,
-    "vector_passed": 44,
-    "llm_rescued": 77,
+    "probes_passed": 117,
+    "probes_failed": 66,
+    "vector_passed": 43,
+    "llm_rescued": 74,
     "threshold": 0.75,
     "collection": "taixing_knowledge_dev",
     "failure_reasons": {
-      "below_threshold": 139
+      "below_threshold": 140
     },
     "score_stats": {
-      "min": 0.5153297,
-      "p50": 0.70832264,
-      "p90": 0.775390926,
-      "max": 0.8614819
+      "min": 0.515344,
+      "p50": 0.7037635,
+      "p90": 0.78037406,
+      "max": 0.86220896
     },
     "worst_groups": [
       {
@@ -90,8 +90,8 @@
       "source": "repo_layer-gateway-embed-v1__design.md",
       "section": "Request Flow",
       "doc_type": "layer-gateway-embed-v1__design.md",
-      "probe_text": "How does the client send the POST request?",
-      "score": 0.6602168,
+      "probe_text": "What HTTP method does the client use to send data to the server?",
+      "score": 0.6433561,
       "scope_match": true,
       "passed": false,
       "threshold": 0.75,
@@ -99,9 +99,9 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "not_supported",
-      "judge_reason": "The context does not provide information on how the client sends the POST request, only the steps after the request is sent.",
+      "judge_reason": "The context does not mention any HTTP methods used by the client to send data to the server.",
       "final_reason": "below_threshold",
-      "top_hit_id": "1bef2a54-3c96-5138-a3ff-327f7605698d"
+      "top_hit_id": "fd1282c9-5f90-5292-85ea-23cb941aa4ad"
     },
     {
       "source": "repo_layer-gateway-embed-v1__design.md",
@@ -124,8 +124,8 @@
       "source": "repo_layer-gateway-embed-v1__design.md",
       "section": "Reliability Controls",
       "doc_type": "layer-gateway-embed-v1__design.md",
-      "probe_text": "How many configurable retry attempts are there?",
-      "score": 0.6738817,
+      "probe_text": "What retry statuses are configured for retries?",
+      "score": 0.6843109,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -133,16 +133,16 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "supported",
-      "judge_reason": "The context mentions 'Configurable retry attempts (RETRY_MAX_ATTEMPTS)' which directly answers the question.",
+      "judge_reason": "The context mentions retry statuses such as 502, 503, and 504.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "5990fa05-499c-5d31-8aa7-0dd2fdc3dc4c"
+      "top_hit_id": "4bcd3b09-303e-5d24-9557-08cf3ca6f637"
     },
     {
       "source": "repo_layer-gateway-embed-v1__design.md",
       "section": "Observability",
       "doc_type": "layer-gateway-embed-v1__design.md",
-      "probe_text": "What types of key events are logged?",
-      "score": 0.66705334,
+      "probe_text": "What types of events are logged?",
+      "score": 0.6440823,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -150,9 +150,9 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "supported",
-      "judge_reason": "The candidate context lists specific key events such as startup, request finished, retry, and request failed.",
+      "judge_reason": "The context lists key events such as startup, request finished, retry, and request failed.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "31a667c0-d190-59ad-85bb-762faceaaa0a"
+      "top_hit_id": "0a940a57-668a-5aea-ad56-7849aa60e4fc"
     },
     {
       "source": "repo_layer-gateway-embed-v1__design.md",
@@ -175,8 +175,8 @@
       "source": "repo_layer-gateway-embed-v1__design.md",
       "section": "Future Enhancements",
       "doc_type": "layer-gateway-embed-v1__design.md",
-      "probe_text": "What feature is suggested to protect backends during burst traffic?",
-      "score": 0.70562375,
+      "probe_text": "What measures are in place to protect backends during burst traffic?",
+      "score": 0.69390666,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -184,16 +184,16 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "supported",
-      "judge_reason": "Admission queue / rate limiting is mentioned as a feature to protect backends during burst traffic.",
+      "judge_reason": "The context mentions admission queue and rate limiting which are measures to protect backends during burst traffic.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "a4cbccbf-3f4c-59e2-992d-fb4f4f9ba82c"
+      "top_hit_id": "7acbae17-43a6-50e4-bf43-0f976452f1b7"
     },
     {
       "source": "repo_layer-gateway-embed-v1__docker.md",
       "section": "Docker Guide",
       "doc_type": "layer-gateway-embed-v1__docker.md",
       "probe_text": "What does this guide cover?",
-      "score": 0.5824106,
+      "score": 0.58256185,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -203,24 +203,24 @@
       "judge_label": "supported",
       "judge_reason": "The candidate context directly answers what the guide covers.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "8f6206c9-f4f5-5b5c-89d7-8d06dd917ac2"
+      "top_hit_id": "b0df69c4-b9ea-581b-9da8-3fd0b47fdf23"
     },
     {
       "source": "repo_layer-gateway-embed-v1__docker.md",
       "section": "Prerequisites",
       "doc_type": "layer-gateway-embed-v1__docker.md",
-      "probe_text": "What is required for the embedding backends to be configured?",
-      "score": 0.68110895,
+      "probe_text": "What prerequisites are mentioned in the section?",
+      "score": 0.5577593,
       "scope_match": true,
       "passed": false,
       "threshold": 0.75,
       "reason": "below_threshold",
       "vector_passed": false,
-      "judge_invoked": true,
-      "judge_label": "not_supported",
-      "judge_reason": "The context does not specify what is required for embedding backends to be configured, only how to set up Docker and a .env file.",
+      "judge_invoked": false,
+      "judge_label": null,
+      "judge_reason": null,
       "final_reason": "below_threshold",
-      "top_hit_id": "00df627d-f8a6-5f99-bd98-00deacedacc7"
+      "top_hit_id": "dd877e60-a195-5bb2-aa21-ed6ab2ee4a1d"
     },
     {
       "source": "repo_layer-gateway-embed-v1__docker.md",
@@ -243,8 +243,8 @@
       "source": "repo_layer-gateway-embed-v1__docker.md",
       "section": "2) Local Docker Deploy (compose)",
       "doc_type": "layer-gateway-embed-v1__docker.md",
-      "probe_text": "What command is used to start the Docker services with building?",
-      "score": 0.71880853,
+      "probe_text": "What command is used to start the Docker containers with building?",
+      "score": 0.72070146,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -252,9 +252,9 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "supported",
-      "judge_reason": "The context provides the command to start Docker services with building.",
+      "judge_reason": "The context provides the command to start Docker containers with building.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "0c1cadb3-4d7f-583d-9cb6-f56780201e5d"
+      "top_hit_id": "abf5556b-66c4-574c-866d-1dd032216dd9"
     },
     {
       "source": "repo_layer-gateway-embed-v1__docker.md",
@@ -277,18 +277,18 @@
       "source": "repo_layer-gateway-embed-v1__docker.md",
       "section": "4) Publish to Docker Hub",
       "doc_type": "layer-gateway-embed-v1__docker.md",
-      "probe_text": "What command is used to build and tag the Docker image?",
-      "score": 0.7377331,
+      "probe_text": "What command is used to set the Docker Hub namespace and target tag?",
+      "score": 0.78660786,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
       "reason": null,
-      "vector_passed": false,
-      "judge_invoked": true,
-      "judge_label": "supported",
-      "judge_reason": "The context provides the command to build and tag the Docker image.",
-      "final_reason": "llm_rescue",
-      "top_hit_id": "600e1335-5c33-556a-b8dc-58a37f56496b"
+      "vector_passed": true,
+      "judge_invoked": false,
+      "judge_label": null,
+      "judge_reason": null,
+      "final_reason": "vector_pass",
+      "top_hit_id": "645ee55b-0309-5b49-8bdc-95302b75ba8e"
     },
     {
       "source": "repo_layer-gateway-embed-v1__docker.md",
@@ -329,7 +329,7 @@
       "section": "ROOT",
       "doc_type": "layer-gateway-embed-v1__plan.md",
       "probe_text": "What is the purpose of layer-gateway-embed-v1?",
-      "score": 0.77713686,
+      "score": 0.7790799,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -339,7 +339,7 @@
       "judge_label": null,
       "judge_reason": null,
       "final_reason": "vector_pass",
-      "top_hit_id": "3b1619f8-6e1f-5c3a-b986-8cbc2b63e5a0"
+      "top_hit_id": "5834b88f-145b-5a8b-82d4-a838cd57f42e"
     },
     {
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
@@ -371,7 +371,7 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "not_supported",
-      "judge_reason": "The context does not explicitly state an HTTP method.",
+      "judge_reason": "The context provides an example of an HTTP request but does not specify the HTTP method used.",
       "final_reason": "below_threshold",
       "top_hit_id": "815b91c7-9065-55b6-ac8d-67715bf2c2b7"
     },
@@ -380,7 +380,7 @@
       "section": "Correlation headers (optional)",
       "doc_type": "layer-gateway-embed-v1__request-response-and-logging.md",
       "probe_text": "What happens if an X-Request-Id header is missing or whitespace-only?",
-      "score": 0.7839005,
+      "score": 0.7893124,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -390,7 +390,7 @@
       "judge_label": null,
       "judge_reason": null,
       "final_reason": "vector_pass",
-      "top_hit_id": "bb99c77e-0345-57f8-8b81-b70fa9de4025"
+      "top_hit_id": "325d1aa7-c7ad-5b6d-96ca-79fd4fc6916f"
     },
     {
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
@@ -422,7 +422,7 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "supported",
-      "judge_reason": "The context specifies which headers are not forwarded and implies that all other headers are forwarded.",
+      "judge_reason": "The context specifies which headers are not forwarded and implies that other headers are forwarded.",
       "final_reason": "llm_rescue",
       "top_hit_id": "1df54575-c0d2-5675-a0b9-813fef6765d5"
     },
@@ -431,7 +431,7 @@
       "section": "Successful response shape",
       "doc_type": "layer-gateway-embed-v1__request-response-and-logging.md",
       "probe_text": "What HTTP status does the gateway return on a completed upstream round-trip?",
-      "score": 0.79436356,
+      "score": 0.7951487,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -441,14 +441,14 @@
       "judge_label": null,
       "judge_reason": null,
       "final_reason": "vector_pass",
-      "top_hit_id": "ee05f832-a8cd-5685-8950-9086f59b8289"
+      "top_hit_id": "72d4badd-ef3a-5ccc-915c-21d9debf50f9"
     },
     {
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
       "section": "Gateway-generated error responses",
       "doc_type": "layer-gateway-embed-v1__request-response-and-logging.md",
       "probe_text": "What is the body of the 429 status response?",
-      "score": 0.6179734,
+      "score": 0.6291858,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -458,7 +458,7 @@
       "judge_label": "supported",
       "judge_reason": "The context provides the body for the 429 status response.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "dc174716-84af-58db-a720-1d12deef629a"
+      "top_hit_id": "10eeab8e-de36-5795-83f9-bc3ddb37ac4d"
     },
     {
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
@@ -515,8 +515,8 @@
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
       "section": "Event catalog",
       "doc_type": "layer-gateway-embed-v1__request-response-and-logging.md",
-      "probe_text": "What fields are included in the `routing_pick` event?",
-      "score": 0.6319374,
+      "probe_text": "What fields are included in the 'routing_pick' event?",
+      "score": 0.63428175,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -524,26 +524,26 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "supported",
-      "judge_reason": "The context lists the fields `attempt`, `excluded`, `decision_reason`, `backends`, and `weights` for the `routing_pick` event.",
+      "judge_reason": "The context lists the fields `attempt`, `excluded`, `decision_reason`, `backends`, and `weights` for the 'routing_pick' event.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "eb8b3392-81ab-550c-ade7-760c4aa8b2ee"
+      "top_hit_id": "cdcba007-6439-51f4-9d9b-9ffd5e70d2e4"
     },
     {
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
       "section": "`routing_pick` / `routing_no_backend`: `gateway_meta` routing snapshot",
       "doc_type": "layer-gateway-embed-v1__request-response-and-logging.md",
-      "probe_text": "What information does the `gateway_meta` include?",
-      "score": 0.7238909,
+      "probe_text": "What information is included in the `gateway_meta` routing snapshot?",
+      "score": 0.7628,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
       "reason": null,
-      "vector_passed": false,
-      "judge_invoked": true,
-      "judge_label": "supported",
-      "judge_reason": "The context provides a detailed list of the information included in `gateway_meta`.",
-      "final_reason": "llm_rescue",
-      "top_hit_id": "56deabe6-c309-5313-907d-6aa3eef46187"
+      "vector_passed": true,
+      "judge_invoked": false,
+      "judge_label": null,
+      "judge_reason": null,
+      "final_reason": "vector_pass",
+      "top_hit_id": "82fa1506-929e-5c22-9e69-5427f00319b0"
     },
     {
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
@@ -558,9 +558,9 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "supported",
-      "judge_reason": "The candidate context provides the exact response for GET /health.",
+      "judge_reason": "The context provides the exact response for GET /health.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "0f9ae3fd-2c88-53dd-90f0-209466b20fbf"
+      "top_hit_id": "67a64f40-10e7-5c98-8e8c-6dc715b84027"
     },
     {
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
@@ -575,9 +575,9 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "supported",
-      "judge_reason": "The context provides information on how log timezone is controlled.",
+      "judge_reason": "The context provides information on how the log timezone is controlled.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "656fea9c-2069-581d-a5c9-18ea1e3c4558"
+      "top_hit_id": "e02a85e0-7d56-58c9-9455-bdce1d64c834"
     },
     {
       "source": "repo_layer-gateway-embed-v1__run-locally.md",
@@ -609,9 +609,9 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "not_supported",
-      "judge_reason": "No specific Python version is mentioned.",
+      "judge_reason": "No Python version is mentioned in the context.",
       "final_reason": "below_threshold",
-      "top_hit_id": "45bcc2f1-d5d5-52db-9d04-66f4e12c8e0f"
+      "top_hit_id": "c5bd024b-82fe-59a4-aa5c-f326da11e0ff"
     },
     {
       "source": "repo_layer-gateway-embed-v1__run-locally.md",
@@ -628,14 +628,14 @@
       "judge_label": "supported",
       "judge_reason": "The context provides the command to create a virtual environment.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "a8e8fb2d-1080-506d-9f98-8717beece84e"
+      "top_hit_id": "e250db48-8d1b-59bf-82d9-6cf5705f05fb"
     },
     {
       "source": "repo_layer-gateway-embed-v1__run-locally.md",
       "section": "2) Install the Project",
       "doc_type": "layer-gateway-embed-v1__run-locally.md",
       "probe_text": "What command is used to install the project?",
-      "score": 0.6849969,
+      "score": 0.6870018,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -643,16 +643,16 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "supported",
-      "judge_reason": "The context provides the command to install the project.",
+      "judge_reason": "The candidate context provides the correct command to install the project.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "a3c4d5fc-9eda-52a4-9355-76ca56084bd1"
+      "top_hit_id": "2b83ca63-c9ae-591f-b882-ea1b2393d8ff"
     },
     {
       "source": "repo_layer-gateway-embed-v1__run-locally.md",
       "section": "3) Configure Environment",
       "doc_type": "layer-gateway-embed-v1__run-locally.md",
       "probe_text": "What command is used to create a local env file?",
-      "score": 0.7284237,
+      "score": 0.733829,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -662,14 +662,14 @@
       "judge_label": "supported",
       "judge_reason": "The context provides the command to create a local env file.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "333c80c9-f0bc-576e-90d3-8293d4990134"
+      "top_hit_id": "9a6d6bca-2c5d-53aa-9c83-8e922a54dd7f"
     },
     {
       "source": "repo_layer-gateway-embed-v1__run-locally.md",
       "section": "4) Start the Gateway",
       "doc_type": "layer-gateway-embed-v1__run-locally.md",
       "probe_text": "What command starts the Gateway?",
-      "score": 0.7023148,
+      "score": 0.7037635,
       "scope_match": true,
       "passed": false,
       "threshold": 0.75,
@@ -679,7 +679,7 @@
       "judge_label": "not_supported",
       "judge_reason": "The context does not provide information about a Gateway command.",
       "final_reason": "below_threshold",
-      "top_hit_id": "bc5aec49-1683-52ee-94cc-64301161db33"
+      "top_hit_id": "0206b25f-5b5e-50b8-a48b-d55f3fe7e4ae"
     },
     {
       "source": "repo_layer-gateway-embed-v1__run-locally.md",
@@ -696,31 +696,14 @@
       "judge_label": null,
       "judge_reason": null,
       "final_reason": "vector_pass",
-      "top_hit_id": "befe04d8-72b6-5564-a76b-7a99019ec481"
+      "top_hit_id": "31c3c9e8-0da4-5f1b-8b84-50ba91b2356e"
     },
     {
       "source": "repo_layer-gateway-embed-v1__run-locally.md",
       "section": "6) Test Embeddings Endpoint",
       "doc_type": "layer-gateway-embed-v1__run-locally.md",
-      "probe_text": "What is the endpoint for testing embeddings?",
-      "score": 0.72117233,
-      "scope_match": true,
-      "passed": true,
-      "threshold": 0.75,
-      "reason": null,
-      "vector_passed": false,
-      "judge_invoked": true,
-      "judge_label": "supported",
-      "judge_reason": "The candidate context provides the endpoint URL for testing embeddings.",
-      "final_reason": "llm_rescue",
-      "top_hit_id": "66e93314-1f21-55c3-8d19-8f776dc993a8"
-    },
-    {
-      "source": "repo_layer-gateway-embed-v1__run-locally.md",
-      "section": "Troubleshooting",
-      "doc_type": "layer-gateway-embed-v1__run-locally.md",
-      "probe_text": "What should be done if the externally-managed-environment is encountered?",
-      "score": 0.6755861,
+      "probe_text": "What is the URL used in the curl command?",
+      "score": 0.7005361,
       "scope_match": true,
       "passed": false,
       "threshold": 0.75,
@@ -728,9 +711,26 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "not_supported",
-      "judge_reason": "The context does not provide instructions for handling an externally-managed-environment.",
+      "judge_reason": "The context provides a curl command but does not explicitly state the URL used.",
       "final_reason": "below_threshold",
-      "top_hit_id": "7e0cd726-439a-54a3-8caf-3be6b0087b5e"
+      "top_hit_id": "61106ceb-2a76-55a4-9ddf-002afbe0b591"
+    },
+    {
+      "source": "repo_layer-gateway-embed-v1__run-locally.md",
+      "section": "Troubleshooting",
+      "doc_type": "layer-gateway-embed-v1__run-locally.md",
+      "probe_text": "What should you do if you encounter an externally-managed-environment issue?",
+      "score": 0.70639956,
+      "scope_match": true,
+      "passed": false,
+      "threshold": 0.75,
+      "reason": "below_threshold",
+      "vector_passed": false,
+      "judge_invoked": true,
+      "judge_label": "not_supported",
+      "judge_reason": "The context does not provide information on how to handle externally-managed-environment issues.",
+      "final_reason": "below_threshold",
+      "top_hit_id": "8c5712f1-6948-56a7-9e55-f8b43a8cca9f"
     },
     {
       "source": "repo_layer-gateway-embed-v1__status-codes.md",
@@ -745,9 +745,9 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "not_supported",
-      "judge_reason": "The context only mentions 429 and 503 status codes, but does not list all of them.",
+      "judge_reason": "The context only mentions 429 and 503 status codes, but does not list all of them as the question asks.",
       "final_reason": "below_threshold",
-      "top_hit_id": "131cffab-22e8-5bb8-953a-18fc1d062a90"
+      "top_hit_id": "2d152fba-7c8d-5f35-8fcf-b01704b3fdb4"
     },
     {
       "source": "repo_layer-gateway-embed-v1__status-codes.md",
@@ -764,31 +764,14 @@
       "judge_label": null,
       "judge_reason": null,
       "final_reason": "vector_pass",
-      "top_hit_id": "b54426bf-6c7b-564a-bff8-d7b5a1ed28fb"
+      "top_hit_id": "7a060bf3-4865-5171-ae21-a64dce73b54f"
     },
     {
       "source": "repo_layer-gateway-embed-v1__status-codes.md",
       "section": "When the gateway returns 503",
       "doc_type": "layer-gateway-embed-v1__status-codes.md",
-      "probe_text": "How many cases can result in a 503 Service Unavailable response?",
-      "score": 0.74652946,
-      "scope_match": true,
-      "passed": true,
-      "threshold": 0.75,
-      "reason": null,
-      "vector_passed": false,
-      "judge_invoked": true,
-      "judge_label": "supported",
-      "judge_reason": "The context mentions that there are two gateway-generated cases and one passthrough case that can result in a 503 Service Unavailable response.",
-      "final_reason": "llm_rescue",
-      "top_hit_id": "2e0aac0c-7e08-5073-b163-2444c6468d61"
-    },
-    {
-      "source": "repo_layer-gateway-embed-v1__status-codes.md",
-      "section": "1) No eligible backend at pick time",
-      "doc_type": "layer-gateway-embed-v1__status-codes.md",
-      "probe_text": "What HTTP status code is returned when no eligible backend is found?",
-      "score": 0.76942515,
+      "probe_text": "How many cases can result in a 503 Service Unavailable being returned by the gateway?",
+      "score": 0.81891924,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -798,7 +781,24 @@
       "judge_label": null,
       "judge_reason": null,
       "final_reason": "vector_pass",
-      "top_hit_id": "4bb67787-2346-58c7-8d6c-2b7516fb5ae5"
+      "top_hit_id": "2e0aac0c-7e08-5073-b163-2444c6468d61"
+    },
+    {
+      "source": "repo_layer-gateway-embed-v1__status-codes.md",
+      "section": "1) No eligible backend at pick time",
+      "doc_type": "layer-gateway-embed-v1__status-codes.md",
+      "probe_text": "What HTTP status code is returned when no eligible backend is found?",
+      "score": 0.7705737,
+      "scope_match": true,
+      "passed": true,
+      "threshold": 0.75,
+      "reason": null,
+      "vector_passed": true,
+      "judge_invoked": false,
+      "judge_label": null,
+      "judge_reason": null,
+      "final_reason": "vector_pass",
+      "top_hit_id": "4b24e318-d5f2-54ad-a7c2-81e48d649b1f"
     },
     {
       "source": "repo_layer-gateway-embed-v1__status-codes.md",
@@ -815,7 +815,7 @@
       "judge_label": null,
       "judge_reason": null,
       "final_reason": "vector_pass",
-      "top_hit_id": "94508125-dec5-5ff3-8b85-20d77893a8b7"
+      "top_hit_id": "eb077ff8-2d18-549e-919f-3d1db1c9ccac"
     },
     {
       "source": "repo_layer-gateway-embed-v1__status-codes.md",
@@ -889,8 +889,8 @@
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
       "section": "3. Components",
       "doc_type": "layer-gateway-inference-v1__artichecture.md",
-      "probe_text": "What section is this text part of?",
-      "score": 0.6373244,
+      "probe_text": "What section is this text under?",
+      "score": 0.61203015,
       "scope_match": true,
       "passed": false,
       "threshold": 0.75,
@@ -898,16 +898,16 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "not_supported",
-      "judge_reason": "The candidate context does not provide enough information to determine which section the text is part of.",
+      "judge_reason": "The candidate context does not provide enough information to determine which section the text is under.",
       "final_reason": "below_threshold",
-      "top_hit_id": "fbf7abcd-a5f6-5077-9537-9d63e20dcf14"
+      "top_hit_id": "e2b5cccc-06b5-5ee4-aef7-87b4e86b18eb"
     },
     {
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
       "section": "3.1 API Layer",
       "doc_type": "layer-gateway-inference-v1__artichecture.md",
-      "probe_text": "How many API endpoints are handled by app/api/routes.py?",
-      "score": 0.762454,
+      "probe_text": "What HTTP methods are handled by app/api/routes.py?",
+      "score": 0.7708471,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -917,24 +917,24 @@
       "judge_label": null,
       "judge_reason": null,
       "final_reason": "vector_pass",
-      "top_hit_id": "038be741-830d-5641-a6b2-963dbe72618a"
+      "top_hit_id": "99067509-965f-51d6-b6f2-2ae165bea001"
     },
     {
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
       "section": "3.2 Admission Queue",
       "doc_type": "layer-gateway-inference-v1__artichecture.md",
-      "probe_text": "What is the purpose of the admission queue?",
-      "score": 0.72191304,
+      "probe_text": "What does the admission queue in app/queue/admission_queue.py provide?",
+      "score": 0.76414716,
       "scope_match": true,
-      "passed": false,
+      "passed": true,
       "threshold": 0.75,
-      "reason": "below_threshold",
-      "vector_passed": false,
-      "judge_invoked": true,
-      "judge_label": "not_supported",
-      "judge_reason": "The context describes the technical aspects and purposes of the code related to the admission queue but does not explicitly state the purpose of an 'admission queue' in a general sense.",
-      "final_reason": "below_threshold",
-      "top_hit_id": "5a35ffdd-ea90-588b-b395-0c3ae29763cb"
+      "reason": null,
+      "vector_passed": true,
+      "judge_invoked": false,
+      "judge_label": null,
+      "judge_reason": null,
+      "final_reason": "vector_pass",
+      "top_hit_id": "114e8ae0-07a8-543b-8159-f6e6bfe1a991"
     },
     {
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
@@ -957,25 +957,8 @@
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
       "section": "3.4 Scoring Engine",
       "doc_type": "layer-gateway-inference-v1__artichecture.md",
-      "probe_text": "How is the backend score computed?",
-      "score": 0.7561955,
-      "scope_match": true,
-      "passed": true,
-      "threshold": 0.75,
-      "reason": null,
-      "vector_passed": true,
-      "judge_invoked": false,
-      "judge_label": null,
-      "judge_reason": null,
-      "final_reason": "vector_pass",
-      "top_hit_id": "0283144f-501b-5597-a3f9-d8aa2bb477d7"
-    },
-    {
-      "source": "repo_layer-gateway-inference-v1__artichecture.md",
-      "section": "3.5 Backend Registry and Runtime State",
-      "doc_type": "layer-gateway-inference-v1__artichecture.md",
-      "probe_text": "What state is tracked for each backend?",
-      "score": 0.6964139,
+      "probe_text": "What factors does the scoring engine consider?",
+      "score": 0.7445688,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -983,9 +966,26 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "supported",
-      "judge_reason": "The context provides details on the state tracked for each backend, including limits, inflight counters, latency/error EWMAs, circuit state, and admin flag.",
+      "judge_reason": "The context lists several factors considered by the scoring engine.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "cf5b041c-c350-5c43-b575-2310a270ad0d"
+      "top_hit_id": "71a07ccf-3113-5a49-bfcf-8f554d8dbd3f"
+    },
+    {
+      "source": "repo_layer-gateway-inference-v1__artichecture.md",
+      "section": "3.5 Backend Registry and Runtime State",
+      "doc_type": "layer-gateway-inference-v1__artichecture.md",
+      "probe_text": "What states are tracked for each backend?",
+      "score": 0.69592285,
+      "scope_match": true,
+      "passed": false,
+      "threshold": 0.75,
+      "reason": "below_threshold",
+      "vector_passed": false,
+      "judge_invoked": true,
+      "judge_label": "not_supported",
+      "judge_reason": "The context does not explicitly mention which states are tracked for each backend, only that they are tracked.",
+      "final_reason": "below_threshold",
+      "top_hit_id": "7ba5254d-48e4-5e16-b14c-812311ed8f0d"
     },
     {
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
@@ -1008,25 +1008,25 @@
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
       "section": "3.7 Observability",
       "doc_type": "layer-gateway-inference-v1__artichecture.md",
-      "probe_text": "What type of logs does app/core/logging.py output?",
-      "score": 0.7416868,
+      "probe_text": "What format do the logs in app/core/logging.py output?",
+      "score": 0.72615045,
       "scope_match": true,
-      "passed": true,
+      "passed": false,
       "threshold": 0.75,
-      "reason": null,
+      "reason": "below_threshold",
       "vector_passed": false,
       "judge_invoked": true,
-      "judge_label": "supported",
-      "judge_reason": "The context mentions that app/core/logging.py outputs structured JSON logs.",
-      "final_reason": "llm_rescue",
-      "top_hit_id": "1c104c77-10f1-5b52-93da-11408d601d7d"
+      "judge_label": "not_supported",
+      "judge_reason": "The context does not mention the format of logs in app/core/logging.py.",
+      "final_reason": "below_threshold",
+      "top_hit_id": "1839f50f-5f00-55b6-bfb8-a292bfbd083b"
     },
     {
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
       "section": "4. End-to-End Request Lifecycle",
       "doc_type": "layer-gateway-inference-v1__artichecture.md",
       "probe_text": "What is the first step when a client sends a request?",
-      "score": 0.70937955,
+      "score": 0.7186842,
       "scope_match": true,
       "passed": false,
       "threshold": 0.75,
@@ -1036,23 +1036,23 @@
       "judge_label": "not_supported",
       "judge_reason": "The context does not provide information about the first step when a client sends a request. It only describes subsequent steps in the process.",
       "final_reason": "below_threshold",
-      "top_hit_id": "4889175f-88f2-5525-89ab-9782dfd10368"
+      "top_hit_id": "0defef1b-15f6-5ea3-a88e-709297ce3b89"
     },
     {
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
       "section": "4.1 Dispatch Decision Flow",
       "doc_type": "layer-gateway-inference-v1__artichecture.md",
-      "probe_text": "What action is taken if the request is cancelled or already resolved?",
-      "score": 0.72097397,
+      "probe_text": "What actions are taken if the request is cancelled or already resolved?",
+      "score": 0.7210612,
       "scope_match": true,
-      "passed": true,
+      "passed": false,
       "threshold": 0.75,
-      "reason": null,
+      "reason": "below_threshold",
       "vector_passed": false,
       "judge_invoked": true,
-      "judge_label": "supported",
-      "judge_reason": "The flowchart includes a condition for when a request is cancelled or already resolved, which leads to skipping the request.",
-      "final_reason": "llm_rescue",
+      "judge_label": "not_supported",
+      "judge_reason": "The context does not explicitly mention actions taken if the request is cancelled or already resolved.",
+      "final_reason": "below_threshold",
       "top_hit_id": "175b45b6-a8e3-52b6-abea-eb014ae3b934"
     },
     {
@@ -1060,24 +1060,24 @@
       "section": "5. Reliability Design",
       "doc_type": "layer-gateway-inference-v1__artichecture.md",
       "probe_text": "What is the topic of this section?",
-      "score": 0.56240296,
+      "score": 0.6006911,
       "scope_match": true,
       "passed": false,
       "threshold": 0.75,
       "reason": "below_threshold",
       "vector_passed": false,
-      "judge_invoked": false,
-      "judge_label": null,
-      "judge_reason": null,
+      "judge_invoked": true,
+      "judge_label": "not_supported",
+      "judge_reason": "The candidate context does not provide information about the topic of the section.",
       "final_reason": "below_threshold",
-      "top_hit_id": "9dbb91e0-e74b-56a9-b13b-fd4a8522849e"
+      "top_hit_id": "5567824f-55dc-5f90-ab21-97465c1ed259"
     },
     {
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
       "section": "5.1 Backpressure",
       "doc_type": "layer-gateway-inference-v1__artichecture.md",
       "probe_text": "What is the name of the metric used to track rejection reasons?",
-      "score": 0.65502596,
+      "score": 0.65942335,
       "scope_match": true,
       "passed": false,
       "threshold": 0.75,
@@ -1087,7 +1087,7 @@
       "judge_label": "not_supported",
       "judge_reason": "The context does not provide the name of the metric used to track rejection reasons.",
       "final_reason": "below_threshold",
-      "top_hit_id": "e347f05b-a9ac-5293-9ce8-348546e9e7d2"
+      "top_hit_id": "197aa522-8f58-5911-86e2-a3dc5f8e21c0"
     },
     {
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
@@ -1111,7 +1111,7 @@
       "section": "5.3 Retry Policy",
       "doc_type": "layer-gateway-inference-v1__artichecture.md",
       "probe_text": "What determines the maximum number of retries?",
-      "score": 0.6246784,
+      "score": 0.6254618,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -1121,14 +1121,14 @@
       "judge_label": "supported",
       "judge_reason": "The context mentions 'retries capped by `retry.max_attempts`', which directly answers the question about what determines the maximum number of retries.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "d3cfa2c0-d101-5b86-be1d-892ba28b8a18"
+      "top_hit_id": "293eac46-d9c3-5c5a-8ae1-36c117181f0b"
     },
     {
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
       "section": "6. Configuration Model",
       "doc_type": "layer-gateway-inference-v1__artichecture.md",
       "probe_text": "What are the primary sections in config.yaml?",
-      "score": 0.76634157,
+      "score": 0.78484404,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -1138,7 +1138,7 @@
       "judge_label": null,
       "judge_reason": null,
       "final_reason": "vector_pass",
-      "top_hit_id": "f6da6483-b6c1-5e39-9521-2f6697ac4c3f"
+      "top_hit_id": "d2560111-c51e-54ef-ae87-115ab70a24ff"
     },
     {
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
@@ -1162,7 +1162,7 @@
       "section": "8. Metrics Design Summary",
       "doc_type": "layer-gateway-inference-v1__artichecture.md",
       "probe_text": "What types of metrics are mentioned in the text?",
-      "score": 0.6631494,
+      "score": 0.6651095,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -1172,14 +1172,14 @@
       "judge_label": "supported",
       "judge_reason": "The context lists several types of metrics mentioned, such as traffic and failures, queue pressure, backend health/load, and latency distribution.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "3aca6eca-ee2b-539f-8a66-674e1f5a9b7a"
+      "top_hit_id": "048ee47e-e9f0-5380-a933-897a8c771206"
     },
     {
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
       "section": "9. Deployment Notes",
       "doc_type": "layer-gateway-inference-v1__artichecture.md",
       "probe_text": "What is the recommended way to run the service instances?",
-      "score": 0.70036715,
+      "score": 0.70168006,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -1187,9 +1187,9 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "supported",
-      "judge_reason": "The context provides instructions on how to run service instances, including running them behind a load balancer and keeping backend URLs reachable.",
+      "judge_reason": "The context provides instructions on how to run service instances, including running them behind a load balancer and making backend URLs reachable.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "b506d264-39e9-5d4e-904a-27d229f45042"
+      "top_hit_id": "8655f254-6e7a-5cd5-a3a5-803e8373c0d9"
     },
     {
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
@@ -1247,7 +1247,7 @@
       "section": "1) What this service does",
       "doc_type": "layer-gateway-inference-v1__docs.md",
       "probe_text": "What HTTP method is used for the primary route?",
-      "score": 0.6595125,
+      "score": 0.65980333,
       "scope_match": true,
       "passed": false,
       "threshold": 0.75,
@@ -1257,7 +1257,7 @@
       "judge_label": "not_supported",
       "judge_reason": "The context does not specify the HTTP method for the primary route.",
       "final_reason": "below_threshold",
-      "top_hit_id": "b2cd1ebb-3921-5440-abbe-6dd743a5ddeb"
+      "top_hit_id": "39369561-86ea-54d8-9df7-b19bd0e2f1e2"
     },
     {
       "source": "repo_layer-gateway-inference-v1__docs.md",
@@ -1281,7 +1281,7 @@
       "section": "3) Core modules",
       "doc_type": "layer-gateway-inference-v1__docs.md",
       "probe_text": "What is the purpose of app/api/routes.py?",
-      "score": 0.7232311,
+      "score": 0.7266166,
       "scope_match": true,
       "passed": false,
       "threshold": 0.75,
@@ -1291,14 +1291,14 @@
       "judge_label": "not_supported",
       "judge_reason": "The context does not provide information about the purpose of app/api/routes.py.",
       "final_reason": "below_threshold",
-      "top_hit_id": "e5e3f675-d0da-595a-9f93-7aaab91a08c1"
+      "top_hit_id": "099420f9-282b-590a-a28a-b40bbb9b0fad"
     },
     {
       "source": "repo_layer-gateway-inference-v1__docs.md",
       "section": "4) Important runtime concepts",
       "doc_type": "layer-gateway-inference-v1__docs.md",
       "probe_text": "What is the purpose of the AdmissionQueue?",
-      "score": 0.65116704,
+      "score": 0.6512841,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -1308,7 +1308,7 @@
       "judge_label": "supported",
       "judge_reason": "The context provides information about the AdmissionQueue as a bounded staging queue before dispatch that protects the system under burst.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "9ac958d0-5818-5261-9c3a-865fdc6a3178"
+      "top_hit_id": "00e6c83f-abc4-58db-b8b1-6cc90eff7606"
     },
     {
       "source": "repo_layer-gateway-inference-v1__docs.md",
@@ -1331,8 +1331,8 @@
       "source": "repo_layer-gateway-inference-v1__docs.md",
       "section": "6) Logging and tracing IDs",
       "doc_type": "layer-gateway-inference-v1__docs.md",
-      "probe_text": "What is the source of the request_id?",
-      "score": 0.6237974,
+      "probe_text": "What does the `request_id` field in the gateway event represent?",
+      "score": 0.68271494,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -1340,16 +1340,16 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "supported",
-      "judge_reason": "The context explains that the request_id is either from 'x-request-id' or generated by the gateway.",
+      "judge_reason": "The context explains that the request_id field is either from x-request-id or generated by the gateway.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "2a53b855-f00f-506c-9297-1e630fa70cb9"
+      "top_hit_id": "b234d1ab-206d-5958-afb7-934c7e52b199"
     },
     {
       "source": "repo_layer-gateway-inference-v1__docs.md",
       "section": "7) Metrics quick map",
       "doc_type": "layer-gateway-inference-v1__docs.md",
       "probe_text": "What metrics are used to measure traffic and reliability?",
-      "score": 0.72698474,
+      "score": 0.7273257,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -1359,14 +1359,14 @@
       "judge_label": "supported",
       "judge_reason": "The context provides metrics related to traffic and reliability as requested in the question.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "99de7c83-376c-5662-844b-1fdff13782a4"
+      "top_hit_id": "b73dd4c5-9007-5b47-a778-15c3c0e8b9ac"
     },
     {
       "source": "repo_layer-gateway-inference-v1__docs.md",
       "section": "8) Common failure patterns",
       "doc_type": "layer-gateway-inference-v1__docs.md",
-      "probe_text": "What should be done if the queue is full or exceeds age limits?",
-      "score": 0.68620837,
+      "probe_text": "What actions should be taken if the queue is full or exceeds age limits?",
+      "score": 0.68054426,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -1374,9 +1374,9 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "supported",
-      "judge_reason": "The context provides instructions on what to do if the queue is full or exceeds age limits.",
+      "judge_reason": "The context provides actions to take when the queue is full or exceeds age limits.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "83025891-f699-5df5-9b10-74bb5d1614c0"
+      "top_hit_id": "d15754f7-08a3-5904-b440-1ce3d885e2c6"
     },
     {
       "source": "repo_layer-gateway-inference-v1__docs.md",
@@ -1417,7 +1417,7 @@
       "section": "Dispatch to fallback (`app/api/routes.py`)",
       "doc_type": "layer-gateway-inference-v1__fallback.md",
       "probe_text": "What does the field 'backend' represent?",
-      "score": 0.6056527,
+      "score": 0.6139871,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -1427,14 +1427,14 @@
       "judge_label": "supported",
       "judge_reason": "The context provides a definition for the 'backend' field.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "03305885-5d59-5924-a749-78624b50d497"
+      "top_hit_id": "b6c29031-b831-5770-88d6-5dc2e94225ca"
     },
     {
       "source": "repo_layer-gateway-inference-v1__fallback.md",
       "section": "After dispatch (`app/proxy/client.py`)",
       "doc_type": "layer-gateway-inference-v1__fallback.md",
-      "probe_text": "What are the proxy events that carry gateway_meta.openai_fallback_enabled?",
-      "score": 0.8176098,
+      "probe_text": "What types of proxy events carry gateway_meta.openai_fallback_enabled?",
+      "score": 0.82898617,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -1450,17 +1450,17 @@
       "source": "repo_layer-gateway-inference-v1__fallback.md",
       "section": "Quick Loki-style filter",
       "doc_type": "layer-gateway-inference-v1__fallback.md",
-      "probe_text": "What is the fallback dispatch line for event request_dispatched?",
-      "score": 0.7511145,
+      "probe_text": "What are the fallback dispatch lines?",
+      "score": 0.68051714,
       "scope_match": true,
-      "passed": true,
+      "passed": false,
       "threshold": 0.75,
-      "reason": null,
-      "vector_passed": true,
-      "judge_invoked": false,
-      "judge_label": null,
-      "judge_reason": null,
-      "final_reason": "vector_pass",
+      "reason": "below_threshold",
+      "vector_passed": false,
+      "judge_invoked": true,
+      "judge_label": "not_supported",
+      "judge_reason": "The context does not provide information about fallback dispatch lines.",
+      "final_reason": "below_threshold",
       "top_hit_id": "5a3c1ced-2f21-5692-b979-22f78fba12ca"
     },
     {
@@ -1468,7 +1468,7 @@
       "section": "Related metric",
       "doc_type": "layer-gateway-inference-v1__fallback.md",
       "probe_text": "What does the `gateway_fallback_requests_total{provider=\"openai\"}` metric increment when?",
-      "score": 0.8614819,
+      "score": 0.86220896,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -1478,14 +1478,14 @@
       "judge_label": null,
       "judge_reason": null,
       "final_reason": "vector_pass",
-      "top_hit_id": "78fd5f0b-5d20-5a6b-ba19-a5317a83bb4a"
+      "top_hit_id": "8e5ee97e-9768-5d05-ace1-19398594d18a"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "Gateway Redesign Plan for `layer-gateway-inference-v1`",
       "doc_type": "layer-gateway-inference-v1__plan.md",
       "probe_text": "What is the name of the gateway redesign plan?",
-      "score": 0.6699892,
+      "score": 0.67071563,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -1495,14 +1495,14 @@
       "judge_label": "supported",
       "judge_reason": "The context provides the name of the gateway redesign plan.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "e38db15b-d205-57db-88aa-15f56fc88715"
+      "top_hit_id": "802b8304-cf0d-5c8f-af5e-a27af0facbcc"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "Goal",
       "doc_type": "layer-gateway-inference-v1__plan.md",
-      "probe_text": "What is the new design goal for the gateway?",
-      "score": 0.63768166,
+      "probe_text": "What is the new goal of redesigning the gateway?",
+      "score": 0.6516893,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -1510,16 +1510,16 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "supported",
-      "judge_reason": "The context describes the new design goal for the gateway, which is to improve multi-GPU utilization, reduce one-node-at-a-time wave patterns, and preserve good latency under load.",
+      "judge_reason": "The context provides a clear description of the new goal of redesigning the gateway.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "32d41ab3-bb18-55d3-8ed1-ac544d642ef6"
+      "top_hit_id": "3b42da46-f46e-5d51-98f7-c1daabfd462d"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "Why Redesign",
       "doc_type": "layer-gateway-inference-v1__plan.md",
-      "probe_text": "What specific issue does the current scheduling model need to address?",
-      "score": 0.6600233,
+      "probe_text": "What additional feature does the system need besides immediate backend selection?",
+      "score": 0.69361615,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -1527,16 +1527,16 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "supported",
-      "judge_reason": "The context mentions that the scheduling model needs 'request shaping', which is a specific issue related to how requests are handled and distributed among backends.",
+      "judge_reason": "The context explicitly states that the system needs 'request shaping', which is an additional feature beyond immediate backend selection.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "d46216d4-5534-5987-985e-09e3b41464e3"
+      "top_hit_id": "8653cb53-bba5-59ad-9315-5e4d1499444d"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "Target Outcome",
       "doc_type": "layer-gateway-inference-v1__plan.md",
       "probe_text": "How should the gateway handle GPU backends after the redesign?",
-      "score": 0.75721896,
+      "score": 0.7662833,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -1546,7 +1546,7 @@
       "judge_label": null,
       "judge_reason": null,
       "final_reason": "vector_pass",
-      "top_hit_id": "fd49ce48-4459-5670-b5dd-d493a665bf8f"
+      "top_hit_id": "dbae8b1f-62e5-5c48-803e-d0180628184e"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
@@ -1569,8 +1569,25 @@
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "1. Design Principles",
       "doc_type": "layer-gateway-inference-v1__plan.md",
-      "probe_text": "What section is this text part of?",
-      "score": 0.6230022,
+      "probe_text": "What section is this text from?",
+      "score": 0.5745906,
+      "scope_match": true,
+      "passed": false,
+      "threshold": 0.75,
+      "reason": "below_threshold",
+      "vector_passed": false,
+      "judge_invoked": false,
+      "judge_label": null,
+      "judge_reason": null,
+      "final_reason": "below_threshold",
+      "top_hit_id": "4efc9834-bf33-520b-8078-64fcc3f49eeb"
+    },
+    {
+      "source": "repo_layer-gateway-inference-v1__plan.md",
+      "section": "1.1 Keep the gateway lightweight, but not purely stateless",
+      "doc_type": "layer-gateway-inference-v1__plan.md",
+      "probe_text": "What does the new process for handling requests include?",
+      "score": 0.6602403,
       "scope_match": true,
       "passed": false,
       "threshold": 0.75,
@@ -1578,33 +1595,16 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "not_supported",
-      "judge_reason": "The candidate context does not provide enough information to determine which section the text is part of.",
+      "judge_reason": "The context describes changes in the request handling process for a gateway but does not provide details on a new process for handling requests as asked in the question.",
       "final_reason": "below_threshold",
-      "top_hit_id": "f8005036-6b56-5cfa-88ef-c32f2824b3a4"
-    },
-    {
-      "source": "repo_layer-gateway-inference-v1__plan.md",
-      "section": "1.1 Keep the gateway lightweight, but not purely stateless",
-      "doc_type": "layer-gateway-inference-v1__plan.md",
-      "probe_text": "What should the gateway do instead of just proxying immediately?",
-      "score": 0.71672386,
-      "scope_match": true,
-      "passed": true,
-      "threshold": 0.75,
-      "reason": null,
-      "vector_passed": false,
-      "judge_invoked": true,
-      "judge_label": "supported",
-      "judge_reason": "The context provides an alternative process for the gateway to follow, which explicitly states what it should do instead of just proxying immediately.",
-      "final_reason": "llm_rescue",
-      "top_hit_id": "5799f70d-2fd7-5470-b0d2-38bb9a090c2b"
+      "top_hit_id": "550f7205-86f1-519a-9d12-151d24250be3"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "1.2 Optimize for GPU efficiency, not just lowest immediate latency",
       "doc_type": "layer-gateway-inference-v1__plan.md",
       "probe_text": "What should the redesign explicitly optimize for?",
-      "score": 0.71909606,
+      "score": 0.72073865,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -1614,24 +1614,24 @@
       "judge_label": "supported",
       "judge_reason": "The candidate context directly provides the specific optimizations the redesign should focus on.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "b12c287e-1c64-594b-be49-ed9f71bde06f"
+      "top_hit_id": "aca2122e-dc8e-5e8d-9a36-a015faeb9064"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "1.3 Use fast local state for routing",
       "doc_type": "layer-gateway-inference-v1__plan.md",
-      "probe_text": "What types of state should be used for routing?",
-      "score": 0.6850021,
+      "probe_text": "What types of state should routing rely on?",
+      "score": 0.6857973,
       "scope_match": true,
-      "passed": false,
+      "passed": true,
       "threshold": 0.75,
-      "reason": "below_threshold",
+      "reason": null,
       "vector_passed": false,
       "judge_invoked": true,
-      "judge_label": "not_supported",
-      "judge_reason": "The context discusses state for routing in a gateway and monitoring, but does not mention types of state specifically for client-side or server-side routing in applications.",
-      "final_reason": "below_threshold",
-      "top_hit_id": "979a6ea5-0e0e-5dce-b1e0-8d100cc245fc"
+      "judge_label": "supported",
+      "judge_reason": "The context provides specific types of state that routing should rely on, such as current inflight per backend, recent dispatch counts, and recent failures and timeouts.",
+      "final_reason": "llm_rescue",
+      "top_hit_id": "41153660-8199-5b77-bb18-7d37adb4e8bf"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
@@ -1646,9 +1646,9 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "not_supported",
-      "judge_reason": "The candidate context does not provide enough information to determine which section the given text is part of.",
+      "judge_reason": "The candidate context does not provide enough information to determine which section this text is part of.",
       "final_reason": "below_threshold",
-      "top_hit_id": "866a06a0-cb41-5971-ac44-391ca20f4238"
+      "top_hit_id": "fe4ed2cb-6b26-5a12-bee5-567c7d52ca9d"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
@@ -1665,14 +1665,14 @@
       "judge_label": "not_supported",
       "judge_reason": "The context does not provide information about the first step when a client sends a request.",
       "final_reason": "below_threshold",
-      "top_hit_id": "501f8730-cb8e-590a-b818-598f7505ef9c"
+      "top_hit_id": "bc70041c-1f7b-5e72-9050-6588f9436168"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "2.2 Components",
       "doc_type": "layer-gateway-inference-v1__plan.md",
       "probe_text": "What section is this?",
-      "score": 0.6244966,
+      "score": 0.63716906,
       "scope_match": true,
       "passed": false,
       "threshold": 0.75,
@@ -1682,14 +1682,14 @@
       "judge_label": "not_supported",
       "judge_reason": "The candidate context does not provide enough information to determine which section the user is referring to.",
       "final_reason": "below_threshold",
-      "top_hit_id": "57e67214-f4fd-5d28-b6d6-2623aaae6ee3"
+      "top_hit_id": "32eded3f-2573-533b-a132-6d61b58a946e"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "A. API layer",
       "doc_type": "layer-gateway-inference-v1__plan.md",
       "probe_text": "What actions does the API layer perform?",
-      "score": 0.7161688,
+      "score": 0.7164742,
       "scope_match": true,
       "passed": false,
       "threshold": 0.75,
@@ -1699,7 +1699,7 @@
       "judge_label": "not_supported",
       "judge_reason": "The candidate context does not describe actions performed by the API layer, but rather its responsibilities.",
       "final_reason": "below_threshold",
-      "top_hit_id": "6a0fd3db-94f6-5bf7-a01f-8d2f7fceaee0"
+      "top_hit_id": "59a7339f-4b70-5baf-82e1-1dcfa49a258f"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
@@ -1750,14 +1750,14 @@
       "judge_label": "not_supported",
       "judge_reason": "The context does not explicitly mention the responsibilities of a backend state manager but rather lists its functionalities.",
       "final_reason": "below_threshold",
-      "top_hit_id": "d126d09c-81c1-5f1f-bcb3-a12427b7864a"
+      "top_hit_id": "1e538e45-e370-54bc-a4aa-a76eda689dda"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "E. Proxy layer",
       "doc_type": "layer-gateway-inference-v1__plan.md",
       "probe_text": "What are the responsibilities of a proxy layer?",
-      "score": 0.75929844,
+      "score": 0.76494294,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -1767,7 +1767,7 @@
       "judge_label": null,
       "judge_reason": null,
       "final_reason": "vector_pass",
-      "top_hit_id": "7562c6a8-c6a0-552a-bad1-b99f324178d5"
+      "top_hit_id": "331416e2-20b9-5284-a015-fad87854581c"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
@@ -1790,8 +1790,8 @@
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "3. Scheduling Model",
       "doc_type": "layer-gateway-inference-v1__plan.md",
-      "probe_text": "What is the title of this section?",
-      "score": 0.6108791,
+      "probe_text": "What is the topic of section 3?",
+      "score": 0.6300137,
       "scope_match": true,
       "passed": false,
       "threshold": 0.75,
@@ -1799,9 +1799,9 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "not_supported",
-      "judge_reason": "The candidate context does not contain a title for a section.",
+      "judge_reason": "The context only provides the section number and title, without any information about the topic.",
       "final_reason": "below_threshold",
-      "top_hit_id": "6eb3dd46-6706-5256-b4b8-b78cb0322ff2"
+      "top_hit_id": "04daf3af-3bab-5006-899f-33ba51aa6293"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
@@ -1892,8 +1892,8 @@
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "3.5 Soft and hard inflight limits",
       "doc_type": "layer-gateway-inference-v1__plan.md",
-      "probe_text": "What does the soft limit represent?",
-      "score": 0.6553327,
+      "probe_text": "What is the difference between soft_limit and hard_limit?",
+      "score": 0.72657037,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -1901,9 +1901,9 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "supported",
-      "judge_reason": "The context explains that 'soft_limit' represents the preferred operating range for backends.",
+      "judge_reason": "The context provides definitions and differences between soft_limit and hard_limit.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "06501f06-bb03-58dc-aa4a-1c763281d837"
+      "top_hit_id": "08448ee1-7901-54ad-b173-9508da1bdb71"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
@@ -1943,18 +1943,18 @@
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "4.2 Suggested classes",
       "doc_type": "layer-gateway-inference-v1__plan.md",
-      "probe_text": "What future feature might the 'embedding' class support?",
-      "score": 0.7215014,
+      "probe_text": "What future feature is suggested in the list?",
+      "score": 0.6306381,
       "scope_match": true,
-      "passed": true,
+      "passed": false,
       "threshold": 0.75,
-      "reason": null,
+      "reason": "below_threshold",
       "vector_passed": false,
       "judge_invoked": true,
-      "judge_label": "supported",
-      "judge_reason": "The context lists 'embedding' as a future feature.",
-      "final_reason": "llm_rescue",
-      "top_hit_id": "4b79def4-786b-56ec-8c06-a53ff4fe691f"
+      "judge_label": "not_supported",
+      "judge_reason": "The context does not mention any specific future feature being suggested.",
+      "final_reason": "below_threshold",
+      "top_hit_id": "4eec9c8c-52bb-5807-a1f0-d1d612c9b692"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
@@ -1978,7 +1978,7 @@
       "section": "4.4 Initial policy",
       "doc_type": "layer-gateway-inference-v1__plan.md",
       "probe_text": "What is the recommended classification for phase 1?",
-      "score": 0.6599212,
+      "score": 0.6723202,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -1988,14 +1988,14 @@
       "judge_label": "supported",
       "judge_reason": "The context provides the recommended classification for phase 1 as advisory.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "a2ca0d44-9bc2-52fd-8c62-2ace04d421b3"
+      "top_hit_id": "5cce063a-764a-559d-9dca-87a4922eb034"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "5. Queueing Strategy",
       "doc_type": "layer-gateway-inference-v1__plan.md",
-      "probe_text": "What is the topic of this section?",
-      "score": 0.5893011,
+      "probe_text": "What section is this about?",
+      "score": 0.6085783,
       "scope_match": true,
       "passed": false,
       "threshold": 0.75,
@@ -2003,16 +2003,16 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "not_supported",
-      "judge_reason": "The candidate context does not provide information about the topic of the section.",
+      "judge_reason": "The candidate context does not provide enough information to determine what section it is about.",
       "final_reason": "below_threshold",
-      "top_hit_id": "28666fed-dd7e-5ae6-ad3d-003c175d1fe5"
+      "top_hit_id": "88497372-dc13-50bf-bc95-47732abb980d"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "5.1 Use a bounded in-memory queue",
       "doc_type": "layer-gateway-inference-v1__plan.md",
-      "probe_text": "What characteristics should the queue have?",
-      "score": 0.6940644,
+      "probe_text": "What are the key characteristics of the queue?",
+      "score": 0.69394267,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -2020,16 +2020,16 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "supported",
-      "judge_reason": "The candidate context provides characteristics that the queue should have.",
+      "judge_reason": "The candidate context provides key characteristics of the queue.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "2d8ed564-3d9a-55a8-a19a-1e7486182785"
+      "top_hit_id": "309e00ca-5f7b-5951-812b-737d2814fe74"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "5.2 Queue settings",
       "doc_type": "layer-gateway-inference-v1__plan.md",
-      "probe_text": "What is the suggested range for max queue length?",
-      "score": 0.7510422,
+      "probe_text": "What are the suggested starting values for max queue length?",
+      "score": 0.7978971,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -2039,31 +2039,31 @@
       "judge_label": null,
       "judge_reason": null,
       "final_reason": "vector_pass",
-      "top_hit_id": "1e74df1a-8179-526b-8f24-1d029bdff2fc"
+      "top_hit_id": "16631910-8238-5fb4-9e1e-6b54d4326b4d"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "5.3 Overload behavior",
       "doc_type": "layer-gateway-inference-v1__plan.md",
-      "probe_text": "What actions are taken if the queue is full?",
-      "score": 0.69662493,
+      "probe_text": "What actions are taken if the queue is full or request age exceeds the threshold?",
+      "score": 0.76236296,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
       "reason": null,
-      "vector_passed": false,
-      "judge_invoked": true,
-      "judge_label": "supported",
-      "judge_reason": "The context provides actions taken when the queue is full.",
-      "final_reason": "llm_rescue",
-      "top_hit_id": "1e20c837-b0c0-5e61-a5c3-e609d9cbcefd"
+      "vector_passed": true,
+      "judge_invoked": false,
+      "judge_label": null,
+      "judge_reason": null,
+      "final_reason": "vector_pass",
+      "top_hit_id": "c5725446-de4a-5fdb-8a6b-3c15d2d44896"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "6. Health, Retry, and Circuit Breaking",
       "doc_type": "layer-gateway-inference-v1__plan.md",
       "probe_text": "What does the current repo include?",
-      "score": 0.6518405,
+      "score": 0.65183955,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -2080,7 +2080,7 @@
       "section": "6.1 Passive health tracking",
       "doc_type": "layer-gateway-inference-v1__plan.md",
       "probe_text": "What types of errors does the system track?",
-      "score": 0.68858516,
+      "score": 0.6885414,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -2097,7 +2097,7 @@
       "section": "6.2 Optional active health checks",
       "doc_type": "layer-gateway-inference-v1__plan.md",
       "probe_text": "What type of health checks are mentioned as optional?",
-      "score": 0.7010174,
+      "score": 0.7009738,
       "scope_match": true,
       "passed": false,
       "threshold": 0.75,
@@ -2114,7 +2114,7 @@
       "section": "6.3 Retry policy",
       "doc_type": "layer-gateway-inference-v1__plan.md",
       "probe_text": "When should retries be performed according to the policy?",
-      "score": 0.64886004,
+      "score": 0.65128815,
       "scope_match": true,
       "passed": false,
       "threshold": 0.75,
@@ -2124,7 +2124,7 @@
       "judge_label": "not_supported",
       "judge_reason": "The context does not provide specific timing or conditions for when retries should be performed according to a policy.",
       "final_reason": "below_threshold",
-      "top_hit_id": "8a18f050-3ab0-5262-8324-fe9ed056c99a"
+      "top_hit_id": "be96bae7-f783-5d82-aaca-beb1bad137c9"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
@@ -2165,7 +2165,7 @@
       "section": "7.1 Gateway metrics",
       "doc_type": "layer-gateway-inference-v1__plan.md",
       "probe_text": "What metrics are exposed by the gateway?",
-      "score": 0.7061406,
+      "score": 0.71126324,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -2175,7 +2175,7 @@
       "judge_label": "supported",
       "judge_reason": "The candidate context lists multiple metrics related to the gateway, which directly answers the question about what metrics are exposed by the gateway.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "d95b515d-9251-5ee3-9266-2833391e904d"
+      "top_hit_id": "c0f87fae-fe7f-5b95-b435-d1fd563f35da"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
@@ -2199,7 +2199,7 @@
       "section": "7.3 Correlation IDs",
       "doc_type": "layer-gateway-inference-v1__plan.md",
       "probe_text": "What types of logs can be correlated using request IDs?",
-      "score": 0.75851196,
+      "score": 0.76012135,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -2209,14 +2209,14 @@
       "judge_label": null,
       "judge_reason": null,
       "final_reason": "vector_pass",
-      "top_hit_id": "bc37e379-b46e-5452-a138-955b82bb8acc"
+      "top_hit_id": "8cb41ef4-fde1-5e99-a774-056098a71586"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "8. API and Config Design",
       "doc_type": "layer-gateway-inference-v1__plan.md",
-      "probe_text": "What is the main topic of this section?",
-      "score": 0.5793041,
+      "probe_text": "What section is this text about?",
+      "score": 0.56951267,
       "scope_match": true,
       "passed": false,
       "threshold": 0.75,
@@ -2226,7 +2226,7 @@
       "judge_label": null,
       "judge_reason": null,
       "final_reason": "below_threshold",
-      "top_hit_id": "a3c79748-ae98-597f-a00f-fe5e81b13395"
+      "top_hit_id": "3433f6b7-b31e-5d96-bb85-3cf30d082deb"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
@@ -2249,8 +2249,8 @@
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "8.2 Config file",
       "doc_type": "layer-gateway-inference-v1__plan.md",
-      "probe_text": "What is the default host value in the server configuration?",
-      "score": 0.65244174,
+      "probe_text": "What is the default request timeout in milliseconds?",
+      "score": 0.65708137,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -2258,9 +2258,9 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "supported",
-      "judge_reason": "The context provides the default host value (0.0.0.0) in the server configuration.",
+      "judge_reason": "The candidate context provides the default request_timeout_ms value, which is 60000 milliseconds.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "4e6ad342-9e61-5e11-bd06-c592e244ef54"
+      "top_hit_id": "c64c3ae7-befe-5a3b-8ccd-77b2e825834f"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
@@ -2301,7 +2301,7 @@
       "section": "`admission_queue.py`",
       "doc_type": "layer-gateway-inference-v1__plan.md",
       "probe_text": "What features does the admission_queue.py include?",
-      "score": 0.75257057,
+      "score": 0.75833213,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -2311,14 +2311,14 @@
       "judge_label": null,
       "judge_reason": null,
       "final_reason": "vector_pass",
-      "top_hit_id": "8d2b7fa4-b1b0-5849-9bea-d41aa715c99d"
+      "top_hit_id": "07e27a0f-6d85-512b-b559-31c83ef856b0"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "`dispatcher.py`",
       "doc_type": "layer-gateway-inference-v1__plan.md",
-      "probe_text": "What components are mentioned in the dispatcher.py section?",
-      "score": 0.68165183,
+      "probe_text": "What processes are mentioned in the dispatcher.py section?",
+      "score": 0.68699926,
       "scope_match": true,
       "passed": false,
       "threshold": 0.75,
@@ -2326,9 +2326,9 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "not_supported",
-      "judge_reason": "The candidate context does not mention any components related to dispatcher.py.",
+      "judge_reason": "The candidate context does not mention any processes related to the dispatcher.py section.",
       "final_reason": "below_threshold",
-      "top_hit_id": "b59f7a34-aa83-585c-b350-d8329ec5ffb6"
+      "top_hit_id": "951d9f77-7e80-59ca-af13-9854476b3cfc"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
@@ -2402,8 +2402,8 @@
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "Phase 0: Baseline capture",
       "doc_type": "layer-gateway-inference-v1__plan.md",
-      "probe_text": "What metrics should be recorded during the baseline capture?",
-      "score": 0.7204292,
+      "probe_text": "What metrics are recorded during the baseline capture?",
+      "score": 0.7216045,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -2411,16 +2411,16 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "supported",
-      "judge_reason": "The candidate context lists several metrics that should be recorded during the baseline capture.",
+      "judge_reason": "The candidate context lists several metrics recorded during the baseline capture.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "42639b28-46f5-5113-a958-08dc044581ef"
+      "top_hit_id": "3dd33f3b-65ef-5407-ad2b-0100f64140f2"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "Phase 1: Core queue + scheduler",
       "doc_type": "layer-gateway-inference-v1__plan.md",
       "probe_text": "What are the components of the core queue in phase 1?",
-      "score": 0.69225174,
+      "score": 0.70598185,
       "scope_match": true,
       "passed": false,
       "threshold": 0.75,
@@ -2430,14 +2430,14 @@
       "judge_label": "not_supported",
       "judge_reason": "The context does not mention any components of a core queue in phase 1.",
       "final_reason": "below_threshold",
-      "top_hit_id": "cfe42250-2c71-5ed7-9fa5-68202d5e4f7d"
+      "top_hit_id": "a1c2f09f-aea2-5152-874b-e454e1532c3a"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "Phase 2: Fairness and hot-backend control",
       "doc_type": "layer-gateway-inference-v1__plan.md",
-      "probe_text": "What was added in Phase 2?",
-      "score": 0.60502696,
+      "probe_text": "What is added in Phase 2?",
+      "score": 0.6168164,
       "scope_match": true,
       "passed": false,
       "threshold": 0.75,
@@ -2445,9 +2445,9 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "not_supported",
-      "judge_reason": "The candidate context does not mention Phase 2 or any specific additions made in that phase.",
+      "judge_reason": "The candidate context does not contain information about Phase 2.",
       "final_reason": "below_threshold",
-      "top_hit_id": "768a4eb7-a4ba-5a5f-8144-54cb8d43bc6d"
+      "top_hit_id": "50852fb4-45bc-5f39-bc69-a09333f00987"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
@@ -2481,14 +2481,14 @@
       "judge_label": "not_supported",
       "judge_reason": "The context does not mention any specific metrics endpoint added in Phase 4.",
       "final_reason": "below_threshold",
-      "top_hit_id": "c931d81d-8ad0-5f12-ab95-e49a91d4fdc4"
+      "top_hit_id": "cffbd0b8-4864-5dec-b39a-439a61d94df5"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "Phase 5: Recovery and resilience hardening",
       "doc_type": "layer-gateway-inference-v1__plan.md",
-      "probe_text": "What behaviors are added to improve recovery and resilience in phase 5?",
-      "score": 0.7696896,
+      "probe_text": "What behaviors are added to improve recovery and resilience in Phase 5?",
+      "score": 0.768038,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -2515,7 +2515,7 @@
       "judge_label": "not_supported",
       "judge_reason": "The candidate context does not mention any specific backend discovery method.",
       "final_reason": "below_threshold",
-      "top_hit_id": "555ce185-5687-5490-bdfd-2b5ce0899085"
+      "top_hit_id": "d0face5f-26eb-5135-94ef-7660328b0cc1"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
@@ -2530,9 +2530,9 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "not_supported",
-      "judge_reason": "The context only indicates the section number but does not provide the name of the section where the testing plan is located.",
+      "judge_reason": "The context only mentions that there is a Testing Plan section but does not provide information about where in the document or document structure this section is located.",
       "final_reason": "below_threshold",
-      "top_hit_id": "8661592f-08d4-5ab0-806a-27de97225e49"
+      "top_hit_id": "a02bf899-88c0-5605-bd70-1a679355a384"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
@@ -2564,16 +2564,16 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "not_supported",
-      "judge_reason": "The context does not provide information about the types of backends tested for latency.",
+      "judge_reason": "The context does not mention any specific types of backends tested for latency.",
       "final_reason": "below_threshold",
-      "top_hit_id": "0a9226d1-f33f-526d-9dc4-bf89fd341063"
+      "top_hit_id": "08de16ff-c23f-5f5d-a966-a11b4435a413"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "11.3 Load tests",
       "doc_type": "layer-gateway-inference-v1__plan.md",
-      "probe_text": "What are the three modes being compared in the load tests?",
-      "score": 0.725575,
+      "probe_text": "What are the three modes being compared?",
+      "score": 0.6671625,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -2581,16 +2581,16 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "supported",
-      "judge_reason": "The candidate context lists three modes being compared, which directly answers the question.",
+      "judge_reason": "The candidate context lists three modes to be compared, which directly answers the question.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "d53c5498-ae8a-5c21-a478-4e77e9c26b99"
+      "top_hit_id": "6ff9f1d5-f6e6-52a2-8508-8eabcfade181"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "11.4 Success metrics",
       "doc_type": "layer-gateway-inference-v1__plan.md",
       "probe_text": "What indicates that the redesign is successful?",
-      "score": 0.71474856,
+      "score": 0.7237579,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -2598,33 +2598,33 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "supported",
-      "judge_reason": "The candidate context provides specific indicators that can be used to determine if the redesign is successful.",
+      "judge_reason": "The candidate context provides specific indicators of a successful redesign.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "bd2ac845-8a3f-5b88-b9d5-fe6dae43881f"
+      "top_hit_id": "156280d1-d320-53fc-8140-61b022d36a16"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "12. Risks and Tradeoffs",
       "doc_type": "layer-gateway-inference-v1__plan.md",
-      "probe_text": "What section number is dedicated to risks and tradeoffs?",
-      "score": 0.7564882,
+      "probe_text": "What is the main topic of section 12?",
+      "score": 0.614085,
       "scope_match": true,
-      "passed": true,
+      "passed": false,
       "threshold": 0.75,
-      "reason": null,
-      "vector_passed": true,
-      "judge_invoked": false,
-      "judge_label": null,
-      "judge_reason": null,
-      "final_reason": "vector_pass",
-      "top_hit_id": "ad0f7153-2fb8-5610-a618-7234f1ae1cda"
+      "reason": "below_threshold",
+      "vector_passed": false,
+      "judge_invoked": true,
+      "judge_label": "not_supported",
+      "judge_reason": "The candidate context does not provide enough information to determine the main topic of section 12.",
+      "final_reason": "below_threshold",
+      "top_hit_id": "0c215c32-db49-51ea-9e3e-73158c335eb3"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "Risk 1: Queue adds latency",
       "doc_type": "layer-gateway-inference-v1__plan.md",
-      "probe_text": "What actions can be taken to mitigate queue adds latency?",
-      "score": 0.7596106,
+      "probe_text": "What actions can be taken to mitigate queue latency?",
+      "score": 0.7560276,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -2634,14 +2634,14 @@
       "judge_label": null,
       "judge_reason": null,
       "final_reason": "vector_pass",
-      "top_hit_id": "0e5c96ac-8e69-5830-8069-07fff3f388df"
+      "top_hit_id": "035598f8-0dae-50c5-8b6a-ee65cdb35ab7"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "Risk 2: Too much fairness hurts best-node selection",
       "doc_type": "layer-gateway-inference-v1__plan.md",
       "probe_text": "What should the hot penalty be according to the mitigation?",
-      "score": 0.7224549,
+      "score": 0.7274641,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -2651,31 +2651,31 @@
       "judge_label": "supported",
       "judge_reason": "The context explicitly states that 'hot penalty should be moderate, not dominant', which directly answers the question.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "92c47ec9-f435-5886-9f60-2fcfbfa4bc7e"
+      "top_hit_id": "9792427b-fa18-55ae-8ab6-3c3572db0fcd"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "Risk 3: Retry amplifies load",
       "doc_type": "layer-gateway-inference-v1__plan.md",
-      "probe_text": "How many times should you retry?",
-      "score": 0.7077732,
+      "probe_text": "How many times should you retry according to the mitigation?",
+      "score": 0.76663923,
       "scope_match": true,
-      "passed": false,
+      "passed": true,
       "threshold": 0.75,
-      "reason": "below_threshold",
-      "vector_passed": false,
-      "judge_invoked": true,
-      "judge_label": "not_supported",
-      "judge_reason": "The context does not provide information on how many times to retry.",
-      "final_reason": "below_threshold",
-      "top_hit_id": "1af47ca8-45a4-53a7-83aa-97e6edd1dc0e"
+      "reason": null,
+      "vector_passed": true,
+      "judge_invoked": false,
+      "judge_label": null,
+      "judge_reason": null,
+      "final_reason": "vector_pass",
+      "top_hit_id": "2e52ab44-31c7-5950-89e4-a4dbe9a9aab7"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "Risk 4: Overfitting to one benchmark prompt",
       "doc_type": "layer-gateway-inference-v1__plan.md",
-      "probe_text": "What mitigation strategies can be used to address overfitting to one benchmark prompt?",
-      "score": 0.7968762,
+      "probe_text": "What mitigation strategies are suggested for overfitting to one benchmark prompt?",
+      "score": 0.7806976,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -2692,7 +2692,7 @@
       "section": "13. Recommended First Milestone",
       "doc_type": "layer-gateway-inference-v1__plan.md",
       "probe_text": "What milestone should be implemented if only one is to be implemented now?",
-      "score": 0.78607345,
+      "score": 0.7918,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -2702,14 +2702,14 @@
       "judge_label": null,
       "judge_reason": null,
       "final_reason": "vector_pass",
-      "top_hit_id": "595942d9-5383-5ecd-8249-34bec916cf72"
+      "top_hit_id": "b4b0fbc4-fef1-5b31-aeae-27262cb1d30f"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "“Bounded queue + scheduler loop + hot-backend penalty”",
       "doc_type": "layer-gateway-inference-v1__plan.md",
-      "probe_text": "What does the bounded queue + scheduler loop + hot-backend penalty method address?",
-      "score": 0.79340374,
+      "probe_text": "What does the bounded queue + scheduler loop + hot-backend penalty method directly address?",
+      "score": 0.80546415,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -2719,24 +2719,24 @@
       "judge_label": null,
       "judge_reason": null,
       "final_reason": "vector_pass",
-      "top_hit_id": "c8e505ca-3ed7-56e9-90ab-62d60e05dd79"
+      "top_hit_id": "dc1b1486-fd52-5391-b5ff-a6e1bcd44f7f"
     },
     {
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "section": "14. Final Recommendation",
       "doc_type": "layer-gateway-inference-v1__plan.md",
-      "probe_text": "What are the key features of the redesigned `layer-gateway-inference-v1`?",
-      "score": 0.7531037,
+      "probe_text": "What is the new design for `layer-gateway-inference-v1`?",
+      "score": 0.7307726,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
       "reason": null,
-      "vector_passed": true,
-      "judge_invoked": false,
-      "judge_label": null,
-      "judge_reason": null,
-      "final_reason": "vector_pass",
-      "top_hit_id": "7dd768d0-1839-5801-9cf5-c0c2180f716a"
+      "vector_passed": false,
+      "judge_invoked": true,
+      "judge_label": "supported",
+      "judge_reason": "The candidate context provides detailed information about the new design for `layer-gateway-inference-v1`, which directly answers the user's question.",
+      "final_reason": "llm_rescue",
+      "top_hit_id": "cea77054-64ae-5431-842a-8d8353367418"
     },
     {
       "source": "repo_layer-gateway-inference-v1__request-trace-session-ids.md",
@@ -2760,7 +2760,7 @@
       "section": "What each ID is for",
       "doc_type": "layer-gateway-inference-v1__request-trace-session-ids.md",
       "probe_text": "What is the purpose of the request_id?",
-      "score": 0.7219526,
+      "score": 0.7225927,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -2770,14 +2770,14 @@
       "judge_label": "supported",
       "judge_reason": "The context explains the purpose of request_id for HTTP requests through the gateway.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "c69c6511-64f2-584d-b2c7-1e6324fdfdea"
+      "top_hit_id": "5d55ee31-8d4f-5bbe-a366-37d1ffde1c4f"
     },
     {
       "source": "repo_layer-gateway-inference-v1__request-trace-session-ids.md",
       "section": "How values are chosen (ingress)",
       "doc_type": "layer-gateway-inference-v1__request-trace-session-ids.md",
-      "probe_text": "What happens if 'x-request-id' is not present in the headers?",
-      "score": 0.72637177,
+      "probe_text": "What is the default value for `request_id` if `x-request-id` is not present?",
+      "score": 0.7016301,
       "scope_match": true,
       "passed": false,
       "threshold": 0.75,
@@ -2785,7 +2785,7 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "not_supported",
-      "judge_reason": "The context does not provide information about the consequences of 'x-request-id' not being present in the headers.",
+      "judge_reason": "The context does not provide information about the default value for `request_id` when `x-request-id` is not present.",
       "final_reason": "below_threshold",
       "top_hit_id": "dc345e76-b81c-5209-b6ac-a6af741b9adb"
     },
@@ -2794,7 +2794,7 @@
       "section": "Strategy when an ID is missing",
       "doc_type": "layer-gateway-inference-v1__request-trace-session-ids.md",
       "probe_text": "What happens if 'x-request-id' is missing?",
-      "score": 0.71642876,
+      "score": 0.7164098,
       "scope_match": true,
       "passed": false,
       "threshold": 0.75,
@@ -2811,7 +2811,7 @@
       "section": "Structured logs",
       "doc_type": "layer-gateway-inference-v1__request-trace-session-ids.md",
       "probe_text": "How are gateway events emitted?",
-      "score": 0.6410068,
+      "score": 0.64104056,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -2827,25 +2827,25 @@
       "source": "repo_layer-gateway-inference-v1__request-trace-session-ids.md",
       "section": "Metrics",
       "doc_type": "layer-gateway-inference-v1__request-trace-session-ids.md",
-      "probe_text": "What are these identifiers used for?",
-      "score": 0.667589,
+      "probe_text": "What is the purpose of these identifiers?",
+      "score": 0.675616,
       "scope_match": true,
-      "passed": false,
+      "passed": true,
       "threshold": 0.75,
-      "reason": "below_threshold",
+      "reason": null,
       "vector_passed": false,
       "judge_invoked": true,
-      "judge_label": "not_supported",
-      "judge_reason": "The context does not explain what the identifiers are used for, only that they are for log correlation and not Prometheus metric labels.",
-      "final_reason": "below_threshold",
-      "top_hit_id": "b9f00f5b-ea8e-5631-9ddd-8694a48273c1"
+      "judge_label": "supported",
+      "judge_reason": "The context explains that the identifiers are for log correlation only.",
+      "final_reason": "llm_rescue",
+      "top_hit_id": "35f458ba-45b3-57e3-8bf3-ff714cb8da01"
     },
     {
       "source": "repo_layer-gateway-inference-v1__request-trace-session-ids.md",
       "section": "Propagation to upstream (vLLM / OpenAI fallback)",
       "doc_type": "layer-gateway-inference-v1__request-trace-session-ids.md",
       "probe_text": "What are the conditions under which the client's 'x-request-id' is forwarded to the backend?",
-      "score": 0.7409774,
+      "score": 0.7409805,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -2861,25 +2861,25 @@
       "source": "repo_layer-gateway-inference-v1__request-trace-session-ids.md",
       "section": "Recommendations for callers",
       "doc_type": "layer-gateway-inference-v1__request-trace-session-ids.md",
-      "probe_text": "What header should be sent on every call if the same id is needed in gateway logs, client traces, and upstream logs?",
-      "score": 0.77324885,
+      "probe_text": "What header should be sent on every call to maintain the same id across different logs?",
+      "score": 0.7476181,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
       "reason": null,
-      "vector_passed": true,
-      "judge_invoked": false,
-      "judge_label": null,
-      "judge_reason": null,
-      "final_reason": "vector_pass",
-      "top_hit_id": "6299ba4d-af8e-59ed-9490-92b605dd8860"
+      "vector_passed": false,
+      "judge_invoked": true,
+      "judge_label": "supported",
+      "judge_reason": "The context provides the header name x-request-id as a solution for maintaining the same ID across different logs.",
+      "final_reason": "llm_rescue",
+      "top_hit_id": "506c0e65-c4fb-541b-8bfc-d85096e5920d"
     },
     {
       "source": "repo_layer-gateway-inference-v1__sla.md",
       "section": "Layer Gateway SLA / SLO",
       "doc_type": "layer-gateway-inference-v1__sla.md",
       "probe_text": "What does this document define?",
-      "score": 0.5153297,
+      "score": 0.51741606,
       "scope_match": true,
       "passed": false,
       "threshold": 0.75,
@@ -2889,14 +2889,14 @@
       "judge_label": null,
       "judge_reason": null,
       "final_reason": "below_threshold",
-      "top_hit_id": "97ff5d2c-f8cf-5756-a476-cc7c73475791"
+      "top_hit_id": "40189021-d59b-5dce-ac05-9a4ed1737bad"
     },
     {
       "source": "repo_layer-gateway-inference-v1__sla.md",
       "section": "1) Scope",
       "doc_type": "layer-gateway-inference-v1__sla.md",
-      "probe_text": "Which API endpoints are covered by the SLA?",
-      "score": 0.76243854,
+      "probe_text": "What API endpoints are covered by the SLA?",
+      "score": 0.7653997,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -2906,24 +2906,24 @@
       "judge_label": null,
       "judge_reason": null,
       "final_reason": "vector_pass",
-      "top_hit_id": "806f680d-73e5-575a-b642-f4256cf02694"
+      "top_hit_id": "14db466a-03c1-5800-abd7-ae39e61162c4"
     },
     {
       "source": "repo_layer-gateway-inference-v1__sla.md",
       "section": "2) Service Level Objective (SLO)",
       "doc_type": "layer-gateway-inference-v1__sla.md",
-      "probe_text": "What is the topic of section 2?",
-      "score": 0.58042806,
+      "probe_text": "What does SLO stand for in this context?",
+      "score": 0.6276103,
       "scope_match": true,
-      "passed": false,
+      "passed": true,
       "threshold": 0.75,
-      "reason": "below_threshold",
+      "reason": null,
       "vector_passed": false,
       "judge_invoked": true,
-      "judge_label": "not_supported",
-      "judge_reason": "The context only provides the section number and title, without any information about the topic.",
-      "final_reason": "below_threshold",
-      "top_hit_id": "476d1667-6592-5bc4-a180-c38cfa3996c8"
+      "judge_label": "supported",
+      "judge_reason": "The context provides the definition for SLO as Service Level Objective.",
+      "final_reason": "llm_rescue",
+      "top_hit_id": "c8295fe8-1a10-57a5-b2ac-5ca844e80f90"
     },
     {
       "source": "repo_layer-gateway-inference-v1__sla.md",
@@ -2963,8 +2963,8 @@
       "source": "repo_layer-gateway-inference-v1__sla.md",
       "section": "Queue SLO",
       "doc_type": "layer-gateway-inference-v1__sla.md",
-      "probe_text": "What is the condition for `gateway_queue_age_ms`?",
-      "score": 0.75342184,
+      "probe_text": "What is the condition for `gateway_queue_age_ms` during steady state?",
+      "score": 0.79784137,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -2974,7 +2974,7 @@
       "judge_label": null,
       "judge_reason": null,
       "final_reason": "vector_pass",
-      "top_hit_id": "152c7704-8c26-5ece-8ed4-ac8cc47f0b83"
+      "top_hit_id": "673805e8-3d94-5f82-bb10-6af5dee68c06"
     },
     {
       "source": "repo_layer-gateway-inference-v1__sla.md",
@@ -2997,8 +2997,8 @@
       "source": "repo_layer-gateway-inference-v1__sla.md",
       "section": "4) How to Measure",
       "doc_type": "layer-gateway-inference-v1__sla.md",
-      "probe_text": "What metrics are used to measure gateway performance?",
-      "score": 0.6907382,
+      "probe_text": "What is the total number of gateway requests?",
+      "score": 0.59068924,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -3006,33 +3006,33 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "supported",
-      "judge_reason": "The candidate context provides a list of metrics used to measure gateway performance.",
+      "judge_reason": "The context provides the metric `gateway_requests_total` which directly answers the question.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "ec61cc39-ec3b-5cbd-967a-74676e3d1921"
+      "top_hit_id": "578d3fee-72f9-5e73-963f-47bbd351be4d"
     },
     {
       "source": "repo_layer-gateway-inference-v1__sla.md",
       "section": "Request rate",
       "doc_type": "layer-gateway-inference-v1__sla.md",
-      "probe_text": "What Prometheus query returns the request rate over the last 5 minutes?",
-      "score": 0.8153784,
+      "probe_text": "What does the Prometheus query calculate?",
+      "score": 0.72502553,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
       "reason": null,
-      "vector_passed": true,
-      "judge_invoked": false,
-      "judge_label": null,
-      "judge_reason": null,
-      "final_reason": "vector_pass",
-      "top_hit_id": "4279723e-85e0-5f2a-924d-d38a5444f206"
+      "vector_passed": false,
+      "judge_invoked": true,
+      "judge_label": "supported",
+      "judge_reason": "The candidate context provides a valid Prometheus query that calculates the rate of gateway_requests_total over a 5-minute window and sums it up.",
+      "final_reason": "llm_rescue",
+      "top_hit_id": "80aa4ef1-7395-50d4-ba86-ada6b6cf07fa"
     },
     {
       "source": "repo_layer-gateway-inference-v1__sla.md",
       "section": "Gateway-visible error rate proxy",
       "doc_type": "layer-gateway-inference-v1__sla.md",
       "probe_text": "What does this expression calculate?",
-      "score": 0.5369414,
+      "score": 0.54270625,
       "scope_match": true,
       "passed": false,
       "threshold": 0.75,
@@ -3042,7 +3042,7 @@
       "judge_label": null,
       "judge_reason": null,
       "final_reason": "below_threshold",
-      "top_hit_id": "98f9d81d-c1a7-5fe4-a55a-d38390818882"
+      "top_hit_id": "0cb03e92-ffdb-5e7e-8dd3-068402c800f5"
     },
     {
       "source": "repo_layer-gateway-inference-v1__sla.md",
@@ -3117,7 +3117,7 @@
       "section": "6) Operational Notes",
       "doc_type": "layer-gateway-inference-v1__sla.md",
       "probe_text": "What should be done when a backend is unstable?",
-      "score": 0.6373076,
+      "score": 0.6473384,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -3127,14 +3127,14 @@
       "judge_label": "supported",
       "judge_reason": "The context provides a relevant instruction on what to do when a backend is unstable.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "47d7fa13-8bcc-55db-a361-4c7ead9bdb21"
+      "top_hit_id": "0e27e2f4-cb10-51be-9f13-e54f561edaf0"
     },
     {
       "source": "repo_layer-gateway-inference-v1__sla.md",
       "section": "7) Exclusions",
       "doc_type": "layer-gateway-inference-v1__sla.md",
       "probe_text": "What are the exclusions mentioned in the SLA?",
-      "score": 0.65259403,
+      "score": 0.6570913,
       "scope_match": true,
       "passed": true,
       "threshold": 0.75,
@@ -3144,24 +3144,24 @@
       "judge_label": "supported",
       "judge_reason": "The candidate context provides a list of exclusions mentioned in the SLA.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "ec4ce29c-68ef-5280-af97-36725a8d4635"
+      "top_hit_id": "df5bf9d5-c7f9-5075-80ae-a38568817e67"
     },
     {
       "source": "repo_repo",
       "section": "ROOT",
       "doc_type": "repo",
-      "probe_text": "What are the documentation links for layer-gateway-inference-v1?",
-      "score": 0.7903361,
+      "probe_text": "What URLs are mentioned in the text?",
+      "score": 0.54794383,
       "scope_match": true,
-      "passed": true,
+      "passed": false,
       "threshold": 0.75,
-      "reason": null,
-      "vector_passed": true,
+      "reason": "below_threshold",
+      "vector_passed": false,
       "judge_invoked": false,
       "judge_label": null,
       "judge_reason": null,
-      "final_reason": "vector_pass",
-      "top_hit_id": "29768302-4fa7-5735-ab13-f431aef9d47d"
+      "final_reason": "below_threshold",
+      "top_hit_id": "fd8a38c4-5d8b-5556-8441-98c9f767a168"
     }
   ]
 }

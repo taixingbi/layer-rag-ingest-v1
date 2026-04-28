@@ -32,6 +32,7 @@ _EST = timezone(timedelta(hours=-5), name="EST")
 
 
 def _json_from_response(content: str) -> dict[str, Any]:
+    """ json from response."""
     content = content.strip()
     fence = re.search(r"```(?:json)?\s*([\s\S]*?)```", content)
     if fence:
@@ -50,6 +51,7 @@ async def generate_questions_for_chunk(
     num_questions: int,
     use_json_object: bool,
 ) -> list[str]:
+    """Generate questions for chunk."""
     started = time.perf_counter()
     logger.debug(
         "chat_completions: section=%r text_chars=%d questions_requested=%d json_object=%s",
@@ -103,6 +105,7 @@ async def generate_questions_for_chunk(
 
 
 def _load_points(path: Path) -> list[dict[str, Any]]:
+    """ load points."""
     raw = path.read_text(encoding="utf-8")
     data = json.loads(raw)
     if not isinstance(data, list):
@@ -111,6 +114,7 @@ def _load_points(path: Path) -> list[dict[str, Any]]:
 
 
 def _is_transient_error(exc: Exception) -> bool:
+    """ is transient error."""
     if isinstance(exc, (httpx.TimeoutException, httpx.ConnectError)):
         return True
     if isinstance(exc, httpx.HTTPStatusError):
@@ -121,10 +125,12 @@ def _is_transient_error(exc: Exception) -> bool:
 
 def _retry_delay_seconds(*, attempt: int, base_delay: float) -> float:
     # Exponential backoff with low jitter to avoid synchronized retries.
+    """ retry delay seconds."""
     return max(0.0, base_delay) * (2 ** (attempt - 1)) + random.uniform(0.0, 0.1)
 
 
 def _default_failed_report_path(*, out_dir: Path | None, data_dir: Path) -> Path:
+    """ default failed report path."""
     target_dir = out_dir if out_dir is not None else data_dir
     ts = datetime.now(_EST).strftime("%Y%m%dT%H%M%S_EST")
     reports_dir = target_dir / "reports"
@@ -132,6 +138,7 @@ def _default_failed_report_path(*, out_dir: Path | None, data_dir: Path) -> Path
 
 
 def enrich_point_payload(payload: dict[str, Any], *, questions: list[str]) -> None:
+    """Enrich point payload."""
     from prepare_payloads import _build_embed_text, _token_count
 
     section = str(payload.get("section") or "ROOT")
@@ -160,6 +167,7 @@ async def _enrich_row(
     retry_max_attempts: int,
     retry_base_delay: float,
 ) -> tuple[bool, bool, dict[str, Any] | None, tuple[str, float] | None]:
+    """ enrich row."""
     payload = row.get("payload")
     if not isinstance(payload, dict):
         logger.warning("Skipping row without dict payload")
@@ -305,6 +313,7 @@ async def enrich_points_file(
 
 
 def _configure_logging(*, verbose: bool) -> None:
+    """ configure logging."""
     level = logging.DEBUG if verbose else logging.INFO
     logging.basicConfig(
         level=level,
@@ -315,6 +324,7 @@ def _configure_logging(*, verbose: bool) -> None:
 
 
 def _parse_args_points() -> argparse.Namespace:
+    """ parse args points."""
     p = argparse.ArgumentParser(
         description=(
             "Read points_*.json (Qdrant-ready payloads), call inference to add "
@@ -409,6 +419,7 @@ def _parse_args_points() -> argparse.Namespace:
 
 
 async def main_points_async() -> None:
+    """Main points async."""
     started = time.perf_counter()
     load_dotenv(_ROOT_DIR / ".env")
     load_dotenv()
@@ -532,6 +543,7 @@ async def main_points_async() -> None:
 
 
 def main_points() -> None:
+    """Main points."""
     asyncio.run(main_points_async())
 
 

@@ -27,6 +27,7 @@ load_dotenv()
 
 
 def _required_env(name: str) -> str:
+    """ required env."""
     v = (os.getenv(name) or "").strip()
     if not v:
         raise RuntimeError(f"Missing required environment variable: {name}")
@@ -34,6 +35,7 @@ def _required_env(name: str) -> str:
 
 
 def _resolve_collection_name(collection_name: str, env_name: str) -> str:
+    """ resolve collection name."""
     c = (collection_name or "").strip()
     if not c:
         raise RuntimeError("Collection name is empty. Set COLLECTION_NAME or pass --collection.")
@@ -46,6 +48,7 @@ def _resolve_collection_name(collection_name: str, env_name: str) -> str:
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse args."""
     parser = argparse.ArgumentParser(
         description=(
             "Read data/points_*.json, embed missing vectors from payload.embed_text, "
@@ -159,6 +162,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def _load_points(path: Path) -> list[dict[str, Any]]:
+    """ load points."""
     raw = path.read_text(encoding="utf-8")
     data = json.loads(raw)
     if not isinstance(data, list):
@@ -175,10 +179,12 @@ T = TypeVar("T")
 
 
 def _iter_batches(items: list[T], size: int) -> list[list[T]]:
+    """ iter batches."""
     return [items[i : i + size] for i in range(0, len(items), size)]
 
 
 def _distance_from_name(name: str) -> models.Distance:
+    """ distance from name."""
     return getattr(models.Distance, name)
 
 
@@ -189,6 +195,7 @@ def ensure_collection(
     distance_name: str,
     skip_create: bool,
 ) -> None:
+    """Ensure collection."""
     exists = client.collection_exists(collection_name=collection)
     if exists:
         return
@@ -202,6 +209,7 @@ def ensure_collection(
 
 def ensure_indexes(client: QdrantClient, collection: str) -> None:
     # Matches metadata/filter guidance in docs/schema.md and docs/plan.md.
+    """Ensure indexes."""
     index_specs: list[tuple[str, models.PayloadSchemaType]] = [
         ("source", models.PayloadSchemaType.KEYWORD),
         ("doc_type", models.PayloadSchemaType.KEYWORD),
@@ -213,6 +221,7 @@ def ensure_indexes(client: QdrantClient, collection: str) -> None:
         ("embed_token_count", models.PayloadSchemaType.INTEGER),
         ("split_index", models.PayloadSchemaType.INTEGER),
         ("ingest_ts", models.PayloadSchemaType.DATETIME),
+        ("document_id", models.PayloadSchemaType.KEYWORD),
         ("lifecycle_status", models.PayloadSchemaType.KEYWORD),
         ("deleted_at", models.PayloadSchemaType.DATETIME),
         ("deleted_by_run_id", models.PayloadSchemaType.KEYWORD),
@@ -236,6 +245,7 @@ def _ensure_vectors(
     base_url: str,
     api_key: str,
 ) -> None:
+    """ ensure vectors."""
     missing_idx: list[int] = []
     texts: list[str] = []
     for i, point in enumerate(points):
@@ -276,6 +286,7 @@ def _ensure_vectors(
 
 
 def _to_point_struct(point: dict[str, Any]) -> models.PointStruct:
+    """ to point struct."""
     pid = point.get("id")
     vec = point.get("vector")
     payload = point.get("payload")
@@ -289,6 +300,7 @@ def _to_point_struct(point: dict[str, Any]) -> models.PointStruct:
 
 
 def _count_missing_vectors(points: list[dict[str, Any]]) -> int:
+    """ count missing vectors."""
     missing = 0
     for point in points:
         vector = point.get("vector")
@@ -298,6 +310,7 @@ def _count_missing_vectors(points: list[dict[str, Any]]) -> int:
 
 
 def _normalize_lifecycle_fields(points: list[dict[str, Any]]) -> None:
+    """ normalize lifecycle fields."""
     for point in points:
         payload = point.get("payload")
         if not isinstance(payload, dict):
@@ -306,9 +319,12 @@ def _normalize_lifecycle_fields(points: list[dict[str, Any]]) -> None:
             payload["lifecycle_status"] = "active"
         payload.setdefault("deleted_at", None)
         payload.setdefault("deleted_by_run_id", None)
+        if not payload.get("document_id"):
+            payload["document_id"] = str(payload.get("doc_type") or "unknown")
 
 
 def main() -> None:
+    """Main."""
     started = time.perf_counter()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s [%(name)s] %(message)s")
     args = parse_args()

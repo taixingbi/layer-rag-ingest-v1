@@ -1,0 +1,555 @@
+{
+  "ingest_run_id": "run_20260428_134809_EST",
+  "collection": "taixing_knowledge_dev",
+  "ingest_ts": "2026-04-28T13:48:09-05:00",
+  "items": [
+    {
+      "id": "25676fd9-4117-54c7-98e4-c192b8c429fb",
+      "source": "personal_profile",
+      "doc_type": "profile",
+      "document_id": "profile",
+      "chunk_id": "0001",
+      "section": "ROOT",
+      "content_hash": "2103d77f4a42685f262a25f4a8f48301eadda0fc88f330c5919d4508d54a0085"
+    },
+    {
+      "id": "74226be1-af1a-53e7-9c9c-e96427519dae",
+      "source": "personal_profile",
+      "doc_type": "profile",
+      "document_id": "profile",
+      "chunk_id": "0002",
+      "section": "ROOT",
+      "content_hash": "cd28aa84bddf61a05eb8fd37fe6aedc12c2e5d2e80c20eb5f585047d67b457b4"
+    },
+    {
+      "id": "a8702a5b-0853-55b7-9002-eac32c99f1ff",
+      "source": "personal_profile",
+      "doc_type": "profile",
+      "document_id": "profile",
+      "chunk_id": "0003",
+      "section": "ROOT",
+      "content_hash": "4e796a9c993b09b145770775edaf7e022b6b746ccd3e7bad070aa76090f82309"
+    },
+    {
+      "id": "5ee99feb-c34a-5260-8238-af2b06318d98",
+      "source": "personal_profile",
+      "doc_type": "profile",
+      "document_id": "profile",
+      "chunk_id": "0004",
+      "section": "ROOT",
+      "content_hash": "100a672a74efd05c3700566c2c3bd5f90568d46672d2a569c9417aec5729dc04"
+    },
+    {
+      "id": "72843ab2-b239-56a8-b02f-1c81897258b5",
+      "source": "personal_profile",
+      "doc_type": "profile",
+      "document_id": "profile",
+      "chunk_id": "0005",
+      "section": "ROOT",
+      "content_hash": "a793ae571f66cb4784b912fc89f06f0aacb90a45e1a74c260b8f7ae0540dea62"
+    },
+    {
+      "id": "0ab602e5-2ebb-5eff-9fab-ac2ca927a8b8",
+      "source": "personal_profile",
+      "doc_type": "profile",
+      "document_id": "profile",
+      "chunk_id": "0006",
+      "section": "ROOT",
+      "content_hash": "3bd3a445ac648e6129c66c305462e057c85363f639fb4f47bcbb4763415b9941"
+    },
+    {
+      "id": "f8525fd3-6ff8-5f48-9da3-2f532f06f735",
+      "source": "personal_profile",
+      "doc_type": "profile",
+      "document_id": "profile",
+      "chunk_id": "0007",
+      "section": "ROOT",
+      "content_hash": "64836b6bf10078ec46964a3bf33e99b8e7e7f944cc47b10461c2e7409412b7cc"
+    },
+    {
+      "id": "a7d11e37-bad1-5e2c-b517-74decab99b4e",
+      "source": "personal_profile",
+      "doc_type": "profile",
+      "document_id": "profile",
+      "chunk_id": "0008",
+      "section": "ROOT",
+      "content_hash": "92f4acf3abcb6ba1a1d1907faad89594766ac362da2b35895e0ef05e79cd5064"
+    },
+    {
+      "id": "cad7d553-4de9-5241-b65d-707a7706c573",
+      "source": "personal_profile",
+      "doc_type": "profile",
+      "document_id": "profile",
+      "chunk_id": "0009",
+      "section": "ROOT",
+      "content_hash": "10c4d13c14303145301dd77f8a9e19335fc4219fb8c08967f18ebe611367c480"
+    },
+    {
+      "id": "6a210fb8-ffce-512a-bb4a-6b9f7f0e34a3",
+      "source": "personal_profile",
+      "doc_type": "profile",
+      "document_id": "profile",
+      "chunk_id": "0010",
+      "section": "ROOT",
+      "content_hash": "fe9e001550886289692f2cb6f7d28a2e2e241d7ccfa682e7adfd8b32533ab4ea"
+    },
+    {
+      "id": "6bad9a78-e5a6-526e-8a84-4a3d82c45b6c",
+      "source": "personal_qa",
+      "doc_type": "qa",
+      "document_id": "qa",
+      "chunk_id": "0001",
+      "section": "ROOT",
+      "content_hash": "1b658e9cc561116cbc3af2ac7e8a8ed5d52f1557c288bc6e76de3477f46bf661"
+    },
+    {
+      "id": "9c22ac32-79d6-5e76-82ab-d21b8a7dfa42",
+      "source": "personal_qa",
+      "doc_type": "qa",
+      "document_id": "qa",
+      "chunk_id": "0002",
+      "section": "ROOT",
+      "content_hash": "bef4a01610e062c6e2e35beb47692dda9be3b05915b36a171ee4bd93192f4d7f"
+    },
+    {
+      "id": "42b8bdc3-6940-5e52-a490-db4a9bb1fb8c",
+      "source": "personal_qa",
+      "doc_type": "qa",
+      "document_id": "qa",
+      "chunk_id": "0003",
+      "section": "ROOT",
+      "content_hash": "ea69c7088537e1b8ec9dc244cfcf4416ae94bcaf5ab6b0b828544029b623b951"
+    },
+    {
+      "id": "c87e6cc7-4d33-5936-804f-8df7883bea55",
+      "source": "personal_qa",
+      "doc_type": "qa",
+      "document_id": "qa",
+      "chunk_id": "0004",
+      "section": "ROOT",
+      "content_hash": "9aa64a5fdf10830bc7070f56088f75524fe978452c4dc8f2c6215a61f6adc53d"
+    },
+    {
+      "id": "6e06e81b-4fa9-551b-913a-e4845bee805c",
+      "source": "personal_qa",
+      "doc_type": "qa",
+      "document_id": "qa",
+      "chunk_id": "0005",
+      "section": "ROOT",
+      "content_hash": "f72455e59349a9c26b5f2a635f37afc6408025d70253425521916b3dfad82bad"
+    },
+    {
+      "id": "bef1880d-91e2-5c1f-910b-2c394787280d",
+      "source": "personal_qa",
+      "doc_type": "qa",
+      "document_id": "qa",
+      "chunk_id": "0006",
+      "section": "ROOT",
+      "content_hash": "069275cdb84847d5edf7e4486dc82a5909452b14760b3ce30a029afc1212ec2f"
+    },
+    {
+      "id": "8df23728-0661-5d0b-a62f-4dc4d1bfcdf0",
+      "source": "personal_qa",
+      "doc_type": "qa",
+      "document_id": "qa",
+      "chunk_id": "0007",
+      "section": "ROOT",
+      "content_hash": "e416ed6fb90368136d7b35e32fca42ec2a61ca30894ba8b2f73eece731f88665"
+    },
+    {
+      "id": "fc448fb3-e399-54a5-827d-8e4636e12706",
+      "source": "personal_qa",
+      "doc_type": "qa",
+      "document_id": "qa",
+      "chunk_id": "0008",
+      "section": "ROOT",
+      "content_hash": "a493ffde3c727e657963d688161b5f03bbcfb5f81bbd0ca427b4f6edda044438"
+    },
+    {
+      "id": "a3ea01d6-4a2d-5fa7-9059-9b8f661d39f6",
+      "source": "personal_qa",
+      "doc_type": "qa",
+      "document_id": "qa",
+      "chunk_id": "0009",
+      "section": "ROOT",
+      "content_hash": "40ee7518328bceabf77a8910489d7743af6e17cb83ccc7a39b2a5653de718f43"
+    },
+    {
+      "id": "ba32f279-a5a1-599e-a93c-dc85c795a48a",
+      "source": "personal_qa",
+      "doc_type": "qa",
+      "document_id": "qa",
+      "chunk_id": "0010",
+      "section": "ROOT",
+      "content_hash": "47b11595e03dac7157a789ce2d3196c075389cf41c832a5e53afc4042a8eb0f5"
+    },
+    {
+      "id": "3225817f-22c5-593b-83dd-958dde615012",
+      "source": "personal_qa",
+      "doc_type": "qa",
+      "document_id": "qa",
+      "chunk_id": "0011",
+      "section": "ROOT",
+      "content_hash": "afffbcabc4ee02e87a56a23966151c47e5e5154d4d4788c7e814aff40a0098ab"
+    },
+    {
+      "id": "5f9d5c37-b8f1-5e3c-8864-8f1eb4469b36",
+      "source": "personal_qa",
+      "doc_type": "qa",
+      "document_id": "qa",
+      "chunk_id": "0012",
+      "section": "ROOT",
+      "content_hash": "4a3bb50388f1977fd9b9b72f4d0b80dc8982b3b216c8c4ee44e181a45293da76"
+    },
+    {
+      "id": "2366caf3-3b87-5ad3-8802-f2544e17c44f",
+      "source": "personal_qa",
+      "doc_type": "qa",
+      "document_id": "qa",
+      "chunk_id": "0013",
+      "section": "ROOT",
+      "content_hash": "562e43c36f4ed379c864c900336d112cada3ef34b23060f4ce1b72af9b697290"
+    },
+    {
+      "id": "bf44f55d-dae1-57d2-a0b4-cc45b6d58bd0",
+      "source": "personal_qa",
+      "doc_type": "qa",
+      "document_id": "qa",
+      "chunk_id": "0014",
+      "section": "ROOT",
+      "content_hash": "e30a0d98564be5e0cee126f2858153992d893a0184f568ea9acf8402bc5d4139"
+    },
+    {
+      "id": "15e46130-c0e0-5a1e-ad58-0a77c4629ca2",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0001",
+      "section": "ROOT",
+      "content_hash": "367f35a1a85728e859704849639ea9486c14ac57eea9885e915f12524c1f3776"
+    },
+    {
+      "id": "51e07bb5-d593-5257-928a-c18534fa72cd",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0002",
+      "section": "SUMMARY",
+      "content_hash": "284fff5ca142e79fa7061dd70e21a2661b3b4df80225f1a5715bcb190c9260ee"
+    },
+    {
+      "id": "cd0564b4-330b-526d-8aca-a4ccccbf536f",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0003",
+      "section": "CORE SKILLS",
+      "content_hash": "8ce160faa2411a9d541b6c89320f2cf85576be61c701d79de06d58ef81f2611a"
+    },
+    {
+      "id": "c807b426-f85a-5851-9e74-00405e8484d5",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0004",
+      "section": "CORE SKILLS",
+      "content_hash": "51ca4f09ce5b2f12f84736dac5c3fcf5eaf22e9bf30c348ec2142f2f526c329c"
+    },
+    {
+      "id": "246c95c8-31cc-55f6-b778-818b27d8e031",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0005",
+      "section": "CORE SKILLS",
+      "content_hash": "abad2182bb3cb8545c2aa2c995a00362fbee0749289ef136befdfbf202b752f8"
+    },
+    {
+      "id": "f4a82092-e869-5a58-b39a-1ea1d9defd4d",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0006",
+      "section": "CORE SKILLS",
+      "content_hash": "01e36ff443ae358ae21ddcec8402e595cc3f656b915db577a1b665322d6b7e0b"
+    },
+    {
+      "id": "522e8544-0b06-5831-ba22-431fdef92f7b",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0007",
+      "section": "CORE SKILLS",
+      "content_hash": "09b10b02a7e6941c5a7685971b6cd9d8571c317ffadc6b53d71f1d9c7152077b"
+    },
+    {
+      "id": "5d2664af-7e54-50e2-8970-f983d6d61784",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0008",
+      "section": "PROFESSIONAL EXPERIENCE",
+      "content_hash": "a702c341d11300582e2c6d47aa8dc06d61f8ead52f54310d2a9e5244e01d7095"
+    },
+    {
+      "id": "a8dc0a76-4b06-58ae-ab72-850c9c939634",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0009",
+      "section": "PROFESSIONAL EXPERIENCE",
+      "content_hash": "786caa559121a9423dd24c3ddb308cfe091b3d630bb7565a3ebf602dd42ded3f"
+    },
+    {
+      "id": "656d1bdd-d1ce-5929-85e7-311d6006698f",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0010",
+      "section": "PROFESSIONAL EXPERIENCE",
+      "content_hash": "bae90fd5baeeeefbce3f3ea18e12d2bbf3b4f7fa274f606a39898d4c8b51534b"
+    },
+    {
+      "id": "e7e8f6d8-3cd5-597c-82d9-e3d6e25452cf",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0011",
+      "section": "PROFESSIONAL EXPERIENCE",
+      "content_hash": "365aa08d296196e014eeb605940b14913d92b8328e0ae5e7b9bccd9554d7415b"
+    },
+    {
+      "id": "5ab3ea14-25af-5133-9f0f-b911d049388c",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0012",
+      "section": "PROFESSIONAL EXPERIENCE",
+      "content_hash": "5a3c749d9331f2ddd6045a8c12bf08640a281500aa4fddc9a874312f8fe11545"
+    },
+    {
+      "id": "cf24b924-7517-5eff-a9a0-e61d38fac014",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0013",
+      "section": "PROFESSIONAL EXPERIENCE",
+      "content_hash": "12eac9dc1b01b44e9fc670b692104b1122fd7d5ce3f241d47366324d0ea4edf3"
+    },
+    {
+      "id": "57b9a71f-8eb1-5628-b93b-2c63ed961801",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0014",
+      "section": "PROFESSIONAL EXPERIENCE",
+      "content_hash": "aaaca9726c46b8a900da2ed25dcb7e9b28565fb814952219298277b11af7b53c"
+    },
+    {
+      "id": "bb4e5849-ee63-5737-9307-71890f2e114e",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0015",
+      "section": "PROFESSIONAL EXPERIENCE",
+      "content_hash": "e4021425aa4d4cc01db588b8e80a019d58c285af76dea1dec0934e183b75ad74"
+    },
+    {
+      "id": "c1f14a2a-6360-524c-8fdb-d460eab78df2",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0016",
+      "section": "PROFESSIONAL EXPERIENCE",
+      "content_hash": "bb37357d1e657888c2e4558912834091c93bf9e270f5e0ae946e0af53ef3bdc2"
+    },
+    {
+      "id": "f81abdb9-1403-508b-b23a-691f4747d041",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0017",
+      "section": "PROFESSIONAL EXPERIENCE",
+      "content_hash": "0a46a78d97906fa85550c4e043546ac03427cc2ba86938670711677f1b73c9e7"
+    },
+    {
+      "id": "6c218305-55d4-5b63-94c5-39d2cbb16c3d",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0018",
+      "section": "PROFESSIONAL EXPERIENCE",
+      "content_hash": "fa693781987f027202eea33bb449b5e704395ba94267bab700d6efb09fc90ff9"
+    },
+    {
+      "id": "335ee497-fdec-5a95-a7cc-b27b25d7e4f2",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0019",
+      "section": "PROFESSIONAL EXPERIENCE",
+      "content_hash": "f6b2d67881869589835f3e5bcb629d810e3971bdf4e6f196a7cf04c2b837c713"
+    },
+    {
+      "id": "ed9ba5d5-bfc5-50d3-92a3-0a0942915b94",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0020",
+      "section": "PROFESSIONAL EXPERIENCE",
+      "content_hash": "2ed0a35cdd07de90e3903675cc24a4c17e6ac768baebb84901d9ba28c0650261"
+    },
+    {
+      "id": "3a0901e4-eaa9-58f8-8ec7-3c5ec2840fe4",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0021",
+      "section": "PROFESSIONAL EXPERIENCE",
+      "content_hash": "f0a6cdd1fc7a1ee59b37899c4049c96a4a4f549c03874491fa08c56188d0cc26"
+    },
+    {
+      "id": "7b38e7cc-5580-56bc-8879-3f5c2316235f",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0022",
+      "section": "PROFESSIONAL EXPERIENCE",
+      "content_hash": "a35ddaf032baa5f9eb8f112f2485ae67a390fe738788ad973c8a1f2e0c8017c4"
+    },
+    {
+      "id": "d56f5061-1ec6-5c3d-affb-bb491813aa90",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0023",
+      "section": "PROFESSIONAL EXPERIENCE",
+      "content_hash": "cda558ac71d1e988a163a14d412327eee3bb8c582f77c1386fbd81ce1aa78c1a"
+    },
+    {
+      "id": "d412f415-f645-556e-849b-cb6548032a62",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0024",
+      "section": "PROFESSIONAL EXPERIENCE",
+      "content_hash": "ea9bbc91c042d1ab367072f663df1d8d7c51b92ac308dfc9624e71c008fb65c6"
+    },
+    {
+      "id": "217f1096-69b4-533d-b052-63ebf2bc9093",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0025",
+      "section": "PROFESSIONAL EXPERIENCE",
+      "content_hash": "84c30fb09f98800e0eeafde02b2c72b7282532179ff02181dba723fc8d8af20c"
+    },
+    {
+      "id": "7fa242f5-b650-5e48-bb3a-2aa1e98de18b",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0026",
+      "section": "PROFESSIONAL EXPERIENCE",
+      "content_hash": "98e9fa16424c93add76664d90913a2deac00bf0df0bec530a4232601bb032dca"
+    },
+    {
+      "id": "1e607b7a-8c32-5b8d-b677-0356c5287400",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0027",
+      "section": "PROFESSIONAL EXPERIENCE",
+      "content_hash": "a5880e45431f9cecd60b09561482cd2d335c12cd3e8d1583eba5c3c7b71e1353"
+    },
+    {
+      "id": "2d18e6d1-ffae-5421-b9da-b75c654c2c6a",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0028",
+      "section": "PROFESSIONAL EXPERIENCE",
+      "content_hash": "f59f8cfb13315af3d7788c189d445b583177ddbc7fb936ea175de8d80ede80e4"
+    },
+    {
+      "id": "241fdd9a-2a3f-5155-85f2-6bf914b3994b",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0029",
+      "section": "PROFESSIONAL EXPERIENCE",
+      "content_hash": "d81056f056bded96ebe60c410fb46ef4e4e471159b3d27686a8e3ad5e8ac112f"
+    },
+    {
+      "id": "523797a6-c2bc-529a-8dcc-2bc4c8669daf",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0030",
+      "section": "PROFESSIONAL EXPERIENCE",
+      "content_hash": "ec30f1e8a641c1a4310fdd564365e76d8fd2a2bc008384db5e1c5c918b496a50"
+    },
+    {
+      "id": "c93242ed-b6d6-568f-a87c-9381c30e8ad5",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0031",
+      "section": "PROFESSIONAL EXPERIENCE",
+      "content_hash": "1e7370a28c4b33dfa5a22c008dd7cb06fd91b241dc1266c7f5408b1ef473f871"
+    },
+    {
+      "id": "b03e80f2-ee3c-545f-83e0-b90a8f7d302f",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0032",
+      "section": "PROFESSIONAL EXPERIENCE",
+      "content_hash": "ce05e3d33fe5c633ab41e6ec9c47f2ec38fdf9b24c4b615c946c351431160169"
+    },
+    {
+      "id": "5ffa9197-7aec-50ce-aeea-81359c9e62a5",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0033",
+      "section": "PROFESSIONAL EXPERIENCE",
+      "content_hash": "1cccdcb5b697a1159d40e4c7ce6454737287d9710df3937dbe7c98d1c2404197"
+    },
+    {
+      "id": "0d9f48a9-4405-50b4-aa92-e85512561852",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0034",
+      "section": "EDUCATION",
+      "content_hash": "9e1617669ab76542029835c626787caf979c835bdd0b00d93c5b425a51dca61a"
+    },
+    {
+      "id": "167388ce-11c0-584d-93bd-f32b0cda45f3",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0035",
+      "section": "EDUCATION",
+      "content_hash": "3cdfb931c3863451bc9cd213e9bc976e518dbc2e642234b58b90170102639607"
+    },
+    {
+      "id": "6027025a-2707-5961-a42c-26efae2e238e",
+      "source": "personal_resume",
+      "doc_type": "resume",
+      "document_id": "resume",
+      "chunk_id": "0036",
+      "section": "PUBLICATION",
+      "content_hash": "0cf73f57b395f897e009ed0635b6db9e5b8b369a35dc2e91ad328f5e6e0fbfd7"
+    }
+  ],
+  "stats": {
+    "points_total": 60,
+    "by_source": {
+      "personal_profile": 10,
+      "personal_qa": 14,
+      "personal_resume": 36
+    }
+  }
+}

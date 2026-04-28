@@ -102,15 +102,15 @@ Responsibilities:
 - Validate essential fields (`chunk_id`, non-empty `text`).
 - Build `payload.embed_text` from section, text, and `synthetic_questions`.
 - Compute:
-  - `content_hash` = SHA-256 of `payload.text`
-  - `id` = UUID5(namespace, `content_hash`) for deterministic point identity
+  - `content_hash` = SHA-256 of `payload.text` (content fingerprint)
+  - `id` = UUID5(namespace, `v2|source=<source>|document_id=<document_id>|chunk_id=<chunk_id>`)
 - Attach stable metadata:
-  - lineage: `chunk_id_parent`, `was_split`, `split_index`
+  - lineage: `document_id`, `chunk_id_parent`, `was_split`, `split_index`
   - filter fields: `source`, `doc_type`, `section`, `language`, `tags`
   - audit fields: `ingest_run_id`, `ingest_ts`
 - lifecycle fields: `lifecycle_status`, `deleted_at`, `deleted_by_run_id`
 
-Important invariant: if `text` is unchanged, `content_hash` and `id` remain unchanged across reruns.
+Important invariant: same `source + document_id + chunk_id` yields same `id` across reruns; `content_hash` tracks content drift independently.
 
 ### Stage C: Synthetic Enrichment (`synthetic_questions.py`, optional)
 
@@ -127,7 +127,7 @@ Responsibilities:
 
 - Generate N questions per point via chat completions.
 - Recompute `embed_text`, `embed_token_count`, and question counters.
-- Keep `id` and `content_hash` stable (derived from `text`, not generated questions).
+- Keep `id` stable (derived from source/document/chunk identity) while `content_hash` tracks text changes.
 
 Operational behavior:
 
@@ -212,7 +212,7 @@ Similarity alone is not enough for production retrieval isolation. Payload metad
 
 Indexed filter keys currently include:
 
-- keyword: `source`, `doc_type`, `section`, `content_hash`, `chunk_id_parent`
+- keyword: `source`, `doc_type`, `section`, `content_hash`, `chunk_id_parent`, `document_id`
 - bool: `was_split`
 - integer: `token_count`, `embed_token_count`, `split_index`
 - datetime: `ingest_ts`
@@ -229,7 +229,7 @@ This avoids collisions and enables strict filtering between personal and reposit
 
 ### Idempotent identity
 
-- Point ID is deterministic from text hash.
+- Point ID is deterministic from versioned composite key (`source + document_id + chunk_id`).
 - Re-running the same source text performs upsert updates, not duplicate inserts.
 
 ### Failure isolation
@@ -239,7 +239,7 @@ This avoids collisions and enables strict filtering between personal and reposit
 
 ### Controlled mutability
 
-- Enrichment mutates embedding input (`embed_text`) but not point identity fields (`id`, `content_hash`).
+- Enrichment mutates embedding input (`embed_text`) but not primary identity fields (`id`, `document_id`, `chunk_id`).
 - This allows iterative improvement of retrieval quality without ID churn.
 
 ## Configuration Model

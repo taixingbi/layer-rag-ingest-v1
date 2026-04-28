@@ -17,7 +17,8 @@ echo "==> data1: chunks -> points (source prefix: personal)"
   --data-dir data1/processed \
   --output-dir data1/processed \
   --pattern "chunks_*.json" \
-  --source-prefix personal
+  --source-prefix personal \
+  --access-control-file data1/raw/access_control.json
 
 if [[ "${RUN_SYNTHETIC_QUESTIONS:-1}" == "0" ]]; then
   echo "==> data1: skipping synthetic questions (RUN_SYNTHETIC_QUESTIONS=0)"
