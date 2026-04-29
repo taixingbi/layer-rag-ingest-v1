@@ -24,7 +24,7 @@ _TOKENIZER_MODEL = ""
 
 
 UUID_NAMESPACE = uuid.NAMESPACE_URL
-ID_KEY_VERSION = "v2"
+DEFAULT_ID_KEY_VERSION = "v3"
 _APP_DIR = Path(__file__).resolve().parent
 _ROOT_DIR = _APP_DIR.parent
 load_dotenv(_ROOT_DIR / ".env")
@@ -102,6 +102,32 @@ def parse_args() -> argparse.Namespace:
         "--ingest-ts",
         default="",
         help="Optional fixed ingest timestamp (ISO-8601). Default: now EST.",
+    )
+    parser.add_argument(
+        "--id-key-version",
+        default=DEFAULT_ID_KEY_VERSION,
+        help=(
+            "Identity schema version used in canonical UUID key "
+            f"(default: {DEFAULT_ID_KEY_VERSION}; use v2 for backward-compatible IDs)."
+        ),
+    )
+    parser.add_argument(
+        "--document-version",
+        default="v1",
+        help="Document/source revision version tag (default: v1).",
+    )
+    parser.add_argument(
+        "--chunk-version",
+        default="v1",
+        help="Chunking strategy version tag (default: v1).",
+    )
+    parser.add_argument(
+        "--embedding-version",
+        default=(os.getenv("EMBEDDING_VERSION") or os.getenv("EMBEDDING_MODEL") or "BAAI/bge-m3").strip(),
+        help=(
+            "Embedding space version tag (default: EMBEDDING_VERSION env, "
+            "else EMBEDDING_MODEL env, else BAAI/bge-m3)."
+        ),
     )
     parser.add_argument(
         "--profile-role-map",
@@ -186,9 +212,26 @@ def _content_hash(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
-def _v2_point_id(*, source: str, document_id: str, chunk_id: str) -> str:
-    """ v2 point id."""
-    canonical = f"{ID_KEY_VERSION}|source={source}|document_id={document_id}|chunk_id={chunk_id}"
+def _point_id(
+    *,
+    id_key_version: str,
+    source: str,
+    document_id: str,
+    chunk_id: str,
+    document_version: str,
+    chunk_version: str,
+    embedding_version: str,
+) -> str:
+    """Deterministic point id by canonical identity key."""
+    key_version = (id_key_version or "").strip() or DEFAULT_ID_KEY_VERSION
+    if key_version == "v2":
+        canonical = f"v2|source={source}|document_id={document_id}|chunk_id={chunk_id}"
+    else:
+        canonical = (
+            f"{key_version}|source={source}|document_id={document_id}|"
+            f"document_version={document_version}|chunk_version={chunk_version}|"
+            f"embedding_version={embedding_version}|chunk_id={chunk_id}"
+        )
     return str(uuid.uuid5(UUID_NAMESPACE, canonical))
 
 
@@ -347,6 +390,10 @@ def _to_point(
     language: str,
     ingest_run_id: str,
     ingest_ts: str,
+    id_key_version: str,
+    document_version: str,
+    chunk_version: str,
+    embedding_version: str,
     profile_role_map: dict[str, str],
     access_control_map: dict[str, dict[str, Any]],
 ) -> dict[str, Any]:
@@ -372,7 +419,15 @@ def _to_point(
     embed_text, used_q, trimmed_q = _build_embed_text(section, text, synthetic_questions)
     embed_token_count = _token_count(embed_text)
     content_hash = _content_hash(text)
-    point_id = _v2_point_id(source=source, document_id=document_id, chunk_id=chunk_id)
+    point_id = _point_id(
+        id_key_version=id_key_version,
+        source=source,
+        document_id=document_id,
+        chunk_id=chunk_id,
+        document_version=document_version,
+        chunk_version=chunk_version,
+        embedding_version=embedding_version,
+    )
 
     payload = {
         "chunk_id": chunk_id,
@@ -393,6 +448,10 @@ def _to_point(
         "synthetic_questions": synthetic_questions,
         "content_hash": content_hash,
         "source": source,
+        "id_key_version": id_key_version,
+        "document_version": document_version,
+        "chunk_version": chunk_version,
+        "embedding_version": embedding_version,
         "ingest_run_id": ingest_run_id,
         "ingest_ts": ingest_ts,
         "lifecycle_status": "active",
@@ -423,6 +482,10 @@ def run_prepare(args: argparse.Namespace) -> dict[str, Any]:
 
     ingest_run_id = args.ingest_run_id.strip() or _default_run_id()
     ingest_ts = args.ingest_ts.strip() or _now_iso_est()
+    id_key_version = (args.id_key_version or "").strip() or DEFAULT_ID_KEY_VERSION
+    document_version = (args.document_version or "").strip() or "v1"
+    chunk_version = (args.chunk_version or "").strip() or "v1"
+    embedding_version = (args.embedding_version or "").strip() or "BAAI/bge-m3"
 
     files = sorted(data_dir.glob(args.pattern))
     if not files:
@@ -437,6 +500,10 @@ def run_prepare(args: argparse.Namespace) -> dict[str, Any]:
         "ingest_run_id": ingest_run_id,
         "collection": collection,
         "ingest_ts": ingest_ts,
+        "id_key_version": id_key_version,
+        "document_version": document_version,
+        "chunk_version": chunk_version,
+        "embedding_version": embedding_version,
         "files": [],
         "stats": {
             "files_total": 0,
@@ -449,6 +516,10 @@ def run_prepare(args: argparse.Namespace) -> dict[str, Any]:
         "ingest_run_id": ingest_run_id,
         "collection": collection,
         "ingest_ts": ingest_ts,
+        "id_key_version": id_key_version,
+        "document_version": document_version,
+        "chunk_version": chunk_version,
+        "embedding_version": embedding_version,
         "items": [],
         "stats": {"points_total": 0, "by_source": {}},
     }
@@ -472,6 +543,10 @@ def run_prepare(args: argparse.Namespace) -> dict[str, Any]:
                         language=args.default_language,
                         ingest_run_id=ingest_run_id,
                         ingest_ts=ingest_ts,
+                        id_key_version=id_key_version,
+                        document_version=document_version,
+                        chunk_version=chunk_version,
+                        embedding_version=embedding_version,
                         profile_role_map=profile_role_map,
                         access_control_map=access_control_map,
                     )
@@ -508,6 +583,10 @@ def run_prepare(args: argparse.Namespace) -> dict[str, Any]:
                 "doc_type": payload.get("doc_type"),
                 "document_id": payload.get("document_id"),
                 "chunk_id": payload.get("chunk_id"),
+                "id_key_version": payload.get("id_key_version"),
+                "document_version": payload.get("document_version"),
+                "chunk_version": payload.get("chunk_version"),
+                "embedding_version": payload.get("embedding_version"),
                 "section": payload.get("section"),
                 "content_hash": payload.get("content_hash"),
             }

@@ -1,6 +1,6 @@
 [
   {
-    "id": "15e46130-c0e0-5a1e-ad58-0a77c4629ca2",
+    "id": "ba0a1bc6-6335-57fc-8dda-10d9ba907e6e",
     "vector": [],
     "payload": {
       "chunk_id": "0001",
@@ -28,8 +28,12 @@
       ],
       "content_hash": "367f35a1a85728e859704849639ea9486c14ac57eea9885e915f12524c1f3776",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -50,7 +54,7 @@
     }
   },
   {
-    "id": "51e07bb5-d593-5257-928a-c18534fa72cd",
+    "id": "874d7582-5007-575d-8b3c-ab7a7ab1d698",
     "vector": [],
     "payload": {
       "chunk_id": "0002",
@@ -66,7 +70,7 @@
         "summary"
       ],
       "text": "Backend AI Engineer with 7+ years of experience building LLM-powered backend systems, RAG pipelines, agent orchestration, and large-scale distributed infrastructure. Expert in LLM tool-calling, multi-agent systems, retrieval architectures, high-throughput pipelines (Kafka/MSK), AWS serverless, DynamoDB performance engineering, and LLM evaluation frameworks for reliability.",
-      "embed_text": "[SECTION: SUMMARY]\nBackend AI Engineer with 7+ years of experience building LLM-powered backend systems, RAG pipelines, agent orchestration, and large-scale distributed infrastructure. Expert in LLM tool-calling, multi-agent systems, retrieval architectures, high-throughput pipelines (Kafka/MSK), AWS serverless, DynamoDB performance engineering, and LLM evaluation frameworks for reliability.\nQ: How many years of experience does the Backend AI Engineer have?\nQ: What LLM evaluation frameworks is the engineer expert in?\nQ: Which distributed messaging systems are mentioned as expertise?",
+      "embed_text": "[SECTION: SUMMARY]\nBackend AI Engineer with 7+ years of experience building LLM-powered backend systems, RAG pipelines, agent orchestration, and large-scale distributed infrastructure. Expert in LLM tool-calling, multi-agent systems, retrieval architectures, high-throughput pipelines (Kafka/MSK), AWS serverless, DynamoDB performance engineering, and LLM evaluation frameworks for reliability.\nQ: How many years of experience does the Backend AI Engineer have?\nQ: What LLM evaluation frameworks is the engineer expert in?\nQ: Which distributed infrastructure technologies is the engineer experienced with?",
       "token_count": 95,
       "embed_token_count": 147,
       "synthetic_questions_used": 3,
@@ -74,12 +78,16 @@
       "synthetic_questions": [
         "How many years of experience does the Backend AI Engineer have?",
         "What LLM evaluation frameworks is the engineer expert in?",
-        "Which distributed messaging systems are mentioned as expertise?"
+        "Which distributed infrastructure technologies is the engineer experienced with?"
       ],
       "content_hash": "284fff5ca142e79fa7061dd70e21a2661b3b4df80225f1a5715bcb190c9260ee",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -100,7 +108,7 @@
     }
   },
   {
-    "id": "cd0564b4-330b-526d-8aca-a4ccccbf536f",
+    "id": "5b610e06-f4cb-527e-b202-cb797c8d79a6",
     "vector": [],
     "payload": {
       "chunk_id": "0003",
@@ -128,8 +136,12 @@
       ],
       "content_hash": "8ce160faa2411a9d541b6c89320f2cf85576be61c701d79de06d58ef81f2611a",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -150,7 +162,7 @@
     }
   },
   {
-    "id": "c807b426-f85a-5851-9e74-00405e8484d5",
+    "id": "6784d57f-639d-5d77-86d8-cddd392ae6c8",
     "vector": [],
     "payload": {
       "chunk_id": "0004",
@@ -166,20 +178,24 @@
         "core_skills"
       ],
       "text": "RAG & Retrieval: FAISS, BM25, hybrid retrieval, embeddings, chunking, cross-encoder reranking, prompt engineering.",
-      "embed_text": "[SECTION: CORE SKILLS]\nRAG & Retrieval: FAISS, BM25, hybrid retrieval, embeddings, chunking, cross-encoder reranking, prompt engineering.\nQ: What are the core skills mentioned in this section?\nQ: List three retrieval methods mentioned.\nQ: Which technique is used for cross-document ranking?",
+      "embed_text": "[SECTION: CORE SKILLS]\nRAG & Retrieval: FAISS, BM25, hybrid retrieval, embeddings, chunking, cross-encoder reranking, prompt engineering.\nQ: What are the core skills mentioned in this section?\nQ: List three techniques mentioned for retrieval.\nQ: Which technique is used for cross-document ranking?",
       "token_count": 37,
-      "embed_token_count": 82,
+      "embed_token_count": 83,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What are the core skills mentioned in this section?",
-        "List three retrieval methods mentioned.",
+        "List three techniques mentioned for retrieval.",
         "Which technique is used for cross-document ranking?"
       ],
       "content_hash": "51ca4f09ce5b2f12f84736dac5c3fcf5eaf22e9bf30c348ec2142f2f526c329c",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -200,7 +216,7 @@
     }
   },
   {
-    "id": "246c95c8-31cc-55f6-b778-818b27d8e031",
+    "id": "4e92b434-499a-5430-b8cb-8782fa83096e",
     "vector": [],
     "payload": {
       "chunk_id": "0005",
@@ -228,8 +244,12 @@
       ],
       "content_hash": "abad2182bb3cb8545c2aa2c995a00362fbee0749289ef136befdfbf202b752f8",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -250,7 +270,7 @@
     }
   },
   {
-    "id": "f4a82092-e869-5a58-b39a-1ea1d9defd4d",
+    "id": "52a83a27-64fb-5c6c-87b5-6059d5c26c0e",
     "vector": [],
     "payload": {
       "chunk_id": "0006",
@@ -278,8 +298,12 @@
       ],
       "content_hash": "01e36ff443ae358ae21ddcec8402e595cc3f656b915db577a1b665322d6b7e0b",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -300,7 +324,7 @@
     }
   },
   {
-    "id": "522e8544-0b06-5831-ba22-431fdef92f7b",
+    "id": "3cf685ed-ed12-5094-ace9-cfda2f2b65c0",
     "vector": [],
     "payload": {
       "chunk_id": "0007",
@@ -316,20 +340,24 @@
         "core_skills"
       ],
       "text": "Observability: Datadog APM & logs, CloudWatch Insights, Prometheus, Grafana\nData & ML: TensorFlow, PyTorch, Keras, XGBoost, scikit- learn, Spark, BigQuery, Hadoop, HBase, transformer for classification.",
-      "embed_text": "[SECTION: CORE SKILLS]\nObservability: Datadog APM & logs, CloudWatch Insights, Prometheus, Grafana\nData & ML: TensorFlow, PyTorch, Keras, XGBoost, scikit- learn, Spark, BigQuery, Hadoop, HBase, transformer for classification.\nQ: What tools are listed under observability?\nQ: Which machine learning frameworks are mentioned?\nQ: What database technologies are included in the list?",
+      "embed_text": "[SECTION: CORE SKILLS]\nObservability: Datadog APM & logs, CloudWatch Insights, Prometheus, Grafana\nData & ML: TensorFlow, PyTorch, Keras, XGBoost, scikit- learn, Spark, BigQuery, Hadoop, HBase, transformer for classification.\nQ: What tools are listed under observability?\nQ: What machine learning frameworks are mentioned?\nQ: Which database is named in the data and ML section?",
       "token_count": 70,
-      "embed_token_count": 112,
+      "embed_token_count": 116,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What tools are listed under observability?",
-        "Which machine learning frameworks are mentioned?",
-        "What database technologies are included in the list?"
+        "What machine learning frameworks are mentioned?",
+        "Which database is named in the data and ML section?"
       ],
       "content_hash": "09b10b02a7e6941c5a7685971b6cd9d8571c317ffadc6b53d71f1d9c7152077b",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -350,7 +378,7 @@
     }
   },
   {
-    "id": "5d2664af-7e54-50e2-8970-f983d6d61784",
+    "id": "2490cf6e-e2f2-5df1-be78-de645cc1fbb6",
     "vector": [],
     "payload": {
       "chunk_id": "0008",
@@ -378,8 +406,12 @@
       ],
       "content_hash": "a702c341d11300582e2c6d47aa8dc06d61f8ead52f54310d2a9e5244e01d7095",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -400,7 +432,7 @@
     }
   },
   {
-    "id": "a8dc0a76-4b06-58ae-ab72-850c9c939634",
+    "id": "7f6824fb-5d51-5a77-8bd2-c4dedbf4947a",
     "vector": [],
     "payload": {
       "chunk_id": "0009",
@@ -416,20 +448,24 @@
         "professional_experience"
       ],
       "text": "New York, NY • Aug 2021 – Present\nBuilt and operated production-grade RAG infrastructure using LangChain, including document ingestion, chunking, semantic ranking, and vector store orchestration, improving grounded response accuracy by +38%.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nNew York, NY • Aug 2021 – Present\nBuilt and operated production-grade RAG infrastructure using LangChain, including document ingestion, chunking, semantic ranking, and vector store orchestration, improving grounded response accuracy by +38%.\nQ: What was the time period for building and operating the RAG infrastructure?\nQ: Which tools were used to build the RAG infrastructure?\nQ: By what percentage did the accuracy of grounded responses improve?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nNew York, NY • Aug 2021 – Present\nBuilt and operated production-grade RAG infrastructure using LangChain, including document ingestion, chunking, semantic ranking, and vector store orchestration, improving grounded response accuracy by +38%.\nQ: What technologies were used to build the RAG infrastructure?\nQ: What specific aspects of the RAG infrastructure were built and operated?\nQ: By what percentage did the accuracy of grounded responses improve?",
       "token_count": 56,
       "embed_token_count": 114,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What was the time period for building and operating the RAG infrastructure?",
-        "Which tools were used to build the RAG infrastructure?",
+        "What technologies were used to build the RAG infrastructure?",
+        "What specific aspects of the RAG infrastructure were built and operated?",
         "By what percentage did the accuracy of grounded responses improve?"
       ],
       "content_hash": "786caa559121a9423dd24c3ddb308cfe091b3d630bb7565a3ebf602dd42ded3f",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -450,7 +486,7 @@
     }
   },
   {
-    "id": "656d1bdd-d1ce-5929-85e7-311d6006698f",
+    "id": "bcd13342-07be-5a18-af2e-c069104f33cb",
     "vector": [],
     "payload": {
       "chunk_id": "0010",
@@ -466,20 +502,24 @@
         "professional_experience"
       ],
       "text": "Designed LLM-to-database access layers using LangChain SQL and tool abstractions, enabling safe, structured querying over operational data and reducing manual lookup time by 65%.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDesigned LLM-to-database access layers using LangChain SQL and tool abstractions, enabling safe, structured querying over operational data and reducing manual lookup time by 65%.\nQ: What technology was used to design the LLM-to-database access layers?\nQ: By what percentage did the new system reduce manual lookup time?\nQ: What specific layers were designed for database access?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDesigned LLM-to-database access layers using LangChain SQL and tool abstractions, enabling safe, structured querying over operational data and reducing manual lookup time by 65%.\nQ: What technology was used to design the LLM-to-database access layers?\nQ: By what percentage did the new system reduce manual lookup time?\nQ: What specific features were implemented to ensure safe and structured querying?",
       "token_count": 46,
-      "embed_token_count": 105,
+      "embed_token_count": 111,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What technology was used to design the LLM-to-database access layers?",
         "By what percentage did the new system reduce manual lookup time?",
-        "What specific layers were designed for database access?"
+        "What specific features were implemented to ensure safe and structured querying?"
       ],
       "content_hash": "bae90fd5baeeeefbce3f3ea18e12d2bbf3b4f7fa274f606a39898d4c8b51534b",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -500,7 +540,7 @@
     }
   },
   {
-    "id": "e7e8f6d8-3cd5-597c-82d9-e3d6e25452cf",
+    "id": "69ff3873-f368-5197-afd9-3771f8adb84c",
     "vector": [],
     "payload": {
       "chunk_id": "0011",
@@ -516,20 +556,24 @@
         "professional_experience"
       ],
       "text": "Architected multi-agent orchestration frameworks with LangGraph, enabling task-specialized agents (retrieval, reasoning, validation) and increasing end-to-end task success rate by 28%.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nArchitected multi-agent orchestration frameworks with LangGraph, enabling task-specialized agents (retrieval, reasoning, validation) and increasing end-to-end task success rate by 28%.\nQ: What did Architected multi-agent orchestration frameworks with LangGraph enable?\nQ: What was the increase in end-to-end task success rate after implementing these frameworks?\nQ: How many specific types of agents were mentioned?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nArchitected multi-agent orchestration frameworks with LangGraph, enabling task-specialized agents (retrieval, reasoning, validation) and increasing end-to-end task success rate by 28%.\nQ: What did Architected multi-agent orchestration frameworks with LangGraph enable?\nQ: How many percentage points did the end-to-end task success rate increase by with these frameworks?\nQ: What types of agents were used in these frameworks?",
       "token_count": 47,
-      "embed_token_count": 112,
+      "embed_token_count": 115,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What did Architected multi-agent orchestration frameworks with LangGraph enable?",
-        "What was the increase in end-to-end task success rate after implementing these frameworks?",
-        "How many specific types of agents were mentioned?"
+        "How many percentage points did the end-to-end task success rate increase by with these frameworks?",
+        "What types of agents were used in these frameworks?"
       ],
       "content_hash": "365aa08d296196e014eeb605940b14913d92b8328e0ae5e7b9bccd9554d7415b",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -550,7 +594,7 @@
     }
   },
   {
-    "id": "5ab3ea14-25af-5133-9f0f-b911d049388c",
+    "id": "5a4b2cb1-3c5c-523a-857a-c430dddafac7",
     "vector": [],
     "payload": {
       "chunk_id": "0012",
@@ -566,20 +610,24 @@
         "professional_experience"
       ],
       "text": "Implemented LLM observability and evaluation pipelines with LangSmith, including regression testing, prompt/version diffing, and pairwise model evaluation, preventing 92% of quality regressions prior to production release.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nImplemented LLM observability and evaluation pipelines with LangSmith, including regression testing, prompt/version diffing, and pairwise model evaluation, preventing 92% of quality regressions prior to production release.\nQ: What tools were used for observability and evaluation?\nQ: What specific methods were implemented for model evaluation?\nQ: What was the effectiveness of the implemented pipelines in preventing quality issues?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nImplemented LLM observability and evaluation pipelines with LangSmith, including regression testing, prompt/version diffing, and pairwise model evaluation, preventing 92% of quality regressions prior to production release.\nQ: What tools were used for observability and evaluation?\nQ: What specific methods were implemented for model evaluation?\nQ: What was the success rate in preventing quality regressions?",
       "token_count": 46,
-      "embed_token_count": 101,
+      "embed_token_count": 96,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What tools were used for observability and evaluation?",
         "What specific methods were implemented for model evaluation?",
-        "What was the effectiveness of the implemented pipelines in preventing quality issues?"
+        "What was the success rate in preventing quality regressions?"
       ],
       "content_hash": "5a3c749d9331f2ddd6045a8c12bf08640a281500aa4fddc9a874312f8fe11545",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -600,7 +648,7 @@
     }
   },
   {
-    "id": "cf24b924-7517-5eff-a9a0-e61d38fac014",
+    "id": "b55de05f-1374-5832-b7fc-bcb9e00f19d0",
     "vector": [],
     "payload": {
       "chunk_id": "0013",
@@ -616,20 +664,24 @@
         "professional_experience"
       ],
       "text": "Deployed low-latency LLM inference services with online tracing, evaluation hooks, and monitoring, maintaining P95 latency under 1.5s at production scale.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDeployed low-latency LLM inference services with online tracing, evaluation hooks, and monitoring, maintaining P95 latency under 1.5s at production scale.\nQ: What was the target for P95 latency?\nQ: Which services were deployed?\nQ: What features were included in the deployed services?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDeployed low-latency LLM inference services with online tracing, evaluation hooks, and monitoring, maintaining P95 latency under 1.5s at production scale.\nQ: What was the target P95 latency for the deployed services?\nQ: What features were included in the deployed low-latency LLM inference services?\nQ: At what scale were these services maintained?",
       "token_count": 38,
-      "embed_token_count": 86,
+      "embed_token_count": 101,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What was the target for P95 latency?",
-        "Which services were deployed?",
-        "What features were included in the deployed services?"
+        "What was the target P95 latency for the deployed services?",
+        "What features were included in the deployed low-latency LLM inference services?",
+        "At what scale were these services maintained?"
       ],
       "content_hash": "12eac9dc1b01b44e9fc670b692104b1122fd7d5ce3f241d47366324d0ea4edf3",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -650,7 +702,7 @@
     }
   },
   {
-    "id": "57b9a71f-8eb1-5628-b93b-2c63ed961801",
+    "id": "93bd5bc9-c525-5b3b-a404-16d6bfd65601",
     "vector": [],
     "payload": {
       "chunk_id": "0014",
@@ -666,20 +718,24 @@
         "professional_experience"
       ],
       "text": "Designed and implemented Kubernetes GPU autoscaling and workload orchestration strategies (HPA/KEDA), enabling dynamic scaling of LLM inference services under variable load while optimizing GPU utilization and latency.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDesigned and implemented Kubernetes GPU autoscaling and workload orchestration strategies (HPA/KEDA), enabling dynamic scaling of LLM inference services under variable load while optimizing GPU utilization and latency.\nQ: What technologies were used for Kubernetes GPU autoscaling?\nQ: What was the goal of the workload orchestration strategies?\nQ: How were LLM inference services managed under variable load?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDesigned and implemented Kubernetes GPU autoscaling and workload orchestration strategies (HPA/KEDA), enabling dynamic scaling of LLM inference services under variable load while optimizing GPU utilization and latency.\nQ: What strategies did the individual design and implement for Kubernetes GPU autoscaling?\nQ: How were LLM inference services scaled dynamically under variable load?\nQ: What aspects of GPU utilization and latency were optimized?",
       "token_count": 51,
-      "embed_token_count": 107,
+      "embed_token_count": 115,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What technologies were used for Kubernetes GPU autoscaling?",
-        "What was the goal of the workload orchestration strategies?",
-        "How were LLM inference services managed under variable load?"
+        "What strategies did the individual design and implement for Kubernetes GPU autoscaling?",
+        "How were LLM inference services scaled dynamically under variable load?",
+        "What aspects of GPU utilization and latency were optimized?"
       ],
       "content_hash": "aaaca9726c46b8a900da2ed25dcb7e9b28565fb814952219298277b11af7b53c",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -700,7 +756,7 @@
     }
   },
   {
-    "id": "bb4e5849-ee63-5737-9307-71890f2e114e",
+    "id": "589d4f4e-b333-541c-bd11-a6d6cc41f527",
     "vector": [],
     "payload": {
       "chunk_id": "0015",
@@ -728,8 +784,12 @@
       ],
       "content_hash": "e4021425aa4d4cc01db588b8e80a019d58c285af76dea1dec0934e183b75ad74",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -750,7 +810,7 @@
     }
   },
   {
-    "id": "c1f14a2a-6360-524c-8fdb-d460eab78df2",
+    "id": "a9064882-ce73-51f3-a714-8e9b99abfe51",
     "vector": [],
     "payload": {
       "chunk_id": "0016",
@@ -766,20 +826,24 @@
         "professional_experience"
       ],
       "text": "Applied reinforcement learning techniques (PPO, DPO, GRPO) for LLM fine-tuning, leveraging offline evaluations, human and programmatic feedback signals to optimize response quality,\nDesigned and operated high-throughput Kafka event pipelines to support real-time ingestion, model signals, and agent execution triggers.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nApplied reinforcement learning techniques (PPO, DPO, GRPO) for LLM fine-tuning, leveraging offline evaluations, human and programmatic feedback signals to optimize response quality,\nDesigned and operated high-throughput Kafka event pipelines to support real-time ingestion, model signals, and agent execution triggers.\nQ: What reinforcement learning techniques were used for LLM fine-tuning?\nQ: How were feedback signals utilized to optimize response quality?\nQ: What tools were used to design and operate high-throughput Kafka event pipelines?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nApplied reinforcement learning techniques (PPO, DPO, GRPO) for LLM fine-tuning, leveraging offline evaluations, human and programmatic feedback signals to optimize response quality,\nDesigned and operated high-throughput Kafka event pipelines to support real-time ingestion, model signals, and agent execution triggers.\nQ: What reinforcement learning techniques were used for LLM fine-tuning?\nQ: How were feedback signals utilized in optimizing response quality?\nQ: What technology was used to design and operate high-throughput event pipelines?",
       "token_count": 76,
-      "embed_token_count": 140,
+      "embed_token_count": 139,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What reinforcement learning techniques were used for LLM fine-tuning?",
-        "How were feedback signals utilized to optimize response quality?",
-        "What tools were used to design and operate high-throughput Kafka event pipelines?"
+        "How were feedback signals utilized in optimizing response quality?",
+        "What technology was used to design and operate high-throughput event pipelines?"
       ],
       "content_hash": "bb37357d1e657888c2e4558912834091c93bf9e270f5e0ae946e0af53ef3bdc2",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -800,7 +864,7 @@
     }
   },
   {
-    "id": "f81abdb9-1403-508b-b23a-691f4747d041",
+    "id": "b0e742cc-1a3e-514d-9bbf-f3881b04875d",
     "vector": [],
     "payload": {
       "chunk_id": "0017",
@@ -816,20 +880,24 @@
         "professional_experience"
       ],
       "text": "Developed serverless, distributed backend services using AWS Lambda to support scalable AI workflows and data processing.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDeveloped serverless, distributed backend services using AWS Lambda to support scalable AI workflows and data processing.\nQ: What technologies were used to develop the backend services?\nQ: For what purpose were the backend services developed?\nQ: Which cloud service provider was utilized for developing the backend services?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDeveloped serverless, distributed backend services using AWS Lambda to support scalable AI workflows and data processing.\nQ: What technology was used to develop the backend services?\nQ: For what purpose were the backend services developed?\nQ: Which cloud provider's service was utilized?",
       "token_count": 28,
-      "embed_token_count": 81,
+      "embed_token_count": 77,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What technologies were used to develop the backend services?",
+        "What technology was used to develop the backend services?",
         "For what purpose were the backend services developed?",
-        "Which cloud service provider was utilized for developing the backend services?"
+        "Which cloud provider's service was utilized?"
       ],
       "content_hash": "0a46a78d97906fa85550c4e043546ac03427cc2ba86938670711677f1b73c9e7",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -850,7 +918,7 @@
     }
   },
   {
-    "id": "6c218305-55d4-5b63-94c5-39d2cbb16c3d",
+    "id": "aa408d33-59ac-5f6b-9eb9-c3876cb50f3b",
     "vector": [],
     "payload": {
       "chunk_id": "0018",
@@ -866,20 +934,24 @@
         "professional_experience"
       ],
       "text": "Implemented resilience patterns (timeouts, retries, exponential backoff, circuit breakers) across AI and data services, significantly improving system reliability under load.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nImplemented resilience patterns (timeouts, retries, exponential backoff, circuit breakers) across AI and data services, significantly improving system reliability under load.\nQ: What resilience patterns were implemented?\nQ: Across which types of services were the resilience patterns implemented?\nQ: What was the outcome of implementing these patterns?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nImplemented resilience patterns (timeouts, retries, exponential backoff, circuit breakers) across AI and data services, significantly improving system reliability under load.\nQ: What resilience patterns were implemented?\nQ: Across which services were the resilience patterns implemented?\nQ: What was the outcome of implementing these patterns?",
       "token_count": 38,
-      "embed_token_count": 93,
+      "embed_token_count": 91,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What resilience patterns were implemented?",
-        "Across which types of services were the resilience patterns implemented?",
+        "Across which services were the resilience patterns implemented?",
         "What was the outcome of implementing these patterns?"
       ],
       "content_hash": "fa693781987f027202eea33bb449b5e704395ba94267bab700d6efb09fc90ff9",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -900,7 +972,7 @@
     }
   },
   {
-    "id": "335ee497-fdec-5a95-a7cc-b27b25d7e4f2",
+    "id": "608a2805-ee18-5a00-9009-653de81ea8de",
     "vector": [],
     "payload": {
       "chunk_id": "0019",
@@ -916,20 +988,24 @@
         "professional_experience"
       ],
       "text": "Kaden Health — ML Engineer",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nKaden Health — ML Engineer\nQ: What was Kaden's role?\nQ: Where did Kaden work as an ML Engineer?\nQ: What specific company is mentioned?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nKaden Health — ML Engineer\nQ: What was Kaden's role?\nQ: Where did Kaden work as an ML Engineer?\nQ: What specific company did Kaden work for as an ML Engineer?",
       "token_count": 8,
-      "embed_token_count": 52,
+      "embed_token_count": 61,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What was Kaden's role?",
         "Where did Kaden work as an ML Engineer?",
-        "What specific company is mentioned?"
+        "What specific company did Kaden work for as an ML Engineer?"
       ],
       "content_hash": "f6b2d67881869589835f3e5bcb629d810e3971bdf4e6f196a7cf04c2b837c713",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -950,7 +1026,7 @@
     }
   },
   {
-    "id": "ed9ba5d5-bfc5-50d3-92a3-0a0942915b94",
+    "id": "eb9a1210-f82b-5cce-8f23-beac50b612c8",
     "vector": [],
     "payload": {
       "chunk_id": "0020",
@@ -966,20 +1042,24 @@
         "professional_experience"
       ],
       "text": "Remote • Jul 2019 – Aug 2021\nDeveloped ML/NLP models using TensorFlow, PyTorch, Keras, XGBoost (classification, sentiment, Speech models), Spacy.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nRemote • Jul 2019 – Aug 2021\nDeveloped ML/NLP models using TensorFlow, PyTorch, Keras, XGBoost (classification, sentiment, Speech models), Spacy.\nQ: Which machine learning frameworks were used?\nQ: What types of models were developed?\nQ: Was any natural language processing work mentioned?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nRemote • Jul 2019 – Aug 2021\nDeveloped ML/NLP models using TensorFlow, PyTorch, Keras, XGBoost (classification, sentiment, Speech models), Spacy.\nQ: Which machine learning frameworks were used for developing models?\nQ: What types of models were developed using these frameworks?\nQ: Was any natural language processing involved in the projects?",
       "token_count": 44,
-      "embed_token_count": 86,
+      "embed_token_count": 95,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "Which machine learning frameworks were used?",
-        "What types of models were developed?",
-        "Was any natural language processing work mentioned?"
+        "Which machine learning frameworks were used for developing models?",
+        "What types of models were developed using these frameworks?",
+        "Was any natural language processing involved in the projects?"
       ],
       "content_hash": "2ed0a35cdd07de90e3903675cc24a4c17e6ac768baebb84901d9ba28c0650261",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -1000,7 +1080,7 @@
     }
   },
   {
-    "id": "3a0901e4-eaa9-58f8-8ec7-3c5ec2840fe4",
+    "id": "16415799-bee4-5e90-93e4-29f3dd3f21a4",
     "vector": [],
     "payload": {
       "chunk_id": "0021",
@@ -1028,8 +1108,12 @@
       ],
       "content_hash": "f0a6cdd1fc7a1ee59b37899c4049c96a4a4f549c03874491fa08c56188d0cc26",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -1050,7 +1134,7 @@
     }
   },
   {
-    "id": "7b38e7cc-5580-56bc-8879-3f5c2316235f",
+    "id": "e1f28251-ce83-53af-b745-9db396d8a581",
     "vector": [],
     "payload": {
       "chunk_id": "0022",
@@ -1066,20 +1150,24 @@
         "professional_experience"
       ],
       "text": "Developed model-serving microservices for clinical inference.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDeveloped model-serving microservices for clinical inference.\nQ: What type of microservices did they develop?\nQ: For what purpose were the microservices developed?\nQ: Which domain does the project belong to?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDeveloped model-serving microservices for clinical inference.\nQ: What kind of microservices did they develop?\nQ: For what purpose were the microservices developed?\nQ: Which domain do these microservices pertain to?",
       "token_count": 15,
-      "embed_token_count": 62,
+      "embed_token_count": 64,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What type of microservices did they develop?",
+        "What kind of microservices did they develop?",
         "For what purpose were the microservices developed?",
-        "Which domain does the project belong to?"
+        "Which domain do these microservices pertain to?"
       ],
       "content_hash": "a35ddaf032baa5f9eb8f112f2485ae67a390fe738788ad973c8a1f2e0c8017c4",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -1100,7 +1188,7 @@
     }
   },
   {
-    "id": "d56f5061-1ec6-5c3d-affb-bb491813aa90",
+    "id": "1d528906-a77b-58fb-9002-3195b7edbd01",
     "vector": [],
     "payload": {
       "chunk_id": "0023",
@@ -1116,20 +1204,24 @@
         "professional_experience"
       ],
       "text": "Designed real-time streaming architecture using NATS + Kafka.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDesigned real-time streaming architecture using NATS + Kafka.\nQ: What technologies were used to design the real-time streaming architecture?\nQ: Which messaging systems were employed in the real-time streaming architecture?\nQ: Who designed the real-time streaming architecture?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDesigned real-time streaming architecture using NATS + Kafka.\nQ: What technologies were used to design the real-time streaming architecture?\nQ: Which messaging systems were implemented in the real-time streaming architecture?\nQ: Who designed the real-time streaming architecture?",
       "token_count": 14,
       "embed_token_count": 72,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What technologies were used to design the real-time streaming architecture?",
-        "Which messaging systems were employed in the real-time streaming architecture?",
+        "Which messaging systems were implemented in the real-time streaming architecture?",
         "Who designed the real-time streaming architecture?"
       ],
       "content_hash": "cda558ac71d1e988a163a14d412327eee3bb8c582f77c1386fbd81ce1aa78c1a",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -1150,7 +1242,7 @@
     }
   },
   {
-    "id": "d412f415-f645-556e-849b-cb6548032a62",
+    "id": "58dc7f0e-e512-5063-b485-9f8e0343bbdf",
     "vector": [],
     "payload": {
       "chunk_id": "0024",
@@ -1166,20 +1258,24 @@
         "professional_experience"
       ],
       "text": "Built unified log ingestion (Cloud Run → BigQuery/S3).",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nBuilt unified log ingestion (Cloud Run → BigQuery/S3).\nQ: What technology was used for unified log ingestion?\nQ: Where were logs ingested to?\nQ: Which services were involved in the log ingestion process?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nBuilt unified log ingestion (Cloud Run → BigQuery/S3).\nQ: What technology was used for unified log ingestion?\nQ: Where were the logs ingested to?\nQ: Which services were involved in the log ingestion process?",
       "token_count": 18,
-      "embed_token_count": 66,
+      "embed_token_count": 67,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What technology was used for unified log ingestion?",
-        "Where were logs ingested to?",
+        "Where were the logs ingested to?",
         "Which services were involved in the log ingestion process?"
       ],
       "content_hash": "ea9bbc91c042d1ab367072f663df1d8d7c51b92ac308dfc9624e71c008fb65c6",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -1200,7 +1296,7 @@
     }
   },
   {
-    "id": "217f1096-69b4-533d-b052-63ebf2bc9093",
+    "id": "ea2d8fa8-2f44-5848-b84a-a8d9ec4852a2",
     "vector": [],
     "payload": {
       "chunk_id": "0025",
@@ -1216,20 +1312,24 @@
         "professional_experience"
       ],
       "text": "CGMAX — ML Engineer",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nCGMAX — ML Engineer\nQ: What was the role held?\nQ: At which company did the person work?\nQ: What field does the ML Engineer specialize in?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nCGMAX — ML Engineer\nQ: What was the role?\nQ: Where did the role take place?\nQ: What was the job title?",
       "token_count": 8,
-      "embed_token_count": 52,
+      "embed_token_count": 44,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What was the role held?",
-        "At which company did the person work?",
-        "What field does the ML Engineer specialize in?"
+        "What was the role?",
+        "Where did the role take place?",
+        "What was the job title?"
       ],
       "content_hash": "84c30fb09f98800e0eeafde02b2c72b7282532179ff02181dba723fc8d8af20c",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -1250,7 +1350,7 @@
     }
   },
   {
-    "id": "7fa242f5-b650-5e48-bb3a-2aa1e98de18b",
+    "id": "8c7664db-de4f-5159-af17-f79294c623fd",
     "vector": [],
     "payload": {
       "chunk_id": "0026",
@@ -1278,8 +1378,12 @@
       ],
       "content_hash": "98e9fa16424c93add76664d90913a2deac00bf0df0bec530a4232601bb032dca",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -1300,7 +1404,7 @@
     }
   },
   {
-    "id": "1e607b7a-8c32-5b8d-b677-0356c5287400",
+    "id": "349bbb54-8a1c-5290-b53c-8bef55af379d",
     "vector": [],
     "payload": {
       "chunk_id": "0027",
@@ -1316,20 +1420,24 @@
         "professional_experience"
       ],
       "text": "• Built sentiment & price prediction models.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\n• Built sentiment & price prediction models.\nQ: What kind of models did they build?\nQ: Which two types of models were built?\nQ: What were the models designed to predict?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\n• Built sentiment & price prediction models.\nQ: What types of models were built?\nQ: Which models were developed?\nQ: Did they involve predicting stock prices?",
       "token_count": 10,
-      "embed_token_count": 52,
+      "embed_token_count": 48,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What kind of models did they build?",
-        "Which two types of models were built?",
-        "What were the models designed to predict?"
+        "What types of models were built?",
+        "Which models were developed?",
+        "Did they involve predicting stock prices?"
       ],
       "content_hash": "a5880e45431f9cecd60b09561482cd2d335c12cd3e8d1583eba5c3c7b71e1353",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -1350,7 +1458,7 @@
     }
   },
   {
-    "id": "2d18e6d1-ffae-5421-b9da-b75c654c2c6a",
+    "id": "60d34c3e-9e95-5c31-9b33-cc1c7db4cbe3",
     "vector": [],
     "payload": {
       "chunk_id": "0028",
@@ -1366,20 +1474,24 @@
         "professional_experience"
       ],
       "text": "• Developed ETL + real-time analytics w/ Spark, Hadoop, Kafka, HBase.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\n• Developed ETL + real-time analytics w/ Spark, Hadoop, Kafka, HBase.\nQ: Which technologies were used for ETL and real-time analytics?\nQ: What tools were utilized for ETL processes?\nQ: Did the experience involve batch or real-time analytics?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\n• Developed ETL + real-time analytics w/ Spark, Hadoop, Kafka, HBase.\nQ: Which technologies were used for ETL and real-time analytics?\nQ: What tools were utilized for real-time analytics?\nQ: Did they use any specific big data technologies?",
       "token_count": 26,
-      "embed_token_count": 84,
+      "embed_token_count": 81,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "Which technologies were used for ETL and real-time analytics?",
-        "What tools were utilized for ETL processes?",
-        "Did the experience involve batch or real-time analytics?"
+        "What tools were utilized for real-time analytics?",
+        "Did they use any specific big data technologies?"
       ],
       "content_hash": "f59f8cfb13315af3d7788c189d445b583177ddbc7fb936ea175de8d80ede80e4",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -1400,7 +1512,7 @@
     }
   },
   {
-    "id": "241fdd9a-2a3f-5155-85f2-6bf914b3994b",
+    "id": "d5e2c6f3-73f2-5c8a-a13f-70e72475b9f0",
     "vector": [],
     "payload": {
       "chunk_id": "0029",
@@ -1416,20 +1528,24 @@
         "professional_experience"
       ],
       "text": "NVIDIA — Full Stack Engineer",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nNVIDIA — Full Stack Engineer\nQ: What was the role held at NVIDIA?\nQ: Which company held the position of Full Stack Engineer?\nQ: What specific technologies or areas of expertise might a Full Stack Engineer at NVIDIA work with?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nNVIDIA — Full Stack Engineer\nQ: What was the role held at NVIDIA?\nQ: Was the role at NVIDIA part-time or full-time?\nQ: What type of engineer position was held at NVIDIA?",
       "token_count": 7,
-      "embed_token_count": 64,
+      "embed_token_count": 56,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What was the role held at NVIDIA?",
-        "Which company held the position of Full Stack Engineer?",
-        "What specific technologies or areas of expertise might a Full Stack Engineer at NVIDIA work with?"
+        "Was the role at NVIDIA part-time or full-time?",
+        "What type of engineer position was held at NVIDIA?"
       ],
       "content_hash": "d81056f056bded96ebe60c410fb46ef4e4e471159b3d27686a8e3ad5e8ac112f",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -1450,7 +1566,7 @@
     }
   },
   {
-    "id": "523797a6-c2bc-529a-8dcc-2bc4c8669daf",
+    "id": "e00849a6-d330-56e8-b76e-3a5f3542e82b",
     "vector": [],
     "payload": {
       "chunk_id": "0030",
@@ -1478,8 +1594,12 @@
       ],
       "content_hash": "ec30f1e8a641c1a4310fdd564365e76d8fd2a2bc008384db5e1c5c918b496a50",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -1500,7 +1620,7 @@
     }
   },
   {
-    "id": "c93242ed-b6d6-568f-a87c-9381c30e8ad5",
+    "id": "209fd075-d954-55fa-a6be-baeacaa456ae",
     "vector": [],
     "payload": {
       "chunk_id": "0031",
@@ -1528,8 +1648,12 @@
       ],
       "content_hash": "1e7370a28c4b33dfa5a22c008dd7cb06fd91b241dc1266c7f5408b1ef473f871",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -1550,7 +1674,7 @@
     }
   },
   {
-    "id": "b03e80f2-ee3c-545f-83e0-b90a8f7d302f",
+    "id": "a5083009-c86f-55e8-bf68-9b10d1cafb4a",
     "vector": [],
     "payload": {
       "chunk_id": "0032",
@@ -1566,20 +1690,24 @@
         "professional_experience"
       ],
       "text": "Developed internal REST APIs supporting GPU engineering.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDeveloped internal REST APIs supporting GPU engineering.\nQ: What type of APIs did the individual develop?\nQ: For what purpose were the APIs developed?\nQ: Which technology was used for API development?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDeveloped internal REST APIs supporting GPU engineering.\nQ: What type of APIs did the individual develop?\nQ: For which department were the APIs developed?\nQ: What technology was used for API development?",
       "token_count": 12,
       "embed_token_count": 57,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What type of APIs did the individual develop?",
-        "For what purpose were the APIs developed?",
-        "Which technology was used for API development?"
+        "For which department were the APIs developed?",
+        "What technology was used for API development?"
       ],
       "content_hash": "ce05e3d33fe5c633ab41e6ec9c47f2ec38fdf9b24c4b615c946c351431160169",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -1600,7 +1728,7 @@
     }
   },
   {
-    "id": "5ffa9197-7aec-50ce-aeea-81359c9e62a5",
+    "id": "c630056f-e3c3-5121-8076-17047b51b105",
     "vector": [],
     "payload": {
       "chunk_id": "0033",
@@ -1616,20 +1744,24 @@
         "professional_experience"
       ],
       "text": "Built frontend interfaces using React within a Node.js environment.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nBuilt frontend interfaces using React within a Node.js environment.\nQ: What technology was used to build frontend interfaces?\nQ: In what environment were the frontend interfaces built?\nQ: Which specific technology was used for the frontend?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nBuilt frontend interfaces using React within a Node.js environment.\nQ: What technology was used to build frontend interfaces?\nQ: Within what backend environment were the frontend interfaces built?\nQ: Which specific frontend technology was utilized?",
       "token_count": 17,
-      "embed_token_count": 67,
+      "embed_token_count": 69,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What technology was used to build frontend interfaces?",
-        "In what environment were the frontend interfaces built?",
-        "Which specific technology was used for the frontend?"
+        "Within what backend environment were the frontend interfaces built?",
+        "Which specific frontend technology was utilized?"
       ],
       "content_hash": "1cccdcb5b697a1159d40e4c7ce6454737287d9710df3937dbe7c98d1c2404197",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -1650,7 +1782,7 @@
     }
   },
   {
-    "id": "0d9f48a9-4405-50b4-aa92-e85512561852",
+    "id": "aadbb3a0-7fc4-5ed5-bd7a-94399d22bbe9",
     "vector": [],
     "payload": {
       "chunk_id": "0034",
@@ -1678,8 +1810,12 @@
       ],
       "content_hash": "9e1617669ab76542029835c626787caf979c835bdd0b00d93c5b425a51dca61a",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -1700,7 +1836,7 @@
     }
   },
   {
-    "id": "167388ce-11c0-584d-93bd-f32b0cda45f3",
+    "id": "63d31e9d-7fb0-5cee-9dd6-d5d11fef7ae8",
     "vector": [],
     "payload": {
       "chunk_id": "0035",
@@ -1728,8 +1864,12 @@
       ],
       "content_hash": "3cdfb931c3863451bc9cd213e9bc976e518dbc2e642234b58b90170102639607",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -1750,7 +1890,7 @@
     }
   },
   {
-    "id": "6027025a-2707-5961-a42c-26efae2e238e",
+    "id": "8705ff2b-99cb-5449-8af1-943f88d0ef87",
     "vector": [],
     "payload": {
       "chunk_id": "0036",
@@ -1766,20 +1906,24 @@
         "publication"
       ],
       "text": "A Novel Approach to Impedance-based Fault Location for High Voltage Cables — IEEE IAS, 2012\n(https://www.researchgate.net/publication/261239443_A_novel_approach_to_impedance-based_fault_location_for_high_voltage_cables)",
-      "embed_text": "[SECTION: PUBLICATION]\nA Novel Approach to Impedance-based Fault Location for High Voltage Cables — IEEE IAS, 2012\n(https://www.researchgate.net/publication/261239443_A_novel_approach_to_impedance-based_fault_location_for_high_voltage_cables)\nQ: What is the title of the publication?\nQ: Which organization published the paper in 2012?\nQ: Where can one find the full text of the publication?",
+      "embed_text": "[SECTION: PUBLICATION]\nA Novel Approach to Impedance-based Fault Location for High Voltage Cables — IEEE IAS, 2012\n(https://www.researchgate.net/publication/261239443_A_novel_approach_to_impedance-based_fault_location_for_high_voltage_cables)\nQ: What is the title of the publication?\nQ: Where was the publication presented?\nQ: What is the URL of the publication?",
       "token_count": 78,
-      "embed_token_count": 119,
+      "embed_token_count": 115,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is the title of the publication?",
-        "Which organization published the paper in 2012?",
-        "Where can one find the full text of the publication?"
+        "Where was the publication presented?",
+        "What is the URL of the publication?"
       ],
       "content_hash": "0cf73f57b395f897e009ed0635b6db9e5b8b369a35dc2e91ad328f5e6e0fbfd7",
       "source": "personal_resume",
-      "ingest_run_id": "run_20260428_134809_EST",
-      "ingest_ts": "2026-04-28T13:48:09-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260429_100921_EST",
+      "ingest_ts": "2026-04-29T10:09:21-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,

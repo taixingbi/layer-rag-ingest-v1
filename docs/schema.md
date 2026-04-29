@@ -16,6 +16,10 @@ Recommended metadata keys:
 - `ingest_ts`: ingest timestamp
 - `ingest_run_id`: run identifier for traceability
 - `profile.role`: optional profile role metadata (for selected sources)
+- `id_key_version`: identity contract version (`v2`, `v3`, ...)
+- `document_version`: raw source revision tag
+- `chunk_version`: chunking strategy revision tag
+- `embedding_version`: embedding/vector space revision tag
 
 Recommended filterable keys:
 
@@ -156,6 +160,10 @@ Recommended filterable keys:
     "synthetic_questions": [...],
     "content_hash": "e3b0c44298fc1c149afbf4c8996fb924...",
     "source": "resume_taixing_bi",
+    "id_key_version": "v3",
+    "document_version": "2026-04-29",
+    "chunk_version": "plain_text_v1",
+    "embedding_version": "bge-m3@1024",
     "profile": {
       "role": "AI Infrastructure Engineer"
     },
@@ -189,6 +197,10 @@ Recommended filterable keys:
     "synthetic_questions": [...],
     "content_hash": "e3b0c44298fc1c149afbf4c8996fb924...",
     "source": "resume_taixing_bi",
+    "id_key_version": "v3",
+    "document_version": "2026-04-29",
+    "chunk_version": "plain_text_v1",
+    "embedding_version": "bge-m3@1024",
     "profile": {
       "role": "AI Infrastructure Engineer"
     },

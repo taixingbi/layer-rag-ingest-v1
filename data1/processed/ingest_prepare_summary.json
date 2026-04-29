@@ -1,7 +1,11 @@
 {
-  "ingest_run_id": "run_20260428_134809_EST",
+  "ingest_run_id": "run_20260429_100921_EST",
   "collection": "taixing_knowledge_dev",
-  "ingest_ts": "2026-04-28T13:48:09-05:00",
+  "ingest_ts": "2026-04-29T10:09:21-05:00",
+  "id_key_version": "v3",
+  "document_version": "v1",
+  "chunk_version": "v1",
+  "embedding_version": "BAAI/bge-m3",
   "files": [
     {
       "input_file": "data1/processed/chunks_profile.json",

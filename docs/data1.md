@@ -39,7 +39,11 @@ Optional:
 - Summary: `data1/processed/ingest_prepare_summary.json`
 - Manifest: `data1/processed/ingest_manifest_<ingest_run_id>.json` and `data1/processed/ingest_manifest_latest.json`
 
-ID contract (v2): point id is UUID5 of `v2|source=<source>|document_id=<document_id>|chunk_id=<chunk_id>`.
+ID contract (default v3): point id is UUID5 of  
+`v3|source=<source>|document_id=<document_id>|document_version=<document_version>|chunk_version=<chunk_version>|embedding_version=<embedding_version>|chunk_id=<chunk_id>`.
+
+Compatibility: pass `--id-key-version v2` to keep the old identity key  
+`v2|source=<source>|document_id=<document_id>|chunk_id=<chunk_id>`.
 
 Use **`--source-prefix personal`** so `payload.source` values look like `personal_<doc_type>` (easy to filter vs `repo_*` from `data2`).
 
@@ -54,6 +58,19 @@ python3 app/prepare_payloads.py \
   --output-dir data1/processed \
   --pattern "chunks_*.json" \
   --source-prefix personal
+```
+
+Optional explicit version tags (recommended for immutable coexistence):
+
+```bash
+python3 app/prepare_payloads.py \
+  --data-dir data1/processed \
+  --output-dir data1/processed \
+  --pattern "chunks_*.json" \
+  --source-prefix personal \
+  --document-version "2026-04-29" \
+  --chunk-version "plain_text_v1" \
+  --embedding-version "bge-m3@1024"
 ```
 
 Optional role mapping (adds `payload.profile.role` only for mapped sources/documents):

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-28T13:48:19.570981-05:00",
+  "generated_at": "2026-04-29T10:09:33.258078-05:00",
   "summary": {
     "files": 3,
     "probes_total": 8,
@@ -14,7 +14,7 @@
     },
     "score_stats": {
       "min": 0.6269789,
-      "p50": 0.6372511000000001,
+      "p50": 0.6396135000000001,
       "p90": 0.7030152399999999,
       "max": 0.7300764
     },
@@ -101,7 +101,7 @@
       "judge_label": "supported",
       "judge_reason": "The phone number is directly provided in the context.",
       "final_reason": "llm_rescue",
-      "top_hit_id": "15e46130-c0e0-5a1e-ad58-0a77c4629ca2"
+      "top_hit_id": "ba0a1bc6-6335-57fc-8dda-10d9ba907e6e"
     },
     {
       "source": "personal_resume",
@@ -135,7 +135,7 @@
       "judge_label": "not_supported",
       "judge_reason": "The candidate context does not mention any core skills.",
       "final_reason": "below_threshold",
-      "top_hit_id": "cd0564b4-330b-526d-8aca-a4ccccbf536f"
+      "top_hit_id": "5b610e06-f4cb-527e-b202-cb797c8d79a6"
     },
     {
       "source": "personal_resume",
@@ -152,7 +152,7 @@
       "judge_label": "not_supported",
       "judge_reason": "The context only mentions an AI Infrastructure Engineer position at Saks.com but does not specify the role held.",
       "final_reason": "below_threshold",
-      "top_hit_id": "5d2664af-7e54-50e2-8970-f983d6d61784"
+      "top_hit_id": "2490cf6e-e2f2-5df1-be78-de645cc1fbb6"
     },
     {
       "source": "personal_resume",
@@ -167,7 +167,7 @@
       "vector_passed": false,
       "judge_invoked": true,
       "judge_label": "supported",
-      "judge_reason": "The context provides a specific degree obtained (Master of Science, Computer Engineering).",
+      "judge_reason": "The context provides a specific degree obtained.",
       "final_reason": "llm_rescue",
       "top_hit_id": "167388ce-11c0-584d-93bd-f32b0cda45f3"
     },
@@ -176,7 +176,7 @@
       "section": "PUBLICATION",
       "doc_type": "resume",
       "probe_text": "What is the title of the publication?",
-      "score": 0.6362976,
+      "score": 0.6410224,
       "scope_match": true,
       "passed": false,
       "threshold": 0.75,
@@ -186,7 +186,7 @@
       "judge_label": "not_supported",
       "judge_reason": "The context does not contain the title of the publication. It only provides a description and the source where the publication can be found.",
       "final_reason": "below_threshold",
-      "top_hit_id": "cf63ef19-699a-5ffc-a3bc-2e8b387d1bd3"
+      "top_hit_id": "8705ff2b-99cb-5449-8af1-943f88d0ef87"
     }
   ]
 }
