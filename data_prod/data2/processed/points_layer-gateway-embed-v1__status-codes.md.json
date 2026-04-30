@@ -1,0 +1,302 @@
+[
+  {
+    "id": "2d152fba-7c8d-5f35-8fcf-b01704b3fdb4",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0001",
+      "document_id": "layer-gateway-embed-v1__status-codes.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Gateway 429 and 503 Conditions",
+      "doc_type": "layer-gateway-embed-v1__status-codes.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__status-codes.md",
+        "gateway_429_and_503_conditions"
+      ],
+      "text": "This document explains when the embedding gateway returns `429` and `503`.",
+      "embed_text": "[SECTION: Gateway 429 and 503 Conditions]\nThis document explains when the embedding gateway returns `429` and `503`.\nQ: What HTTP status codes are explained in this document?\nQ: When does the embedding gateway return 429?\nQ: When does the embedding gateway return 503?",
+      "token_count": 23,
+      "embed_token_count": 78,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What HTTP status codes are explained in this document?",
+        "When does the embedding gateway return 429?",
+        "When does the embedding gateway return 503?"
+      ],
+      "content_hash": "3c238bbc802ada3f436c219e9b2992d8a814e05e2b8c2b658e766873e52928ee",
+      "source": "repo_layer-gateway-embed-v1__status-codes.md",
+      "ingest_run_id": "run_20260428_164848_EST",
+      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "7a060bf3-4865-5171-ae21-a64dce73b54f",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0002",
+      "document_id": "layer-gateway-embed-v1__status-codes.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "When the gateway returns 429",
+      "doc_type": "layer-gateway-embed-v1__status-codes.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__status-codes.md",
+        "when_the_gateway_returns_429"
+      ],
+      "text": "The gateway returns `429 Too Many Requests` when admission control cannot accept a request in time.\n\nCondition:\n\n- The admission semaphore is full (`ADMISSION_MAX_CONCURRENT` active requests), and\n- waiting to acquire a slot exceeds `ADMISSION_WAIT_TIMEOUT_MS`.\n\nBehavior:\n\n- Response: `{\"error\": \"Gateway busy, try again\"}`\n- Log event: `admission_rejected`\n- Metrics: `ADMISSION_REJECTED` incremented",
+      "embed_text": "[SECTION: When the gateway returns 429]\nThe gateway returns `429 Too Many Requests` when admission control cannot accept a request in time.\n\nCondition:\n\n- The admission semaphore is full (`ADMISSION_MAX_CONCURRENT` active requests), and\n- waiting to acquire a slot exceeds `ADMISSION_WAIT_TIMEOUT_MS`.\n\nBehavior:\n\n- Response: `{\"error\": \"Gateway busy, try again\"}`\n- Log event: `admission_rejected`\n- Metrics: `ADMISSION_REJECTED` incremented\nQ: What does the gateway return when admission control cannot accept a request in time?\nQ: What condition causes the gateway to return 429 Too Many Requests?\nQ: What is logged when a request is rejected due to too many concurrent requests?",
+      "token_count": 128,
+      "embed_token_count": 200,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What does the gateway return when admission control cannot accept a request in time?",
+        "What condition causes the gateway to return 429 Too Many Requests?",
+        "What is logged when a request is rejected due to too many concurrent requests?"
+      ],
+      "content_hash": "22886b6f67dfb07ab1a52555fc356a8f7ba4af0bc01d79f575bbe9cf990860d8",
+      "source": "repo_layer-gateway-embed-v1__status-codes.md",
+      "ingest_run_id": "run_20260428_164848_EST",
+      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "46f8a3fe-1705-5024-ac8e-a7b20fb9bf09",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0003",
+      "document_id": "layer-gateway-embed-v1__status-codes.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "When the gateway returns 503",
+      "doc_type": "layer-gateway-embed-v1__status-codes.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__status-codes.md",
+        "when_the_gateway_returns_503"
+      ],
+      "text": "The gateway can return `503 Service Unavailable` in two gateway-generated cases and one passthrough case.",
+      "embed_text": "[SECTION: When the gateway returns 503]\nThe gateway can return `503 Service Unavailable` in two gateway-generated cases and one passthrough case.\nQ: How many cases can cause the gateway to return 503 Service Unavailable?\nQ: What type of cases can lead to a 503 Service Unavailable being returned by the gateway?\nQ: Are there any passthrough cases for returning 503 Service Unavailable?",
+      "token_count": 28,
+      "embed_token_count": 104,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "How many cases can cause the gateway to return 503 Service Unavailable?",
+        "What type of cases can lead to a 503 Service Unavailable being returned by the gateway?",
+        "Are there any passthrough cases for returning 503 Service Unavailable?"
+      ],
+      "content_hash": "2cd461d7fd3efb5b870a50bbf63b0295e4984b416a8d01adc3f53ad56aa5f039",
+      "source": "repo_layer-gateway-embed-v1__status-codes.md",
+      "ingest_run_id": "run_20260428_164848_EST",
+      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "4b24e318-d5f2-54ad-a7c2-81e48d649b1f",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0004",
+      "document_id": "layer-gateway-embed-v1__status-codes.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "1) No eligible backend at pick time",
+      "doc_type": "layer-gateway-embed-v1__status-codes.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__status-codes.md",
+        "1)_no_eligible_backend_at_pick_time"
+      ],
+      "text": "If routing cannot find any backend to send the request to (for example, all are excluded or circuit-open), the gateway returns `503`.\n\nThis can also happen during half-open recovery when all remaining candidates are temporarily ineligible for additional probe traffic.\n\nBehavior:\n\n- Raises: `HTTPException(status_code=503, detail=\"No healthy backend available\")`\n- Log event: `routing_no_backend`",
+      "embed_text": "[SECTION: 1) No eligible backend at pick time]\nIf routing cannot find any backend to send the request to (for example, all are excluded or circuit-open), the gateway returns `503`.\n\nThis can also happen during half-open recovery when all remaining candidates are temporarily ineligible for additional probe traffic.\n\nBehavior:\n\n- Raises: `HTTPException(status_code=503, detail=\"No healthy backend available\")`\n- Log event: `routing_no_backend`\nQ: What HTTP status code is returned when no backend is available?\nQ: What log event is raised when there's no backend available?\nQ: Under what condition can the 'No eligible backend at pick time' scenario occur?",
+      "token_count": 105,
+      "embed_token_count": 169,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What HTTP status code is returned when no backend is available?",
+        "What log event is raised when there's no backend available?",
+        "Under what condition can the 'No eligible backend at pick time' scenario occur?"
+      ],
+      "content_hash": "1e9c1ef2254de25a5b702675d422c00b06eb896c670171c57425a7c794384d16",
+      "source": "repo_layer-gateway-embed-v1__status-codes.md",
+      "ingest_run_id": "run_20260428_164848_EST",
+      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "eb077ff8-2d18-549e-919f-3d1db1c9ccac",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0005",
+      "document_id": "layer-gateway-embed-v1__status-codes.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "2) All retry attempts fail with upstream transport errors",
+      "doc_type": "layer-gateway-embed-v1__status-codes.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__status-codes.md",
+        "2)_all_retry_attempts_fail_with_upstream_transport_errors"
+      ],
+      "text": "If every attempt fails due to timeout/network HTTP client exceptions (`httpx.TimeoutException` / `httpx.HTTPError`), the gateway returns `503`.\n\nBehavior:\n\n- Response: `{\"error\": \"Backends unavailable\"}`\n- Log event: `request_failed`",
+      "embed_text": "[SECTION: 2) All retry attempts fail with upstream transport errors]\nIf every attempt fails due to timeout/network HTTP client exceptions (`httpx.TimeoutException` / `httpx.HTTPError`), the gateway returns `503`.\n\nBehavior:\n\n- Response: `{\"error\": \"Backends unavailable\"}`\n- Log event: `request_failed`\nQ: What HTTP status code does the gateway return when all retry attempts fail?\nQ: What is the error message in the response when all retry attempts fail?\nQ: What log event is generated when all retry attempts fail?",
+      "token_count": 82,
+      "embed_token_count": 154,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What HTTP status code does the gateway return when all retry attempts fail?",
+        "What is the error message in the response when all retry attempts fail?",
+        "What log event is generated when all retry attempts fail?"
+      ],
+      "content_hash": "99ed774533a896df016fa5955343f812a5ccbe792eec54feb7f57b08d370ecf5",
+      "source": "repo_layer-gateway-embed-v1__status-codes.md",
+      "ingest_run_id": "run_20260428_164848_EST",
+      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "781d4af2-2bbd-5d3e-9b9d-5c750916d167",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0006",
+      "document_id": "layer-gateway-embed-v1__status-codes.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "3) Upstream backend returns 503 on final attempt (passthrough)",
+      "doc_type": "layer-gateway-embed-v1__status-codes.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__status-codes.md",
+        "3)_upstream_backend_returns_503_on_final_attempt_(passthrough)"
+      ],
+      "text": "`503` is retryable, so the gateway retries while attempts remain. If the final attempt still gets upstream `503`, the gateway returns that upstream status to the client.\n\nBehavior:\n\n- Response status: `503` (passthrough from upstream)\n- Log event: `request_finished` with upstream status",
+      "embed_text": "[SECTION: 3) Upstream backend returns 503 on final attempt (passthrough)]\n`503` is retryable, so the gateway retries while attempts remain. If the final attempt still gets upstream `503`, the gateway returns that upstream status to the client.\n\nBehavior:\n\n- Response status: `503` (passthrough from upstream)\n- Log event: `request_finished` with upstream status\nQ: What status does the gateway return to the client if the final attempt still gets a 503 from the upstream backend?\nQ: How does the gateway handle the final 503 response from the upstream backend?\nQ: What log event is generated by the gateway when the final attempt results in a 503 from the upstream backend?",
+      "token_count": 80,
+      "embed_token_count": 178,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What status does the gateway return to the client if the final attempt still gets a 503 from the upstream backend?",
+        "How does the gateway handle the final 503 response from the upstream backend?",
+        "What log event is generated by the gateway when the final attempt results in a 503 from the upstream backend?"
+      ],
+      "content_hash": "54196dff33e49d16ad5d65552d0d5ad2e752240200a07e5d68b90c7ed48af338",
+      "source": "repo_layer-gateway-embed-v1__status-codes.md",
+      "ingest_run_id": "run_20260428_164848_EST",
+      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  }
+]

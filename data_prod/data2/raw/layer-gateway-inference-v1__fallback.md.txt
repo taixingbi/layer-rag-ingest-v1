@@ -1,0 +1,50 @@
+source: github:layer-gateway-inference-v1
+path_in_archive: layer-gateway-inference-v1-main/docs/fallback.md
+---
+
+# OpenAI overload fallback (logs)
+
+When the gateway routes a request to OpenAI because GPU backends are overloaded or unavailable, it emits structured JSON logs (`app/core/logging.py`).
+
+## Dispatch to fallback (`app/api/routes.py`)
+
+Look for `event: "request_dispatched"` at level `WARN`.
+
+| Field | Meaning |
+| --- | --- |
+| `backend` | Fallback backend name (default `openai-fallback`; matches `openai_fallback.backend_name` in `config.yaml`) |
+| `gateway_meta.openai_fallback_enabled` | Whether `openai_fallback.enabled` is true for this process |
+| `gateway_meta.provider` | Always `openai` for this path |
+| `gateway_meta.reason` | Why fallback was chosen (see below) |
+
+**`gateway_meta.reason` values**
+
+- `queue_full_fallback` — admission queue is full.
+- `queue_age_fallback` — dispatch did not complete within `scheduler.queue_max_age_ms`.
+- `no_backend_fallback` — scheduler could not assign a backend (`ScheduleError`).
+
+## After dispatch (`app/proxy/client.py`)
+
+The same request continues with proxy events, all carrying `gateway_meta.openai_fallback_enabled` where `gateway_meta` is present, for example:
+
+- `proxy_start`, `proxy_retry`, `proxy_response`
+- On failure: `proxy_transport_error`, `proxy_final_failure`
+- Streaming: `stream_first_byte`, `stream_complete`
+
+## Quick Loki-style filter
+
+Match fallback dispatch lines:
+
+```text
+|="\"event\":\"request_dispatched\"" |="\"provider\":\"openai\""
+```
+
+Narrow by reason:
+
+```text
+|="queue_age_fallback"
+```
+
+## Related metric
+
+`gateway_fallback_requests_total{provider="openai"}` increments when a request is dispatched to OpenAI fallback (`app/metrics/prometheus.py`).

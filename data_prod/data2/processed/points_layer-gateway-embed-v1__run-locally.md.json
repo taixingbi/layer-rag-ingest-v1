@@ -1,0 +1,452 @@
+[
+  {
+    "id": "3e9fbd8c-98d8-5a5c-a2c7-38aa181b75de",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0001",
+      "document_id": "layer-gateway-embed-v1__run-locally.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Local Run Guide",
+      "doc_type": "layer-gateway-embed-v1__run-locally.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__run-locally.md",
+        "local_run_guide"
+      ],
+      "text": "This guide runs `layer-gateway-embed-v1` locally without Docker.",
+      "embed_text": "[SECTION: Local Run Guide]\nThis guide runs `layer-gateway-embed-v1` locally without Docker.\nQ: What does this guide run locally without?\nQ: Which version of the layer-gateway-embed is covered in this guide?\nQ: Is Docker used in this local setup?",
+      "token_count": 22,
+      "embed_token_count": 72,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What does this guide run locally without?",
+        "Which version of the layer-gateway-embed is covered in this guide?",
+        "Is Docker used in this local setup?"
+      ],
+      "content_hash": "e816c08f02e81786825becc0fed40a663ffbfa2ef2d1fb5cd10411a405844229",
+      "source": "repo_layer-gateway-embed-v1__run-locally.md",
+      "ingest_run_id": "run_20260428_164848_EST",
+      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "c5bd024b-82fe-59a4-aa5c-f326da11e0ff",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0002",
+      "document_id": "layer-gateway-embed-v1__run-locally.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Prerequisites",
+      "doc_type": "layer-gateway-embed-v1__run-locally.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__run-locally.md",
+        "prerequisites"
+      ],
+      "text": "- Python 3.12+\n- Reachable embedding backends for `EMBED_BACKENDS`",
+      "embed_text": "[SECTION: Prerequisites]\n- Python 3.12+\n- Reachable embedding backends for `EMBED_BACKENDS`\nQ: What version of Python is required?\nQ: What does EMBED_BACKENDS require?\nQ: Are there any other prerequisites mentioned?",
+      "token_count": 26,
+      "embed_token_count": 71,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What version of Python is required?",
+        "What does EMBED_BACKENDS require?",
+        "Are there any other prerequisites mentioned?"
+      ],
+      "content_hash": "8fbfb196dfaadee4b534e86f57c585f186a4d42a717a8d07b84946c94b7a1508",
+      "source": "repo_layer-gateway-embed-v1__run-locally.md",
+      "ingest_run_id": "run_20260428_164848_EST",
+      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "e250db48-8d1b-59bf-82d9-6cf5705f05fb",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0003",
+      "document_id": "layer-gateway-embed-v1__run-locally.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "1) Create and Activate Virtual Environment",
+      "doc_type": "layer-gateway-embed-v1__run-locally.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__run-locally.md",
+        "1)_create_and_activate_virtual_environment"
+      ],
+      "text": "From repo root:\n\n```bash\npython3 -m venv .venv\nsource .venv/bin/activate\npython3 -m pip install --upgrade pip\n```",
+      "embed_text": "[SECTION: 1) Create and Activate Virtual Environment]\nFrom repo root:\n\n```bash\npython3 -m venv .venv\nsource .venv/bin/activate\npython3 -m pip install --upgrade pip\n```\nQ: What command is used to create a virtual environment?\nQ: How do you activate the virtual environment?\nQ: Which command is used to upgrade pip within the virtual environment?",
+      "token_count": 43,
+      "embed_token_count": 97,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What command is used to create a virtual environment?",
+        "How do you activate the virtual environment?",
+        "Which command is used to upgrade pip within the virtual environment?"
+      ],
+      "content_hash": "5ee2aff0b021c8c973e619725f90f8dd879f99102fb5edd4cd0eed819db4a467",
+      "source": "repo_layer-gateway-embed-v1__run-locally.md",
+      "ingest_run_id": "run_20260428_164848_EST",
+      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "2b83ca63-c9ae-591f-b882-ea1b2393d8ff",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0004",
+      "document_id": "layer-gateway-embed-v1__run-locally.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "2) Install the Project",
+      "doc_type": "layer-gateway-embed-v1__run-locally.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__run-locally.md",
+        "2)_install_the_project"
+      ],
+      "text": "```bash\npython3 -m pip install .\n```\n\nInstall dev dependencies (optional):\n\n```bash\npython3 -m pip install \".[dev]\"\n```",
+      "embed_text": "[SECTION: 2) Install the Project]\n```bash\npython3 -m pip install .\n```\n\nInstall dev dependencies (optional):\n\n```bash\npython3 -m pip install \".[dev]\"\n```\nQ: What command is used to install the project?\nQ: How can one install development dependencies?\nQ: What does the second command do?",
+      "token_count": 42,
+      "embed_token_count": 82,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What command is used to install the project?",
+        "How can one install development dependencies?",
+        "What does the second command do?"
+      ],
+      "content_hash": "941ee208b88539806b13e76e85e5eb7af54fd83d960d068051bbbf03200fb8f5",
+      "source": "repo_layer-gateway-embed-v1__run-locally.md",
+      "ingest_run_id": "run_20260428_164848_EST",
+      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "9a6d6bca-2c5d-53aa-9c83-8e922a54dd7f",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0005",
+      "document_id": "layer-gateway-embed-v1__run-locally.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "3) Configure Environment",
+      "doc_type": "layer-gateway-embed-v1__run-locally.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__run-locally.md",
+        "3)_configure_environment"
+      ],
+      "text": "Create local env file:\n\n```bash\ncp .env.example .env\n```\n\nLoad env vars into shell:\n\n```bash\nset -a\nsource .env\nset +a\n```\n\nAt minimum, ensure:\n\n- `EMBED_BACKENDS` points to healthy backend URLs\n- `GATEWAY_HOST` and `GATEWAY_PORT` are correct for local run",
+      "embed_text": "[SECTION: 3) Configure Environment]\nCreate local env file:\n\n```bash\ncp .env.example .env\n```\n\nLoad env vars into shell:\n\n```bash\nset -a\nsource .env\nset +a\n```\n\nAt minimum, ensure:\n\n- `EMBED_BACKENDS` points to healthy backend URLs\n- `GATEWAY_HOST` and `GATEWAY_PORT` are correct for local run\nQ: What command is used to create a local env file?\nQ: What does the set -a and set +a commands do in this context?\nQ: What are the minimum environment variables that need to be ensured?",
+      "token_count": 96,
+      "embed_token_count": 159,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What command is used to create a local env file?",
+        "What does the set -a and set +a commands do in this context?",
+        "What are the minimum environment variables that need to be ensured?"
+      ],
+      "content_hash": "5064074fc95e93e376c6f7bcfa272d62314dd751c6b1ad8fe63b5c991819f82f",
+      "source": "repo_layer-gateway-embed-v1__run-locally.md",
+      "ingest_run_id": "run_20260428_164848_EST",
+      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "0206b25f-5b5e-50b8-a48b-d55f3fe7e4ae",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0006",
+      "document_id": "layer-gateway-embed-v1__run-locally.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "4) Start the Gateway",
+      "doc_type": "layer-gateway-embed-v1__run-locally.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__run-locally.md",
+        "4)_start_the_gateway"
+      ],
+      "text": "```bash\npython -m app.main\n```",
+      "embed_text": "[SECTION: 4) Start the Gateway]\n```bash\npython -m app.main\n```\nQ: What command starts the Gateway?\nQ: Which Python module is used to start the Gateway?\nQ: How do you run the Gateway application?",
+      "token_count": 12,
+      "embed_token_count": 53,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What command starts the Gateway?",
+        "Which Python module is used to start the Gateway?",
+        "How do you run the Gateway application?"
+      ],
+      "content_hash": "c75ec6d914931b12e3a3782e2147afb5eda444af93e0441a7ffbc17833e846f0",
+      "source": "repo_layer-gateway-embed-v1__run-locally.md",
+      "ingest_run_id": "run_20260428_164848_EST",
+      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "31c3c9e8-0da4-5f1b-8b84-50ba91b2356e",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0007",
+      "document_id": "layer-gateway-embed-v1__run-locally.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "5) Verify Health and Metrics",
+      "doc_type": "layer-gateway-embed-v1__run-locally.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__run-locally.md",
+        "5)_verify_health_and_metrics"
+      ],
+      "text": "```bash\ncurl http://localhost:30181/health\ncurl http://localhost:30181/metrics\n```",
+      "embed_text": "[SECTION: 5) Verify Health and Metrics]\n```bash\ncurl http://localhost:30181/health\ncurl http://localhost:30181/metrics\n```\nQ: What HTTP requests are used to verify health and metrics?\nQ: Which endpoint is used to check the health?\nQ: Which endpoint is used to retrieve metrics?",
+      "token_count": 28,
+      "embed_token_count": 84,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What HTTP requests are used to verify health and metrics?",
+        "Which endpoint is used to check the health?",
+        "Which endpoint is used to retrieve metrics?"
+      ],
+      "content_hash": "78c1de5651363b1dfdbc79026954f3b39f0ff26b6ad297158037e9685a2e29f3",
+      "source": "repo_layer-gateway-embed-v1__run-locally.md",
+      "ingest_run_id": "run_20260428_164848_EST",
+      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "61106ceb-2a76-55a4-9ddf-002afbe0b591",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0008",
+      "document_id": "layer-gateway-embed-v1__run-locally.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "6) Test Embeddings Endpoint",
+      "doc_type": "layer-gateway-embed-v1__run-locally.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__run-locally.md",
+        "6)_test_embeddings_endpoint"
+      ],
+      "text": "```bash\ncurl -X POST http://localhost:30181/v1/embeddings \\\n  -H \"Content-Type: application/json\" \\\n  -H \"X-Request-Id: request-id-1\" \\\n  -H \"X-Trace-Id: trace-id-1\" \\\n  -H \"X-Session-Id: session-id-1\" \\\n  -d '{\"model\":\"BAAI/bge-m3\",\"input\":\"hello world\"}'\n```",
+      "embed_text": "[SECTION: 6) Test Embeddings Endpoint]\n```bash\ncurl -X POST http://localhost:30181/v1/embeddings \\\n  -H \"Content-Type: application/json\" \\\n  -H \"X-Request-Id: request-id-1\" \\\n  -H \"X-Trace-Id: trace-id-1\" \\\n  -H \"X-Session-Id: session-id-1\" \\\n  -d '{\"model\":\"BAAI/bge-m3\",\"input\":\"hello world\"}'\n```\nQ: What is the URL used in the curl command?\nQ: What model is specified in the curl command?\nQ: What is the input to the embedding model?",
+      "token_count": 125,
+      "embed_token_count": 178,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is the URL used in the curl command?",
+        "What model is specified in the curl command?",
+        "What is the input to the embedding model?"
+      ],
+      "content_hash": "eecd338bdea045640e42caf14d18a48b97d05b3e056b26c6d2339bacd0ca078a",
+      "source": "repo_layer-gateway-embed-v1__run-locally.md",
+      "ingest_run_id": "run_20260428_164848_EST",
+      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "8c5712f1-6948-56a7-9e55-f8b43a8cca9f",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0009",
+      "document_id": "layer-gateway-embed-v1__run-locally.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Troubleshooting",
+      "doc_type": "layer-gateway-embed-v1__run-locally.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__run-locally.md",
+        "troubleshooting"
+      ],
+      "text": "- `externally-managed-environment`: use the `.venv` steps above instead of installing into system Python.\n- `503 No healthy backend available`: check `EMBED_BACKENDS` and backend service availability.\n- `429 Gateway busy`: increase `ADMISSION_MAX_CONCURRENT` or `ADMISSION_WAIT_TIMEOUT_MS`.",
+      "embed_text": "[SECTION: Troubleshooting]\n- `externally-managed-environment`: use the `.venv` steps above instead of installing into system Python.\n- `503 No healthy backend available`: check `EMBED_BACKENDS` and backend service availability.\n- `429 Gateway busy`: increase `ADMISSION_MAX_CONCURRENT` or `ADMISSION_WAIT_TIMEOUT_MS`.\nQ: What should you do if you encounter an externally-managed-environment issue?\nQ: How can you resolve a 503 No healthy backend available error?\nQ: What are the possible actions to take for a 429 Gateway busy error?",
+      "token_count": 95,
+      "embed_token_count": 158,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What should you do if you encounter an externally-managed-environment issue?",
+        "How can you resolve a 503 No healthy backend available error?",
+        "What are the possible actions to take for a 429 Gateway busy error?"
+      ],
+      "content_hash": "72de5d2d878ee678752f7343b39976bb5de609e7788471a35070d9a7b927d45a",
+      "source": "repo_layer-gateway-embed-v1__run-locally.md",
+      "ingest_run_id": "run_20260428_164848_EST",
+      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "anyuser",
+          "hr",
+          "recruiter",
+          "other_employer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  }
+]

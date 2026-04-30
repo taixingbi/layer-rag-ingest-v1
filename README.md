@@ -12,7 +12,13 @@ pip install -r requirements.txt
 
 ## Environment
 
-Create `.env` at repo root.
+Use environment-specific env files at repo root:
+
+- `.env.dev`
+- `.env.qa`
+- `.env.prod`
+
+When a tool expects `.env`, copy the target file first (example: `cp .env.qa .env`).
 
 | Variable | Required | Description |
 |---|---|---|
@@ -30,6 +36,43 @@ Create `.env` at repo root.
 | `CHAT_MODEL` | no | Chat model id for `synthetic_questions.py` |
 | `CHAT_API_KEY` | no | Optional Bearer token for chat (`synthetic_questions.py`) |
 
+## Environment-specific data folders
+
+The dataset root is split by environment:
+
+- `data_dev/data1`, `data_dev/data2`
+- `data_qa/data1`, `data_qa/data2`
+- `data_prod/data1`, `data_prod/data2`
+
+Shell wrappers resolve this automatically with `DATA_ENV`:
+
+```bash
+# uses data_dev/*
+./scripts/data1.sh
+./scripts/data2.sh
+
+# uses data_qa/*
+DATA_ENV=qa ./scripts/data1.sh
+DATA_ENV=qa ./scripts/data2.sh
+
+# uses data_prod/*
+DATA_ENV=prod ./scripts/data1.sh
+DATA_ENV=prod ./scripts/data2.sh
+```
+
+For manual Python commands, set a base folder and reuse it in paths:
+
+```bash
+export DATA_ROOT=data_dev
+# export DATA_ROOT=data_qa
+# export DATA_ROOT=data_prod
+```
+
+Path shorthand in older examples:
+
+- `data1/...` means `"${DATA_ROOT}/data1/..."`
+- `data2/...` means `"${DATA_ROOT}/data2/..."`
+
 ## Data Flow
 
 1) Build chunk JSON from raw text (see below: `plain_text_chunks.py` for prose/resume-style sources, `markdown_to_chunks.py` for Markdown and GitHub-exported `.txt`)  
@@ -45,17 +88,24 @@ From repo root:
 **Data** (plain text pipeline):
 
 ```bash
+# defaults to DATA_ENV=dev (uses data_dev/data1 and data_dev/data2)
 ./scripts/data1.sh
 ./scripts/data2.sh
+
+# select QA or PROD folders
+DATA_ENV=qa ./scripts/data1.sh
+DATA_ENV=qa ./scripts/data2.sh
+DATA_ENV=prod ./scripts/data1.sh
+DATA_ENV=prod ./scripts/data2.sh
 ```
 
-Shell wrappers [`scripts/data1.sh`](scripts/data1.sh) and [`scripts/data2.sh`](scripts/data2.sh) run synthetic questions and smoke validation by default; set `RUN_SYNTHETIC_QUESTIONS=0` and/or `RUN_SMOKE_VALIDATE=0` to skip stages. Optional lifecycle reconcile can be enabled with `RUN_RECONCILE=1` (default dry-run; use `RECONCILE_APPLY_SOFT_DELETE=1` to mutate). See [data1.md](data1.md) / [data2.md](data2.md).
+Shell wrappers [`scripts/data1.sh`](scripts/data1.sh) and [`scripts/data2.sh`](scripts/data2.sh) run synthetic questions and smoke validation by default; set `RUN_SYNTHETIC_QUESTIONS=0` and/or `RUN_SMOKE_VALIDATE=0` to skip stages. Optional lifecycle reconcile can be enabled with `RUN_RECONCILE=1` (default dry-run; use `RECONCILE_APPLY_SOFT_DELETE=1` to mutate). They now resolve dataset paths by `DATA_ENV` (`dev|qa|prod`) using `data_<env>/data1` and `data_<env>/data2`; `DATA_ROOT` can be set to override the base folder. See [data1.md](data1.md) / [data2.md](data2.md).
 
 Run chunking, prepare, then upsert (adjust paths as needed):
 
 ```bash
-python3 app/plain_text_chunks.py data1
-python3 app/prepare_payloads.py --data-dir data1/processed --output-dir data1/processed --pattern "chunks_*.json" --source-prefix personal
+python3 app/plain_text_chunks.py "${DATA_ROOT}/data1"
+python3 app/prepare_payloads.py --data-dir "${DATA_ROOT}/data1/processed" --output-dir "${DATA_ROOT}/data1/processed" --pattern "chunks_*.json" --source-prefix personal
 ```
 
 Variants:
@@ -66,7 +116,7 @@ Variants:
 # selected sources only: run plain_text_chunks in single-file mode per stem, or keep only those .txt files under data1/raw
 
 # validate upsert parsing only (existing points)
-python3 app/upsert_qdrant.py --data-dir data1/processed --pattern "points_*.json" --dry-run --skip-embedding
+python3 app/upsert_qdrant.py --data-dir "${DATA_ROOT}/data1/processed" --pattern "points_*.json" --dry-run --skip-embedding
 ```
 
 ### 1) Build chunks from text

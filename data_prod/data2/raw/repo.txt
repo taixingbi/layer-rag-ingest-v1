@@ -1,0 +1,2 @@
+https://github.com/taixingbi/layer-gateway-inference-v1/tree/main/docs
+https://github.com/taixingbi/layer-gateway-embed-v1/tree/main/docs

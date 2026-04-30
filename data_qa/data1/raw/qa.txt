@@ -1,0 +1,41 @@
+Q: Who is Taixing Bi?
+A: Taixing Bi is an AI Infrastructure Engineer with over 7 years of experience building production-grade LLM systems, RAG pipelines, and distributed machine learning platforms.
+
+Q: What is Taixing Bi's primary expertise?
+A: Taixing specializes in deploying scalable LLM infrastructure, including retrieval systems, agent orchestration, and real-time AI data pipelines.
+
+Q: Is Taixing Bi's work research-focused or production-focused?
+A: Taixing's work is strongly production-focused, emphasizing reliability, scalability, and real-world deployment of AI systems.
+
+Q: Has Taixing Bi built LLM systems in real business environments?
+A: Yes, Taixing has designed and operated enterprise RAG and multi-agent AI systems used in live production settings.
+
+Q: What kind of companies has Taixing Bi worked for?
+A: Taixing has worked across retail technology, healthcare AI, data analytics firms, and NVIDIA, giving Taixing cross-industry engineering experience.
+
+Q: What level of seniority is Taixing Bi?
+A: Taixing operates at a senior-to-staff engineering level, contributing architecture design, system reliability, and platform scalability.
+
+Q: What technologies does Taixing Bi commonly use?
+A: Taixing works extensively with LangChain, LangGraph, Python, Kafka, AWS, vector retrieval systems, and modern ML frameworks like PyTorch and TensorFlow.
+
+Q: Does Taixing Bi have experience scaling AI systems?
+A: Yes, Taixing has built high-throughput event-driven architectures and low-latency inference services designed to scale in enterprise environments.
+
+Q: What makes Taixing Bi different from a typical ML engineer?
+A: Taixing focuses not just on models, but on the infrastructure required to make AI reliable, observable, and production-ready.
+
+Q: What roles is Taixing Bi best suited for?
+A: Taixing is best suited for Senior or Staff AI Engineer roles focused on LLM platforms, applied AI infrastructure, and scalable intelligent systems.
+
+Q: What is Taixing Bi's earliest start date?
+A: Taixing can begin right away and is flexible to coordinate a start date that ensures a smooth transition.
+
+Q: When would Taixing Bi be available to start?
+A: Taixing is available to start immediately and can align with the company's preferred onboarding timeline.
+
+Q: What is Taixing Bi's notice period?
+A: Taixing currently has no notice obligation and is able to start immediately.
+
+Q: Why is Taixing Bi looking for a new opportunity?
+A: Taixing is looking to focus fully on applied AI systems. A lot of Taixing's recent work has naturally moved into LLM orchestration, retrieval pipelines, and scalable AI tooling, and Taixing wants the next role to be centered on building those systems end-to-end rather than as an add-on.

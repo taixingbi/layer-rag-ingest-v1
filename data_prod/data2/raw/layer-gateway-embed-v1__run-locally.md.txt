@@ -1,0 +1,85 @@
+source: github:layer-gateway-embed-v1
+path_in_archive: layer-gateway-embed-v1-main/docs/run-locally.md
+---
+
+# Local Run Guide
+
+This guide runs `layer-gateway-embed-v1` locally without Docker.
+
+## Prerequisites
+
+- Python 3.12+
+- Reachable embedding backends for `EMBED_BACKENDS`
+
+## 1) Create and Activate Virtual Environment
+
+From repo root:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install --upgrade pip
+```
+
+## 2) Install the Project
+
+```bash
+python3 -m pip install .
+```
+
+Install dev dependencies (optional):
+
+```bash
+python3 -m pip install ".[dev]"
+```
+
+## 3) Configure Environment
+
+Create local env file:
+
+```bash
+cp .env.example .env
+```
+
+Load env vars into shell:
+
+```bash
+set -a
+source .env
+set +a
+```
+
+At minimum, ensure:
+
+- `EMBED_BACKENDS` points to healthy backend URLs
+- `GATEWAY_HOST` and `GATEWAY_PORT` are correct for local run
+
+## 4) Start the Gateway
+
+```bash
+python -m app.main
+```
+
+## 5) Verify Health and Metrics
+
+```bash
+curl http://localhost:30181/health
+curl http://localhost:30181/metrics
+```
+
+## 6) Test Embeddings Endpoint
+
+```bash
+curl -X POST http://localhost:30181/v1/embeddings \
+  -H "Content-Type: application/json" \
+  -H "X-Request-Id: request-id-1" \
+  -H "X-Trace-Id: trace-id-1" \
+  -H "X-Session-Id: session-id-1" \
+  -d '{"model":"BAAI/bge-m3","input":"hello world"}'
+```
+
+## Troubleshooting
+
+- `externally-managed-environment`: use the `.venv` steps above instead of installing into system Python.
+- `503 No healthy backend available`: check `EMBED_BACKENDS` and backend service availability.
+- `429 Gateway busy`: increase `ADMISSION_MAX_CONCURRENT` or `ADMISSION_WAIT_TIMEOUT_MS`.

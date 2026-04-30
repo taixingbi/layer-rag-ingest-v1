@@ -1,18 +1,22 @@
 # data2 — GitHub / Markdown docs runbook
 
-Repo docs: list GitHub `/tree/` URLs, download as text exports, chunk with Markdown-aware splitter. Outputs land in `data2/processed/`.
+Repo docs: list GitHub `/tree/` URLs, download as text exports, chunk with Markdown-aware splitter. Outputs land in `data_<env>/data2/processed/`.
 
 **Data2** (GitHub / markdown pipeline) — from repo root:
 
 ```bash
 ./scripts/data2.sh
+
+# optional
+DATA_ENV=qa ./scripts/data2.sh
+DATA_ENV=prod ./scripts/data2.sh
 ```
 
 Synthetic questions and smoke validation run by default; use **`RUN_SYNTHETIC_QUESTIONS=0`** and/or **`RUN_SMOKE_VALIDATE=0`** to skip stages.
 
 ## Prerequisites
 
-Same as [data1.md](data1.md): venv, `pip install -r requirements.txt`, `.env` with `QDRANT_URL`, `EMBEDDINGS_BASE_URL`, `COLLECTION_NAME`.
+Same as [data1.md](data1.md): venv, `pip install -r requirements.txt`, and env files (`.env.dev`, `.env.qa`, `.env.prod`) with `QDRANT_URL`, `EMBEDDINGS_BASE_URL`, `COLLECTION_NAME`.
 
 For GitHub downloads, a token helps rate limits:
 
@@ -24,11 +28,21 @@ For optional synthetic questions:
 
 ## Layout
 
-- URL list: `data2/raw/repo.txt` (one GitHub tree URL per line)
-- Raw exports: `data2/raw/*.txt` (from `github_tree_to_txt.py`, or your chosen `--out-dir`)
-- Chunks: `data2/processed/chunks_<stem>.json`
-- Points: `data2/processed/points_<stem>.json`
-- Manifest: `data2/processed/ingest_manifest_<ingest_run_id>.json` and `data2/processed/ingest_manifest_latest.json`
+- URL list: `data_<env>/data2/raw/repo.txt` (one GitHub tree URL per line)
+- Raw exports: `data_<env>/data2/raw/*.txt` (from `github_tree_to_txt.py`, or your chosen `--out-dir`)
+- Chunks: `data_<env>/data2/processed/chunks_<stem>.json`
+- Points: `data_<env>/data2/processed/points_<stem>.json`
+- Manifest: `data_<env>/data2/processed/ingest_manifest_<ingest_run_id>.json` and `data_<env>/data2/processed/ingest_manifest_latest.json`
+
+For manual commands in this doc, use:
+
+```bash
+export DATA_ROOT=data_dev
+# export DATA_ROOT=data_qa
+# export DATA_ROOT=data_prod
+```
+
+Path shorthand in remaining examples: `data2/...` means `"${DATA_ROOT}/data2/..."`.
 
 ID contract (v2): point id is UUID5 of `v2|source=<source>|document_id=<document_id>|chunk_id=<chunk_id>`.
 
@@ -39,11 +53,11 @@ Use **`--source-prefix repo`** so `payload.source` values look like `repo_<doc_t
 Run from repo root:
 
 ```bash
-python3 app/github_tree_to_txt.py --repo-list data2/raw/repo.txt --out-dir data2/raw
-python3 app/markdown_to_chunks.py data2
+python3 app/github_tree_to_txt.py --repo-list "${DATA_ROOT}/data2/raw/repo.txt" --out-dir "${DATA_ROOT}/data2/raw"
+python3 app/markdown_to_chunks.py "${DATA_ROOT}/data2"
 python3 app/prepare_payloads.py \
-  --data-dir data2/processed \
-  --output-dir data2/processed \
+  --data-dir "${DATA_ROOT}/data2/processed" \
+  --output-dir "${DATA_ROOT}/data2/processed" \
   --pattern "chunks_*.json" \
   --source-prefix repo
 ```

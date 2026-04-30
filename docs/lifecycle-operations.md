@@ -11,10 +11,18 @@ All operations should follow **dry-run first**.
 
 ## Prerequisites
 
-- `.env` configured (`QDRANT_URL`, `COLLECTION_NAME`, optional `QDRANT_API_KEY`, `ENV`)
+- env file configured (`.env.dev`, `.env.qa`, or `.env.prod`; copy to `.env` when needed)
 - latest manifest exists under your processed directory:
-  - `data1/processed/ingest_manifest_latest.json`
-  - or `data2/processed/ingest_manifest_latest.json`
+  - `data_<env>/data1/processed/ingest_manifest_latest.json`
+  - or `data_<env>/data2/processed/ingest_manifest_latest.json`
+
+For manual commands in this doc, use:
+
+```bash
+export DATA_ROOT=data_dev
+# export DATA_ROOT=data_qa
+# export DATA_ROOT=data_prod
+```
 
 ## 1) Reconcile dry-run (no mutation)
 
@@ -22,7 +30,7 @@ Use this to preview stale IDs in scope.
 
 ```bash
 python3 app/reconcile_qdrant.py \
-  --manifest-path data1/processed/ingest_manifest_latest.json \
+  --manifest-path "${DATA_ROOT}/data1/processed/ingest_manifest_latest.json" \
   --scope-key collection \
   --dry-run
 ```
@@ -38,7 +46,7 @@ Only run after reviewing dry-run output.
 
 ```bash
 python3 app/reconcile_qdrant.py \
-  --manifest-path data1/processed/ingest_manifest_latest.json \
+  --manifest-path "${DATA_ROOT}/data1/processed/ingest_manifest_latest.json" \
   --scope-key collection \
   --delete-mode soft \
   --apply-soft-delete
@@ -55,7 +63,7 @@ Use after retention window has passed.
 
 ```bash
 python3 app/reconcile_qdrant.py \
-  --manifest-path data1/processed/ingest_manifest_latest.json \
+  --manifest-path "${DATA_ROOT}/data1/processed/ingest_manifest_latest.json" \
   --scope-key collection \
   --delete-mode hard \
   --retention-days 30 \
@@ -74,7 +82,7 @@ To limit changes by source or doc type:
 
 ```bash
 python3 app/reconcile_qdrant.py \
-  --manifest-path data2/processed/ingest_manifest_latest.json \
+  --manifest-path "${DATA_ROOT}/data2/processed/ingest_manifest_latest.json" \
   --scope-key source \
   --scope-value repo_layer-gateway-embed-v1__design.md \
   --dry-run
@@ -95,7 +103,7 @@ Preview:
 ```bash
 python3 app/rollback_ingest_run.py \
   --target-run-id run_20260425_180000_EST \
-  --manifest-dir data1/processed \
+  --manifest-dir "${DATA_ROOT}/data1/processed" \
   --scope-key collection \
   --dry-run
 ```
@@ -105,7 +113,7 @@ Apply:
 ```bash
 python3 app/rollback_ingest_run.py \
   --target-run-id run_20260425_180000_EST \
-  --manifest-dir data1/processed \
+  --manifest-dir "${DATA_ROOT}/data1/processed" \
   --scope-key collection \
   --apply
 ```

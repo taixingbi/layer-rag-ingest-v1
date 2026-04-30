@@ -1,0 +1,17 @@
+{
+  "personal_profile": {
+    "roles": ["anyuser", "hr", "recruiter", "other_employer"],
+    "groups": ["engineering"],
+    "teams": ["rag-platform"]
+  },
+  "personal_qa": {
+    "roles": ["anyuser", "hr", "recruiter", "other_employer"],
+    "groups": ["engineering"],
+    "teams": ["rag-platform"]
+  },
+  "personal_resume": {
+    "roles": ["anyuser", "hr", "recruiter", "other_employer"],
+    "groups": ["engineering"],
+    "teams": ["rag-platform"]
+  }
+}

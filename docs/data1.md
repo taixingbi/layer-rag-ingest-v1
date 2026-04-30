@@ -1,11 +1,15 @@
 # data1 — personal corpus runbook
 
-Personal-style text (resume, Q&A, profile) under `data1/raw/*.txt`. Outputs land in `data1/processed/`.
+Personal-style text (resume, Q&A, profile) under `data_<env>/data1/raw/*.txt`. Outputs land in `data_<env>/data1/processed/`.
 
 **Data1** (plain text pipeline) — from repo root:
 
 ```bash
 ./scripts/data1.sh
+
+# optional
+DATA_ENV=qa ./scripts/data1.sh
+DATA_ENV=prod ./scripts/data1.sh
 ```
 
 Synthetic questions and smoke validation run by default; use **`RUN_SYNTHETIC_QUESTIONS=0`** and/or **`RUN_SMOKE_VALIDATE=0`** to skip stages.
@@ -20,7 +24,13 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Create `.env` (see `env.example` and [README.md](README.md)). For ingest you need at least:
+Create environment file(s) (see `env.example` and [README.md](README.md)):
+
+- `.env.dev`
+- `.env.qa`
+- `.env.prod`
+
+For ingest you need at least:
 
 - `QDRANT_URL`
 - `EMBEDDINGS_BASE_URL` (for upsert embedding)
@@ -33,11 +43,21 @@ Optional:
 
 ## Layout
 
-- Input: `data1/raw/*.txt`
-- Chunks: `data1/processed/chunks_<stem>.json`
-- Points: `data1/processed/points_<stem>.json`
-- Summary: `data1/processed/ingest_prepare_summary.json`
-- Manifest: `data1/processed/ingest_manifest_<ingest_run_id>.json` and `data1/processed/ingest_manifest_latest.json`
+- Input: `data_<env>/data1/raw/*.txt`
+- Chunks: `data_<env>/data1/processed/chunks_<stem>.json`
+- Points: `data_<env>/data1/processed/points_<stem>.json`
+- Summary: `data_<env>/data1/processed/ingest_prepare_summary.json`
+- Manifest: `data_<env>/data1/processed/ingest_manifest_<ingest_run_id>.json` and `data_<env>/data1/processed/ingest_manifest_latest.json`
+
+For manual commands in this doc, use:
+
+```bash
+export DATA_ROOT=data_dev
+# export DATA_ROOT=data_qa
+# export DATA_ROOT=data_prod
+```
+
+Path shorthand in remaining examples: `data1/...` means `"${DATA_ROOT}/data1/..."`.
 
 ID contract (default v3): point id is UUID5 of  
 `v3|source=<source>|document_id=<document_id>|document_version=<document_version>|chunk_version=<chunk_version>|embedding_version=<embedding_version>|chunk_id=<chunk_id>`.
@@ -52,10 +72,10 @@ Use **`--source-prefix personal`** so `payload.source` values look like `persona
 Run from repo root:
 
 ```bash
-python3 app/plain_text_chunks.py data1
+python3 app/plain_text_chunks.py "${DATA_ROOT}/data1"
 python3 app/prepare_payloads.py \
-  --data-dir data1/processed \
-  --output-dir data1/processed \
+  --data-dir "${DATA_ROOT}/data1/processed" \
+  --output-dir "${DATA_ROOT}/data1/processed" \
   --pattern "chunks_*.json" \
   --source-prefix personal
 ```

@@ -1,0 +1,44 @@
+{
+  "ingest_run_id": "run_20260430_141344_EST",
+  "collection": "taixing_knowledge_dev",
+  "ingest_ts": "2026-04-30T14:13:44-05:00",
+  "id_key_version": "v3",
+  "document_version": "v1",
+  "chunk_version": "v1",
+  "embedding_version": "BAAI/bge-m3",
+  "files": [
+    {
+      "input_file": "data_dev/data1/processed/chunks_profile.json",
+      "output_file": "data_dev/data1/processed/points_profile.json",
+      "doc_type": "profile",
+      "source": "personal_profile",
+      "chunks_input": 10,
+      "chunks_prepared": 10,
+      "chunks_failed": 0
+    },
+    {
+      "input_file": "data_dev/data1/processed/chunks_qa.json",
+      "output_file": "data_dev/data1/processed/points_qa.json",
+      "doc_type": "qa",
+      "source": "personal_qa",
+      "chunks_input": 14,
+      "chunks_prepared": 14,
+      "chunks_failed": 0
+    },
+    {
+      "input_file": "data_dev/data1/processed/chunks_resume.json",
+      "output_file": "data_dev/data1/processed/points_resume.json",
+      "doc_type": "resume",
+      "source": "personal_resume",
+      "chunks_input": 36,
+      "chunks_prepared": 36,
+      "chunks_failed": 0
+    }
+  ],
+  "stats": {
+    "files_total": 3,
+    "chunks_input": 60,
+    "chunks_total_prepared": 60,
+    "chunks_failed": 0
+  }
+}

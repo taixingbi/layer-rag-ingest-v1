@@ -1,0 +1,243 @@
+source: github:layer-gateway-embed-v1
+path_in_archive: layer-gateway-embed-v1-main/docs/plan.md
+---
+
+layer-gateway-embed-v1
+
+A lightweight, request-level routing gateway for embedding workloads across multiple vLLM backends.
+
+This service complements
+layer-gateway-inference-v1 by handling /v1/embeddings traffic independently.
+
+Overview
+
+layer-gateway-embed-v1 provides:
+
+Load-aware routing across embedding backends
+Request-level scheduling (not connection-level)
+Retry and circuit breaker for reliability
+Structured logging and metrics
+Simple, production-ready architecture
+Why a Separate Gateway?
+
+Embedding workloads differ significantly from chat/inference:
+
+High QPS, short requests
+No streaming / TTFT concerns
+Different latency and load characteristics
+
+Separating gateways ensures:
+
+Clean routing logic
+Independent scaling and deployment
+No interference between chat and embedding workloads
+API
+POST /v1/embeddings
+
+Compatible with OpenAI-style embedding API.
+
+Example
+curl -X POST http://<gateway-host>:30181/v1/embeddings \
+  -H "X-Request-Id: request_id_1" \
+  -H "X-Session-Id: session_id_1" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"BAAI/bge-m3","input":"hello world"}'
+GET /health
+
+Returns service health.
+
+GET /metrics
+
+Prometheus-compatible metrics.
+
+Architecture
+Client
+   ↓
+Embedding Gateway (/v1/embeddings)
+   ↓
+Routing / Scheduler (load-aware)
+   ↓
+vLLM Embedding Backends
+Backends
+
+Example configuration:
+
+backends:
+  - name: embed-node-1
+    url: http://192.168.86.173:8001
+  - name: embed-node-2
+    url: http://192.168.86.176:8001
+
+Each backend must expose:
+
+POST /v1/embeddings
+Routing Strategy
+
+The gateway selects the best backend using a score-based approach:
+
+score = inflight * W1 + latency * W2 + error_rate * W3
+
+Where:
+
+inflight = current active requests
+latency = recent response time
+error_rate = recent failures
+
+Lowest score wins.
+
+Request Classification
+
+Requests are classified for observability and future tuning:
+
+SMALL_EMBED
+MEDIUM_EMBED
+LARGE_EMBED
+
+Based on:
+
+number of input items
+total character size
+Reliability
+Retry
+
+Retries occur on:
+
+timeouts
+502, 503, 504
+
+Config:
+
+retry:
+  max_attempts: 2
+
+Retries will prefer a different backend.
+
+Circuit Breaker
+
+Each backend is protected by a circuit breaker:
+
+Opens after repeated failures
+Temporarily removes backend from routing
+Automatically retries after cooldown
+Configuration
+
+Example:
+
+server:
+  host: 0.0.0.0
+  port: 30181
+
+timeouts:
+  connect_ms: 1000
+  read_ms: 15000
+
+retry:
+  max_attempts: 2
+  retryable_statuses: [502, 503, 504]
+
+circuit_breaker:
+  failure_threshold: 5
+  reset_timeout_sec: 30
+
+routing:
+  inflight_weight: 10.0
+  latency_weight: 1.0
+  error_weight: 100.0
+
+backends:
+  - name: embed-node-1
+    url: http://192.168.86.173:8001
+  - name: embed-node-2
+    url: http://192.168.86.176:8001
+Security
+
+All requests must include:
+
+X-Request-Id
+X-Session-Id
+
+Metrics
+
+Prometheus metrics include:
+
+gateway_embed_requests_total
+gateway_embed_request_latency_ms
+gateway_embed_backend_selected_total
+gateway_embed_inflight
+gateway_embed_failures_total
+gateway_embed_retries_total
+Logging
+
+Structured logs include:
+
+request lifecycle events
+backend selection
+retry attempts
+failures and circuit breaker events
+
+Fields:
+
+request_id
+session_id
+backend
+latency_ms
+model
+input size
+request class
+Repository Structure
+app/
+  api/
+  core/
+  routing/
+  proxy/
+  models/
+  metrics/
+
+config/
+tests/
+Dockerfile
+README.md
+Development Plan
+Phase 1 — Bootstrap
+Create repo
+Copy reusable components from inference gateway
+Remove chat-specific logic
+Phase 2 — Core Endpoint
+Implement /v1/embeddings
+Add config + security
+Add backend routing
+Phase 3 — Reliability
+Retry logic
+Circuit breaker
+Backend health tracking
+Phase 4 — Observability
+Logging
+Metrics
+/health
+Phase 5 — Deployment
+Build Docker image
+Run locally or in cluster
+Phase 6 — Load Testing
+Concurrency tests
+Failover tests
+Latency validation
+Design Principles
+Request-level routing (not connection-level)
+Keep gateway simple — no batching
+Let vLLM handle batching
+Fail fast, retry smart
+Prefer stability over complexity
+Future Enhancements (Optional)
+OpenAI fallback for embeddings
+Admission queue / rate limiting
+Dynamic backend discovery
+Adaptive routing weights
+Request batching (if needed)
+Status
+
+🚧 Initial version (v1) focuses on:
+
+Stable routing
+Reliability
+Observability
+Simple deployment

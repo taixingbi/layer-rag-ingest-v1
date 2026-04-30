@@ -1,0 +1,314 @@
+source: github:layer-gateway-inference-v1
+path_in_archive: layer-gateway-inference-v1-main/docs/artichecture.md
+---
+
+# Architecture Design
+
+This document describes the architecture of `layer-gateway-inference-v1`.
+
+## 1. Goals
+
+- Provide an OpenAI-compatible inference gateway endpoint.
+- Route traffic across multiple vLLM backends with load-aware scheduling.
+- Protect upstream backends with queueing, circuit breaking, and retries.
+- Expose operational visibility through structured logs and Prometheus metrics.
+
+## 2. System Overview
+
+The gateway is a single FastAPI service composed of these major subsystems:
+
+- API ingress and request validation
+- Admission queue
+- Scheduler and scoring engine
+- Backend registry and health/circuit state
+- Proxy client (non-streaming + streaming)
+- Logging and metrics pipeline
+
+```mermaid
+flowchart LR
+    C[Client] -->|POST /v1/chat/completions| API[FastAPI API Layer]
+    API --> Q[AdmissionQueue]
+    Q --> S[Scheduler + Scoring]
+    S --> R[BackendRegistry + Health]
+    S --> P[Proxy Client]
+    P --> B1[vLLM Backend 1]
+    P --> B2[vLLM Backend 2]
+    API --> L[Structured Logs]
+    API --> M[Prometheus Metrics]
+    S --> M
+    P --> M
+```
+
+## 3. Components
+
+### 3.1 API Layer
+
+`app/api/routes.py` handles:
+
+- `POST /v1/chat/completions`
+- `GET /healthz`
+- `GET /metrics`
+
+Responsibilities:
+
+- parse and validate request payload
+- extract correlation headers (`x-request-id`, `x-trace-id`, `x-session-id`)
+- classify request complexity
+- enqueue work for scheduling
+- return gateway rejections (queue full/age/no backend)
+
+### 3.2 Admission Queue
+
+`app/queue/admission_queue.py` provides a bounded FIFO queue:
+
+- `enqueue()`
+- `pop_batch()`
+- `requeue_front()`
+
+Purpose:
+
+- absorb short spikes
+- cap memory and queue growth
+- surface queue pressure through gauges
+
+### 3.3 Scheduler
+
+`app/scheduler/dispatcher.py` runs a periodic loop:
+
+- pops pending requests in batches
+- filters eligible backends
+- computes score and selects best backend
+- resolves each request with a `BackendTarget`
+
+Scheduler cadence and queue policy are configured under `scheduler` in `config.yaml`.
+
+### 3.4 Scoring Engine
+
+`app/scheduler/scoring.py` computes backend score from:
+
+- inflight load
+- queue estimate
+- latency EWMAs (TTFT/E2E)
+- recent error rate
+- hot-spot penalty
+- overload penalty
+- request-class penalty (small/medium requests avoid backends already holding large work)
+
+Lower score wins.
+
+### 3.5 Backend Registry and Runtime State
+
+- `app/backends/registry.py`
+- `app/backends/state.py`
+- `app/backends/health.py`
+
+Tracks per-backend runtime state:
+
+- limits (`soft_limit`, `hard_limit`)
+- inflight counters
+- latency/error EWMAs
+- circuit state (`closed`, `open`, `half_open`)
+- admin flag (`drained`)
+
+Eligibility checks include:
+
+- not drained
+- circuit not open
+- inflight below hard limit
+- recent error signal below threshold
+- half-open probe allowance
+
+### 3.6 Proxy Layer
+
+`app/proxy/client.py`:
+
+- forwards requests to selected backend
+- handles streaming and non-streaming responses
+- applies retry policy on configured failure conditions
+- updates runtime health signals on success/failure
+
+### 3.7 Observability
+
+- `app/core/logging.py` outputs structured JSON logs.
+- `app/metrics/prometheus.py` defines counters/gauges/histograms.
+- `app/metrics/sync.py` publishes backend runtime state to metrics.
+
+## 4. End-to-End Request Lifecycle
+
+1. Client sends `POST /v1/chat/completions`.
+2. Gateway validates payload and logs `request_received`.
+3. Request is classified (`small`, `medium`, `large`, or `streaming_long`).
+4. Request is placed into `AdmissionQueue`.
+5. Scheduler selects an eligible backend.
+6. Proxy sends request upstream.
+7. On success, response is returned and latency metrics are updated.
+8. On failure, retry/circuit/error signals are applied and final error returned if exhausted.
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant Client
+    participant API as API Routes
+    participant Queue as AdmissionQueue
+    participant Sched as Scheduler
+    participant Proxy as Proxy Client
+    participant Backend as vLLM Backend
+
+    Client->>API: POST /v1/chat/completions
+    API->>API: Validate + classify + log request_received
+    API->>Queue: enqueue(PendingRequest)
+    Sched->>Queue: pop_batch()
+    Sched->>Sched: filter eligible + score + choose backend
+    Sched-->>API: dispatch_future.set_result(target)
+    API->>Proxy: proxy_chat_completion(target)
+    Proxy->>Backend: upstream request
+    alt success
+        Backend-->>Proxy: 2xx response
+        Proxy-->>API: response
+        API-->>Client: response body
+    else retryable failure
+        Backend-->>Proxy: 5xx / timeout / connect error
+        Proxy->>Proxy: retry (if attempts remain)
+        Proxy->>Backend: retry to alternative backend
+        Backend-->>Proxy: response or final failure
+        Proxy-->>API: response or HTTPException
+        API-->>Client: success or 5xx
+    end
+```
+
+### 4.1 Dispatch Decision Flow
+
+```mermaid
+flowchart TD
+    A[PendingRequest from queue] --> B{cancelled or already resolved?}
+    B -- yes --> Z[skip]
+    B -- no --> C{age > queue_max_age_ms?}
+    C -- yes --> R1[reject queue_age]
+    C -- no --> D[collect eligible backends]
+    D --> E{any eligible?}
+    E -- no --> F[requeue_front]
+    E -- yes --> G[pick_backend by score]
+    G --> H{chosen backend exists?}
+    H -- no --> F
+    H -- yes --> I[on_request_start + inflight++]
+    I --> J[set dispatch_future(target)]
+```
+
+## 5. Reliability Design
+
+### 5.1 Backpressure
+
+- bounded queue size (`queue_max_size`)
+- queue age timeout (`queue_max_age_ms`)
+- rejection reasons tracked by metric labels
+
+### 5.2 Circuit Breaker
+
+State machine:
+
+- `closed` -> normal
+- `open` -> no new dispatch
+- `half_open` -> limited probe traffic (`half_open_max_inflight`)
+
+Transitions driven by consecutive failures and cooldown timing.
+
+```mermaid
+stateDiagram-v2
+    [*] --> closed
+    closed --> open: consecutive failures >= threshold
+    open --> half_open: cooldown elapsed
+    half_open --> closed: probe success
+    half_open --> open: probe failure
+```
+
+### 5.3 Retry Policy
+
+- retries capped by `retry.max_attempts`
+- retryable statuses from `retry.retryable_statuses`
+- transport errors are treated as retry candidates
+- best-effort switch to alternative backend
+
+```mermaid
+flowchart TD
+    A[proxy attempt N] --> B{response < 400?}
+    B -- yes --> OK[return success]
+    B -- no --> C{retryable status or transport error?}
+    C -- no --> FAIL[return failure]
+    C -- yes --> D{N < max_attempts?}
+    D -- no --> FAIL
+    D -- yes --> E[pick alternate backend]
+    E --> F{backend found?}
+    F -- no --> FAIL
+    F -- yes --> G[attempt N+1]
+    G --> B
+```
+
+## 6. Configuration Model
+
+Primary sections in `config.yaml`:
+
+- `server`
+- `scheduler`
+- `routing`
+- `backends`
+- `health`
+- `retry`
+
+Config is loaded from:
+
+1. explicit path argument, else
+2. `GATEWAY_CONFIG` env var, else
+3. default `config.yaml`
+
+```mermaid
+flowchart LR
+    A[load_gateway_config(path)] --> B{path passed?}
+    B -- yes --> P[use explicit path]
+    B -- no --> C{GATEWAY_CONFIG set?}
+    C -- yes --> E[use env path]
+    C -- no --> D[use config.yaml]
+```
+
+## 7. Logging and Trace Context
+
+Gateway event logs include:
+
+- `event`, `service`, `env`
+- `trace_id`, `request_id`, `session_id`
+- optional `backend`, `latency_ms`, `status_code`, `error`
+
+Guideline:
+
+- use `request_id` for per-call debugging
+- use `trace_id` for cross-service tracing
+- use `session_id` for conversation/session grouping
+
+## 8. Metrics Design Summary
+
+Metrics are process-level aggregates and backend-level state snapshots:
+
+- traffic and failures (`gateway_requests_total`, `gateway_request_errors_total`)
+- queue pressure (`gateway_queue_depth`, `gateway_queue_age_ms`)
+- backend health/load (`gateway_backend_*`)
+- latency distribution (`gateway_request_latency_ms`)
+
+IDs like `request_id` and `trace_id` are not metric labels to avoid high-cardinality issues.
+
+## 9. Deployment Notes
+
+- Run as stateless service instances behind a load balancer/ingress.
+- Keep backend URLs reachable from gateway network context.
+- Mount environment-specific `config.yaml`.
+- Scrape `/metrics` and ingest structured stdout logs into your log backend.
+
+## 10. Known Trade-offs
+
+- queue age gauge is instantaneous, not a full percentile distribution
+- request classification is heuristic (token estimate), not exact tokenizer output
+- in-memory runtime state resets on restart
+
+## 11. Related Documents
+
+- `docs/docs.md` for general technical reference
+- `docs/sla.md` for SLO/SLA targets and alert baseline
+- `docs/plan.md` for detailed implementation planning context
