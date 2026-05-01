@@ -8,7 +8,32 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
 
 PYTHON="${PYTHON:-python3}"
-DATA_ENV="${DATA_ENV:-dev}"
+ARG_DATA_ENV="${1:-}"
+if [[ -n "$ARG_DATA_ENV" ]]; then
+  DATA_ENV="$ARG_DATA_ENV"
+else
+  DATA_ENV="${DATA_ENV:-dev}"
+fi
+
+if [[ "$DATA_ENV" != "dev" && "$DATA_ENV" != "qa" && "$DATA_ENV" != "prod" ]]; then
+  echo "error: invalid environment '$DATA_ENV'"
+  echo "usage: ./scripts/data1.sh [dev|qa|prod]"
+  exit 1
+fi
+
+ENV_FILE="${ENV_FILE:-.env.${DATA_ENV}}"
+if [[ -f "$ENV_FILE" ]]; then
+  set -a
+  # shellcheck disable=SC1090
+  source "$ENV_FILE"
+  set +a
+else
+  echo "warning: env file not found: $ENV_FILE (continuing with existing environment variables)"
+fi
+
+# Ensure collection suffix logic always matches script environment argument.
+export ENV="$DATA_ENV"
+
 DATA_ROOT="${DATA_ROOT:-data_${DATA_ENV}}"
 DATASET_ROOT="${DATA_ROOT}/data1"
 

@@ -1,6 +1,6 @@
 [
   {
-    "id": "cf5b8f38-b33a-518e-9f32-95c1503f6027",
+    "id": "96218323-a4b6-5f7d-9936-6ffeaac68b75",
     "vector": [],
     "payload": {
       "chunk_id": "0001",
@@ -16,20 +16,24 @@
         "request,_response,_and_logging_schema"
       ],
       "text": "This document describes the **HTTP contract** for `POST /v1/embeddings` and the **structured JSON logs** emitted by the gateway when `LOG_JSON=true` (default in `.env.example`).\n\nImplementation references:\n\n- Handler: `app/api/embeddings.py`\n- Request body model: `app/models/schemas.py`\n- Log formatter: `app/core/logging.py`\n\n---",
-      "embed_text": "[SECTION: Request, Response, and Logging Schema]\nThis document describes the **HTTP contract** for `POST /v1/embeddings` and the **structured JSON logs** emitted by the gateway when `LOG_JSON=true` (default in `.env.example`).\n\nImplementation references:\n\n- Handler: `app/api/embeddings.py`\n- Request body model: `app/models/schemas.py`\n- Log formatter: `app/core/logging.py`\n\n---\nQ: What does this document describe?\nQ: What environment variable controls JSON logging?\nQ: Where is the log formatter defined?",
+      "embed_text": "[SECTION: Request, Response, and Logging Schema]\nThis document describes the **HTTP contract** for `POST /v1/embeddings` and the **structured JSON logs** emitted by the gateway when `LOG_JSON=true` (default in `.env.example`).\n\nImplementation references:\n\n- Handler: `app/api/embeddings.py`\n- Request body model: `app/models/schemas.py`\n- Log formatter: `app/core/logging.py`\n\n---\nQ: What does this document describe?\nQ: What is the default setting for LOG_JSON?\nQ: Where can implementation references be found?",
       "token_count": 113,
-      "embed_token_count": 160,
+      "embed_token_count": 161,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What does this document describe?",
-        "What environment variable controls JSON logging?",
-        "Where is the log formatter defined?"
+        "What is the default setting for LOG_JSON?",
+        "Where can implementation references be found?"
       ],
       "content_hash": "d6d36396cbc54b48ee810f92f0ce6210f4b85a7d57b3db2d8d37357f74249ade",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -50,7 +54,7 @@
     }
   },
   {
-    "id": "18d38bfb-99a1-5bb7-95ea-1c3a8b9dda2a",
+    "id": "5a75e046-f8fe-594e-b63e-acbe64aad121",
     "vector": [],
     "payload": {
       "chunk_id": "0002",
@@ -78,8 +82,12 @@
       ],
       "content_hash": "68b6ba31a13c862d4c563a7beff7869c08c6cbfe37532d907c29e418acc95849",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -100,7 +108,7 @@
     }
   },
   {
-    "id": "325d1aa7-c7ad-5b6d-96ca-79fd4fc6916f",
+    "id": "ea1dcb02-7b63-5939-b236-628e7b1f4a89",
     "vector": [],
     "payload": {
       "chunk_id": "0003",
@@ -116,20 +124,24 @@
         "correlation_headers_(optional)"
       ],
       "text": "`X-Request-Id`, `X-Trace-Id`, and `X-Session-Id` are **optional** on `POST /v1/embeddings`. The handler resolves each value from the incoming request (header names are case-insensitive). **Missing** or **whitespace-only** values are replaced with a **new UUID** (via `new_request_id()` in `app/core/logging.py`) before logging and before the upstream `httpx` call.\n\nAn **empty** `X-Request-Id` (after trimming) is treated like a missing header: a new UUID is generated. The **same** empty-as-missing rule applies to `X-Trace-Id` and `X-Session-Id` on this route.",
-      "embed_text": "[SECTION: Correlation headers (optional)]\n`X-Request-Id`, `X-Trace-Id`, and `X-Session-Id` are **optional** on `POST /v1/embeddings`. The handler resolves each value from the incoming request (header names are case-insensitive). **Missing** or **whitespace-only** values are replaced with a **new UUID** (via `new_request_id()` in `app/core/logging.py`) before logging and before the upstream `httpx` call.\n\nAn **empty** `X-Request-Id` (after trimming) is treated like a missing header: a new UUID is generated. The **same** empty-as-missing rule applies to `X-Trace-Id` and `X-Session-Id` on this route.\nQ: What happens if an X-Request-Id header is missing or contains only whitespace?\nQ: How are X-Trace-Id and X-Session-Id headers handled similarly to X-Request-Id?\nQ: Which Python function generates a new UUID in the given context?",
+      "embed_text": "[SECTION: Correlation headers (optional)]\n`X-Request-Id`, `X-Trace-Id`, and `X-Session-Id` are **optional** on `POST /v1/embeddings`. The handler resolves each value from the incoming request (header names are case-insensitive). **Missing** or **whitespace-only** values are replaced with a **new UUID** (via `new_request_id()` in `app/core/logging.py`) before logging and before the upstream `httpx` call.\n\nAn **empty** `X-Request-Id` (after trimming) is treated like a missing header: a new UUID is generated. The **same** empty-as-missing rule applies to `X-Trace-Id` and `X-Session-Id` on this route.\nQ: What happens if an X-Request-Id header is missing or contains only whitespace?\nQ: How are X-Trace-Id and X-Session-Id handled similarly to X-Request-Id?\nQ: Which Python function generates a new UUID in the logging module?",
       "token_count": 206,
-      "embed_token_count": 295,
+      "embed_token_count": 294,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What happens if an X-Request-Id header is missing or contains only whitespace?",
-        "How are X-Trace-Id and X-Session-Id headers handled similarly to X-Request-Id?",
-        "Which Python function generates a new UUID in the given context?"
+        "How are X-Trace-Id and X-Session-Id handled similarly to X-Request-Id?",
+        "Which Python function generates a new UUID in the logging module?"
       ],
       "content_hash": "4fa52710a79052da4d1c6bde44e7fc771e99565d083c8f43ba6a75cbbfab77d1",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -150,7 +162,7 @@
     }
   },
   {
-    "id": "bc6fc02f-06f8-5256-99df-a2d663a92094",
+    "id": "0a12f6d9-4dd2-57d7-b3ca-057c6cc4bb46",
     "vector": [],
     "payload": {
       "chunk_id": "0004",
@@ -166,20 +178,24 @@
         "correlation_headers_(optional)"
       ],
       "text": "| Header | Purpose |\n|--------|---------|\n| `X-Request-Id` | Correlation id (logged and forwarded) |\n| `X-Trace-Id` | Trace id (logged and forwarded) |\n| `X-Session-Id` | Session id (logged and forwarded) |\n\n**JSON logs:** `JsonLogFormatter` writes `request_id`, `trace_id`, and `session_id` as **`\"-\"`** when the log record **omits** that field **or** the value is an **empty string** (see `_format_gateway` in `app/core/logging.py`). Empty `x-trace-id` / `x-session-id` values still yield **`\"-\"`** in JSON logs when they reach the formatter as blank strings (the same rule applies to `request_id`). Events that omit correlation kwargs show `\"-\"`; the `/v1/embeddings` handler normally passes resolved non-empty UUIDs for all three.",
-      "embed_text": "[SECTION: Correlation headers (optional)]\n| Header | Purpose |\n|--------|---------|\n| `X-Request-Id` | Correlation id (logged and forwarded) |\n| `X-Trace-Id` | Trace id (logged and forwarded) |\n| `X-Session-Id` | Session id (logged and forwarded) |\n\n**JSON logs:** `JsonLogFormatter` writes `request_id`, `trace_id`, and `session_id` as **`\"-\"`** when the log record **omits** that field **or** the value is an **empty string** (see `_format_gateway` in `app/core/logging.py`). Empty `x-trace-id` / `x-session-id` values still yield **`\"-\"`** in JSON logs when they reach the formatter as blank strings (the same rule applies to `request_id`). Events that omit correlation kwargs show `\"-\"`; the `/v1/embeddings` handler normally passes resolved non-empty UUIDs for all three.\nQ: What does the JsonLogFormatter use for omitted fields or empty strings?\nQ: Which headers are logged and forwarded according to the table?\nQ: How are empty 'x-trace-id' and 'x-session-id' values represented in JSON logs?",
+      "embed_text": "[SECTION: Correlation headers (optional)]\n| Header | Purpose |\n|--------|---------|\n| `X-Request-Id` | Correlation id (logged and forwarded) |\n| `X-Trace-Id` | Trace id (logged and forwarded) |\n| `X-Session-Id` | Session id (logged and forwarded) |\n\n**JSON logs:** `JsonLogFormatter` writes `request_id`, `trace_id`, and `session_id` as **`\"-\"`** when the log record **omits** that field **or** the value is an **empty string** (see `_format_gateway` in `app/core/logging.py`). Empty `x-trace-id` / `x-session-id` values still yield **`\"-\"`** in JSON logs when they reach the formatter as blank strings (the same rule applies to `request_id`). Events that omit correlation kwargs show `\"-\"`; the `/v1/embeddings` handler normally passes resolved non-empty UUIDs for all three.\nQ: What does the JsonLogFormatter use for omitted or empty fields?\nQ: How are empty x-trace-id and x-session-id values represented in JSON logs?\nQ: Which handlers typically pass non-empty UUIDs for all three correlation IDs?",
       "token_count": 283,
       "embed_token_count": 366,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What does the JsonLogFormatter use for omitted fields or empty strings?",
-        "Which headers are logged and forwarded according to the table?",
-        "How are empty 'x-trace-id' and 'x-session-id' values represented in JSON logs?"
+        "What does the JsonLogFormatter use for omitted or empty fields?",
+        "How are empty x-trace-id and x-session-id values represented in JSON logs?",
+        "Which handlers typically pass non-empty UUIDs for all three correlation IDs?"
       ],
       "content_hash": "498838351c84328580eed8639718a16b4a8e064bc13576937ce04e19cd0e5361",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -200,7 +216,7 @@
     }
   },
   {
-    "id": "ddb04dc2-b8e7-5bae-b227-dcba8595682f",
+    "id": "447f354a-8425-5045-b820-9a8b3a289ff2",
     "vector": [],
     "payload": {
       "chunk_id": "0005",
@@ -228,8 +244,12 @@
       ],
       "content_hash": "125484ec053e961034b81476fed6f0e6f2e2f61956eff83077c7cf8be84279bf",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -250,7 +270,7 @@
     }
   },
   {
-    "id": "d6e2db4b-ef63-5fe9-ae50-777c16d76bb3",
+    "id": "b58bd7da-f9f3-5ff9-93ad-35214adc2b7b",
     "vector": [],
     "payload": {
       "chunk_id": "0006",
@@ -266,20 +286,24 @@
         "request_body_(json)"
       ],
       "text": "`count` is `len(input)` when `input` is a list, else `1`. `total_chars` is the sum of `len(str(item))` over items.",
-      "embed_text": "[SECTION: Request body (JSON)]\n`count` is `len(input)` when `input` is a list, else `1`. `total_chars` is the sum of `len(str(item))` over items.\nQ: What is the value of `count` when `input` is a list?\nQ: What is the value of `count` when `input` is not a list?\nQ: How is `total_chars` calculated?",
+      "embed_text": "[SECTION: Request body (JSON)]\n`count` is `len(input)` when `input` is a list, else `1`. `total_chars` is the sum of `len(str(item))` over items.\nQ: What is the value of count when input is a list?\nQ: How is total_chars calculated?\nQ: What happens if input is not a list?",
       "token_count": 49,
-      "embed_token_count": 115,
+      "embed_token_count": 98,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is the value of `count` when `input` is a list?",
-        "What is the value of `count` when `input` is not a list?",
-        "How is `total_chars` calculated?"
+        "What is the value of count when input is a list?",
+        "How is total_chars calculated?",
+        "What happens if input is not a list?"
       ],
       "content_hash": "2c1b6f6955a127dbe1eec0a4e0a90655bd06e37e0257e261965df72ae8acc04e",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -300,7 +324,7 @@
     }
   },
   {
-    "id": "5d9b2b97-7fc0-5737-b9ed-8e7fc969c2fb",
+    "id": "150c3b14-aa19-5a92-8d58-633d677e8af3",
     "vector": [],
     "payload": {
       "chunk_id": "0007",
@@ -316,20 +340,24 @@
         "forwarded_headers"
       ],
       "text": "The gateway forwards **almost all** incoming headers to the selected upstream, except hop-by-hop fields blocked in code: `host`, `content-length` (see `_BLOCKED_HEADERS` in `app/api/embeddings.py`).",
-      "embed_text": "[SECTION: Forwarded headers]\nThe gateway forwards **almost all** incoming headers to the selected upstream, except hop-by-hop fields blocked in code: `host`, `content-length` (see `_BLOCKED_HEADERS` in `app/api/embeddings.py`).\nQ: Which headers are forwarded by the gateway?\nQ: What hop-by-hop fields are blocked and not forwarded?\nQ: Where can _BLOCKED_HEADERS be found?",
+      "embed_text": "[SECTION: Forwarded headers]\nThe gateway forwards **almost all** incoming headers to the selected upstream, except hop-by-hop fields blocked in code: `host`, `content-length` (see `_BLOCKED_HEADERS` in `app/api/embeddings.py`).\nQ: Which headers are forwarded by the gateway?\nQ: What hop-by-hop fields are blocked from being forwarded?\nQ: Where can _BLOCKED_HEADERS be found?",
       "token_count": 71,
       "embed_token_count": 129,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "Which headers are forwarded by the gateway?",
-        "What hop-by-hop fields are blocked and not forwarded?",
+        "What hop-by-hop fields are blocked from being forwarded?",
         "Where can _BLOCKED_HEADERS be found?"
       ],
       "content_hash": "0d5ea4f091df5f88126e0d66aa582249acff6fbd2a48acdf3db58a6ebcc3c160",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -350,7 +378,7 @@
     }
   },
   {
-    "id": "72d4badd-ef3a-5ccc-915c-21d9debf50f9",
+    "id": "b851c0df-11f0-572d-9452-c931fb6c2a27",
     "vector": [],
     "payload": {
       "chunk_id": "0008",
@@ -366,20 +394,24 @@
         "successful_response_shape"
       ],
       "text": "On a completed upstream round-trip (including non-retryable HTTP errors from the backend), the gateway returns:\n\n- **HTTP status**: same as upstream response (`upstream.status_code`)\n- **Body**: raw upstream bytes (`upstream.content`)\n- **`Content-Type`**: upstream `content-type` header if present\n\nSo clients may receive **2xx**, **4xx**, or **5xx** bodies **from the backend** without the gateway rewriting them, except where documented below (429/503 JSON from the gateway itself).",
-      "embed_text": "[SECTION: Successful response shape]\nOn a completed upstream round-trip (including non-retryable HTTP errors from the backend), the gateway returns:\n\n- **HTTP status**: same as upstream response (`upstream.status_code`)\n- **Body**: raw upstream bytes (`upstream.content`)\n- **`Content-Type`**: upstream `content-type` header if present\n\nSo clients may receive **2xx**, **4xx**, or **5xx** bodies **from the backend** without the gateway rewriting them, except where documented below (429/503 JSON from the gateway itself).\nQ: What HTTP status does the gateway return on a completed upstream round-trip?\nQ: What content does the gateway return in the body of its response?\nQ: Which HTTP status codes might clients receive directly from the backend?",
+      "embed_text": "[SECTION: Successful response shape]\nOn a completed upstream round-trip (including non-retryable HTTP errors from the backend), the gateway returns:\n\n- **HTTP status**: same as upstream response (`upstream.status_code`)\n- **Body**: raw upstream bytes (`upstream.content`)\n- **`Content-Type`**: upstream `content-type` header if present\n\nSo clients may receive **2xx**, **4xx**, or **5xx** bodies **from the backend** without the gateway rewriting them, except where documented below (429/503 JSON from the gateway itself).\nQ: What HTTP status does the gateway return on a completed upstream round-trip?\nQ: What does the gateway return in the body of its response?\nQ: Which HTTP status codes might clients receive directly from the backend?",
       "token_count": 143,
-      "embed_token_count": 204,
+      "embed_token_count": 203,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What HTTP status does the gateway return on a completed upstream round-trip?",
-        "What content does the gateway return in the body of its response?",
+        "What does the gateway return in the body of its response?",
         "Which HTTP status codes might clients receive directly from the backend?"
       ],
       "content_hash": "c975b2cf4d3705ff642195d848506a84b3f9d1123002e36aff61528b808d5864",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -400,7 +432,7 @@
     }
   },
   {
-    "id": "10eeab8e-de36-5795-83f9-bc3ddb37ac4d",
+    "id": "8790387a-7a0b-522e-88ac-e46f6ddf5a7c",
     "vector": [],
     "payload": {
       "chunk_id": "0009",
@@ -428,8 +460,12 @@
       ],
       "content_hash": "23f2d190b76d839e992f18855b9de1daac4e0ebb8780b6d10535ec5076e142a2",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -450,7 +486,7 @@
     }
   },
   {
-    "id": "5fba869a-a7d1-5ee2-9c80-772aa0d89032",
+    "id": "65ff05f3-b690-5f2c-8d1a-0f2de37cb1ff",
     "vector": [],
     "payload": {
       "chunk_id": "0010",
@@ -466,20 +502,24 @@
         "gateway-generated_error_responses"
       ],
       "text": "See also `docs/status-codes.md` for 429/503 nuances (including upstream passthrough).",
-      "embed_text": "[SECTION: Gateway-generated error responses]\nSee also `docs/status-codes.md` for 429/503 nuances (including upstream passthrough).\nQ: What additional documentation is referenced for understanding 429 and 503 errors?\nQ: Does the referenced documentation include information about upstream passthroughs?\nQ: Are there specific nuances about 429 and 503 errors discussed in the referenced documentation?",
+      "embed_text": "[SECTION: Gateway-generated error responses]\nSee also `docs/status-codes.md` for 429/503 nuances (including upstream passthrough).\nQ: Where can I find information about 429 and 503 status codes?\nQ: What does the text suggest to read for nuances of 429/503 status codes?\nQ: How are 429/503 status codes related to upstream passthrough?",
       "token_count": 27,
-      "embed_token_count": 97,
+      "embed_token_count": 96,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What additional documentation is referenced for understanding 429 and 503 errors?",
-        "Does the referenced documentation include information about upstream passthroughs?",
-        "Are there specific nuances about 429 and 503 errors discussed in the referenced documentation?"
+        "Where can I find information about 429 and 503 status codes?",
+        "What does the text suggest to read for nuances of 429/503 status codes?",
+        "How are 429/503 status codes related to upstream passthrough?"
       ],
       "content_hash": "60bd757b15b569e003fd880115aa89946b4cc9967575a4452fe7b1871064426a",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -500,7 +540,7 @@
     }
   },
   {
-    "id": "40745d3a-fd95-53e8-bead-f7d019e1b779",
+    "id": "9dabc258-1bf1-50d3-9005-59131484cc60",
     "vector": [],
     "payload": {
       "chunk_id": "0011",
@@ -516,20 +556,24 @@
         "retries_(client-visible_behavior)"
       ],
       "text": "Configured by `RETRY_MAX_ATTEMPTS` (minimum 1). For each attempt the gateway may pick a different backend; failed backends are added to an internal `excluded` set for the rest of that client request.\n\n- **Retry on HTTP status**: `502`, `503`, `504` when attempts remain (from `RetryConfig.retryable_statuses`).\n- **Retry on transport errors**: `httpx.TimeoutException`, `httpx.HTTPError` when attempts remain.",
-      "embed_text": "[SECTION: Retries (client-visible behavior)]\nConfigured by `RETRY_MAX_ATTEMPTS` (minimum 1). For each attempt the gateway may pick a different backend; failed backends are added to an internal `excluded` set for the rest of that client request.\n\n- **Retry on HTTP status**: `502`, `503`, `504` when attempts remain (from `RetryConfig.retryable_statuses`).\n- **Retry on transport errors**: `httpx.TimeoutException`, `httpx.HTTPError` when attempts remain.\nQ: What HTTP status codes trigger retries?\nQ: Which transport errors can cause retries?\nQ: How many retry attempts are configured at minimum?",
+      "embed_text": "[SECTION: Retries (client-visible behavior)]\nConfigured by `RETRY_MAX_ATTEMPTS` (minimum 1). For each attempt the gateway may pick a different backend; failed backends are added to an internal `excluded` set for the rest of that client request.\n\n- **Retry on HTTP status**: `502`, `503`, `504` when attempts remain (from `RetryConfig.retryable_statuses`).\n- **Retry on transport errors**: `httpx.TimeoutException`, `httpx.HTTPError` when attempts remain.\nQ: What HTTP status codes trigger retries?\nQ: Which transport errors trigger retries?\nQ: What is the minimum value for RETRY_MAX_ATTEMPTS?",
       "token_count": 133,
-      "embed_token_count": 183,
+      "embed_token_count": 186,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What HTTP status codes trigger retries?",
-        "Which transport errors can cause retries?",
-        "How many retry attempts are configured at minimum?"
+        "Which transport errors trigger retries?",
+        "What is the minimum value for RETRY_MAX_ATTEMPTS?"
       ],
       "content_hash": "01b22f9c4c736bf41700c28655d33271cd07cee77abdd331d72c098fd2972fb3",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -550,7 +594,7 @@
     }
   },
   {
-    "id": "1ba337c4-5eb4-594f-8b80-497c0c9ce3dd",
+    "id": "69316c7b-4c52-5877-9dc7-9f1f4dc6fc1d",
     "vector": [],
     "payload": {
       "chunk_id": "0012",
@@ -566,20 +610,24 @@
         "retries_(client-visible_behavior)"
       ],
       "text": "**Circuit breaker bookkeeping**: `success = (upstream.status_code < 500)` for the selector. So **5xx** counts as a **failure** for the breaker even if the gateway returns the upstream body on the final attempt.\n\n---",
-      "embed_text": "[SECTION: Retries (client-visible behavior)]\n**Circuit breaker bookkeeping**: `success = (upstream.status_code < 500)` for the selector. So **5xx** counts as a **failure** for the breaker even if the gateway returns the upstream body on the final attempt.\n\n---\nQ: What status code range is considered a failure for the circuit breaker?\nQ: How does the gateway handle 5xx responses in relation to the circuit breaker?\nQ: What is the condition for success in the selector?",
+      "embed_text": "[SECTION: Retries (client-visible behavior)]\n**Circuit breaker bookkeeping**: `success = (upstream.status_code < 500)` for the selector. So **5xx** counts as a **failure** for the breaker even if the gateway returns the upstream body on the final attempt.\n\n---\nQ: What status code range is considered a failure for the circuit breaker?\nQ: How does the gateway handle 5xx responses in the context of the circuit breaker?\nQ: What is the condition for success in the circuit breaker's bookkeeping?",
       "token_count": 66,
-      "embed_token_count": 129,
+      "embed_token_count": 136,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What status code range is considered a failure for the circuit breaker?",
-        "How does the gateway handle 5xx responses in relation to the circuit breaker?",
-        "What is the condition for success in the selector?"
+        "How does the gateway handle 5xx responses in the context of the circuit breaker?",
+        "What is the condition for success in the circuit breaker's bookkeeping?"
       ],
       "content_hash": "facabc029fdccdd2b113e173fd9b6f7784666c98356ec453207c8b583dc35273",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -600,7 +648,7 @@
     }
   },
   {
-    "id": "e77b8d3f-18ce-57c4-b6af-fdf4662b1afd",
+    "id": "97913faa-6338-527f-814a-dd9ce23240b7",
     "vector": [],
     "payload": {
       "chunk_id": "0013",
@@ -616,20 +664,24 @@
         "structured_logging_(json)"
       ],
       "text": "When JSON logging is enabled, `JsonLogFormatter` emits **one JSON object per line** for gateway events.",
-      "embed_text": "[SECTION: Structured logging (JSON)]\nWhen JSON logging is enabled, `JsonLogFormatter` emits **one JSON object per line** for gateway events.\nQ: What format does JsonLogFormatter emit for gateway events?\nQ: How many JSON objects are emitted per line when JSON logging is enabled?\nQ: What type of events does JsonLogFormatter log?",
+      "embed_text": "[SECTION: Structured logging (JSON)]\nWhen JSON logging is enabled, `JsonLogFormatter` emits **one JSON object per line** for gateway events.\nQ: What format does JsonLogFormatter emit for gateway events?\nQ: How many JSON objects does JsonLogFormatter emit per line?\nQ: What type of events does JsonLogFormatter log?",
       "token_count": 31,
-      "embed_token_count": 99,
+      "embed_token_count": 97,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What format does JsonLogFormatter emit for gateway events?",
-        "How many JSON objects are emitted per line when JSON logging is enabled?",
+        "How many JSON objects does JsonLogFormatter emit per line?",
         "What type of events does JsonLogFormatter log?"
       ],
       "content_hash": "9cba62253dee8f89516434b13cdeb2bd942ca1212c97043382f444668c8f27a6",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -650,7 +702,7 @@
     }
   },
   {
-    "id": "b4caed14-7784-5687-b3bf-57f54691bd27",
+    "id": "5b02c824-74ec-5ded-856c-ae5fd3f04ce5",
     "vector": [],
     "payload": {
       "chunk_id": "0014",
@@ -678,8 +730,12 @@
       ],
       "content_hash": "9003860276e9ab8739eb412a212a083def450de3f3e8e48b4a20a3e784db285d",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -700,7 +756,7 @@
     }
   },
   {
-    "id": "afdc7539-183c-50c7-bc82-9b1074e3e73b",
+    "id": "2713280f-1b35-58d9-9133-757ed2bb4fc1",
     "vector": [],
     "payload": {
       "chunk_id": "0015",
@@ -716,20 +772,24 @@
         "common_envelope_fields"
       ],
       "text": "**Note:** `log_gateway_event` stores errors internally as `structured_error`, but the JSON output field is **`error`**.",
-      "embed_text": "[SECTION: Common envelope fields]\n**Note:** `log_gateway_event` stores errors internally as `structured_error`, but the JSON output field is **`error`**.\nQ: What is the name of the internal field used for storing errors in log_gateway_event?\nQ: What is the name of the JSON output field for errors in log_gateway_event?\nQ: Which field stores errors internally in log_gateway_event?",
+      "embed_text": "[SECTION: Common envelope fields]\n**Note:** `log_gateway_event` stores errors internally as `structured_error`, but the JSON output field is **`error`**.\nQ: What is the name of the JSON output field for errors?\nQ: Where are errors stored internally?\nQ: What function stores errors internally?",
       "token_count": 39,
-      "embed_token_count": 115,
+      "embed_token_count": 88,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is the name of the internal field used for storing errors in log_gateway_event?",
-        "What is the name of the JSON output field for errors in log_gateway_event?",
-        "Which field stores errors internally in log_gateway_event?"
+        "What is the name of the JSON output field for errors?",
+        "Where are errors stored internally?",
+        "What function stores errors internally?"
       ],
       "content_hash": "78ef9ff0999d13019ee1963d44492bbf666d3306c0605888cdcd326ef2b754ed",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -750,7 +810,7 @@
     }
   },
   {
-    "id": "cdcba007-6439-51f4-9d9b-9ffd5e70d2e4",
+    "id": "c983b487-401b-50b0-802a-943559fb4cb4",
     "vector": [],
     "payload": {
       "chunk_id": "0016",
@@ -778,8 +838,12 @@
       ],
       "content_hash": "4ebfdd18e4e31e99f6916d8cab8e7fa1517950ef0179044a108ce4e0d9fb2736",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -800,7 +864,7 @@
     }
   },
   {
-    "id": "fc0156a5-434a-50a6-9299-748fd39e2132",
+    "id": "37af3dbd-c2dd-59f4-a3a1-4f3f5312ec0b",
     "vector": [],
     "payload": {
       "chunk_id": "0017",
@@ -816,20 +880,24 @@
         "`routing_pick`_/_`routing_no_backend`:_`gateway_meta`_routing_snapshot"
       ],
       "text": "`gateway_meta` includes:\n\n- **`decision_reason`** (`routing_pick` only): `score`, `exploration`, `idle_rebalance`, or `none`\n- **`attempt`**: retry attempt index (1-based)\n- **`excluded`**: sorted list of backend names skipped for this client request\n- **`backends`**: map of backend name → object:\n  - `score`, `inflight`, `latency_ms`, `error_rate`, `requests`, `errors`\n  - `circuit_open`, `circuit_half_open`, `half_open_inflight`, `half_open_successes`\n  - `excluded`, `eligible`\n- **`weights`**: routing weights used in score: `inflight`, `latency`, `error`",
-      "embed_text": "[SECTION: `routing_pick` / `routing_no_backend`: `gateway_meta` routing snapshot]\n`gateway_meta` includes:\n\n- **`decision_reason`** (`routing_pick` only): `score`, `exploration`, `idle_rebalance`, or `none`\n- **`attempt`**: retry attempt index (1-based)\n- **`excluded`**: sorted list of backend names skipped for this client request\n- **`backends`**: map of backend name → object:\n  - `score`, `inflight`, `latency_ms`, `error_rate`, `requests`, `errors`\n  - `circuit_open`, `circuit_half_open`, `half_open_inflight`, `half_open_successes`\n  - `excluded`, `eligible`\n- **`weights`**: routing weights used in score: `inflight`, `latency`, `error`\nQ: What information does the `gateway_meta` include?\nQ: How is the `attempt` index represented in `gateway_meta`?\nQ: What are the keys in the `backends` object within `gateway_meta`?",
+      "embed_text": "[SECTION: `routing_pick` / `routing_no_backend`: `gateway_meta` routing snapshot]\n`gateway_meta` includes:\n\n- **`decision_reason`** (`routing_pick` only): `score`, `exploration`, `idle_rebalance`, or `none`\n- **`attempt`**: retry attempt index (1-based)\n- **`excluded`**: sorted list of backend names skipped for this client request\n- **`backends`**: map of backend name → object:\n  - `score`, `inflight`, `latency_ms`, `error_rate`, `requests`, `errors`\n  - `circuit_open`, `circuit_half_open`, `half_open_inflight`, `half_open_successes`\n  - `excluded`, `eligible`\n- **`weights`**: routing weights used in score: `inflight`, `latency`, `error`\nQ: What information is included in the `gateway_meta` routing snapshot?\nQ: How is the `attempt` field defined in `gateway_meta`?\nQ: What does the `backends` map contain for each backend name?",
       "token_count": 219,
       "embed_token_count": 311,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What information does the `gateway_meta` include?",
-        "How is the `attempt` index represented in `gateway_meta`?",
-        "What are the keys in the `backends` object within `gateway_meta`?"
+        "What information is included in the `gateway_meta` routing snapshot?",
+        "How is the `attempt` field defined in `gateway_meta`?",
+        "What does the `backends` map contain for each backend name?"
       ],
       "content_hash": "2f0bdfbb1a68eb158656aa90564bf2d1cfd069e94d9e7ee4d29b309e556ead0c",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -850,7 +918,7 @@
     }
   },
   {
-    "id": "82fa1506-929e-5c22-9e69-5427f00319b0",
+    "id": "d778771e-38b0-5801-8e32-0f7b2a703ae2",
     "vector": [],
     "payload": {
       "chunk_id": "0018",
@@ -866,20 +934,24 @@
         "`routing_pick`_/_`routing_no_backend`:_`gateway_meta`_routing_snapshot"
       ],
       "text": "---",
-      "embed_text": "[SECTION: `routing_pick` / `routing_no_backend`: `gateway_meta` routing snapshot]\n---\nQ: What is the routing snapshot for?\nQ: Which routing options are mentioned?\nQ: What does `gateway_meta` refer to in this context?",
+      "embed_text": "[SECTION: `routing_pick` / `routing_no_backend`: `gateway_meta` routing snapshot]\n---\nQ: What is the routing snapshot for?\nQ: Which routing methods are mentioned?\nQ: What does `gateway_meta` refer to in this context?",
       "token_count": 1,
       "embed_token_count": 71,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is the routing snapshot for?",
-        "Which routing options are mentioned?",
+        "Which routing methods are mentioned?",
         "What does `gateway_meta` refer to in this context?"
       ],
       "content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -900,7 +972,7 @@
     }
   },
   {
-    "id": "67a64f40-10e7-5c98-8e8c-6dc715b84027",
+    "id": "e5a143a3-80d4-55fe-b2fd-9af0a02552e9",
     "vector": [],
     "payload": {
       "chunk_id": "0019",
@@ -928,8 +1000,12 @@
       ],
       "content_hash": "c2cb46683cc1602aed0a30639035588166d58aba5a4cd8b003e31fe92b25ff2a",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -950,7 +1026,7 @@
     }
   },
   {
-    "id": "e02a85e0-7d56-58c9-9455-bdce1d64c834",
+    "id": "7b942c49-98ae-5775-b306-1553bc085092",
     "vector": [],
     "payload": {
       "chunk_id": "0020",
@@ -978,8 +1054,12 @@
       ],
       "content_hash": "1c92c209b22ff81276eba9ab051fe6b66e16aa6f69311aa908f3a73a133342cd",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,

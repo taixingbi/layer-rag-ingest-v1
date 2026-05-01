@@ -1,6 +1,6 @@
 [
   {
-    "id": "40189021-d59b-5dce-ac05-9a4ed1737bad",
+    "id": "6816f869-2978-57b9-83a8-9babd0d3a826",
     "vector": [],
     "payload": {
       "chunk_id": "0001",
@@ -16,20 +16,24 @@
         "layer_gateway_sla_/_slo"
       ],
       "text": "This document defines a practical SLA/SLO baseline for `layer-gateway-inference-v1`.",
-      "embed_text": "[SECTION: Layer Gateway SLA / SLO]\nThis document defines a practical SLA/SLO baseline for `layer-gateway-inference-v1`.\nQ: What does this document define?\nQ: Which version of layer-gateway is referenced?\nQ: Is this an SLA or SLO?",
+      "embed_text": "[SECTION: Layer Gateway SLA / SLO]\nThis document defines a practical SLA/SLO baseline for `layer-gateway-inference-v1`.\nQ: What does this document define?\nQ: Which version of layer gateway is referenced?\nQ: Is this an SLA or SLO or both?",
       "token_count": 29,
-      "embed_token_count": 75,
+      "embed_token_count": 76,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What does this document define?",
-        "Which version of layer-gateway is referenced?",
-        "Is this an SLA or SLO?"
+        "Which version of layer gateway is referenced?",
+        "Is this an SLA or SLO or both?"
       ],
       "content_hash": "a40962b9fb31d93853059886e570315fb12bc904bece9c01f7af4296fb35238c",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144345_EST",
+      "ingest_ts": "2026-04-30T14:43:45-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -50,7 +54,7 @@
     }
   },
   {
-    "id": "14db466a-03c1-5800-abd7-ae39e61162c4",
+    "id": "80cc798e-90d9-59f9-a9b3-562b2e7eea65",
     "vector": [],
     "payload": {
       "chunk_id": "0002",
@@ -66,20 +70,24 @@
         "1)_scope"
       ],
       "text": "The SLA applies to gateway API endpoints:\n\n- `POST /v1/chat/completions`\n- `GET /healthz`\n- `GET /metrics`\n\nThe SLA covers only gateway behavior. It does not guarantee upstream model quality/content.",
-      "embed_text": "[SECTION: 1) Scope]\nThe SLA applies to gateway API endpoints:\n\n- `POST /v1/chat/completions`\n- `GET /healthz`\n- `GET /metrics`\n\nThe SLA covers only gateway behavior. It does not guarantee upstream model quality/content.\nQ: What API endpoints are covered by the SLA?\nQ: Does the SLA guarantee upstream model quality/content?\nQ: Which HTTP methods are included in the SLA?",
+      "embed_text": "[SECTION: 1) Scope]\nThe SLA applies to gateway API endpoints:\n\n- `POST /v1/chat/completions`\n- `GET /healthz`\n- `GET /metrics`\n\nThe SLA covers only gateway behavior. It does not guarantee upstream model quality/content.\nQ: Which API endpoints are covered by the SLA?\nQ: What does the SLA not guarantee regarding the upstream models?\nQ: How many API endpoints are explicitly mentioned in the SLA?",
       "token_count": 61,
-      "embed_token_count": 110,
+      "embed_token_count": 116,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What API endpoints are covered by the SLA?",
-        "Does the SLA guarantee upstream model quality/content?",
-        "Which HTTP methods are included in the SLA?"
+        "Which API endpoints are covered by the SLA?",
+        "What does the SLA not guarantee regarding the upstream models?",
+        "How many API endpoints are explicitly mentioned in the SLA?"
       ],
       "content_hash": "e9775e19de8ec7b5062f68c0e4d9d44fcb72e7800e1a5fb8e51f5e60bb338afe",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144345_EST",
+      "ingest_ts": "2026-04-30T14:43:45-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -100,7 +108,7 @@
     }
   },
   {
-    "id": "c8295fe8-1a10-57a5-b2ac-5ca844e80f90",
+    "id": "7dbe68ca-0fa0-5385-9b35-990b0a7673c0",
     "vector": [],
     "payload": {
       "chunk_id": "0003",
@@ -116,20 +124,24 @@
         "2)_service_level_objective_(slo)"
       ],
       "text": "2) Service Level Objective (SLO)",
-      "embed_text": "[SECTION: 2) Service Level Objective (SLO)]\n2) Service Level Objective (SLO)\nQ: What is the topic of this section?\nQ: What does SLO stand for in this context?\nQ: Is there any content provided within this section?",
+      "embed_text": "[SECTION: 2) Service Level Objective (SLO)]\n2) Service Level Objective (SLO)\nQ: What does SLO stand for in this context?\nQ: Which section is about Service Level Objective?\nQ: Is SLO defined in this text?",
       "token_count": 9,
-      "embed_token_count": 57,
+      "embed_token_count": 58,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is the topic of this section?",
         "What does SLO stand for in this context?",
-        "Is there any content provided within this section?"
+        "Which section is about Service Level Objective?",
+        "Is SLO defined in this text?"
       ],
       "content_hash": "ce2374a17fb080b3abd8a2b33d07304c5f4729b316a3564684f4e22183c6e2cf",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144345_EST",
+      "ingest_ts": "2026-04-30T14:43:45-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -150,7 +162,7 @@
     }
   },
   {
-    "id": "6f227bb3-7ddc-533b-9648-a706f250daa9",
+    "id": "e82c8aa8-0b8d-55bf-a242-a8af07f1b9cd",
     "vector": [],
     "payload": {
       "chunk_id": "0004",
@@ -178,8 +190,12 @@
       ],
       "content_hash": "a8f6c52c1347092aca19880473a3f4101ab829406c0a3b2ebe669db8aac13fa2",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144345_EST",
+      "ingest_ts": "2026-04-30T14:43:45-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -200,7 +216,7 @@
     }
   },
   {
-    "id": "8b2a61aa-da7c-53fe-9f02-14d93903d74b",
+    "id": "fc4359d0-e3af-5320-8946-b42a7bf262fd",
     "vector": [],
     "payload": {
       "chunk_id": "0005",
@@ -228,8 +244,12 @@
       ],
       "content_hash": "b19669a392e4abc92a5d4fa5a3d961adee6e817308c8a8d8cc7fda41d35c1812",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144345_EST",
+      "ingest_ts": "2026-04-30T14:43:45-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -250,7 +270,7 @@
     }
   },
   {
-    "id": "673805e8-3d94-5f82-bb10-6af5dee68c06",
+    "id": "5cce7667-0a6c-5e1f-b9c8-5731d838d53c",
     "vector": [],
     "payload": {
       "chunk_id": "0006",
@@ -266,20 +286,24 @@
         "queue_slo"
       ],
       "text": "- `gateway_queue_age_ms` should remain **< queue_max_age_ms** during steady state.\n- `gateway_rejections_total{reason=\"queue_full\"}` and `{reason=\"queue_age\"}` should be near zero during normal operation.\n\n```mermaid\nflowchart LR\n    A[Traffic] --> B{Availability SLO 99.9%}\n    A --> C{Latency SLO}\n    A --> D{Queue SLO}\n    C --> C1[P95 <= 2500ms]\n    C --> C2[P99 <= 5000ms]\n    D --> D1[queue_age_ms < queue_max_age_ms]\n    D --> D2[queue_full/queue_age rejections near 0]\n```",
-      "embed_text": "[SECTION: Queue SLO]\n- `gateway_queue_age_ms` should remain **< queue_max_age_ms** during steady state.\n- `gateway_rejections_total{reason=\"queue_full\"}` and `{reason=\"queue_age\"}` should be near zero during normal operation.\n\n```mermaid\nflowchart LR\n    A[Traffic] --> B{Availability SLO 99.9%}\n    A --> C{Latency SLO}\n    A --> D{Queue SLO}\n    C --> C1[P95 <= 2500ms]\n    C --> C2[P99 <= 5000ms]\n    D --> D1[queue_age_ms < queue_max_age_ms]\n    D --> D2[queue_full/queue_age rejections near 0]\n```\nQ: What is the condition for `gateway_queue_age_ms` during steady state?\nQ: Which metrics should be near zero during normal operation?\nQ: What does the Queue SLO consist of according to the flowchart?",
+      "embed_text": "[SECTION: Queue SLO]\n- `gateway_queue_age_ms` should remain **< queue_max_age_ms** during steady state.\n- `gateway_rejections_total{reason=\"queue_full\"}` and `{reason=\"queue_age\"}` should be near zero during normal operation.\n\n```mermaid\nflowchart LR\n    A[Traffic] --> B{Availability SLO 99.9%}\n    A --> C{Latency SLO}\n    A --> D{Queue SLO}\n    C --> C1[P95 <= 2500ms]\n    C --> C2[P99 <= 5000ms]\n    D --> D1[queue_age_ms < queue_max_age_ms]\n    D --> D2[queue_full/queue_age rejections near 0]\n```\nQ: What is the condition for `gateway_queue_age_ms`?\nQ: Which metrics should be near zero during normal operation?\nQ: What does the Queue SLO consist of?",
       "token_count": 185,
-      "embed_token_count": 249,
+      "embed_token_count": 239,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is the condition for `gateway_queue_age_ms` during steady state?",
+        "What is the condition for `gateway_queue_age_ms`?",
         "Which metrics should be near zero during normal operation?",
-        "What does the Queue SLO consist of according to the flowchart?"
+        "What does the Queue SLO consist of?"
       ],
       "content_hash": "22e200202c44b6d388338cdf9f7252900ac3c28f99c3f361dcdf9b4a756ed0c9",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144345_EST",
+      "ingest_ts": "2026-04-30T14:43:45-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -300,7 +324,7 @@
     }
   },
   {
-    "id": "cc1e49de-5153-5adb-90dc-e3bffcb1a613",
+    "id": "9f740d21-fbe8-57ea-8bd0-68c04d1416b9",
     "vector": [],
     "payload": {
       "chunk_id": "0007",
@@ -328,8 +352,12 @@
       ],
       "content_hash": "0e6ec29ea328aea0f2fe5eca8a8959b9cfa604c2f00ce2792b302f740541298f",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144345_EST",
+      "ingest_ts": "2026-04-30T14:43:45-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -350,7 +378,7 @@
     }
   },
   {
-    "id": "578d3fee-72f9-5e73-963f-47bbd351be4d",
+    "id": "652825e5-2288-5652-b64f-4d59625909f9",
     "vector": [],
     "payload": {
       "chunk_id": "0008",
@@ -366,20 +394,24 @@
         "4)_how_to_measure"
       ],
       "text": "Use `/metrics` with Prometheus.\n\nKey metrics:\n\n- `gateway_requests_total`\n- `gateway_request_errors_total{backend=...}`\n- `gateway_request_retries_total`\n- `gateway_request_latency_ms`\n- `gateway_queue_depth`\n- `gateway_queue_age_ms`\n- `gateway_rejections_total{reason=...}`\n- `gateway_backend_error_rate{backend=...}`\n- `gateway_backend_circuit_state{backend=...}`\n\nSuggested PromQL examples:\n\n```promql",
-      "embed_text": "[SECTION: 4) How to Measure]\nUse `/metrics` with Prometheus.\n\nKey metrics:\n\n- `gateway_requests_total`\n- `gateway_request_errors_total{backend=...}`\n- `gateway_request_retries_total`\n- `gateway_request_latency_ms`\n- `gateway_queue_depth`\n- `gateway_queue_age_ms`\n- `gateway_rejections_total{reason=...}`\n- `gateway_backend_error_rate{backend=...}`\n- `gateway_backend_circuit_state{backend=...}`\n\nSuggested PromQL examples:\n\n```promql\nQ: What metrics are used to measure gateway performance?\nQ: How can PromQL be utilized to monitor gateway requests?\nQ: What does the `gateway_backend_error_rate` metric indicate?",
+      "embed_text": "[SECTION: 4) How to Measure]\nUse `/metrics` with Prometheus.\n\nKey metrics:\n\n- `gateway_requests_total`\n- `gateway_request_errors_total{backend=...}`\n- `gateway_request_retries_total`\n- `gateway_request_latency_ms`\n- `gateway_queue_depth`\n- `gateway_queue_age_ms`\n- `gateway_rejections_total{reason=...}`\n- `gateway_backend_error_rate{backend=...}`\n- `gateway_backend_circuit_state{backend=...}`\n\nSuggested PromQL examples:\n\n```promql\nQ: What is the total number of gateway requests?\nQ: How many gateway request errors occurred for a specific backend?\nQ: What is the current queue depth of the gateway?",
       "token_count": 167,
-      "embed_token_count": 230,
+      "embed_token_count": 224,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What metrics are used to measure gateway performance?",
-        "How can PromQL be utilized to monitor gateway requests?",
-        "What does the `gateway_backend_error_rate` metric indicate?"
+        "What is the total number of gateway requests?",
+        "How many gateway request errors occurred for a specific backend?",
+        "What is the current queue depth of the gateway?"
       ],
       "content_hash": "35c617fec8f9ad2a98f8aaccac7f0e6e7173984c762041fc05edc7e54eec2acd",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144345_EST",
+      "ingest_ts": "2026-04-30T14:43:45-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -400,7 +432,7 @@
     }
   },
   {
-    "id": "80aa4ef1-7395-50d4-ba86-ada6b6cf07fa",
+    "id": "47485b7f-b56b-55cb-94a0-703fb6bdec4e",
     "vector": [],
     "payload": {
       "chunk_id": "0009",
@@ -416,20 +448,24 @@
         "request_rate"
       ],
       "text": "sum(rate(gateway_requests_total[5m]))\n```\n\n```promql",
-      "embed_text": "[SECTION: Request rate]\nsum(rate(gateway_requests_total[5m]))\n```\n\n```promql\nQ: What does the Prometheus query calculate?\nQ: What time range does the query use?\nQ: How often is the request rate measured?",
+      "embed_text": "[SECTION: Request rate]\nsum(rate(gateway_requests_total[5m]))\n```\n\n```promql\nQ: What does the Prometheus query calculate?\nQ: What time range does the query use for rate calculation?\nQ: How often is the request rate measured?",
       "token_count": 26,
-      "embed_token_count": 71,
+      "embed_token_count": 75,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What does the Prometheus query calculate?",
-        "What time range does the query use?",
+        "What time range does the query use for rate calculation?",
         "How often is the request rate measured?"
       ],
       "content_hash": "84cc0abb2ffe0c11cacd84d989dc76174f389e700a2329c3f7a296ad8ea03e98",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144345_EST",
+      "ingest_ts": "2026-04-30T14:43:45-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -450,7 +486,7 @@
     }
   },
   {
-    "id": "0cb03e92-ffdb-5e7e-8dd3-068402c800f5",
+    "id": "6668876b-32b6-576f-8ce5-0e3695d77631",
     "vector": [],
     "payload": {
       "chunk_id": "0010",
@@ -466,20 +502,24 @@
         "gateway-visible_error_rate_proxy"
       ],
       "text": "sum(rate(gateway_request_errors_total[5m])) / sum(rate(gateway_requests_total[5m]))\n```\n\n```promql",
-      "embed_text": "[SECTION: Gateway-visible error rate proxy]\nsum(rate(gateway_request_errors_total[5m])) / sum(rate(gateway_requests_total[5m]))\n```\n\n```promql\nQ: What does this expression calculate?\nQ: What time range does this expression use for its calculation?\nQ: How is the gateway error rate represented here?",
+      "embed_text": "[SECTION: Gateway-visible error rate proxy]\nsum(rate(gateway_request_errors_total[5m])) / sum(rate(gateway_requests_total[5m]))\n```\n\n```promql\nQ: What does this expression calculate?\nQ: What time range does this expression use for its calculation?\nQ: Which Prometheus functions are used in this expression?",
       "token_count": 48,
-      "embed_token_count": 97,
+      "embed_token_count": 99,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What does this expression calculate?",
         "What time range does this expression use for its calculation?",
-        "How is the gateway error rate represented here?"
+        "Which Prometheus functions are used in this expression?"
       ],
       "content_hash": "dbe6fc9498160a0bae0faed2a21d73a15e2d08a48eaacab1fdac000b4f69cd92",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144345_EST",
+      "ingest_ts": "2026-04-30T14:43:45-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -500,7 +540,7 @@
     }
   },
   {
-    "id": "27ac62ab-cdaa-5778-8700-58e7f7fa2b64",
+    "id": "a7525b8d-2458-5927-ac5c-230c8fe7eb43",
     "vector": [],
     "payload": {
       "chunk_id": "0011",
@@ -516,20 +556,24 @@
         "p95_latency"
       ],
       "text": "histogram_quantile(0.95, sum by (le) (rate(gateway_request_latency_ms_bucket[5m])))\n```\n\n```promql",
-      "embed_text": "[SECTION: P95 latency]\nhistogram_quantile(0.95, sum by (le) (rate(gateway_request_latency_ms_bucket[5m])))\n```\n\n```promql\nQ: What does the histogram_quantile function represent?\nQ: What is the time window for the gateway_request_latency_ms_bucket?\nQ: Which quantile is being calculated?",
+      "embed_text": "[SECTION: P95 latency]\nhistogram_quantile(0.95, sum by (le) (rate(gateway_request_latency_ms_bucket[5m])))\n```\n\n```promql\nQ: What does the histogram_quantile function represent?\nQ: What is the quantile being measured?\nQ: What time range does the rate function use?",
       "token_count": 43,
-      "embed_token_count": 100,
+      "embed_token_count": 89,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What does the histogram_quantile function represent?",
-        "What is the time window for the gateway_request_latency_ms_bucket?",
-        "Which quantile is being calculated?"
+        "What is the quantile being measured?",
+        "What time range does the rate function use?"
       ],
       "content_hash": "98d7ac5011f8553c7f9d1755fe6de1b93e64bfee637a520a1a832f63425fef6d",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144345_EST",
+      "ingest_ts": "2026-04-30T14:43:45-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -550,7 +594,7 @@
     }
   },
   {
-    "id": "16631dec-b1fa-5cd3-896e-c507d25e8b1b",
+    "id": "0127a425-d894-5fd3-b684-2c65a86c5e85",
     "vector": [],
     "payload": {
       "chunk_id": "0012",
@@ -578,8 +622,12 @@
       ],
       "content_hash": "58f3edbb4da8422023af5ffe875597841f991aa089b28101322fba41ae4398b5",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144345_EST",
+      "ingest_ts": "2026-04-30T14:43:45-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -600,7 +648,7 @@
     }
   },
   {
-    "id": "d0099dd3-4531-55c4-99d1-7b98cfd14935",
+    "id": "11e74bae-5a8a-5508-bd6e-48c0d782dff5",
     "vector": [],
     "payload": {
       "chunk_id": "0013",
@@ -616,20 +664,24 @@
         "rejections_by_reason"
       ],
       "text": "sum by (reason) (rate(gateway_rejections_total[5m]))\n```",
-      "embed_text": "[SECTION: Rejections by reason]\nsum by (reason) (rate(gateway_rejections_total[5m]))\n```\nQ: What reasons are given for gateway rejections?\nQ: How many rejections are there by reason in the last 5 minutes?\nQ: Can we identify specific causes for rejections based on the given data?",
+      "embed_text": "[SECTION: Rejections by reason]\nsum by (reason) (rate(gateway_rejections_total[5m]))\n```\nQ: What reasons are given for gateway rejections?\nQ: How many rejections are there for each reason in the last 5 minutes?\nQ: Can you list the reasons for rejections and their rates?",
       "token_count": 26,
-      "embed_token_count": 84,
+      "embed_token_count": 83,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What reasons are given for gateway rejections?",
-        "How many rejections are there by reason in the last 5 minutes?",
-        "Can we identify specific causes for rejections based on the given data?"
+        "How many rejections are there for each reason in the last 5 minutes?",
+        "Can you list the reasons for rejections and their rates?"
       ],
       "content_hash": "d56e919a19d1652a9f136b945078ccfee5283bd7f03c9afdae551f7dedd0ae8e",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144345_EST",
+      "ingest_ts": "2026-04-30T14:43:45-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -650,7 +702,7 @@
     }
   },
   {
-    "id": "0f0193a0-8459-54cc-ac5d-82609fbc30c2",
+    "id": "7cfe4dca-5458-5620-bdb1-072f3f34bfa8",
     "vector": [],
     "payload": {
       "chunk_id": "0014",
@@ -666,20 +718,24 @@
         "5)_alerting_baseline"
       ],
       "text": "Critical alerts:\n\n- Availability burn: estimated error ratio > 1% for 5 minutes\n- Queue age saturation: `gateway_queue_age_ms` > `queue_max_age_ms` for 5 minutes\n- No healthy backend: all backends in `open` circuit state\n\nWarning alerts:\n\n- Retry surge: `rate(gateway_request_retries_total[5m])` significantly above baseline\n- Rising backend error signal: `gateway_backend_error_rate` sustained above threshold",
-      "embed_text": "[SECTION: 5) Alerting Baseline]\nCritical alerts:\n\n- Availability burn: estimated error ratio > 1% for 5 minutes\n- Queue age saturation: `gateway_queue_age_ms` > `queue_max_age_ms` for 5 minutes\n- No healthy backend: all backends in `open` circuit state\n\nWarning alerts:\n\n- Retry surge: `rate(gateway_request_retries_total[5m])` significantly above baseline\n- Rising backend error signal: `gateway_backend_error_rate` sustained above threshold\nQ: What is the critical alert for availability burn?\nQ: How long must the gateway_queue_age_ms exceed the queue_max_age_ms for it to trigger an alert?\nQ: Which metric indicates a rising backend error signal?",
+      "embed_text": "[SECTION: 5) Alerting Baseline]\nCritical alerts:\n\n- Availability burn: estimated error ratio > 1% for 5 minutes\n- Queue age saturation: `gateway_queue_age_ms` > `queue_max_age_ms` for 5 minutes\n- No healthy backend: all backends in `open` circuit state\n\nWarning alerts:\n\n- Retry surge: `rate(gateway_request_retries_total[5m])` significantly above baseline\n- Rising backend error signal: `gateway_backend_error_rate` sustained above threshold\nQ: What is the critical alert for availability burn?\nQ: How long does the queue age have to exceed the maximum age before it triggers an alert?\nQ: What triggers a warning alert for rising backend error signal?",
       "token_count": 127,
-      "embed_token_count": 198,
+      "embed_token_count": 190,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is the critical alert for availability burn?",
-        "How long must the gateway_queue_age_ms exceed the queue_max_age_ms for it to trigger an alert?",
-        "Which metric indicates a rising backend error signal?"
+        "How long does the queue age have to exceed the maximum age before it triggers an alert?",
+        "What triggers a warning alert for rising backend error signal?"
       ],
       "content_hash": "1c67775c6f31ab1a23f9bb7b30e1b5bed624df591ebfd41d63f32bce4943b9be",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144345_EST",
+      "ingest_ts": "2026-04-30T14:43:45-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -700,7 +756,7 @@
     }
   },
   {
-    "id": "0e27e2f4-cb10-51be-9f13-e54f561edaf0",
+    "id": "c531ccdb-1c86-5e26-b79a-a736b44c05c0",
     "vector": [],
     "payload": {
       "chunk_id": "0015",
@@ -716,20 +772,24 @@
         "6)_operational_notes"
       ],
       "text": "- `trace_id`, `request_id`, and `session_id` are for log correlation, not metric labels.\n- Keep metric label cardinality low (do not add request/session IDs as labels).\n- When a backend is unstable, set `drained: true` in config to remove it from new scheduling.",
-      "embed_text": "[SECTION: 6) Operational Notes]\n- `trace_id`, `request_id`, and `session_id` are for log correlation, not metric labels.\n- Keep metric label cardinality low (do not add request/session IDs as labels).\n- When a backend is unstable, set `drained: true` in config to remove it from new scheduling.\nQ: What should be done when a backend is unstable?\nQ: Which configuration setting should be changed to remove a backend from new scheduling?\nQ: Why should `trace_id`, `request_id`, and `session_id` not be used as metric labels?",
+      "embed_text": "[SECTION: 6) Operational Notes]\n- `trace_id`, `request_id`, and `session_id` are for log correlation, not metric labels.\n- Keep metric label cardinality low (do not add request/session IDs as labels).\n- When a backend is unstable, set `drained: true` in config to remove it from new scheduling.\nQ: What should be done when a backend is unstable?\nQ: Which configuration parameter should be set to remove a backend from new scheduling?\nQ: Why should `trace_id`, `request_id`, and `session_id` not be used as metric labels?",
       "token_count": 82,
       "embed_token_count": 159,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What should be done when a backend is unstable?",
-        "Which configuration setting should be changed to remove a backend from new scheduling?",
+        "Which configuration parameter should be set to remove a backend from new scheduling?",
         "Why should `trace_id`, `request_id`, and `session_id` not be used as metric labels?"
       ],
       "content_hash": "29cc256a0d740b12c5ce12869774dcb6d56a6df6e2485d890dbfea02d153737f",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144345_EST",
+      "ingest_ts": "2026-04-30T14:43:45-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -750,7 +810,7 @@
     }
   },
   {
-    "id": "df5bf9d5-c7f9-5075-80ae-a38568817e67",
+    "id": "8174bd82-6005-5a85-b7a2-a3682a5e13c0",
     "vector": [],
     "payload": {
       "chunk_id": "0016",
@@ -766,20 +826,24 @@
         "7)_exclusions"
       ],
       "text": "The SLA excludes:\n\n- planned maintenance windows\n- upstream provider/network outages outside gateway control\n- user-caused invalid requests (`4xx`)",
-      "embed_text": "[SECTION: 7) Exclusions]\nThe SLA excludes:\n\n- planned maintenance windows\n- upstream provider/network outages outside gateway control\n- user-caused invalid requests (`4xx`)\nQ: What are the exclusions mentioned in the SLA?\nQ: Does the SLA cover planned maintenance windows?\nQ: Are user-caused invalid requests excluded according to the SLA?",
+      "embed_text": "[SECTION: 7) Exclusions]\nThe SLA excludes:\n\n- planned maintenance windows\n- upstream provider/network outages outside gateway control\n- user-caused invalid requests (`4xx`)\nQ: What are the exclusions mentioned in the SLA?\nQ: Does the SLA cover user-caused invalid requests?\nQ: Are upstream provider/network outages covered by the SLA?",
       "token_count": 37,
-      "embed_token_count": 89,
+      "embed_token_count": 92,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What are the exclusions mentioned in the SLA?",
-        "Does the SLA cover planned maintenance windows?",
-        "Are user-caused invalid requests excluded according to the SLA?"
+        "Does the SLA cover user-caused invalid requests?",
+        "Are upstream provider/network outages covered by the SLA?"
       ],
       "content_hash": "bb5beed2b2ff51d1b97644af3d0fe15e0e2b3056ca9cc0283be586ec8b46f12f",
       "source": "repo_layer-gateway-inference-v1__sla.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144345_EST",
+      "ingest_ts": "2026-04-30T14:43:45-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,

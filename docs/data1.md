@@ -5,11 +5,9 @@ Personal-style text (resume, Q&A, profile) under `data_<env>/data1/raw/*.txt`. O
 **Data1** (plain text pipeline) — from repo root:
 
 ```bash
-./scripts/data1.sh
-
-# optional
-DATA_ENV=qa ./scripts/data1.sh
-DATA_ENV=prod ./scripts/data1.sh
+./scripts/data1.sh dev
+./scripts/data1.sh qa
+./scripts/data1.sh prod
 ```
 
 Synthetic questions and smoke validation run by default; use **`RUN_SYNTHETIC_QUESTIONS=0`** and/or **`RUN_SMOKE_VALIDATE=0`** to skip stages.

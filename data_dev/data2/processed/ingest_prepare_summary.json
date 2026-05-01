@@ -1,11 +1,15 @@
 {
-  "ingest_run_id": "run_20260428_164848_EST",
-  "collection": "taixing_knowledge_qa",
-  "ingest_ts": "2026-04-28T16:48:48-05:00",
+  "ingest_run_id": "run_20260430_144012_EST",
+  "collection": "taixing_knowledge_dev",
+  "ingest_ts": "2026-04-30T14:40:12-05:00",
+  "id_key_version": "v3",
+  "document_version": "v1",
+  "chunk_version": "v1",
+  "embedding_version": "BAAI/bge-m3",
   "files": [
     {
-      "input_file": "data2/processed/chunks_layer-gateway-embed-v1__design.md.json",
-      "output_file": "data2/processed/points_layer-gateway-embed-v1__design.md.json",
+      "input_file": "data_dev/data2/processed/chunks_layer-gateway-embed-v1__design.md.json",
+      "output_file": "data_dev/data2/processed/points_layer-gateway-embed-v1__design.md.json",
       "doc_type": "layer-gateway-embed-v1__design.md",
       "source": "repo_layer-gateway-embed-v1__design.md",
       "chunks_input": 8,
@@ -13,8 +17,8 @@
       "chunks_failed": 0
     },
     {
-      "input_file": "data2/processed/chunks_layer-gateway-embed-v1__docker.md.json",
-      "output_file": "data2/processed/points_layer-gateway-embed-v1__docker.md.json",
+      "input_file": "data_dev/data2/processed/chunks_layer-gateway-embed-v1__docker.md.json",
+      "output_file": "data_dev/data2/processed/points_layer-gateway-embed-v1__docker.md.json",
       "doc_type": "layer-gateway-embed-v1__docker.md",
       "source": "repo_layer-gateway-embed-v1__docker.md",
       "chunks_input": 8,
@@ -22,8 +26,8 @@
       "chunks_failed": 0
     },
     {
-      "input_file": "data2/processed/chunks_layer-gateway-embed-v1__plan.md.json",
-      "output_file": "data2/processed/points_layer-gateway-embed-v1__plan.md.json",
+      "input_file": "data_dev/data2/processed/chunks_layer-gateway-embed-v1__plan.md.json",
+      "output_file": "data_dev/data2/processed/points_layer-gateway-embed-v1__plan.md.json",
       "doc_type": "layer-gateway-embed-v1__plan.md",
       "source": "repo_layer-gateway-embed-v1__plan.md",
       "chunks_input": 9,
@@ -31,8 +35,8 @@
       "chunks_failed": 0
     },
     {
-      "input_file": "data2/processed/chunks_layer-gateway-embed-v1__request-response-and-logging.md.json",
-      "output_file": "data2/processed/points_layer-gateway-embed-v1__request-response-and-logging.md.json",
+      "input_file": "data_dev/data2/processed/chunks_layer-gateway-embed-v1__request-response-and-logging.md.json",
+      "output_file": "data_dev/data2/processed/points_layer-gateway-embed-v1__request-response-and-logging.md.json",
       "doc_type": "layer-gateway-embed-v1__request-response-and-logging.md",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
       "chunks_input": 20,
@@ -40,8 +44,8 @@
       "chunks_failed": 0
     },
     {
-      "input_file": "data2/processed/chunks_layer-gateway-embed-v1__run-locally.md.json",
-      "output_file": "data2/processed/points_layer-gateway-embed-v1__run-locally.md.json",
+      "input_file": "data_dev/data2/processed/chunks_layer-gateway-embed-v1__run-locally.md.json",
+      "output_file": "data_dev/data2/processed/points_layer-gateway-embed-v1__run-locally.md.json",
       "doc_type": "layer-gateway-embed-v1__run-locally.md",
       "source": "repo_layer-gateway-embed-v1__run-locally.md",
       "chunks_input": 9,
@@ -49,8 +53,8 @@
       "chunks_failed": 0
     },
     {
-      "input_file": "data2/processed/chunks_layer-gateway-embed-v1__status-codes.md.json",
-      "output_file": "data2/processed/points_layer-gateway-embed-v1__status-codes.md.json",
+      "input_file": "data_dev/data2/processed/chunks_layer-gateway-embed-v1__status-codes.md.json",
+      "output_file": "data_dev/data2/processed/points_layer-gateway-embed-v1__status-codes.md.json",
       "doc_type": "layer-gateway-embed-v1__status-codes.md",
       "source": "repo_layer-gateway-embed-v1__status-codes.md",
       "chunks_input": 6,
@@ -58,8 +62,8 @@
       "chunks_failed": 0
     },
     {
-      "input_file": "data2/processed/chunks_layer-gateway-inference-v1__artichecture.md.json",
-      "output_file": "data2/processed/points_layer-gateway-inference-v1__artichecture.md.json",
+      "input_file": "data_dev/data2/processed/chunks_layer-gateway-inference-v1__artichecture.md.json",
+      "output_file": "data_dev/data2/processed/points_layer-gateway-inference-v1__artichecture.md.json",
       "doc_type": "layer-gateway-inference-v1__artichecture.md",
       "source": "repo_layer-gateway-inference-v1__artichecture.md",
       "chunks_input": 24,
@@ -67,8 +71,8 @@
       "chunks_failed": 0
     },
     {
-      "input_file": "data2/processed/chunks_layer-gateway-inference-v1__docs.md.json",
-      "output_file": "data2/processed/points_layer-gateway-inference-v1__docs.md.json",
+      "input_file": "data_dev/data2/processed/chunks_layer-gateway-inference-v1__docs.md.json",
+      "output_file": "data_dev/data2/processed/points_layer-gateway-inference-v1__docs.md.json",
       "doc_type": "layer-gateway-inference-v1__docs.md",
       "source": "repo_layer-gateway-inference-v1__docs.md",
       "chunks_input": 13,
@@ -76,8 +80,8 @@
       "chunks_failed": 0
     },
     {
-      "input_file": "data2/processed/chunks_layer-gateway-inference-v1__fallback.md.json",
-      "output_file": "data2/processed/points_layer-gateway-inference-v1__fallback.md.json",
+      "input_file": "data_dev/data2/processed/chunks_layer-gateway-inference-v1__fallback.md.json",
+      "output_file": "data_dev/data2/processed/points_layer-gateway-inference-v1__fallback.md.json",
       "doc_type": "layer-gateway-inference-v1__fallback.md",
       "source": "repo_layer-gateway-inference-v1__fallback.md",
       "chunks_input": 6,
@@ -85,8 +89,8 @@
       "chunks_failed": 0
     },
     {
-      "input_file": "data2/processed/chunks_layer-gateway-inference-v1__plan.md.json",
-      "output_file": "data2/processed/points_layer-gateway-inference-v1__plan.md.json",
+      "input_file": "data_dev/data2/processed/chunks_layer-gateway-inference-v1__plan.md.json",
+      "output_file": "data_dev/data2/processed/points_layer-gateway-inference-v1__plan.md.json",
       "doc_type": "layer-gateway-inference-v1__plan.md",
       "source": "repo_layer-gateway-inference-v1__plan.md",
       "chunks_input": 78,
@@ -94,8 +98,8 @@
       "chunks_failed": 0
     },
     {
-      "input_file": "data2/processed/chunks_layer-gateway-inference-v1__request-trace-session-ids.md.json",
-      "output_file": "data2/processed/points_layer-gateway-inference-v1__request-trace-session-ids.md.json",
+      "input_file": "data_dev/data2/processed/chunks_layer-gateway-inference-v1__request-trace-session-ids.md.json",
+      "output_file": "data_dev/data2/processed/points_layer-gateway-inference-v1__request-trace-session-ids.md.json",
       "doc_type": "layer-gateway-inference-v1__request-trace-session-ids.md",
       "source": "repo_layer-gateway-inference-v1__request-trace-session-ids.md",
       "chunks_input": 10,
@@ -103,8 +107,8 @@
       "chunks_failed": 0
     },
     {
-      "input_file": "data2/processed/chunks_layer-gateway-inference-v1__sla.md.json",
-      "output_file": "data2/processed/points_layer-gateway-inference-v1__sla.md.json",
+      "input_file": "data_dev/data2/processed/chunks_layer-gateway-inference-v1__sla.md.json",
+      "output_file": "data_dev/data2/processed/points_layer-gateway-inference-v1__sla.md.json",
       "doc_type": "layer-gateway-inference-v1__sla.md",
       "source": "repo_layer-gateway-inference-v1__sla.md",
       "chunks_input": 16,
@@ -112,8 +116,8 @@
       "chunks_failed": 0
     },
     {
-      "input_file": "data2/processed/chunks_repo.json",
-      "output_file": "data2/processed/points_repo.json",
+      "input_file": "data_dev/data2/processed/chunks_repo.json",
+      "output_file": "data_dev/data2/processed/points_repo.json",
       "doc_type": "repo",
       "source": "repo_repo",
       "chunks_input": 1,

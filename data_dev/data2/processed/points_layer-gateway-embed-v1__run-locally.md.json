@@ -1,6 +1,6 @@
 [
   {
-    "id": "3e9fbd8c-98d8-5a5c-a2c7-38aa181b75de",
+    "id": "c289c984-5bf0-5e8e-8313-7bfc15970964",
     "vector": [],
     "payload": {
       "chunk_id": "0001",
@@ -16,20 +16,24 @@
         "local_run_guide"
       ],
       "text": "This guide runs `layer-gateway-embed-v1` locally without Docker.",
-      "embed_text": "[SECTION: Local Run Guide]\nThis guide runs `layer-gateway-embed-v1` locally without Docker.\nQ: What does this guide run locally without?\nQ: Which version of the layer-gateway-embed is covered in this guide?\nQ: Is Docker used in this local setup?",
+      "embed_text": "[SECTION: Local Run Guide]\nThis guide runs `layer-gateway-embed-v1` locally without Docker.\nQ: What does this guide run locally without?\nQ: Which version of layer-gateway-embed is covered in this guide?\nQ: Is Docker used in this guide?",
       "token_count": 22,
-      "embed_token_count": 72,
+      "embed_token_count": 70,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What does this guide run locally without?",
-        "Which version of the layer-gateway-embed is covered in this guide?",
-        "Is Docker used in this local setup?"
+        "Which version of layer-gateway-embed is covered in this guide?",
+        "Is Docker used in this guide?"
       ],
       "content_hash": "e816c08f02e81786825becc0fed40a663ffbfa2ef2d1fb5cd10411a405844229",
       "source": "repo_layer-gateway-embed-v1__run-locally.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -50,7 +54,7 @@
     }
   },
   {
-    "id": "c5bd024b-82fe-59a4-aa5c-f326da11e0ff",
+    "id": "9e77309a-940a-55a2-a5d1-67148439f389",
     "vector": [],
     "payload": {
       "chunk_id": "0002",
@@ -78,8 +82,12 @@
       ],
       "content_hash": "8fbfb196dfaadee4b534e86f57c585f186a4d42a717a8d07b84946c94b7a1508",
       "source": "repo_layer-gateway-embed-v1__run-locally.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -100,7 +108,7 @@
     }
   },
   {
-    "id": "e250db48-8d1b-59bf-82d9-6cf5705f05fb",
+    "id": "712fa2f0-4671-5bd8-a49c-6bba14b59189",
     "vector": [],
     "payload": {
       "chunk_id": "0003",
@@ -128,8 +136,12 @@
       ],
       "content_hash": "5ee2aff0b021c8c973e619725f90f8dd879f99102fb5edd4cd0eed819db4a467",
       "source": "repo_layer-gateway-embed-v1__run-locally.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -150,7 +162,7 @@
     }
   },
   {
-    "id": "2b83ca63-c9ae-591f-b882-ea1b2393d8ff",
+    "id": "d6440da0-91c3-551d-bf72-2552a9b370b7",
     "vector": [],
     "payload": {
       "chunk_id": "0004",
@@ -178,8 +190,12 @@
       ],
       "content_hash": "941ee208b88539806b13e76e85e5eb7af54fd83d960d068051bbbf03200fb8f5",
       "source": "repo_layer-gateway-embed-v1__run-locally.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -200,7 +216,7 @@
     }
   },
   {
-    "id": "9a6d6bca-2c5d-53aa-9c83-8e922a54dd7f",
+    "id": "f1a2e19e-2ef8-586c-bffd-4dbbe5c35fc4",
     "vector": [],
     "payload": {
       "chunk_id": "0005",
@@ -228,8 +244,12 @@
       ],
       "content_hash": "5064074fc95e93e376c6f7bcfa272d62314dd751c6b1ad8fe63b5c991819f82f",
       "source": "repo_layer-gateway-embed-v1__run-locally.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -250,7 +270,7 @@
     }
   },
   {
-    "id": "0206b25f-5b5e-50b8-a48b-d55f3fe7e4ae",
+    "id": "f931613b-203b-5466-9d0e-3312ebc86d29",
     "vector": [],
     "payload": {
       "chunk_id": "0006",
@@ -278,8 +298,12 @@
       ],
       "content_hash": "c75ec6d914931b12e3a3782e2147afb5eda444af93e0441a7ffbc17833e846f0",
       "source": "repo_layer-gateway-embed-v1__run-locally.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -300,7 +324,7 @@
     }
   },
   {
-    "id": "31c3c9e8-0da4-5f1b-8b84-50ba91b2356e",
+    "id": "7035b0a5-f408-5e8b-8197-3d6909b7ba49",
     "vector": [],
     "payload": {
       "chunk_id": "0007",
@@ -328,8 +352,12 @@
       ],
       "content_hash": "78c1de5651363b1dfdbc79026954f3b39f0ff26b6ad297158037e9685a2e29f3",
       "source": "repo_layer-gateway-embed-v1__run-locally.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -350,7 +378,7 @@
     }
   },
   {
-    "id": "61106ceb-2a76-55a4-9ddf-002afbe0b591",
+    "id": "cf3b4698-a056-5c65-a0c0-9f5e170887c6",
     "vector": [],
     "payload": {
       "chunk_id": "0008",
@@ -366,20 +394,24 @@
         "6)_test_embeddings_endpoint"
       ],
       "text": "```bash\ncurl -X POST http://localhost:30181/v1/embeddings \\\n  -H \"Content-Type: application/json\" \\\n  -H \"X-Request-Id: request-id-1\" \\\n  -H \"X-Trace-Id: trace-id-1\" \\\n  -H \"X-Session-Id: session-id-1\" \\\n  -d '{\"model\":\"BAAI/bge-m3\",\"input\":\"hello world\"}'\n```",
-      "embed_text": "[SECTION: 6) Test Embeddings Endpoint]\n```bash\ncurl -X POST http://localhost:30181/v1/embeddings \\\n  -H \"Content-Type: application/json\" \\\n  -H \"X-Request-Id: request-id-1\" \\\n  -H \"X-Trace-Id: trace-id-1\" \\\n  -H \"X-Session-Id: session-id-1\" \\\n  -d '{\"model\":\"BAAI/bge-m3\",\"input\":\"hello world\"}'\n```\nQ: What is the URL used in the curl command?\nQ: What model is specified in the curl command?\nQ: What is the input to the embedding model?",
+      "embed_text": "[SECTION: 6) Test Embeddings Endpoint]\n```bash\ncurl -X POST http://localhost:30181/v1/embeddings \\\n  -H \"Content-Type: application/json\" \\\n  -H \"X-Request-Id: request-id-1\" \\\n  -H \"X-Trace-Id: trace-id-1\" \\\n  -H \"X-Session-Id: session-id-1\" \\\n  -d '{\"model\":\"BAAI/bge-m3\",\"input\":\"hello world\"}'\n```\nQ: What is the URL used in the test embeddings endpoint?\nQ: What model is specified in the test embeddings request?\nQ: What is the input provided in the test embeddings request?",
       "token_count": 125,
-      "embed_token_count": 178,
+      "embed_token_count": 188,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is the URL used in the curl command?",
-        "What model is specified in the curl command?",
-        "What is the input to the embedding model?"
+        "What is the URL used in the test embeddings endpoint?",
+        "What model is specified in the test embeddings request?",
+        "What is the input provided in the test embeddings request?"
       ],
       "content_hash": "eecd338bdea045640e42caf14d18a48b97d05b3e056b26c6d2339bacd0ca078a",
       "source": "repo_layer-gateway-embed-v1__run-locally.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -400,7 +432,7 @@
     }
   },
   {
-    "id": "8c5712f1-6948-56a7-9e55-f8b43a8cca9f",
+    "id": "f0dfbb62-c369-5e0f-85c6-09129ff7565c",
     "vector": [],
     "payload": {
       "chunk_id": "0009",
@@ -416,20 +448,24 @@
         "troubleshooting"
       ],
       "text": "- `externally-managed-environment`: use the `.venv` steps above instead of installing into system Python.\n- `503 No healthy backend available`: check `EMBED_BACKENDS` and backend service availability.\n- `429 Gateway busy`: increase `ADMISSION_MAX_CONCURRENT` or `ADMISSION_WAIT_TIMEOUT_MS`.",
-      "embed_text": "[SECTION: Troubleshooting]\n- `externally-managed-environment`: use the `.venv` steps above instead of installing into system Python.\n- `503 No healthy backend available`: check `EMBED_BACKENDS` and backend service availability.\n- `429 Gateway busy`: increase `ADMISSION_MAX_CONCURRENT` or `ADMISSION_WAIT_TIMEOUT_MS`.\nQ: What should you do if you encounter an externally-managed-environment issue?\nQ: How can you resolve a 503 No healthy backend available error?\nQ: What are the possible actions to take for a 429 Gateway busy error?",
+      "embed_text": "[SECTION: Troubleshooting]\n- `externally-managed-environment`: use the `.venv` steps above instead of installing into system Python.\n- `503 No healthy backend available`: check `EMBED_BACKENDS` and backend service availability.\n- `429 Gateway busy`: increase `ADMISSION_MAX_CONCURRENT` or `ADMISSION_WAIT_TIMEOUT_MS`.\nQ: What should be done if the externally-managed-environment is encountered?\nQ: How can the '503 No healthy backend available' error be resolved?\nQ: What are the possible solutions for the '429 Gateway busy' error?",
       "token_count": 95,
-      "embed_token_count": 158,
+      "embed_token_count": 161,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What should you do if you encounter an externally-managed-environment issue?",
-        "How can you resolve a 503 No healthy backend available error?",
-        "What are the possible actions to take for a 429 Gateway busy error?"
+        "What should be done if the externally-managed-environment is encountered?",
+        "How can the '503 No healthy backend available' error be resolved?",
+        "What are the possible solutions for the '429 Gateway busy' error?"
       ],
       "content_hash": "72de5d2d878ee678752f7343b39976bb5de609e7788471a35070d9a7b927d45a",
       "source": "repo_layer-gateway-embed-v1__run-locally.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,

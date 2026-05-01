@@ -1,6 +1,6 @@
 [
   {
-    "id": "fd8a38c4-5d8b-5556-8441-98c9f767a168",
+    "id": "0c5044e7-2e87-5e95-9ee7-89d179b353f1",
     "vector": [],
     "payload": {
       "chunk_id": "0001",
@@ -16,20 +16,24 @@
         "root"
       ],
       "text": "https://github.com/taixingbi/layer-gateway-inference-v1/tree/main/docs\nhttps://github.com/taixingbi/layer-gateway-embed-v1/tree/main/docs",
-      "embed_text": "[SECTION: ROOT]\nhttps://github.com/taixingbi/layer-gateway-inference-v1/tree/main/docs\nhttps://github.com/taixingbi/layer-gateway-embed-v1/tree/main/docs\nQ: What URLs are mentioned in the text?\nQ: Which repositories are documented?\nQ: Where can I find the documentation for layer-gateway-inference-v1?",
+      "embed_text": "[SECTION: ROOT]\nhttps://github.com/taixingbi/layer-gateway-inference-v1/tree/main/docs\nhttps://github.com/taixingbi/layer-gateway-embed-v1/tree/main/docs\nQ: What are the documentation links for layer-gateway-inference-v1?\nQ: What are the documentation links for layer-gateway-embed-v1?\nQ: Are there any other repositories mentioned?",
       "token_count": 59,
-      "embed_token_count": 109,
+      "embed_token_count": 117,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What URLs are mentioned in the text?",
-        "Which repositories are documented?",
-        "Where can I find the documentation for layer-gateway-inference-v1?"
+        "What are the documentation links for layer-gateway-inference-v1?",
+        "What are the documentation links for layer-gateway-embed-v1?",
+        "Are there any other repositories mentioned?"
       ],
       "content_hash": "e85963df4d10e55a4739b71d4582a4ca232fb720f85c786a71dd60e978406fcc",
       "source": "repo_repo",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144345_EST",
+      "ingest_ts": "2026-04-30T14:43:45-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,

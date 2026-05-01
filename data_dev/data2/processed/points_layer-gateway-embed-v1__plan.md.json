@@ -1,6 +1,6 @@
 [
   {
-    "id": "5834b88f-145b-5a8b-82d4-a838cd57f42e",
+    "id": "e6720f1e-f1ba-588e-a657-3a8c5855f4c5",
     "vector": [],
     "payload": {
       "chunk_id": "0001",
@@ -16,7 +16,7 @@
         "root"
       ],
       "text": "layer-gateway-embed-v1\n\nA lightweight, request-level routing gateway for embedding workloads across multiple vLLM backends.\n\nThis service complements\nlayer-gateway-inference-v1 by handling /v1/embeddings traffic independently.\n\nOverview\n\nlayer-gateway-embed-v1 provides:\n\nLoad-aware routing across embedding backends\nRequest-level scheduling (not connection-level)\nRetry and circuit breaker for reliability\nStructured logging and metrics\nSimple, production-ready architecture\nWhy a Separate Gateway?",
-      "embed_text": "[SECTION: ROOT]\nlayer-gateway-embed-v1\n\nA lightweight, request-level routing gateway for embedding workloads across multiple vLLM backends.\n\nThis service complements\nlayer-gateway-inference-v1 by handling /v1/embeddings traffic independently.\n\nOverview\n\nlayer-gateway-embed-v1 provides:\n\nLoad-aware routing across embedding backends\nRequest-level scheduling (not connection-level)\nRetry and circuit breaker for reliability\nStructured logging and metrics\nSimple, production-ready architecture\nWhy a Separate Gateway?\nQ: What is the purpose of layer-gateway-embed-v1?\nQ: How does layer-gateway-embed-v1 handle traffic?\nQ: What capabilities does layer-gateway-embed-v1 provide?",
+      "embed_text": "[SECTION: ROOT]\nlayer-gateway-embed-v1\n\nA lightweight, request-level routing gateway for embedding workloads across multiple vLLM backends.\n\nThis service complements\nlayer-gateway-inference-v1 by handling /v1/embeddings traffic independently.\n\nOverview\n\nlayer-gateway-embed-v1 provides:\n\nLoad-aware routing across embedding backends\nRequest-level scheduling (not connection-level)\nRetry and circuit breaker for reliability\nStructured logging and metrics\nSimple, production-ready architecture\nWhy a Separate Gateway?\nQ: What is the purpose of layer-gateway-embed-v1?\nQ: How does layer-gateway-embed-v1 handle traffic?\nQ: What capabilities does layer-gateway-embed-v1 offer?",
       "token_count": 137,
       "embed_token_count": 198,
       "synthetic_questions_used": 3,
@@ -24,12 +24,16 @@
       "synthetic_questions": [
         "What is the purpose of layer-gateway-embed-v1?",
         "How does layer-gateway-embed-v1 handle traffic?",
-        "What capabilities does layer-gateway-embed-v1 provide?"
+        "What capabilities does layer-gateway-embed-v1 offer?"
       ],
       "content_hash": "db47718635ddfa9e605a9db3334e7a6d7f82876ee3a20b0dd5ca5783e80b90a9",
       "source": "repo_layer-gateway-embed-v1__plan.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -50,7 +54,7 @@
     }
   },
   {
-    "id": "4b2f29bb-0790-5d00-8831-3974735ad456",
+    "id": "d9f1d1e6-2bb5-5c4c-b47b-7ad12fb124fd",
     "vector": [],
     "payload": {
       "chunk_id": "0002",
@@ -78,8 +82,12 @@
       ],
       "content_hash": "278b2fecc50361a5a5de543084e5bc58b749329eefe83d8a37ebc8b54e64ecbb",
       "source": "repo_layer-gateway-embed-v1__plan.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -100,7 +108,7 @@
     }
   },
   {
-    "id": "2ec4ccfd-4f9b-5111-95e1-ec7e706fdf34",
+    "id": "336d20ed-22d1-59c3-862d-0df6ff723dfb",
     "vector": [],
     "payload": {
       "chunk_id": "0003",
@@ -128,8 +136,12 @@
       ],
       "content_hash": "56b74d8c2fcba3119a3a204ded20beae739b74230f6aae7796ce5ae36b564fa5",
       "source": "repo_layer-gateway-embed-v1__plan.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -150,7 +162,7 @@
     }
   },
   {
-    "id": "031bdda6-f2fd-5171-9044-eb91f1bbc9b3",
+    "id": "7a3047ab-38a7-5bbb-b70c-15f26e512759",
     "vector": [],
     "payload": {
       "chunk_id": "0004",
@@ -178,8 +190,12 @@
       ],
       "content_hash": "820a2c50618e532f606d3cddb571e56d575eddccda0e75fe9d404abbbf4354a0",
       "source": "repo_layer-gateway-embed-v1__plan.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -200,7 +216,7 @@
     }
   },
   {
-    "id": "baa51db4-9686-56f4-8aee-a3f05cfb7f53",
+    "id": "754696fd-2d9e-57b8-89cc-c21636560eb8",
     "vector": [],
     "payload": {
       "chunk_id": "0005",
@@ -228,8 +244,12 @@
       ],
       "content_hash": "c9b5e6535d1c942d7c27ff47f119c0be8fdc9e9335d2dfc23dbd951409033ce0",
       "source": "repo_layer-gateway-embed-v1__plan.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -250,7 +270,7 @@
     }
   },
   {
-    "id": "b07f4a4e-b4df-5ec9-a0cd-8e4f75e281c0",
+    "id": "39c127d1-78c1-50d3-8fda-dbdf2cf47bf1",
     "vector": [],
     "payload": {
       "chunk_id": "0006",
@@ -278,8 +298,12 @@
       ],
       "content_hash": "5539cc5b8b5fca7155158469c9d36e15f4752decceac2c4f0e62d650986c9a7f",
       "source": "repo_layer-gateway-embed-v1__plan.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -300,7 +324,7 @@
     }
   },
   {
-    "id": "07adcfb2-b2d0-5fbe-a893-69da64f6761f",
+    "id": "6680f6c6-9df0-5d88-a523-a1f84793750f",
     "vector": [],
     "payload": {
       "chunk_id": "0007",
@@ -316,20 +340,24 @@
         "root"
       ],
       "text": "Prometheus metrics include:\n\ngateway_embed_requests_total\ngateway_embed_request_latency_ms\ngateway_embed_backend_selected_total\ngateway_embed_inflight\ngateway_embed_failures_total\ngateway_embed_retries_total\nLogging\n\nStructured logs include:\n\nrequest lifecycle events\nbackend selection\nretry attempts\nfailures and circuit breaker events\n\nFields:\n\nrequest_id\nsession_id\nbackend\nlatency_ms\nmodel\ninput size\nrequest class\nRepository Structure\napp/\n  api/\n  core/\n  routing/\n  proxy/\n  models/\n  metrics/",
-      "embed_text": "[SECTION: ROOT]\nPrometheus metrics include:\n\ngateway_embed_requests_total\ngateway_embed_request_latency_ms\ngateway_embed_backend_selected_total\ngateway_embed_inflight\ngateway_embed_failures_total\ngateway_embed_retries_total\nLogging\n\nStructured logs include:\n\nrequest lifecycle events\nbackend selection\nretry attempts\nfailures and circuit breaker events\n\nFields:\n\nrequest_id\nsession_id\nbackend\nlatency_ms\nmodel\ninput size\nrequest class\nRepository Structure\napp/\n  api/\n  core/\n  routing/\n  proxy/\n  models/\n  metrics/\nQ: What metrics are included in Prometheus for gateway embed requests?\nQ: What types of events are included in structured logs?\nQ: What is the purpose of the 'metrics/' directory?",
+      "embed_text": "[SECTION: ROOT]\nPrometheus metrics include:\n\ngateway_embed_requests_total\ngateway_embed_request_latency_ms\ngateway_embed_backend_selected_total\ngateway_embed_inflight\ngateway_embed_failures_total\ngateway_embed_retries_total\nLogging\n\nStructured logs include:\n\nrequest lifecycle events\nbackend selection\nretry attempts\nfailures and circuit breaker events\n\nFields:\n\nrequest_id\nsession_id\nbackend\nlatency_ms\nmodel\ninput size\nrequest class\nRepository Structure\napp/\n  api/\n  core/\n  routing/\n  proxy/\n  models/\n  metrics/\nQ: What types of metrics does Prometheus track for the gateway embed functionality?\nQ: What events are included in structured logs?\nQ: What is the purpose of the 'metrics/' directory in the repository structure?",
       "token_count": 147,
-      "embed_token_count": 205,
+      "embed_token_count": 211,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What metrics are included in Prometheus for gateway embed requests?",
-        "What types of events are included in structured logs?",
-        "What is the purpose of the 'metrics/' directory?"
+        "What types of metrics does Prometheus track for the gateway embed functionality?",
+        "What events are included in structured logs?",
+        "What is the purpose of the 'metrics/' directory in the repository structure?"
       ],
       "content_hash": "fc0e587b63568a54f9ce76503b227d00cc043c16aa8ad5cfbe33435edf11388c",
       "source": "repo_layer-gateway-embed-v1__plan.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -350,7 +378,7 @@
     }
   },
   {
-    "id": "d3ac653b-7f3a-54d2-8934-730c1d6c1492",
+    "id": "bc0695fa-f446-567d-8532-bca496af2902",
     "vector": [],
     "payload": {
       "chunk_id": "0008",
@@ -366,20 +394,24 @@
         "root"
       ],
       "text": "config/\ntests/\nDockerfile\nREADME.md\nDevelopment Plan\nPhase 1 — Bootstrap\nCreate repo\nCopy reusable components from inference gateway\nRemove chat-specific logic\nPhase 2 — Core Endpoint\nImplement /v1/embeddings\nAdd config + security\nAdd backend routing\nPhase 3 — Reliability\nRetry logic\nCircuit breaker\nBackend health tracking\nPhase 4 — Observability\nLogging\nMetrics\n/health\nPhase 5 — Deployment\nBuild Docker image\nRun locally or in cluster\nPhase 6 — Load Testing\nConcurrency tests\nFailover tests\nLatency validation\nDesign Principles\nRequest-level routing (not connection-level)\nKeep gateway simple — no batching\nLet vLLM handle batching\nFail fast, retry smart\nPrefer stability over complexity\nFuture Enhancements (Optional)\nOpenAI fallback for embeddings\nAdmission queue / rate limiting\nDynamic backend discovery\nAdaptive routing weights\nRequest batching (if needed)\nStatus",
-      "embed_text": "[SECTION: ROOT]\nconfig/\ntests/\nDockerfile\nREADME.md\nDevelopment Plan\nPhase 1 — Bootstrap\nCreate repo\nCopy reusable components from inference gateway\nRemove chat-specific logic\nPhase 2 — Core Endpoint\nImplement /v1/embeddings\nAdd config + security\nAdd backend routing\nPhase 3 — Reliability\nRetry logic\nCircuit breaker\nBackend health tracking\nPhase 4 — Observability\nLogging\nMetrics\n/health\nPhase 5 — Deployment\nBuild Docker image\nRun locally or in cluster\nPhase 6 — Load Testing\nConcurrency tests\nFailover tests\nLatency validation\nDesign Principles\nRequest-level routing (not connection-level)\nKeep gateway simple — no batching\nLet vLLM handle batching\nFail fast, retry smart\nPrefer stability over complexity\nFuture Enhancements (Optional)\nOpenAI fallback for embeddings\nAdmission queue / rate limiting\nDynamic backend discovery\nAdaptive routing weights\nRequest batching (if needed)\nStatus\nQ: What are the phases of development mentioned in the document?\nQ: What is the first phase of the development plan?\nQ: What does the last phase of deployment include?",
+      "embed_text": "[SECTION: ROOT]\nconfig/\ntests/\nDockerfile\nREADME.md\nDevelopment Plan\nPhase 1 — Bootstrap\nCreate repo\nCopy reusable components from inference gateway\nRemove chat-specific logic\nPhase 2 — Core Endpoint\nImplement /v1/embeddings\nAdd config + security\nAdd backend routing\nPhase 3 — Reliability\nRetry logic\nCircuit breaker\nBackend health tracking\nPhase 4 — Observability\nLogging\nMetrics\n/health\nPhase 5 — Deployment\nBuild Docker image\nRun locally or in cluster\nPhase 6 — Load Testing\nConcurrency tests\nFailover tests\nLatency validation\nDesign Principles\nRequest-level routing (not connection-level)\nKeep gateway simple — no batching\nLet vLLM handle batching\nFail fast, retry smart\nPrefer stability over complexity\nFuture Enhancements (Optional)\nOpenAI fallback for embeddings\nAdmission queue / rate limiting\nDynamic backend discovery\nAdaptive routing weights\nRequest batching (if needed)\nStatus\nQ: What are the phases of development mentioned in the document?\nQ: What is the first phase of the development plan called and what does it involve?\nQ: Which design principle states to prefer stability over complexity?",
       "token_count": 217,
-      "embed_token_count": 265,
+      "embed_token_count": 272,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What are the phases of development mentioned in the document?",
-        "What is the first phase of the development plan?",
-        "What does the last phase of deployment include?"
+        "What is the first phase of the development plan called and what does it involve?",
+        "Which design principle states to prefer stability over complexity?"
       ],
       "content_hash": "e13cc464a9d830f8fcf23739db3890463c3c9c9838dd10e44360e17d4a89c34b",
       "source": "repo_layer-gateway-embed-v1__plan.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -400,7 +432,7 @@
     }
   },
   {
-    "id": "cfbead7a-5664-50b7-8366-88372609a0b8",
+    "id": "19ca0a3f-2b7b-566a-bbc3-3d23c106c25e",
     "vector": [],
     "payload": {
       "chunk_id": "0009",
@@ -428,8 +460,12 @@
       ],
       "content_hash": "b62c6b96f4ed646f6cfa61606615ed3ca820ccda8258c97745d408112046be41",
       "source": "repo_layer-gateway-embed-v1__plan.md",
-      "ingest_run_id": "run_20260428_164848_EST",
-      "ingest_ts": "2026-04-28T16:48:48-05:00",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260430_144012_EST",
+      "ingest_ts": "2026-04-30T14:40:12-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,

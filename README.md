@@ -18,7 +18,7 @@ Use environment-specific env files at repo root:
 - `.env.qa`
 - `.env.prod`
 
-When a tool expects `.env`, copy the target file first (example: `cp .env.qa .env`).
+`scripts/data1.sh` can auto-load `.env.<env>` based on its env argument (`dev|qa|prod`).
 
 | Variable | Required | Description |
 |---|---|---|
@@ -44,19 +44,21 @@ The dataset root is split by environment:
 - `data_qa/data1`, `data_qa/data2`
 - `data_prod/data1`, `data_prod/data2`
 
-Shell wrappers resolve this automatically with `DATA_ENV`:
+Shell wrappers resolve this automatically:
 
 ```bash
-# uses data_dev/*
-./scripts/data1.sh
+# data1 shorthand (auto-loads .env.dev / .env.qa / .env.prod)
+./scripts/data1.sh dev
+./scripts/data1.sh qa
+./scripts/data1.sh prod
+
+# data2 uses DATA_ENV
 ./scripts/data2.sh
 
 # uses data_qa/*
-DATA_ENV=qa ./scripts/data1.sh
 DATA_ENV=qa ./scripts/data2.sh
 
 # uses data_prod/*
-DATA_ENV=prod ./scripts/data1.sh
 DATA_ENV=prod ./scripts/data2.sh
 ```
 
@@ -88,14 +90,16 @@ From repo root:
 **Data** (plain text pipeline):
 
 ```bash
-# defaults to DATA_ENV=dev (uses data_dev/data1 and data_dev/data2)
-./scripts/data1.sh
+# data1 shorthand (auto-loads matching .env.<env>)
+./scripts/data1.sh dev
+./scripts/data1.sh qa
+./scripts/data1.sh prod
+
+# data2
 ./scripts/data2.sh
 
 # select QA or PROD folders
-DATA_ENV=qa ./scripts/data1.sh
 DATA_ENV=qa ./scripts/data2.sh
-DATA_ENV=prod ./scripts/data1.sh
 DATA_ENV=prod ./scripts/data2.sh
 ```
 

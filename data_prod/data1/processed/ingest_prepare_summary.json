@@ -1,15 +1,15 @@
 {
-  "ingest_run_id": "run_20260429_100921_EST",
-  "collection": "taixing_knowledge_dev",
-  "ingest_ts": "2026-04-29T10:09:21-05:00",
+  "ingest_run_id": "run_20260430_144327_EST",
+  "collection": "taixing_knowledge_prod",
+  "ingest_ts": "2026-04-30T14:43:27-05:00",
   "id_key_version": "v3",
   "document_version": "v1",
   "chunk_version": "v1",
   "embedding_version": "BAAI/bge-m3",
   "files": [
     {
-      "input_file": "data1/processed/chunks_profile.json",
-      "output_file": "data1/processed/points_profile.json",
+      "input_file": "data_prod/data1/processed/chunks_profile.json",
+      "output_file": "data_prod/data1/processed/points_profile.json",
       "doc_type": "profile",
       "source": "personal_profile",
       "chunks_input": 10,
@@ -17,8 +17,8 @@
       "chunks_failed": 0
     },
     {
-      "input_file": "data1/processed/chunks_qa.json",
-      "output_file": "data1/processed/points_qa.json",
+      "input_file": "data_prod/data1/processed/chunks_qa.json",
+      "output_file": "data_prod/data1/processed/points_qa.json",
       "doc_type": "qa",
       "source": "personal_qa",
       "chunks_input": 14,
@@ -26,8 +26,8 @@
       "chunks_failed": 0
     },
     {
-      "input_file": "data1/processed/chunks_resume.json",
-      "output_file": "data1/processed/points_resume.json",
+      "input_file": "data_prod/data1/processed/chunks_resume.json",
+      "output_file": "data_prod/data1/processed/points_resume.json",
       "doc_type": "resume",
       "source": "personal_resume",
       "chunks_input": 36,
