@@ -31,39 +31,32 @@
     "chunk_id": "0005",
     "document_id": "profile",
     "section": "ROOT",
-    "text": "Q: What is Taixing Bi's visa status?\nA: H4 EAD",
+    "text": "Q: What is Taixing Bi's visa status / work authorization?\nA: H4 EAD. No visa sponsorship required.",
     "synthetic_questions": []
   },
   {
     "chunk_id": "0006",
     "document_id": "profile",
     "section": "ROOT",
-    "text": "Q: Does Taixing Bi require visa sponsorship?\nA: No",
+    "text": "Q: Which roles is Taixing Bi targeting?\nA: AI Infra / Backend / LLM Engineer",
     "synthetic_questions": []
   },
   {
     "chunk_id": "0007",
     "document_id": "profile",
     "section": "ROOT",
-    "text": "Q: Which roles is Taixing Bi targeting?\nA: AI Infra / Backend / LLM Engineer",
+    "text": "Q: What is Taixing Bi's LinkedIn profile?\nA: https://www.linkedin.com/in/taixing-bi-757a4961/",
     "synthetic_questions": []
   },
   {
     "chunk_id": "0008",
     "document_id": "profile",
     "section": "ROOT",
-    "text": "Q: What is Taixing Bi's LinkedIn profile?\nA: https://www.linkedin.com/in/taixing-bi-757a4961/",
-    "synthetic_questions": []
-  },
-  {
-    "chunk_id": "0009",
-    "document_id": "profile",
-    "section": "ROOT",
     "text": "Q: What is Taixing Bi's phone number?\nA: 347-560-4308",
     "synthetic_questions": []
   },
   {
-    "chunk_id": "0010",
+    "chunk_id": "0009",
     "document_id": "profile",
     "section": "ROOT",
     "text": "Q: What is Taixing Bi's email address?\nA: taixingbijob@gmail.com",

@@ -1,0 +1,1 @@
+{"env":"dev","source_file":"__manual_negative__","id":"dev:negative:01","question":"What is Taixing Bi's favorite programming book?","answer":"","must_contain":[],"source":"negative","doc_type":"negative","section":"negative","chunk_id":"negative","text":"","case_type":"negative","required_sources":[],"expected_behavior":"not_found","query_type":"clean","eval_bucket":"negative"}

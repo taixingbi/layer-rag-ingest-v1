@@ -83,6 +83,62 @@ Path shorthand in older examples:
 3) Embed missing vectors and upsert to Qdrant  
 4) Run post-upsert smoke retrieval validation (warning-only by default in shell wrappers)
 
+## Gold Dataset
+
+Build a consolidated gold QA dataset from all environment points files:
+
+```bash
+python3 app/generate_gold_dataset.py
+```
+
+Default behavior:
+- scans `data_dev`, `data_qa`, `data_prod`
+- matches `**/processed/points_*.json`
+- writes a consolidated `gold_dataset.jsonl` in the current directory (unless `--skip-consolidated-output`)
+- writes split eval files `easy_single_hop.jsonl` and `paraphrase.jsonl` next to that output or under `--split-output-dir`
+- outputs one JSONL row per synthetic question in each point
+- dedups on `(env, id, question)`
+
+Gold row fields:
+- `env`, `source_file`, `id`, `question`, `answer`, `must_contain`
+- `source`, `doc_type`, `section`, `chunk_id`, `text`
+- `case_type`, `required_sources`, `expected_behavior`
+
+Useful flags:
+
+```bash
+# splits only under data_dev/gold_dataset (no data_dev/gold_dataset.jsonl)
+python3 app/generate_gold_dataset.py \
+  --skip-consolidated-output \
+  --split-output-dir data_dev/gold_dataset
+
+# custom consolidated output path (splits default beside that file unless --split-output-dir)
+python3 app/generate_gold_dataset.py --output data_dev/gold_dataset/gold_dataset.jsonl
+
+# custom roots and pattern
+python3 app/generate_gold_dataset.py \
+  --data-roots data_dev data_qa \
+  --glob "**/processed/points_*.json"
+
+# include points with missing/empty synthetic_questions
+python3 app/generate_gold_dataset.py --include-empty-questions
+
+# keep duplicates
+python3 app/generate_gold_dataset.py --no-dedup
+
+# evaluator-ready output (recommended)
+python3 app/generate_gold_dataset.py \
+  --skip-consolidated-output \
+  --split-output-dir data_dev/gold_dataset \
+  --enable-must-contain-llm \
+  --enable-noisy-queries \
+  --max-paraphrases-per-fact 2
+```
+
+Detailed runbook: `docs/gold-dataset.md`.
+
+Split eval files: `easy_single_hop.jsonl`, `paraphrase.jsonl` (see `--split-output-dir` and `--skip-consolidated-output`).
+
 ## Example: full pipeline (`data1`)
 
 From repo root:
