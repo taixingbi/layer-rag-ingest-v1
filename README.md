@@ -85,10 +85,12 @@ Path shorthand in older examples:
 
 ## Gold Dataset
 
+Code lives under **`app/rag_gold_eval/`**: `generate_gold_dataset.py` (build JSONL) and `run_eval.py` (score RAG answers vs gold). Gold JSONL usually goes under **`data_<env>/gold_dataset/`**; optional **`run_eval.py`** JSON outputs go under **`data_<env>/report/`** (see `docs/gold-dataset.md`).
+
 Build a consolidated gold QA dataset from all environment points files:
 
 ```bash
-python3 app/generate_gold_dataset.py
+python3 app/rag_gold_eval/generate_gold_dataset.py
 ```
 
 Default behavior:
@@ -108,26 +110,26 @@ Useful flags:
 
 ```bash
 # splits only under data_dev/gold_dataset (no data_dev/gold_dataset.jsonl)
-python3 app/generate_gold_dataset.py \
+python3 app/rag_gold_eval/generate_gold_dataset.py \
   --skip-consolidated-output \
   --split-output-dir data_dev/gold_dataset
 
 # custom consolidated output path (splits default beside that file unless --split-output-dir)
-python3 app/generate_gold_dataset.py --output data_dev/gold_dataset/gold_dataset.jsonl
+python3 app/rag_gold_eval/generate_gold_dataset.py --output data_dev/gold_dataset/gold_dataset.jsonl
 
 # custom roots and pattern
-python3 app/generate_gold_dataset.py \
+python3 app/rag_gold_eval/generate_gold_dataset.py \
   --data-roots data_dev data_qa \
   --glob "**/processed/points_*.json"
 
 # include points with missing/empty synthetic_questions
-python3 app/generate_gold_dataset.py --include-empty-questions
+python3 app/rag_gold_eval/generate_gold_dataset.py --include-empty-questions
 
 # keep duplicates
-python3 app/generate_gold_dataset.py --no-dedup
+python3 app/rag_gold_eval/generate_gold_dataset.py --no-dedup
 
 # evaluator-ready output (recommended)
-python3 app/generate_gold_dataset.py \
+python3 app/rag_gold_eval/generate_gold_dataset.py \
   --skip-consolidated-output \
   --split-output-dir data_dev/gold_dataset \
   --enable-must-contain-llm \
@@ -135,9 +137,19 @@ python3 app/generate_gold_dataset.py \
   --max-paraphrases-per-fact 2
 ```
 
-Detailed runbook: `docs/gold-dataset.md`.
+Detailed runbook: `docs/gold-dataset.md` (includes **RAG eval** with `run_eval.py`).
 
 Split eval files: `easy_single_hop.jsonl`, `paraphrase.jsonl` (see `--split-output-dir` and `--skip-consolidated-output`).
+
+RAG eval over gold JSONL (requires a running RAG gateway):
+
+```bash
+python3 app/rag_gold_eval/run_eval.py --gold data_dev/gold_dataset/ --limit 20
+
+# optional: write summary next to dev data
+python3 app/rag_gold_eval/run_eval.py --gold data_dev/gold_dataset/ \
+  --summary-json data_dev/report/rag_eval_summary.json
+```
 
 ## Example: full pipeline (`data1`)
 

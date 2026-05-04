@@ -137,7 +137,13 @@ async def _extract_keywords_llm_async(
     client: Any,
 ) -> list[str]:
     # Optional import so non-LLM flow does not require inference deps.
-    from client_inference import async_chat_completions, normalize_chat_base_url
+    try:
+        from client_inference import async_chat_completions, normalize_chat_base_url
+    except ModuleNotFoundError:
+        import sys
+
+        sys.path.append(str(Path(__file__).resolve().parent.parent))
+        from client_inference import async_chat_completions, normalize_chat_base_url
 
     system, user = _llm_must_contain_messages(answer)
     data = await async_chat_completions(

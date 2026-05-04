@@ -213,12 +213,14 @@ Filter personal context by `payload.source` prefix `personal_` when querying the
 Generate gold QA JSONL from all env folders (`data_dev`, `data_qa`, `data_prod`). For per-env split files only (no single consolidated file next to `data_dev/`):
 
 ```bash
-python3 app/generate_gold_dataset.py \
+python3 app/rag_gold_eval/generate_gold_dataset.py \
   --skip-consolidated-output \
   --split-output-dir data_dev/gold_dataset
 ```
 
 Or run with defaults (writes `gold_dataset.jsonl` in the current directory plus splits beside it); see `docs/gold-dataset.md`.
+
+To evaluate those rows against the live RAG API, use `app/rag_gold_eval/run_eval.py` (see the **RAG evaluation** section in `docs/gold-dataset.md`).
 
 Each output row is one question-answer pair derived from `points_*.json`:
 - `question` from `payload.synthetic_questions[]`
