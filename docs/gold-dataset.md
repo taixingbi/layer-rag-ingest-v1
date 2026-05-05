@@ -109,7 +109,8 @@ Runs **`POST {rag_base_url}/v1/rag/query`** for each gold row’s `question`, th
 1. **`must_contain`** — Each non-empty fragment must appear as a substring of the RAG **`answer`** (case-insensitive, whitespace-normalized). Rows with no `must_contain` entries are not scored on this axis (`must_contain_total` = 0 counts as pass for that check in summaries).
 2. **`source` (single-hop)** — If the gold row has a non-empty `source` and it is not `multi` or `negative`, at least one citation must list that `source`.
 3. **`required_sources` (multi-hop)** — If the list is non-empty, every listed source must appear among citation `source` values.
-4. **`retrieval_hits` (retrieval quality)** — By default the client sends `"include_retrieval_hits": true`. For each gold row whose **`id` is a UUID** (same as point / `chunk_id` in hits), the script finds that id in the ordered **`retrieve`** and **`rerank`** hit lists, then records **1-based rank**, **reciprocal rank** (1/rank, 0 if missing), and **Recall@k** booleans per `--recall-at-k` (default `5,10,40`). Rows with non-UUID `id` (e.g. synthetic multi-hop ids) get `retrieval_eval_skipped` and do not affect retrieval aggregates.
+4. **`retrieval_hits` (retrieval quality)** — By default the client sends `"include_retrieval_hits": true`. For each gold row whose **`id` is a UUID** (same as point / `chunk_id` in hits), the script finds that id in the ordered **`retrieve`** and **`rerank`** hit lists, then records **1-based rank**, **RR** and **MRR**, plus **Recall@k**, **Precision@k**, **NDCG@k**, and **F1@k** per `--recall-at-k` (default `5,10,40`). Rows with non-UUID `id` (e.g. synthetic multi-hop ids) get `retrieval_eval_skipped` and do not affect retrieval aggregates.
+5. **`quality_dimensions` (answer quality, heuristic)** — Per row: `correct`, `faithful`, `complete`, `precise`, `cited` plus `quality_score` (mean of the 5 binary dimensions). Summary includes pass counts/rates and `quality_score_mean`.
 
 Each request sends `collection_base`, `request_id`, `session_id`, `k`, `k_max`, and (unless `--skip-retrieval-hits`) `include_retrieval_hits` as in the RAG API.
 
@@ -131,8 +132,8 @@ Each request sends `collection_base`, `request_id`, `session_id`, `k`, `k_max`, 
 | `--k-max` | `40` | Retrieval `k_max` |
 | `--concurrency` | `20` | Max concurrent async RAG requests |
 | `--limit` | `0` | Max rows (`0` = all) |
-| `--skip-retrieval-hits` | off | Omit `include_retrieval_hits` from the request; skip retrieval rank / Recall@k |
-| `--recall-at-k` | `5,10,40` | Comma-separated k values for per-row `hit_retrieve_at_*` / `hit_rerank_at_*` and summary `recall_at_*_*` |
+| `--skip-retrieval-hits` | off | Omit `include_retrieval_hits` from the request; skip retrieval rank / RR/MRR / Recall@k / Precision@k / NDCG@k / F1@k |
+| `--recall-at-k` | `5,10,40` | Comma-separated k values for per-row and summary `recall_at_*_*`, `precision_at_*_*`, `ndcg_at_*_*`, `f1_at_*_*` |
 | `--report-json` | off | Write full per-row results (JSON array) to this path; parent dirs are created |
 | `--summary-json` | off | Write the same summary object as stdout to this path |
 
@@ -175,7 +176,7 @@ python3 app/rag_gold_eval/run_eval.py \
   --summary-json data_dev/report/rag_eval_paraphrase_summary.json
 ```
 
-Unless **`--summary-json`** is set, the only output is this **JSON summary on stdout**, including **`retrieval_scored_rows`**, **`mean_rr_retrieve`**, **`mean_rr_rerank`**, **`retrieval_found_retrieve`**, **`mean_rr_*_when_found`**, and for each k **`recall_at_{k}_retrieve`** / **`recall_at_{k}_rerank`**, plus `must_contain_*`, `gold_source_*`, `required_sources_*`, and `errors_sample`.
+Unless **`--summary-json`** is set, the only output is this **JSON summary on stdout**, including **`retrieval_scored_rows`**, **`mean_rr_retrieve`**, **`mean_rr_rerank`**, **`mrr_retrieve`**, **`mrr_rerank`**, **`retrieval_found_retrieve`**, **`mean_rr_*_when_found`**, and for each k **`recall_at_{k}_*`**, **`precision_at_{k}_*`**, **`ndcg_at_{k}_*`**, **`f1_at_{k}_*`** (for `retrieve` and `rerank`), latency aggregates (**`latency_scored_rows`**, **`latency_ms_mean`**, **`latency_ms_min`**, **`latency_ms_max`**, **`latency_ms_p50`**, **`latency_ms_p95`**, **`latency_ms_p99`**), quality aggregates (**`quality_*_pass`**, **`quality_*_rate`**, **`quality_score_mean`**), `must_contain_*`, `gold_source_*`, `required_sources_*`, and `errors_sample`.
 
 ---
 
@@ -194,6 +195,7 @@ Unless **`--summary-json`** is set, the only output is this **JSON summary on st
 2. Summary `rag_calls_failed` is **0** (or inspect `errors_sample` / `--report-json`).
 3. `must_contain_pass` and citation checks align with your eval bar (strict `must_contain` vs. acceptable paraphrases).
 4. If retrieval metrics are enabled: `retrieval_scored_rows` matches your expectation (UUID `id` rows only); inspect `recall_at_*_retrieve` / `mean_rr_retrieve` for retrieval health.
+5. Check latency metrics (`latency_ms_p50`, `latency_ms_p95`, `latency_ms_p99`) for runtime stability.
 
 ## Notes
 

@@ -24,6 +24,7 @@ import argparse
 import asyncio
 import json
 import logging
+import math
 import os
 import re
 import uuid
@@ -106,6 +107,34 @@ def _hit_at_k(rank: int | None, k: int) -> bool:
     return rank is not None and rank <= k
 
 
+def _precision_at_k(rank: int | None, k: int) -> float:
+    if k <= 0:
+        return 0.0
+    return (1.0 / float(k)) if _hit_at_k(rank, k) else 0.0
+
+
+def _dcg_at_k(rank: int | None, k: int) -> float:
+    if not _hit_at_k(rank, k) or rank is None:
+        return 0.0
+    # Binary relevance with one gold chunk.
+    return 1.0 / math.log2(rank + 1)
+
+
+def _ndcg_at_k(rank: int | None, k: int) -> float:
+    if k <= 0:
+        return 0.0
+    ideal_dcg = 1.0  # single relevant item at rank 1 => 1/log2(2) = 1
+    dcg = _dcg_at_k(rank, k)
+    return dcg / ideal_dcg
+
+
+def _f1(precision: float, recall: float) -> float:
+    den = precision + recall
+    if den <= 0:
+        return 0.0
+    return 2.0 * precision * recall / den
+
+
 def _retrieval_row_fields(
     row: dict[str, Any],
     data: dict[str, Any],
@@ -155,8 +184,23 @@ def _retrieval_row_fields(
     out["retrieval_stages"] = sorted(by_stage.keys())
 
     for kk in recall_ks:
-        out[f"hit_retrieve_at_{kk}"] = _hit_at_k(rank_r, kk)
-        out[f"hit_rerank_at_{kk}"] = _hit_at_k(rank_rr, kk)
+        hit_r = _hit_at_k(rank_r, kk)
+        hit_rr = _hit_at_k(rank_rr, kk)
+        rec_r = 1.0 if hit_r else 0.0
+        rec_rr = 1.0 if hit_rr else 0.0
+        pre_r = _precision_at_k(rank_r, kk)
+        pre_rr = _precision_at_k(rank_rr, kk)
+        ndcg_r = _ndcg_at_k(rank_r, kk)
+        ndcg_rr = _ndcg_at_k(rank_rr, kk)
+
+        out[f"hit_retrieve_at_{kk}"] = hit_r
+        out[f"hit_rerank_at_{kk}"] = hit_rr
+        out[f"precision_at_{kk}_retrieve"] = pre_r
+        out[f"precision_at_{kk}_rerank"] = pre_rr
+        out[f"ndcg_at_{kk}_retrieve"] = ndcg_r
+        out[f"ndcg_at_{kk}_rerank"] = ndcg_rr
+        out[f"f1_at_{kk}_retrieve"] = _f1(pre_r, rec_r)
+        out[f"f1_at_{kk}_rerank"] = _f1(pre_rr, rec_rr)
 
     out["retrieval_scored"] = True
     return out
@@ -209,6 +253,65 @@ def _required_sources_hit(row: dict[str, Any], cite_sources: set[str]) -> bool |
     if not needed:
         return None
     return needed.issubset(cite_sources)
+
+
+def _quality_dimensions(
+    row: dict[str, Any],
+    *,
+    cite_sources: set[str],
+    must_contain_pass: bool,
+    gold_source_hit: bool | None,
+    required_sources_pass: bool | None,
+) -> dict[str, Any]:
+    """Heuristic answer-quality dimensions on top of deterministic row checks."""
+    has_citations = len(cite_sources) > 0
+
+    cited: bool
+    if required_sources_pass is not None:
+        cited = bool(required_sources_pass)
+    elif gold_source_hit is not None:
+        cited = bool(gold_source_hit)
+    else:
+        cited = has_citations
+
+    # "Correct" and "Complete" both anchor on required factual fragments.
+    correct = bool(must_contain_pass)
+    complete = bool(must_contain_pass)
+
+    # "Faithful" means answer is grounded by available citations.
+    faithful = cited
+
+    # "Precise" is a strict proxy: content is correct and grounded.
+    precise = bool(correct and faithful)
+
+    dims: dict[str, bool] = {
+        "correct": correct,
+        "faithful": faithful,
+        "complete": complete,
+        "precise": precise,
+        "cited": cited,
+    }
+    dim_vals = [1.0 if v else 0.0 for v in dims.values()]
+    return {
+        "quality_dimensions": dims,
+        "quality_score": (sum(dim_vals) / len(dim_vals)) if dim_vals else 0.0,
+    }
+
+
+def _percentile(values: list[float], p: float) -> float:
+    if not values:
+        return 0.0
+    if p <= 0:
+        return values[0]
+    if p >= 100:
+        return values[-1]
+    idx = (len(values) - 1) * (p / 100.0)
+    lo = int(math.floor(idx))
+    hi = int(math.ceil(idx))
+    if lo == hi:
+        return values[lo]
+    w = idx - lo
+    return values[lo] * (1.0 - w) + values[hi] * w
 
 
 def _iter_jsonl_paths(paths: list[str]) -> list[Path]:
@@ -335,6 +438,15 @@ async def _evaluate_all(
 
             out["gold_source_hit"] = _gold_source_hit(row, cite_sources)
             out["required_sources_pass"] = _required_sources_hit(row, cite_sources)
+            out.update(
+                _quality_dimensions(
+                    row,
+                    cite_sources=cite_sources,
+                    must_contain_pass=bool(out["must_contain_pass"]),
+                    gold_source_hit=out["gold_source_hit"],
+                    required_sources_pass=out["required_sources_pass"],
+                )
+            )
 
             lat = data.get("latency_ms")
             if isinstance(lat, dict) and lat.get("total") is not None:
@@ -377,6 +489,43 @@ def _summarize(results: list[dict[str, Any]], *, recall_ks: list[int]) -> dict[s
         "required_sources_pass": req_pass,
         "errors_sample": errors[:5],
     }
+    latencies = sorted(
+        float(r["latency_ms_total"])
+        for r in results
+        if r.get("ok") and isinstance(r.get("latency_ms_total"), (int, float))
+    )
+    nl = len(latencies)
+    out["latency_scored_rows"] = nl
+    if nl > 0:
+        out["latency_ms_mean"] = sum(latencies) / nl
+        out["latency_ms_min"] = latencies[0]
+        out["latency_ms_max"] = latencies[-1]
+        out["latency_ms_p50"] = _percentile(latencies, 50)
+        out["latency_ms_p95"] = _percentile(latencies, 95)
+        out["latency_ms_p99"] = _percentile(latencies, 99)
+    else:
+        out["latency_ms_mean"] = 0.0
+        out["latency_ms_min"] = 0.0
+        out["latency_ms_max"] = 0.0
+        out["latency_ms_p50"] = 0.0
+        out["latency_ms_p95"] = 0.0
+        out["latency_ms_p99"] = 0.0
+    quality_rows = [r for r in results if r.get("ok") and isinstance(r.get("quality_dimensions"), dict)]
+    nq = len(quality_rows)
+    out["quality_scored_rows"] = nq
+    if nq > 0:
+        keys = ["correct", "faithful", "complete", "precise", "cited"]
+        for k in keys:
+            out[f"quality_{k}_pass"] = sum(
+                1 for r in quality_rows if bool((r.get("quality_dimensions") or {}).get(k))
+            )
+            out[f"quality_{k}_rate"] = out[f"quality_{k}_pass"] / nq
+        out["quality_score_mean"] = sum(float(r.get("quality_score") or 0.0) for r in quality_rows) / nq
+    else:
+        for k in ["correct", "faithful", "complete", "precise", "cited"]:
+            out[f"quality_{k}_pass"] = 0
+            out[f"quality_{k}_rate"] = 0.0
+        out["quality_score_mean"] = 0.0
 
     scored = [r for r in results if r.get("ok") and r.get("retrieval_scored")]
     ns = len(scored)
@@ -384,6 +533,8 @@ def _summarize(results: list[dict[str, Any]], *, recall_ks: list[int]) -> dict[s
     if ns > 0:
         out["mean_rr_retrieve"] = sum(float(r.get("rr_retrieve") or 0) for r in scored) / ns
         out["mean_rr_rerank"] = sum(float(r.get("rr_rerank") or 0) for r in scored) / ns
+        out["mrr_retrieve"] = out["mean_rr_retrieve"]
+        out["mrr_rerank"] = out["mean_rr_rerank"]
         found_r = [r for r in scored if r.get("rank_retrieve") is not None]
         found_rr = [r for r in scored if r.get("rank_rerank") is not None]
         out["retrieval_found_retrieve"] = len(found_r)
@@ -401,9 +552,29 @@ def _summarize(results: list[dict[str, Any]], *, recall_ks: list[int]) -> dict[s
             out[f"recall_at_{kk}_retrieve"] = sum(1 for r in scored if r.get(hk) is True) / ns
             hk2 = f"hit_rerank_at_{kk}"
             out[f"recall_at_{kk}_rerank"] = sum(1 for r in scored if r.get(hk2) is True) / ns
+            out[f"precision_at_{kk}_retrieve"] = (
+                sum(float(r.get(f"precision_at_{kk}_retrieve") or 0.0) for r in scored) / ns
+            )
+            out[f"precision_at_{kk}_rerank"] = (
+                sum(float(r.get(f"precision_at_{kk}_rerank") or 0.0) for r in scored) / ns
+            )
+            out[f"ndcg_at_{kk}_retrieve"] = (
+                sum(float(r.get(f"ndcg_at_{kk}_retrieve") or 0.0) for r in scored) / ns
+            )
+            out[f"ndcg_at_{kk}_rerank"] = (
+                sum(float(r.get(f"ndcg_at_{kk}_rerank") or 0.0) for r in scored) / ns
+            )
+            out[f"f1_at_{kk}_retrieve"] = (
+                sum(float(r.get(f"f1_at_{kk}_retrieve") or 0.0) for r in scored) / ns
+            )
+            out[f"f1_at_{kk}_rerank"] = (
+                sum(float(r.get(f"f1_at_{kk}_rerank") or 0.0) for r in scored) / ns
+            )
     else:
         out["mean_rr_retrieve"] = 0.0
         out["mean_rr_rerank"] = 0.0
+        out["mrr_retrieve"] = 0.0
+        out["mrr_rerank"] = 0.0
         out["retrieval_found_retrieve"] = 0
         out["retrieval_found_rerank"] = 0
         out["mean_rr_retrieve_when_found"] = 0.0
@@ -411,6 +582,12 @@ def _summarize(results: list[dict[str, Any]], *, recall_ks: list[int]) -> dict[s
         for kk in recall_ks:
             out[f"recall_at_{kk}_retrieve"] = 0.0
             out[f"recall_at_{kk}_rerank"] = 0.0
+            out[f"precision_at_{kk}_retrieve"] = 0.0
+            out[f"precision_at_{kk}_rerank"] = 0.0
+            out[f"ndcg_at_{kk}_retrieve"] = 0.0
+            out[f"ndcg_at_{kk}_rerank"] = 0.0
+            out[f"f1_at_{kk}_retrieve"] = 0.0
+            out[f"f1_at_{kk}_rerank"] = 0.0
 
     return out
 
