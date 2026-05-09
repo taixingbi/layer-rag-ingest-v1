@@ -32,13 +32,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260509_074401_EST",
-      "ingest_ts": "2026-05-09T07:44:01-05:00",
+      "ingest_run_id": "run_20260509_080852_EST",
+      "ingest_ts": "2026-05-09T08:08:52-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
+          "admin",
           "hr",
           "recruiter",
           "engineer"
@@ -85,13 +86,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260509_074401_EST",
-      "ingest_ts": "2026-05-09T07:44:01-05:00",
+      "ingest_run_id": "run_20260509_080852_EST",
+      "ingest_ts": "2026-05-09T08:08:52-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
+          "admin",
           "hr",
           "recruiter",
           "engineer"
@@ -138,13 +140,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260509_074401_EST",
-      "ingest_ts": "2026-05-09T07:44:01-05:00",
+      "ingest_run_id": "run_20260509_080852_EST",
+      "ingest_ts": "2026-05-09T08:08:52-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
+          "admin",
           "hr",
           "recruiter",
           "engineer"
@@ -175,15 +178,15 @@
         "root"
       ],
       "text": "Q: Has Taixing Bi built LLM systems in real business environments?\nA: Yes, Taixing has designed and operated enterprise RAG and multi-agent AI systems used in live production settings.",
-      "embed_text": "[SECTION: ROOT]\nQ: Has Taixing Bi built LLM systems in real business environments?\nA: Yes, Taixing has designed and operated enterprise RAG and multi-agent AI systems used in live production settings.\nQ: Has Taixing Bi developed large language models for practical use?\nQ: What types of AI systems has Taixing Bi implemented?\nQ: Are Taixing Bi's AI systems operational in real business scenarios?",
+      "embed_text": "[SECTION: ROOT]\nQ: Has Taixing Bi built LLM systems in real business environments?\nA: Yes, Taixing has designed and operated enterprise RAG and multi-agent AI systems used in live production settings.\nQ: Has Taixing Bi developed large language models for practical use?\nQ: What types of AI systems has Taixing Bi implemented?\nQ: Are Taixing Bi's AI systems operational in real businesses?",
       "token_count": 45,
-      "embed_token_count": 102,
+      "embed_token_count": 100,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "Has Taixing Bi developed large language models for practical use?",
         "What types of AI systems has Taixing Bi implemented?",
-        "Are Taixing Bi's AI systems operational in real business scenarios?"
+        "Are Taixing Bi's AI systems operational in real businesses?"
       ],
       "content_hash": "9aa64a5fdf10830bc7070f56088f75524fe978452c4dc8f2c6215a61f6adc53d",
       "source": "personal_qa",
@@ -191,13 +194,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260509_074401_EST",
-      "ingest_ts": "2026-05-09T07:44:01-05:00",
+      "ingest_run_id": "run_20260509_080852_EST",
+      "ingest_ts": "2026-05-09T08:08:52-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
+          "admin",
           "hr",
           "recruiter",
           "engineer"
@@ -244,13 +248,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260509_074401_EST",
-      "ingest_ts": "2026-05-09T07:44:01-05:00",
+      "ingest_run_id": "run_20260509_080852_EST",
+      "ingest_ts": "2026-05-09T08:08:52-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
+          "admin",
           "hr",
           "recruiter",
           "engineer"
@@ -281,15 +286,15 @@
         "root"
       ],
       "text": "Q: What level of seniority is Taixing Bi?\nA: Taixing operates at a senior-to-staff engineering level, contributing architecture design, system reliability, and platform scalability.",
-      "embed_text": "[SECTION: ROOT]\nQ: What level of seniority is Taixing Bi?\nA: Taixing operates at a senior-to-staff engineering level, contributing architecture design, system reliability, and platform scalability.\nQ: What are the key contributions of Taixing Bi?\nQ: At what level does Taixing Bi operate in terms of seniority?\nQ: What aspects does Taixing Bi's role cover?",
+      "embed_text": "[SECTION: ROOT]\nQ: What level of seniority is Taixing Bi?\nA: Taixing operates at a senior-to-staff engineering level, contributing architecture design, system reliability, and platform scalability.\nQ: What are the key contributions of Taixing Bi?\nQ: At what level does Taixing Bi operate in terms of seniority?\nQ: What aspects does Taixing Bi's role focus on?",
       "token_count": 46,
-      "embed_token_count": 99,
+      "embed_token_count": 100,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What are the key contributions of Taixing Bi?",
         "At what level does Taixing Bi operate in terms of seniority?",
-        "What aspects does Taixing Bi's role cover?"
+        "What aspects does Taixing Bi's role focus on?"
       ],
       "content_hash": "069275cdb84847d5edf7e4486dc82a5909452b14760b3ce30a029afc1212ec2f",
       "source": "personal_qa",
@@ -297,13 +302,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260509_074401_EST",
-      "ingest_ts": "2026-05-09T07:44:01-05:00",
+      "ingest_run_id": "run_20260509_080852_EST",
+      "ingest_ts": "2026-05-09T08:08:52-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
+          "admin",
           "hr",
           "recruiter",
           "engineer"
@@ -334,15 +340,15 @@
         "root"
       ],
       "text": "Q: What technologies does Taixing Bi commonly use?\nA: Taixing works extensively with LangChain, LangGraph, Python, Kafka, AWS, vector retrieval systems, and modern ML frameworks like PyTorch and TensorFlow.",
-      "embed_text": "[SECTION: ROOT]\nQ: What technologies does Taixing Bi commonly use?\nA: Taixing works extensively with LangChain, LangGraph, Python, Kafka, AWS, vector retrieval systems, and modern ML frameworks like PyTorch and TensorFlow.\nQ: What language does Taixing Bi use for its projects?\nQ: Which cloud service provider does Taixing Bi utilize?\nQ: Which vector retrieval systems does Taixing Bi work with?",
+      "embed_text": "[SECTION: ROOT]\nQ: What technologies does Taixing Bi commonly use?\nA: Taixing works extensively with LangChain, LangGraph, Python, Kafka, AWS, vector retrieval systems, and modern ML frameworks like PyTorch and TensorFlow.\nQ: What programming languages does Taixing Bi use?\nQ: Which machine learning frameworks does Taixing Bi work with?\nQ: What cloud service does Taixing Bi utilize?",
       "token_count": 62,
-      "embed_token_count": 114,
+      "embed_token_count": 111,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What language does Taixing Bi use for its projects?",
-        "Which cloud service provider does Taixing Bi utilize?",
-        "Which vector retrieval systems does Taixing Bi work with?"
+        "What programming languages does Taixing Bi use?",
+        "Which machine learning frameworks does Taixing Bi work with?",
+        "What cloud service does Taixing Bi utilize?"
       ],
       "content_hash": "e416ed6fb90368136d7b35e32fca42ec2a61ca30894ba8b2f73eece731f88665",
       "source": "personal_qa",
@@ -350,13 +356,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260509_074401_EST",
-      "ingest_ts": "2026-05-09T07:44:01-05:00",
+      "ingest_run_id": "run_20260509_080852_EST",
+      "ingest_ts": "2026-05-09T08:08:52-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
+          "admin",
           "hr",
           "recruiter",
           "engineer"
@@ -387,15 +394,15 @@
         "root"
       ],
       "text": "Q: Does Taixing Bi have experience scaling AI systems?\nA: Yes, Taixing has built high-throughput event-driven architectures and low-latency inference services designed to scale in enterprise environments.",
-      "embed_text": "[SECTION: ROOT]\nQ: Does Taixing Bi have experience scaling AI systems?\nA: Yes, Taixing has built high-throughput event-driven architectures and low-latency inference services designed to scale in enterprise environments.\nQ: Does Taixing Bi have experience in scaling AI systems?\nQ: What types of architectures has Taixing Bi built for scaling AI systems?\nQ: In what kind of environments are these architectures designed to scale?",
+      "embed_text": "[SECTION: ROOT]\nQ: Does Taixing Bi have experience scaling AI systems?\nA: Yes, Taixing has built high-throughput event-driven architectures and low-latency inference services designed to scale in enterprise environments.\nQ: Does Taixing Bi have experience in scaling AI systems?\nQ: What types of architectures has Taixing Bi built for scaling AI systems?\nQ: In what kind of environments are Taixing Bi's scaling solutions designed?",
       "token_count": 50,
-      "embed_token_count": 110,
+      "embed_token_count": 113,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "Does Taixing Bi have experience in scaling AI systems?",
         "What types of architectures has Taixing Bi built for scaling AI systems?",
-        "In what kind of environments are these architectures designed to scale?"
+        "In what kind of environments are Taixing Bi's scaling solutions designed?"
       ],
       "content_hash": "a493ffde3c727e657963d688161b5f03bbcfb5f81bbd0ca427b4f6edda044438",
       "source": "personal_qa",
@@ -403,13 +410,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260509_074401_EST",
-      "ingest_ts": "2026-05-09T07:44:01-05:00",
+      "ingest_run_id": "run_20260509_080852_EST",
+      "ingest_ts": "2026-05-09T08:08:52-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
+          "admin",
           "hr",
           "recruiter",
           "engineer"
@@ -456,13 +464,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260509_074401_EST",
-      "ingest_ts": "2026-05-09T07:44:01-05:00",
+      "ingest_run_id": "run_20260509_080852_EST",
+      "ingest_ts": "2026-05-09T08:08:52-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
+          "admin",
           "hr",
           "recruiter",
           "engineer"
@@ -493,15 +502,15 @@
         "root"
       ],
       "text": "Q: What roles is Taixing Bi best suited for?\nA: Taixing is best suited for Senior or Staff AI Engineer roles focused on LLM platforms, applied AI infrastructure, and scalable intelligent systems.",
-      "embed_text": "[SECTION: ROOT]\nQ: What roles is Taixing Bi best suited for?\nA: Taixing is best suited for Senior or Staff AI Engineer roles focused on LLM platforms, applied AI infrastructure, and scalable intelligent systems.\nQ: What roles is Taixing Bi best suited for?\nQ: For which types of AI engineering roles is Taixing Bi well-suited?\nQ: What specific areas should Taixing Bi focus on in AI engineering roles?",
+      "embed_text": "[SECTION: ROOT]\nQ: What roles is Taixing Bi best suited for?\nA: Taixing is best suited for Senior or Staff AI Engineer roles focused on LLM platforms, applied AI infrastructure, and scalable intelligent systems.\nQ: What roles is Taixing Bi best suited for?\nQ: For which types of AI engineering roles is Taixing Bi well-suited?\nQ: In what areas does Taixing Bi excel as an AI engineer?",
       "token_count": 50,
-      "embed_token_count": 111,
+      "embed_token_count": 109,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What roles is Taixing Bi best suited for?",
         "For which types of AI engineering roles is Taixing Bi well-suited?",
-        "What specific areas should Taixing Bi focus on in AI engineering roles?"
+        "In what areas does Taixing Bi excel as an AI engineer?"
       ],
       "content_hash": "47b11595e03dac7157a789ce2d3196c075389cf41c832a5e53afc4042a8eb0f5",
       "source": "personal_qa",
@@ -509,13 +518,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260509_074401_EST",
-      "ingest_ts": "2026-05-09T07:44:01-05:00",
+      "ingest_run_id": "run_20260509_080852_EST",
+      "ingest_ts": "2026-05-09T08:08:52-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
+          "admin",
           "hr",
           "recruiter",
           "engineer"
@@ -546,13 +556,13 @@
         "root"
       ],
       "text": "Q: What is Taixing Bi's earliest start date?\nA: Taixing can begin right away and is flexible to coordinate a start date that ensures a smooth transition.",
-      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's earliest start date?\nA: Taixing can begin right away and is flexible to coordinate a start date that ensures a smooth transition.\nQ: What is Taixing Bi's earliest start date?\nQ: Can Taixing Bi start immediately?\nQ: Is Taixing Bi flexible with the start date?",
+      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's earliest start date?\nA: Taixing can begin right away and is flexible to coordinate a start date that ensures a smooth transition.\nQ: What is the earliest start date for Taixing Bi?\nQ: Can Taixing Bi start immediately?\nQ: Is Taixing Bi flexible with the start date?",
       "token_count": 41,
       "embed_token_count": 88,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is Taixing Bi's earliest start date?",
+        "What is the earliest start date for Taixing Bi?",
         "Can Taixing Bi start immediately?",
         "Is Taixing Bi flexible with the start date?"
       ],
@@ -562,13 +572,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260509_074401_EST",
-      "ingest_ts": "2026-05-09T07:44:01-05:00",
+      "ingest_run_id": "run_20260509_080852_EST",
+      "ingest_ts": "2026-05-09T08:08:52-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
+          "admin",
           "hr",
           "recruiter",
           "engineer"
@@ -599,14 +610,14 @@
         "root"
       ],
       "text": "Q: When would Taixing Bi be available to start?\nA: Taixing is available to start immediately and can align with the company's preferred onboarding timeline.",
-      "embed_text": "[SECTION: ROOT]\nQ: When would Taixing Bi be available to start?\nA: Taixing is available to start immediately and can align with the company's preferred onboarding timeline.\nQ: When would Taixing Bi be available to start?\nQ: Is Taixing Bi available immediately?\nQ: Can Taixing Bi adjust to the company's onboarding schedule?",
+      "embed_text": "[SECTION: ROOT]\nQ: When would Taixing Bi be available to start?\nA: Taixing is available to start immediately and can align with the company's preferred onboarding timeline.\nQ: When would Taixing Bi be available to start?\nQ: Is Taixing Bi available to start immediately?\nQ: Can Taixing Bi adjust to the company's onboarding schedule?",
       "token_count": 40,
-      "embed_token_count": 89,
+      "embed_token_count": 91,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "When would Taixing Bi be available to start?",
-        "Is Taixing Bi available immediately?",
+        "Is Taixing Bi available to start immediately?",
         "Can Taixing Bi adjust to the company's onboarding schedule?"
       ],
       "content_hash": "4a3bb50388f1977fd9b9b72f4d0b80dc8982b3b216c8c4ee44e181a45293da76",
@@ -615,13 +626,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260509_074401_EST",
-      "ingest_ts": "2026-05-09T07:44:01-05:00",
+      "ingest_run_id": "run_20260509_080852_EST",
+      "ingest_ts": "2026-05-09T08:08:52-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
+          "admin",
           "hr",
           "recruiter",
           "engineer"
@@ -668,13 +680,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260509_074401_EST",
-      "ingest_ts": "2026-05-09T07:44:01-05:00",
+      "ingest_run_id": "run_20260509_080852_EST",
+      "ingest_ts": "2026-05-09T08:08:52-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
+          "admin",
           "hr",
           "recruiter",
           "engineer"
@@ -721,13 +734,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260509_074401_EST",
-      "ingest_ts": "2026-05-09T07:44:01-05:00",
+      "ingest_run_id": "run_20260509_080852_EST",
+      "ingest_ts": "2026-05-09T08:08:52-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
+          "admin",
           "hr",
           "recruiter",
           "engineer"

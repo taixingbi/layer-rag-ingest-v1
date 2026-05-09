@@ -16,15 +16,15 @@
         "gateway_smoke_test"
       ],
       "text": "Use this quick checklist after startup or deploy to verify core gateway behavior.",
-      "embed_text": "[SECTION: Gateway Smoke Test]\nUse this quick checklist after startup or deploy to verify core gateway behavior.\nQ: What should you use to verify core gateway behavior?\nQ: When should you perform the quick checklist?\nQ: What is the purpose of the quick checklist?",
+      "embed_text": "[SECTION: Gateway Smoke Test]\nUse this quick checklist after startup or deploy to verify core gateway behavior.\nQ: What can be used to verify core gateway behavior?\nQ: When should this checklist be used?\nQ: Does this checklist cover all gateway features?",
       "token_count": 19,
-      "embed_token_count": 66,
+      "embed_token_count": 65,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What should you use to verify core gateway behavior?",
-        "When should you perform the quick checklist?",
-        "What is the purpose of the quick checklist?"
+        "What can be used to verify core gateway behavior?",
+        "When should this checklist be used?",
+        "Does this checklist cover all gateway features?"
       ],
       "content_hash": "6cfdbe9d2f60726b59ea242a51598a47acc6f07e1a0fe46f717db61fcb4543ee",
       "source": "repo_layer-gateway-inference-v1__smoke-test.md",
@@ -32,8 +32,8 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260509_074539_EST",
-      "ingest_ts": "2026-05-09T07:45:39-05:00",
+      "ingest_run_id": "run_20260509_081007_EST",
+      "ingest_ts": "2026-05-09T08:10:07-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null
@@ -56,15 +56,15 @@
         "prerequisites"
       ],
       "text": "- Gateway is running and reachable\n- At least one backend in `config.yaml` is reachable by the gateway\n\nSet your base URL:\n\n```bash\nexport GATEWAY_URL=\"http://127.0.0.1:8010\"\n```",
-      "embed_text": "[SECTION: Prerequisites]\n- Gateway is running and reachable\n- At least one backend in `config.yaml` is reachable by the gateway\n\nSet your base URL:\n\n```bash\nexport GATEWAY_URL=\"http://127.0.0.1:8010\"\n```\nQ: What must be true for the gateway?\nQ: How can you set the base URL?\nQ: What is the default value for GATEWAY_URL?",
+      "embed_text": "[SECTION: Prerequisites]\n- Gateway is running and reachable\n- At least one backend in `config.yaml` is reachable by the gateway\n\nSet your base URL:\n\n```bash\nexport GATEWAY_URL=\"http://127.0.0.1:8010\"\n```\nQ: What must be true for the gateway?\nQ: How can you set the base URL?\nQ: What is an example of setting the GATEWAY_URL?",
       "token_count": 54,
-      "embed_token_count": 99,
+      "embed_token_count": 100,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What must be true for the gateway?",
         "How can you set the base URL?",
-        "What is the default value for GATEWAY_URL?"
+        "What is an example of setting the GATEWAY_URL?"
       ],
       "content_hash": "dcda2f7467c99e2bdea2d31d19cae73e5d39f5848a41bdd9e1ac5e8eafa48ca0",
       "source": "repo_layer-gateway-inference-v1__smoke-test.md",
@@ -72,8 +72,8 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260509_074539_EST",
-      "ingest_ts": "2026-05-09T07:45:39-05:00",
+      "ingest_run_id": "run_20260509_081007_EST",
+      "ingest_ts": "2026-05-09T08:10:07-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null
@@ -96,15 +96,15 @@
         "1)_liveness_(`/health`)"
       ],
       "text": "```bash\ncurl -sS \"$GATEWAY_URL/health\"\n```\n\nExpected response:\n\n```json\n{\"status\":\"ok\"}\n```",
-      "embed_text": "[SECTION: 1) Liveness (`/health`)]\n```bash\ncurl -sS \"$GATEWAY_URL/health\"\n```\n\nExpected response:\n\n```json\n{\"status\":\"ok\"}\n```\nQ: What is the expected response when checking liveness?\nQ: Which URL is used to check the application's liveness?\nQ: What method is used to check the application's health?",
+      "embed_text": "[SECTION: 1) Liveness (`/health`)]\n```bash\ncurl -sS \"$GATEWAY_URL/health\"\n```\n\nExpected response:\n\n```json\n{\"status\":\"ok\"}\n```\nQ: What is the expected response from the liveness check?\nQ: Which URL is used for the liveness check?\nQ: What method is used to perform the liveness check?",
       "token_count": 40,
-      "embed_token_count": 96,
+      "embed_token_count": 93,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is the expected response when checking liveness?",
-        "Which URL is used to check the application's liveness?",
-        "What method is used to check the application's health?"
+        "What is the expected response from the liveness check?",
+        "Which URL is used for the liveness check?",
+        "What method is used to perform the liveness check?"
       ],
       "content_hash": "261306e4e9dd87bf489ca82dc69a8486b00ce5b1f8414b05a79920901fe06739",
       "source": "repo_layer-gateway-inference-v1__smoke-test.md",
@@ -112,8 +112,8 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260509_074539_EST",
-      "ingest_ts": "2026-05-09T07:45:39-05:00",
+      "ingest_run_id": "run_20260509_081007_EST",
+      "ingest_ts": "2026-05-09T08:10:07-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null
@@ -136,15 +136,15 @@
         "2)_readiness_(`/ready`)"
       ],
       "text": "```bash\ncurl -i -sS \"$GATEWAY_URL/ready\"\n```\n\nExpected:\n\n- `HTTP/1.1 200 OK`\n- Body includes `{\"status\":\"ready\"}`\n\nIf not ready, endpoint returns `503` with JSON details (for example missing app state or closed HTTP client).",
-      "embed_text": "[SECTION: 2) Readiness (`/ready`)]\n```bash\ncurl -i -sS \"$GATEWAY_URL/ready\"\n```\n\nExpected:\n\n- `HTTP/1.1 200 OK`\n- Body includes `{\"status\":\"ready\"}`\n\nIf not ready, endpoint returns `503` with JSON details (for example missing app state or closed HTTP client).\nQ: What HTTP status code indicates the service is ready?\nQ: What is included in the body when the service is ready?\nQ: What status message is included in the body when the service is ready?",
+      "embed_text": "[SECTION: 2) Readiness (`/ready`)]\n```bash\ncurl -i -sS \"$GATEWAY_URL/ready\"\n```\n\nExpected:\n\n- `HTTP/1.1 200 OK`\n- Body includes `{\"status\":\"ready\"}`\n\nIf not ready, endpoint returns `503` with JSON details (for example missing app state or closed HTTP client).\nQ: What HTTP status code indicates the service is ready?\nQ: What is included in the body when the service is ready?\nQ: What HTTP status code indicates the service is not ready?",
       "token_count": 78,
-      "embed_token_count": 138,
+      "embed_token_count": 136,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What HTTP status code indicates the service is ready?",
         "What is included in the body when the service is ready?",
-        "What status message is included in the body when the service is ready?"
+        "What HTTP status code indicates the service is not ready?"
       ],
       "content_hash": "8d59b4d474a6c8eedbb5a6d61f863cc30ff5142f592f4876f2aac542d9f295d0",
       "source": "repo_layer-gateway-inference-v1__smoke-test.md",
@@ -152,8 +152,8 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260509_074539_EST",
-      "ingest_ts": "2026-05-09T07:45:39-05:00",
+      "ingest_run_id": "run_20260509_081007_EST",
+      "ingest_ts": "2026-05-09T08:10:07-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null
@@ -192,8 +192,8 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260509_074539_EST",
-      "ingest_ts": "2026-05-09T07:45:39-05:00",
+      "ingest_run_id": "run_20260509_081007_EST",
+      "ingest_ts": "2026-05-09T08:10:07-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null
@@ -216,15 +216,15 @@
         "4)_optional:_quick_correlation-id_check_in_logs"
       ],
       "text": "Send a request and then check logs for the same ids:\n\n```bash\ncurl -sS \"$GATEWAY_URL/v1/chat/completions\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"X-Request-Id: smoke-req-2\" \\\n  -H \"X-Trace-Id: smoke-trace-2\" \\\n  -H \"X-Session-Id: smoke-session-2\" \\\n  -d '{\"model\":\"Qwen/Qwen2.5-7B-Instruct\",\"messages\":[{\"role\":\"user\",\"content\":\"ping\"}]}'\n```\n\nThen verify log lines include:\n\n- `request_id=smoke-req-2`\n- `trace_id=smoke-trace-2`\n- `session_id=smoke-session-2`",
-      "embed_text": "[SECTION: 4) Optional: quick correlation-ID check in logs]\nSend a request and then check logs for the same ids:\n\n```bash\ncurl -sS \"$GATEWAY_URL/v1/chat/completions\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"X-Request-Id: smoke-req-2\" \\\n  -H \"X-Trace-Id: smoke-trace-2\" \\\n  -H \"X-Session-Id: smoke-session-2\" \\\n  -d '{\"model\":\"Qwen/Qwen2.5-7B-Instruct\",\"messages\":[{\"role\":\"user\",\"content\":\"ping\"}]}'\n```\n\nThen verify log lines include:\n\n- `request_id=smoke-req-2`\n- `trace_id=smoke-trace-2`\n- `session_id=smoke-session-2`\nQ: What IDs should be checked in logs after sending a request?\nQ: Which curl command is used to send a request?\nQ: What are the specific headers included in the curl command?",
+      "embed_text": "[SECTION: 4) Optional: quick correlation-ID check in logs]\nSend a request and then check logs for the same ids:\n\n```bash\ncurl -sS \"$GATEWAY_URL/v1/chat/completions\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"X-Request-Id: smoke-req-2\" \\\n  -H \"X-Trace-Id: smoke-trace-2\" \\\n  -H \"X-Session-Id: smoke-session-2\" \\\n  -d '{\"model\":\"Qwen/Qwen2.5-7B-Instruct\",\"messages\":[{\"role\":\"user\",\"content\":\"ping\"}]}'\n```\n\nThen verify log lines include:\n\n- `request_id=smoke-req-2`\n- `trace_id=smoke-trace-2`\n- `session_id=smoke-session-2`\nQ: What IDs should be checked in the logs?\nQ: Which curl command is used to send a request?\nQ: What are the specific headers sent in the curl request?",
       "token_count": 211,
-      "embed_token_count": 275,
+      "embed_token_count": 272,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What IDs should be checked in logs after sending a request?",
+        "What IDs should be checked in the logs?",
         "Which curl command is used to send a request?",
-        "What are the specific headers included in the curl command?"
+        "What are the specific headers sent in the curl request?"
       ],
       "content_hash": "68d512e1ed61f05f6f1b10a1cba312eda089fe1988c2a67cd455cddb14c72334",
       "source": "repo_layer-gateway-inference-v1__smoke-test.md",
@@ -232,8 +232,8 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260509_074539_EST",
-      "ingest_ts": "2026-05-09T07:45:39-05:00",
+      "ingest_run_id": "run_20260509_081007_EST",
+      "ingest_ts": "2026-05-09T08:10:07-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null
@@ -256,15 +256,15 @@
         "6)_k3s_smoke_examples"
       ],
       "text": "These are direct examples against a k3s-exposed gateway service.\n\nBasic request:\n\n```bash\ncurl http://192.168.86.179:30180/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"model\": \"Qwen/Qwen2.5-7B-Instruct\", \"messages\":\n      [{\"role\": \"user\", \"content\": \"where is jersey city\"}],\n      \"max_tokens\": 50}'\n```\n\nRequest with correlation headers:\n\n```bash\ncurl http://192.168.86.179:30180/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -H \"X-Request-Id: request-id-1\" \\\n  -H \"X-Trace-Id: trace-id-1\" \\\n  -H \"X-Session-Id: session-id-1\" \\\n  -d '{\n    \"model\": \"Qwen/Qwen2.5-7B-Instruct\",\n    \"messages\": [\n      {\"role\": \"user\", \"content\": \"where is jersey city\"}\n    ],\n    \"max_tokens\": 50,\n    \"temperature\": 0.7\n  }'\n```",
-      "embed_text": "[SECTION: 6) k3s smoke examples]\nThese are direct examples against a k3s-exposed gateway service.\n\nBasic request:\n\n```bash\ncurl http://192.168.86.179:30180/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"model\": \"Qwen/Qwen2.5-7B-Instruct\", \"messages\":\n      [{\"role\": \"user\", \"content\": \"where is jersey city\"}],\n      \"max_tokens\": 50}'\n```\n\nRequest with correlation headers:\n\n```bash\ncurl http://192.168.86.179:30180/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -H \"X-Request-Id: request-id-1\" \\\n  -H \"X-Trace-Id: trace-id-1\" \\\n  -H \"X-Session-Id: session-id-1\" \\\n  -d '{\n    \"model\": \"Qwen/Qwen2.5-7B-Instruct\",\n    \"messages\": [\n      {\"role\": \"user\", \"content\": \"where is jersey city\"}\n    ],\n    \"max_tokens\": 50,\n    \"temperature\": 0.7\n  }'\n```\nQ: What is the basic request for the k3s-exposed gateway service?\nQ: What additional headers are included in the request with correlation headers?\nQ: Which model is used in both requests?",
+      "embed_text": "[SECTION: 6) k3s smoke examples]\nThese are direct examples against a k3s-exposed gateway service.\n\nBasic request:\n\n```bash\ncurl http://192.168.86.179:30180/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"model\": \"Qwen/Qwen2.5-7B-Instruct\", \"messages\":\n      [{\"role\": \"user\", \"content\": \"where is jersey city\"}],\n      \"max_tokens\": 50}'\n```\n\nRequest with correlation headers:\n\n```bash\ncurl http://192.168.86.179:30180/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -H \"X-Request-Id: request-id-1\" \\\n  -H \"X-Trace-Id: trace-id-1\" \\\n  -H \"X-Session-Id: session-id-1\" \\\n  -d '{\n    \"model\": \"Qwen/Qwen2.5-7B-Instruct\",\n    \"messages\": [\n      {\"role\": \"user\", \"content\": \"where is jersey city\"}\n    ],\n    \"max_tokens\": 50,\n    \"temperature\": 0.7\n  }'\n```\nQ: What are these examples for?\nQ: What is the basic request format?\nQ: What additional headers are included in the request with correlation headers?",
       "token_count": 297,
-      "embed_token_count": 358,
+      "embed_token_count": 346,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is the basic request for the k3s-exposed gateway service?",
-        "What additional headers are included in the request with correlation headers?",
-        "Which model is used in both requests?"
+        "What are these examples for?",
+        "What is the basic request format?",
+        "What additional headers are included in the request with correlation headers?"
       ],
       "content_hash": "476271fbfb724af81fb9213d34b1b3d10927a742e013b3c72546b12bf594ffc3",
       "source": "repo_layer-gateway-inference-v1__smoke-test.md",
@@ -272,8 +272,8 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260509_074539_EST",
-      "ingest_ts": "2026-05-09T07:45:39-05:00",
+      "ingest_run_id": "run_20260509_081007_EST",
+      "ingest_ts": "2026-05-09T08:10:07-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null
@@ -312,8 +312,8 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260509_074539_EST",
-      "ingest_ts": "2026-05-09T07:45:39-05:00",
+      "ingest_run_id": "run_20260509_081007_EST",
+      "ingest_ts": "2026-05-09T08:10:07-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null

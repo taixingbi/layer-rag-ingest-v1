@@ -1,7 +1,7 @@
 {
-  "ingest_run_id": "run_20260509_074257_EST",
+  "ingest_run_id": "run_20260509_080802_EST",
   "collection": "taixing_knowledge_qa",
-  "ingest_ts": "2026-05-09T07:42:57-05:00",
+  "ingest_ts": "2026-05-09T08:08:02-05:00",
   "id_key_version": "v3",
   "document_version": "v1",
   "chunk_version": "v1",
