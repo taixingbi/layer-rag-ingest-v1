@@ -16,14 +16,14 @@
         "request,_response,_and_logging_schema"
       ],
       "text": "This document describes the **HTTP contract** for `POST /v1/embeddings` and the **structured JSON logs** emitted by the gateway when `LOG_JSON=true` (default in `.env.example`).\n\nImplementation references:\n\n- Handler: `app/api/embeddings.py`\n- Request body model: `app/models/schemas.py`\n- Log formatter: `app/core/logging.py`\n\n---",
-      "embed_text": "[SECTION: Request, Response, and Logging Schema]\nThis document describes the **HTTP contract** for `POST /v1/embeddings` and the **structured JSON logs** emitted by the gateway when `LOG_JSON=true` (default in `.env.example`).\n\nImplementation references:\n\n- Handler: `app/api/embeddings.py`\n- Request body model: `app/models/schemas.py`\n- Log formatter: `app/core/logging.py`\n\n---\nQ: What does this document describe?\nQ: What is the default setting for LOG_JSON in .env.example?\nQ: Where can implementation references be found?",
+      "embed_text": "[SECTION: Request, Response, and Logging Schema]\nThis document describes the **HTTP contract** for `POST /v1/embeddings` and the **structured JSON logs** emitted by the gateway when `LOG_JSON=true` (default in `.env.example`).\n\nImplementation references:\n\n- Handler: `app/api/embeddings.py`\n- Request body model: `app/models/schemas.py`\n- Log formatter: `app/core/logging.py`\n\n---\nQ: What does this document describe?\nQ: What is the default setting for LOG_JSON?\nQ: Where can implementation references be found?",
       "token_count": 113,
-      "embed_token_count": 170,
+      "embed_token_count": 161,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What does this document describe?",
-        "What is the default setting for LOG_JSON in .env.example?",
+        "What is the default setting for LOG_JSON?",
         "Where can implementation references be found?"
       ],
       "content_hash": "d6d36396cbc54b48ee810f92f0ce6210f4b85a7d57b3db2d8d37357f74249ade",
@@ -32,17 +32,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -70,14 +67,14 @@
         "`post_/v1/embeddings`"
       ],
       "text": "`POST /v1/embeddings`",
-      "embed_text": "[SECTION: `POST /v1/embeddings`]\n`POST /v1/embeddings`\nQ: What HTTP method is used?\nQ: What API endpoint is specified?\nQ: Which version of the API is indicated?",
+      "embed_text": "[SECTION: `POST /v1/embeddings`]\n`POST /v1/embeddings`\nQ: What HTTP method is used?\nQ: What API endpoint is defined?\nQ: Which version of the API is indicated?",
       "token_count": 10,
       "embed_token_count": 55,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What HTTP method is used?",
-        "What API endpoint is specified?",
+        "What API endpoint is defined?",
         "Which version of the API is indicated?"
       ],
       "content_hash": "68b6ba31a13c862d4c563a7beff7869c08c6cbfe37532d907c29e418acc95849",
@@ -86,17 +83,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -124,13 +118,13 @@
         "correlation_headers_(optional)"
       ],
       "text": "`X-Request-Id`, `X-Trace-Id`, and `X-Session-Id` are **optional** on `POST /v1/embeddings`. The handler resolves each value from the incoming request (header names are case-insensitive). **Missing** or **whitespace-only** values are replaced with a **new UUID** (via `new_request_id()` in `app/core/logging.py`) before logging and before the upstream `httpx` call.\n\nAn **empty** `X-Request-Id` (after trimming) is treated like a missing header: a new UUID is generated. The **same** empty-as-missing rule applies to `X-Trace-Id` and `X-Session-Id` on this route.",
-      "embed_text": "[SECTION: Correlation headers (optional)]\n`X-Request-Id`, `X-Trace-Id`, and `X-Session-Id` are **optional** on `POST /v1/embeddings`. The handler resolves each value from the incoming request (header names are case-insensitive). **Missing** or **whitespace-only** values are replaced with a **new UUID** (via `new_request_id()` in `app/core/logging.py`) before logging and before the upstream `httpx` call.\n\nAn **empty** `X-Request-Id` (after trimming) is treated like a missing header: a new UUID is generated. The **same** empty-as-missing rule applies to `X-Trace-Id` and `X-Session-Id` on this route.\nQ: What happens if an X-Request-Id header is missing or contains only whitespace?\nQ: How are X-Trace-Id and X-Session-Id handled similarly to X-Request-Id?\nQ: Which Python function generates a new UUID in the logging process?",
+      "embed_text": "[SECTION: Correlation headers (optional)]\n`X-Request-Id`, `X-Trace-Id`, and `X-Session-Id` are **optional** on `POST /v1/embeddings`. The handler resolves each value from the incoming request (header names are case-insensitive). **Missing** or **whitespace-only** values are replaced with a **new UUID** (via `new_request_id()` in `app/core/logging.py`) before logging and before the upstream `httpx` call.\n\nAn **empty** `X-Request-Id` (after trimming) is treated like a missing header: a new UUID is generated. The **same** empty-as-missing rule applies to `X-Trace-Id` and `X-Session-Id` on this route.\nQ: What happens if an X-Request-Id header is missing or whitespace-only?\nQ: How are X-Trace-Id and X-Session-Id handled similarly to X-Request-Id?\nQ: Which Python function generates a new UUID in the logging process?",
       "token_count": 206,
       "embed_token_count": 294,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What happens if an X-Request-Id header is missing or contains only whitespace?",
+        "What happens if an X-Request-Id header is missing or whitespace-only?",
         "How are X-Trace-Id and X-Session-Id handled similarly to X-Request-Id?",
         "Which Python function generates a new UUID in the logging process?"
       ],
@@ -140,17 +134,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -178,15 +169,15 @@
         "correlation_headers_(optional)"
       ],
       "text": "| Header | Purpose |\n|--------|---------|\n| `X-Request-Id` | Correlation id (logged and forwarded) |\n| `X-Trace-Id` | Trace id (logged and forwarded) |\n| `X-Session-Id` | Session id (logged and forwarded) |\n\n**JSON logs:** `JsonLogFormatter` writes `request_id`, `trace_id`, and `session_id` as **`\"-\"`** when the log record **omits** that field **or** the value is an **empty string** (see `_format_gateway` in `app/core/logging.py`). Empty `x-trace-id` / `x-session-id` values still yield **`\"-\"`** in JSON logs when they reach the formatter as blank strings (the same rule applies to `request_id`). Events that omit correlation kwargs show `\"-\"`; the `/v1/embeddings` handler normally passes resolved non-empty UUIDs for all three.",
-      "embed_text": "[SECTION: Correlation headers (optional)]\n| Header | Purpose |\n|--------|---------|\n| `X-Request-Id` | Correlation id (logged and forwarded) |\n| `X-Trace-Id` | Trace id (logged and forwarded) |\n| `X-Session-Id` | Session id (logged and forwarded) |\n\n**JSON logs:** `JsonLogFormatter` writes `request_id`, `trace_id`, and `session_id` as **`\"-\"`** when the log record **omits** that field **or** the value is an **empty string** (see `_format_gateway` in `app/core/logging.py`). Empty `x-trace-id` / `x-session-id` values still yield **`\"-\"`** in JSON logs when they reach the formatter as blank strings (the same rule applies to `request_id`). Events that omit correlation kwargs show `\"-\"`; the `/v1/embeddings` handler normally passes resolved non-empty UUIDs for all three.\nQ: What does the JsonLogFormatter use for omitted or empty fields?\nQ: How are empty 'x-trace-id' and 'x-session-id' represented in JSON logs?\nQ: Which handlers typically pass non-empty UUIDs for all three correlation IDs?",
+      "embed_text": "[SECTION: Correlation headers (optional)]\n| Header | Purpose |\n|--------|---------|\n| `X-Request-Id` | Correlation id (logged and forwarded) |\n| `X-Trace-Id` | Trace id (logged and forwarded) |\n| `X-Session-Id` | Session id (logged and forwarded) |\n\n**JSON logs:** `JsonLogFormatter` writes `request_id`, `trace_id`, and `session_id` as **`\"-\"`** when the log record **omits** that field **or** the value is an **empty string** (see `_format_gateway` in `app/core/logging.py`). Empty `x-trace-id` / `x-session-id` values still yield **`\"-\"`** in JSON logs when they reach the formatter as blank strings (the same rule applies to `request_id`). Events that omit correlation kwargs show `\"-\"`; the `/v1/embeddings` handler normally passes resolved non-empty UUIDs for all three.\nQ: What does the JsonLogFormatter use for omitted or empty fields?\nQ: How are empty x-trace-id and x-session-id values represented in JSON logs?\nQ: Which handlers typically pass non-empty UUIDs for all three correlation ids?",
       "token_count": 283,
-      "embed_token_count": 369,
+      "embed_token_count": 366,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What does the JsonLogFormatter use for omitted or empty fields?",
-        "How are empty 'x-trace-id' and 'x-session-id' represented in JSON logs?",
-        "Which handlers typically pass non-empty UUIDs for all three correlation IDs?"
+        "How are empty x-trace-id and x-session-id values represented in JSON logs?",
+        "Which handlers typically pass non-empty UUIDs for all three correlation ids?"
       ],
       "content_hash": "498838351c84328580eed8639718a16b4a8e064bc13576937ce04e19cd0e5361",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
@@ -194,17 +185,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -248,17 +236,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -302,17 +287,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -340,7 +322,7 @@
         "forwarded_headers"
       ],
       "text": "The gateway forwards **almost all** incoming headers to the selected upstream, except hop-by-hop fields blocked in code: `host`, `content-length` (see `_BLOCKED_HEADERS` in `app/api/embeddings.py`).",
-      "embed_text": "[SECTION: Forwarded headers]\nThe gateway forwards **almost all** incoming headers to the selected upstream, except hop-by-hop fields blocked in code: `host`, `content-length` (see `_BLOCKED_HEADERS` in `app/api/embeddings.py`).\nQ: Which headers are forwarded by the gateway?\nQ: What hop-by-hop fields are blocked and not forwarded?\nQ: Where can one find the list of blocked headers?",
+      "embed_text": "[SECTION: Forwarded headers]\nThe gateway forwards **almost all** incoming headers to the selected upstream, except hop-by-hop fields blocked in code: `host`, `content-length` (see `_BLOCKED_HEADERS` in `app/api/embeddings.py`).\nQ: Which headers are forwarded by the gateway?\nQ: What hop-by-hop fields are blocked and not forwarded?\nQ: Where can I find the list of blocked headers?",
       "token_count": 71,
       "embed_token_count": 127,
       "synthetic_questions_used": 3,
@@ -348,7 +330,7 @@
       "synthetic_questions": [
         "Which headers are forwarded by the gateway?",
         "What hop-by-hop fields are blocked and not forwarded?",
-        "Where can one find the list of blocked headers?"
+        "Where can I find the list of blocked headers?"
       ],
       "content_hash": "0d5ea4f091df5f88126e0d66aa582249acff6fbd2a48acdf3db58a6ebcc3c160",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
@@ -356,17 +338,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -410,17 +389,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -448,15 +424,15 @@
         "gateway-generated_error_responses"
       ],
       "text": "| Status | When | Body (typical) |\n|--------|------|----------------|\n| **429** | Admission queue wait exceeded `ADMISSION_WAIT_TIMEOUT_MS` | `{\"error\":\"Gateway busy, try again\"}` |\n| **503** | No backend to route to after exclusions / breaker | `{\"detail\":\"No healthy backend available\"}` (FastAPI) |\n| **503** | All retry attempts failed with transport errors | `{\"error\":\"Backends unavailable\"}` |",
-      "embed_text": "[SECTION: Gateway-generated error responses]\n| Status | When | Body (typical) |\n|--------|------|----------------|\n| **429** | Admission queue wait exceeded `ADMISSION_WAIT_TIMEOUT_MS` | `{\"error\":\"Gateway busy, try again\"}` |\n| **503** | No backend to route to after exclusions / breaker | `{\"detail\":\"No healthy backend available\"}` (FastAPI) |\n| **503** | All retry attempts failed with transport errors | `{\"error\":\"Backends unavailable\"}` |\nQ: What is the body of the 429 status response?\nQ: When does a 503 status with 'No healthy backend available' detail occur?\nQ: What does the error message 'Backends unavailable' indicate?",
+      "embed_text": "[SECTION: Gateway-generated error responses]\n| Status | When | Body (typical) |\n|--------|------|----------------|\n| **429** | Admission queue wait exceeded `ADMISSION_WAIT_TIMEOUT_MS` | `{\"error\":\"Gateway busy, try again\"}` |\n| **503** | No backend to route to after exclusions / breaker | `{\"detail\":\"No healthy backend available\"}` (FastAPI) |\n| **503** | All retry attempts failed with transport errors | `{\"error\":\"Backends unavailable\"}` |\nQ: What status code indicates the admission queue wait exceeded?\nQ: When does the error 'Gateway busy, try again' appear?\nQ: What does the body of a 503 response mean when all retry attempts failed with transport errors?",
       "token_count": 157,
-      "embed_token_count": 220,
+      "embed_token_count": 227,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is the body of the 429 status response?",
-        "When does a 503 status with 'No healthy backend available' detail occur?",
-        "What does the error message 'Backends unavailable' indicate?"
+        "What status code indicates the admission queue wait exceeded?",
+        "When does the error 'Gateway busy, try again' appear?",
+        "What does the body of a 503 response mean when all retry attempts failed with transport errors?"
       ],
       "content_hash": "23f2d190b76d839e992f18855b9de1daac4e0ebb8780b6d10535ec5076e142a2",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
@@ -464,17 +440,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -502,14 +475,14 @@
         "gateway-generated_error_responses"
       ],
       "text": "See also `docs/status-codes.md` for 429/503 nuances (including upstream passthrough).",
-      "embed_text": "[SECTION: Gateway-generated error responses]\nSee also `docs/status-codes.md` for 429/503 nuances (including upstream passthrough).\nQ: Where can I find information about 429 and 503 status codes?\nQ: What does the text suggest to read for nuances in 429 and 503 status codes?\nQ: How are 429 and 503 status codes related to upstream passthrough?",
+      "embed_text": "[SECTION: Gateway-generated error responses]\nSee also `docs/status-codes.md` for 429/503 nuances (including upstream passthrough).\nQ: Where can I find information about 429 and 503 status codes?\nQ: What does the text suggest to read for nuances of 429/503 status codes?\nQ: How are 429 and 503 status codes related to upstream passthrough?",
       "token_count": 27,
-      "embed_token_count": 98,
+      "embed_token_count": 97,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "Where can I find information about 429 and 503 status codes?",
-        "What does the text suggest to read for nuances in 429 and 503 status codes?",
+        "What does the text suggest to read for nuances of 429/503 status codes?",
         "How are 429 and 503 status codes related to upstream passthrough?"
       ],
       "content_hash": "60bd757b15b569e003fd880115aa89946b4cc9967575a4452fe7b1871064426a",
@@ -518,17 +491,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -572,17 +542,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -610,15 +577,15 @@
         "retries_(client-visible_behavior)"
       ],
       "text": "**Circuit breaker bookkeeping**: `success = (upstream.status_code < 500)` for the selector. So **5xx** counts as a **failure** for the breaker even if the gateway returns the upstream body on the final attempt.\n\n---",
-      "embed_text": "[SECTION: Retries (client-visible behavior)]\n**Circuit breaker bookkeeping**: `success = (upstream.status_code < 500)` for the selector. So **5xx** counts as a **failure** for the breaker even if the gateway returns the upstream body on the final attempt.\n\n---\nQ: What status code range is considered a failure for the circuit breaker?\nQ: How does the gateway handle 5xx responses in relation to the circuit breaker?\nQ: What does the success condition for the selector evaluate to?",
+      "embed_text": "[SECTION: Retries (client-visible behavior)]\n**Circuit breaker bookkeeping**: `success = (upstream.status_code < 500)` for the selector. So **5xx** counts as a **failure** for the breaker even if the gateway returns the upstream body on the final attempt.\n\n---\nQ: What status code range is considered a failure for the circuit breaker?\nQ: How does the gateway handle 5xx responses in relation to the circuit breaker?\nQ: What is the condition for success in the circuit breaker bookkeeping?",
       "token_count": 66,
-      "embed_token_count": 131,
+      "embed_token_count": 133,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What status code range is considered a failure for the circuit breaker?",
         "How does the gateway handle 5xx responses in relation to the circuit breaker?",
-        "What does the success condition for the selector evaluate to?"
+        "What is the condition for success in the circuit breaker bookkeeping?"
       ],
       "content_hash": "facabc029fdccdd2b113e173fd9b6f7784666c98356ec453207c8b583dc35273",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
@@ -626,17 +593,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -680,17 +644,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -718,15 +679,15 @@
         "common_envelope_fields"
       ],
       "text": "| Field | Type | Meaning |\n|-------|------|---------|\n| `ts` | string (ISO-8601) | Timestamp in configured timezone (`LOG_TIMEZONE`, default `America/New_York`) |\n| `level` | string | `INFO`, `WARN` (from `WARNING`), `ERROR`, … |\n| `event` | string | Logical event name (see table below) |\n| `service` | string | Always `gateway` for `log_gateway_event` |\n| `env` | string | `GATEWAY_ENV` or `ENV`, default `dev` |\n| `trace_id` | string or `\"-\"` | Resolved `X-Trace-Id` when set on the record; `\"-\"` if omitted or empty string on the record |\n| `request_id` | string or `\"-\"` | Resolved `X-Request-Id` when set on the record; `\"-\"` if omitted or empty string on the record |\n| `session_id` | string or `\"-\"` | Resolved `X-Session-Id` when set on the record; `\"-\"` if omitted or empty string on the record |\n| `path` | string or `\"-\"` | Gateway route path (e.g. `/v1/embeddings`) |\n| `backend` | string or `\"-\"` | Upstream backend **name** when relevant |\n| `latency_ms` | number (optional) | **Upstream-only** duration: from start of `httpx.post` to completion (excludes admission wait and JSON parse before the post) |\n| `queue_wait_ms` | number (optional) | Time spent waiting on the **admission semaphore** before handling |\n| `status_code` | number (optional) | HTTP status when relevant (e.g. admission 429, upstream status on finish) |\n| `error` | object (optional) | Structured error payload (`{\"kind\": ...}`) |\n| `gateway_meta` | object (optional) | Event-specific metadata |",
-      "embed_text": "[SECTION: Common envelope fields]\n| Field | Type | Meaning |\n|-------|------|---------|\n| `ts` | string (ISO-8601) | Timestamp in configured timezone (`LOG_TIMEZONE`, default `America/New_York`) |\n| `level` | string | `INFO`, `WARN` (from `WARNING`), `ERROR`, … |\n| `event` | string | Logical event name (see table below) |\n| `service` | string | Always `gateway` for `log_gateway_event` |\n| `env` | string | `GATEWAY_ENV` or `ENV`, default `dev` |\n| `trace_id` | string or `\"-\"` | Resolved `X-Trace-Id` when set on the record; `\"-\"` if omitted or empty string on the record |\n| `request_id` | string or `\"-\"` | Resolved `X-Request-Id` when set on the record; `\"-\"` if omitted or empty string on the record |\n| `session_id` | string or `\"-\"` | Resolved `X-Session-Id` when set on the record; `\"-\"` if omitted or empty string on the record |\n| `path` | string or `\"-\"` | Gateway route path (e.g. `/v1/embeddings`) |\n| `backend` | string or `\"-\"` | Upstream backend **name** when relevant |\n| `latency_ms` | number (optional) | **Upstream-only** duration: from start of `httpx.post` to completion (excludes admission wait and JSON parse before the post) |\n| `queue_wait_ms` | number (optional) | Time spent waiting on the **admission semaphore** before handling |\n| `status_code` | number (optional) | HTTP status when relevant (e.g. admission 429, upstream status on finish) |\n| `error` | object (optional) | Structured error payload (`{\"kind\": ...}`) |\n| `gateway_meta` | object (optional) | Event-specific metadata |\nQ: What is the type of the 'ts' field?\nQ: Which service value is always present in the 'service' field?\nQ: What does the 'backend' field represent?",
+      "embed_text": "[SECTION: Common envelope fields]\n| Field | Type | Meaning |\n|-------|------|---------|\n| `ts` | string (ISO-8601) | Timestamp in configured timezone (`LOG_TIMEZONE`, default `America/New_York`) |\n| `level` | string | `INFO`, `WARN` (from `WARNING`), `ERROR`, … |\n| `event` | string | Logical event name (see table below) |\n| `service` | string | Always `gateway` for `log_gateway_event` |\n| `env` | string | `GATEWAY_ENV` or `ENV`, default `dev` |\n| `trace_id` | string or `\"-\"` | Resolved `X-Trace-Id` when set on the record; `\"-\"` if omitted or empty string on the record |\n| `request_id` | string or `\"-\"` | Resolved `X-Request-Id` when set on the record; `\"-\"` if omitted or empty string on the record |\n| `session_id` | string or `\"-\"` | Resolved `X-Session-Id` when set on the record; `\"-\"` if omitted or empty string on the record |\n| `path` | string or `\"-\"` | Gateway route path (e.g. `/v1/embeddings`) |\n| `backend` | string or `\"-\"` | Upstream backend **name** when relevant |\n| `latency_ms` | number (optional) | **Upstream-only** duration: from start of `httpx.post` to completion (excludes admission wait and JSON parse before the post) |\n| `queue_wait_ms` | number (optional) | Time spent waiting on the **admission semaphore** before handling |\n| `status_code` | number (optional) | HTTP status when relevant (e.g. admission 429, upstream status on finish) |\n| `error` | object (optional) | Structured error payload (`{\"kind\": ...}`) |\n| `gateway_meta` | object (optional) | Event-specific metadata |\nQ: What is the type of the `ts` field?\nQ: Which service value is always present in the `service` field?\nQ: What does the `backend` field represent?",
       "token_count": 591,
       "embed_token_count": 642,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is the type of the 'ts' field?",
-        "Which service value is always present in the 'service' field?",
-        "What does the 'backend' field represent?"
+        "What is the type of the `ts` field?",
+        "Which service value is always present in the `service` field?",
+        "What does the `backend` field represent?"
       ],
       "content_hash": "9003860276e9ab8739eb412a212a083def450de3f3e8e48b4a20a3e784db285d",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
@@ -734,17 +695,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -772,14 +730,14 @@
         "common_envelope_fields"
       ],
       "text": "**Note:** `log_gateway_event` stores errors internally as `structured_error`, but the JSON output field is **`error`**.",
-      "embed_text": "[SECTION: Common envelope fields]\n**Note:** `log_gateway_event` stores errors internally as `structured_error`, but the JSON output field is **`error`**.\nQ: What is the name of the internal field used for storing errors in log_gateway_event?\nQ: What is the name of the JSON output field for errors in log_gateway_event?\nQ: Which field stores errors internally in log_gateway_event?",
+      "embed_text": "[SECTION: Common envelope fields]\n**Note:** `log_gateway_event` stores errors internally as `structured_error`, but the JSON output field is **`error`**.\nQ: What is the name of the internal field used for storing errors in log_gateway_event?\nQ: What is the JSON output field name for errors in log_gateway_event?\nQ: Which field stores errors internally in log_gateway_event?",
       "token_count": 39,
-      "embed_token_count": 115,
+      "embed_token_count": 113,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is the name of the internal field used for storing errors in log_gateway_event?",
-        "What is the name of the JSON output field for errors in log_gateway_event?",
+        "What is the JSON output field name for errors in log_gateway_event?",
         "Which field stores errors internally in log_gateway_event?"
       ],
       "content_hash": "78ef9ff0999d13019ee1963d44492bbf666d3306c0605888cdcd326ef2b754ed",
@@ -788,17 +746,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -826,15 +781,15 @@
         "event_catalog"
       ],
       "text": "| `event` | Level | Typical `path` | `backend` | Key `gateway_meta` / other fields |\n|---------|-------|----------------|-----------|-----------------------------------|\n| `gateway_process_started` | INFO | — | — | `backends_count`, `admission_max_concurrent`, `admission_wait_timeout_ms` |\n| `gateway_started` | INFO | `/v1/embeddings` | — | `backends_count`, admission settings, `model`, `request_class`, `client_host` |\n| `routing_pick` | INFO | `/v1/embeddings` | chosen backend | `attempt`, `excluded`, **`decision_reason`**, **`backends`**, **`weights`** (see below) |\n| `routing_no_backend` | WARN | `/v1/embeddings` | — | `attempt`, `excluded`, same routing debug as `routing_pick` |\n| `backend_retry` | WARN | `/v1/embeddings` | failed backend | `attempt`; may include `latency_ms`, `status_code`, or `error` |\n| `request_finished` | INFO | `/v1/embeddings` | backend used | `model`, `request_class`, `attempt` |\n| `request_failed` | WARN | `/v1/embeddings` | — | `error.kind` after retries exhausted |\n| `admission_rejected` | WARN | `/v1/embeddings` | — | `wait_timeout_ms`, `status_code` 429 |",
-      "embed_text": "[SECTION: Event catalog]\n| `event` | Level | Typical `path` | `backend` | Key `gateway_meta` / other fields |\n|---------|-------|----------------|-----------|-----------------------------------|\n| `gateway_process_started` | INFO | — | — | `backends_count`, `admission_max_concurrent`, `admission_wait_timeout_ms` |\n| `gateway_started` | INFO | `/v1/embeddings` | — | `backends_count`, admission settings, `model`, `request_class`, `client_host` |\n| `routing_pick` | INFO | `/v1/embeddings` | chosen backend | `attempt`, `excluded`, **`decision_reason`**, **`backends`**, **`weights`** (see below) |\n| `routing_no_backend` | WARN | `/v1/embeddings` | — | `attempt`, `excluded`, same routing debug as `routing_pick` |\n| `backend_retry` | WARN | `/v1/embeddings` | failed backend | `attempt`; may include `latency_ms`, `status_code`, or `error` |\n| `request_finished` | INFO | `/v1/embeddings` | backend used | `model`, `request_class`, `attempt` |\n| `request_failed` | WARN | `/v1/embeddings` | — | `error.kind` after retries exhausted |\n| `admission_rejected` | WARN | `/v1/embeddings` | — | `wait_timeout_ms`, `status_code` 429 |\nQ: What fields are included in the `routing_pick` event?\nQ: What level is the `backend_retry` event logged at?\nQ: Which paths are associated with the `gateway_started` event?",
+      "embed_text": "[SECTION: Event catalog]\n| `event` | Level | Typical `path` | `backend` | Key `gateway_meta` / other fields |\n|---------|-------|----------------|-----------|-----------------------------------|\n| `gateway_process_started` | INFO | — | — | `backends_count`, `admission_max_concurrent`, `admission_wait_timeout_ms` |\n| `gateway_started` | INFO | `/v1/embeddings` | — | `backends_count`, admission settings, `model`, `request_class`, `client_host` |\n| `routing_pick` | INFO | `/v1/embeddings` | chosen backend | `attempt`, `excluded`, **`decision_reason`**, **`backends`**, **`weights`** (see below) |\n| `routing_no_backend` | WARN | `/v1/embeddings` | — | `attempt`, `excluded`, same routing debug as `routing_pick` |\n| `backend_retry` | WARN | `/v1/embeddings` | failed backend | `attempt`; may include `latency_ms`, `status_code`, or `error` |\n| `request_finished` | INFO | `/v1/embeddings` | backend used | `model`, `request_class`, `attempt` |\n| `request_failed` | WARN | `/v1/embeddings` | — | `error.kind` after retries exhausted |\n| `admission_rejected` | WARN | `/v1/embeddings` | — | `wait_timeout_ms`, `status_code` 429 |\nQ: What fields are included in the 'routing_pick' event?\nQ: What is the typical path for the 'gateway_started' event?\nQ: Which event level is assigned to the 'backend_retry' event?",
       "token_count": 486,
-      "embed_token_count": 548,
+      "embed_token_count": 549,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What fields are included in the `routing_pick` event?",
-        "What level is the `backend_retry` event logged at?",
-        "Which paths are associated with the `gateway_started` event?"
+        "What fields are included in the 'routing_pick' event?",
+        "What is the typical path for the 'gateway_started' event?",
+        "Which event level is assigned to the 'backend_retry' event?"
       ],
       "content_hash": "4ebfdd18e4e31e99f6916d8cab8e7fa1517950ef0179044a108ce4e0d9fb2736",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
@@ -842,17 +797,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -880,15 +832,15 @@
         "`routing_pick`_/_`routing_no_backend`:_`gateway_meta`_routing_snapshot"
       ],
       "text": "`gateway_meta` includes:\n\n- **`decision_reason`** (`routing_pick` only): `score`, `exploration`, `idle_rebalance`, or `none`\n- **`attempt`**: retry attempt index (1-based)\n- **`excluded`**: sorted list of backend names skipped for this client request\n- **`backends`**: map of backend name → object:\n  - `score`, `inflight`, `latency_ms`, `error_rate`, `requests`, `errors`\n  - `circuit_open`, `circuit_half_open`, `half_open_inflight`, `half_open_successes`\n  - `excluded`, `eligible`\n- **`weights`**: routing weights used in score: `inflight`, `latency`, `error`",
-      "embed_text": "[SECTION: `routing_pick` / `routing_no_backend`: `gateway_meta` routing snapshot]\n`gateway_meta` includes:\n\n- **`decision_reason`** (`routing_pick` only): `score`, `exploration`, `idle_rebalance`, or `none`\n- **`attempt`**: retry attempt index (1-based)\n- **`excluded`**: sorted list of backend names skipped for this client request\n- **`backends`**: map of backend name → object:\n  - `score`, `inflight`, `latency_ms`, `error_rate`, `requests`, `errors`\n  - `circuit_open`, `circuit_half_open`, `half_open_inflight`, `half_open_successes`\n  - `excluded`, `eligible`\n- **`weights`**: routing weights used in score: `inflight`, `latency`, `error`\nQ: What information is included in the `gateway_meta` routing snapshot?\nQ: How is the `attempt` field defined in `gateway_meta`?\nQ: What does the `backends` map contain for each backend name?",
+      "embed_text": "[SECTION: `routing_pick` / `routing_no_backend`: `gateway_meta` routing snapshot]\n`gateway_meta` includes:\n\n- **`decision_reason`** (`routing_pick` only): `score`, `exploration`, `idle_rebalance`, or `none`\n- **`attempt`**: retry attempt index (1-based)\n- **`excluded`**: sorted list of backend names skipped for this client request\n- **`backends`**: map of backend name → object:\n  - `score`, `inflight`, `latency_ms`, `error_rate`, `requests`, `errors`\n  - `circuit_open`, `circuit_half_open`, `half_open_inflight`, `half_open_successes`\n  - `excluded`, `eligible`\n- **`weights`**: routing weights used in score: `inflight`, `latency`, `error`\nQ: What information does the `gateway_meta` include?\nQ: How is the `attempt` field defined in `gateway_meta`?\nQ: What fields are included in the `backends` object within `gateway_meta`?",
       "token_count": 219,
       "embed_token_count": 311,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What information is included in the `gateway_meta` routing snapshot?",
+        "What information does the `gateway_meta` include?",
         "How is the `attempt` field defined in `gateway_meta`?",
-        "What does the `backends` map contain for each backend name?"
+        "What fields are included in the `backends` object within `gateway_meta`?"
       ],
       "content_hash": "2f0bdfbb1a68eb158656aa90564bf2d1cfd069e94d9e7ee4d29b309e556ead0c",
       "source": "repo_layer-gateway-embed-v1__request-response-and-logging.md",
@@ -896,17 +848,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -934,14 +883,14 @@
         "`routing_pick`_/_`routing_no_backend`:_`gateway_meta`_routing_snapshot"
       ],
       "text": "---",
-      "embed_text": "[SECTION: `routing_pick` / `routing_no_backend`: `gateway_meta` routing snapshot]\n---\nQ: What is the routing snapshot for?\nQ: Which routing methods are mentioned?\nQ: What does `gateway_meta` refer to in this context?",
+      "embed_text": "[SECTION: `routing_pick` / `routing_no_backend`: `gateway_meta` routing snapshot]\n---\nQ: What is the routing snapshot for?\nQ: Which routing options are mentioned?\nQ: What does `gateway_meta` refer to in this context?",
       "token_count": 1,
       "embed_token_count": 71,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is the routing snapshot for?",
-        "Which routing methods are mentioned?",
+        "Which routing options are mentioned?",
         "What does `gateway_meta` refer to in this context?"
       ],
       "content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
@@ -950,17 +899,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -1004,17 +950,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -1058,17 +1001,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"

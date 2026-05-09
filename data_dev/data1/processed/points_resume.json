@@ -32,17 +32,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -70,7 +69,7 @@
         "summary"
       ],
       "text": "Backend AI Engineer with 7+ years of experience building LLM-powered backend systems, RAG pipelines, agent orchestration, and large-scale distributed infrastructure. Expert in LLM tool-calling, multi-agent systems, retrieval architectures, high-throughput pipelines (Kafka/MSK), AWS serverless, DynamoDB performance engineering, and LLM evaluation frameworks for reliability.",
-      "embed_text": "[SECTION: SUMMARY]\nBackend AI Engineer with 7+ years of experience building LLM-powered backend systems, RAG pipelines, agent orchestration, and large-scale distributed infrastructure. Expert in LLM tool-calling, multi-agent systems, retrieval architectures, high-throughput pipelines (Kafka/MSK), AWS serverless, DynamoDB performance engineering, and LLM evaluation frameworks for reliability.\nQ: How many years of experience does the Backend AI Engineer have?\nQ: What LLM evaluation frameworks is the engineer expert in?\nQ: Which distributed messaging systems are mentioned as expertise?",
+      "embed_text": "[SECTION: SUMMARY]\nBackend AI Engineer with 7+ years of experience building LLM-powered backend systems, RAG pipelines, agent orchestration, and large-scale distributed infrastructure. Expert in LLM tool-calling, multi-agent systems, retrieval architectures, high-throughput pipelines (Kafka/MSK), AWS serverless, DynamoDB performance engineering, and LLM evaluation frameworks for reliability.\nQ: How many years of experience does the Backend AI Engineer have?\nQ: What LLM evaluation frameworks is the engineer expert in?\nQ: Which distributed infrastructure technologies is the engineer experienced with?",
       "token_count": 95,
       "embed_token_count": 147,
       "synthetic_questions_used": 3,
@@ -78,7 +77,7 @@
       "synthetic_questions": [
         "How many years of experience does the Backend AI Engineer have?",
         "What LLM evaluation frameworks is the engineer expert in?",
-        "Which distributed messaging systems are mentioned as expertise?"
+        "Which distributed infrastructure technologies is the engineer experienced with?"
       ],
       "content_hash": "284fff5ca142e79fa7061dd70e21a2661b3b4df80225f1a5715bcb190c9260ee",
       "source": "personal_resume",
@@ -86,17 +85,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -140,17 +138,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -178,15 +175,15 @@
         "core_skills"
       ],
       "text": "RAG & Retrieval: FAISS, BM25, hybrid retrieval, embeddings, chunking, cross-encoder reranking, prompt engineering.",
-      "embed_text": "[SECTION: CORE SKILLS]\nRAG & Retrieval: FAISS, BM25, hybrid retrieval, embeddings, chunking, cross-encoder reranking, prompt engineering.\nQ: What are the core skills mentioned in this section?\nQ: List two retrieval methods mentioned here.\nQ: Which technique is used for re-ranking in this context?",
+      "embed_text": "[SECTION: CORE SKILLS]\nRAG & Retrieval: FAISS, BM25, hybrid retrieval, embeddings, chunking, cross-encoder reranking, prompt engineering.\nQ: What are the core skills mentioned in this section?\nQ: List two retrieval methods mentioned.\nQ: What is another name for hybrid retrieval mentioned here?",
       "token_count": 37,
-      "embed_token_count": 86,
+      "embed_token_count": 84,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What are the core skills mentioned in this section?",
-        "List two retrieval methods mentioned here.",
-        "Which technique is used for re-ranking in this context?"
+        "List two retrieval methods mentioned.",
+        "What is another name for hybrid retrieval mentioned here?"
       ],
       "content_hash": "51ca4f09ce5b2f12f84736dac5c3fcf5eaf22e9bf30c348ec2142f2f526c329c",
       "source": "personal_resume",
@@ -194,17 +191,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -248,17 +244,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -286,15 +281,15 @@
         "core_skills"
       ],
       "text": "AI Serving: vLLM/Crew, SGLang, TGI, batching, caching, token streaming.",
-      "embed_text": "[SECTION: CORE SKILLS]\nAI Serving: vLLM/Crew, SGLang, TGI, batching, caching, token streaming.\nQ: What AI serving technologies are mentioned?\nQ: What technique is listed for handling multiple requests at once?\nQ: Which method is noted for delivering tokens one at a time?",
+      "embed_text": "[SECTION: CORE SKILLS]\nAI Serving: vLLM/Crew, SGLang, TGI, batching, caching, token streaming.\nQ: What AI serving technologies are mentioned?\nQ: What technique is used for token processing?\nQ: Which methods are used for optimization?",
       "token_count": 28,
-      "embed_token_count": 80,
+      "embed_token_count": 71,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What AI serving technologies are mentioned?",
-        "What technique is listed for handling multiple requests at once?",
-        "Which method is noted for delivering tokens one at a time?"
+        "What technique is used for token processing?",
+        "Which methods are used for optimization?"
       ],
       "content_hash": "01e36ff443ae358ae21ddcec8402e595cc3f656b915db577a1b665322d6b7e0b",
       "source": "personal_resume",
@@ -302,17 +297,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -340,15 +334,15 @@
         "core_skills"
       ],
       "text": "Observability: Datadog APM & logs, CloudWatch Insights, Prometheus, Grafana\nData & ML: TensorFlow, PyTorch, Keras, XGBoost, scikit- learn, Spark, BigQuery, Hadoop, HBase, transformer for classification.",
-      "embed_text": "[SECTION: CORE SKILLS]\nObservability: Datadog APM & logs, CloudWatch Insights, Prometheus, Grafana\nData & ML: TensorFlow, PyTorch, Keras, XGBoost, scikit- learn, Spark, BigQuery, Hadoop, HBase, transformer for classification.\nQ: What tools are listed under observability?\nQ: What machine learning frameworks and libraries are mentioned?\nQ: Which database technologies are included in the data & ML section?",
+      "embed_text": "[SECTION: CORE SKILLS]\nObservability: Datadog APM & logs, CloudWatch Insights, Prometheus, Grafana\nData & ML: TensorFlow, PyTorch, Keras, XGBoost, scikit- learn, Spark, BigQuery, Hadoop, HBase, transformer for classification.\nQ: What tools are listed for observability?\nQ: What machine learning frameworks are mentioned?\nQ: Which database technologies are included in the list?",
       "token_count": 70,
-      "embed_token_count": 119,
+      "embed_token_count": 112,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What tools are listed under observability?",
-        "What machine learning frameworks and libraries are mentioned?",
-        "Which database technologies are included in the data & ML section?"
+        "What tools are listed for observability?",
+        "What machine learning frameworks are mentioned?",
+        "Which database technologies are included in the list?"
       ],
       "content_hash": "09b10b02a7e6941c5a7685971b6cd9d8571c317ffadc6b53d71f1d9c7152077b",
       "source": "personal_resume",
@@ -356,17 +350,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -394,15 +387,15 @@
         "professional_experience"
       ],
       "text": "Saks.com — AI Infrastructure Engineer",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nSaks.com — AI Infrastructure Engineer\nQ: What was the role held at Saks.com?\nQ: Which company held the position of AI Infrastructure Engineer?\nQ: What specific job title is mentioned?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nSaks.com — AI Infrastructure Engineer\nQ: What was the role held at Saks.com?\nQ: Which company held the position of AI Infrastructure Engineer?\nQ: What specific job title did the individual hold at Saks.com?",
       "token_count": 9,
-      "embed_token_count": 56,
+      "embed_token_count": 62,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What was the role held at Saks.com?",
         "Which company held the position of AI Infrastructure Engineer?",
-        "What specific job title is mentioned?"
+        "What specific job title did the individual hold at Saks.com?"
       ],
       "content_hash": "a702c341d11300582e2c6d47aa8dc06d61f8ead52f54310d2a9e5244e01d7095",
       "source": "personal_resume",
@@ -410,17 +403,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -464,17 +456,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -502,15 +493,15 @@
         "professional_experience"
       ],
       "text": "Designed LLM-to-database access layers using LangChain SQL and tool abstractions, enabling safe, structured querying over operational data and reducing manual lookup time by 65%.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDesigned LLM-to-database access layers using LangChain SQL and tool abstractions, enabling safe, structured querying over operational data and reducing manual lookup time by 65%.\nQ: What technology was used to design the LLM-to-database access layers?\nQ: By what percentage did the new system reduce manual lookup time?\nQ: What specific features were utilized in the design?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDesigned LLM-to-database access layers using LangChain SQL and tool abstractions, enabling safe, structured querying over operational data and reducing manual lookup time by 65%.\nQ: What technology was used to design the LLM-to-database access layers?\nQ: By what percentage did the new system reduce manual lookup time?\nQ: What specific features were implemented to ensure safe and structured querying?",
       "token_count": 46,
-      "embed_token_count": 105,
+      "embed_token_count": 111,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What technology was used to design the LLM-to-database access layers?",
         "By what percentage did the new system reduce manual lookup time?",
-        "What specific features were utilized in the design?"
+        "What specific features were implemented to ensure safe and structured querying?"
       ],
       "content_hash": "bae90fd5baeeeefbce3f3ea18e12d2bbf3b4f7fa274f606a39898d4c8b51534b",
       "source": "personal_resume",
@@ -518,17 +509,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -556,15 +546,15 @@
         "professional_experience"
       ],
       "text": "Architected multi-agent orchestration frameworks with LangGraph, enabling task-specialized agents (retrieval, reasoning, validation) and increasing end-to-end task success rate by 28%.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nArchitected multi-agent orchestration frameworks with LangGraph, enabling task-specialized agents (retrieval, reasoning, validation) and increasing end-to-end task success rate by 28%.\nQ: What did the individual architected at LangGraph?\nQ: Which frameworks were developed?\nQ: By what percentage did the task success rate increase?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nArchitected multi-agent orchestration frameworks with LangGraph, enabling task-specialized agents (retrieval, reasoning, validation) and increasing end-to-end task success rate by 28%.\nQ: What did Architected multi-agent orchestration frameworks enable?\nQ: How many percentage points did the end-to-end task success rate increase by?\nQ: What are some of the task-specialized agents mentioned?",
       "token_count": 47,
-      "embed_token_count": 92,
+      "embed_token_count": 108,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What did the individual architected at LangGraph?",
-        "Which frameworks were developed?",
-        "By what percentage did the task success rate increase?"
+        "What did Architected multi-agent orchestration frameworks enable?",
+        "How many percentage points did the end-to-end task success rate increase by?",
+        "What are some of the task-specialized agents mentioned?"
       ],
       "content_hash": "365aa08d296196e014eeb605940b14913d92b8328e0ae5e7b9bccd9554d7415b",
       "source": "personal_resume",
@@ -572,17 +562,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -610,15 +599,15 @@
         "professional_experience"
       ],
       "text": "Implemented LLM observability and evaluation pipelines with LangSmith, including regression testing, prompt/version diffing, and pairwise model evaluation, preventing 92% of quality regressions prior to production release.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nImplemented LLM observability and evaluation pipelines with LangSmith, including regression testing, prompt/version diffing, and pairwise model evaluation, preventing 92% of quality regressions prior to production release.\nQ: What tools were used for observability and evaluation?\nQ: What specific methods were implemented for model evaluation?\nQ: What was the effectiveness of the implemented pipelines in preventing quality issues?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nImplemented LLM observability and evaluation pipelines with LangSmith, including regression testing, prompt/version diffing, and pairwise model evaluation, preventing 92% of quality regressions prior to production release.\nQ: What tools were used for observability and evaluation?\nQ: What specific methods were implemented for model evaluation?\nQ: What was the success rate in preventing quality regressions?",
       "token_count": 46,
-      "embed_token_count": 101,
+      "embed_token_count": 96,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What tools were used for observability and evaluation?",
         "What specific methods were implemented for model evaluation?",
-        "What was the effectiveness of the implemented pipelines in preventing quality issues?"
+        "What was the success rate in preventing quality regressions?"
       ],
       "content_hash": "5a3c749d9331f2ddd6045a8c12bf08640a281500aa4fddc9a874312f8fe11545",
       "source": "personal_resume",
@@ -626,17 +615,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -664,15 +652,15 @@
         "professional_experience"
       ],
       "text": "Deployed low-latency LLM inference services with online tracing, evaluation hooks, and monitoring, maintaining P95 latency under 1.5s at production scale.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDeployed low-latency LLM inference services with online tracing, evaluation hooks, and monitoring, maintaining P95 latency under 1.5s at production scale.\nQ: What was the target P95 latency for the deployed services?\nQ: What features were included in the deployment of the LLM inference services?\nQ: At what scale were the services maintained?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDeployed low-latency LLM inference services with online tracing, evaluation hooks, and monitoring, maintaining P95 latency under 1.5s at production scale.\nQ: What was the target for P95 latency?\nQ: Which services were deployed?\nQ: What features were included in the deployed services?",
       "token_count": 38,
-      "embed_token_count": 99,
+      "embed_token_count": 86,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What was the target P95 latency for the deployed services?",
-        "What features were included in the deployment of the LLM inference services?",
-        "At what scale were the services maintained?"
+        "What was the target for P95 latency?",
+        "Which services were deployed?",
+        "What features were included in the deployed services?"
       ],
       "content_hash": "12eac9dc1b01b44e9fc670b692104b1122fd7d5ce3f241d47366324d0ea4edf3",
       "source": "personal_resume",
@@ -680,17 +668,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -718,15 +705,15 @@
         "professional_experience"
       ],
       "text": "Designed and implemented Kubernetes GPU autoscaling and workload orchestration strategies (HPA/KEDA), enabling dynamic scaling of LLM inference services under variable load while optimizing GPU utilization and latency.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDesigned and implemented Kubernetes GPU autoscaling and workload orchestration strategies (HPA/KEDA), enabling dynamic scaling of LLM inference services under variable load while optimizing GPU utilization and latency.\nQ: What technologies were used for autoscaling and workload orchestration?\nQ: What was the goal of the Kubernetes GPU autoscaling strategy?\nQ: How did the strategy optimize GPU utilization and latency?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDesigned and implemented Kubernetes GPU autoscaling and workload orchestration strategies (HPA/KEDA), enabling dynamic scaling of LLM inference services under variable load while optimizing GPU utilization and latency.\nQ: What technologies were used for autoscaling and workload orchestration?\nQ: How was GPU utilization optimized?\nQ: What services were dynamically scaled?",
       "token_count": 51,
-      "embed_token_count": 111,
+      "embed_token_count": 99,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What technologies were used for autoscaling and workload orchestration?",
-        "What was the goal of the Kubernetes GPU autoscaling strategy?",
-        "How did the strategy optimize GPU utilization and latency?"
+        "How was GPU utilization optimized?",
+        "What services were dynamically scaled?"
       ],
       "content_hash": "aaaca9726c46b8a900da2ed25dcb7e9b28565fb814952219298277b11af7b53c",
       "source": "personal_resume",
@@ -734,17 +721,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -772,15 +758,15 @@
         "professional_experience"
       ],
       "text": "Built a centralized analytics and feature data platform on Snowflake to unify multi-source operational and event data for downstream AI and ML workloads.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nBuilt a centralized analytics and feature data platform on Snowflake to unify multi-source operational and event data for downstream AI and ML workloads.\nQ: What platform was used to unify multi-source operational and event data?\nQ: For what purpose was the unified data used?\nQ: Which technology was employed to build the analytics and feature data platform?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nBuilt a centralized analytics and feature data platform on Snowflake to unify multi-source operational and event data for downstream AI and ML workloads.\nQ: What platform was used to build the analytics and feature data platform?\nQ: What was the main goal of building this platform?\nQ: Which types of data were unified by this platform?",
       "token_count": 38,
-      "embed_token_count": 98,
+      "embed_token_count": 92,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What platform was used to unify multi-source operational and event data?",
-        "For what purpose was the unified data used?",
-        "Which technology was employed to build the analytics and feature data platform?"
+        "What platform was used to build the analytics and feature data platform?",
+        "What was the main goal of building this platform?",
+        "Which types of data were unified by this platform?"
       ],
       "content_hash": "e4021425aa4d4cc01db588b8e80a019d58c285af76dea1dec0934e183b75ad74",
       "source": "personal_resume",
@@ -788,17 +774,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -826,15 +811,15 @@
         "professional_experience"
       ],
       "text": "Applied reinforcement learning techniques (PPO, DPO, GRPO) for LLM fine-tuning, leveraging offline evaluations, human and programmatic feedback signals to optimize response quality,\nDesigned and operated high-throughput Kafka event pipelines to support real-time ingestion, model signals, and agent execution triggers.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nApplied reinforcement learning techniques (PPO, DPO, GRPO) for LLM fine-tuning, leveraging offline evaluations, human and programmatic feedback signals to optimize response quality,\nDesigned and operated high-throughput Kafka event pipelines to support real-time ingestion, model signals, and agent execution triggers.\nQ: What reinforcement learning techniques were used for LLM fine-tuning?\nQ: How were feedback signals utilized in optimizing response quality?\nQ: What tools were used to design and operate high-throughput event pipelines?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nApplied reinforcement learning techniques (PPO, DPO, GRPO) for LLM fine-tuning, leveraging offline evaluations, human and programmatic feedback signals to optimize response quality,\nDesigned and operated high-throughput Kafka event pipelines to support real-time ingestion, model signals, and agent execution triggers.\nQ: What reinforcement learning techniques were used for LLM fine-tuning?\nQ: How were feedback signals utilized to optimize response quality?\nQ: What technologies were used to design and operate high-throughput event pipelines?",
       "token_count": 76,
       "embed_token_count": 139,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What reinforcement learning techniques were used for LLM fine-tuning?",
-        "How were feedback signals utilized in optimizing response quality?",
-        "What tools were used to design and operate high-throughput event pipelines?"
+        "How were feedback signals utilized to optimize response quality?",
+        "What technologies were used to design and operate high-throughput event pipelines?"
       ],
       "content_hash": "bb37357d1e657888c2e4558912834091c93bf9e270f5e0ae946e0af53ef3bdc2",
       "source": "personal_resume",
@@ -842,17 +827,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -880,15 +864,15 @@
         "professional_experience"
       ],
       "text": "Developed serverless, distributed backend services using AWS Lambda to support scalable AI workflows and data processing.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDeveloped serverless, distributed backend services using AWS Lambda to support scalable AI workflows and data processing.\nQ: What technologies were used to develop the backend services?\nQ: For what purpose were the backend services developed?\nQ: Which cloud provider was utilized for developing these services?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDeveloped serverless, distributed backend services using AWS Lambda to support scalable AI workflows and data processing.\nQ: What technologies were used for the backend services?\nQ: For what purpose were the backend services developed?\nQ: Which cloud service provider was utilized?",
       "token_count": 28,
-      "embed_token_count": 78,
+      "embed_token_count": 74,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What technologies were used to develop the backend services?",
+        "What technologies were used for the backend services?",
         "For what purpose were the backend services developed?",
-        "Which cloud provider was utilized for developing these services?"
+        "Which cloud service provider was utilized?"
       ],
       "content_hash": "0a46a78d97906fa85550c4e043546ac03427cc2ba86938670711677f1b73c9e7",
       "source": "personal_resume",
@@ -896,17 +880,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -950,17 +933,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -988,15 +970,15 @@
         "professional_experience"
       ],
       "text": "Kaden Health — ML Engineer",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nKaden Health — ML Engineer\nQ: What was Kaden's role?\nQ: Where did Kaden work as an ML Engineer?\nQ: What specific company did Kaden work for as an ML Engineer?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nKaden Health — ML Engineer\nQ: What was Kaden's role?\nQ: Where did Kaden work as an ML Engineer?\nQ: What specific company did Kaden work for?",
       "token_count": 8,
-      "embed_token_count": 61,
+      "embed_token_count": 55,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What was Kaden's role?",
         "Where did Kaden work as an ML Engineer?",
-        "What specific company did Kaden work for as an ML Engineer?"
+        "What specific company did Kaden work for?"
       ],
       "content_hash": "f6b2d67881869589835f3e5bcb629d810e3971bdf4e6f196a7cf04c2b837c713",
       "source": "personal_resume",
@@ -1004,17 +986,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -1042,15 +1023,15 @@
         "professional_experience"
       ],
       "text": "Remote • Jul 2019 – Aug 2021\nDeveloped ML/NLP models using TensorFlow, PyTorch, Keras, XGBoost (classification, sentiment, Speech models), Spacy.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nRemote • Jul 2019 – Aug 2021\nDeveloped ML/NLP models using TensorFlow, PyTorch, Keras, XGBoost (classification, sentiment, Speech models), Spacy.\nQ: Which machine learning frameworks were used for developing models?\nQ: What types of models were developed during the remote position?\nQ: What specific NLP models were created?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nRemote • Jul 2019 – Aug 2021\nDeveloped ML/NLP models using TensorFlow, PyTorch, Keras, XGBoost (classification, sentiment, Speech models), Spacy.\nQ: Which machine learning frameworks were used for developing models?\nQ: What types of models were developed using these frameworks?\nQ: Was any natural language processing involved in the models developed?",
       "token_count": 44,
-      "embed_token_count": 92,
+      "embed_token_count": 96,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "Which machine learning frameworks were used for developing models?",
-        "What types of models were developed during the remote position?",
-        "What specific NLP models were created?"
+        "What types of models were developed using these frameworks?",
+        "Was any natural language processing involved in the models developed?"
       ],
       "content_hash": "2ed0a35cdd07de90e3903675cc24a4c17e6ac768baebb84901d9ba28c0650261",
       "source": "personal_resume",
@@ -1058,17 +1039,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -1096,7 +1076,7 @@
         "professional_experience"
       ],
       "text": "Built fine-tuning pipelines with automated voice data cleaning, feature extraction, evaluation loops.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nBuilt fine-tuning pipelines with automated voice data cleaning, feature extraction, evaluation loops.\nQ: What tasks were involved in building the fine-tuning pipelines?\nQ: What kind of data cleaning was performed?\nQ: Which processes were included in the evaluation loops?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nBuilt fine-tuning pipelines with automated voice data cleaning, feature extraction, evaluation loops.\nQ: What tasks were involved in building the fine-tuning pipelines?\nQ: What kind of data cleaning was performed?\nQ: What aspects were evaluated in the evaluation loops?",
       "token_count": 23,
       "embed_token_count": 76,
       "synthetic_questions_used": 3,
@@ -1104,7 +1084,7 @@
       "synthetic_questions": [
         "What tasks were involved in building the fine-tuning pipelines?",
         "What kind of data cleaning was performed?",
-        "Which processes were included in the evaluation loops?"
+        "What aspects were evaluated in the evaluation loops?"
       ],
       "content_hash": "f0a6cdd1fc7a1ee59b37899c4049c96a4a4f549c03874491fa08c56188d0cc26",
       "source": "personal_resume",
@@ -1112,17 +1092,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -1150,15 +1129,15 @@
         "professional_experience"
       ],
       "text": "Developed model-serving microservices for clinical inference.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDeveloped model-serving microservices for clinical inference.\nQ: What type of microservices did the developer create?\nQ: For what purpose were the microservices developed?\nQ: Which field does the model inference relate to?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDeveloped model-serving microservices for clinical inference.\nQ: What type of services did the individual develop?\nQ: For what purpose were the developed services intended?\nQ: Which domain does the work relate to?",
       "token_count": 15,
-      "embed_token_count": 65,
+      "embed_token_count": 60,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What type of microservices did the developer create?",
-        "For what purpose were the microservices developed?",
-        "Which field does the model inference relate to?"
+        "What type of services did the individual develop?",
+        "For what purpose were the developed services intended?",
+        "Which domain does the work relate to?"
       ],
       "content_hash": "a35ddaf032baa5f9eb8f112f2485ae67a390fe738788ad973c8a1f2e0c8017c4",
       "source": "personal_resume",
@@ -1166,17 +1145,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -1204,15 +1182,15 @@
         "professional_experience"
       ],
       "text": "Designed real-time streaming architecture using NATS + Kafka.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDesigned real-time streaming architecture using NATS + Kafka.\nQ: What technologies were used to design the real-time streaming architecture?\nQ: Which messaging system was paired with Kafka in the architecture?\nQ: Did they design any other aspects of the architecture besides the real-time streaming part?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDesigned real-time streaming architecture using NATS + Kafka.\nQ: What technologies were used to design the real-time streaming architecture?\nQ: Which messaging systems were implemented in the real-time streaming architecture?\nQ: Did the architecture use NATS or Kafka primarily?",
       "token_count": 14,
-      "embed_token_count": 79,
+      "embed_token_count": 74,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What technologies were used to design the real-time streaming architecture?",
-        "Which messaging system was paired with Kafka in the architecture?",
-        "Did they design any other aspects of the architecture besides the real-time streaming part?"
+        "Which messaging systems were implemented in the real-time streaming architecture?",
+        "Did the architecture use NATS or Kafka primarily?"
       ],
       "content_hash": "cda558ac71d1e988a163a14d412327eee3bb8c582f77c1386fbd81ce1aa78c1a",
       "source": "personal_resume",
@@ -1220,17 +1198,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -1258,15 +1235,15 @@
         "professional_experience"
       ],
       "text": "Built unified log ingestion (Cloud Run → BigQuery/S3).",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nBuilt unified log ingestion (Cloud Run → BigQuery/S3).\nQ: What technology was used for unified log ingestion?\nQ: Where were logs ingested to?\nQ: Which services were involved in the log ingestion process?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nBuilt unified log ingestion (Cloud Run → BigQuery/S3).\nQ: What was the project?\nQ: Which services were used for ingestion?\nQ: Where was the data stored?",
       "token_count": 18,
-      "embed_token_count": 66,
+      "embed_token_count": 56,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What technology was used for unified log ingestion?",
-        "Where were logs ingested to?",
-        "Which services were involved in the log ingestion process?"
+        "What was the project?",
+        "Which services were used for ingestion?",
+        "Where was the data stored?"
       ],
       "content_hash": "ea9bbc91c042d1ab367072f663df1d8d7c51b92ac308dfc9624e71c008fb65c6",
       "source": "personal_resume",
@@ -1274,17 +1251,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -1328,17 +1304,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -1382,17 +1357,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -1420,15 +1394,15 @@
         "professional_experience"
       ],
       "text": "• Built sentiment & price prediction models.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\n• Built sentiment & price prediction models.\nQ: What types of models were built?\nQ: Which models were developed?\nQ: Did they involve predicting stock prices?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\n• Built sentiment & price prediction models.\nQ: What types of models did they build?\nQ: Which models were built?\nQ: Did they build any other types of models?",
       "token_count": 10,
-      "embed_token_count": 48,
+      "embed_token_count": 50,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What types of models were built?",
-        "Which models were developed?",
-        "Did they involve predicting stock prices?"
+        "What types of models did they build?",
+        "Which models were built?",
+        "Did they build any other types of models?"
       ],
       "content_hash": "a5880e45431f9cecd60b09561482cd2d335c12cd3e8d1583eba5c3c7b71e1353",
       "source": "personal_resume",
@@ -1436,17 +1410,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -1474,15 +1447,15 @@
         "professional_experience"
       ],
       "text": "• Developed ETL + real-time analytics w/ Spark, Hadoop, Kafka, HBase.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\n• Developed ETL + real-time analytics w/ Spark, Hadoop, Kafka, HBase.\nQ: Which technologies were used for ETL and real-time analytics?\nQ: What tools were utilized for real-time analytics?\nQ: Did they use any specific big data technologies?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\n• Developed ETL + real-time analytics w/ Spark, Hadoop, Kafka, HBase.\nQ: Which technologies were used for developing ETL and real-time analytics?\nQ: What tools were utilized for ETL development?\nQ: Which tool was used for real-time analytics?",
       "token_count": 26,
-      "embed_token_count": 81,
+      "embed_token_count": 82,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "Which technologies were used for ETL and real-time analytics?",
-        "What tools were utilized for real-time analytics?",
-        "Did they use any specific big data technologies?"
+        "Which technologies were used for developing ETL and real-time analytics?",
+        "What tools were utilized for ETL development?",
+        "Which tool was used for real-time analytics?"
       ],
       "content_hash": "f59f8cfb13315af3d7788c189d445b583177ddbc7fb936ea175de8d80ede80e4",
       "source": "personal_resume",
@@ -1490,17 +1463,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -1528,15 +1500,15 @@
         "professional_experience"
       ],
       "text": "NVIDIA — Full Stack Engineer",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nNVIDIA — Full Stack Engineer\nQ: What was the role held at NVIDIA?\nQ: Which company was the role held at?\nQ: Was the role part-time or full-time?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nNVIDIA — Full Stack Engineer\nQ: What was the role held at NVIDIA?\nQ: Was the role at NVIDIA part-time or full-time?\nQ: What type of engineer position was held at NVIDIA?",
       "token_count": 7,
-      "embed_token_count": 52,
+      "embed_token_count": 56,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What was the role held at NVIDIA?",
-        "Which company was the role held at?",
-        "Was the role part-time or full-time?"
+        "Was the role at NVIDIA part-time or full-time?",
+        "What type of engineer position was held at NVIDIA?"
       ],
       "content_hash": "d81056f056bded96ebe60c410fb46ef4e4e471159b3d27686a8e3ad5e8ac112f",
       "source": "personal_resume",
@@ -1544,17 +1516,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -1598,17 +1569,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -1652,17 +1622,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -1690,15 +1659,15 @@
         "professional_experience"
       ],
       "text": "Developed internal REST APIs supporting GPU engineering.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDeveloped internal REST APIs supporting GPU engineering.\nQ: What type of APIs did the individual develop?\nQ: For what purpose were the APIs developed?\nQ: Which engineering field do the APIs support?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDeveloped internal REST APIs supporting GPU engineering.\nQ: What type of APIs did the individual develop?\nQ: For which department were the APIs developed?\nQ: What technology was used for API development?",
       "token_count": 12,
-      "embed_token_count": 58,
+      "embed_token_count": 57,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What type of APIs did the individual develop?",
-        "For what purpose were the APIs developed?",
-        "Which engineering field do the APIs support?"
+        "For which department were the APIs developed?",
+        "What technology was used for API development?"
       ],
       "content_hash": "ce05e3d33fe5c633ab41e6ec9c47f2ec38fdf9b24c4b615c946c351431160169",
       "source": "personal_resume",
@@ -1706,17 +1675,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -1744,15 +1712,15 @@
         "professional_experience"
       ],
       "text": "Built frontend interfaces using React within a Node.js environment.",
-      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nBuilt frontend interfaces using React within a Node.js environment.\nQ: What technology was used to build frontend interfaces?\nQ: Within what backend environment were the frontend interfaces built?\nQ: Which specific frontend technology was utilized?",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nBuilt frontend interfaces using React within a Node.js environment.\nQ: What technology was used to build frontend interfaces?\nQ: In what environment were the frontend interfaces built?\nQ: Which specific technology was used for the frontend?",
       "token_count": 17,
-      "embed_token_count": 69,
+      "embed_token_count": 67,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What technology was used to build frontend interfaces?",
-        "Within what backend environment were the frontend interfaces built?",
-        "Which specific frontend technology was utilized?"
+        "In what environment were the frontend interfaces built?",
+        "Which specific technology was used for the frontend?"
       ],
       "content_hash": "1cccdcb5b697a1159d40e4c7ce6454737287d9710df3937dbe7c98d1c2404197",
       "source": "personal_resume",
@@ -1760,17 +1728,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -1814,17 +1781,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -1868,17 +1834,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -1906,15 +1871,15 @@
         "publication"
       ],
       "text": "A Novel Approach to Impedance-based Fault Location for High Voltage Cables — IEEE IAS, 2012\n(https://www.researchgate.net/publication/261239443_A_novel_approach_to_impedance-based_fault_location_for_high_voltage_cables)",
-      "embed_text": "[SECTION: PUBLICATION]\nA Novel Approach to Impedance-based Fault Location for High Voltage Cables — IEEE IAS, 2012\n(https://www.researchgate.net/publication/261239443_A_novel_approach_to_impedance-based_fault_location_for_high_voltage_cables)\nQ: What is the title of the publication?\nQ: Which conference was the publication presented at?\nQ: When was the publication presented?",
+      "embed_text": "[SECTION: PUBLICATION]\nA Novel Approach to Impedance-based Fault Location for High Voltage Cables — IEEE IAS, 2012\n(https://www.researchgate.net/publication/261239443_A_novel_approach_to_impedance-based_fault_location_for_high_voltage_cables)\nQ: What is the title of the publication?\nQ: Where was the publication presented?\nQ: What is the URL for the publication?",
       "token_count": 78,
-      "embed_token_count": 116,
+      "embed_token_count": 115,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is the title of the publication?",
-        "Which conference was the publication presented at?",
-        "When was the publication presented?"
+        "Where was the publication presented?",
+        "What is the URL for the publication?"
       ],
       "content_hash": "0cf73f57b395f897e009ed0635b6db9e5b8b369a35dc2e91ad328f5e6e0fbfd7",
       "source": "personal_resume",
@@ -1922,17 +1887,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151832_EST",
-      "ingest_ts": "2026-05-03T15:18:32-05:00",
+      "ingest_run_id": "run_20260509_074523_EST",
+      "ingest_ts": "2026-05-09T07:45:23-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"

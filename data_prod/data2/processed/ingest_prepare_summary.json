@@ -1,7 +1,7 @@
 {
-  "ingest_run_id": "run_20260430_144345_EST",
+  "ingest_run_id": "run_20260509_074416_EST",
   "collection": "taixing_knowledge_prod",
-  "ingest_ts": "2026-04-30T14:43:45-05:00",
+  "ingest_ts": "2026-05-09T07:44:16-05:00",
   "id_key_version": "v3",
   "document_version": "v1",
   "chunk_version": "v1",
@@ -116,6 +116,15 @@
       "chunks_failed": 0
     },
     {
+      "input_file": "data_prod/data2/processed/chunks_layer-gateway-inference-v1__smoke-test.md.json",
+      "output_file": "data_prod/data2/processed/points_layer-gateway-inference-v1__smoke-test.md.json",
+      "doc_type": "layer-gateway-inference-v1__smoke-test.md",
+      "source": "repo_layer-gateway-inference-v1__smoke-test.md",
+      "chunks_input": 8,
+      "chunks_prepared": 8,
+      "chunks_failed": 0
+    },
+    {
       "input_file": "data_prod/data2/processed/chunks_repo.json",
       "output_file": "data_prod/data2/processed/points_repo.json",
       "doc_type": "repo",
@@ -126,9 +135,9 @@
     }
   ],
   "stats": {
-    "files_total": 13,
-    "chunks_input": 208,
-    "chunks_total_prepared": 208,
+    "files_total": 14,
+    "chunks_input": 216,
+    "chunks_total_prepared": 216,
     "chunks_failed": 0
   }
 }

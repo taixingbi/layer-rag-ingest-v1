@@ -46,7 +46,8 @@ flowchart LR
 `app/api/routes.py` handles:
 
 - `POST /v1/chat/completions`
-- `GET /healthz`
+- `GET /health`
+- `GET /ready`
 - `GET /metrics`
 
 Responsibilities:

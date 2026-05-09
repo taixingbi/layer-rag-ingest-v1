@@ -1,0 +1,322 @@
+[
+  {
+    "id": "098b548f-74f9-5254-9b3c-e37fa2f9aa17",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0001",
+      "document_id": "layer-gateway-inference-v1__smoke-test.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Gateway Smoke Test",
+      "doc_type": "layer-gateway-inference-v1__smoke-test.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-inference-v1__smoke-test.md",
+        "gateway_smoke_test"
+      ],
+      "text": "Use this quick checklist after startup or deploy to verify core gateway behavior.",
+      "embed_text": "[SECTION: Gateway Smoke Test]\nUse this quick checklist after startup or deploy to verify core gateway behavior.\nQ: What should you use to verify core gateway behavior?\nQ: When should you perform the quick checklist?\nQ: What is the purpose of the quick checklist?",
+      "token_count": 19,
+      "embed_token_count": 66,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What should you use to verify core gateway behavior?",
+        "When should you perform the quick checklist?",
+        "What is the purpose of the quick checklist?"
+      ],
+      "content_hash": "6cfdbe9d2f60726b59ea242a51598a47acc6f07e1a0fe46f717db61fcb4543ee",
+      "source": "repo_layer-gateway-inference-v1__smoke-test.md",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null
+    }
+  },
+  {
+    "id": "59f0a566-b4e8-5b7d-adaf-cc7435dbc31c",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0002",
+      "document_id": "layer-gateway-inference-v1__smoke-test.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Prerequisites",
+      "doc_type": "layer-gateway-inference-v1__smoke-test.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-inference-v1__smoke-test.md",
+        "prerequisites"
+      ],
+      "text": "- Gateway is running and reachable\n- At least one backend in `config.yaml` is reachable by the gateway\n\nSet your base URL:\n\n```bash\nexport GATEWAY_URL=\"http://127.0.0.1:8010\"\n```",
+      "embed_text": "[SECTION: Prerequisites]\n- Gateway is running and reachable\n- At least one backend in `config.yaml` is reachable by the gateway\n\nSet your base URL:\n\n```bash\nexport GATEWAY_URL=\"http://127.0.0.1:8010\"\n```\nQ: What must be true for the gateway?\nQ: How can you set the base URL?\nQ: What is the default value for GATEWAY_URL?",
+      "token_count": 54,
+      "embed_token_count": 99,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What must be true for the gateway?",
+        "How can you set the base URL?",
+        "What is the default value for GATEWAY_URL?"
+      ],
+      "content_hash": "dcda2f7467c99e2bdea2d31d19cae73e5d39f5848a41bdd9e1ac5e8eafa48ca0",
+      "source": "repo_layer-gateway-inference-v1__smoke-test.md",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null
+    }
+  },
+  {
+    "id": "f924234e-1139-5730-8af9-f7f78ff3f1e3",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0003",
+      "document_id": "layer-gateway-inference-v1__smoke-test.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "1) Liveness (`/health`)",
+      "doc_type": "layer-gateway-inference-v1__smoke-test.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-inference-v1__smoke-test.md",
+        "1)_liveness_(`/health`)"
+      ],
+      "text": "```bash\ncurl -sS \"$GATEWAY_URL/health\"\n```\n\nExpected response:\n\n```json\n{\"status\":\"ok\"}\n```",
+      "embed_text": "[SECTION: 1) Liveness (`/health`)]\n```bash\ncurl -sS \"$GATEWAY_URL/health\"\n```\n\nExpected response:\n\n```json\n{\"status\":\"ok\"}\n```\nQ: What is the expected response when checking liveness?\nQ: Which URL is used to check the application's liveness?\nQ: What method is used to check the application's health?",
+      "token_count": 40,
+      "embed_token_count": 96,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is the expected response when checking liveness?",
+        "Which URL is used to check the application's liveness?",
+        "What method is used to check the application's health?"
+      ],
+      "content_hash": "261306e4e9dd87bf489ca82dc69a8486b00ce5b1f8414b05a79920901fe06739",
+      "source": "repo_layer-gateway-inference-v1__smoke-test.md",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null
+    }
+  },
+  {
+    "id": "c2ca1bcd-6b24-5ad2-b574-08bbcea1b8cd",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0004",
+      "document_id": "layer-gateway-inference-v1__smoke-test.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "2) Readiness (`/ready`)",
+      "doc_type": "layer-gateway-inference-v1__smoke-test.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-inference-v1__smoke-test.md",
+        "2)_readiness_(`/ready`)"
+      ],
+      "text": "```bash\ncurl -i -sS \"$GATEWAY_URL/ready\"\n```\n\nExpected:\n\n- `HTTP/1.1 200 OK`\n- Body includes `{\"status\":\"ready\"}`\n\nIf not ready, endpoint returns `503` with JSON details (for example missing app state or closed HTTP client).",
+      "embed_text": "[SECTION: 2) Readiness (`/ready`)]\n```bash\ncurl -i -sS \"$GATEWAY_URL/ready\"\n```\n\nExpected:\n\n- `HTTP/1.1 200 OK`\n- Body includes `{\"status\":\"ready\"}`\n\nIf not ready, endpoint returns `503` with JSON details (for example missing app state or closed HTTP client).\nQ: What HTTP status code indicates the service is ready?\nQ: What is included in the body when the service is ready?\nQ: What status message is included in the body when the service is ready?",
+      "token_count": 78,
+      "embed_token_count": 138,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What HTTP status code indicates the service is ready?",
+        "What is included in the body when the service is ready?",
+        "What status message is included in the body when the service is ready?"
+      ],
+      "content_hash": "8d59b4d474a6c8eedbb5a6d61f863cc30ff5142f592f4876f2aac542d9f295d0",
+      "source": "repo_layer-gateway-inference-v1__smoke-test.md",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null
+    }
+  },
+  {
+    "id": "385d50e7-8a1c-5f85-81ca-427836287dc6",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0005",
+      "document_id": "layer-gateway-inference-v1__smoke-test.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "3) Metrics (`/metrics`)",
+      "doc_type": "layer-gateway-inference-v1__smoke-test.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-inference-v1__smoke-test.md",
+        "3)_metrics_(`/metrics`)"
+      ],
+      "text": "```bash\ncurl -sS \"$GATEWAY_URL/metrics\" | rg \"gateway_requests_total|gateway_queue_depth|gateway_dispatch_total\"\n```\n\nExpected: one or more matching metric lines.",
+      "embed_text": "[SECTION: 3) Metrics (`/metrics`)]\n```bash\ncurl -sS \"$GATEWAY_URL/metrics\" | rg \"gateway_requests_total|gateway_queue_depth|gateway_dispatch_total\"\n```\n\nExpected: one or more matching metric lines.\nQ: What metrics are expected to be returned by the gateway?\nQ: Which specific metrics are queried using the provided command?\nQ: How many specific metrics are targeted in the given command?",
+      "token_count": 67,
+      "embed_token_count": 128,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What metrics are expected to be returned by the gateway?",
+        "Which specific metrics are queried using the provided command?",
+        "How many specific metrics are targeted in the given command?"
+      ],
+      "content_hash": "058cc7d9de3a8927ec5fd60f5f862c958f0a624a4acde768d72b3bc8f52044f7",
+      "source": "repo_layer-gateway-inference-v1__smoke-test.md",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null
+    }
+  },
+  {
+    "id": "6f715736-5c73-5ecc-b39a-f1ab673ff5f6",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0006",
+      "document_id": "layer-gateway-inference-v1__smoke-test.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "4) Optional: quick correlation-ID check in logs",
+      "doc_type": "layer-gateway-inference-v1__smoke-test.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-inference-v1__smoke-test.md",
+        "4)_optional:_quick_correlation-id_check_in_logs"
+      ],
+      "text": "Send a request and then check logs for the same ids:\n\n```bash\ncurl -sS \"$GATEWAY_URL/v1/chat/completions\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"X-Request-Id: smoke-req-2\" \\\n  -H \"X-Trace-Id: smoke-trace-2\" \\\n  -H \"X-Session-Id: smoke-session-2\" \\\n  -d '{\"model\":\"Qwen/Qwen2.5-7B-Instruct\",\"messages\":[{\"role\":\"user\",\"content\":\"ping\"}]}'\n```\n\nThen verify log lines include:\n\n- `request_id=smoke-req-2`\n- `trace_id=smoke-trace-2`\n- `session_id=smoke-session-2`",
+      "embed_text": "[SECTION: 4) Optional: quick correlation-ID check in logs]\nSend a request and then check logs for the same ids:\n\n```bash\ncurl -sS \"$GATEWAY_URL/v1/chat/completions\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"X-Request-Id: smoke-req-2\" \\\n  -H \"X-Trace-Id: smoke-trace-2\" \\\n  -H \"X-Session-Id: smoke-session-2\" \\\n  -d '{\"model\":\"Qwen/Qwen2.5-7B-Instruct\",\"messages\":[{\"role\":\"user\",\"content\":\"ping\"}]}'\n```\n\nThen verify log lines include:\n\n- `request_id=smoke-req-2`\n- `trace_id=smoke-trace-2`\n- `session_id=smoke-session-2`\nQ: What IDs should be checked in logs after sending a request?\nQ: Which curl command is used to send a request?\nQ: What are the specific headers included in the curl command?",
+      "token_count": 211,
+      "embed_token_count": 275,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What IDs should be checked in logs after sending a request?",
+        "Which curl command is used to send a request?",
+        "What are the specific headers included in the curl command?"
+      ],
+      "content_hash": "68d512e1ed61f05f6f1b10a1cba312eda089fe1988c2a67cd455cddb14c72334",
+      "source": "repo_layer-gateway-inference-v1__smoke-test.md",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null
+    }
+  },
+  {
+    "id": "1eceb19d-83e2-5f24-ab83-0378c3bb5581",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0007",
+      "document_id": "layer-gateway-inference-v1__smoke-test.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "6) k3s smoke examples",
+      "doc_type": "layer-gateway-inference-v1__smoke-test.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-inference-v1__smoke-test.md",
+        "6)_k3s_smoke_examples"
+      ],
+      "text": "These are direct examples against a k3s-exposed gateway service.\n\nBasic request:\n\n```bash\ncurl http://192.168.86.179:30180/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"model\": \"Qwen/Qwen2.5-7B-Instruct\", \"messages\":\n      [{\"role\": \"user\", \"content\": \"where is jersey city\"}],\n      \"max_tokens\": 50}'\n```\n\nRequest with correlation headers:\n\n```bash\ncurl http://192.168.86.179:30180/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -H \"X-Request-Id: request-id-1\" \\\n  -H \"X-Trace-Id: trace-id-1\" \\\n  -H \"X-Session-Id: session-id-1\" \\\n  -d '{\n    \"model\": \"Qwen/Qwen2.5-7B-Instruct\",\n    \"messages\": [\n      {\"role\": \"user\", \"content\": \"where is jersey city\"}\n    ],\n    \"max_tokens\": 50,\n    \"temperature\": 0.7\n  }'\n```",
+      "embed_text": "[SECTION: 6) k3s smoke examples]\nThese are direct examples against a k3s-exposed gateway service.\n\nBasic request:\n\n```bash\ncurl http://192.168.86.179:30180/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"model\": \"Qwen/Qwen2.5-7B-Instruct\", \"messages\":\n      [{\"role\": \"user\", \"content\": \"where is jersey city\"}],\n      \"max_tokens\": 50}'\n```\n\nRequest with correlation headers:\n\n```bash\ncurl http://192.168.86.179:30180/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -H \"X-Request-Id: request-id-1\" \\\n  -H \"X-Trace-Id: trace-id-1\" \\\n  -H \"X-Session-Id: session-id-1\" \\\n  -d '{\n    \"model\": \"Qwen/Qwen2.5-7B-Instruct\",\n    \"messages\": [\n      {\"role\": \"user\", \"content\": \"where is jersey city\"}\n    ],\n    \"max_tokens\": 50,\n    \"temperature\": 0.7\n  }'\n```\nQ: What is the basic request for the k3s-exposed gateway service?\nQ: What additional headers are included in the request with correlation headers?\nQ: Which model is used in both requests?",
+      "token_count": 297,
+      "embed_token_count": 358,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is the basic request for the k3s-exposed gateway service?",
+        "What additional headers are included in the request with correlation headers?",
+        "Which model is used in both requests?"
+      ],
+      "content_hash": "476271fbfb724af81fb9213d34b1b3d10927a742e013b3c72546b12bf594ffc3",
+      "source": "repo_layer-gateway-inference-v1__smoke-test.md",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null
+    }
+  },
+  {
+    "id": "1be70628-b0d5-5584-923f-21423168ed10",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0008",
+      "document_id": "layer-gateway-inference-v1__smoke-test.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "6) k3s smoke examples",
+      "doc_type": "layer-gateway-inference-v1__smoke-test.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-inference-v1__smoke-test.md",
+        "6)_k3s_smoke_examples"
+      ],
+      "text": "Streaming request:\n\n```bash\ncurl -N http://192.168.86.179:30180/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -H \"X-Request-Id: request-id-stream-1\" \\\n  -H \"X-Trace-Id: trace-id-stream-1\" \\\n  -H \"X-Session-Id: session-id-stream-1\" \\\n  -d '{\n    \"model\": \"Qwen/Qwen2.5-7B-Instruct\",\n    \"messages\": [\n      {\"role\": \"user\", \"content\": \"tell me 3 facts about jersey city\"}\n    ],\n    \"max_tokens\": 80,\n    \"temperature\": 0.7,\n    \"stream\": true\n  }'\n```",
+      "embed_text": "[SECTION: 6) k3s smoke examples]\nStreaming request:\n\n```bash\ncurl -N http://192.168.86.179:30180/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -H \"X-Request-Id: request-id-stream-1\" \\\n  -H \"X-Trace-Id: trace-id-stream-1\" \\\n  -H \"X-Session-Id: session-id-stream-1\" \\\n  -d '{\n    \"model\": \"Qwen/Qwen2.5-7B-Instruct\",\n    \"messages\": [\n      {\"role\": \"user\", \"content\": \"tell me 3 facts about jersey city\"}\n    ],\n    \"max_tokens\": 80,\n    \"temperature\": 0.7,\n    \"stream\": true\n  }'\n```\nQ: What is the command used to stream a request?\nQ: Which IP address and port are used in the streaming request?\nQ: What model is specified in the request?",
+      "token_count": 188,
+      "embed_token_count": 239,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is the command used to stream a request?",
+        "Which IP address and port are used in the streaming request?",
+        "What model is specified in the request?"
+      ],
+      "content_hash": "e0e29062789ecc148b4e7f11e75cdbf4c10714c678f9c796cf24681e46de9b6d",
+      "source": "repo_layer-gateway-inference-v1__smoke-test.md",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null
+    }
+  }
+]

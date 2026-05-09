@@ -16,15 +16,15 @@
         "root"
       ],
       "text": "layer-gateway-embed-v1\n\nA lightweight, request-level routing gateway for embedding workloads across multiple vLLM backends.\n\nThis service complements\nlayer-gateway-inference-v1 by handling /v1/embeddings traffic independently.\n\nOverview\n\nlayer-gateway-embed-v1 provides:\n\nLoad-aware routing across embedding backends\nRequest-level scheduling (not connection-level)\nRetry and circuit breaker for reliability\nStructured logging and metrics\nSimple, production-ready architecture\nWhy a Separate Gateway?",
-      "embed_text": "[SECTION: ROOT]\nlayer-gateway-embed-v1\n\nA lightweight, request-level routing gateway for embedding workloads across multiple vLLM backends.\n\nThis service complements\nlayer-gateway-inference-v1 by handling /v1/embeddings traffic independently.\n\nOverview\n\nlayer-gateway-embed-v1 provides:\n\nLoad-aware routing across embedding backends\nRequest-level scheduling (not connection-level)\nRetry and circuit breaker for reliability\nStructured logging and metrics\nSimple, production-ready architecture\nWhy a Separate Gateway?\nQ: What is the purpose of layer-gateway-embed-v1?\nQ: How does layer-gateway-embed-v1 handle traffic?\nQ: What features does layer-gateway-embed-v1 provide?",
+      "embed_text": "[SECTION: ROOT]\nlayer-gateway-embed-v1\n\nA lightweight, request-level routing gateway for embedding workloads across multiple vLLM backends.\n\nThis service complements\nlayer-gateway-inference-v1 by handling /v1/embeddings traffic independently.\n\nOverview\n\nlayer-gateway-embed-v1 provides:\n\nLoad-aware routing across embedding backends\nRequest-level scheduling (not connection-level)\nRetry and circuit breaker for reliability\nStructured logging and metrics\nSimple, production-ready architecture\nWhy a Separate Gateway?\nQ: What is the purpose of layer-gateway-embed-v1?\nQ: How does layer-gateway-embed-v1 handle traffic?\nQ: What capabilities does layer-gateway-embed-v1 provide?",
       "token_count": 137,
-      "embed_token_count": 197,
+      "embed_token_count": 198,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is the purpose of layer-gateway-embed-v1?",
         "How does layer-gateway-embed-v1 handle traffic?",
-        "What features does layer-gateway-embed-v1 provide?"
+        "What capabilities does layer-gateway-embed-v1 provide?"
       ],
       "content_hash": "db47718635ddfa9e605a9db3334e7a6d7f82876ee3a20b0dd5ca5783e80b90a9",
       "source": "repo_layer-gateway-embed-v1__plan.md",
@@ -32,17 +32,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -86,17 +83,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -140,17 +134,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -178,13 +169,13 @@
         "root"
       ],
       "text": "The gateway selects the best backend using a score-based approach:\n\nscore = inflight * W1 + latency * W2 + error_rate * W3\n\nWhere:\n\ninflight = current active requests\nlatency = recent response time\nerror_rate = recent failures\n\nLowest score wins.\n\nRequest Classification\n\nRequests are classified for observability and future tuning:\n\nSMALL_EMBED\nMEDIUM_EMBED\nLARGE_EMBED\n\nBased on:\n\nnumber of input items\ntotal character size\nReliability\nRetry",
-      "embed_text": "[SECTION: ROOT]\nThe gateway selects the best backend using a score-based approach:\n\nscore = inflight * W1 + latency * W2 + error_rate * W3\n\nWhere:\n\ninflight = current active requests\nlatency = recent response time\nerror_rate = recent failures\n\nLowest score wins.\n\nRequest Classification\n\nRequests are classified for observability and future tuning:\n\nSMALL_EMBED\nMEDIUM_EMBED\nLARGE_EMBED\n\nBased on:\n\nnumber of input items\ntotal character size\nReliability\nRetry\nQ: What factors are considered in the score-based approach for selecting the best backend?\nQ: How are requests classified for observability and future tuning?\nQ: What does the SMALL_EMBED classification consider?",
+      "embed_text": "[SECTION: ROOT]\nThe gateway selects the best backend using a score-based approach:\n\nscore = inflight * W1 + latency * W2 + error_rate * W3\n\nWhere:\n\ninflight = current active requests\nlatency = recent response time\nerror_rate = recent failures\n\nLowest score wins.\n\nRequest Classification\n\nRequests are classified for observability and future tuning:\n\nSMALL_EMBED\nMEDIUM_EMBED\nLARGE_EMBED\n\nBased on:\n\nnumber of input items\ntotal character size\nReliability\nRetry\nQ: What factors are considered in the score calculation for selecting the best backend?\nQ: How are requests classified for observability and future tuning?\nQ: What does the SMALL_EMBED classification consider?",
       "token_count": 117,
-      "embed_token_count": 176,
+      "embed_token_count": 175,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What factors are considered in the score-based approach for selecting the best backend?",
+        "What factors are considered in the score calculation for selecting the best backend?",
         "How are requests classified for observability and future tuning?",
         "What does the SMALL_EMBED classification consider?"
       ],
@@ -194,17 +185,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -248,17 +236,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -302,17 +287,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -356,17 +338,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -394,14 +373,14 @@
         "root"
       ],
       "text": "config/\ntests/\nDockerfile\nREADME.md\nDevelopment Plan\nPhase 1 — Bootstrap\nCreate repo\nCopy reusable components from inference gateway\nRemove chat-specific logic\nPhase 2 — Core Endpoint\nImplement /v1/embeddings\nAdd config + security\nAdd backend routing\nPhase 3 — Reliability\nRetry logic\nCircuit breaker\nBackend health tracking\nPhase 4 — Observability\nLogging\nMetrics\n/health\nPhase 5 — Deployment\nBuild Docker image\nRun locally or in cluster\nPhase 6 — Load Testing\nConcurrency tests\nFailover tests\nLatency validation\nDesign Principles\nRequest-level routing (not connection-level)\nKeep gateway simple — no batching\nLet vLLM handle batching\nFail fast, retry smart\nPrefer stability over complexity\nFuture Enhancements (Optional)\nOpenAI fallback for embeddings\nAdmission queue / rate limiting\nDynamic backend discovery\nAdaptive routing weights\nRequest batching (if needed)\nStatus",
-      "embed_text": "[SECTION: ROOT]\nconfig/\ntests/\nDockerfile\nREADME.md\nDevelopment Plan\nPhase 1 — Bootstrap\nCreate repo\nCopy reusable components from inference gateway\nRemove chat-specific logic\nPhase 2 — Core Endpoint\nImplement /v1/embeddings\nAdd config + security\nAdd backend routing\nPhase 3 — Reliability\nRetry logic\nCircuit breaker\nBackend health tracking\nPhase 4 — Observability\nLogging\nMetrics\n/health\nPhase 5 — Deployment\nBuild Docker image\nRun locally or in cluster\nPhase 6 — Load Testing\nConcurrency tests\nFailover tests\nLatency validation\nDesign Principles\nRequest-level routing (not connection-level)\nKeep gateway simple — no batching\nLet vLLM handle batching\nFail fast, retry smart\nPrefer stability over complexity\nFuture Enhancements (Optional)\nOpenAI fallback for embeddings\nAdmission queue / rate limiting\nDynamic backend discovery\nAdaptive routing weights\nRequest batching (if needed)\nStatus\nQ: What are the phases of development mentioned in the document?\nQ: What is the first phase of the development plan called and what does it entail?\nQ: Which design principle states to prefer stability over complexity?",
+      "embed_text": "[SECTION: ROOT]\nconfig/\ntests/\nDockerfile\nREADME.md\nDevelopment Plan\nPhase 1 — Bootstrap\nCreate repo\nCopy reusable components from inference gateway\nRemove chat-specific logic\nPhase 2 — Core Endpoint\nImplement /v1/embeddings\nAdd config + security\nAdd backend routing\nPhase 3 — Reliability\nRetry logic\nCircuit breaker\nBackend health tracking\nPhase 4 — Observability\nLogging\nMetrics\n/health\nPhase 5 — Deployment\nBuild Docker image\nRun locally or in cluster\nPhase 6 — Load Testing\nConcurrency tests\nFailover tests\nLatency validation\nDesign Principles\nRequest-level routing (not connection-level)\nKeep gateway simple — no batching\nLet vLLM handle batching\nFail fast, retry smart\nPrefer stability over complexity\nFuture Enhancements (Optional)\nOpenAI fallback for embeddings\nAdmission queue / rate limiting\nDynamic backend discovery\nAdaptive routing weights\nRequest batching (if needed)\nStatus\nQ: What are the phases of development mentioned in the document?\nQ: What is the last phase of deployment and what does it include?\nQ: Which design principle states to prefer stability over complexity?",
       "token_count": 217,
-      "embed_token_count": 273,
+      "embed_token_count": 272,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What are the phases of development mentioned in the document?",
-        "What is the first phase of the development plan called and what does it entail?",
+        "What is the last phase of deployment and what does it include?",
         "Which design principle states to prefer stability over complexity?"
       ],
       "content_hash": "e13cc464a9d830f8fcf23739db3890463c3c9c9838dd10e44360e17d4a89c34b",
@@ -410,17 +389,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -448,15 +424,15 @@
         "root"
       ],
       "text": "🚧 Initial version (v1) focuses on:\n\nStable routing\nReliability\nObservability\nSimple deployment",
-      "embed_text": "[SECTION: ROOT]\n🚧 Initial version (v1) focuses on:\n\nStable routing\nReliability\nObservability\nSimple deployment\nQ: What are the main focuses of the initial version?\nQ: Which aspects does the initial version prioritize?\nQ: What does the v1 prioritize?",
+      "embed_text": "[SECTION: ROOT]\n🚧 Initial version (v1) focuses on:\n\nStable routing\nReliability\nObservability\nSimple deployment\nQ: What are the main focuses of the initial version?\nQ: Which aspects does the initial version prioritize?\nQ: What does the v1 version primarily concentrate on?",
       "token_count": 27,
-      "embed_token_count": 69,
+      "embed_token_count": 73,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What are the main focuses of the initial version?",
         "Which aspects does the initial version prioritize?",
-        "What does the v1 prioritize?"
+        "What does the v1 version primarily concentrate on?"
       ],
       "content_hash": "b62c6b96f4ed646f6cfa61606615ed3ca820ccda8258c97745d408112046be41",
       "source": "repo_layer-gateway-embed-v1__plan.md",
@@ -464,17 +440,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"

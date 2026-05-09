@@ -32,17 +32,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260430_144345_EST",
-      "ingest_ts": "2026-04-30T14:43:45-05:00",
+      "ingest_run_id": "run_20260509_074416_EST",
+      "ingest_ts": "2026-05-09T07:44:16-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -70,15 +67,15 @@
         "prerequisites"
       ],
       "text": "- Docker Desktop (or Docker Engine + Compose plugin)\n- A `.env` file in repo root (you can start from `.env.example`)\n- Reachable embedding backends configured in `EMBED_BACKENDS`",
-      "embed_text": "[SECTION: Prerequisites]\n- Docker Desktop (or Docker Engine + Compose plugin)\n- A `.env` file in repo root (you can start from `.env.example`)\n- Reachable embedding backends configured in `EMBED_BACKENDS`\nQ: What prerequisites are mentioned in the section?\nQ: What is the purpose of the .env file?\nQ: What should you configure in EMBED_BACKENDS?",
+      "embed_text": "[SECTION: Prerequisites]\n- Docker Desktop (or Docker Engine + Compose plugin)\n- A `.env` file in repo root (you can start from `.env.example`)\n- Reachable embedding backends configured in `EMBED_BACKENDS`\nQ: What is required for the Docker setup?\nQ: What file should be used as an example for configuration?\nQ: What should be configured in EMBED_BACKENDS?",
       "token_count": 63,
-      "embed_token_count": 116,
+      "embed_token_count": 114,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What prerequisites are mentioned in the section?",
-        "What is the purpose of the .env file?",
-        "What should you configure in EMBED_BACKENDS?"
+        "What is required for the Docker setup?",
+        "What file should be used as an example for configuration?",
+        "What should be configured in EMBED_BACKENDS?"
       ],
       "content_hash": "a0b56e1803a6f1a9aa0e656f48431cf6f6cf26ddb7f50c22402a6d33ef3bc630",
       "source": "repo_layer-gateway-embed-v1__docker.md",
@@ -86,17 +83,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260430_144345_EST",
-      "ingest_ts": "2026-04-30T14:43:45-05:00",
+      "ingest_run_id": "run_20260509_074416_EST",
+      "ingest_ts": "2026-05-09T07:44:16-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -124,15 +118,15 @@
         "1)_local_docker_deploy_(single_container)"
       ],
       "text": "Build image from project root:\n\n```bash\ndocker build -t layer-gateway-embed-v1:local .\n```\n\nRun container:\n\n```bash\ndocker run --rm \\\n  --name layer-gateway-embed-v1 \\\n  --env-file .env \\\n  -p 30181:30181 \\\n  layer-gateway-embed-v1:local\n```\n\nVerify:\n\n```bash\ncurl http://localhost:30181/health\n```\n\nExpected response:\n\n```json\n{\"status\":\"ok\"}\n```",
-      "embed_text": "[SECTION: 1) Local Docker Deploy (single container)]\nBuild image from project root:\n\n```bash\ndocker build -t layer-gateway-embed-v1:local .\n```\n\nRun container:\n\n```bash\ndocker run --rm \\\n  --name layer-gateway-embed-v1 \\\n  --env-file .env \\\n  -p 30181:30181 \\\n  layer-gateway-embed-v1:local\n```\n\nVerify:\n\n```bash\ncurl http://localhost:30181/health\n```\n\nExpected response:\n\n```json\n{\"status\":\"ok\"}\n```\nQ: What command is used to build the Docker image?\nQ: How is the Docker container named when running?\nQ: Which port is exposed by the Docker container?",
+      "embed_text": "[SECTION: 1) Local Docker Deploy (single container)]\nBuild image from project root:\n\n```bash\ndocker build -t layer-gateway-embed-v1:local .\n```\n\nRun container:\n\n```bash\ndocker run --rm \\\n  --name layer-gateway-embed-v1 \\\n  --env-file .env \\\n  -p 30181:30181 \\\n  layer-gateway-embed-v1:local\n```\n\nVerify:\n\n```bash\ncurl http://localhost:30181/health\n```\n\nExpected response:\n\n```json\n{\"status\":\"ok\"}\n```\nQ: What command is used to build the Docker image?\nQ: How can you run the Docker container?\nQ: What URL should be used to verify the Docker container?",
       "token_count": 130,
       "embed_token_count": 187,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What command is used to build the Docker image?",
-        "How is the Docker container named when running?",
-        "Which port is exposed by the Docker container?"
+        "How can you run the Docker container?",
+        "What URL should be used to verify the Docker container?"
       ],
       "content_hash": "6836533670d5ae00f231072deb5597aed306a2e984446eb567528b86bb48ddd2",
       "source": "repo_layer-gateway-embed-v1__docker.md",
@@ -140,17 +134,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260430_144345_EST",
-      "ingest_ts": "2026-04-30T14:43:45-05:00",
+      "ingest_run_id": "run_20260509_074416_EST",
+      "ingest_ts": "2026-05-09T07:44:16-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -194,17 +185,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260430_144345_EST",
-      "ingest_ts": "2026-04-30T14:43:45-05:00",
+      "ingest_run_id": "run_20260509_074416_EST",
+      "ingest_ts": "2026-05-09T07:44:16-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -248,17 +236,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260430_144345_EST",
-      "ingest_ts": "2026-04-30T14:43:45-05:00",
+      "ingest_run_id": "run_20260509_074416_EST",
+      "ingest_ts": "2026-05-09T07:44:16-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -286,15 +271,15 @@
         "4)_publish_to_docker_hub"
       ],
       "text": "Set your Docker Hub namespace and target tag:\n\n```bash\nexport DOCKERHUB_USER=<your-dockerhub-username>\nexport IMAGE_NAME=layer-gateway-embed-v1\nexport IMAGE_TAG=v1.0.0\n```\n\nBuild and tag:\n\n```bash\ndocker build -t ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG} .\ndocker tag ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG} ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```\n\nLogin and push:\n\n```bash\ndocker login\ndocker push ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG}\ndocker push ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```",
-      "embed_text": "[SECTION: 4) Publish to Docker Hub]\nSet your Docker Hub namespace and target tag:\n\n```bash\nexport DOCKERHUB_USER=<your-dockerhub-username>\nexport IMAGE_NAME=layer-gateway-embed-v1\nexport IMAGE_TAG=v1.0.0\n```\n\nBuild and tag:\n\n```bash\ndocker build -t ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG} .\ndocker tag ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG} ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```\n\nLogin and push:\n\n```bash\ndocker login\ndocker push ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG}\ndocker push ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```\nQ: What Docker Hub username should be set?\nQ: What is the name of the image being published?\nQ: Which command is used to log in and push the Docker image?",
+      "embed_text": "[SECTION: 4) Publish to Docker Hub]\nSet your Docker Hub namespace and target tag:\n\n```bash\nexport DOCKERHUB_USER=<your-dockerhub-username>\nexport IMAGE_NAME=layer-gateway-embed-v1\nexport IMAGE_TAG=v1.0.0\n```\n\nBuild and tag:\n\n```bash\ndocker build -t ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG} .\ndocker tag ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG} ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```\n\nLogin and push:\n\n```bash\ndocker login\ndocker push ${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG}\ndocker push ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```\nQ: What command is used to set the Docker Hub namespace and target tag?\nQ: How many times is the docker push command executed?\nQ: Which tags are pushed to Docker Hub?",
       "token_count": 219,
-      "embed_token_count": 272,
+      "embed_token_count": 276,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What Docker Hub username should be set?",
-        "What is the name of the image being published?",
-        "Which command is used to log in and push the Docker image?"
+        "What command is used to set the Docker Hub namespace and target tag?",
+        "How many times is the docker push command executed?",
+        "Which tags are pushed to Docker Hub?"
       ],
       "content_hash": "e935288c7a35cf3c609866e3a9cf93f6af1d7fc0720b5e29e781727c9da09a0b",
       "source": "repo_layer-gateway-embed-v1__docker.md",
@@ -302,17 +287,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260430_144345_EST",
-      "ingest_ts": "2026-04-30T14:43:45-05:00",
+      "ingest_run_id": "run_20260509_074416_EST",
+      "ingest_ts": "2026-05-09T07:44:16-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -340,15 +322,15 @@
         "5)_pull_and_run_from_docker_hub"
       ],
       "text": "```bash\ndocker pull ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\ndocker run --rm \\\n  --name layer-gateway-embed-v1 \\\n  --env-file .env \\\n  -p 30181:30181 \\\n  ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```",
-      "embed_text": "[SECTION: 5) Pull and Run from Docker Hub]\n```bash\ndocker pull ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\ndocker run --rm \\\n  --name layer-gateway-embed-v1 \\\n  --env-file .env \\\n  -p 30181:30181 \\\n  ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```\nQ: What command is used to pull the Docker image?\nQ: What does the --rm flag do in the docker run command?\nQ: Which port is exposed by the docker run command?",
+      "embed_text": "[SECTION: 5) Pull and Run from Docker Hub]\n```bash\ndocker pull ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\ndocker run --rm \\\n  --name layer-gateway-embed-v1 \\\n  --env-file .env \\\n  -p 30181:30181 \\\n  ${DOCKERHUB_USER}/${IMAGE_NAME}:latest\n```\nQ: What command is used to pull the Docker image?\nQ: Which environment file is used with the docker run command?\nQ: On which port is the container exposed?",
       "token_count": 92,
-      "embed_token_count": 150,
+      "embed_token_count": 144,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What command is used to pull the Docker image?",
-        "What does the --rm flag do in the docker run command?",
-        "Which port is exposed by the docker run command?"
+        "Which environment file is used with the docker run command?",
+        "On which port is the container exposed?"
       ],
       "content_hash": "6dd46485454e18caa83b5b7db835463219406047e597286e34c8536641d14666",
       "source": "repo_layer-gateway-embed-v1__docker.md",
@@ -356,17 +338,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260430_144345_EST",
-      "ingest_ts": "2026-04-30T14:43:45-05:00",
+      "ingest_run_id": "run_20260509_074416_EST",
+      "ingest_ts": "2026-05-09T07:44:16-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -410,17 +389,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260430_144345_EST",
-      "ingest_ts": "2026-04-30T14:43:45-05:00",
+      "ingest_run_id": "run_20260509_074416_EST",
+      "ingest_ts": "2026-05-09T07:44:16-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"

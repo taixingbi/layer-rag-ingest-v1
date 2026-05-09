@@ -32,17 +32,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260430_144327_EST",
-      "ingest_ts": "2026-04-30T14:43:27-05:00",
+      "ingest_run_id": "run_20260509_074401_EST",
+      "ingest_ts": "2026-05-09T07:44:01-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -70,15 +69,15 @@
         "root"
       ],
       "text": "Q: Where does Taixing Bi currently work?\nA: Saks",
-      "embed_text": "[SECTION: ROOT]\nQ: Where does Taixing Bi currently work?\nA: Saks\nQ: Where does Taixing Bi currently work?\nQ: What is the current workplace of Taixing Bi?\nQ: Can you tell me which company Taixing Bi works for?",
+      "embed_text": "[SECTION: ROOT]\nQ: Where does Taixing Bi currently work?\nA: Saks\nQ: Where does Taixing Bi currently work?\nQ: What company is Taixing Bi associated with?\nQ: Can you name the current workplace of Taixing Bi?",
       "token_count": 14,
-      "embed_token_count": 62,
+      "embed_token_count": 60,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "Where does Taixing Bi currently work?",
-        "What is the current workplace of Taixing Bi?",
-        "Can you tell me which company Taixing Bi works for?"
+        "What company is Taixing Bi associated with?",
+        "Can you name the current workplace of Taixing Bi?"
       ],
       "content_hash": "cd28aa84bddf61a05eb8fd37fe6aedc12c2e5d2e80c20eb5f585047d67b457b4",
       "source": "personal_profile",
@@ -86,17 +85,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260430_144327_EST",
-      "ingest_ts": "2026-04-30T14:43:27-05:00",
+      "ingest_run_id": "run_20260509_074401_EST",
+      "ingest_ts": "2026-05-09T07:44:01-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -140,17 +138,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260430_144327_EST",
-      "ingest_ts": "2026-04-30T14:43:27-05:00",
+      "ingest_run_id": "run_20260509_074401_EST",
+      "ingest_ts": "2026-05-09T07:44:01-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -194,17 +191,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260430_144327_EST",
-      "ingest_ts": "2026-04-30T14:43:27-05:00",
+      "ingest_run_id": "run_20260509_074401_EST",
+      "ingest_ts": "2026-05-09T07:44:01-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -248,17 +244,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260430_144327_EST",
-      "ingest_ts": "2026-04-30T14:43:27-05:00",
+      "ingest_run_id": "run_20260509_074401_EST",
+      "ingest_ts": "2026-05-09T07:44:01-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -286,15 +281,15 @@
         "root"
       ],
       "text": "Q: Does Taixing Bi require visa sponsorship?\nA: No",
-      "embed_text": "[SECTION: ROOT]\nQ: Does Taixing Bi require visa sponsorship?\nA: No\nQ: Does Taixing Bi need a visa sponsor?\nQ: Is visa sponsorship required for Taixing Bi?\nQ: Do they require visa support for Taixing Bi?",
+      "embed_text": "[SECTION: ROOT]\nQ: Does Taixing Bi require visa sponsorship?\nA: No\nQ: Does Taixing Bi need visa sponsorship?\nQ: Is visa sponsorship required for Taixing Bi?\nQ: Do Taixing Bi employees need visa support?",
       "token_count": 15,
-      "embed_token_count": 61,
+      "embed_token_count": 60,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "Does Taixing Bi need a visa sponsor?",
+        "Does Taixing Bi need visa sponsorship?",
         "Is visa sponsorship required for Taixing Bi?",
-        "Do they require visa support for Taixing Bi?"
+        "Do Taixing Bi employees need visa support?"
       ],
       "content_hash": "3bd3a445ac648e6129c66c305462e057c85363f639fb4f47bcbb4763415b9941",
       "source": "personal_profile",
@@ -302,17 +297,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260430_144327_EST",
-      "ingest_ts": "2026-04-30T14:43:27-05:00",
+      "ingest_run_id": "run_20260509_074401_EST",
+      "ingest_ts": "2026-05-09T07:44:01-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -356,17 +350,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260430_144327_EST",
-      "ingest_ts": "2026-04-30T14:43:27-05:00",
+      "ingest_run_id": "run_20260509_074401_EST",
+      "ingest_ts": "2026-05-09T07:44:01-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -410,17 +403,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260430_144327_EST",
-      "ingest_ts": "2026-04-30T14:43:27-05:00",
+      "ingest_run_id": "run_20260509_074401_EST",
+      "ingest_ts": "2026-05-09T07:44:01-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -464,17 +456,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260430_144327_EST",
-      "ingest_ts": "2026-04-30T14:43:27-05:00",
+      "ingest_run_id": "run_20260509_074401_EST",
+      "ingest_ts": "2026-05-09T07:44:01-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -502,15 +493,15 @@
         "root"
       ],
       "text": "Q: What is Taixing Bi's email address?\nA: taixingbijob@gmail.com",
-      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's email address?\nA: taixingbijob@gmail.com\nQ: What is Taixing Bi's email address?\nQ: Where can one find Taixing Bi's contact information?\nQ: How can someone reach out to Taixing Bi?",
+      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's email address?\nA: taixingbijob@gmail.com\nQ: What is Taixing Bi's email address?\nQ: Where can one find Taixing Bi's professional email?\nQ: How can one contact Taixing Bi professionally?",
       "token_count": 24,
       "embed_token_count": 73,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is Taixing Bi's email address?",
-        "Where can one find Taixing Bi's contact information?",
-        "How can someone reach out to Taixing Bi?"
+        "Where can one find Taixing Bi's professional email?",
+        "How can one contact Taixing Bi professionally?"
       ],
       "content_hash": "fe9e001550886289692f2cb6f7d28a2e2e241d7ccfa682e7adfd8b32533ab4ea",
       "source": "personal_profile",
@@ -518,17 +509,16 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260430_144327_EST",
-      "ingest_ts": "2026-04-30T14:43:27-05:00",
+      "ingest_run_id": "run_20260509_074401_EST",
+      "ingest_ts": "2026-05-09T07:44:01-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
           "hr",
           "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"

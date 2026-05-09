@@ -31,7 +31,7 @@
     "chunk_id": "0005",
     "document_id": "layer-gateway-inference-v1__artichecture.md",
     "section": "3.1 API Layer",
-    "text": "`app/api/routes.py` handles:\n\n- `POST /v1/chat/completions`\n- `GET /healthz`\n- `GET /metrics`\n\nResponsibilities:\n\n- parse and validate request payload\n- extract correlation headers (`x-request-id`, `x-trace-id`, `x-session-id`)\n- classify request complexity\n- enqueue work for scheduling\n- return gateway rejections (queue full/age/no backend)",
+    "text": "`app/api/routes.py` handles:\n\n- `POST /v1/chat/completions`\n- `GET /health`\n- `GET /ready`\n- `GET /metrics`\n\nResponsibilities:\n\n- parse and validate request payload\n- extract correlation headers (`x-request-id`, `x-trace-id`, `x-session-id`)\n- classify request complexity\n- enqueue work for scheduling\n- return gateway rejections (queue full/age/no backend)",
     "synthetic_questions": []
   },
   {

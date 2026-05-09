@@ -16,15 +16,15 @@
         "layer_gateway_reference"
       ],
       "text": "This document is a quick technical reference for `layer-gateway-inference-v1`.",
-      "embed_text": "[SECTION: Layer Gateway Reference]\nThis document is a quick technical reference for `layer-gateway-inference-v1`.\nQ: What is the purpose of this document?\nQ: Which version of layer gateway inference is referenced?\nQ: Is there any other version mentioned?",
+      "embed_text": "[SECTION: Layer Gateway Reference]\nThis document is a quick technical reference for `layer-gateway-inference-v1`.\nQ: What is the purpose of this document?\nQ: Which version of layer gateway inference is referenced?\nQ: Is there any information about features or usage within this text?",
       "token_count": 23,
-      "embed_token_count": 66,
+      "embed_token_count": 71,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is the purpose of this document?",
         "Which version of layer gateway inference is referenced?",
-        "Is there any other version mentioned?"
+        "Is there any information about features or usage within this text?"
       ],
       "content_hash": "d2e87e586605ae9f9a5289b5b972490c3d4d366c8d0ef79c360910721765ac07",
       "source": "repo_layer-gateway-inference-v1__docs.md",
@@ -32,17 +32,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260430_144345_EST",
-      "ingest_ts": "2026-04-30T14:43:45-05:00",
+      "ingest_run_id": "run_20260509_074416_EST",
+      "ingest_ts": "2026-05-09T07:44:16-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -69,34 +66,31 @@
         "layer-gateway-inference-v1__docs.md",
         "1)_what_this_service_does"
       ],
-      "text": "The gateway accepts OpenAI-compatible chat requests and routes them to healthy vLLM backends.\n\nPrimary route:\n\n- `POST /v1/chat/completions`\n\nOperational routes:\n\n- `GET /healthz`\n- `GET /metrics`",
-      "embed_text": "[SECTION: 1) What this service does]\nThe gateway accepts OpenAI-compatible chat requests and routes them to healthy vLLM backends.\n\nPrimary route:\n\n- `POST /v1/chat/completions`\n\nOperational routes:\n\n- `GET /healthz`\n- `GET /metrics`\nQ: What HTTP method is used for the primary route?\nQ: What is the purpose of the gateway?\nQ: Which backends does the gateway route chat requests to?",
-      "token_count": 63,
-      "embed_token_count": 113,
+      "text": "The gateway accepts OpenAI-compatible chat requests and routes them to healthy vLLM backends.\n\nPrimary route:\n\n- `POST /v1/chat/completions`\n\nOperational routes:\n\n- `GET /health`\n- `GET /ready`\n- `GET /metrics`",
+      "embed_text": "[SECTION: 1) What this service does]\nThe gateway accepts OpenAI-compatible chat requests and routes them to healthy vLLM backends.\n\nPrimary route:\n\n- `POST /v1/chat/completions`\n\nOperational routes:\n\n- `GET /health`\n- `GET /ready`\n- `GET /metrics`\nQ: What HTTP methods are used for the primary route?\nQ: What is the purpose of the gateway?\nQ: Which backends does the gateway route chat requests to?",
+      "token_count": 69,
+      "embed_token_count": 119,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What HTTP method is used for the primary route?",
+        "What HTTP methods are used for the primary route?",
         "What is the purpose of the gateway?",
         "Which backends does the gateway route chat requests to?"
       ],
-      "content_hash": "0b92c1f981ff3bc3b5498556812edde26d99684102bc3e41b79738af23f348c7",
+      "content_hash": "7d27bde9e61d0394cca9ad24550112855276348b5190b5715f239151274481a8",
       "source": "repo_layer-gateway-inference-v1__docs.md",
       "id_key_version": "v3",
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260430_144345_EST",
-      "ingest_ts": "2026-04-30T14:43:45-05:00",
+      "ingest_run_id": "run_20260509_074416_EST",
+      "ingest_ts": "2026-05-09T07:44:16-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -124,15 +118,15 @@
         "2)_high-level_request_flow"
       ],
       "text": "1. Request arrives at `routes.py`.\n2. Gateway validates payload and assigns/requests correlation IDs.\n3. Request is classified (small/medium/large/streaming_long).\n4. Request enters `AdmissionQueue`.\n5. Scheduler picks an eligible backend using score + health policies.\n6. Proxy forwards request to selected backend (with retry policy).\n7. Runtime health/latency signals are updated.\n8. Structured logs and Prometheus metrics are emitted.",
-      "embed_text": "[SECTION: 2) High-level request flow]\n1. Request arrives at `routes.py`.\n2. Gateway validates payload and assigns/requests correlation IDs.\n3. Request is classified (small/medium/large/streaming_long).\n4. Request enters `AdmissionQueue`.\n5. Scheduler picks an eligible backend using score + health policies.\n6. Proxy forwards request to selected backend (with retry policy).\n7. Runtime health/latency signals are updated.\n8. Structured logs and Prometheus metrics are emitted.\nQ: What is the first step when a request arrives?\nQ: How does the system handle request classification?\nQ: What happens after the request enters the AdmissionQueue?",
+      "embed_text": "[SECTION: 2) High-level request flow]\n1. Request arrives at `routes.py`.\n2. Gateway validates payload and assigns/requests correlation IDs.\n3. Request is classified (small/medium/large/streaming_long).\n4. Request enters `AdmissionQueue`.\n5. Scheduler picks an eligible backend using score + health policies.\n6. Proxy forwards request to selected backend (with retry policy).\n7. Runtime health/latency signals are updated.\n8. Structured logs and Prometheus metrics are emitted.\nQ: What is the first step when a request arrives?\nQ: How does the system handle structured logs and Prometheus metrics?\nQ: Which queue does the request enter after validation?",
       "token_count": 124,
-      "embed_token_count": 175,
+      "embed_token_count": 181,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is the first step when a request arrives?",
-        "How does the system handle request classification?",
-        "What happens after the request enters the AdmissionQueue?"
+        "How does the system handle structured logs and Prometheus metrics?",
+        "Which queue does the request enter after validation?"
       ],
       "content_hash": "134388a6ccc9319a194e48562ed0c7032249f743c693d9ff4d8f68f1aac72ee7",
       "source": "repo_layer-gateway-inference-v1__docs.md",
@@ -140,17 +134,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260430_144345_EST",
-      "ingest_ts": "2026-04-30T14:43:45-05:00",
+      "ingest_run_id": "run_20260509_074416_EST",
+      "ingest_ts": "2026-05-09T07:44:16-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -178,14 +169,14 @@
         "2)_high-level_request_flow"
       ],
       "text": "```mermaid\nflowchart LR\n    C[Client] --> A[API Routes]\n    A --> Q[AdmissionQueue]\n    Q --> S[Scheduler]\n    S --> R[Backend Registry]\n    S --> P[Proxy Client]\n    P --> B1[vLLM Backend 1]\n    P --> B2[vLLM Backend 2]\n    A --> L[Structured Logs]\n    A --> M[Prometheus Metrics]\n```",
-      "embed_text": "[SECTION: 2) High-level request flow]\n```mermaid\nflowchart LR\n    C[Client] --> A[API Routes]\n    A --> Q[AdmissionQueue]\n    Q --> S[Scheduler]\n    S --> R[Backend Registry]\n    S --> P[Proxy Client]\n    P --> B1[vLLM Backend 1]\n    P --> B2[vLLM Backend 2]\n    A --> L[Structured Logs]\n    A --> M[Prometheus Metrics]\n```\nQ: What are the steps involved in the high-level request flow?\nQ: Which components does the Scheduler interact with?\nQ: How many vLLM backends are there?",
+      "embed_text": "[SECTION: 2) High-level request flow]\n```mermaid\nflowchart LR\n    C[Client] --> A[API Routes]\n    A --> Q[AdmissionQueue]\n    Q --> S[Scheduler]\n    S --> R[Backend Registry]\n    S --> P[Proxy Client]\n    P --> B1[vLLM Backend 1]\n    P --> B2[vLLM Backend 2]\n    A --> L[Structured Logs]\n    A --> M[Prometheus Metrics]\n```\nQ: What are the main components involved in the high-level request flow?\nQ: Which components are part of the AdmissionQueue path?\nQ: How many vLLM backends are there?",
       "token_count": 104,
-      "embed_token_count": 156,
+      "embed_token_count": 161,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What are the steps involved in the high-level request flow?",
-        "Which components does the Scheduler interact with?",
+        "What are the main components involved in the high-level request flow?",
+        "Which components are part of the AdmissionQueue path?",
         "How many vLLM backends are there?"
       ],
       "content_hash": "23b5e62c994a0f87f93b8867bc6ac24704b7f9edf2b8afd5155c1b034db12ac0",
@@ -194,17 +185,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260430_144345_EST",
-      "ingest_ts": "2026-04-30T14:43:45-05:00",
+      "ingest_run_id": "run_20260509_074416_EST",
+      "ingest_ts": "2026-05-09T07:44:16-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -248,17 +236,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260430_144345_EST",
-      "ingest_ts": "2026-04-30T14:43:45-05:00",
+      "ingest_run_id": "run_20260509_074416_EST",
+      "ingest_ts": "2026-05-09T07:44:16-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -286,15 +271,15 @@
         "4)_important_runtime_concepts"
       ],
       "text": "- **AdmissionQueue**: bounded staging queue before dispatch; protects system under burst.\n- **Request class**: estimated work size from request body; used in routing fairness.\n- **Circuit breaker**:\n  - `closed`: normal traffic\n  - `open`: backend temporarily blocked\n  - `half_open`: limited probe traffic after cooldown\n- **drained**: administrative flag to stop new scheduling to a backend.\n- **recent_error_rate**: EWMA failure signal for eligibility/scoring.",
-      "embed_text": "[SECTION: 4) Important runtime concepts]\n- **AdmissionQueue**: bounded staging queue before dispatch; protects system under burst.\n- **Request class**: estimated work size from request body; used in routing fairness.\n- **Circuit breaker**:\n  - `closed`: normal traffic\n  - `open`: backend temporarily blocked\n  - `half_open`: limited probe traffic after cooldown\n- **drained**: administrative flag to stop new scheduling to a backend.\n- **recent_error_rate**: EWMA failure signal for eligibility/scoring.\nQ: What is the purpose of the AdmissionQueue?\nQ: What does the Circuit breaker do when it is in the half_open state?\nQ: What does the drained flag indicate?",
+      "embed_text": "[SECTION: 4) Important runtime concepts]\n- **AdmissionQueue**: bounded staging queue before dispatch; protects system under burst.\n- **Request class**: estimated work size from request body; used in routing fairness.\n- **Circuit breaker**:\n  - `closed`: normal traffic\n  - `open`: backend temporarily blocked\n  - `half_open`: limited probe traffic after cooldown\n- **drained**: administrative flag to stop new scheduling to a backend.\n- **recent_error_rate**: EWMA failure signal for eligibility/scoring.\nQ: What is the purpose of the AdmissionQueue?\nQ: What does the Circuit breaker do when it is in the half_open state?\nQ: What does the 'drained' administrative flag indicate?",
       "token_count": 134,
-      "embed_token_count": 188,
+      "embed_token_count": 191,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is the purpose of the AdmissionQueue?",
         "What does the Circuit breaker do when it is in the half_open state?",
-        "What does the drained flag indicate?"
+        "What does the 'drained' administrative flag indicate?"
       ],
       "content_hash": "1512ba115718c56959295c1dd605b8b3d31aa16ee92f3a1da57e979db1c8fee8",
       "source": "repo_layer-gateway-inference-v1__docs.md",
@@ -302,17 +287,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260430_144345_EST",
-      "ingest_ts": "2026-04-30T14:43:45-05:00",
+      "ingest_run_id": "run_20260509_074416_EST",
+      "ingest_ts": "2026-05-09T07:44:16-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -356,17 +338,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260430_144345_EST",
-      "ingest_ts": "2026-04-30T14:43:45-05:00",
+      "ingest_run_id": "run_20260509_074416_EST",
+      "ingest_ts": "2026-05-09T07:44:16-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -410,17 +389,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260430_144345_EST",
-      "ingest_ts": "2026-04-30T14:43:45-05:00",
+      "ingest_run_id": "run_20260509_074416_EST",
+      "ingest_ts": "2026-05-09T07:44:16-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -448,15 +424,15 @@
         "6)_logging_and_tracing_ids"
       ],
       "text": "```mermaid\nflowchart TD\n    H[Incoming headers] --> X1{x-request-id present?}\n    X1 -- yes --> RID[use x-request-id]\n    X1 -- no --> NEWRID[generate request_id]\n    H --> X2{x-trace-id present?}\n    X2 -- yes --> TID[use trace_id]\n    X2 -- no --> TID0[trace_id = '-']\n    H --> X3{x-session-id present?}\n    X3 -- yes --> SID[use session_id]\n    X3 -- no --> SID0[session_id = '-']\n```",
-      "embed_text": "[SECTION: 6) Logging and tracing IDs]\n```mermaid\nflowchart TD\n    H[Incoming headers] --> X1{x-request-id present?}\n    X1 -- yes --> RID[use x-request-id]\n    X1 -- no --> NEWRID[generate request_id]\n    H --> X2{x-trace-id present?}\n    X2 -- yes --> TID[use trace_id]\n    X2 -- no --> TID0[trace_id = '-']\n    H --> X3{x-session-id present?}\n    X3 -- yes --> SID[use session_id]\n    X3 -- no --> SID0[session_id = '-']\n```\nQ: What happens if the x-request-id is present?\nQ: What value does session_id take if it's not present?\nQ: How is trace_id handled if it's not present?",
+      "embed_text": "[SECTION: 6) Logging and tracing IDs]\n```mermaid\nflowchart TD\n    H[Incoming headers] --> X1{x-request-id present?}\n    X1 -- yes --> RID[use x-request-id]\n    X1 -- no --> NEWRID[generate request_id]\n    H --> X2{x-trace-id present?}\n    X2 -- yes --> TID[use trace_id]\n    X2 -- no --> TID0[trace_id = '-']\n    H --> X3{x-session-id present?}\n    X3 -- yes --> SID[use session_id]\n    X3 -- no --> SID0[session_id = '-']\n```\nQ: What happens if the x-request-id is present?\nQ: What value does session_id take if it's not present?\nQ: How is trace_id initialized if it is not present?",
       "token_count": 149,
-      "embed_token_count": 210,
+      "embed_token_count": 209,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What happens if the x-request-id is present?",
         "What value does session_id take if it's not present?",
-        "How is trace_id handled if it's not present?"
+        "How is trace_id initialized if it is not present?"
       ],
       "content_hash": "72b6d3e3fe4ee5b8a151bba8db6cbf955ecc073cd4e0d4b336d4c4bfa5b3561d",
       "source": "repo_layer-gateway-inference-v1__docs.md",
@@ -464,17 +440,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260430_144345_EST",
-      "ingest_ts": "2026-04-30T14:43:45-05:00",
+      "ingest_run_id": "run_20260509_074416_EST",
+      "ingest_ts": "2026-05-09T07:44:16-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -502,15 +475,15 @@
         "7)_metrics_quick_map"
       ],
       "text": "Traffic and reliability:\n\n- `gateway_requests_total`\n- `gateway_request_errors_total{backend=...}`\n- `gateway_request_retries_total`\n- `gateway_rejections_total{reason=...}`\n\nQueue pressure:\n\n- `gateway_queue_depth`\n- `gateway_queue_age_ms`\n\nBackend state:\n\n- `gateway_backend_inflight{backend=...}`\n- `gateway_backend_error_rate{backend=...}`\n- `gateway_backend_circuit_state{backend=...}`\n- `gateway_backend_ewma_ttft_ms{backend=...}`\n- `gateway_backend_ewma_e2e_ms{backend=...}`",
-      "embed_text": "[SECTION: 7) Metrics quick map]\nTraffic and reliability:\n\n- `gateway_requests_total`\n- `gateway_request_errors_total{backend=...}`\n- `gateway_request_retries_total`\n- `gateway_rejections_total{reason=...}`\n\nQueue pressure:\n\n- `gateway_queue_depth`\n- `gateway_queue_age_ms`\n\nBackend state:\n\n- `gateway_backend_inflight{backend=...}`\n- `gateway_backend_error_rate{backend=...}`\n- `gateway_backend_circuit_state{backend=...}`\n- `gateway_backend_ewma_ttft_ms{backend=...}`\n- `gateway_backend_ewma_e2e_ms{backend=...}`\nQ: What metrics are used to measure traffic and reliability?\nQ: How is queue pressure monitored?\nQ: What does gateway_backend_circuit_state measure?",
+      "embed_text": "[SECTION: 7) Metrics quick map]\nTraffic and reliability:\n\n- `gateway_requests_total`\n- `gateway_request_errors_total{backend=...}`\n- `gateway_request_retries_total`\n- `gateway_rejections_total{reason=...}`\n\nQueue pressure:\n\n- `gateway_queue_depth`\n- `gateway_queue_age_ms`\n\nBackend state:\n\n- `gateway_backend_inflight{backend=...}`\n- `gateway_backend_error_rate{backend=...}`\n- `gateway_backend_circuit_state{backend=...}`\n- `gateway_backend_ewma_ttft_ms{backend=...}`\n- `gateway_backend_ewma_e2e_ms{backend=...}`\nQ: What metrics are used to measure traffic and reliability?\nQ: How is queue pressure monitored?\nQ: What does gateway_backend_circuit_state{backend=...} indicate?",
       "token_count": 198,
-      "embed_token_count": 250,
+      "embed_token_count": 256,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What metrics are used to measure traffic and reliability?",
         "How is queue pressure monitored?",
-        "What does gateway_backend_circuit_state measure?"
+        "What does gateway_backend_circuit_state{backend=...} indicate?"
       ],
       "content_hash": "972591b56dfe125615cf3c153fde8ee006f4829c936b0945672925d53bf433bc",
       "source": "repo_layer-gateway-inference-v1__docs.md",
@@ -518,17 +491,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260430_144345_EST",
-      "ingest_ts": "2026-04-30T14:43:45-05:00",
+      "ingest_run_id": "run_20260509_074416_EST",
+      "ingest_ts": "2026-05-09T07:44:16-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -572,17 +542,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260430_144345_EST",
-      "ingest_ts": "2026-04-30T14:43:45-05:00",
+      "ingest_run_id": "run_20260509_074416_EST",
+      "ingest_ts": "2026-05-09T07:44:16-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -626,17 +593,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260430_144345_EST",
-      "ingest_ts": "2026-04-30T14:43:45-05:00",
+      "ingest_run_id": "run_20260509_074416_EST",
+      "ingest_ts": "2026-05-09T07:44:16-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -664,15 +628,15 @@
         "9)_related_docs"
       ],
       "text": "- `README.md`: setup, run, and deployment basics.\n- `sla.md`: SLO/SLA targets and alerting baseline.",
-      "embed_text": "[SECTION: 9) Related docs]\n- `README.md`: setup, run, and deployment basics.\n- `sla.md`: SLO/SLA targets and alerting baseline.\nQ: What topics does README.md cover?\nQ: What does sla.md contain?\nQ: Are there any other documents mentioned?",
+      "embed_text": "[SECTION: 9) Related docs]\n- `README.md`: setup, run, and deployment basics.\n- `sla.md`: SLO/SLA targets and alerting baseline.\nQ: What documents cover setup, run, and deployment basics?\nQ: What document contains SLO/SLA targets and alerting baselines?\nQ: Are there any other documents mentioned besides README.md and sla.md?",
       "token_count": 42,
-      "embed_token_count": 82,
+      "embed_token_count": 107,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What topics does README.md cover?",
-        "What does sla.md contain?",
-        "Are there any other documents mentioned?"
+        "What documents cover setup, run, and deployment basics?",
+        "What document contains SLO/SLA targets and alerting baselines?",
+        "Are there any other documents mentioned besides README.md and sla.md?"
       ],
       "content_hash": "107d9c9662eafb3053f39730a48cae6c9a30753ad180386e79b4d3a7041b8410",
       "source": "repo_layer-gateway-inference-v1__docs.md",
@@ -680,17 +644,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260430_144345_EST",
-      "ingest_ts": "2026-04-30T14:43:45-05:00",
+      "ingest_run_id": "run_20260509_074416_EST",
+      "ingest_ts": "2026-05-09T07:44:16-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"

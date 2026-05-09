@@ -32,17 +32,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -86,17 +83,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -140,17 +134,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -194,17 +185,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -232,15 +220,15 @@
         "3)_configure_environment"
       ],
       "text": "Create local env file:\n\n```bash\ncp .env.example .env\n```\n\nLoad env vars into shell:\n\n```bash\nset -a\nsource .env\nset +a\n```\n\nAt minimum, ensure:\n\n- `EMBED_BACKENDS` points to healthy backend URLs\n- `GATEWAY_HOST` and `GATEWAY_PORT` are correct for local run",
-      "embed_text": "[SECTION: 3) Configure Environment]\nCreate local env file:\n\n```bash\ncp .env.example .env\n```\n\nLoad env vars into shell:\n\n```bash\nset -a\nsource .env\nset +a\n```\n\nAt minimum, ensure:\n\n- `EMBED_BACKENDS` points to healthy backend URLs\n- `GATEWAY_HOST` and `GATEWAY_PORT` are correct for local run\nQ: What command is used to create a local env file?\nQ: What does the set -a and set +a commands do in the context of loading environment variables?\nQ: What are the minimum configurations needed in the .env file?",
+      "embed_text": "[SECTION: 3) Configure Environment]\nCreate local env file:\n\n```bash\ncp .env.example .env\n```\n\nLoad env vars into shell:\n\n```bash\nset -a\nsource .env\nset +a\n```\n\nAt minimum, ensure:\n\n- `EMBED_BACKENDS` points to healthy backend URLs\n- `GATEWAY_HOST` and `GATEWAY_PORT` are correct for local run\nQ: What command is used to create a local env file?\nQ: What does the set -a and set +a commands do in this context?\nQ: What are the minimum environment variables that need to be ensured?",
       "token_count": 96,
-      "embed_token_count": 166,
+      "embed_token_count": 159,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What command is used to create a local env file?",
-        "What does the set -a and set +a commands do in the context of loading environment variables?",
-        "What are the minimum configurations needed in the .env file?"
+        "What does the set -a and set +a commands do in this context?",
+        "What are the minimum environment variables that need to be ensured?"
       ],
       "content_hash": "5064074fc95e93e376c6f7bcfa272d62314dd751c6b1ad8fe63b5c991819f82f",
       "source": "repo_layer-gateway-embed-v1__run-locally.md",
@@ -248,17 +236,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -286,15 +271,15 @@
         "4)_start_the_gateway"
       ],
       "text": "```bash\npython -m app.main\n```",
-      "embed_text": "[SECTION: 4) Start the Gateway]\n```bash\npython -m app.main\n```\nQ: What command starts the Gateway?\nQ: Which Python module is used to start the Gateway?\nQ: How do you run the Gateway application?",
+      "embed_text": "[SECTION: 4) Start the Gateway]\n```bash\npython -m app.main\n```\nQ: What command starts the Gateway?\nQ: Which Python module is used to start the Gateway?\nQ: How do you run the Gateway?",
       "token_count": 12,
-      "embed_token_count": 53,
+      "embed_token_count": 52,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What command starts the Gateway?",
         "Which Python module is used to start the Gateway?",
-        "How do you run the Gateway application?"
+        "How do you run the Gateway?"
       ],
       "content_hash": "c75ec6d914931b12e3a3782e2147afb5eda444af93e0441a7ffbc17833e846f0",
       "source": "repo_layer-gateway-embed-v1__run-locally.md",
@@ -302,17 +287,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -356,17 +338,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -394,14 +373,14 @@
         "6)_test_embeddings_endpoint"
       ],
       "text": "```bash\ncurl -X POST http://localhost:30181/v1/embeddings \\\n  -H \"Content-Type: application/json\" \\\n  -H \"X-Request-Id: request-id-1\" \\\n  -H \"X-Trace-Id: trace-id-1\" \\\n  -H \"X-Session-Id: session-id-1\" \\\n  -d '{\"model\":\"BAAI/bge-m3\",\"input\":\"hello world\"}'\n```",
-      "embed_text": "[SECTION: 6) Test Embeddings Endpoint]\n```bash\ncurl -X POST http://localhost:30181/v1/embeddings \\\n  -H \"Content-Type: application/json\" \\\n  -H \"X-Request-Id: request-id-1\" \\\n  -H \"X-Trace-Id: trace-id-1\" \\\n  -H \"X-Session-Id: session-id-1\" \\\n  -d '{\"model\":\"BAAI/bge-m3\",\"input\":\"hello world\"}'\n```\nQ: What is the endpoint for testing embeddings?\nQ: Which model is used in the example?\nQ: What is the input to the embedding model?",
+      "embed_text": "[SECTION: 6) Test Embeddings Endpoint]\n```bash\ncurl -X POST http://localhost:30181/v1/embeddings \\\n  -H \"Content-Type: application/json\" \\\n  -H \"X-Request-Id: request-id-1\" \\\n  -H \"X-Trace-Id: trace-id-1\" \\\n  -H \"X-Session-Id: session-id-1\" \\\n  -d '{\"model\":\"BAAI/bge-m3\",\"input\":\"hello world\"}'\n```\nQ: What is the URL used in the test?\nQ: Which model is specified in the request?\nQ: What is the input to the embedding model?",
       "token_count": 125,
-      "embed_token_count": 176,
+      "embed_token_count": 174,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is the endpoint for testing embeddings?",
-        "Which model is used in the example?",
+        "What is the URL used in the test?",
+        "Which model is specified in the request?",
         "What is the input to the embedding model?"
       ],
       "content_hash": "eecd338bdea045640e42caf14d18a48b97d05b3e056b26c6d2339bacd0ca078a",
@@ -410,17 +389,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"
@@ -448,15 +424,15 @@
         "troubleshooting"
       ],
       "text": "- `externally-managed-environment`: use the `.venv` steps above instead of installing into system Python.\n- `503 No healthy backend available`: check `EMBED_BACKENDS` and backend service availability.\n- `429 Gateway busy`: increase `ADMISSION_MAX_CONCURRENT` or `ADMISSION_WAIT_TIMEOUT_MS`.",
-      "embed_text": "[SECTION: Troubleshooting]\n- `externally-managed-environment`: use the `.venv` steps above instead of installing into system Python.\n- `503 No healthy backend available`: check `EMBED_BACKENDS` and backend service availability.\n- `429 Gateway busy`: increase `ADMISSION_MAX_CONCURRENT` or `ADMISSION_WAIT_TIMEOUT_MS`.\nQ: What should you do if you encounter an externally-managed-environment issue?\nQ: How can you resolve a 503 No healthy backend available error?\nQ: What settings can be adjusted to address a 429 Gateway busy issue?",
+      "embed_text": "[SECTION: Troubleshooting]\n- `externally-managed-environment`: use the `.venv` steps above instead of installing into system Python.\n- `503 No healthy backend available`: check `EMBED_BACKENDS` and backend service availability.\n- `429 Gateway busy`: increase `ADMISSION_MAX_CONCURRENT` or `ADMISSION_WAIT_TIMEOUT_MS`.\nQ: What should you do if you encounter an externally-managed-environment issue?\nQ: How can you resolve a 503 No healthy backend available error?\nQ: What are the possible actions to take for a 429 Gateway busy error?",
       "token_count": 95,
-      "embed_token_count": 159,
+      "embed_token_count": 158,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What should you do if you encounter an externally-managed-environment issue?",
         "How can you resolve a 503 No healthy backend available error?",
-        "What settings can be adjusted to address a 429 Gateway busy issue?"
+        "What are the possible actions to take for a 429 Gateway busy error?"
       ],
       "content_hash": "72de5d2d878ee678752f7343b39976bb5de609e7788471a35070d9a7b927d45a",
       "source": "repo_layer-gateway-embed-v1__run-locally.md",
@@ -464,17 +440,14 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260503_151853_EST",
-      "ingest_ts": "2026-05-03T15:18:53-05:00",
+      "ingest_run_id": "run_20260509_074539_EST",
+      "ingest_ts": "2026-05-09T07:45:39-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
       "access": {
         "roles": [
-          "anyuser",
-          "hr",
-          "recruiter",
-          "other_employer"
+          "engineer"
         ],
         "groups": [
           "engineering"

@@ -425,7 +425,8 @@ Maintain OpenAI-compatible routes first:
 
 - `POST /v1/chat/completions`
 - future: `POST /v1/embeddings`
-- `GET /healthz`
+- `GET /health`
+- `GET /ready`
 - `GET /metrics`
 
 ## 8.2 Config file

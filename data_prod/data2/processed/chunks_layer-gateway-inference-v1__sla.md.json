@@ -10,7 +10,7 @@
     "chunk_id": "0002",
     "document_id": "layer-gateway-inference-v1__sla.md",
     "section": "1) Scope",
-    "text": "The SLA applies to gateway API endpoints:\n\n- `POST /v1/chat/completions`\n- `GET /healthz`\n- `GET /metrics`\n\nThe SLA covers only gateway behavior. It does not guarantee upstream model quality/content.",
+    "text": "The SLA applies to gateway API endpoints:\n\n- `POST /v1/chat/completions`\n- `GET /health`\n- `GET /ready`\n- `GET /metrics`\n\nThe SLA covers only gateway behavior. It does not guarantee upstream model quality/content.",
     "synthetic_questions": []
   },
   {

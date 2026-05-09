@@ -11,7 +11,8 @@ This document defines a practical SLA/SLO baseline for `layer-gateway-inference-
 The SLA applies to gateway API endpoints:
 
 - `POST /v1/chat/completions`
-- `GET /healthz`
+- `GET /health`
+- `GET /ready`
 - `GET /metrics`
 
 The SLA covers only gateway behavior. It does not guarantee upstream model quality/content.

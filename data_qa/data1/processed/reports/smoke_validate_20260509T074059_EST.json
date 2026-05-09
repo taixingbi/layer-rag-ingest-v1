@@ -1,0 +1,192 @@
+{
+  "generated_at": "2026-05-09T07:40:59.620400-05:00",
+  "summary": {
+    "files": 3,
+    "probes_total": 8,
+    "probes_passed": 5,
+    "probes_failed": 3,
+    "vector_passed": 0,
+    "llm_rescued": 5,
+    "threshold": 0.75,
+    "collection": "taixing_knowledge_qa",
+    "failure_reasons": {
+      "below_threshold": 8
+    },
+    "score_stats": {
+      "min": 0.6169671,
+      "p50": 0.63974935,
+      "p90": 0.7025224299999999,
+      "max": 0.7284337
+    },
+    "worst_groups": [
+      {
+        "source": "personal_profile",
+        "section": "ROOT",
+        "failed": 1
+      },
+      {
+        "source": "personal_qa",
+        "section": "ROOT",
+        "failed": 1
+      },
+      {
+        "source": "personal_resume",
+        "section": "ROOT",
+        "failed": 1
+      },
+      {
+        "source": "personal_resume",
+        "section": "SUMMARY",
+        "failed": 1
+      },
+      {
+        "source": "personal_resume",
+        "section": "CORE SKILLS",
+        "failed": 1
+      }
+    ]
+  },
+  "run_args": {
+    "data_dir": "data_qa/data1/processed",
+    "pattern": "points_*.json",
+    "max_probes": 0
+  },
+  "probes": [
+    {
+      "source": "personal_profile",
+      "section": "ROOT",
+      "doc_type": "profile",
+      "probe_text": "What is Taixing Bi's current role?",
+      "score": 0.6382046,
+      "scope_match": true,
+      "passed": true,
+      "threshold": 0.75,
+      "reason": null,
+      "vector_passed": false,
+      "judge_invoked": true,
+      "judge_label": "supported",
+      "judge_reason": "The candidate context directly provides Taixing Bi's current role as AI Infrastructure Engineer.",
+      "final_reason": "llm_rescue",
+      "top_hit_id": "c5d60ac7-00f8-51df-b22f-9c2e531b4f47"
+    },
+    {
+      "source": "personal_qa",
+      "section": "ROOT",
+      "doc_type": "qa",
+      "probe_text": "What is Taixing Bi's profession?",
+      "score": 0.6443634,
+      "scope_match": true,
+      "passed": true,
+      "threshold": 0.75,
+      "reason": null,
+      "vector_passed": false,
+      "judge_invoked": true,
+      "judge_label": "supported",
+      "judge_reason": "The context provides information about Taixing Bi's profession as an AI Infrastructure Engineer.",
+      "final_reason": "llm_rescue",
+      "top_hit_id": "6bad9a78-e5a6-526e-8a84-4a3d82c45b6c"
+    },
+    {
+      "source": "personal_resume",
+      "section": "ROOT",
+      "doc_type": "resume",
+      "probe_text": "What is the phone number for Taixing Bi?",
+      "score": 0.6914176,
+      "scope_match": true,
+      "passed": true,
+      "threshold": 0.75,
+      "reason": null,
+      "vector_passed": false,
+      "judge_invoked": true,
+      "judge_label": "supported",
+      "judge_reason": "The phone number is directly provided in the context.",
+      "final_reason": "llm_rescue",
+      "top_hit_id": "15e46130-c0e0-5a1e-ad58-0a77c4629ca2"
+    },
+    {
+      "source": "personal_resume",
+      "section": "SUMMARY",
+      "doc_type": "resume",
+      "probe_text": "How many years of experience does the Backend AI Engineer have?",
+      "score": 0.7284337,
+      "scope_match": true,
+      "passed": true,
+      "threshold": 0.75,
+      "reason": null,
+      "vector_passed": false,
+      "judge_invoked": true,
+      "judge_label": "supported",
+      "judge_reason": "The context explicitly states 7+ years of experience.",
+      "final_reason": "llm_rescue",
+      "top_hit_id": "874d7582-5007-575d-8b3c-ab7a7ab1d698"
+    },
+    {
+      "source": "personal_resume",
+      "section": "CORE SKILLS",
+      "doc_type": "resume",
+      "probe_text": "What are some of the core skills mentioned?",
+      "score": 0.6280284,
+      "scope_match": true,
+      "passed": false,
+      "threshold": 0.75,
+      "reason": "below_threshold",
+      "vector_passed": false,
+      "judge_invoked": true,
+      "judge_label": "not_supported",
+      "judge_reason": "The candidate context does not mention any core skills.",
+      "final_reason": "below_threshold",
+      "top_hit_id": "cd0564b4-330b-526d-8aca-a4ccccbf536f"
+    },
+    {
+      "source": "personal_resume",
+      "section": "PROFESSIONAL EXPERIENCE",
+      "doc_type": "resume",
+      "probe_text": "What was the role held at Saks.com?",
+      "score": 0.6169671,
+      "scope_match": true,
+      "passed": false,
+      "threshold": 0.75,
+      "reason": "below_threshold",
+      "vector_passed": false,
+      "judge_invoked": true,
+      "judge_label": "not_supported",
+      "judge_reason": "The context only mentions an AI Infrastructure Engineer position at Saks.com but does not specify the role held.",
+      "final_reason": "below_threshold",
+      "top_hit_id": "5d2664af-7e54-50e2-8970-f983d6d61784"
+    },
+    {
+      "source": "personal_resume",
+      "section": "EDUCATION",
+      "doc_type": "resume",
+      "probe_text": "What degree was obtained?",
+      "score": 0.6289475,
+      "scope_match": true,
+      "passed": true,
+      "threshold": 0.75,
+      "reason": null,
+      "vector_passed": false,
+      "judge_invoked": true,
+      "judge_label": "supported",
+      "judge_reason": "The context provides a specific degree obtained.",
+      "final_reason": "llm_rescue",
+      "top_hit_id": "63d31e9d-7fb0-5cee-9dd6-d5d11fef7ae8"
+    },
+    {
+      "source": "personal_resume",
+      "section": "PUBLICATION",
+      "doc_type": "resume",
+      "probe_text": "What is the title of the publication?",
+      "score": 0.6412941,
+      "scope_match": true,
+      "passed": false,
+      "threshold": 0.75,
+      "reason": "below_threshold",
+      "vector_passed": false,
+      "judge_invoked": true,
+      "judge_label": "not_supported",
+      "judge_reason": "The context does not contain the title of the publication. It only provides a description and a source.",
+      "final_reason": "below_threshold",
+      "top_hit_id": "6027025a-2707-5961-a42c-26efae2e238e"
+    }
+  ]
+}

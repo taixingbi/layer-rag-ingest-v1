@@ -10,7 +10,7 @@
     "chunk_id": "0002",
     "document_id": "layer-gateway-inference-v1__docs.md",
     "section": "1) What this service does",
-    "text": "The gateway accepts OpenAI-compatible chat requests and routes them to healthy vLLM backends.\n\nPrimary route:\n\n- `POST /v1/chat/completions`\n\nOperational routes:\n\n- `GET /healthz`\n- `GET /metrics`",
+    "text": "The gateway accepts OpenAI-compatible chat requests and routes them to healthy vLLM backends.\n\nPrimary route:\n\n- `POST /v1/chat/completions`\n\nOperational routes:\n\n- `GET /health`\n- `GET /ready`\n- `GET /metrics`",
     "synthetic_questions": []
   },
   {

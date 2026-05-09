@@ -1,0 +1,461 @@
+[
+  {
+    "id": "c289c984-5bf0-5e8e-8313-7bfc15970964",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0001",
+      "document_id": "layer-gateway-embed-v1__run-locally.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Local Run Guide",
+      "doc_type": "layer-gateway-embed-v1__run-locally.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__run-locally.md",
+        "local_run_guide"
+      ],
+      "text": "This guide runs `layer-gateway-embed-v1` locally without Docker.",
+      "embed_text": "[SECTION: Local Run Guide]\nThis guide runs `layer-gateway-embed-v1` locally without Docker.\nQ: What does this guide run locally without?\nQ: Which version of layer-gateway-embed is covered in this guide?\nQ: Is Docker used in this local setup?",
+      "token_count": 22,
+      "embed_token_count": 71,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What does this guide run locally without?",
+        "Which version of layer-gateway-embed is covered in this guide?",
+        "Is Docker used in this local setup?"
+      ],
+      "content_hash": "e816c08f02e81786825becc0fed40a663ffbfa2ef2d1fb5cd10411a405844229",
+      "source": "repo_layer-gateway-embed-v1__run-locally.md",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260509_074257_EST",
+      "ingest_ts": "2026-05-09T07:42:57-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "engineer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "9e77309a-940a-55a2-a5d1-67148439f389",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0002",
+      "document_id": "layer-gateway-embed-v1__run-locally.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Prerequisites",
+      "doc_type": "layer-gateway-embed-v1__run-locally.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__run-locally.md",
+        "prerequisites"
+      ],
+      "text": "- Python 3.12+\n- Reachable embedding backends for `EMBED_BACKENDS`",
+      "embed_text": "[SECTION: Prerequisites]\n- Python 3.12+\n- Reachable embedding backends for `EMBED_BACKENDS`\nQ: What version of Python is required?\nQ: What does EMBED_BACKENDS require?\nQ: Are there any specific versions or requirements mentioned for the embedding backends?",
+      "token_count": 26,
+      "embed_token_count": 79,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What version of Python is required?",
+        "What does EMBED_BACKENDS require?",
+        "Are there any specific versions or requirements mentioned for the embedding backends?"
+      ],
+      "content_hash": "8fbfb196dfaadee4b534e86f57c585f186a4d42a717a8d07b84946c94b7a1508",
+      "source": "repo_layer-gateway-embed-v1__run-locally.md",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260509_074257_EST",
+      "ingest_ts": "2026-05-09T07:42:57-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "engineer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "712fa2f0-4671-5bd8-a49c-6bba14b59189",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0003",
+      "document_id": "layer-gateway-embed-v1__run-locally.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "1) Create and Activate Virtual Environment",
+      "doc_type": "layer-gateway-embed-v1__run-locally.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__run-locally.md",
+        "1)_create_and_activate_virtual_environment"
+      ],
+      "text": "From repo root:\n\n```bash\npython3 -m venv .venv\nsource .venv/bin/activate\npython3 -m pip install --upgrade pip\n```",
+      "embed_text": "[SECTION: 1) Create and Activate Virtual Environment]\nFrom repo root:\n\n```bash\npython3 -m venv .venv\nsource .venv/bin/activate\npython3 -m pip install --upgrade pip\n```\nQ: What command is used to create a virtual environment?\nQ: How do you activate the virtual environment?\nQ: Which command ensures that pip is up-to-date?",
+      "token_count": 43,
+      "embed_token_count": 98,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What command is used to create a virtual environment?",
+        "How do you activate the virtual environment?",
+        "Which command ensures that pip is up-to-date?"
+      ],
+      "content_hash": "5ee2aff0b021c8c973e619725f90f8dd879f99102fb5edd4cd0eed819db4a467",
+      "source": "repo_layer-gateway-embed-v1__run-locally.md",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260509_074257_EST",
+      "ingest_ts": "2026-05-09T07:42:57-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "engineer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "d6440da0-91c3-551d-bf72-2552a9b370b7",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0004",
+      "document_id": "layer-gateway-embed-v1__run-locally.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "2) Install the Project",
+      "doc_type": "layer-gateway-embed-v1__run-locally.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__run-locally.md",
+        "2)_install_the_project"
+      ],
+      "text": "```bash\npython3 -m pip install .\n```\n\nInstall dev dependencies (optional):\n\n```bash\npython3 -m pip install \".[dev]\"\n```",
+      "embed_text": "[SECTION: 2) Install the Project]\n```bash\npython3 -m pip install .\n```\n\nInstall dev dependencies (optional):\n\n```bash\npython3 -m pip install \".[dev]\"\n```\nQ: What command is used to install the project?\nQ: How can one install development dependencies?\nQ: What does the second command do?",
+      "token_count": 42,
+      "embed_token_count": 82,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What command is used to install the project?",
+        "How can one install development dependencies?",
+        "What does the second command do?"
+      ],
+      "content_hash": "941ee208b88539806b13e76e85e5eb7af54fd83d960d068051bbbf03200fb8f5",
+      "source": "repo_layer-gateway-embed-v1__run-locally.md",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260509_074257_EST",
+      "ingest_ts": "2026-05-09T07:42:57-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "engineer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "f1a2e19e-2ef8-586c-bffd-4dbbe5c35fc4",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0005",
+      "document_id": "layer-gateway-embed-v1__run-locally.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "3) Configure Environment",
+      "doc_type": "layer-gateway-embed-v1__run-locally.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__run-locally.md",
+        "3)_configure_environment"
+      ],
+      "text": "Create local env file:\n\n```bash\ncp .env.example .env\n```\n\nLoad env vars into shell:\n\n```bash\nset -a\nsource .env\nset +a\n```\n\nAt minimum, ensure:\n\n- `EMBED_BACKENDS` points to healthy backend URLs\n- `GATEWAY_HOST` and `GATEWAY_PORT` are correct for local run",
+      "embed_text": "[SECTION: 3) Configure Environment]\nCreate local env file:\n\n```bash\ncp .env.example .env\n```\n\nLoad env vars into shell:\n\n```bash\nset -a\nsource .env\nset +a\n```\n\nAt minimum, ensure:\n\n- `EMBED_BACKENDS` points to healthy backend URLs\n- `GATEWAY_HOST` and `GATEWAY_PORT` are correct for local run\nQ: What command is used to create a local env file?\nQ: What does the set -a and set +a commands do in the context of loading environment variables?\nQ: What are the minimum requirements to ensure when configuring the environment?",
+      "token_count": 96,
+      "embed_token_count": 165,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What command is used to create a local env file?",
+        "What does the set -a and set +a commands do in the context of loading environment variables?",
+        "What are the minimum requirements to ensure when configuring the environment?"
+      ],
+      "content_hash": "5064074fc95e93e376c6f7bcfa272d62314dd751c6b1ad8fe63b5c991819f82f",
+      "source": "repo_layer-gateway-embed-v1__run-locally.md",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260509_074257_EST",
+      "ingest_ts": "2026-05-09T07:42:57-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "engineer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "f931613b-203b-5466-9d0e-3312ebc86d29",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0006",
+      "document_id": "layer-gateway-embed-v1__run-locally.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "4) Start the Gateway",
+      "doc_type": "layer-gateway-embed-v1__run-locally.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__run-locally.md",
+        "4)_start_the_gateway"
+      ],
+      "text": "```bash\npython -m app.main\n```",
+      "embed_text": "[SECTION: 4) Start the Gateway]\n```bash\npython -m app.main\n```\nQ: What command starts the Gateway?\nQ: Which Python module is used to start the Gateway?\nQ: How do you run the Gateway application?",
+      "token_count": 12,
+      "embed_token_count": 53,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What command starts the Gateway?",
+        "Which Python module is used to start the Gateway?",
+        "How do you run the Gateway application?"
+      ],
+      "content_hash": "c75ec6d914931b12e3a3782e2147afb5eda444af93e0441a7ffbc17833e846f0",
+      "source": "repo_layer-gateway-embed-v1__run-locally.md",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260509_074257_EST",
+      "ingest_ts": "2026-05-09T07:42:57-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "engineer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "7035b0a5-f408-5e8b-8197-3d6909b7ba49",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0007",
+      "document_id": "layer-gateway-embed-v1__run-locally.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "5) Verify Health and Metrics",
+      "doc_type": "layer-gateway-embed-v1__run-locally.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__run-locally.md",
+        "5)_verify_health_and_metrics"
+      ],
+      "text": "```bash\ncurl http://localhost:30181/health\ncurl http://localhost:30181/metrics\n```",
+      "embed_text": "[SECTION: 5) Verify Health and Metrics]\n```bash\ncurl http://localhost:30181/health\ncurl http://localhost:30181/metrics\n```\nQ: What HTTP requests are used to verify health and metrics?\nQ: Which endpoint is used to verify health?\nQ: Which endpoint is used to retrieve metrics?",
+      "token_count": 28,
+      "embed_token_count": 84,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What HTTP requests are used to verify health and metrics?",
+        "Which endpoint is used to verify health?",
+        "Which endpoint is used to retrieve metrics?"
+      ],
+      "content_hash": "78c1de5651363b1dfdbc79026954f3b39f0ff26b6ad297158037e9685a2e29f3",
+      "source": "repo_layer-gateway-embed-v1__run-locally.md",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260509_074257_EST",
+      "ingest_ts": "2026-05-09T07:42:57-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "engineer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "cf3b4698-a056-5c65-a0c0-9f5e170887c6",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0008",
+      "document_id": "layer-gateway-embed-v1__run-locally.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "6) Test Embeddings Endpoint",
+      "doc_type": "layer-gateway-embed-v1__run-locally.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__run-locally.md",
+        "6)_test_embeddings_endpoint"
+      ],
+      "text": "```bash\ncurl -X POST http://localhost:30181/v1/embeddings \\\n  -H \"Content-Type: application/json\" \\\n  -H \"X-Request-Id: request-id-1\" \\\n  -H \"X-Trace-Id: trace-id-1\" \\\n  -H \"X-Session-Id: session-id-1\" \\\n  -d '{\"model\":\"BAAI/bge-m3\",\"input\":\"hello world\"}'\n```",
+      "embed_text": "[SECTION: 6) Test Embeddings Endpoint]\n```bash\ncurl -X POST http://localhost:30181/v1/embeddings \\\n  -H \"Content-Type: application/json\" \\\n  -H \"X-Request-Id: request-id-1\" \\\n  -H \"X-Trace-Id: trace-id-1\" \\\n  -H \"X-Session-Id: session-id-1\" \\\n  -d '{\"model\":\"BAAI/bge-m3\",\"input\":\"hello world\"}'\n```\nQ: What is the URL used in the curl command?\nQ: What model is specified in the curl command?\nQ: What is the input to the embedding model?",
+      "token_count": 125,
+      "embed_token_count": 178,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is the URL used in the curl command?",
+        "What model is specified in the curl command?",
+        "What is the input to the embedding model?"
+      ],
+      "content_hash": "eecd338bdea045640e42caf14d18a48b97d05b3e056b26c6d2339bacd0ca078a",
+      "source": "repo_layer-gateway-embed-v1__run-locally.md",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260509_074257_EST",
+      "ingest_ts": "2026-05-09T07:42:57-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "engineer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "f0dfbb62-c369-5e0f-85c6-09129ff7565c",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0009",
+      "document_id": "layer-gateway-embed-v1__run-locally.md",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "Troubleshooting",
+      "doc_type": "layer-gateway-embed-v1__run-locally.md",
+      "language": "en",
+      "tags": [
+        "layer-gateway-embed-v1__run-locally.md",
+        "troubleshooting"
+      ],
+      "text": "- `externally-managed-environment`: use the `.venv` steps above instead of installing into system Python.\n- `503 No healthy backend available`: check `EMBED_BACKENDS` and backend service availability.\n- `429 Gateway busy`: increase `ADMISSION_MAX_CONCURRENT` or `ADMISSION_WAIT_TIMEOUT_MS`.",
+      "embed_text": "[SECTION: Troubleshooting]\n- `externally-managed-environment`: use the `.venv` steps above instead of installing into system Python.\n- `503 No healthy backend available`: check `EMBED_BACKENDS` and backend service availability.\n- `429 Gateway busy`: increase `ADMISSION_MAX_CONCURRENT` or `ADMISSION_WAIT_TIMEOUT_MS`.\nQ: What should be done if the externally-managed-environment is encountered?\nQ: How can the '503 No healthy backend available' error be resolved?\nQ: What are the possible solutions for the '429 Gateway busy' issue?",
+      "token_count": 95,
+      "embed_token_count": 161,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What should be done if the externally-managed-environment is encountered?",
+        "How can the '503 No healthy backend available' error be resolved?",
+        "What are the possible solutions for the '429 Gateway busy' issue?"
+      ],
+      "content_hash": "72de5d2d878ee678752f7343b39976bb5de609e7788471a35070d9a7b927d45a",
+      "source": "repo_layer-gateway-embed-v1__run-locally.md",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260509_074257_EST",
+      "ingest_ts": "2026-05-09T07:42:57-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "engineer"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  }
+]
