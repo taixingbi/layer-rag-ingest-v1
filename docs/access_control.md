@@ -18,18 +18,15 @@ Adjust the `roles` arrays in `access_control.json` per document or source if a s
 
 ## Where the file lives
 
-Paths are **per environment** and **per dataset** (data1 vs data2):
+Paths are **per environment** under `data1`:
 
-| Environment | data1 (personal) | data2 (repo markdown) |
-|-------------|------------------|------------------------|
-| dev | `data_dev/data1/raw/access_control.json` | `data_dev/data2/raw/access_control.json` |
-| qa | `data_qa/data1/raw/access_control.json` | `data_qa/data2/raw/access_control.json` |
-| prod | `data_prod/data1/raw/access_control.json` | `data_prod/data2/raw/access_control.json` |
+| Environment | data1 (personal) |
+|-------------|------------------|
+| dev | `data_dev/data1/raw/access_control.json` |
+| qa | `data_qa/data1/raw/access_control.json` |
+| prod | `data_prod/data1/raw/access_control.json` |
 
-Scripts pass the matching file explicitly, for example:
-
-- [`scripts/data1.sh`](../scripts/data1.sh) → `--access-control-file "$DATASET_ROOT/raw/access_control.json"` with `DATASET_ROOT="${DATA_ROOT}/data1"`.
-- [`scripts/data2.sh`](../scripts/data2.sh) → same pattern under `data2`.
+[`scripts/data1.sh`](../scripts/data1.sh) passes the matching file explicitly: `--access-control-file "$DATASET_ROOT/raw/access_control.json"` with `DATASET_ROOT="${DATA_ROOT}/data1"`.
 
 If you omit `--access-control-file`, [`app/prepare_payloads.py`](../app/prepare_payloads.py) still resolves `<dataset-root>/raw/access_control.json` from `--data-dir` (the dataset root is the parent of `processed/`).
 
@@ -54,8 +51,6 @@ Example (data1-style sources with `personal` prefix):
   }
 }
 ```
-
-Example (data2-style `repo_*` document keys): see `data_dev/data2/raw/access_control.json` in the repo.
 
 ## Lookup order
 

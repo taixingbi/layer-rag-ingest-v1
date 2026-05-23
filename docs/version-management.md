@@ -71,7 +71,7 @@ When behavior changes, update in same change set:
 - `README.md`
 - `docs/design.md`
 - `docs/plan.md`
-- runbook files (`data1.md`, `data2.md`)
+- runbook file (`data1.md`)
 
 Avoid “code says one thing, docs say another.”
 

@@ -12,9 +12,7 @@ All operations should follow **dry-run first**.
 ## Prerequisites
 
 - env file configured (`.env.dev`, `.env.qa`, or `.env.prod`; copy to `.env` when needed)
-- latest manifest exists under your processed directory:
-  - `data_<env>/data1/processed/ingest_manifest_latest.json`
-  - or `data_<env>/data2/processed/ingest_manifest_latest.json`
+- latest manifest exists under `data_<env>/data1/processed/ingest_manifest_latest.json`
 
 For manual commands in this doc, use:
 
@@ -82,9 +80,9 @@ To limit changes by source or doc type:
 
 ```bash
 python3 app/reconcile_qdrant.py \
-  --manifest-path "${DATA_ROOT}/data2/processed/ingest_manifest_latest.json" \
+  --manifest-path "${DATA_ROOT}/data1/processed/ingest_manifest_latest.json" \
   --scope-key source \
-  --scope-value repo_layer-gateway-embed-v1__design.md \
+  --scope-value personal_profile \
   --dry-run
 ```
 

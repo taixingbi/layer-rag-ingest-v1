@@ -27,7 +27,7 @@ It complements:
 
 The pipeline is batch-oriented and file-backed:
 
-1. Input files are read from data folders (`data1/raw`, `data2/raw`).
+1. Input files are read from data folders (`data1/raw`).
 2. Intermediate JSON artifacts are written to `processed/`.
 3. Final stage embeds and upserts into a Qdrant collection.
 
@@ -38,9 +38,8 @@ Design choice: files are preserved between stages to make each step debuggable a
 ### Runtime Entry Points
 
 - `scripts/data1.sh`: plain-text corpus pipeline (`data1`)
-- `scripts/data2.sh`: GitHub/Markdown corpus pipeline (`data2`)
 
-Both scripts:
+The script:
 
 - run from any cwd by resolving repo root
 - default to running synthetic enrichment (`RUN_SYNTHETIC_QUESTIONS=0` disables)
@@ -51,8 +50,6 @@ Both scripts:
 
 - `app/plain_text_chunks.py`
   - Converts prose-style `.txt` sources into `chunks_*.json`.
-- `app/markdown_to_chunks.py`
-  - Converts Markdown (and GitHub-export `.txt`) into `chunks_*.json` with heading-aware segmentation.
 - `app/prepare_payloads.py`
   - Transforms chunks into Qdrant point dictionaries (`points_*.json`) and writes run summary + ingest manifests.
 - `app/synthetic_questions.py`
@@ -220,10 +217,9 @@ Indexed filter keys currently include:
 
 ### Source namespacing convention
 
-- `data1` uses `--source-prefix personal`
-- `data2` uses `--source-prefix repo`
+- `data1` uses `--source-prefix personal` (for example `personal_profile`)
 
-This avoids collisions and enables strict filtering between personal and repository corpora.
+This namespaces `payload.source` for strict filtering.
 
 ## Reliability and Idempotency
 

@@ -1,7 +1,7 @@
 {
-  "ingest_run_id": "run_20260509_080954_EST",
+  "ingest_run_id": "run_20260523_115552_EST",
   "collection": "taixing_knowledge_dev",
-  "ingest_ts": "2026-05-09T08:09:54-05:00",
+  "ingest_ts": "2026-05-23T11:55:52-05:00",
   "id_key_version": "v3",
   "document_version": "v1",
   "chunk_version": "v1",
@@ -21,8 +21,8 @@
       "output_file": "data_dev/data1/processed/points_qa.json",
       "doc_type": "qa",
       "source": "personal_qa",
-      "chunks_input": 14,
-      "chunks_prepared": 14,
+      "chunks_input": 15,
+      "chunks_prepared": 15,
       "chunks_failed": 0
     },
     {
@@ -37,8 +37,8 @@
   ],
   "stats": {
     "files_total": 3,
-    "chunks_input": 59,
-    "chunks_total_prepared": 59,
+    "chunks_input": 60,
+    "chunks_total_prepared": 60,
     "chunks_failed": 0
   }
 }

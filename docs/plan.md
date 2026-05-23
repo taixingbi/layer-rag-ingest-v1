@@ -7,16 +7,12 @@ This plan reflects the current implementation in `app/` and `scripts/`.
 From repo root, the primary entrypoints are:
 
 - `./scripts/data1.sh` for personal/plain-text ingest
-- `./scripts/data2.sh` for GitHub/Markdown ingest
 
-Both scripts run synthetic-question enrichment and smoke validation by default. Set `RUN_SYNTHETIC_QUESTIONS=0` and/or `RUN_SMOKE_VALIDATE=0` to skip stages.
+The script runs synthetic-question enrichment and smoke validation by default. Set `RUN_SYNTHETIC_QUESTIONS=0` and/or `RUN_SMOKE_VALIDATE=0` to skip stages.
 
 ## Stage 1 - Build Chunk Files
 
-Two chunkers are used depending on source shape:
-
 - `app/plain_text_chunks.py` for prose/resume-style text
-- `app/markdown_to_chunks.py` for Markdown and GitHub export `.txt`
 
 Outputs are `chunks_*.json` under `<data>/processed/`.
 
@@ -121,9 +117,8 @@ Validation behavior:
 ## Data Set Conventions
 
 - `data1` flow uses `--source-prefix personal`
-- `data2` flow uses `--source-prefix repo`
 
-This keeps payload `source` namespaced (for example `personal_profile`, `repo_layer-gateway-embed-v1__design.md`).
+This keeps payload `source` namespaced (for example `personal_profile`).
 
 ## Non-Goals / Not Yet Implemented
 

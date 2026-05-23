@@ -19,7 +19,7 @@ Prepared payloads include:
 - `chunk_id`
 - `content_hash`
 
-Chunk builders (`plain_text_chunks.py`, `markdown_to_chunks.py`) emit `document_id` in `chunks_*.json`.
+`plain_text_chunks.py` emits `document_id` in `chunks_*.json`.
 
 ## Manifests and reconcile
 
@@ -50,12 +50,12 @@ Reconcile behavior:
 
 ```bash
 python3 app/prepare_payloads.py \
-  --data-dir data2/processed \
-  --output-dir data2/processed \
+  --data-dir data1/processed \
+  --output-dir data1/processed \
   --pattern "chunks_*.json" \
-  --source-prefix repo
+  --source-prefix personal
 
-python3 app/upsert_qdrant.py --data-dir data2/processed --pattern "points_*.json"
+python3 app/upsert_qdrant.py --data-dir data1/processed --pattern "points_*.json"
 ```
 
 Optional strict approach:
@@ -66,7 +66,7 @@ Optional strict approach:
 
 ```bash
 python3 app/reconcile_qdrant.py \
-  --manifest-path data2/processed/ingest_manifest_latest.json \
+  --manifest-path data1/processed/ingest_manifest_latest.json \
   --scope-key collection \
   --dry-run
 ```
@@ -75,7 +75,7 @@ python3 app/reconcile_qdrant.py \
 
 ```bash
 python3 app/reconcile_qdrant.py \
-  --manifest-path data2/processed/ingest_manifest_latest.json \
+  --manifest-path data1/processed/ingest_manifest_latest.json \
   --scope-key collection \
   --delete-mode soft \
   --apply-soft-delete
@@ -85,7 +85,7 @@ python3 app/reconcile_qdrant.py \
 
 ```bash
 python3 app/reconcile_qdrant.py \
-  --manifest-path data2/processed/ingest_manifest_latest.json \
+  --manifest-path data1/processed/ingest_manifest_latest.json \
   --scope-key collection \
   --delete-mode hard \
   --retention-days 30 \

@@ -96,5 +96,12 @@
     "section": "ROOT",
     "text": "Q: Why is Taixing Bi looking for a new opportunity?\nA: Taixing is looking to focus fully on applied AI systems. A lot of Taixing's recent work has naturally moved into LLM orchestration, retrieval pipelines, and scalable AI tooling, and Taixing wants the next role to be centered on building those systems end-to-end rather than as an add-on.",
     "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0015",
+    "document_id": "qa",
+    "section": "ROOT",
+    "text": "Q: How many years of experience in Python does taixing have?\nA: 9 years",
+    "synthetic_questions": []
   }
 ]
