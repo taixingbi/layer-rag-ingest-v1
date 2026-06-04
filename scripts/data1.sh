@@ -7,7 +7,15 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
 
-PYTHON="${PYTHON:-python3}"
+if [[ -n "${PYTHON:-}" ]]; then
+  :
+elif [[ -x "$ROOT/.venv/bin/python3.11" ]]; then
+  PYTHON="$ROOT/.venv/bin/python3.11"
+elif [[ -x "$ROOT/.venv/bin/python" ]]; then
+  PYTHON="$ROOT/.venv/bin/python"
+else
+  PYTHON="python3"
+fi
 ARG_DATA_ENV="${1:-}"
 if [[ -n "$ARG_DATA_ENV" ]]; then
   DATA_ENV="$ARG_DATA_ENV"
