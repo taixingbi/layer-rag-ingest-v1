@@ -53,7 +53,7 @@ def _build_payload(
     response_format: dict[str, Any] | None,
 ) -> dict[str, Any]:
     """ build payload."""
-    payload: dict[str, Any] = {"model": model, "messages": messages}
+    payload: dict[str, Any] = {"model": model, "messages": messages, "stream": False}
     if max_tokens is not None:
         payload["max_tokens"] = max_tokens
     if temperature is not None:
