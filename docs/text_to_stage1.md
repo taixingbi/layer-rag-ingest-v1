@@ -7,5 +7,5 @@ python3 app/plain_text_chunks.py data_save/resume.txt data/chunks_resume_stage1.
 ```bash
 python3 app/plain_text_chunks.py data_raw/resume.txt data/chunks_resume.json
 python3 app/plain_text_chunks.py data_raw/qa.txt data/chunks_qa.json
-python3 app/plain_text_chunks.py data_raw/profile.txt data/chunks_profile.json
+python3 app/plain_text_chunks.py data_raw/personal_profile.txt data/chunks_personal_profile.json
 ```

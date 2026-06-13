@@ -116,9 +116,7 @@ Validation behavior:
 
 ## Data Set Conventions
 
-- `data1` flow uses `--source-prefix personal`
-
-This keeps payload `source` namespaced (for example `personal_profile`).
+- `data1` raw files use `personal_*.txt`; `payload.source` equals the stem (for example `personal_profile`)
 
 ## Non-Goals / Not Yet Implemented
 

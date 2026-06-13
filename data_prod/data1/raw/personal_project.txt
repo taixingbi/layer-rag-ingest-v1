@@ -1,0 +1,92 @@
+AI Platform Leadership & Measurable Impact
+Building an Enterprise AI Platform
+
+Taixing served as the primary technical owner, an end-to-end AI platform designed to deliver grounded, production-grade AI experiences using private knowledge, public web information, and GitHub repositories.
+
+Rather than building a standalone chatbot, he architected and implemented a complete AI ecosystem spanning retrieval, orchestration, model serving, evaluation, and operational infrastructure.
+
+Ownership
+
+Owned the full AI platform lifecycle:
+
+AI platform architecture and technical strategy
+Multi-model inference platform design
+Retrieval-Augmented Generation (RAG) architecture
+LLM orchestration and routing systems
+Evaluation and quality measurement frameworks
+Production deployment and operational reliability
+Key AI Systems Delivered
+Intelligent LLM Orchestration Layer
+
+Designed a routing system capable of dynamically selecting between:
+
+Private knowledge retrieval
+GitHub repository search
+Public web search
+Direct LLM responses
+
+Implemented model-based routing, query rewriting, confidence scoring, and answer grounding to improve response accuracy while minimizing hallucinations.
+
+Production RAG Platform
+
+Built a multi-stage retrieval architecture combining:
+
+Semantic vector retrieval
+Candidate expansion
+Cross-encoder reranking
+Citation generation
+Evidence-grounded answer synthesis
+
+The system supports multiple enterprise knowledge sources while maintaining low-latency user experiences.
+
+AI Evaluation Framework
+
+Developed automated evaluation pipelines to measure:
+
+Routing accuracy
+Retrieval relevance
+Citation quality
+Response grounding
+End-to-end answer quality
+
+Created reproducible benchmark datasets and testing workflows that enabled continuous model and prompt improvements.
+
+GPU Inference Platform
+
+Designed and operated self-hosted AI inference infrastructure using:
+
+vLLM
+LoRA adapters
+Kubernetes
+Multi-node GPU deployments
+
+Enabled efficient serving of multiple specialized models from shared GPU resources while maintaining operational flexibility and cost control.
+
+Measurable Impact
+Reduced AI Platform Dependency
+
+Built an internally controlled AI platform that reduced reliance on external AI tooling and enabled rapid experimentation with models, prompts, retrieval strategies, and evaluation methods.
+
+Improved Answer Quality
+
+Implemented multi-stage retrieval and reranking pipelines that significantly improved retrieval precision and answer grounding compared with naive vector search approaches.
+
+Increased User Trust
+
+Introduced citation-backed responses and evidence-grounded generation, helping users understand where information originated and reducing hallucination risk.
+
+Accelerated AI Development
+
+Established reusable AI infrastructure components—including orchestration, retrieval, inference, and evaluation layers—that can be leveraged by future AI products and agent-based workflows.
+
+End-to-End Technical Ownership
+
+Led initiatives from concept through production operation, including:
+
+Architecture design
+AI system implementation
+Infrastructure deployment
+Performance optimization
+Production support
+
+Demonstrated the ability to independently deliver complex AI systems that combine machine learning infrastructure, distributed systems, retrieval architectures, and production software engineering.

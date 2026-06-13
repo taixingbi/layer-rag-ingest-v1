@@ -10,11 +10,8 @@ A: Remote, Hybrid, or Office
 Q: What is Taixing Bi's expected compensation range?
 A: $180,000 – $240,000 USD
 
-Q: What is Taixing Bi's visa status?
-A: H4 EAD
-
-Q: Does Taixing Bi require visa sponsorship?
-A: No
+Q: What is Taixing Bi's visa status / work authorization? 
+A: H4 EAD. No visa sponsorship required.
 
 Q: Which roles is Taixing Bi targeting?
 A: AI Infra / Backend / LLM Engineer

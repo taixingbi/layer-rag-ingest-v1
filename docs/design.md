@@ -217,7 +217,7 @@ Indexed filter keys currently include:
 
 ### Source namespacing convention
 
-- `data1` uses `--source-prefix personal` (for example `personal_profile`)
+- `data1` raw files use `personal_*.txt`; `payload.source` equals the filename stem (for example `personal_profile`), matching `access_control.json` keys
 
 This namespaces `payload.source` for strict filtering.
 

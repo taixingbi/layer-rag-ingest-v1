@@ -1,0 +1,2862 @@
+[
+  {
+    "id": "74c8e5b7-67f1-5352-9285-f653abafce91",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0001",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "TAIXING BI",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "taixing_bi"
+      ],
+      "text": "Senior AI Infrastructure & Platform Engineer\nNew York, NY (Open to Remote / Hybrid / NYC)\n347-560-4308 • taixingbijob@gmail.com\nLinkedIn: linkedin.com/in/taixing-bi-757a4961\nPortfolio: https://taixingai.com\nGitHub: github.com/taixingbi",
+      "embed_text": "[SECTION: TAIXING BI]\nSenior AI Infrastructure & Platform Engineer\nNew York, NY (Open to Remote / Hybrid / NYC)\n347-560-4308 • taixingbijob@gmail.com\nLinkedIn: linkedin.com/in/taixing-bi-757a4961\nPortfolio: https://taixingai.com\nGitHub: github.com/taixingbi\nQ: What is the phone number of the Senior AI Infrastructure & Platform Engineer?\nQ: What is the LinkedIn profile URL of Taixing Bi?\nQ: What is the email address for job inquiries?",
+      "token_count": 81,
+      "embed_token_count": 136,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is the phone number of the Senior AI Infrastructure & Platform Engineer?",
+        "What is the LinkedIn profile URL of Taixing Bi?",
+        "What is the email address for job inquiries?"
+      ],
+      "content_hash": "94e6e8254de7e5e0f0f079abaf9c73d0dd15809355ea36ecc7664eb8bbfb05a0",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "ab29e5ba-3f03-5696-98d9-49048f68dc4e",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0002",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "SUMMARY",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "summary"
+      ],
+      "text": "Senior AI Infrastructure & Platform Engineer with 7+ years of experience building production AI platforms, GPU inference systems, distributed backend services, and cloud-native infrastructure.",
+      "embed_text": "[SECTION: SUMMARY]\nSenior AI Infrastructure & Platform Engineer with 7+ years of experience building production AI platforms, GPU inference systems, distributed backend services, and cloud-native infrastructure.\nQ: How many years of experience does the engineer have?\nQ: What type of AI platforms has the engineer built?\nQ: What kind of cloud-native infrastructure has the engineer worked on?",
+      "token_count": 38,
+      "embed_token_count": 88,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "How many years of experience does the engineer have?",
+        "What type of AI platforms has the engineer built?",
+        "What kind of cloud-native infrastructure has the engineer worked on?"
+      ],
+      "content_hash": "d030c924179ff853f1bb693b8c1e448c26ef42e9d61faf974e9bfebd9ed402ac",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "4a9509d7-dd11-566a-8f0b-06a539cd3227",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0003",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "SUMMARY",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "summary"
+      ],
+      "text": "Experienced designing and operating Kubernetes-based AI workloads, LLM serving platforms, retrieval infrastructure, and observability systems.",
+      "embed_text": "[SECTION: SUMMARY]\nExperienced designing and operating Kubernetes-based AI workloads, LLM serving platforms, retrieval infrastructure, and observability systems.\nQ: What types of systems has the individual experience in designing and operating?\nQ: Which AI technologies does the person have experience with?\nQ: What specific platforms were they involved in for LLM serving?",
+      "token_count": 33,
+      "embed_token_count": 86,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What types of systems has the individual experience in designing and operating?",
+        "Which AI technologies does the person have experience with?",
+        "What specific platforms were they involved in for LLM serving?"
+      ],
+      "content_hash": "4f15d0984e3ea21f496cea00149c79f38eb445e705f387b0a060e526ca39feca",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "859aebb5-e03f-5eb8-b9e7-727a18ad4cb6",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0004",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "SUMMARY",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "summary"
+      ],
+      "text": "Strong background across GPU inference,LLM infrastructure,model serving,distributed systems,cloud-native platforms,and production reliability. Built end-to-end AI platforms supporting model routing, agent orchestration, retrieval-augmented generation (RAG), evaluation pipelines, fine-tuning workflows, and GitOps deployment.",
+      "embed_text": "[SECTION: SUMMARY]\nStrong background across GPU inference,LLM infrastructure,model serving,distributed systems,cloud-native platforms,and production reliability. Built end-to-end AI platforms supporting model routing, agent orchestration, retrieval-augmented generation (RAG), evaluation pipelines, fine-tuning workflows, and GitOps deployment.\nQ: What areas of expertise does the individual have?\nQ: What kind of AI platforms did they build?\nQ: Which deployment method was used for the platforms?",
+      "token_count": 86,
+      "embed_token_count": 133,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What areas of expertise does the individual have?",
+        "What kind of AI platforms did they build?",
+        "Which deployment method was used for the platforms?"
+      ],
+      "content_hash": "5085929d7ff6aae848319da20858fda3a3a0218d78d3749fbedf82e986d2ebd7",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "18804142-c3bd-5ef0-bf6f-c715e168553c",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0005",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "CORE SKILLS",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "core_skills"
+      ],
+      "text": "AI Infrastructure & Platform Engineering\nKubernetes\nDocker\nArgoCD\nGitOps",
+      "embed_text": "[SECTION: CORE SKILLS]\nAI Infrastructure & Platform Engineering\nKubernetes\nDocker\nArgoCD\nGitOps\nQ: What are the core skills mentioned in this section?\nQ: Which Kubernetes tool is listed?\nQ: What GitOps tool is mentioned?",
+      "token_count": 18,
+      "embed_token_count": 62,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What are the core skills mentioned in this section?",
+        "Which Kubernetes tool is listed?",
+        "What GitOps tool is mentioned?"
+      ],
+      "content_hash": "7355a1bb69f92854f1c05b04af72d63c0c2d5230d5147b27577b205b88829d00",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "930a3b11-1d18-5998-9452-82e3d52affa9",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0006",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "CI/CD",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "ci/cd"
+      ],
+      "text": "Distributed Systems\nPlatform Engineering\nService Reliability\nAI Serving & Inference\nvLLM\nSGLang\nHugging Face TGI\nLoRA Serving\nModel Routing\nToken Streaming\nBatching\nCaching\nGPU Workload Management\nCloud & Data Infrastructure\nAWS Lambda\nDynamoDB",
+      "embed_text": "[SECTION: CI/CD]\nDistributed Systems\nPlatform Engineering\nService Reliability\nAI Serving & Inference\nvLLM\nSGLang\nHugging Face TGI\nLoRA Serving\nModel Routing\nToken Streaming\nBatching\nCaching\nGPU Workload Management\nCloud & Data Infrastructure\nAWS Lambda\nDynamoDB\nQ: What topics are covered in the Distributed Systems section?\nQ: Are there any AI-related services mentioned?\nQ: Which cloud service is listed?",
+      "token_count": 57,
+      "embed_token_count": 99,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What topics are covered in the Distributed Systems section?",
+        "Are there any AI-related services mentioned?",
+        "Which cloud service is listed?"
+      ],
+      "content_hash": "356778e9175fe90e48628d3f3e9fec82205d323bdae6a08e502f0c6577fdbed5",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "b996262c-0ea7-5675-9a30-c62db4416eb2",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0007",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "SQS",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "sqs"
+      ],
+      "text": "EventBridge\nSnowflake\nKafka / MSK\nObservability\nPrometheus\nGrafana\nDatadog\nCloudWatch\nDistributed Tracing\nPerformance Monitoring\nAI Systems",
+      "embed_text": "[SECTION: SQS]\nEventBridge\nSnowflake\nKafka / MSK\nObservability\nPrometheus\nGrafana\nDatadog\nCloudWatch\nDistributed Tracing\nPerformance Monitoring\nAI Systems\nQ: What distributed tracing systems are mentioned?\nQ: Which performance monitoring tools are listed?\nQ: Are there any AI systems mentioned in the SQS section?",
+      "token_count": 31,
+      "embed_token_count": 73,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What distributed tracing systems are mentioned?",
+        "Which performance monitoring tools are listed?",
+        "Are there any AI systems mentioned in the SQS section?"
+      ],
+      "content_hash": "26827b5a04c645d3e119cd51374e56439b60fcf89e71cee83da08b271f3a9130",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "56f2ee9a-0f50-5b3e-91ea-7a5de0f4e557",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0008",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "RAG",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "rag"
+      ],
+      "text": "Agent Orchestration\nTool Calling\nLangChain\nLangGraph\nEvaluation Frameworks\nFine-Tuning (LoRA, SFT, DPO)\nProgramming\nPython\nTypeScript\nJava",
+      "embed_text": "[SECTION: RAG]\nAgent Orchestration\nTool Calling\nLangChain\nLangGraph\nEvaluation Frameworks\nFine-Tuning (LoRA, SFT, DPO)\nProgramming\nPython\nTypeScript\nJava\nQ: What programming languages are mentioned?\nQ: How many programming languages are listed?\nQ: Are there any evaluation frameworks mentioned?",
+      "token_count": 36,
+      "embed_token_count": 75,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What programming languages are mentioned?",
+        "How many programming languages are listed?",
+        "Are there any evaluation frameworks mentioned?"
+      ],
+      "content_hash": "8a488b49fbd4def74cbbdd212fc4e1c64b613d17fdc3ffb1f895dd089fd136fe",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "3bff4058-773a-5b89-9393-eabbef070c1a",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0009",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "AI PLATFORM EXPERIENCE",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "ai_platform_experience"
+      ],
+      "text": "HuntAI — AI Platform & Infrastructure\nFounder & Architect | https://taixingai.com\nDesigned and built a production-ready AI platform supporting LLM serving, agent orchestration, retrieval, evaluation, and GitOps deployment.",
+      "embed_text": "[SECTION: AI PLATFORM EXPERIENCE]\nHuntAI — AI Platform & Infrastructure\nFounder & Architect | https://taixingai.com\nDesigned and built a production-ready AI platform supporting LLM serving, agent orchestration, retrieval, evaluation, and GitOps deployment.\nQ: What AI platform did the founder architect?\nQ: What are the key functionalities supported by the AI platform?\nQ: How was the AI platform deployed?",
+      "token_count": 59,
+      "embed_token_count": 109,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What AI platform did the founder architect?",
+        "What are the key functionalities supported by the AI platform?",
+        "How was the AI platform deployed?"
+      ],
+      "content_hash": "898467e3b38e86481401af5973372829be6bcb86ea975d0db570f89c9f6322a2",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "02e529c2-1203-51a1-89d0-542a55cd9af4",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0010",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "AI PLATFORM EXPERIENCE",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "ai_platform_experience"
+      ],
+      "text": "Architected a distributed platform consisting of 10+ microservices running on Kubernetes.",
+      "embed_text": "[SECTION: AI PLATFORM EXPERIENCE]\nArchitected a distributed platform consisting of 10+ microservices running on Kubernetes.\nQ: How many microservices were there in the platform?\nQ: On which system were the microservices running?\nQ: What was the role of the author in building the platform?",
+      "token_count": 20,
+      "embed_token_count": 71,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "How many microservices were there in the platform?",
+        "On which system were the microservices running?",
+        "What was the role of the author in building the platform?"
+      ],
+      "content_hash": "b9322e3e4625ee682c40a3dcdf8dc6e5f2b5f9a46fceb366d9b3d7e323b47791",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "8b6569d8-412f-5297-9c9b-94b87f01553b",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0011",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "AI PLATFORM EXPERIENCE",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "ai_platform_experience"
+      ],
+      "text": "Built AI Gateway services supporting model routing, tool calling, streaming responses, authentication, and observability.",
+      "embed_text": "[SECTION: AI PLATFORM EXPERIENCE]\nBuilt AI Gateway services supporting model routing, tool calling, streaming responses, authentication, and observability.\nQ: What services did AI Gateway support?\nQ: What kind of responses could be handled by the AI Gateway?\nQ: Which aspects of security and monitoring were included in AI Gateway?",
+      "token_count": 25,
+      "embed_token_count": 76,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What services did AI Gateway support?",
+        "What kind of responses could be handled by the AI Gateway?",
+        "Which aspects of security and monitoring were included in AI Gateway?"
+      ],
+      "content_hash": "0ff6cd838c155087697594000967c3c8e41c94f8d595497a2fd0a921da0bc007",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "971706a3-847a-5d07-b347-990639848341",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0012",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "AI PLATFORM EXPERIENCE",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "ai_platform_experience"
+      ],
+      "text": "Designed and operated GPU inference infrastructure on a multi-GPU Kubernetes environment using vLLM and LoRA adapters.",
+      "embed_text": "[SECTION: AI PLATFORM EXPERIENCE]\nDesigned and operated GPU inference infrastructure on a multi-GPU Kubernetes environment using vLLM and LoRA adapters.\nQ: What tools were used for GPU inference infrastructure?\nQ: On what type of Kubernetes environment was the GPU inference infrastructure operated?\nQ: Which adapters were utilized in the GPU inference infrastructure?",
+      "token_count": 29,
+      "embed_token_count": 87,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What tools were used for GPU inference infrastructure?",
+        "On what type of Kubernetes environment was the GPU inference infrastructure operated?",
+        "Which adapters were utilized in the GPU inference infrastructure?"
+      ],
+      "content_hash": "d45446f2656d2363b67f45902f6f3b98cc40e87339d009dbc4c41887eb1fc0e1",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "32690750-8632-56b9-80be-3bea3cc2b183",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0013",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "AI PLATFORM EXPERIENCE",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "ai_platform_experience"
+      ],
+      "text": "Implemented hybrid retrieval pipelines combining semantic search, keyword search, reranking, and citation grounding.",
+      "embed_text": "[SECTION: AI PLATFORM EXPERIENCE]\nImplemented hybrid retrieval pipelines combining semantic search, keyword search, reranking, and citation grounding.\nQ: What types of search methods were combined in the hybrid retrieval pipeline?\nQ: Did the implementation involve any form of reranking?\nQ: Was citation grounding included in the implemented hybrid retrieval pipeline?",
+      "token_count": 28,
+      "embed_token_count": 91,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What types of search methods were combined in the hybrid retrieval pipeline?",
+        "Did the implementation involve any form of reranking?",
+        "Was citation grounding included in the implemented hybrid retrieval pipeline?"
+      ],
+      "content_hash": "ab887496a6dbc1aeb284c45f3e1ccbdf16987914e9974bafc5f05f8ef8ff7391",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "ef93aa79-1881-5d78-876b-02101f7d38ce",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0014",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "AI PLATFORM EXPERIENCE",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "ai_platform_experience"
+      ],
+      "text": "Built orchestration services for routing, retrieval, tool execution, and response generation workflows.",
+      "embed_text": "[SECTION: AI PLATFORM EXPERIENCE]\nBuilt orchestration services for routing, retrieval, tool execution, and response generation workflows.\nQ: What services did the AI platform build?\nQ: What types of workflows were created?\nQ: Which processes were included in the workflows?",
+      "token_count": 24,
+      "embed_token_count": 70,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What services did the AI platform build?",
+        "What types of workflows were created?",
+        "Which processes were included in the workflows?"
+      ],
+      "content_hash": "f2c3fdccba2fbd3bf50c9e59733f5565c8d61f38ac406ad052aac6f5ea381fdc",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "63cc4000-ba5b-5e74-b276-8986078bb637",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0015",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "AI PLATFORM EXPERIENCE",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "ai_platform_experience"
+      ],
+      "text": "Implemented automated evaluation pipelines using golden datasets, routing accuracy testing, and regression validation.",
+      "embed_text": "[SECTION: AI PLATFORM EXPERIENCE]\nImplemented automated evaluation pipelines using golden datasets, routing accuracy testing, and regression validation.\nQ: What types of automated evaluation pipelines were implemented?\nQ: What kind of testing was performed?\nQ: Which aspects of the system were validated?",
+      "token_count": 26,
+      "embed_token_count": 73,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What types of automated evaluation pipelines were implemented?",
+        "What kind of testing was performed?",
+        "Which aspects of the system were validated?"
+      ],
+      "content_hash": "feb069331d8eec2c3c41a94b501046b00788e9770132cd6414e5903e944abd79",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "82056398-4736-5f56-bdb0-8269afd3a897",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0016",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "AI PLATFORM EXPERIENCE",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "ai_platform_experience"
+      ],
+      "text": "Designed GitOps deployment workflows using ArgoCD and GitHub Actions for automated environment promotion and drift detection.",
+      "embed_text": "[SECTION: AI PLATFORM EXPERIENCE]\nDesigned GitOps deployment workflows using ArgoCD and GitHub Actions for automated environment promotion and drift detection.\nQ: What tools were used to design GitOps deployment workflows?\nQ: For what purpose were the GitOps deployment workflows designed?\nQ: Which specific drift detection method was employed?",
+      "token_count": 33,
+      "embed_token_count": 97,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What tools were used to design GitOps deployment workflows?",
+        "For what purpose were the GitOps deployment workflows designed?",
+        "Which specific drift detection method was employed?"
+      ],
+      "content_hash": "fff3402bdc0f23f8a6e7e1186bb564820856067c073fd8e069808dfc803fd30d",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "40742d7c-67f2-5eb6-a34f-346bb32012f6",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0017",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "AI PLATFORM EXPERIENCE",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "ai_platform_experience"
+      ],
+      "text": "Built monitoring, logging, and operational dashboards using Prometheus and Grafana.",
+      "embed_text": "[SECTION: AI PLATFORM EXPERIENCE]\nBuilt monitoring, logging, and operational dashboards using Prometheus and Grafana.\nQ: Which tools were used to build monitoring, logging, and operational dashboards?\nQ: What platforms were utilized for creating the dashboards?\nQ: Can you name any specific tools used for building dashboards?",
+      "token_count": 21,
+      "embed_token_count": 80,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "Which tools were used to build monitoring, logging, and operational dashboards?",
+        "What platforms were utilized for creating the dashboards?",
+        "Can you name any specific tools used for building dashboards?"
+      ],
+      "content_hash": "b7df43cbddb77f95ca71d44f0ade3f4adb6bdfc1f64d9f5f77d950e584b25faa",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "320191d7-9bb1-50ed-a857-8198cebf53b5",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0018",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "AI PLATFORM EXPERIENCE",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "ai_platform_experience"
+      ],
+      "text": "Developed Kubernetes deployment strategies for inference, gateway, orchestration, retrieval, and observability services.",
+      "embed_text": "[SECTION: AI PLATFORM EXPERIENCE]\nDeveloped Kubernetes deployment strategies for inference, gateway, orchestration, retrieval, and observability services.\nQ: What Kubernetes deployment strategies were developed?\nQ: For which services were Kubernetes deployment strategies developed?\nQ: Did any other services besides inference, gateway, orchestration, retrieval, and observability require Kubernetes deployment strategies?",
+      "token_count": 30,
+      "embed_token_count": 109,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What Kubernetes deployment strategies were developed?",
+        "For which services were Kubernetes deployment strategies developed?",
+        "Did any other services besides inference, gateway, orchestration, retrieval, and observability require Kubernetes deployment strategies?"
+      ],
+      "content_hash": "3483b2f32c8b5223b7c0109eded9dfee75307b1ba2c6d62de642b56568439cc8",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "239c6b52-8a37-5e45-9ea1-0cea4f848d41",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0019",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "AI PLATFORM EXPERIENCE",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "ai_platform_experience"
+      ],
+      "text": "Built and fine-tuned LLM routing models using LoRA, SFT, and DPO workflows with automated evaluation and regression testing pipelines.",
+      "embed_text": "[SECTION: AI PLATFORM EXPERIENCE]\nBuilt and fine-tuned LLM routing models using LoRA, SFT, and DPO workflows with automated evaluation and regression testing pipelines.\nQ: What techniques were used to build and fine-tune LLM routing models?\nQ: Did the workflow include any automated processes?\nQ: Which specific workflows were utilized for fine-tuning LLM routing models?",
+      "token_count": 36,
+      "embed_token_count": 100,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What techniques were used to build and fine-tune LLM routing models?",
+        "Did the workflow include any automated processes?",
+        "Which specific workflows were utilized for fine-tuning LLM routing models?"
+      ],
+      "content_hash": "0fbe53db0b5225cb49a20d5144f23de1e24c3ab3bd8024ca658e4ce70b964222",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "8b5ded58-dbf4-5f1c-aed9-c1537528a23e",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0020",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "AI PLATFORM EXPERIENCE",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "ai_platform_experience"
+      ],
+      "text": "Technologies: Kubernetes, ArgoCD, vLLM, Qwen, Python, TypeScript, FastAPI, Qdrant, Prometheus, Grafana, Cloudflare, GitHub Actions",
+      "embed_text": "[SECTION: AI PLATFORM EXPERIENCE]\nTechnologies: Kubernetes, ArgoCD, vLLM, Qwen, Python, TypeScript, FastAPI, Qdrant, Prometheus, Grafana, Cloudflare, GitHub Actions\nQ: What technologies are mentioned in the AI platform experience?\nQ: Which deployment tool is listed?\nQ: What is the name of the language mentioned?",
+      "token_count": 47,
+      "embed_token_count": 93,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What technologies are mentioned in the AI platform experience?",
+        "Which deployment tool is listed?",
+        "What is the name of the language mentioned?"
+      ],
+      "content_hash": "9e228972ee31910bfa1d375e0146e40471ed74298f7b4a72e4e863a6735babf3",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "b472d3a0-ee78-51ea-856c-7dd5dbfed7d5",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0021",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "PROFESSIONAL EXPERIENCE",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "professional_experience"
+      ],
+      "text": "Saks.com\nSenior Software Engineer / AI Platform Engineer\nNew York, NY | Aug 2021 – Present\nLed the design and implementation of production AI platform capabilities supporting retrieval, operational intelligence, and engineering productivity initiatives.",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nSaks.com\nSenior Software Engineer / AI Platform Engineer\nNew York, NY | Aug 2021 – Present\nLed the design and implementation of production AI platform capabilities supporting retrieval, operational intelligence, and engineering productivity initiatives.\nQ: What was the role of the Senior Software Engineer / AI Platform Engineer at Saks.com?\nQ: Where did the Senior Software Engineer / AI Platform Engineer work?\nQ: What were the key responsibilities of the Senior Software Engineer / AI Platform Engineer?",
+      "token_count": 52,
+      "embed_token_count": 122,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What was the role of the Senior Software Engineer / AI Platform Engineer at Saks.com?",
+        "Where did the Senior Software Engineer / AI Platform Engineer work?",
+        "What were the key responsibilities of the Senior Software Engineer / AI Platform Engineer?"
+      ],
+      "content_hash": "3086931557434191580562e03ebc7da9ee8f16aa9d84b7854af10caf2b068306",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "d5d369ab-e3b7-528f-bde9-5135cbaaf2fa",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0022",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "PROFESSIONAL EXPERIENCE",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "professional_experience"
+      ],
+      "text": "Developed Retrieval-Augmented Generation (RAG) systems including document ingestion, chunking, embedding generation, hybrid retrieval, reranking, and citation grounding.",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDeveloped Retrieval-Augmented Generation (RAG) systems including document ingestion, chunking, embedding generation, hybrid retrieval, reranking, and citation grounding.\nQ: What components did the RAG systems developed by the author include?\nQ: Which phase comes after embedding generation in the RAG system development?\nQ: Mention one feature of the RAG systems developed by the author.",
+      "token_count": 43,
+      "embed_token_count": 104,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What components did the RAG systems developed by the author include?",
+        "Which phase comes after embedding generation in the RAG system development?",
+        "Mention one feature of the RAG systems developed by the author."
+      ],
+      "content_hash": "96fca2a9c91fc7ce0e3333afc1e37234ec9c198c3463e9a80bee54ac44fc1317",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "2f8e5b14-70a2-5454-b514-da80064c1459",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0023",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "PROFESSIONAL EXPERIENCE",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "professional_experience"
+      ],
+      "text": "Built LLM-powered applications enabling natural language access to operational and business data through tool-calling and structured retrieval interfaces.",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nBuilt LLM-powered applications enabling natural language access to operational and business data through tool-calling and structured retrieval interfaces.\nQ: What kind of applications did the individual build?\nQ: How did these applications enable natural language access?\nQ: Through which types of interfaces were these applications accessed?",
+      "token_count": 34,
+      "embed_token_count": 83,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What kind of applications did the individual build?",
+        "How did these applications enable natural language access?",
+        "Through which types of interfaces were these applications accessed?"
+      ],
+      "content_hash": "f18b885d46a24d3491286e1b0bdb577a4e77bd7ba011550b1e943db739435d44",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "947ec510-f1dd-5873-8ef1-525ffb66dd2f",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0024",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "PROFESSIONAL EXPERIENCE",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "professional_experience"
+      ],
+      "text": "Architected agent orchestration workflows for retrieval, reasoning, validation, and response generation using graph-based execution models.",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nArchitected agent orchestration workflows for retrieval, reasoning, validation, and response generation using graph-based execution models.\nQ: What type of models were used to architect the agent orchestration workflows?\nQ: What are the key steps involved in the agent orchestration workflows according to the text?\nQ: How were the workflows structured based on the given information?",
+      "token_count": 31,
+      "embed_token_count": 98,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What type of models were used to architect the agent orchestration workflows?",
+        "What are the key steps involved in the agent orchestration workflows according to the text?",
+        "How were the workflows structured based on the given information?"
+      ],
+      "content_hash": "8133ac3a8a762c3447efa6acaeb4699ef7430608abec35a3afc9d10ca9ca7d2d",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "3527d29c-bd52-5334-ba8e-afe2e7b1b707",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0025",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "PROFESSIONAL EXPERIENCE",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "professional_experience"
+      ],
+      "text": "Designed AI evaluation frameworks including regression testing, prompt versioning, model comparison, quality monitoring, and automated validation pipelines.",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDesigned AI evaluation frameworks including regression testing, prompt versioning, model comparison, quality monitoring, and automated validation pipelines.\nQ: What types of AI evaluation frameworks did the individual design?\nQ: Did the individual create any automated validation pipelines?\nQ: Which aspects of AI models were included in the evaluation frameworks?",
+      "token_count": 29,
+      "embed_token_count": 84,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What types of AI evaluation frameworks did the individual design?",
+        "Did the individual create any automated validation pipelines?",
+        "Which aspects of AI models were included in the evaluation frameworks?"
+      ],
+      "content_hash": "581cdec46962e6451cc583513d23de752e2867ad7b4a025101a84dc9eb71b15b",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "9285113d-d3d0-53ac-9f00-ff2e5fca62f3",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0026",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "PROFESSIONAL EXPERIENCE",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "professional_experience"
+      ],
+      "text": "Implemented low-latency inference and streaming response services with tracing, observability, and production monitoring.",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nImplemented low-latency inference and streaming response services with tracing, observability, and production monitoring.\nQ: What services did the individual implement?\nQ: What features were included in the implemented services?\nQ: What were the key aspects of the implementation?",
+      "token_count": 23,
+      "embed_token_count": 67,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What services did the individual implement?",
+        "What features were included in the implemented services?",
+        "What were the key aspects of the implementation?"
+      ],
+      "content_hash": "b8ec8f91f3d5ca2111afcf2d851e648d78bbe01f872456875ddc6c907741ceb1",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "39db3c84-85de-5377-b945-01a5e29f74df",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0027",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "PROFESSIONAL EXPERIENCE",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "professional_experience"
+      ],
+      "text": "Developed AI-powered operational tooling to improve knowledge access, troubleshooting, and engineering productivity.",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDeveloped AI-powered operational tooling to improve knowledge access, troubleshooting, and engineering productivity.\nQ: What was the focus of the AI-powered operational tooling developed?\nQ: How did the tooling aim to improve engineering productivity?\nQ: What areas did the tooling enhance?",
+      "token_count": 25,
+      "embed_token_count": 81,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What was the focus of the AI-powered operational tooling developed?",
+        "How did the tooling aim to improve engineering productivity?",
+        "What areas did the tooling enhance?"
+      ],
+      "content_hash": "efab6c42dbb61893a87ec3d6ec1ab39bb20a63d47ba914d33929ff824fc98818",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "c9f4f3cd-3245-5000-9793-a0058f65a77a",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0028",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "PROFESSIONAL EXPERIENCE",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "professional_experience"
+      ],
+      "text": "Built distributed AI services leveraging Kubernetes, AWS, Kafka, and cloud-native infrastructure.",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nBuilt distributed AI services leveraging Kubernetes, AWS, Kafka, and cloud-native infrastructure.\nQ: Which technologies were used to build distributed AI services?\nQ: What kind of infrastructure was utilized for the AI services?\nQ: Did they use any specific platforms or tools?",
+      "token_count": 24,
+      "embed_token_count": 75,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "Which technologies were used to build distributed AI services?",
+        "What kind of infrastructure was utilized for the AI services?",
+        "Did they use any specific platforms or tools?"
+      ],
+      "content_hash": "eb28ffeefeca76cb6b48e20f44bde20dda39ddb9381aaf69c8590b9810ce7357",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "90154472-7bc8-5341-b0a5-874a238a9fd0",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0029",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "PROFESSIONAL EXPERIENCE",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "professional_experience"
+      ],
+      "text": "Designed centralized data and analytics platforms supporting AI, machine learning, and retrieval workloads.",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDesigned centralized data and analytics platforms supporting AI, machine learning, and retrieval workloads.\nQ: What kind of platforms did the individual design?\nQ: For what types of workloads were these platforms designed?\nQ: Did these platforms support any specific technologies?",
+      "token_count": 26,
+      "embed_token_count": 76,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What kind of platforms did the individual design?",
+        "For what types of workloads were these platforms designed?",
+        "Did these platforms support any specific technologies?"
+      ],
+      "content_hash": "547c87e6741426489f31024955723c7547a9b026fe7817f9bfbe34eaf87c55b1",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "9009b225-14c1-5ef6-9499-2aaacccd56a0",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0030",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "PROFESSIONAL EXPERIENCE",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "professional_experience"
+      ],
+      "text": "Implemented reliability, observability, and operational controls for production AI systems using Datadog, CloudWatch, Grafana, and automated monitoring.",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nImplemented reliability, observability, and operational controls for production AI systems using Datadog, CloudWatch, Grafana, and automated monitoring.\nQ: Which tools were used to implement reliability, observability, and operational controls?\nQ: What specific areas were addressed by the implemented controls?\nQ: Mention any automated tools or processes used?",
+      "token_count": 32,
+      "embed_token_count": 92,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "Which tools were used to implement reliability, observability, and operational controls?",
+        "What specific areas were addressed by the implemented controls?",
+        "Mention any automated tools or processes used?"
+      ],
+      "content_hash": "080059a72c134db47438d2783130d0768e3395c9a3e72c83bad840b4d036ca50",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "c871f1b2-4649-5c91-800b-39eeac4c5398",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0031",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "PROFESSIONAL EXPERIENCE",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "professional_experience"
+      ],
+      "text": "Kaden Health\nMachine Learning Engineer\nRemote | Jul 2019 – Aug 2021\nDeveloped NLP and machine learning solutions for healthcare applications using TensorFlow, PyTorch, and spaCy.",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nKaden Health\nMachine Learning Engineer\nRemote | Jul 2019 – Aug 2021\nDeveloped NLP and machine learning solutions for healthcare applications using TensorFlow, PyTorch, and spaCy.\nQ: What was Kaden Health's role for the Machine Learning Engineer position?\nQ: Which technologies were used to develop NLP and machine learning solutions?\nQ: For which field were the developed solutions intended?",
+      "token_count": 42,
+      "embed_token_count": 98,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What was Kaden Health's role for the Machine Learning Engineer position?",
+        "Which technologies were used to develop NLP and machine learning solutions?",
+        "For which field were the developed solutions intended?"
+      ],
+      "content_hash": "f12aae76345c611bc544e6dc8d66edb3dbe28d942c9e7298edfb5dee4bdb8fe1",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "44a878f1-b7f8-5a37-ac88-bcc756d6bdcf",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0032",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "PROFESSIONAL EXPERIENCE",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "professional_experience"
+      ],
+      "text": "Built end-to-end ML pipelines covering data processing, model training, evaluation, deployment, and monitoring.",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nBuilt end-to-end ML pipelines covering data processing, model training, evaluation, deployment, and monitoring.\nQ: What aspects of ML pipelines did the individual cover?\nQ: Did the individual have experience in all stages of ML pipeline development?\nQ: Which stages of ML pipeline development were included in their work?",
+      "token_count": 30,
+      "embed_token_count": 91,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What aspects of ML pipelines did the individual cover?",
+        "Did the individual have experience in all stages of ML pipeline development?",
+        "Which stages of ML pipeline development were included in their work?"
+      ],
+      "content_hash": "4c942cc38d81a25090c2c4fabe3f7f9d2b64f08cf9aadb264d931a95eebef002",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "cd5826ac-0b34-5f3d-93bb-e40f40783ef5",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0033",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "PROFESSIONAL EXPERIENCE",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "professional_experience"
+      ],
+      "text": "Designed and implemented production inference services and model-serving APIs supporting real-time clinical workflows.",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDesigned and implemented production inference services and model-serving APIs supporting real-time clinical workflows.\nQ: What did the individual design and implement?\nQ: For what purpose were the production inference services created?\nQ: What type of workflows were supported by the model-serving APIs?",
+      "token_count": 27,
+      "embed_token_count": 82,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What did the individual design and implement?",
+        "For what purpose were the production inference services created?",
+        "What type of workflows were supported by the model-serving APIs?"
+      ],
+      "content_hash": "f9f1eed7001cf9306ca013c24f831c67f033d3951804256a7ffc4f6e9d68ff52",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "0bf91c9d-e7b3-559b-9911-b36e4ad0f66f",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0034",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "PROFESSIONAL EXPERIENCE",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "professional_experience"
+      ],
+      "text": "Developed text classification, sentiment analysis, and predictive modeling solutions for healthcare datasets.",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDeveloped text classification, sentiment analysis, and predictive modeling solutions for healthcare datasets.\nQ: What types of solutions did the individual develop for healthcare datasets?\nQ: Which specific solutions were developed for healthcare datasets?\nQ: For which area of healthcare were these solutions developed?",
+      "token_count": 22,
+      "embed_token_count": 78,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What types of solutions did the individual develop for healthcare datasets?",
+        "Which specific solutions were developed for healthcare datasets?",
+        "For which area of healthcare were these solutions developed?"
+      ],
+      "content_hash": "aea655537d51948edef913dbad8b7c7382edcfabf3cce2c8dcd94dddd1202226",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "a6680788-d427-5ff3-8099-9911a712e7a7",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0035",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "PROFESSIONAL EXPERIENCE",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "professional_experience"
+      ],
+      "text": "Built automated evaluation and validation pipelines to improve model quality, reliability, and deployment readiness.",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nBuilt automated evaluation and validation pipelines to improve model quality, reliability, and deployment readiness.\nQ: What did the individual do in their professional experience?\nQ: How many pipelines were built?\nQ: What aspects of the models were improved?",
+      "token_count": 27,
+      "embed_token_count": 71,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What did the individual do in their professional experience?",
+        "How many pipelines were built?",
+        "What aspects of the models were improved?"
+      ],
+      "content_hash": "6bd351e3f7902704e608658f3865ce01d200ae1f31fb2b96f1f29c1b1c0f7304",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "26f3212a-ee83-52b2-8b47-7c1da5add3de",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0036",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "PROFESSIONAL EXPERIENCE",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "professional_experience"
+      ],
+      "text": "Designed event-driven data processing architectures using Kafka and NATS for real-time model and application workflows.",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nDesigned event-driven data processing architectures using Kafka and NATS for real-time model and application workflows.\nQ: Which messaging systems did the author use for event-driven data processing?\nQ: What kind of workflows did the author work on?\nQ: What architectural aspect did the author focus on?",
+      "token_count": 28,
+      "embed_token_count": 85,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "Which messaging systems did the author use for event-driven data processing?",
+        "What kind of workflows did the author work on?",
+        "What architectural aspect did the author focus on?"
+      ],
+      "content_hash": "777147bbc8e59e608b40eaf43425c280524fddafd04530e97753beaf4f5e89d7",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "d3deb10d-365e-5987-8ccb-02300c84a22d",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0037",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "PROFESSIONAL EXPERIENCE",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "professional_experience"
+      ],
+      "text": "Built centralized analytics, logging, and monitoring pipelines using BigQuery and cloud-native infrastructure.",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nBuilt centralized analytics, logging, and monitoring pipelines using BigQuery and cloud-native infrastructure.\nQ: What tools were used to build the centralized analytics, logging, and monitoring pipelines?\nQ: Which platform was utilized for building the pipelines?\nQ: What specific technologies were employed for the pipelines?",
+      "token_count": 26,
+      "embed_token_count": 87,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What tools were used to build the centralized analytics, logging, and monitoring pipelines?",
+        "Which platform was utilized for building the pipelines?",
+        "What specific technologies were employed for the pipelines?"
+      ],
+      "content_hash": "9cb00252d84a42d722906b2e2c42023933a9e8d69e8abec987506e673f30c98b",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "c13638c9-a987-5522-801d-284c86d09ee6",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0038",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "PROFESSIONAL EXPERIENCE",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "professional_experience"
+      ],
+      "text": "Collaborated with product, engineering, and clinical stakeholders to deliver production AI capabilities.",
+      "embed_text": "[SECTION: PROFESSIONAL EXPERIENCE]\nCollaborated with product, engineering, and clinical stakeholders to deliver production AI capabilities.\nQ: What types of stakeholders did the individual collaborate with to deliver production AI capabilities?\nQ: Which areas of the organization did the individual work with to deliver AI capabilities?\nQ: What was the main goal of the individual's collaboration?",
+      "token_count": 21,
+      "embed_token_count": 86,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What types of stakeholders did the individual collaborate with to deliver production AI capabilities?",
+        "Which areas of the organization did the individual work with to deliver AI capabilities?",
+        "What was the main goal of the individual's collaboration?"
+      ],
+      "content_hash": "50b817db547cd3abc20002b18f19575087031a478698b61caa273a0e0b00d294",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "365c46a1-8471-587d-8c90-2265bce99f3d",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0039",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "CGMAX",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "cgmax"
+      ],
+      "text": "Machine Learning Engineer\nNew York, NY | Jan 2018 – Jul 2019\nDeveloped AI and machine learning solutions for financial forecasting, sentiment analysis, and quantitative research applications.",
+      "embed_text": "[SECTION: CGMAX]\nMachine Learning Engineer\nNew York, NY | Jan 2018 – Jul 2019\nDeveloped AI and machine learning solutions for financial forecasting, sentiment analysis, and quantitative research applications.\nQ: What were the key applications of the AI and machine learning solutions developed by the Machine Learning Engineer?\nQ: Where did the Machine Learning Engineer work from January 2018 to July 2019?\nQ: What specific areas did the Machine Learning Engineer focus on within AI and machine learning?",
+      "token_count": 36,
+      "embed_token_count": 103,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What were the key applications of the AI and machine learning solutions developed by the Machine Learning Engineer?",
+        "Where did the Machine Learning Engineer work from January 2018 to July 2019?",
+        "What specific areas did the Machine Learning Engineer focus on within AI and machine learning?"
+      ],
+      "content_hash": "c75ef26b06d98b02c04bc0f49e4545c867cd7a7a883da0b991c3f3f9507a61cb",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "6654df59-0830-571f-9da9-9c66d46fb4ba",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0040",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "CGMAX",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "cgmax"
+      ],
+      "text": "Built predictive modeling pipelines using structured and unstructured financial datasets to generate investment and market insights.",
+      "embed_text": "[SECTION: CGMAX]\nBuilt predictive modeling pipelines using structured and unstructured financial datasets to generate investment and market insights.\nQ: What type of datasets were used to build predictive modeling pipelines?\nQ: What kind of insights were generated using these pipelines?\nQ: Which specific datasets were utilized?",
+      "token_count": 27,
+      "embed_token_count": 81,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What type of datasets were used to build predictive modeling pipelines?",
+        "What kind of insights were generated using these pipelines?",
+        "Which specific datasets were utilized?"
+      ],
+      "content_hash": "2251ef4800783b141dbb0804c986a102276ceeff50a8e37d62115df97c01ba6a",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "3838b647-b57b-5e31-b71a-8b8fba160e44",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0041",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "CGMAX",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "cgmax"
+      ],
+      "text": "Designed distributed feature engineering and data processing platforms using Spark, Hadoop, Kafka, and HBase.",
+      "embed_text": "[SECTION: CGMAX]\nDesigned distributed feature engineering and data processing platforms using Spark, Hadoop, Kafka, and HBase.\nQ: Which technologies were used to design distributed feature engineering and data processing platforms?\nQ: What platforms did the design focus on?\nQ: Did the platforms use Spark, Hadoop, Kafka, and HBase?",
+      "token_count": 26,
+      "embed_token_count": 85,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "Which technologies were used to design distributed feature engineering and data processing platforms?",
+        "What platforms did the design focus on?",
+        "Did the platforms use Spark, Hadoop, Kafka, and HBase?"
+      ],
+      "content_hash": "3b2b5107990269ba48c7d18b9584deafa35564c91d659259bcd0283265b0f9e0",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "729dc0ce-31ce-539d-a559-7ed00e19ba4e",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0042",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "CGMAX",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "cgmax"
+      ],
+      "text": "Developed real-time data ingestion and analytics systems supporting machine learning and quantitative research workloads.",
+      "embed_text": "[SECTION: CGMAX]\nDeveloped real-time data ingestion and analytics systems supporting machine learning and quantitative research workloads.\nQ: What types of systems did CGMAX develop?\nQ: For what kinds of workloads were the systems developed?\nQ: Which specific features did the systems support?",
+      "token_count": 25,
+      "embed_token_count": 71,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What types of systems did CGMAX develop?",
+        "For what kinds of workloads were the systems developed?",
+        "Which specific features did the systems support?"
+      ],
+      "content_hash": "e70ecec71e5d7751fd1d1bdefb49b64fdd60109e89ba6c119b391b08bad95654",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "50a99743-d756-5a08-bf76-39d1a13de807",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0043",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "CGMAX",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "cgmax"
+      ],
+      "text": "Built model evaluation, validation, and backtesting frameworks to improve prediction accuracy and deployment readiness.",
+      "embed_text": "[SECTION: CGMAX]\nBuilt model evaluation, validation, and backtesting frameworks to improve prediction accuracy and deployment readiness.\nQ: What did CGMAX build?\nQ: What were the goals of the frameworks built by CGMAX?\nQ: How many types of frameworks did CGMAX build?",
+      "token_count": 30,
+      "embed_token_count": 78,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What did CGMAX build?",
+        "What were the goals of the frameworks built by CGMAX?",
+        "How many types of frameworks did CGMAX build?"
+      ],
+      "content_hash": "7f78cfb94d8c025e7e93e0c6ef72b0a5e01f2eddb66051e1c4ea10ae0d71d97e",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "c594560d-1a50-5866-b78f-cf624ab1290a",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0044",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "CGMAX",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "cgmax"
+      ],
+      "text": "Partnered with quantitative researchers and software engineers to operationalize machine learning capabilities in production environments.",
+      "embed_text": "[SECTION: CGMAX]\nPartnered with quantitative researchers and software engineers to operationalize machine learning capabilities in production environments.\nQ: What types of partners did CGMAX work with to implement machine learning?\nQ: What was the goal of partnering with these researchers and engineers?\nQ: In what kind of environments were the machine learning capabilities operationalized?",
+      "token_count": 24,
+      "embed_token_count": 85,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What types of partners did CGMAX work with to implement machine learning?",
+        "What was the goal of partnering with these researchers and engineers?",
+        "In what kind of environments were the machine learning capabilities operationalized?"
+      ],
+      "content_hash": "058ae57841c82ba4284b3ff08e55bce2d37e96390e953c3ce7b1c251fe6a1471",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "63952bf4-4dcd-5e6b-acfe-40008f782f64",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0045",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "NVIDIA",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "nvidia"
+      ],
+      "text": "Software Engineer\nSanta Clara, CA | Mar 2016 – Dec 2017\nDeveloped telemetry and observability platforms supporting GPU engineering teams.",
+      "embed_text": "[SECTION: NVIDIA]\nSoftware Engineer\nSanta Clara, CA | Mar 2016 – Dec 2017\nDeveloped telemetry and observability platforms supporting GPU engineering teams.\nQ: What role did the individual hold at NVIDIA?\nQ: Where was the individual based during their employment at NVIDIA?\nQ: What platforms did they develop for GPU engineering teams?",
+      "token_count": 30,
+      "embed_token_count": 74,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What role did the individual hold at NVIDIA?",
+        "Where was the individual based during their employment at NVIDIA?",
+        "What platforms did they develop for GPU engineering teams?"
+      ],
+      "content_hash": "0e1b72ca923ca51daac5cf7b0362c2ee99dffbf27769cca8af662374e392e0d5",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "f3980861-912c-5232-a248-bd842b2e2ba5",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0046",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "NVIDIA",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "nvidia"
+      ],
+      "text": "Built backend services and APIs for collecting and analyzing GPU performance, utilization, and diagnostic data.",
+      "embed_text": "[SECTION: NVIDIA]\nBuilt backend services and APIs for collecting and analyzing GPU performance, utilization, and diagnostic data.\nQ: What did NVIDIA build backend services and APIs for?\nQ: What types of data did NVIDIA collect and analyze?\nQ: Which hardware component's performance was monitored?",
+      "token_count": 25,
+      "embed_token_count": 72,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What did NVIDIA build backend services and APIs for?",
+        "What types of data did NVIDIA collect and analyze?",
+        "Which hardware component's performance was monitored?"
+      ],
+      "content_hash": "86c6130b08db7467ea6e006f737d55a1983d76a3462e09905cb3881361030dd3",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "f0e6e8d6-501e-5c45-9baa-6811b8145f45",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0047",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "NVIDIA",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "nvidia"
+      ],
+      "text": "Designed analytics dashboards enabling engineers to investigate system behavior and performance trends at scale.",
+      "embed_text": "[SECTION: NVIDIA]\nDesigned analytics dashboards enabling engineers to investigate system behavior and performance trends at scale.\nQ: What does NVIDIA design to help engineers?\nQ: How do these analytics dashboards assist engineers?\nQ: What specific aspects of the system can engineers investigate?",
+      "token_count": 24,
+      "embed_token_count": 70,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What does NVIDIA design to help engineers?",
+        "How do these analytics dashboards assist engineers?",
+        "What specific aspects of the system can engineers investigate?"
+      ],
+      "content_hash": "cc96b71d97b17d56f1840f126cc76fa84a97b75719839bf0e8c0865a9b7f9323",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "e0c6257e-e73c-5eae-a838-2810b6121940",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0048",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "NVIDIA",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "nvidia"
+      ],
+      "text": "Developed full-stack engineering tools using React, Python, and Node.js.",
+      "embed_text": "[SECTION: NVIDIA]\nDeveloped full-stack engineering tools using React, Python, and Node.js.\nQ: What programming languages were used to develop the engineering tools?\nQ: Which frontend framework was utilized?\nQ: Were any specific backend technologies mentioned?",
+      "token_count": 20,
+      "embed_token_count": 63,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What programming languages were used to develop the engineering tools?",
+        "Which frontend framework was utilized?",
+        "Were any specific backend technologies mentioned?"
+      ],
+      "content_hash": "0688fbf39d39f295fad48d71ae7eb43de59d3c9e021a8f9b905d21fb5151facd",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "9a23d93a-c238-54ab-982f-f30391780f04",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0049",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "NVIDIA",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "nvidia"
+      ],
+      "text": "Partnered with cross-functional hardware and software teams to improve visibility into GPU performance and operational health.",
+      "embed_text": "[SECTION: NVIDIA]\nPartnered with cross-functional hardware and software teams to improve visibility into GPU performance and operational health.\nQ: What did NVIDIA partner on to enhance?\nQ: Who did NVIDIA collaborate with for better GPU performance insights?\nQ: What aspect of GPU management was improved through partnerships?",
+      "token_count": 23,
+      "embed_token_count": 69,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What did NVIDIA partner on to enhance?",
+        "Who did NVIDIA collaborate with for better GPU performance insights?",
+        "What aspect of GPU management was improved through partnerships?"
+      ],
+      "content_hash": "2578e0010b098539a2a49ef16a9062d59e237155ce5d608fb9f56fb674727104",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "3970a2b5-33c3-5c95-a6c1-ee315e2d3ab0",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0050",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "NVIDIA",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "nvidia"
+      ],
+      "text": "Gained early experience working with large-scale GPU systems, performance analytics, and infrastructure monitoring.",
+      "embed_text": "[SECTION: NVIDIA]\nGained early experience working with large-scale GPU systems, performance analytics, and infrastructure monitoring.\nQ: What areas did NVIDIA gain early experience in?\nQ: What kind of systems did NVIDIA work with initially?\nQ: What specific skills did NVIDIA develop early on?",
+      "token_count": 22,
+      "embed_token_count": 64,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What areas did NVIDIA gain early experience in?",
+        "What kind of systems did NVIDIA work with initially?",
+        "What specific skills did NVIDIA develop early on?"
+      ],
+      "content_hash": "8d9ceae4623f48f4ae66df6b66c7ec6d75d5e5ad5446e009cd49593ead6b3a85",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "80a2e25f-9dff-580b-9d79-151eb5ce90c0",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0051",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "EDUCATION",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "education"
+      ],
+      "text": "Master of Science, Analytics (Machine Learning & NLP)\nHarrisburg University | 2019 – 2022\nMaster of Science, Electrical & Computer Engineering\nUniversity of Alabama in Huntsville | 2013 – 2015",
+      "embed_text": "[SECTION: EDUCATION]\nMaster of Science, Analytics (Machine Learning & NLP)\nHarrisburg University | 2019 – 2022\nMaster of Science, Electrical & Computer Engineering\nUniversity of Alabama in Huntsville | 2013 – 2015\nQ: What degrees did the individual earn?\nQ: From which universities did they obtain their degrees?\nQ: During what years did they study for their Master of Science in Analytics (Machine Learning & NLP)?",
+      "token_count": 42,
+      "embed_token_count": 97,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What degrees did the individual earn?",
+        "From which universities did they obtain their degrees?",
+        "During what years did they study for their Master of Science in Analytics (Machine Learning & NLP)?"
+      ],
+      "content_hash": "5936f08373540c8a397f7b1486bda3d84e1326a60df4b1d3b3aab14c920552c0",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "a626de7c-7071-5c49-838b-e7ea8bcaa807",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0052",
+      "document_id": "personal_resume",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "PUBLICATION",
+      "doc_type": "personal_resume",
+      "language": "en",
+      "tags": [
+        "personal_resume",
+        "publication"
+      ],
+      "text": "A Novel Approach to Impedance-based Fault Location for High Voltage Cables\nIEEE Industry Applications Society (IAS)",
+      "embed_text": "[SECTION: PUBLICATION]\nA Novel Approach to Impedance-based Fault Location for High Voltage Cables\nIEEE Industry Applications Society (IAS)\nQ: What is the topic of the publication?\nQ: Which society published the work?\nQ: What is the specific method discussed in the publication?",
+      "token_count": 29,
+      "embed_token_count": 68,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is the topic of the publication?",
+        "Which society published the work?",
+        "What is the specific method discussed in the publication?"
+      ],
+      "content_hash": "f7a27d6dabf3a17402f2c07d8315e8860800fdf6b05ac40b177f3dd900c0706e",
+      "source": "personal_resume",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  }
+]

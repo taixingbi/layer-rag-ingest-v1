@@ -1,0 +1,233 @@
+[
+  {
+    "chunk_id": "0001",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "AI Platform Leadership & Measurable Impact\nBuilding an Enterprise AI Platform",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0002",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "Taixing served as the primary technical owner, an end-to-end AI platform designed to deliver grounded, production-grade AI experiences using private knowledge, public web information, and GitHub repositories.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0003",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "Rather than building a standalone chatbot, he architected and implemented a complete AI ecosystem spanning retrieval, orchestration, model serving, evaluation, and operational infrastructure.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0004",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "Ownership",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0005",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "Owned the full AI platform lifecycle:",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0006",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "AI platform architecture and technical strategy\nMulti-model inference platform design\nRetrieval-Augmented Generation (RAG) architecture\nLLM orchestration and routing systems\nEvaluation and quality measurement frameworks\nProduction deployment and operational reliability\nKey AI Systems Delivered\nIntelligent LLM Orchestration Layer",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0007",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "Designed a routing system capable of dynamically selecting between:",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0008",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "Private knowledge retrieval\nGitHub repository search\nPublic web search\nDirect LLM responses",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0009",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "Implemented model-based routing, query rewriting, confidence scoring, and answer grounding to improve response accuracy while minimizing hallucinations.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0010",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "Production RAG Platform",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0011",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "Built a multi-stage retrieval architecture combining:",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0012",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "Semantic vector retrieval\nCandidate expansion\nCross-encoder reranking\nCitation generation\nEvidence-grounded answer synthesis",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0013",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "The system supports multiple enterprise knowledge sources while maintaining low-latency user experiences.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0014",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "AI Evaluation Framework",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0015",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "Developed automated evaluation pipelines to measure:",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0016",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "Routing accuracy\nRetrieval relevance\nCitation quality\nResponse grounding\nEnd-to-end answer quality",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0017",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "Created reproducible benchmark datasets and testing workflows that enabled continuous model and prompt improvements.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0018",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "GPU Inference Platform",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0019",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "Designed and operated self-hosted AI inference infrastructure using:",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0020",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "vLLM\nLoRA adapters\nKubernetes\nMulti-node GPU deployments",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0021",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "Enabled efficient serving of multiple specialized models from shared GPU resources while maintaining operational flexibility and cost control.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0022",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "Measurable Impact\nReduced AI Platform Dependency",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0023",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "Built an internally controlled AI platform that reduced reliance on external AI tooling and enabled rapid experimentation with models, prompts, retrieval strategies, and evaluation methods.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0024",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "Improved Answer Quality",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0025",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "Implemented multi-stage retrieval and reranking pipelines that significantly improved retrieval precision and answer grounding compared with naive vector search approaches.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0026",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "Increased User Trust",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0027",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "Introduced citation-backed responses and evidence-grounded generation, helping users understand where information originated and reducing hallucination risk.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0028",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "Accelerated AI Development",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0029",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "Established reusable AI infrastructure components—including orchestration, retrieval, inference, and evaluation layers—that can be leveraged by future AI products and agent-based workflows.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0030",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "End-to-End Technical Ownership",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0031",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "Led initiatives from concept through production operation, including:",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0032",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "Architecture design\nAI system implementation\nInfrastructure deployment\nPerformance optimization\nProduction support",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0033",
+    "document_id": "personal_project",
+    "section": "ROOT",
+    "text": "Demonstrated the ability to independently deliver complex AI systems that combine machine learning infrastructure, distributed systems, retrieval architectures, and production software engineering.",
+    "synthetic_questions": []
+  }
+]

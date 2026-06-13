@@ -1,0 +1,137 @@
+TAIXING BI
+Senior AI Infrastructure & Platform Engineer
+New York, NY (Open to Remote / Hybrid / NYC)
+347-560-4308 • taixingbijob@gmail.com
+LinkedIn: linkedin.com/in/taixing-bi-757a4961
+Portfolio: https://taixingai.com
+GitHub: github.com/taixingbi
+
+SUMMARY
+Senior AI Infrastructure & Platform Engineer with 7+ years of experience building production AI platforms, GPU inference systems, distributed backend services, and cloud-native infrastructure.
+Experienced designing and operating Kubernetes-based AI workloads, LLM serving platforms, retrieval infrastructure, and observability systems.
+Strong background across GPU inference,LLM infrastructure,model serving,distributed systems,cloud-native platforms,and production reliability. Built end-to-end AI platforms supporting model routing, agent orchestration, retrieval-augmented generation (RAG), evaluation pipelines, fine-tuning workflows, and GitOps deployment.
+
+CORE SKILLS
+AI Infrastructure & Platform Engineering
+Kubernetes
+Docker
+ArgoCD
+GitOps
+CI/CD
+Distributed Systems
+Platform Engineering
+Service Reliability
+AI Serving & Inference
+vLLM
+SGLang
+Hugging Face TGI
+LoRA Serving
+Model Routing
+Token Streaming
+Batching
+Caching
+GPU Workload Management
+Cloud & Data Infrastructure
+AWS Lambda
+DynamoDB
+S3
+EC2
+SQS
+EventBridge
+Snowflake
+Kafka / MSK
+Observability
+Prometheus
+Grafana
+Datadog
+CloudWatch
+Distributed Tracing
+Performance Monitoring
+AI Systems
+RAG
+Agent Orchestration
+Tool Calling
+LangChain
+LangGraph
+Evaluation Frameworks
+Fine-Tuning (LoRA, SFT, DPO)
+Programming
+Python
+TypeScript
+Java
+SQL
+
+AI PLATFORM EXPERIENCE
+HuntAI — AI Platform & Infrastructure
+Founder & Architect | https://taixingai.com
+Designed and built a production-ready AI platform supporting LLM serving, agent orchestration, retrieval, evaluation, and GitOps deployment.
+Architected a distributed platform consisting of 10+ microservices running on Kubernetes.
+Built AI Gateway services supporting model routing, tool calling, streaming responses, authentication, and observability.
+Designed and operated GPU inference infrastructure on a multi-GPU Kubernetes environment using vLLM and LoRA adapters.
+Implemented hybrid retrieval pipelines combining semantic search, keyword search, reranking, and citation grounding.
+Built orchestration services for routing, retrieval, tool execution, and response generation workflows.
+Implemented automated evaluation pipelines using golden datasets, routing accuracy testing, and regression validation.
+Designed GitOps deployment workflows using ArgoCD and GitHub Actions for automated environment promotion and drift detection.
+Built monitoring, logging, and operational dashboards using Prometheus and Grafana.
+Developed Kubernetes deployment strategies for inference, gateway, orchestration, retrieval, and observability services.
+Built and fine-tuned LLM routing models using LoRA, SFT, and DPO workflows with automated evaluation and regression testing pipelines.
+Technologies: Kubernetes, ArgoCD, vLLM, Qwen, Python, TypeScript, FastAPI, Qdrant, Prometheus, Grafana, Cloudflare, GitHub Actions
+
+PROFESSIONAL EXPERIENCE
+Saks.com
+Senior Software Engineer / AI Platform Engineer
+New York, NY | Aug 2021 – Present
+Led the design and implementation of production AI platform capabilities supporting retrieval, operational intelligence, and engineering productivity initiatives.
+
+Developed Retrieval-Augmented Generation (RAG) systems including document ingestion, chunking, embedding generation, hybrid retrieval, reranking, and citation grounding.
+Built LLM-powered applications enabling natural language access to operational and business data through tool-calling and structured retrieval interfaces.
+Architected agent orchestration workflows for retrieval, reasoning, validation, and response generation using graph-based execution models.
+Designed AI evaluation frameworks including regression testing, prompt versioning, model comparison, quality monitoring, and automated validation pipelines.
+Implemented low-latency inference and streaming response services with tracing, observability, and production monitoring.
+Developed AI-powered operational tooling to improve knowledge access, troubleshooting, and engineering productivity.
+Built distributed AI services leveraging Kubernetes, AWS, Kafka, and cloud-native infrastructure.
+Designed centralized data and analytics platforms supporting AI, machine learning, and retrieval workloads.
+Implemented reliability, observability, and operational controls for production AI systems using Datadog, CloudWatch, Grafana, and automated monitoring.
+
+
+Kaden Health
+Machine Learning Engineer
+Remote | Jul 2019 – Aug 2021
+Developed NLP and machine learning solutions for healthcare applications using TensorFlow, PyTorch, and spaCy.
+Built end-to-end ML pipelines covering data processing, model training, evaluation, deployment, and monitoring.
+Designed and implemented production inference services and model-serving APIs supporting real-time clinical workflows.
+Developed text classification, sentiment analysis, and predictive modeling solutions for healthcare datasets.
+Built automated evaluation and validation pipelines to improve model quality, reliability, and deployment readiness.
+Designed event-driven data processing architectures using Kafka and NATS for real-time model and application workflows.
+Built centralized analytics, logging, and monitoring pipelines using BigQuery and cloud-native infrastructure.
+Collaborated with product, engineering, and clinical stakeholders to deliver production AI capabilities.
+CGMAX
+Machine Learning Engineer
+New York, NY | Jan 2018 – Jul 2019
+Developed AI and machine learning solutions for financial forecasting, sentiment analysis, and quantitative research applications.
+Built predictive modeling pipelines using structured and unstructured financial datasets to generate investment and market insights.
+Designed distributed feature engineering and data processing platforms using Spark, Hadoop, Kafka, and HBase.
+Developed real-time data ingestion and analytics systems supporting machine learning and quantitative research workloads.
+Built model evaluation, validation, and backtesting frameworks to improve prediction accuracy and deployment readiness.
+Partnered with quantitative researchers and software engineers to operationalize machine learning capabilities in production environments.
+
+
+NVIDIA
+Software Engineer
+Santa Clara, CA | Mar 2016 – Dec 2017
+Developed telemetry and observability platforms supporting GPU engineering teams.
+Built backend services and APIs for collecting and analyzing GPU performance, utilization, and diagnostic data.
+Designed analytics dashboards enabling engineers to investigate system behavior and performance trends at scale.
+Developed full-stack engineering tools using React, Python, and Node.js.
+Partnered with cross-functional hardware and software teams to improve visibility into GPU performance and operational health.
+Gained early experience working with large-scale GPU systems, performance analytics, and infrastructure monitoring.
+
+EDUCATION
+Master of Science, Analytics (Machine Learning & NLP)
+Harrisburg University | 2019 – 2022
+Master of Science, Electrical & Computer Engineering
+University of Alabama in Huntsville | 2013 – 2015
+
+PUBLICATION
+A Novel Approach to Impedance-based Fault Location for High Voltage Cables
+IEEE Industry Applications Society (IAS)

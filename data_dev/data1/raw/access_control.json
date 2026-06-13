@@ -1,16 +1,21 @@
 {
   "personal_profile": {
-    "roles": ["admin", "hr", "recruiter", "engineer"],
+    "roles": ["admin", "hr", "recruiter", "engineer", "anyuser"],
     "groups": ["engineering"],
     "teams": ["rag-platform"]
   },
   "personal_qa": {
-    "roles": ["admin", "hr", "recruiter", "engineer"],
+    "roles": ["admin", "hr", "recruiter", "engineer", "anyuser"],
     "groups": ["engineering"],
     "teams": ["rag-platform"]
   },
   "personal_resume": {
-    "roles": ["admin", "hr", "recruiter", "engineer"],
+    "roles": ["admin", "hr", "recruiter", "engineer", "anyuser"],
+    "groups": ["engineering"],
+    "teams": ["rag-platform"]
+  },
+  "personal_project": {
+    "roles": ["admin", "hr", "recruiter", "engineer", "anyuser"],
     "groups": ["engineering"],
     "teams": ["rag-platform"]
   }

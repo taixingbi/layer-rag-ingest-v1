@@ -1,0 +1,1817 @@
+[
+  {
+    "id": "5ff1af67-9dee-5a2c-aa82-babab885f9ca",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0001",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "AI Platform Leadership & Measurable Impact\nBuilding an Enterprise AI Platform",
+      "embed_text": "[SECTION: ROOT]\nAI Platform Leadership & Measurable Impact\nBuilding an Enterprise AI Platform\nQ: What is the main topic of this section?\nQ: What does this section suggest about the platform being discussed?\nQ: Are specific details provided about the platform’s functionality?",
+      "token_count": 14,
+      "embed_token_count": 61,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is the main topic of this section?",
+        "What does this section suggest about the platform being discussed?",
+        "Are specific details provided about the platform’s functionality?"
+      ],
+      "content_hash": "7946c79c98fc61712406df73136bddb648d54db71eced45cbda2a35b1c7ac50f",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "36e4633e-e133-5dcd-b924-ab20454d6a15",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0002",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "Taixing served as the primary technical owner, an end-to-end AI platform designed to deliver grounded, production-grade AI experiences using private knowledge, public web information, and GitHub repositories.",
+      "embed_text": "[SECTION: ROOT]\nTaixing served as the primary technical owner, an end-to-end AI platform designed to deliver grounded, production-grade AI experiences using private knowledge, public web information, and GitHub repositories.\nQ: What role did Taixing serve?\nQ: What kind of AI platform was developed?\nQ: What sources were used for the AI platform?",
+      "token_count": 45,
+      "embed_token_count": 84,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What role did Taixing serve?",
+        "What kind of AI platform was developed?",
+        "What sources were used for the AI platform?"
+      ],
+      "content_hash": "15b8803937fa95f5ddf8a0396ef8f73bdb98a38ebd6bb53c378b57503e04eb39",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "bf008ddc-eea6-5e34-b5a0-8685726444b3",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0003",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "Rather than building a standalone chatbot, he architected and implemented a complete AI ecosystem spanning retrieval, orchestration, model serving, evaluation, and operational infrastructure.",
+      "embed_text": "[SECTION: ROOT]\nRather than building a standalone chatbot, he architected and implemented a complete AI ecosystem spanning retrieval, orchestration, model serving, evaluation, and operational infrastructure.\nQ: What did he build?\nQ: How many aspects of the AI ecosystem did he cover?\nQ: Did he build a standalone chatbot?",
+      "token_count": 40,
+      "embed_token_count": 80,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What did he build?",
+        "How many aspects of the AI ecosystem did he cover?",
+        "Did he build a standalone chatbot?"
+      ],
+      "content_hash": "f35fb55d0fe78a64c6fcafa5eb4d8c2e376926d413b091221116d41cbe8f6964",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "daf44968-d514-5782-be29-3f638ff7297a",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0004",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "Ownership",
+      "embed_text": "[SECTION: ROOT]\nOwnership\nQ: What is the main topic of this section?\nQ: Does this section discuss operations or management?\nQ: Is this section about financial aspects?",
+      "token_count": 2,
+      "embed_token_count": 41,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is the main topic of this section?",
+        "Does this section discuss operations or management?",
+        "Is this section about financial aspects?"
+      ],
+      "content_hash": "c7d3acc826a80cf2029d915f79cc3bf5f1c097392cbc554799ba0bed1e73a36e",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "0da68faa-04d3-51c7-918d-fd28ef51393e",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0005",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "Owned the full AI platform lifecycle:",
+      "embed_text": "[SECTION: ROOT]\nOwned the full AI platform lifecycle:\nQ: What aspect of AI does the platform cover?\nQ: Does the platform manage the entire AI lifecycle?\nQ: Is the platform responsible for the full AI process?",
+      "token_count": 10,
+      "embed_token_count": 53,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What aspect of AI does the platform cover?",
+        "Does the platform manage the entire AI lifecycle?",
+        "Is the platform responsible for the full AI process?"
+      ],
+      "content_hash": "d3c2d66464b9dafbd2aa442000f21c38a0470747a16f212abe994362ff06d012",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "a2eab54e-989d-50cc-b637-9acab874977b",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0006",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "AI platform architecture and technical strategy\nMulti-model inference platform design\nRetrieval-Augmented Generation (RAG) architecture\nLLM orchestration and routing systems\nEvaluation and quality measurement frameworks\nProduction deployment and operational reliability\nKey AI Systems Delivered\nIntelligent LLM Orchestration Layer",
+      "embed_text": "[SECTION: ROOT]\nAI platform architecture and technical strategy\nMulti-model inference platform design\nRetrieval-Augmented Generation (RAG) architecture\nLLM orchestration and routing systems\nEvaluation and quality measurement frameworks\nProduction deployment and operational reliability\nKey AI Systems Delivered\nIntelligent LLM Orchestration Layer\nQ: What is the focus of the section?\nQ: What key AI system was delivered?\nQ: Which architecture is specifically mentioned?",
+      "token_count": 67,
+      "embed_token_count": 104,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is the focus of the section?",
+        "What key AI system was delivered?",
+        "Which architecture is specifically mentioned?"
+      ],
+      "content_hash": "0087e3117b9a5ea31678a2a10b558b88151811183854a13a7e16eb51c605fdc4",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "9448b561-7e4a-5afa-8161-1c087d0cbb45",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0007",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "Designed a routing system capable of dynamically selecting between:",
+      "embed_text": "[SECTION: ROOT]\nDesigned a routing system capable of dynamically selecting between:\nQ: What was designed?\nQ: What can the routing system dynamically select between?\nQ: Is the routing system static or dynamic?",
+      "token_count": 14,
+      "embed_token_count": 53,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What was designed?",
+        "What can the routing system dynamically select between?",
+        "Is the routing system static or dynamic?"
+      ],
+      "content_hash": "0b9ff12cb6556c5717429b15477e37df90593466c48c14dbe3e04f5d64b15c5b",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "4f11916e-f23c-5d72-bcab-cb356b0e9104",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0008",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "Private knowledge retrieval\nGitHub repository search\nPublic web search\nDirect LLM responses",
+      "embed_text": "[SECTION: ROOT]\nPrivate knowledge retrieval\nGitHub repository search\nPublic web search\nDirect LLM responses\nQ: What types of knowledge retrieval methods are mentioned?\nQ: Which method involves searching a GitHub repository?\nQ: How many different knowledge retrieval methods are listed?",
+      "token_count": 20,
+      "embed_token_count": 69,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What types of knowledge retrieval methods are mentioned?",
+        "Which method involves searching a GitHub repository?",
+        "How many different knowledge retrieval methods are listed?"
+      ],
+      "content_hash": "f7c4737dba845d5b113607a4f9220bf75ac4b508b151ce321e42ba15d4bd49f2",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "985db01a-ac59-51c7-b779-75c261bbd2f5",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0009",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "Implemented model-based routing, query rewriting, confidence scoring, and answer grounding to improve response accuracy while minimizing hallucinations.",
+      "embed_text": "[SECTION: ROOT]\nImplemented model-based routing, query rewriting, confidence scoring, and answer grounding to improve response accuracy while minimizing hallucinations.\nQ: What techniques were implemented to improve response accuracy?\nQ: How many specific techniques were used in the model?\nQ: What was done to minimize hallucinations?",
+      "token_count": 34,
+      "embed_token_count": 80,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What techniques were implemented to improve response accuracy?",
+        "How many specific techniques were used in the model?",
+        "What was done to minimize hallucinations?"
+      ],
+      "content_hash": "a9a083c4cf7e26b3650e808bd016d13e55e6911983752a01b0b8a7af34e830a3",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "e29cd81a-47b2-5356-aada-3bf13725438e",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0010",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "Production RAG Platform",
+      "embed_text": "[SECTION: ROOT]\nProduction RAG Platform\nQ: What is the main topic of this section?\nQ: Does this section discuss any specific platform?\nQ: Is this section about a consumer or production RAG platform?",
+      "token_count": 4,
+      "embed_token_count": 47,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is the main topic of this section?",
+        "Does this section discuss any specific platform?",
+        "Is this section about a consumer or production RAG platform?"
+      ],
+      "content_hash": "016d5eff6863a6a6af2c7c7ac85221ae7e6dc03779e0da00607514ee809c312e",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "dc73b604-6c11-5f51-b3a7-23206b05ff35",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0011",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "Built a multi-stage retrieval architecture combining:",
+      "embed_text": "[SECTION: ROOT]\nBuilt a multi-stage retrieval architecture combining:\nQ: What type of architecture did they build?\nQ: How many stages does the retrieval architecture have?\nQ: What does the retrieval architecture combine?",
+      "token_count": 16,
+      "embed_token_count": 62,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What type of architecture did they build?",
+        "How many stages does the retrieval architecture have?",
+        "What does the retrieval architecture combine?"
+      ],
+      "content_hash": "180982abd2d3d2884f63ed502579c3ebce37a61c4246e0da907beac30c8e19e6",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "4b0c78d5-4a05-5ad8-a9c3-3938ea9ed12b",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0012",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "Semantic vector retrieval\nCandidate expansion\nCross-encoder reranking\nCitation generation\nEvidence-grounded answer synthesis",
+      "embed_text": "[SECTION: ROOT]\nSemantic vector retrieval\nCandidate expansion\nCross-encoder reranking\nCitation generation\nEvidence-grounded answer synthesis\nQ: What is the first step in the process?\nQ: What technique is used for improving the accuracy of answers?\nQ: How are citations created?",
+      "token_count": 32,
+      "embed_token_count": 75,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is the first step in the process?",
+        "What technique is used for improving the accuracy of answers?",
+        "How are citations created?"
+      ],
+      "content_hash": "ed8949eab8fbf4aad6fd017daf1a61d09ba6d2e98ce39fe736f4db2065752dd4",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "c21db92f-a014-59ae-b645-643b39a20635",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0013",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "The system supports multiple enterprise knowledge sources while maintaining low-latency user experiences.",
+      "embed_text": "[SECTION: ROOT]\nThe system supports multiple enterprise knowledge sources while maintaining low-latency user experiences.\nQ: How does the system handle multiple enterprise knowledge sources?\nQ: What is important for user experiences according to the text?\nQ: Does the system compromise on performance with multiple knowledge sources?",
+      "token_count": 18,
+      "embed_token_count": 65,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "How does the system handle multiple enterprise knowledge sources?",
+        "What is important for user experiences according to the text?",
+        "Does the system compromise on performance with multiple knowledge sources?"
+      ],
+      "content_hash": "4f01ebde84c33b148bc16790d24ca931087d0e9b050e244192006985d94b65b4",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "7d47d47b-68e9-5238-bdd6-ee77fa62e0d8",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0014",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "AI Evaluation Framework",
+      "embed_text": "[SECTION: ROOT]\nAI Evaluation Framework\nQ: What is the topic of this section?\nQ: Does this section contain any specific details about AI evaluation?\nQ: Is this section about a particular aspect of AI or a general overview?",
+      "token_count": 4,
+      "embed_token_count": 52,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is the topic of this section?",
+        "Does this section contain any specific details about AI evaluation?",
+        "Is this section about a particular aspect of AI or a general overview?"
+      ],
+      "content_hash": "56559ed2f23297fc528025dbcc71ff8d3ac5e4fd95bcce9c9add2b551c89ad2d",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "af28b068-85d2-541c-8861-d95ec2040090",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0015",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "Developed automated evaluation pipelines to measure:",
+      "embed_text": "[SECTION: ROOT]\nDeveloped automated evaluation pipelines to measure:\nQ: What was developed?\nQ: To measure what?\nQ: Automated evaluation of what?",
+      "token_count": 10,
+      "embed_token_count": 38,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What was developed?",
+        "To measure what?",
+        "Automated evaluation of what?"
+      ],
+      "content_hash": "0843838d6cb8230e7e6f72eaf73adc17396e608ec3a8fa0188425af399bfa673",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "09ee39bf-3c30-5b23-9966-b9ba15939e08",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0016",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "Routing accuracy\nRetrieval relevance\nCitation quality\nResponse grounding\nEnd-to-end answer quality",
+      "embed_text": "[SECTION: ROOT]\nRouting accuracy\nRetrieval relevance\nCitation quality\nResponse grounding\nEnd-to-end answer quality\nQ: What aspects of the system are listed?\nQ: How many aspects are mentioned?\nQ: What does the section seem to focus on?",
+      "token_count": 23,
+      "embed_token_count": 60,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What aspects of the system are listed?",
+        "How many aspects are mentioned?",
+        "What does the section seem to focus on?"
+      ],
+      "content_hash": "6172b7f3258e1a10b07b00d597618b0c8e5e8e79fa4305b370203a140ba44d98",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "86f0503a-24c4-5934-8215-0ade5819dc69",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0017",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "Created reproducible benchmark datasets and testing workflows that enabled continuous model and prompt improvements.",
+      "embed_text": "[SECTION: ROOT]\nCreated reproducible benchmark datasets and testing workflows that enabled continuous model and prompt improvements.\nQ: What did the section focus on creating?\nQ: How were model and prompt improvements facilitated?\nQ: What were developed to enable continuous improvements?",
+      "token_count": 23,
+      "embed_token_count": 66,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What did the section focus on creating?",
+        "How were model and prompt improvements facilitated?",
+        "What were developed to enable continuous improvements?"
+      ],
+      "content_hash": "2e7315543ca9593b0766960846b6b1edaa2ca38384c9e2f20def50fa7841b574",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "16f458e3-868d-5f58-a1e3-92453c8dac50",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0018",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "GPU Inference Platform",
+      "embed_text": "[SECTION: ROOT]\nGPU Inference Platform\nQ: What is the topic of this section?\nQ: Does this section discuss CPU inference?\nQ: Is this section about GPU training?",
+      "token_count": 5,
+      "embed_token_count": 42,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is the topic of this section?",
+        "Does this section discuss CPU inference?",
+        "Is this section about GPU training?"
+      ],
+      "content_hash": "d14583c238d41034630629f97b99b49b2df78384e99182ea0db87c0744935fd4",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "672ac5ad-888f-5601-9e12-67b78e2b2e2f",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0019",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "Designed and operated self-hosted AI inference infrastructure using:",
+      "embed_text": "[SECTION: ROOT]\nDesigned and operated self-hosted AI inference infrastructure using:\nQ: What was the infrastructure designed and operated for?\nQ: What type of AI inference infrastructure was used?\nQ: Was the infrastructure hosted by someone else?",
+      "token_count": 15,
+      "embed_token_count": 58,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What was the infrastructure designed and operated for?",
+        "What type of AI inference infrastructure was used?",
+        "Was the infrastructure hosted by someone else?"
+      ],
+      "content_hash": "c6c8a29144556c651864aba8b90040bf44f8b0a9baf238e462882e9e8e4a0b54",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "e1cbb5e1-4d5d-51af-9783-7755b0bf29fc",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0020",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "vLLM\nLoRA adapters\nKubernetes\nMulti-node GPU deployments",
+      "embed_text": "[SECTION: ROOT]\nvLLM\nLoRA adapters\nKubernetes\nMulti-node GPU deployments\nQ: What technology is mentioned for efficient model deployment?\nQ: What technique is discussed for reducing the size of neural networks?\nQ: How might Kubernetes be used in the context of deploying machine learning models?",
+      "token_count": 19,
+      "embed_token_count": 79,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What technology is mentioned for efficient model deployment?",
+        "What technique is discussed for reducing the size of neural networks?",
+        "How might Kubernetes be used in the context of deploying machine learning models?"
+      ],
+      "content_hash": "460d3c186dbc5e743d995053e443c3b4fbd9618e66234e57e3eabdd487797bab",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "cb4f19f4-7d92-5447-9bfd-fdfd126d6236",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0021",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "Enabled efficient serving of multiple specialized models from shared GPU resources while maintaining operational flexibility and cost control.",
+      "embed_text": "[SECTION: ROOT]\nEnabled efficient serving of multiple specialized models from shared GPU resources while maintaining operational flexibility and cost control.\nQ: What does the section discuss?\nQ: How are multiple specialized models handled?\nQ: What aspects are maintained according to the section?",
+      "token_count": 26,
+      "embed_token_count": 65,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What does the section discuss?",
+        "How are multiple specialized models handled?",
+        "What aspects are maintained according to the section?"
+      ],
+      "content_hash": "42b39d9482c73437985e4c60c34d3bf1f8b11ab859d2e2416ec0f18173dac9f6",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "d998eefd-62e9-50fa-98fb-dabc81f31038",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0022",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "Measurable Impact\nReduced AI Platform Dependency",
+      "embed_text": "[SECTION: ROOT]\nMeasurable Impact\nReduced AI Platform Dependency\nQ: What has been reduced?\nQ: Which platform's dependency has been decreased?\nQ: What is the measurable impact mentioned here?",
+      "token_count": 13,
+      "embed_token_count": 54,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What has been reduced?",
+        "Which platform's dependency has been decreased?",
+        "What is the measurable impact mentioned here?"
+      ],
+      "content_hash": "ca90447bb8919b0f9b6a04d0728357fc9dfeb2cbc0a670ac309e2ac037174ceb",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "3b074944-a54f-5468-ab17-f3897139b624",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0023",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "Built an internally controlled AI platform that reduced reliance on external AI tooling and enabled rapid experimentation with models, prompts, retrieval strategies, and evaluation methods.",
+      "embed_text": "[SECTION: ROOT]\nBuilt an internally controlled AI platform that reduced reliance on external AI tooling and enabled rapid experimentation with models, prompts, retrieval strategies, and evaluation methods.\nQ: What did the platform reduce reliance on?\nQ: What types of experiments could be conducted quickly?\nQ: How was the platform managed?",
+      "token_count": 40,
+      "embed_token_count": 80,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What did the platform reduce reliance on?",
+        "What types of experiments could be conducted quickly?",
+        "How was the platform managed?"
+      ],
+      "content_hash": "9c61f1296c570d8de082c05e5feb12d463dc7449dfaf567c14faaa7b65a65ca5",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "9fffad69-0af8-55c5-9928-357efa595cd2",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0024",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "Improved Answer Quality",
+      "embed_text": "[SECTION: ROOT]\nImproved Answer Quality\nQ: What is the main topic of this section?\nQ: How many distinct strings should the response contain?\nQ: What is the format of the response?",
+      "token_count": 5,
+      "embed_token_count": 46,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is the main topic of this section?",
+        "How many distinct strings should the response contain?",
+        "What is the format of the response?"
+      ],
+      "content_hash": "9ff4c73a229e659c2692e9b6fe8766696e86f443ab4c03dbb4e8b023b817ce81",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "b886f3c0-e02a-5104-9a12-64df4c80a9b4",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0025",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "Implemented multi-stage retrieval and reranking pipelines that significantly improved retrieval precision and answer grounding compared with naive vector search approaches.",
+      "embed_text": "[SECTION: ROOT]\nImplemented multi-stage retrieval and reranking pipelines that significantly improved retrieval precision and answer grounding compared with naive vector search approaches.\nQ: What improvements were made to the retrieval process?\nQ: How does the new method compare to naive vector search?\nQ: Which aspects of the system were enhanced?",
+      "token_count": 38,
+      "embed_token_count": 86,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What improvements were made to the retrieval process?",
+        "How does the new method compare to naive vector search?",
+        "Which aspects of the system were enhanced?"
+      ],
+      "content_hash": "0d34676f3b6a4980b293a2c240d993fc22f24918b951f570b0ea8a632bd9f15c",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "cadcc312-7d35-5a32-aefd-3f527aa1fad1",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0026",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "Increased User Trust",
+      "embed_text": "[SECTION: ROOT]\nIncreased User Trust\nQ: What is the main topic of this section?\nQ: Does this section discuss any specific actions or metrics related to user trust?\nQ: Are there any subtopics within Increased User Trust mentioned here?",
+      "token_count": 5,
+      "embed_token_count": 58,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is the main topic of this section?",
+        "Does this section discuss any specific actions or metrics related to user trust?",
+        "Are there any subtopics within Increased User Trust mentioned here?"
+      ],
+      "content_hash": "cda4725a952c808c19db5d35b2282e8b55e6182813924d3d86247f29090ebbd5",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "cdc3bcc5-ba6b-558c-a7a3-78d424fab006",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0027",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "Introduced citation-backed responses and evidence-grounded generation, helping users understand where information originated and reducing hallucination risk.",
+      "embed_text": "[SECTION: ROOT]\nIntroduced citation-backed responses and evidence-grounded generation, helping users understand where information originated and reducing hallucination risk.\nQ: What feature was introduced to back responses with citations?\nQ: How does the new system help users understand the origin of information?\nQ: What is the goal of introducing evidence-grounded generation?",
+      "token_count": 31,
+      "embed_token_count": 84,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What feature was introduced to back responses with citations?",
+        "How does the new system help users understand the origin of information?",
+        "What is the goal of introducing evidence-grounded generation?"
+      ],
+      "content_hash": "077400f0c8a18f9a40dc4a9651c49a497b421313f6ac78b0537ee081a3d6c565",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "aaf3b8bd-3cfb-55fd-bc3c-71302fceb2c1",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0028",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "Accelerated AI Development",
+      "embed_text": "[SECTION: ROOT]\nAccelerated AI Development\nQ: What is the topic of this section?\nQ: Can you provide a brief description of the topic?\nQ: What specific topic does this chunk cover?",
+      "token_count": 5,
+      "embed_token_count": 46,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is the topic of this section?",
+        "Can you provide a brief description of the topic?",
+        "What specific topic does this chunk cover?"
+      ],
+      "content_hash": "c5f2fa5fcddf87bd3921d43f51d9c96dff826d0531ce91cdbe0775d7fdfa40a1",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "50958496-ec8a-5fc7-b26a-e19663e9cd2f",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0029",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "Established reusable AI infrastructure components—including orchestration, retrieval, inference, and evaluation layers—that can be leveraged by future AI products and agent-based workflows.",
+      "embed_text": "[SECTION: ROOT]\nEstablished reusable AI infrastructure components—including orchestration, retrieval, inference, and evaluation layers—that can be leveraged by future AI products and agent-based workflows.\nQ: What are the key components of the reusable AI infrastructure?\nQ: Which layers does the reusable AI infrastructure include?\nQ: How can these components be used in future AI products?",
+      "token_count": 45,
+      "embed_token_count": 97,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What are the key components of the reusable AI infrastructure?",
+        "Which layers does the reusable AI infrastructure include?",
+        "How can these components be used in future AI products?"
+      ],
+      "content_hash": "bc644778096234232bbd8145ae7649417547c98411a68c0c0ba487cc86181aba",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "136dc2d4-d95c-5e61-bb55-e2a145eef87b",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0030",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "End-to-End Technical Ownership",
+      "embed_text": "[SECTION: ROOT]\nEnd-to-End Technical Ownership\nQ: What is the main topic of this section?\nQ: Does this section discuss any specific technical processes?\nQ: Is this section about shared or individual responsibility?",
+      "token_count": 9,
+      "embed_token_count": 51,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is the main topic of this section?",
+        "Does this section discuss any specific technical processes?",
+        "Is this section about shared or individual responsibility?"
+      ],
+      "content_hash": "0e733efb53ba6ff6e1a255cf20a335366e7962cf7f81ec8d141756b1478d68bb",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "4827d05e-d36d-584f-b2e4-bea578c23523",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0031",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "Led initiatives from concept through production operation, including:",
+      "embed_text": "[SECTION: ROOT]\nLed initiatives from concept through production operation, including:\nQ: What stages of a project did the individual lead initiatives from?\nQ: What was the scope of the initiatives led by the individual?\nQ: Which phase of the process started with concept and ended with production operation?",
+      "token_count": 11,
+      "embed_token_count": 67,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What stages of a project did the individual lead initiatives from?",
+        "What was the scope of the initiatives led by the individual?",
+        "Which phase of the process started with concept and ended with production operation?"
+      ],
+      "content_hash": "13cf8e70dfb72aa52c6f5e85c9addf941bc359031124d643a4b2bbe0e2b181f5",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "83ae35f4-5b66-5cd4-b1f1-2e623e150ce5",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0032",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "Architecture design\nAI system implementation\nInfrastructure deployment\nPerformance optimization\nProduction support",
+      "embed_text": "[SECTION: ROOT]\nArchitecture design\nAI system implementation\nInfrastructure deployment\nPerformance optimization\nProduction support\nQ: What are the main components of the described process?\nQ: Which step comes after architecture design?\nQ: What is the last phase mentioned?",
+      "token_count": 17,
+      "embed_token_count": 57,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What are the main components of the described process?",
+        "Which step comes after architecture design?",
+        "What is the last phase mentioned?"
+      ],
+      "content_hash": "b4ab883e90390d985c34998c453d7fe9e6b506dcd2634ba65465c9f306a95146",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "8f0b1cf6-32a4-5914-9b8d-57f5259cc1b5",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0033",
+      "document_id": "personal_project",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_project",
+      "language": "en",
+      "tags": [
+        "personal_project",
+        "root"
+      ],
+      "text": "Demonstrated the ability to independently deliver complex AI systems that combine machine learning infrastructure, distributed systems, retrieval architectures, and production software engineering.",
+      "embed_text": "[SECTION: ROOT]\nDemonstrated the ability to independently deliver complex AI systems that combine machine learning infrastructure, distributed systems, retrieval architectures, and production software engineering.\nQ: What abilities were demonstrated?\nQ: Which types of systems was the individual able to deliver?\nQ: What components make up the complex AI systems delivered?",
+      "token_count": 33,
+      "embed_token_count": 77,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What abilities were demonstrated?",
+        "Which types of systems was the individual able to deliver?",
+        "What components make up the complex AI systems delivered?"
+      ],
+      "content_hash": "4733333683df18a28306bf4fd1be76a38a85401cafb23f873986fadd50902ba5",
+      "source": "personal_project",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  }
+]

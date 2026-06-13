@@ -52,8 +52,7 @@ Reconcile behavior:
 python3 app/prepare_payloads.py \
   --data-dir data1/processed \
   --output-dir data1/processed \
-  --pattern "chunks_*.json" \
-  --source-prefix personal
+  --pattern "chunks_*.json"
 
 python3 app/upsert_qdrant.py --data-dir data1/processed --pattern "points_*.json"
 ```

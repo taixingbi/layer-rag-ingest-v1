@@ -196,10 +196,14 @@ def _doc_type_from_name(path: Path) -> str:
 
 
 def _source_name(doc_type: str, source_prefix: str) -> str:
-    """ source name."""
-    if source_prefix:
-        return f"{source_prefix}_{doc_type}"
-    return f"{doc_type}_source"
+    """Return payload.source; doc_type stem is used when no prefix is set."""
+    prefix = source_prefix.strip()
+    if prefix:
+        qualified = f"{prefix}_"
+        if doc_type == prefix or doc_type.startswith(qualified):
+            return doc_type
+        return f"{prefix}_{doc_type}"
+    return doc_type
 
 
 def _tags_for(doc_type: str, section: str) -> list[str]:

@@ -1,17 +1,53 @@
 {
-  "ingest_run_id": "run_20260604_150724_EST",
+  "ingest_run_id": "run_20260613_134331_EST",
   "collection": "taixing_knowledge_prod",
-  "ingest_ts": "2026-06-04T15:07:24-05:00",
+  "ingest_ts": "2026-06-13T13:43:31-05:00",
   "id_key_version": "v3",
   "document_version": "v1",
   "chunk_version": "v1",
   "embedding_version": "BAAI/bge-m3",
   "files": [
     {
+      "input_file": "data_prod/data1/processed/chunks_personal_profile.json",
+      "output_file": "data_prod/data1/processed/points_personal_profile.json",
+      "doc_type": "personal_profile",
+      "source": "personal_profile",
+      "chunks_input": 9,
+      "chunks_prepared": 9,
+      "chunks_failed": 0
+    },
+    {
+      "input_file": "data_prod/data1/processed/chunks_personal_project.json",
+      "output_file": "data_prod/data1/processed/points_personal_project.json",
+      "doc_type": "personal_project",
+      "source": "personal_project",
+      "chunks_input": 33,
+      "chunks_prepared": 33,
+      "chunks_failed": 0
+    },
+    {
+      "input_file": "data_prod/data1/processed/chunks_personal_qa.json",
+      "output_file": "data_prod/data1/processed/points_personal_qa.json",
+      "doc_type": "personal_qa",
+      "source": "personal_qa",
+      "chunks_input": 15,
+      "chunks_prepared": 15,
+      "chunks_failed": 0
+    },
+    {
+      "input_file": "data_prod/data1/processed/chunks_personal_resume.json",
+      "output_file": "data_prod/data1/processed/points_personal_resume.json",
+      "doc_type": "personal_resume",
+      "source": "personal_resume",
+      "chunks_input": 52,
+      "chunks_prepared": 52,
+      "chunks_failed": 0
+    },
+    {
       "input_file": "data_prod/data1/processed/chunks_profile.json",
       "output_file": "data_prod/data1/processed/points_profile.json",
       "doc_type": "profile",
-      "source": "personal_profile",
+      "source": "profile",
       "chunks_input": 10,
       "chunks_prepared": 10,
       "chunks_failed": 0
@@ -20,7 +56,7 @@
       "input_file": "data_prod/data1/processed/chunks_qa.json",
       "output_file": "data_prod/data1/processed/points_qa.json",
       "doc_type": "qa",
-      "source": "personal_qa",
+      "source": "qa",
       "chunks_input": 14,
       "chunks_prepared": 14,
       "chunks_failed": 0
@@ -29,16 +65,16 @@
       "input_file": "data_prod/data1/processed/chunks_resume.json",
       "output_file": "data_prod/data1/processed/points_resume.json",
       "doc_type": "resume",
-      "source": "personal_resume",
+      "source": "resume",
       "chunks_input": 36,
       "chunks_prepared": 36,
       "chunks_failed": 0
     }
   ],
   "stats": {
-    "files_total": 3,
-    "chunks_input": 60,
-    "chunks_total_prepared": 60,
+    "files_total": 7,
+    "chunks_input": 169,
+    "chunks_total_prepared": 169,
     "chunks_failed": 0
   }
 }

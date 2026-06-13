@@ -162,7 +162,7 @@ Run chunking, prepare, then upsert (adjust paths as needed):
 
 ```bash
 python3 app/plain_text_chunks.py "${DATA_ROOT}/data1"
-python3 app/prepare_payloads.py --data-dir "${DATA_ROOT}/data1/processed" --output-dir "${DATA_ROOT}/data1/processed" --pattern "chunks_*.json" --source-prefix personal
+python3 app/prepare_payloads.py --data-dir "${DATA_ROOT}/data1/processed" --output-dir "${DATA_ROOT}/data1/processed" --pattern "chunks_*.json"
 ```
 
 Variants:
@@ -187,9 +187,9 @@ python3 app/plain_text_chunks.py data1
 Single-file mode:
 
 ```bash
-python3 app/plain_text_chunks.py data1/raw/resume.txt data1/processed/chunks_resume.json
-python3 app/plain_text_chunks.py data1/raw/qa.txt data1/processed/chunks_qa.json
-python3 app/plain_text_chunks.py data1/raw/profile.txt data1/processed/chunks_profile.json
+python3 app/plain_text_chunks.py data1/raw/personal_resume.txt data1/processed/chunks_personal_resume.json
+python3 app/plain_text_chunks.py data1/raw/personal_qa.txt data1/processed/chunks_personal_qa.json
+python3 app/plain_text_chunks.py data1/raw/personal_profile.txt data1/processed/chunks_personal_profile.json
 ```
 
 `plain_text_chunks.py` does not call the chat API; every chunk has `synthetic_questions: []`. For LLM questions on prepared payloads, use **`synthetic_questions.py`** on **`points_*.json`** after **`prepare_payloads.py`** (see §2b).
@@ -197,13 +197,13 @@ python3 app/plain_text_chunks.py data1/raw/profile.txt data1/processed/chunks_pr
 ### 2) Prepare metadata + filter payload files
 
 ```bash
-python3 app/prepare_payloads.py --data-dir data1/processed --output-dir data1/processed --pattern "chunks_*.json" --source-prefix personal
+python3 app/prepare_payloads.py --data-dir data1/processed --output-dir data1/processed --pattern "chunks_*.json"
 ```
 
 This writes:
-- `data1/processed/points_resume.json`
-- `data1/processed/points_qa.json`
-- `data1/processed/points_profile.json`
+- `data1/processed/points_personal_resume.json`
+- `data1/processed/points_personal_qa.json`
+- `data1/processed/points_personal_profile.json`
 - `data1/processed/ingest_prepare_summary.json`
 - `data1/processed/ingest_manifest_<ingest_run_id>.json`
 - `data1/processed/ingest_manifest_latest.json`
@@ -236,7 +236,7 @@ python3 app/synthetic_questions.py --data-dir data1/processed --dry-run
 
 Optional chat flags: `--chat-base-url`, `--chat-model`, `--chat-api-key`, `--no-json-object-mode` (same env defaults as elsewhere). After changing **`embed_text`**, run **`upsert_qdrant.py`** again so stored vectors match the new embedding input (unless your upsert always re-embeds from payload).
 
-With `--source-prefix personal`, `payload.source` is namespaced (for example `personal_profile`) for clean filtering.
+Raw files use the `personal_*.txt` naming convention; `payload.source` equals the filename stem (for example `personal_profile`), matching keys in `raw/access_control.json`.
 
 ### 3) Upsert to Qdrant
 

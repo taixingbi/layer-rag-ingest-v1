@@ -63,7 +63,7 @@ ID contract (default v3): point id is UUID5 of
 Compatibility: pass `--id-key-version v2` to keep the old identity key  
 `v2|source=<source>|document_id=<document_id>|chunk_id=<chunk_id>`.
 
-Use **`--source-prefix personal`** so `payload.source` values look like `personal_<doc_type>` for clean filtering.
+Use **`personal_*.txt`** raw filenames so `payload.source` equals the stem (for example `personal_profile`), aligned with `raw/access_control.json` keys. Legacy datasets can still pass **`--source-prefix personal`** when stems omit the prefix.
 
 ## Full pipeline
 
@@ -74,8 +74,7 @@ python3 app/plain_text_chunks.py "${DATA_ROOT}/data1"
 python3 app/prepare_payloads.py \
   --data-dir "${DATA_ROOT}/data1/processed" \
   --output-dir "${DATA_ROOT}/data1/processed" \
-  --pattern "chunks_*.json" \
-  --source-prefix personal
+  --pattern "chunks_*.json"
 ```
 
 Optional explicit version tags (recommended for immutable coexistence):
@@ -85,7 +84,6 @@ python3 app/prepare_payloads.py \
   --data-dir data1/processed \
   --output-dir data1/processed \
   --pattern "chunks_*.json" \
-  --source-prefix personal \
   --document-version "2026-04-29" \
   --chunk-version "plain_text_v1" \
   --embedding-version "bge-m3@1024"
@@ -98,7 +96,6 @@ python3 app/prepare_payloads.py \
   --data-dir data1/processed \
   --output-dir data1/processed \
   --pattern "chunks_*.json" \
-  --source-prefix personal \
   --profile-role-map '{"personal_profile":"AI Infrastructure Engineer"}'
 ```
 
@@ -109,7 +106,6 @@ python3 app/prepare_payloads.py \
   --data-dir data1/processed \
   --output-dir data1/processed \
   --pattern "chunks_*.json" \
-  --source-prefix personal \
   --profile-role-map-file data1/processed/profile_roles.json
 ```
 
@@ -199,7 +195,7 @@ python3 app/rollback_ingest_run.py \
 If you only want one source:
 
 ```bash
-python3 app/plain_text_chunks.py data1/raw/profile.txt data1/processed/chunks_profile.json
+python3 app/plain_text_chunks.py data1/raw/personal_profile.txt data1/processed/chunks_personal_profile.json
 ```
 
 Then run `prepare_payloads.py` on `data1/processed` as above (it globs all `chunks_*.json`).

@@ -54,12 +54,11 @@ fi
 echo "==> data1 (${DATA_ENV}): chunk raw/*.txt -> processed/chunks_*.json"
 "$PYTHON" app/plain_text_chunks.py "$DATASET_ROOT"
 
-echo "==> data1 (${DATA_ENV}): chunks -> points (source prefix: personal)"
+echo "==> data1 (${DATA_ENV}): chunks -> points (source = raw filename stem, e.g. personal_profile)"
 "$PYTHON" app/prepare_payloads.py \
   --data-dir "$DATASET_ROOT/processed" \
   --output-dir "$DATASET_ROOT/processed" \
   --pattern "chunks_*.json" \
-  --source-prefix personal \
   --access-control-file "$DATASET_ROOT/raw/access_control.json"
 
 if [[ "${RUN_SYNTHETIC_QUESTIONS:-1}" == "0" ]]; then

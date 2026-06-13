@@ -1,0 +1,366 @@
+[
+  {
+    "chunk_id": "0001",
+    "document_id": "personal_resume",
+    "section": "TAIXING BI",
+    "text": "Senior AI Infrastructure & Platform Engineer\nNew York, NY (Open to Remote / Hybrid / NYC)\n347-560-4308 • taixingbijob@gmail.com\nLinkedIn: linkedin.com/in/taixing-bi-757a4961\nPortfolio: https://taixingai.com\nGitHub: github.com/taixingbi",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0002",
+    "document_id": "personal_resume",
+    "section": "SUMMARY",
+    "text": "Senior AI Infrastructure & Platform Engineer with 7+ years of experience building production AI platforms, GPU inference systems, distributed backend services, and cloud-native infrastructure.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0003",
+    "document_id": "personal_resume",
+    "section": "SUMMARY",
+    "text": "Experienced designing and operating Kubernetes-based AI workloads, LLM serving platforms, retrieval infrastructure, and observability systems.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0004",
+    "document_id": "personal_resume",
+    "section": "SUMMARY",
+    "text": "Strong background across GPU inference,LLM infrastructure,model serving,distributed systems,cloud-native platforms,and production reliability. Built end-to-end AI platforms supporting model routing, agent orchestration, retrieval-augmented generation (RAG), evaluation pipelines, fine-tuning workflows, and GitOps deployment.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0005",
+    "document_id": "personal_resume",
+    "section": "CORE SKILLS",
+    "text": "AI Infrastructure & Platform Engineering\nKubernetes\nDocker\nArgoCD\nGitOps",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0006",
+    "document_id": "personal_resume",
+    "section": "CI/CD",
+    "text": "Distributed Systems\nPlatform Engineering\nService Reliability\nAI Serving & Inference\nvLLM\nSGLang\nHugging Face TGI\nLoRA Serving\nModel Routing\nToken Streaming\nBatching\nCaching\nGPU Workload Management\nCloud & Data Infrastructure\nAWS Lambda\nDynamoDB",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0007",
+    "document_id": "personal_resume",
+    "section": "SQS",
+    "text": "EventBridge\nSnowflake\nKafka / MSK\nObservability\nPrometheus\nGrafana\nDatadog\nCloudWatch\nDistributed Tracing\nPerformance Monitoring\nAI Systems",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0008",
+    "document_id": "personal_resume",
+    "section": "RAG",
+    "text": "Agent Orchestration\nTool Calling\nLangChain\nLangGraph\nEvaluation Frameworks\nFine-Tuning (LoRA, SFT, DPO)\nProgramming\nPython\nTypeScript\nJava",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0009",
+    "document_id": "personal_resume",
+    "section": "AI PLATFORM EXPERIENCE",
+    "text": "HuntAI — AI Platform & Infrastructure\nFounder & Architect | https://taixingai.com\nDesigned and built a production-ready AI platform supporting LLM serving, agent orchestration, retrieval, evaluation, and GitOps deployment.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0010",
+    "document_id": "personal_resume",
+    "section": "AI PLATFORM EXPERIENCE",
+    "text": "Architected a distributed platform consisting of 10+ microservices running on Kubernetes.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0011",
+    "document_id": "personal_resume",
+    "section": "AI PLATFORM EXPERIENCE",
+    "text": "Built AI Gateway services supporting model routing, tool calling, streaming responses, authentication, and observability.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0012",
+    "document_id": "personal_resume",
+    "section": "AI PLATFORM EXPERIENCE",
+    "text": "Designed and operated GPU inference infrastructure on a multi-GPU Kubernetes environment using vLLM and LoRA adapters.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0013",
+    "document_id": "personal_resume",
+    "section": "AI PLATFORM EXPERIENCE",
+    "text": "Implemented hybrid retrieval pipelines combining semantic search, keyword search, reranking, and citation grounding.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0014",
+    "document_id": "personal_resume",
+    "section": "AI PLATFORM EXPERIENCE",
+    "text": "Built orchestration services for routing, retrieval, tool execution, and response generation workflows.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0015",
+    "document_id": "personal_resume",
+    "section": "AI PLATFORM EXPERIENCE",
+    "text": "Implemented automated evaluation pipelines using golden datasets, routing accuracy testing, and regression validation.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0016",
+    "document_id": "personal_resume",
+    "section": "AI PLATFORM EXPERIENCE",
+    "text": "Designed GitOps deployment workflows using ArgoCD and GitHub Actions for automated environment promotion and drift detection.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0017",
+    "document_id": "personal_resume",
+    "section": "AI PLATFORM EXPERIENCE",
+    "text": "Built monitoring, logging, and operational dashboards using Prometheus and Grafana.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0018",
+    "document_id": "personal_resume",
+    "section": "AI PLATFORM EXPERIENCE",
+    "text": "Developed Kubernetes deployment strategies for inference, gateway, orchestration, retrieval, and observability services.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0019",
+    "document_id": "personal_resume",
+    "section": "AI PLATFORM EXPERIENCE",
+    "text": "Built and fine-tuned LLM routing models using LoRA, SFT, and DPO workflows with automated evaluation and regression testing pipelines.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0020",
+    "document_id": "personal_resume",
+    "section": "AI PLATFORM EXPERIENCE",
+    "text": "Technologies: Kubernetes, ArgoCD, vLLM, Qwen, Python, TypeScript, FastAPI, Qdrant, Prometheus, Grafana, Cloudflare, GitHub Actions",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0021",
+    "document_id": "personal_resume",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Saks.com\nSenior Software Engineer / AI Platform Engineer\nNew York, NY | Aug 2021 – Present\nLed the design and implementation of production AI platform capabilities supporting retrieval, operational intelligence, and engineering productivity initiatives.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0022",
+    "document_id": "personal_resume",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Developed Retrieval-Augmented Generation (RAG) systems including document ingestion, chunking, embedding generation, hybrid retrieval, reranking, and citation grounding.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0023",
+    "document_id": "personal_resume",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Built LLM-powered applications enabling natural language access to operational and business data through tool-calling and structured retrieval interfaces.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0024",
+    "document_id": "personal_resume",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Architected agent orchestration workflows for retrieval, reasoning, validation, and response generation using graph-based execution models.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0025",
+    "document_id": "personal_resume",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Designed AI evaluation frameworks including regression testing, prompt versioning, model comparison, quality monitoring, and automated validation pipelines.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0026",
+    "document_id": "personal_resume",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Implemented low-latency inference and streaming response services with tracing, observability, and production monitoring.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0027",
+    "document_id": "personal_resume",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Developed AI-powered operational tooling to improve knowledge access, troubleshooting, and engineering productivity.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0028",
+    "document_id": "personal_resume",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Built distributed AI services leveraging Kubernetes, AWS, Kafka, and cloud-native infrastructure.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0029",
+    "document_id": "personal_resume",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Designed centralized data and analytics platforms supporting AI, machine learning, and retrieval workloads.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0030",
+    "document_id": "personal_resume",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Implemented reliability, observability, and operational controls for production AI systems using Datadog, CloudWatch, Grafana, and automated monitoring.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0031",
+    "document_id": "personal_resume",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Kaden Health\nMachine Learning Engineer\nRemote | Jul 2019 – Aug 2021\nDeveloped NLP and machine learning solutions for healthcare applications using TensorFlow, PyTorch, and spaCy.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0032",
+    "document_id": "personal_resume",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Built end-to-end ML pipelines covering data processing, model training, evaluation, deployment, and monitoring.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0033",
+    "document_id": "personal_resume",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Designed and implemented production inference services and model-serving APIs supporting real-time clinical workflows.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0034",
+    "document_id": "personal_resume",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Developed text classification, sentiment analysis, and predictive modeling solutions for healthcare datasets.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0035",
+    "document_id": "personal_resume",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Built automated evaluation and validation pipelines to improve model quality, reliability, and deployment readiness.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0036",
+    "document_id": "personal_resume",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Designed event-driven data processing architectures using Kafka and NATS for real-time model and application workflows.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0037",
+    "document_id": "personal_resume",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Built centralized analytics, logging, and monitoring pipelines using BigQuery and cloud-native infrastructure.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0038",
+    "document_id": "personal_resume",
+    "section": "PROFESSIONAL EXPERIENCE",
+    "text": "Collaborated with product, engineering, and clinical stakeholders to deliver production AI capabilities.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0039",
+    "document_id": "personal_resume",
+    "section": "CGMAX",
+    "text": "Machine Learning Engineer\nNew York, NY | Jan 2018 – Jul 2019\nDeveloped AI and machine learning solutions for financial forecasting, sentiment analysis, and quantitative research applications.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0040",
+    "document_id": "personal_resume",
+    "section": "CGMAX",
+    "text": "Built predictive modeling pipelines using structured and unstructured financial datasets to generate investment and market insights.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0041",
+    "document_id": "personal_resume",
+    "section": "CGMAX",
+    "text": "Designed distributed feature engineering and data processing platforms using Spark, Hadoop, Kafka, and HBase.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0042",
+    "document_id": "personal_resume",
+    "section": "CGMAX",
+    "text": "Developed real-time data ingestion and analytics systems supporting machine learning and quantitative research workloads.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0043",
+    "document_id": "personal_resume",
+    "section": "CGMAX",
+    "text": "Built model evaluation, validation, and backtesting frameworks to improve prediction accuracy and deployment readiness.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0044",
+    "document_id": "personal_resume",
+    "section": "CGMAX",
+    "text": "Partnered with quantitative researchers and software engineers to operationalize machine learning capabilities in production environments.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0045",
+    "document_id": "personal_resume",
+    "section": "NVIDIA",
+    "text": "Software Engineer\nSanta Clara, CA | Mar 2016 – Dec 2017\nDeveloped telemetry and observability platforms supporting GPU engineering teams.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0046",
+    "document_id": "personal_resume",
+    "section": "NVIDIA",
+    "text": "Built backend services and APIs for collecting and analyzing GPU performance, utilization, and diagnostic data.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0047",
+    "document_id": "personal_resume",
+    "section": "NVIDIA",
+    "text": "Designed analytics dashboards enabling engineers to investigate system behavior and performance trends at scale.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0048",
+    "document_id": "personal_resume",
+    "section": "NVIDIA",
+    "text": "Developed full-stack engineering tools using React, Python, and Node.js.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0049",
+    "document_id": "personal_resume",
+    "section": "NVIDIA",
+    "text": "Partnered with cross-functional hardware and software teams to improve visibility into GPU performance and operational health.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0050",
+    "document_id": "personal_resume",
+    "section": "NVIDIA",
+    "text": "Gained early experience working with large-scale GPU systems, performance analytics, and infrastructure monitoring.",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0051",
+    "document_id": "personal_resume",
+    "section": "EDUCATION",
+    "text": "Master of Science, Analytics (Machine Learning & NLP)\nHarrisburg University | 2019 – 2022\nMaster of Science, Electrical & Computer Engineering\nUniversity of Alabama in Huntsville | 2013 – 2015",
+    "synthetic_questions": []
+  },
+  {
+    "chunk_id": "0052",
+    "document_id": "personal_resume",
+    "section": "PUBLICATION",
+    "text": "A Novel Approach to Impedance-based Fault Location for High Voltage Cables\nIEEE Industry Applications Society (IAS)",
+    "synthetic_questions": []
+  }
+]

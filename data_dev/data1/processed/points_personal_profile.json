@@ -1,0 +1,497 @@
+[
+  {
+    "id": "2a2a6a5a-e40f-5aa7-a663-18551b00c0e9",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0001",
+      "document_id": "personal_profile",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_profile",
+      "language": "en",
+      "tags": [
+        "personal_profile",
+        "root"
+      ],
+      "text": "Q: What is Taixing Bi's current role?\nA: AI Infrastructure Engineer",
+      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's current role?\nA: AI Infrastructure Engineer\nQ: What is Taixing Bi's current position?\nQ: What role does Taixing Bi hold now?\nQ: Who is Taixing Bi's current job title?",
+      "token_count": 20,
+      "embed_token_count": 67,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is Taixing Bi's current position?",
+        "What role does Taixing Bi hold now?",
+        "Who is Taixing Bi's current job title?"
+      ],
+      "content_hash": "2103d77f4a42685f262a25f4a8f48301eadda0fc88f330c5919d4508d54a0085",
+      "source": "personal_profile",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "3d247817-db8b-5e4b-a514-fba668c93d10",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0002",
+      "document_id": "personal_profile",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_profile",
+      "language": "en",
+      "tags": [
+        "personal_profile",
+        "root"
+      ],
+      "text": "Q: Where does Taixing Bi currently work?\nA: Saks",
+      "embed_text": "[SECTION: ROOT]\nQ: Where does Taixing Bi currently work?\nA: Saks\nQ: Where does Taixing Bi currently work?\nQ: What company is Taixing Bi associated with?\nQ: Can you name the current workplace of Taixing Bi?",
+      "token_count": 14,
+      "embed_token_count": 60,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "Where does Taixing Bi currently work?",
+        "What company is Taixing Bi associated with?",
+        "Can you name the current workplace of Taixing Bi?"
+      ],
+      "content_hash": "cd28aa84bddf61a05eb8fd37fe6aedc12c2e5d2e80c20eb5f585047d67b457b4",
+      "source": "personal_profile",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "524045b8-1d7c-51a2-a431-66cd5e8add31",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0003",
+      "document_id": "personal_profile",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_profile",
+      "language": "en",
+      "tags": [
+        "personal_profile",
+        "root"
+      ],
+      "text": "Q: Which work locations is Taixing Bi open to?\nA: Remote, Hybrid, or Office",
+      "embed_text": "[SECTION: ROOT]\nQ: Which work locations is Taixing Bi open to?\nA: Remote, Hybrid, or Office\nQ: Which work locations is Taixing Bi open to?\nQ: What are the available work location options for Taixing Bi?\nQ: Can Taixing Bi employees work remotely?",
+      "token_count": 22,
+      "embed_token_count": 71,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "Which work locations is Taixing Bi open to?",
+        "What are the available work location options for Taixing Bi?",
+        "Can Taixing Bi employees work remotely?"
+      ],
+      "content_hash": "4e796a9c993b09b145770775edaf7e022b6b746ccd3e7bad070aa76090f82309",
+      "source": "personal_profile",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "5cb83c45-d431-505e-94bb-16d909598793",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0004",
+      "document_id": "personal_profile",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_profile",
+      "language": "en",
+      "tags": [
+        "personal_profile",
+        "root"
+      ],
+      "text": "Q: What is Taixing Bi's expected compensation range?\nA: $180,000 – $240,000 USD",
+      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's expected compensation range?\nA: $180,000 – $240,000 USD\nQ: What is the expected compensation range for Taixing Bi?\nQ: What is the minimum expected compensation for Taixing Bi?\nQ: What is the maximum expected compensation for Taixing Bi?",
+      "token_count": 23,
+      "embed_token_count": 76,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is the expected compensation range for Taixing Bi?",
+        "What is the minimum expected compensation for Taixing Bi?",
+        "What is the maximum expected compensation for Taixing Bi?"
+      ],
+      "content_hash": "100a672a74efd05c3700566c2c3bd5f90568d46672d2a569c9417aec5729dc04",
+      "source": "personal_profile",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "08d53b51-7e9f-58db-8863-fc437b7100fe",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0005",
+      "document_id": "personal_profile",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_profile",
+      "language": "en",
+      "tags": [
+        "personal_profile",
+        "root"
+      ],
+      "text": "Q: What is Taixing Bi's visa status / work authorization?\nA: H4 EAD. No visa sponsorship required.",
+      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's visa status / work authorization?\nA: H4 EAD. No visa sponsorship required.\nQ: What is Taixing Bi's current visa status?\nQ: Does Taixing Bi require visa sponsorship?\nQ: What type of work authorization does Taixing Bi have?",
+      "token_count": 30,
+      "embed_token_count": 79,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is Taixing Bi's current visa status?",
+        "Does Taixing Bi require visa sponsorship?",
+        "What type of work authorization does Taixing Bi have?"
+      ],
+      "content_hash": "0b1cda3f127ac42dc9fb12b308d1bf7b595fe0a5b4e3ddc05c157bf4febd9433",
+      "source": "personal_profile",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "c8f17b9b-c35a-5f3a-99fe-bf4c3877228d",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0006",
+      "document_id": "personal_profile",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_profile",
+      "language": "en",
+      "tags": [
+        "personal_profile",
+        "root"
+      ],
+      "text": "Q: Which roles is Taixing Bi targeting?\nA: AI Infra / Backend / LLM Engineer",
+      "embed_text": "[SECTION: ROOT]\nQ: Which roles is Taixing Bi targeting?\nA: AI Infra / Backend / LLM Engineer\nQ: What roles is Taixing Bi targeting?\nQ: Which positions is Taixing Bi looking for?\nQ: Can you list the roles targeted by Taixing Bi?",
+      "token_count": 25,
+      "embed_token_count": 75,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What roles is Taixing Bi targeting?",
+        "Which positions is Taixing Bi looking for?",
+        "Can you list the roles targeted by Taixing Bi?"
+      ],
+      "content_hash": "64836b6bf10078ec46964a3bf33e99b8e7e7f944cc47b10461c2e7409412b7cc",
+      "source": "personal_profile",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "8c34826b-d74f-5dc9-88ff-69231332c6c3",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0007",
+      "document_id": "personal_profile",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_profile",
+      "language": "en",
+      "tags": [
+        "personal_profile",
+        "root"
+      ],
+      "text": "Q: What is Taixing Bi's LinkedIn profile?\nA: https://www.linkedin.com/in/taixing-bi-757a4961/",
+      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's LinkedIn profile?\nA: https://www.linkedin.com/in/taixing-bi-757a4961/\nQ: What is the LinkedIn profile of Taixing Bi?\nQ: Can you provide the LinkedIn link for Taixing Bi?\nQ: How can I find Taixing Bi's professional profile?",
+      "token_count": 37,
+      "embed_token_count": 87,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is the LinkedIn profile of Taixing Bi?",
+        "Can you provide the LinkedIn link for Taixing Bi?",
+        "How can I find Taixing Bi's professional profile?"
+      ],
+      "content_hash": "92f4acf3abcb6ba1a1d1907faad89594766ac362da2b35895e0ef05e79cd5064",
+      "source": "personal_profile",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "cb42e77b-3ad3-539e-a4c0-bb5719179c6f",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0008",
+      "document_id": "personal_profile",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_profile",
+      "language": "en",
+      "tags": [
+        "personal_profile",
+        "root"
+      ],
+      "text": "Q: What is Taixing Bi's phone number?\nA: 347-560-4308",
+      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's phone number?\nA: 347-560-4308\nQ: What is Taixing Bi's phone number?\nQ: What phone number can be used to contact Taixing Bi?\nQ: How can one reach Taixing Bi?",
+      "token_count": 22,
+      "embed_token_count": 69,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is Taixing Bi's phone number?",
+        "What phone number can be used to contact Taixing Bi?",
+        "How can one reach Taixing Bi?"
+      ],
+      "content_hash": "10c4d13c14303145301dd77f8a9e19335fc4219fb8c08967f18ebe611367c480",
+      "source": "personal_profile",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  },
+  {
+    "id": "0ebb8a7f-008d-5abf-9031-d1dd8b4e8dc5",
+    "vector": [],
+    "payload": {
+      "chunk_id": "0009",
+      "document_id": "personal_profile",
+      "chunk_id_parent": null,
+      "was_split": false,
+      "split_index": null,
+      "section": "ROOT",
+      "doc_type": "personal_profile",
+      "language": "en",
+      "tags": [
+        "personal_profile",
+        "root"
+      ],
+      "text": "Q: What is Taixing Bi's email address?\nA: taixingbijob@gmail.com",
+      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's email address?\nA: taixingbijob@gmail.com\nQ: What is Taixing Bi's email address?\nQ: Where can one find Taixing Bi's professional email?\nQ: How can one contact Taixing Bi professionally?",
+      "token_count": 24,
+      "embed_token_count": 73,
+      "synthetic_questions_used": 3,
+      "synthetic_questions_trimmed": 0,
+      "synthetic_questions": [
+        "What is Taixing Bi's email address?",
+        "Where can one find Taixing Bi's professional email?",
+        "How can one contact Taixing Bi professionally?"
+      ],
+      "content_hash": "fe9e001550886289692f2cb6f7d28a2e2e241d7ccfa682e7adfd8b32533ab4ea",
+      "source": "personal_profile",
+      "id_key_version": "v3",
+      "document_version": "v1",
+      "chunk_version": "v1",
+      "embedding_version": "BAAI/bge-m3",
+      "ingest_run_id": "run_20260613_133927_EST",
+      "ingest_ts": "2026-06-13T13:39:27-05:00",
+      "lifecycle_status": "active",
+      "deleted_at": null,
+      "deleted_by_run_id": null,
+      "access": {
+        "roles": [
+          "admin",
+          "hr",
+          "recruiter",
+          "engineer",
+          "anyuser"
+        ],
+        "groups": [
+          "engineering"
+        ],
+        "teams": [
+          "rag-platform"
+        ]
+      }
+    }
+  }
+]

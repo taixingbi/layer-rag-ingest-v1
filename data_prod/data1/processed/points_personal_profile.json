@@ -1,30 +1,30 @@
 [
   {
-    "id": "c5d60ac7-00f8-51df-b22f-9c2e531b4f47",
+    "id": "2a2a6a5a-e40f-5aa7-a663-18551b00c0e9",
     "vector": [],
     "payload": {
       "chunk_id": "0001",
-      "document_id": "profile",
+      "document_id": "personal_profile",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
       "section": "ROOT",
-      "doc_type": "profile",
+      "doc_type": "personal_profile",
       "language": "en",
       "tags": [
-        "profile",
+        "personal_profile",
         "root"
       ],
       "text": "Q: What is Taixing Bi's current role?\nA: AI Infrastructure Engineer",
-      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's current role?\nA: AI Infrastructure Engineer\nQ: What is Taixing Bi's current role?\nQ: What does Taixing Bi do at his job?\nQ: Which position does Taixing Bi hold?",
+      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's current role?\nA: AI Infrastructure Engineer\nQ: What is Taixing Bi's current position?\nQ: What role does Taixing Bi hold now?\nQ: Who is Taixing Bi's current job title?",
       "token_count": 20,
-      "embed_token_count": 65,
+      "embed_token_count": 67,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
-        "What is Taixing Bi's current role?",
-        "What does Taixing Bi do at his job?",
-        "Which position does Taixing Bi hold?"
+        "What is Taixing Bi's current position?",
+        "What role does Taixing Bi hold now?",
+        "Who is Taixing Bi's current job title?"
       ],
       "content_hash": "2103d77f4a42685f262a25f4a8f48301eadda0fc88f330c5919d4508d54a0085",
       "source": "personal_profile",
@@ -32,8 +32,8 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260603_190424_EST",
-      "ingest_ts": "2026-06-03T19:04:24-05:00",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -42,7 +42,8 @@
           "admin",
           "hr",
           "recruiter",
-          "engineer"
+          "engineer",
+          "anyuser"
         ],
         "groups": [
           "engineering"
@@ -54,31 +55,31 @@
     }
   },
   {
-    "id": "954f7323-955e-5121-bceb-520547c5b4b4",
+    "id": "3d247817-db8b-5e4b-a514-fba668c93d10",
     "vector": [],
     "payload": {
       "chunk_id": "0002",
-      "document_id": "profile",
+      "document_id": "personal_profile",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
       "section": "ROOT",
-      "doc_type": "profile",
+      "doc_type": "personal_profile",
       "language": "en",
       "tags": [
-        "profile",
+        "personal_profile",
         "root"
       ],
       "text": "Q: Where does Taixing Bi currently work?\nA: Saks",
-      "embed_text": "[SECTION: ROOT]\nQ: Where does Taixing Bi currently work?\nA: Saks\nQ: Where does Taixing Bi currently work?\nQ: What company is Taixing Bi associated with?\nQ: Can you name the current workplace of Taixing Bi?",
+      "embed_text": "[SECTION: ROOT]\nQ: Where does Taixing Bi currently work?\nA: Saks\nQ: Where does Taixing Bi currently work?\nQ: What is the current workplace of Taixing Bi?\nQ: Can you tell me which company Taixing Bi works for?",
       "token_count": 14,
-      "embed_token_count": 60,
+      "embed_token_count": 62,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "Where does Taixing Bi currently work?",
-        "What company is Taixing Bi associated with?",
-        "Can you name the current workplace of Taixing Bi?"
+        "What is the current workplace of Taixing Bi?",
+        "Can you tell me which company Taixing Bi works for?"
       ],
       "content_hash": "cd28aa84bddf61a05eb8fd37fe6aedc12c2e5d2e80c20eb5f585047d67b457b4",
       "source": "personal_profile",
@@ -86,8 +87,8 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260603_190424_EST",
-      "ingest_ts": "2026-06-03T19:04:24-05:00",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -96,7 +97,8 @@
           "admin",
           "hr",
           "recruiter",
-          "engineer"
+          "engineer",
+          "anyuser"
         ],
         "groups": [
           "engineering"
@@ -108,19 +110,19 @@
     }
   },
   {
-    "id": "b46fbb33-3e90-51c8-b81c-30ac858610cf",
+    "id": "524045b8-1d7c-51a2-a431-66cd5e8add31",
     "vector": [],
     "payload": {
       "chunk_id": "0003",
-      "document_id": "profile",
+      "document_id": "personal_profile",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
       "section": "ROOT",
-      "doc_type": "profile",
+      "doc_type": "personal_profile",
       "language": "en",
       "tags": [
-        "profile",
+        "personal_profile",
         "root"
       ],
       "text": "Q: Which work locations is Taixing Bi open to?\nA: Remote, Hybrid, or Office",
@@ -140,8 +142,8 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260603_190424_EST",
-      "ingest_ts": "2026-06-03T19:04:24-05:00",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -150,7 +152,8 @@
           "admin",
           "hr",
           "recruiter",
-          "engineer"
+          "engineer",
+          "anyuser"
         ],
         "groups": [
           "engineering"
@@ -162,19 +165,19 @@
     }
   },
   {
-    "id": "5bff6bd9-5015-52cc-b47b-99e1a5e40d3a",
+    "id": "5cb83c45-d431-505e-94bb-16d909598793",
     "vector": [],
     "payload": {
       "chunk_id": "0004",
-      "document_id": "profile",
+      "document_id": "personal_profile",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
       "section": "ROOT",
-      "doc_type": "profile",
+      "doc_type": "personal_profile",
       "language": "en",
       "tags": [
-        "profile",
+        "personal_profile",
         "root"
       ],
       "text": "Q: What is Taixing Bi's expected compensation range?\nA: $180,000 – $240,000 USD",
@@ -194,8 +197,8 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260603_190424_EST",
-      "ingest_ts": "2026-06-03T19:04:24-05:00",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -204,7 +207,8 @@
           "admin",
           "hr",
           "recruiter",
-          "engineer"
+          "engineer",
+          "anyuser"
         ],
         "groups": [
           "engineering"
@@ -216,31 +220,31 @@
     }
   },
   {
-    "id": "1607b45e-1c07-5c29-975d-bbf47ef3129c",
+    "id": "08d53b51-7e9f-58db-8863-fc437b7100fe",
     "vector": [],
     "payload": {
       "chunk_id": "0005",
-      "document_id": "profile",
+      "document_id": "personal_profile",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
       "section": "ROOT",
-      "doc_type": "profile",
+      "doc_type": "personal_profile",
       "language": "en",
       "tags": [
-        "profile",
+        "personal_profile",
         "root"
       ],
       "text": "Q: What is Taixing Bi's visa status / work authorization?\nA: H4 EAD. No visa sponsorship required.",
-      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's visa status / work authorization?\nA: H4 EAD. No visa sponsorship required.\nQ: What is Taixing Bi's current visa status?\nQ: Does Taixing Bi require visa sponsorship?\nQ: What additional document does Taixing Bi hold for work authorization?",
+      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's visa status / work authorization?\nA: H4 EAD. No visa sponsorship required.\nQ: What is Taixing Bi's current visa status?\nQ: Does Taixing Bi require visa sponsorship?\nQ: What additional document does Taixing Bi have for working in the U.S.?",
       "token_count": 30,
-      "embed_token_count": 80,
+      "embed_token_count": 84,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is Taixing Bi's current visa status?",
         "Does Taixing Bi require visa sponsorship?",
-        "What additional document does Taixing Bi hold for work authorization?"
+        "What additional document does Taixing Bi have for working in the U.S.?"
       ],
       "content_hash": "0b1cda3f127ac42dc9fb12b308d1bf7b595fe0a5b4e3ddc05c157bf4febd9433",
       "source": "personal_profile",
@@ -248,8 +252,8 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260603_190424_EST",
-      "ingest_ts": "2026-06-03T19:04:24-05:00",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -258,7 +262,8 @@
           "admin",
           "hr",
           "recruiter",
-          "engineer"
+          "engineer",
+          "anyuser"
         ],
         "groups": [
           "engineering"
@@ -270,19 +275,19 @@
     }
   },
   {
-    "id": "56411443-dc67-55ca-8c54-ccc9d74e623d",
+    "id": "c8f17b9b-c35a-5f3a-99fe-bf4c3877228d",
     "vector": [],
     "payload": {
       "chunk_id": "0006",
-      "document_id": "profile",
+      "document_id": "personal_profile",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
       "section": "ROOT",
-      "doc_type": "profile",
+      "doc_type": "personal_profile",
       "language": "en",
       "tags": [
-        "profile",
+        "personal_profile",
         "root"
       ],
       "text": "Q: Which roles is Taixing Bi targeting?\nA: AI Infra / Backend / LLM Engineer",
@@ -302,8 +307,8 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260603_190424_EST",
-      "ingest_ts": "2026-06-03T19:04:24-05:00",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -312,7 +317,8 @@
           "admin",
           "hr",
           "recruiter",
-          "engineer"
+          "engineer",
+          "anyuser"
         ],
         "groups": [
           "engineering"
@@ -324,19 +330,19 @@
     }
   },
   {
-    "id": "a3d1a3da-7cf6-57fa-9618-d4df66e4cfec",
+    "id": "8c34826b-d74f-5dc9-88ff-69231332c6c3",
     "vector": [],
     "payload": {
       "chunk_id": "0007",
-      "document_id": "profile",
+      "document_id": "personal_profile",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
       "section": "ROOT",
-      "doc_type": "profile",
+      "doc_type": "personal_profile",
       "language": "en",
       "tags": [
-        "profile",
+        "personal_profile",
         "root"
       ],
       "text": "Q: What is Taixing Bi's LinkedIn profile?\nA: https://www.linkedin.com/in/taixing-bi-757a4961/",
@@ -356,8 +362,8 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260603_190424_EST",
-      "ingest_ts": "2026-06-03T19:04:24-05:00",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -366,7 +372,8 @@
           "admin",
           "hr",
           "recruiter",
-          "engineer"
+          "engineer",
+          "anyuser"
         ],
         "groups": [
           "engineering"
@@ -378,31 +385,31 @@
     }
   },
   {
-    "id": "f8f43f90-4831-56e0-9fe2-e2470dfadf56",
+    "id": "cb42e77b-3ad3-539e-a4c0-bb5719179c6f",
     "vector": [],
     "payload": {
       "chunk_id": "0008",
-      "document_id": "profile",
+      "document_id": "personal_profile",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
       "section": "ROOT",
-      "doc_type": "profile",
+      "doc_type": "personal_profile",
       "language": "en",
       "tags": [
-        "profile",
+        "personal_profile",
         "root"
       ],
       "text": "Q: What is Taixing Bi's phone number?\nA: 347-560-4308",
-      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's phone number?\nA: 347-560-4308\nQ: What is Taixing Bi's phone number?\nQ: What phone number can be associated with Taixing Bi?\nQ: How can one contact Taixing Bi?",
+      "embed_text": "[SECTION: ROOT]\nQ: What is Taixing Bi's phone number?\nA: 347-560-4308\nQ: What is Taixing Bi's phone number?\nQ: What phone number can be associated with Taixing Bi?\nQ: Can you provide the contact number for Taixing Bi?",
       "token_count": 22,
-      "embed_token_count": 68,
+      "embed_token_count": 71,
       "synthetic_questions_used": 3,
       "synthetic_questions_trimmed": 0,
       "synthetic_questions": [
         "What is Taixing Bi's phone number?",
         "What phone number can be associated with Taixing Bi?",
-        "How can one contact Taixing Bi?"
+        "Can you provide the contact number for Taixing Bi?"
       ],
       "content_hash": "10c4d13c14303145301dd77f8a9e19335fc4219fb8c08967f18ebe611367c480",
       "source": "personal_profile",
@@ -410,8 +417,8 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260603_190424_EST",
-      "ingest_ts": "2026-06-03T19:04:24-05:00",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -420,7 +427,8 @@
           "admin",
           "hr",
           "recruiter",
-          "engineer"
+          "engineer",
+          "anyuser"
         ],
         "groups": [
           "engineering"
@@ -432,19 +440,19 @@
     }
   },
   {
-    "id": "f4ec81dc-1038-59fa-ab3b-101776a8e44e",
+    "id": "0ebb8a7f-008d-5abf-9031-d1dd8b4e8dc5",
     "vector": [],
     "payload": {
       "chunk_id": "0009",
-      "document_id": "profile",
+      "document_id": "personal_profile",
       "chunk_id_parent": null,
       "was_split": false,
       "split_index": null,
       "section": "ROOT",
-      "doc_type": "profile",
+      "doc_type": "personal_profile",
       "language": "en",
       "tags": [
-        "profile",
+        "personal_profile",
         "root"
       ],
       "text": "Q: What is Taixing Bi's email address?\nA: taixingbijob@gmail.com",
@@ -464,8 +472,8 @@
       "document_version": "v1",
       "chunk_version": "v1",
       "embedding_version": "BAAI/bge-m3",
-      "ingest_run_id": "run_20260603_190424_EST",
-      "ingest_ts": "2026-06-03T19:04:24-05:00",
+      "ingest_run_id": "run_20260613_134331_EST",
+      "ingest_ts": "2026-06-13T13:43:31-05:00",
       "lifecycle_status": "active",
       "deleted_at": null,
       "deleted_by_run_id": null,
@@ -474,7 +482,8 @@
           "admin",
           "hr",
           "recruiter",
-          "engineer"
+          "engineer",
+          "anyuser"
         ],
         "groups": [
           "engineering"
